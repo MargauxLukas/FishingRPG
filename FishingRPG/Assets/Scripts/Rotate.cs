@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class ThrowBobber : MonoBehaviour
+public class Rotate : MonoBehaviour
 {
-    Vector3 baseRotation;
     Quaternion xBase;
     bool isMax = false;
-    bool throwing = false;
+
+    public bool result = false;
 
     private void Start()
     {
-        baseRotation = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         xBase = transform.localRotation;
     }
 
@@ -32,14 +31,9 @@ public class ThrowBobber : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0))
         {
-            throwing = true;
-            isMax = false;
-        }
-
-        if (throwing)
-        {
-            throwing = false;
             StartCoroutine("ThrowBobberCoroutine");
+            result = true;
+            isMax = false;
         }
     }
 
