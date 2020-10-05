@@ -9,6 +9,8 @@ public class FishingRodManager : MonoBehaviour
     public GameObject fishingRodPivot;
     public GameObject bobber;
 
+    bool bobberThrowed = false;
+
     private void Awake()
     {
         Init();
@@ -21,10 +23,10 @@ public class FishingRodManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(fishingRodPivot.GetComponent<Rotate>().result);
-        if(fishingRodPivot.GetComponent<Rotate>().result)
+        if(fishingRodPivot.GetComponent<Rotate>().result && !bobberThrowed)
         {
-
+            //fishingRodPivot.GetComponent<Rotate>().result = false;
+            bobberThrowed = true;
             LaunchBobber();
         }
     }

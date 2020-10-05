@@ -395,8 +395,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580231280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09912729, y: 1.0392014, z: 2.893653}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.09912491, y: 1.0392013, z: 2.8936532}
   m_LocalScale: {x: 5, y: 0.19, z: 5}
   m_Children: []
   m_Father: {fileID: 1604537646}
@@ -410,13 +410,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580231280}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!114 &1580231286
 MonoBehaviour:
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed6bdff2d2f0f140ae697ea7c584fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwPower: 20
+  throwPower: 1000
 --- !u!1 &1604537645
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b13a187a689fe043ae91ba3ff4eb086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwing: 0
+  timeBeforeLaunch: 1
+  result: 0
 --- !u!1 &1791959271
 GameObject:
   m_ObjectHideFlags: 0
