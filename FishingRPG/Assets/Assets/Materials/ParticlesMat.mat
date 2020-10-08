@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterCaustics
-  m_Shader: {fileID: 4800000, guid: dd7e2b2408621344fbca2b3e1caad2d4, type: 3}
+  m_Name: ParticlesMat
+  m_Shader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -39,24 +39,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _FalloffTex:
-        m_Texture: {fileID: 2800000, guid: 796665ac53e8d8743bc8aef64fc41562, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Mask:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6a77feb489afa3247b42f36adff1227b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise:
-        m_Texture: {fileID: 2800000, guid: ef2c42fd609492e4bbe845b9cf613ab9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -67,35 +55,45 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Tile:
-        m_Texture: {fileID: 2800000, guid: dbcf484e291a0994a9d61655af241752, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BlendMode: 3
-    - _BlendOp: 10
+    - _BlendOp: 0
     - _BumpScale: 1
+    - _CameraFadingEnabled: 0
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 1
+    - _ColorMode: 0
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
+    - _DistortionStrength: 1
+    - _DistortionStrengthScaled: 0
     - _DstBlend: 0
+    - _EmissionEnabled: 0
+    - _FlipbookMode: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Intensity: 2
+    - _InvFade: 1
+    - _LightingEnabled: 0
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseScale: 0.2
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Scale: 0.07
     - _SmoothnessTextureChannel: 0
+    - _SoftParticlesEnabled: 0
+    - _SoftParticlesFarFadeDistance: 1
+    - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.5
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.38431373}
-    - _ColorT: {r: 0, g: 0.8398378, b: 1, a: 0.49019608}
+    - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
