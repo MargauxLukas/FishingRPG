@@ -5,6 +5,7 @@
 		_Color("Tint", Color) = (1, 1, 1, .5)
 		_FoamC("Foam", Color) = (1, 1, 1, .5)
 		_MainTex("Main Texture", 2D) = "white" {}
+		_MaskInt ("RenderTexture Mask", 2D) = "white" {}
 		_TextureDistort("Texture Wobble", range(0,1)) = 0.1
 		_NoiseTex("Extra Wave Noise", 2D) = "white" {}
 		_Speed("Wave Speed", Range(0,1)) = 0.5
@@ -50,17 +51,22 @@
 				float2 uv : TEXCOORD3;
 				UNITY_FOG_COORDS(1)
 				float4 vertex : SV_POSITION;
-				float4 scrPos : TEXCOORD2;//
-				float4 worldPos : TEXCOORD4;//
+				float4 scrPos : TEXCOORD2;
+				float4 worldPos : TEXCOORD4;
 			};
 
 			float _TextureDistort;
 			float4 _Color;
 			sampler2D _CameraDepthTexture; //Depth Texture
-			sampler2D _MainTex, _NoiseTex;//
+			sampler2D _MainTex, _NoiseTex;
 			float4 _MainTex_ST;
-			float _Speed, _Amount, _Height, _Foam, _Scale;// 
+			float _Speed, _Amount, _Height, _Foam, _Scale; 
 			float4 _FoamC;
+			sampler2D _MaskInt;
+
+			uniform float3 _Position;
+			uniform sampler2D _GlobalEffectRT;
+			uniform float _OrthographicCamSize;
 
 			v2f vert(appdata v)
 			{
@@ -79,8 +85,21 @@
 
 			fixed4 frag(v2f i) : SV_Target
 			{
+				//rendertexture UV
+				float2 uv = i.worldPos.xz - _Position.xz;
+				uv = uv / (_OrthographicCamSize * 2);
+				uv += 0.5;
+
+				//Ripples
+				float ripples = tex2D(_GlobalEffectRT, uv).b;
+
+				//prevent bleeding with mask
+				float4 mask = tex2D(_MaskInt, uv);
+				ripples *= mask.a;
+
 				// sample the texture
 				fixed distortx = tex2D(_NoiseTex, (i.worldPos.xz * _Scale) + (_Time.x * 2)).r;// distortion alpha
+				distortx += (ripples * 2);
 
 				half4 col = tex2D(_MainTex, (i.worldPos.xz * _Scale) - (distortx * _TextureDistort));// texture times tint;			
 				half depth = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos))); // depth
@@ -89,7 +108,10 @@
 				col += (step(0.4 * distortx,foamLine) * _FoamC); // add the foam line and tint to the texture
 				col = saturate(col) * col.a;
 
-				return   col;
+				ripples = step(0.99, ripples * 3);
+				//float4 ripplesColored = ripples * _FoamC
+
+				return col + ripples;
 			}
 			ENDCG
 		}
