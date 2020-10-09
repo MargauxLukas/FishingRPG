@@ -8,8 +8,14 @@ public class FishingRodManager : MonoBehaviour
 
     public GameObject fishingRodPivot;
     public GameObject bobber;
+    public GameObject bobberPosition;
+    public GameObject fishingRodGameObject;
 
-    bool bobberThrowed = false;
+    //Bobber
+    private Vector3 bobberScale = new Vector3(5f, 0.25f, 5f);
+    private Quaternion bobberRotation;
+
+    public bool bobberThrowed = false;
 
     private void Awake()
     {
@@ -21,11 +27,15 @@ public class FishingRodManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        bobberRotation = bobber.transform.localRotation;
+    }
+
     private void Update()
     {
         if(fishingRodPivot.GetComponent<Rotate>().result && !bobberThrowed)
         {
-            //fishingRodPivot.GetComponent<Rotate>().result = false;
             bobberThrowed = true;
             LaunchBobber();
         }
@@ -35,5 +45,19 @@ public class FishingRodManager : MonoBehaviour
     {
         bobber.GetComponent<Rigidbody>().useGravity = true;
         bobber.GetComponent<Bobber>().Throw();
+    }
+
+    public void BobberBack()
+    {
+        //A METTRE DANS UN BEHAVIOUR BobberBACK 
+        bobber.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        bobber.transform.position = bobberPosition.transform.position;
+        bobber.transform.parent   = fishingRodGameObject.transform;
+        fishingRodPivot.GetComponent<Rotate>().result = false;
+        bobber.transform.localScale    = bobberScale;
+        bobber.transform.localRotation = bobberRotation;
+        bobber.GetComponent<Rigidbody>().useGravity = false;
+
+        //Fish Poisson
     }
 }

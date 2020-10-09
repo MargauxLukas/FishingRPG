@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    Quaternion xBase;
+    Quaternion FishingRodRotaBase;
     bool isMax = false;
     public float timeBeforeLaunch = 0.2f;
 
@@ -13,12 +13,18 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
-        xBase = transform.localRotation;
+        FishingRodRotaBase = transform.localRotation;
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonUp(0) && !FishingRodManager.instance.bobberThrowed)
+        {
+            StartCoroutine("Throw");
+            isMax = false;
+        }
+
+        if (Input.GetMouseButton(0) && !FishingRodManager.instance.bobberThrowed)
         {
             if ((transform.rotation.eulerAngles.x > 270f || transform.rotation.eulerAngles.x == 0) && !isMax)
             {
@@ -29,11 +35,10 @@ public class Rotate : MonoBehaviour
                 isMax = true;
             }
         }
-
-        if (Input.GetMouseButtonUp(0))
+        else if(Input.GetMouseButtonUp(0) && FishingRodManager.instance.bobberThrowed)
         {
-            StartCoroutine("Throw");
-            isMax = false;
+            FishingRodManager.instance.BobberBack();
+            FishingRodManager.instance.bobberThrowed = false;
         }
     }
 
@@ -45,10 +50,10 @@ public class Rotate : MonoBehaviour
             {
                 result = true;
             }
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, xBase, t);
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, FishingRodRotaBase, t);
             yield return null;
         }
-        transform.localRotation = xBase;
+        transform.localRotation = FishingRodRotaBase;
     }
 }
 
