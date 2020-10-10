@@ -11,6 +11,9 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
 
+    public Material catchMaterial;
+    public Material dontCatchMaterial;
+
     //Bobber
     private Vector3 bobberScale = new Vector3(5f, 0.25f, 5f);
     private Quaternion bobberRotation;
@@ -63,5 +66,15 @@ public class FishingRodManager : MonoBehaviour
         PlayerManager.instance.EnablePlayerMovement();
 
         //Fish Poisson
+    }
+
+    public void SetBobberMaterialToSucces()
+    {
+        bobber.GetComponent<MeshRenderer>().material = catchMaterial;
+    }
+
+    public void SetBobberMaterialToFail()
+    {
+        bobber.GetComponent<MeshRenderer>().material = dontCatchMaterial;
     }
 }

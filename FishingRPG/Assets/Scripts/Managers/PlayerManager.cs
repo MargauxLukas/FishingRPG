@@ -27,4 +27,14 @@ public class PlayerManager : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = true;
     }
+
+    public void DisableFishMovement()
+    {
+
+    }
+
+    public void EnableFishMovement()
+    {
+
+    }
 }

@@ -167,6 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBobberOnWater: 0
+  timer: 0
+  needToWait: 0
+  readyToFish: 0
+  fishPrefab: {fileID: 3777321972750495661, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
+  dynamics: {fileID: 1191154695}
 --- !u!1 &156331745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1155,8 @@ MonoBehaviour:
   bobber: {fileID: 1580231280}
   bobberPosition: {fileID: 1200236150}
   fishingRodGameObject: {fileID: 1604537645}
+  catchMaterial: {fileID: 2100000, guid: 2154821283097a14cafbff2c920a2a41, type: 2}
+  dontCatchMaterial: {fileID: 2100000, guid: 6ccf9d06d2860a84e87ef6728fdf2a3f, type: 2}
   bobberThrowed: 0
 --- !u!1 &1966296127
 GameObject:
