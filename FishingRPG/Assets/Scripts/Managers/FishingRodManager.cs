@@ -45,6 +45,8 @@ public class FishingRodManager : MonoBehaviour
     {
         bobber.GetComponent<Rigidbody>().useGravity = true;
         bobber.GetComponent<Bobber>().Throw();
+        CameraManager.instance.CameraLookAtGameObject(bobber);
+        PlayerManager.instance.DisablePlayerMovement();
     }
 
     public void BobberBack()
@@ -57,6 +59,8 @@ public class FishingRodManager : MonoBehaviour
         bobber.transform.localScale    = bobberScale;
         bobber.transform.localRotation = bobberRotation;
         bobber.GetComponent<Rigidbody>().useGravity = false;
+        CameraManager.instance.FreeCameraEnable();
+        PlayerManager.instance.EnablePlayerMovement();
 
         //Fish Poisson
     }

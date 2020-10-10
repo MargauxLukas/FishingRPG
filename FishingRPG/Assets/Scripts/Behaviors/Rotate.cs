@@ -28,7 +28,7 @@ public class Rotate : MonoBehaviour
         {
             if ((transform.rotation.eulerAngles.x > 270f || transform.rotation.eulerAngles.x == 0) && !isMax)
             {
-                transform.Rotate(new Vector3(-0.5f, 0f, 0f));
+                transform.Rotate(new Vector3(-1f, 0f, 0f));
             }
             else
             {

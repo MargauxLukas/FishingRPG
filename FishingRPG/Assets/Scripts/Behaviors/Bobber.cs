@@ -8,8 +8,7 @@ public class Bobber : MonoBehaviour
 
     public void Throw()
     {
-        transform.parent = null;
-        //Debug.Log(Vector3.forward);
+        GetComponent<MoveToDynamic>().GameObjectToDynamics();
         transform.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * throwPower);
     }
 }

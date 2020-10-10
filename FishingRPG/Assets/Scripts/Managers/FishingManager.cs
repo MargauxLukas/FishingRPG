@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FishingManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static FishingManager instance;
+    public bool isBobberOnWater = false;
+
+    private void Awake()
     {
-        
+        Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Init()
     {
-        
+        instance = this;
     }
+
+
 }
