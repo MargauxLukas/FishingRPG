@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class PlayerFishing : MonoBehaviour
 {
-
-    public bool blockLine;
-    public bool pullTowards;
+    public bool isReadyToFish = false;
 
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
         {
             FishingManager.instance.CancelFishing();
+        }
+
+        if (isReadyToFish)
+        {
+            if (Input.GetKey(KeyCode.A))   //BlockLine
+            {
+                PlayerManager.instance.IsBlockingLine();
+            }
+            else if (Input.GetKey(KeyCode.E))   //Pull
+            {
+                PlayerManager.instance.IsPullingTowards();
+            }
+            else
+            {
+                PlayerManager.instance.NothingPushed();
+            }
         }
     }
 }

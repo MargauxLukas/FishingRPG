@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3777321972750495660}
   - component: {fileID: 3777321972750495703}
   - component: {fileID: 4779707269943753527}
+  - component: {fileID: 2042084132484654825}
+  - component: {fileID: 1168737364579768549}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -125,3 +127,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa8bbdc0e100b0409ff10756513befb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2042084132484654825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777321972750495661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365f88d9d6c75d047b25d61ceeef20c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+--- !u!138 &1168737364579768549
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777321972750495661}
+  m_ConnectedBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1

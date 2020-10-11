@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject player;
 
+    public bool blockLine;
+    public bool pullTowards;
+
     private void Awake()
     {
         Init();
@@ -36,5 +39,26 @@ public class PlayerManager : MonoBehaviour
     public void EnableFishMovement()
     {
         player.GetComponent<PlayerFishing>().enabled = true;
+    }
+
+    public void FishingCanStart()
+    {
+        player.GetComponent<PlayerFishing>().isReadyToFish = true;
+    }
+
+    public void IsBlockingLine()
+    {
+        blockLine = true;
+    }
+
+    public void IsPullingTowards()
+    {
+        pullTowards = true;
+    }
+
+    public void NothingPushed()
+    {
+        blockLine = false;
+        pullTowards = false;
     }
 }

@@ -58,6 +58,8 @@ public class FishingManager : MonoBehaviour
                                 FishingRodManager.instance.bobber.transform.position.z),
                     Quaternion.identity,
                     dynamics          );
+        currentFish.GetComponent<FixedJoint>().connectedBody = FishingRodManager.instance.bobber.GetComponent<Rigidbody>();
+        PlayerManager.instance.FishingCanStart();
     }
 
     public void CancelFishing()
