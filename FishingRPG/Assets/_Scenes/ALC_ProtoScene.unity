@@ -166,12 +166,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23084eb8fb6a0b4d8e7484f930a855a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBobberOnWater: 0
   timer: 0
   needToWait: 0
   readyToFish: 0
   fishPrefab: {fileID: 3777321972750495661, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
   dynamics: {fileID: 1191154695}
+  currentFish: {fileID: 0}
 --- !u!1 &156331745
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +239,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3201430607740515252, guid: 9ffd31e973c873c4ba3de6446c888803, type: 3}
   m_PrefabInstance: {fileID: 787874844}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &458970820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458970817}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3897023b00db3094a8b66345549b6fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockLine: 0
+  pullTowards: 0
 --- !u!1 &469315195
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isWater: 0
   waterCheck: {fileID: 1580231284}
-  waterDistance: 0.4
+  waterDistance: 0.2
   waterMask:
     serializedVersion: 2
     m_Bits: 16

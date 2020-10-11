@@ -50,11 +50,13 @@ public class FishingRodManager : MonoBehaviour
         bobber.GetComponent<Bobber>().Throw();
         CameraManager.instance.CameraLookAtGameObject(bobber);
         PlayerManager.instance.DisablePlayerMovement();
+        PlayerManager.instance.EnableFishMovement();
     }
 
     public void BobberBack()
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
+        bobberThrowed = false;
         bobber.GetComponent<Rigidbody>().velocity = Vector3.zero;
         bobber.transform.position = bobberPosition.transform.position;
         bobber.transform.parent   = fishingRodGameObject.transform;
@@ -64,6 +66,7 @@ public class FishingRodManager : MonoBehaviour
         bobber.GetComponent<Rigidbody>().useGravity = false;
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
+        PlayerManager.instance.DisableFishMovement();
 
         //Fish Poisson
     }

@@ -35,11 +35,11 @@ public class Rotate : MonoBehaviour
                 isMax = true;
             }
         }
-        else if(Input.GetMouseButtonUp(0) && FishingRodManager.instance.bobberThrowed)
+        /*else if(Input.GetMouseButtonUp(0) && FishingRodManager.instance.bobberThrowed)
         {
             FishingRodManager.instance.BobberBack();
             FishingRodManager.instance.bobberThrowed = false;
-        }
+        }*/
     }
 
     IEnumerator Throw()

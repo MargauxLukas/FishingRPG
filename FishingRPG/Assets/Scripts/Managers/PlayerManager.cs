@@ -30,11 +30,11 @@ public class PlayerManager : MonoBehaviour
 
     public void DisableFishMovement()
     {
-
+        player.GetComponent<PlayerFishing>().enabled = false;
     }
 
     public void EnableFishMovement()
     {
-
+        player.GetComponent<PlayerFishing>().enabled = true;
     }
 }
