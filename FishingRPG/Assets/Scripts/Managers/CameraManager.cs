@@ -21,7 +21,7 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if(!mainCamera.GetComponent<PlayerView>().freeCamera)
+        if(!mainCamera.GetComponent<PlayerView>().freeCamera && !FishingRodManager.instance.bobber.GetComponent<CheckWater>().isWater)
         {
             mainCamera.transform.LookAt(target.transform);
         }
