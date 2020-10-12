@@ -21,9 +21,7 @@ public class FishBehavior : MonoBehaviour
     public bool isOnWater = true;
 
     //Possiblement dans FishManager
-    Vector3 velocity;
-    public float JumpHeight = 15f;      //Valeur à obtenir avec formule (stats du player contre stats du fish)
-
+    public float JumpHeight = 20f;      //Valeur à obtenir avec formule (stats du player contre stats du fish)
     Rigidbody rb;
 
     private void Start()
@@ -56,6 +54,9 @@ public class FishBehavior : MonoBehaviour
         else
         {
             isAerial = false;
+            extenued = false;
+            endurance = 50f;
+            FishManager.instance.NotExtenued();
             rb.velocity = new Vector3(0f, JumpHeight, 0f);
         }
     }

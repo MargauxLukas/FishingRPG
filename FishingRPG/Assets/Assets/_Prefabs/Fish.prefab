@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3372881926875865332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.544, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3777321972750495697}
@@ -181,8 +181,12 @@ MonoBehaviour:
   endurance: 100
   isAerial: 0
   isOnWater: 1
-  jumpHeight: 2
-  gravity: -9.81
+  JumpHeight: 15
+  waterCheck: {fileID: 2520561422270228874}
+  waterDistance: 10
+  waterMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!138 &1168737364579768549
 FixedJoint:
   m_ObjectHideFlags: 0

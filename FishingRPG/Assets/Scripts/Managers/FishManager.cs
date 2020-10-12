@@ -7,7 +7,7 @@ public class FishManager : MonoBehaviour
     public static FishManager instance;
     public GameObject currentFish;
     public Material canAerialMat;
-    public Material normalMal;
+    public Material normalMat;
 
     private void Awake()
     {
@@ -30,5 +30,10 @@ public class FishManager : MonoBehaviour
     public void ExtenuedChange()
     {
         currentFish.GetComponent<MeshRenderer>().material = canAerialMat;
+    }
+
+    public void NotExtenued()
+    {
+        currentFish.GetComponent<MeshRenderer>().material = normalMat;
     }
 }
