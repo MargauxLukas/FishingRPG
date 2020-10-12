@@ -59,6 +59,7 @@ public class FishingManager : MonoBehaviour
                     Quaternion.identity,
                     dynamics          );
         currentFish.GetComponent<FixedJoint>().connectedBody = FishingRodManager.instance.bobber.GetComponent<Rigidbody>();
+        FishManager.instance.currentFish = currentFish;
         PlayerManager.instance.FishingCanStart();
     }
 

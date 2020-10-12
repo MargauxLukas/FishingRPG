@@ -18,6 +18,7 @@ public class FishBehavior : MonoBehaviour
     public float endurance = 100f;
 
     public bool isAerial = false;
+    public bool isOnWater = true;
 
 
     void Update()

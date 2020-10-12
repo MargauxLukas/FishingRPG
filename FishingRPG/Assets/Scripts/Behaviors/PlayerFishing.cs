@@ -6,8 +6,6 @@ public class PlayerFishing : MonoBehaviour
 {
     public bool isReadyToFish = false;
 
-    
-
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
