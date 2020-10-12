@@ -8,24 +8,15 @@ public class FishBehavior : MonoBehaviour
     public float speed = 4f;
     public Vector3 maxPos;
     public Vector3 minPos;
+    public Vector3 pullLeft;
+    public Vector3 pullRight;
 
     public int directionChoice = 0;
     public bool isDirectionChoosen = false;
 
     void Update()
     {
-        if (PlayerManager.instance.blockLine)
-        {
-            if (!isDirectionChoosen)
-            {
-                MovingRightOrLeft();
-            }
-            else
-            {
-                Move();
-            }
-        }
-        else if(PlayerManager.instance.pullTowards)
+        if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
         {
             if (!isDirectionChoosen)
             {
@@ -46,15 +37,7 @@ public class FishBehavior : MonoBehaviour
     public void MovingRightOrLeft()
     {
         directionChoice = Random.Range(0, 2);
-
-        if (directionChoice == 1)
-        {
-            MovingRight();
-        }
-        else
-        {
-            MovingLeft();
-        }
+        Move();
         isDirectionChoosen = true;
     }
 
@@ -77,30 +60,48 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingRight()
     {
-        Debug.Log("Right :" + Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)));
-        if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < 0.2f)
+        Debug.Log(Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)));
+        if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) < 0.3f)
         {
             ChangeDirection();
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z), (speed * 2) * Time.deltaTime);
+            if (PlayerManager.instance.blockLine)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z), (speed * 2) * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), (speed * 3f) * Time.deltaTime);
+            }
         }
     }
 
     public void MovingLeft()
     {
-        Debug.Log("Left :" + Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)));
-        if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < 0.2f)
+        Debug.Log(Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)));
+        if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)) < 0.3f)
         {
             ChangeDirection();
         }
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z), (speed*2) * Time.deltaTime);
+        else
+        {
+            if (PlayerManager.instance.blockLine)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z), (speed * 2) * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), (speed * 3f) * Time.deltaTime);
+            }
+        }
     }
 
     public void ChangeDirection()
     {
-        if(directionChoice == 1)
+        SetMaxAndMinDistance();
+        if (directionChoice == 1)
         {
             directionChoice = 2;
         }
@@ -109,6 +110,11 @@ public class FishBehavior : MonoBehaviour
             directionChoice = 1;
         }
     }
+
+    /*public void PullTowards()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), speed * Time.deltaTime);
+    }*/
 
     public void SetMaxAndMinDistance()
     {
@@ -123,11 +129,14 @@ public class FishBehavior : MonoBehaviour
         float distance = Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position);
         maxPos = cone +( upRayRotation * PlayerManager.instance.player.transform.right * distance);
         minPos = cone + (downRayRotation * PlayerManager.instance.player.transform.right * distance);
+        pullRight  = cone + (upRayRotation * PlayerManager.instance.player.transform.right * (distance - 2f));
+        pullLeft = cone + (downRayRotation * PlayerManager.instance.player.transform.right * (distance - 2f));
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, PlayerManager.instance.player.transform.position);
+        Gizmos.DrawLine(transform.position, pullRight);
+        Gizmos.DrawLine(transform.position, pullLeft);
     }
 }
