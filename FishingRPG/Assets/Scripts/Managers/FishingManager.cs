@@ -15,7 +15,7 @@ public class FishingManager : MonoBehaviour
     public Transform dynamics;
 
     public GameObject currentFish;
-
+    public bool isOnWater;
     private void Awake()
     {
         Init();

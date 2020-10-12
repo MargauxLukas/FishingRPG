@@ -9,10 +9,6 @@ public class FishManager : MonoBehaviour
     public Material canAerialMat;
     public Material normalMal;
 
-    public float gravity = -9.81f;
-    public float jumpHeight = 2f;
-    Vector3 velocity;
-
     private void Awake()
     {
         Init();

@@ -168,9 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFish: {fileID: 0}
   canAerialMat: {fileID: 2100000, guid: 2154821283097a14cafbff2c920a2a41, type: 2}
-  normalMal: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  gravity: -9.81
-  jumpHeight: 2
+  normalMal: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &26438268
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +218,7 @@ MonoBehaviour:
   fishPrefab: {fileID: 3777321972750495661, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
   dynamics: {fileID: 1191154695}
   currentFish: {fileID: 0}
+  isOnWater: 0
 --- !u!1 &156331745
 GameObject:
   m_ObjectHideFlags: 0

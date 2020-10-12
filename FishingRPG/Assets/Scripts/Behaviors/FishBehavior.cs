@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class FishBehavior : MonoBehaviour
 {
-    public float speed = 4f;
+    public float speed = 10f;
     public Vector3 maxPos;
     public Vector3 minPos;
     public Vector3 pullLeft;
@@ -15,10 +15,21 @@ public class FishBehavior : MonoBehaviour
     public bool isDirectionChoosen = false;
 
     public bool extenued = false;
-    public float endurance = 100f;
+    public float endurance = 50f;
 
     public bool isAerial = false;
     public bool isOnWater = true;
+
+    //Possiblement dans FishManager
+    Vector3 velocity;
+    public float JumpHeight = 15f;      //Valeur à obtenir avec formule (stats du player contre stats du fish)
+
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
 
     void Update()
@@ -44,7 +55,8 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-
+            isAerial = false;
+            rb.velocity = new Vector3(0f, JumpHeight, 0f);
         }
     }
 
@@ -74,7 +86,6 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingRight()
     {
-        Debug.Log(Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)));
         if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) < 0.3f)
         {
             ChangeDirection();
@@ -94,7 +105,6 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingLeft()
     {
-        Debug.Log(Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)));
         if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)) < 0.3f)
         {
             ChangeDirection();
