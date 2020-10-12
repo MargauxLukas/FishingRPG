@@ -24,11 +24,11 @@
 		Blend OneMinusDstColor One
 		Cull Off
 
-		GrabPass
+		/*GrabPass
 		{
 			Name "BASE"
 			Tags{ "LightMode" = "Always" }
-		}
+		}*/
 
 		Pass
 		{
