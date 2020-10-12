@@ -25,6 +25,10 @@ public class PlayerFishing : MonoBehaviour
             {
                 PlayerManager.instance.IsPullingTowards();
             }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                PlayerManager.instance.IsAerial();
+            }
             else
             {
                 PlayerManager.instance.NothingPushed();

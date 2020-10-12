@@ -56,6 +56,11 @@ public class PlayerManager : MonoBehaviour
         pullTowards = true;
     }
 
+    public void IsAerial()
+    {
+        FishManager.instance.IsExtenued();
+    }
+
     public void NothingPushed()
     {
         blockLine = false;

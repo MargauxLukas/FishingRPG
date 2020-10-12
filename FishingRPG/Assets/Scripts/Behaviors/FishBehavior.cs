@@ -14,23 +14,36 @@ public class FishBehavior : MonoBehaviour
     public int directionChoice = 0;
     public bool isDirectionChoosen = false;
 
+    public bool extenued = false;
+    public float endurance = 100f;
+
+    public bool isAerial = false;
+
+
     void Update()
     {
-        if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
+        if (!isAerial)
         {
-            if (!isDirectionChoosen)
+            if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
             {
-                MovingRightOrLeft();
+                if (!isDirectionChoosen)
+                {
+                    MovingRightOrLeft();
+                }
+                else
+                {
+                    Move();
+                }
             }
             else
             {
-                Move();
+                MovingAway();
+                SetMaxAndMinDistance();
             }
         }
         else
         {
-            MovingAway();
-            SetMaxAndMinDistance();
+
         }
     }
 
@@ -100,6 +113,8 @@ public class FishBehavior : MonoBehaviour
 
     public void ChangeDirection()
     {
+        endurance -= 50f;
+        CheckEndurance();
         SetMaxAndMinDistance();
         if (directionChoice == 1)
         {
@@ -115,6 +130,15 @@ public class FishBehavior : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), speed * Time.deltaTime);
     }*/
+
+    public void CheckEndurance()
+    {
+        if(endurance <= 0)
+        {
+            extenued = true;
+            FishManager.instance.ExtenuedChange();
+        }
+    }
 
     public void SetMaxAndMinDistance()
     {
