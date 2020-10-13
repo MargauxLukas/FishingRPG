@@ -27,6 +27,14 @@ public class PlayerFishing : MonoBehaviour
             {
                 PlayerManager.instance.IsAerial();
             }
+            else if(Input.GetKey(KeyCode.Q))
+            {
+                FishingRodManager.instance.LeftFishingRod();
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                FishingRodManager.instance.RightFishingRod();
+            }
             else
             {
                 PlayerManager.instance.NothingPushed();

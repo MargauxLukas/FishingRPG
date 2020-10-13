@@ -11,6 +11,8 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
 
+    public GameObject[] positionGroup;
+
     public Material catchMaterial;
     public Material dontCatchMaterial;
 
@@ -19,6 +21,9 @@ public class FishingRodManager : MonoBehaviour
     private Quaternion bobberRotation;
 
     public bool bobberThrowed = false;
+
+    public float direction = 0f;
+    public float speed = 1f;
 
     private void Awake()
     {
@@ -79,5 +84,15 @@ public class FishingRodManager : MonoBehaviour
     public void SetBobberMaterialToFail()
     {
         bobber.GetComponent<MeshRenderer>().material = dontCatchMaterial;
+    }
+
+    public void LeftFishingRod()
+    {
+        fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[0].transform.localPosition, speed * Time.fixedDeltaTime);
+    }
+
+    public void RightFishingRod()
+    {
+        fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[2].transform.localPosition, speed * Time.fixedDeltaTime);
     }
 }
