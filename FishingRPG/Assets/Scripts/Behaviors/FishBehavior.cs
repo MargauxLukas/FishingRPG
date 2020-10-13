@@ -12,11 +12,14 @@ public class FishBehavior : MonoBehaviour
     public Vector3 pullLeft;
     public Vector3 pullRight;
 
+    public float zone1;
+    public float zone2;
+
     public int directionChoice = 0;
     public bool isDirectionChoosen = false;
 
     public bool extenued = false;
-    public float endurance = 50f;
+    public float endurance = 100f;
 
     public bool isAerial = false;
     public bool isOnWater = true;
@@ -90,12 +93,21 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingRight()
     {
+       
         if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) < 0.3f)
         {
             ChangeDirection();
         }
-        else
+        else if(Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone1)
         {
+            FishingRodManager.instance.fishingLine.TensionDown();
+            FishManager.instance.DownEndurance();
+        }
+        else if(Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone2)
+        {
+            FishManager.instance.DownEndurance();
+        }
+        
             CalculateSpeed();
             if (PlayerManager.instance.blockLine)
             {
@@ -105,17 +117,27 @@ public class FishBehavior : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), speed * Time.deltaTime);
             }
-        }
+        
     }
 
     public void MovingLeft()
     {
+
         if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)) < 0.3f)
         {
             ChangeDirection();
         }
-        else
+        else if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone1)
         {
+            FishingRodManager.instance.fishingLine.TensionDown();
+            FishManager.instance.DownEndurance();
+        }
+        else if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone2)
+        {
+            FishManager.instance.DownEndurance();
+        }
+ 
+        
             CalculateSpeed();
             if (PlayerManager.instance.blockLine)
             {
@@ -125,12 +147,11 @@ public class FishBehavior : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), speed  * Time.deltaTime);
             }
-        }
+        
     }
 
     public void ChangeDirection()
     {
-        endurance -= 50f;
         CheckEndurance();
         SetMaxAndMinDistance();
         if (directionChoice == 1)
@@ -186,6 +207,8 @@ public class FishBehavior : MonoBehaviour
         minPos = cone + (downRayRotation * PlayerManager.instance.player.transform.right * distance);
         pullRight  = cone + (upRayRotation * PlayerManager.instance.player.transform.right * (distance - 2f));
         pullLeft = cone + (downRayRotation * PlayerManager.instance.player.transform.right * (distance - 2f));
+        zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;
+        zone1 = Vector3.Distance(minPos, maxPos) * 0.1f;
     }
 
     private void OnDrawGizmosSelected()

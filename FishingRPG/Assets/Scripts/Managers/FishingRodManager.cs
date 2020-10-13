@@ -10,6 +10,7 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public FishingLine fishingLine;
 
     public GameObject[] positionGroup;
 
@@ -38,6 +39,7 @@ public class FishingRodManager : MonoBehaviour
     private void Start()
     {
         bobberRotation = bobber.transform.localRotation;
+        fishingLine = GetComponent<FishingLine>();
     }
 
     private void Update()

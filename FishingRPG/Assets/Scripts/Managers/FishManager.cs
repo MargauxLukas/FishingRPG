@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FishManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class FishManager : MonoBehaviour
     public GameObject currentFish;
     public Material canAerialMat;
     public Material normalMat;
+    public Text enduText;
 
     private void Awake()
     {
@@ -35,5 +37,16 @@ public class FishManager : MonoBehaviour
     public void NotExtenued()
     {
         currentFish.GetComponent<MeshRenderer>().material = normalMat;
+    }
+
+    public void DownEndurance()
+    {
+        currentFish.GetComponent<FishBehavior>().endurance -= 0.2f;
+        ChangeText();
+    }
+
+    public void ChangeText()
+    {
+        enduText.text = currentFish.GetComponent<FishBehavior>().endurance.ToString();
     }
 }
