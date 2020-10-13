@@ -16,6 +16,7 @@ public class FishingManager : MonoBehaviour
 
     public GameObject currentFish;
     public bool isOnWater;
+    public bool fishIsGoingRight;
     private void Awake()
     {
         Init();

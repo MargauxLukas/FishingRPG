@@ -95,4 +95,36 @@ public class FishingRodManager : MonoBehaviour
     {
         fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[2].transform.localPosition, speed * Time.fixedDeltaTime);
     }
+
+    public float GetPlayerForce()
+    {
+        direction = fishingRodGameObject.transform.localPosition.x;
+        return direction;
+    }
+
+    public bool IsSameDirection()
+    {
+        if(FishingManager.instance.fishIsGoingRight)
+        {
+            if(direction > 0f)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if (direction < 0f)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }

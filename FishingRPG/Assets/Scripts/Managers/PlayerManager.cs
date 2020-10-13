@@ -65,5 +65,7 @@ public class PlayerManager : MonoBehaviour
     {
         blockLine = false;
         pullTowards = false;
+        //FishingRod retourne progressivement vers 0 si poisson est opposé !
+
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine.UIElements;
 
 public class FishBehavior : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 1f;
+
     public Vector3 maxPos;
     public Vector3 minPos;
     public Vector3 pullLeft;
@@ -72,10 +73,12 @@ public class FishBehavior : MonoBehaviour
     {
         if (directionChoice == 1)
         {
+            FishingManager.instance.fishIsGoingRight = true;
             MovingRight();
         }
         else
         {
+            FishingManager.instance.fishIsGoingRight = false;
             MovingLeft();
         }
     }
@@ -93,13 +96,14 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
+            CalculateSpeed();
             if (PlayerManager.instance.blockLine)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z), (speed * 2) * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z), speed * Time.deltaTime);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), (speed * 3f) * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), speed * Time.deltaTime);
             }
         }
     }
@@ -112,13 +116,14 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
+            CalculateSpeed();
             if (PlayerManager.instance.blockLine)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z), (speed * 2) * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z), speed  * Time.deltaTime);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), (speed * 3f) * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), speed  * Time.deltaTime);
             }
         }
     }
@@ -135,6 +140,20 @@ public class FishBehavior : MonoBehaviour
         else
         {
             directionChoice = 1;
+        }
+    }
+
+    public void CalculateSpeed()
+    {
+        if(FishingRodManager.instance.IsSameDirection())
+        {
+            speed = 5f + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())*2;
+            //Debug.Log("+ = " + (1f + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+        }
+        else
+        {
+            speed = 5f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())*2;
+            //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
         }
     }
 
