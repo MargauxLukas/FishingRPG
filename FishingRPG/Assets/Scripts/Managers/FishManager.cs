@@ -41,6 +41,7 @@ public class FishManager : MonoBehaviour
 
     public void DownEndurance()
     {
+        Debug.Log("heyEndu");
         currentFish.GetComponent<FishBehavior>().endurance -= 0.2f;
         ChangeText();
     }

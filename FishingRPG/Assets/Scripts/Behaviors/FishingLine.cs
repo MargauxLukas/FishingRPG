@@ -10,18 +10,21 @@ public class FishingLine : MonoBehaviour
     public float maxTension = 100;
     public Text textInt;
 
-
-
     public void LineIsBroken()
     {
-        //Poisson s'enfuit
-        //Bobber back
+        FishingManager.instance.CancelFishing();
     }
 
     public void TensionDown()
     {
+        Debug.Log("heyTension");
         currentTension -= 0.5f;
         ChangeText();
+
+        if(currentTension <= 0)
+        {
+            LineIsBroken();
+        }
     }
 
     public void ChangeText()

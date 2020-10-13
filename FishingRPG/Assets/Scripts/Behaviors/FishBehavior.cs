@@ -93,7 +93,9 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingRight()
     {
-       
+        //Debug.Log("R et Zone 1 : " + (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) + " < " + zone1));
+        //Debug.Log("R et Zone 1 : " + Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) + " <  0.3f");
+
         if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) < 0.3f)
         {
             ChangeDirection();
@@ -122,6 +124,7 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingLeft()
     {
+        //Debug.Log("L et Zone 1 : " + (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) +" < " +zone1));
 
         if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)) < 0.3f)
         {

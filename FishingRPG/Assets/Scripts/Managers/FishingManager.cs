@@ -61,6 +61,7 @@ public class FishingManager : MonoBehaviour
                     dynamics          );
         currentFish.GetComponent<FixedJoint>().connectedBody = FishingRodManager.instance.bobber.GetComponent<Rigidbody>();
         FishManager.instance.currentFish = currentFish;
+        FishManager.instance.ChangeText();
         PlayerManager.instance.FishingCanStart();
     }
 
@@ -76,6 +77,7 @@ public class FishingManager : MonoBehaviour
             //currentFish.GetComponent<Destroy>().DestroyThisGameobject();
         }
 
+        
         FishingRodManager.instance.BobberBack();
     }
 }
