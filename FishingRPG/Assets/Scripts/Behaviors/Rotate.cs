@@ -18,13 +18,13 @@ public class Rotate : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonUp(0) && !FishingRodManager.instance.bobberThrowed)
+        if (Input.GetButtonUp("B Button") && !FishingRodManager.instance.bobberThrowed)
         {
             StartCoroutine("Throw");
             isMax = false;
         }
 
-        if (Input.GetMouseButton(0) && !FishingRodManager.instance.bobberThrowed)
+        if (Input.GetButton("B Button") && !FishingRodManager.instance.bobberThrowed)
         {
             if ((transform.rotation.eulerAngles.x > 270f || transform.rotation.eulerAngles.x == 0) && !isMax)
             {
@@ -35,11 +35,11 @@ public class Rotate : MonoBehaviour
                 isMax = true;
             }
         }
-        /*else if(Input.GetMouseButtonUp(0) && FishingRodManager.instance.bobberThrowed)
+        else if(Input.GetButtonUp("B Button") && FishingRodManager.instance.bobberThrowed)
         {
-            FishingRodManager.instance.BobberBack();
+            FishingManager.instance.CancelFishing();
             FishingRodManager.instance.bobberThrowed = false;
-        }*/
+        }
     }
 
     IEnumerator Throw()

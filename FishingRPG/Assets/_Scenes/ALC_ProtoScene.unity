@@ -390,6 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469315196}
   - component: {fileID: 469315197}
+  - component: {fileID: 469315198}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -423,6 +424,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbe44c91e7e4fa4180bba5573c807c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &469315198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469315195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd634eb116b0d264a81ec9e889cfed09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aButton: 0
+  bButton: 0
+  xButton: 0
+  yButton: 0
+  leftBumper: 0
+  rightBumper: 0
+  viewButton: 0
+  menuButton: 0
+  lClickButton: 0
+  rClickButton: 0
+  xBoxGuideHomeButton: 0
+  leftAnalogStickHorizontal: 0
+  rightAnalogStickHorizontal: 0
+  leftAnalogStickVertical: 0
+  rightAnalogStickVertical: 0
+  dPadHorizontal: 0
+  dPadVertical: 0
+  leftTrigger: 0
+  rightTrigger: 0
 --- !u!20 &626249484 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3201430608827339777, guid: 9ffd31e973c873c4ba3de6446c888803, type: 3}

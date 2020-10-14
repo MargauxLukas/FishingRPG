@@ -117,7 +117,7 @@ public class FishBehavior : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), (speed*2) * Time.deltaTime);
             }
         
     }
@@ -148,7 +148,7 @@ public class FishBehavior : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), speed  * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), (speed*2)  * Time.deltaTime);
             }
         
     }

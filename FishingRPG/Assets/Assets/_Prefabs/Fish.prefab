@@ -175,18 +175,15 @@ MonoBehaviour:
   minPos: {x: 0, y: 0, z: 0}
   pullLeft: {x: 0, y: 0, z: 0}
   pullRight: {x: 0, y: 0, z: 0}
+  zone1: 0
+  zone2: 0
   directionChoice: 0
   isDirectionChoosen: 0
   extenued: 0
   endurance: 100
   isAerial: 0
   isOnWater: 1
-  JumpHeight: 15
-  waterCheck: {fileID: 2520561422270228874}
-  waterDistance: 10
-  waterMask:
-    serializedVersion: 2
-    m_Bits: 0
+  JumpHeight: 20
 --- !u!138 &1168737364579768549
 FixedJoint:
   m_ObjectHideFlags: 0

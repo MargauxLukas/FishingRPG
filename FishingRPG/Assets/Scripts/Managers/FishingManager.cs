@@ -74,7 +74,6 @@ public class FishingManager : MonoBehaviour
         {
             readyToFish = false;
             Destroy(currentFish);
-            //currentFish.GetComponent<Destroy>().DestroyThisGameobject();
         }
 
         

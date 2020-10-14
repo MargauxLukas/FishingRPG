@@ -8,22 +8,22 @@ public class PlayerFishing : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        /*if (Input.GetButtonUp("B Button"))
         {
             FishingManager.instance.CancelFishing();
-        }
+        }*/
 
         if (isReadyToFish)
         {
-            if (Input.GetKey(KeyCode.A))   //BlockLine
+            if (Input.GetButton("Left Bumper"))   //BlockLine
             {
                 PlayerManager.instance.IsBlockingLine();
             }
-            else if (Input.GetKey(KeyCode.E))   //Pull
+            else if (Input.GetButton("Right Bumper"))   //Pull
             {
                 PlayerManager.instance.IsPullingTowards();
             }
-            else if (Input.GetKeyDown(KeyCode.R))
+            else if (Input.GetAxis("Right Trigger") > 0.1f)
             {
                 PlayerManager.instance.IsAerial();
             }
@@ -32,11 +32,12 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.NothingPushed();
             }
 
-            if (Input.GetKey(KeyCode.Q))
+
+            if (Input.GetAxis("Right Stick (Horizontal)") < -0.2f)
             {
                 FishingRodManager.instance.LeftFishingRod();
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetAxis("Right Stick (Horizontal)") > 0.2f)
             {
                 FishingRodManager.instance.RightFishingRod();
             }

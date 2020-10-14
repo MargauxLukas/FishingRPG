@@ -74,7 +74,7 @@ public class FishingRodManager : MonoBehaviour
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
-
+        FishManager.instance.currentFish.GetComponent<Destroy>().DestroyThisGameobject();
         //Fish Poisson
     }
 
