@@ -1158,7 +1158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 1000
 --- !u!222 &1384828970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1758,8 +1758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad38fded8e2b9214784c42fa8335abb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTension: 100
-  maxTension: 100
+  currentTension: 1000
+  maxTension: 1000
   textInt: {fileID: 1384828969}
 --- !u!1 &1966296127
 GameObject:
