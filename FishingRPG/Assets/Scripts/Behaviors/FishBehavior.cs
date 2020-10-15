@@ -219,5 +219,7 @@ public class FishBehavior : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, pullRight);
         Gizmos.DrawLine(transform.position, pullLeft);
+        Gizmos.DrawLine(transform.position, maxPos);
+        Gizmos.DrawLine(transform.position, minPos);
     }
 }
