@@ -197,29 +197,41 @@ public class FishBehavior : MonoBehaviour
 
     public void SetMaxAndMinDistance()
     {
-        float angle = 20.0f;
-        float halfFOV = angle / 1.0f;
-        float coneDirection = 90;
+        float angle         = 30.0f;            //Angle voulu (Doublon avec PlayerView)
+        float halfFOV       = angle / 1.0f;     //FieldOfView (Doublon avec PlayerView)
+        float coneDirection = 90;               //Direction dans un cercle allant de 0 à 380 Droite = 0 / Devant = 90 / Gauche = 180 / Arrière = 270 (Doublon avec PlayerView)
 
-        Quaternion upRayRotation = Quaternion.AngleAxis(-halfFOV + coneDirection, Vector3.down);
-        Quaternion downRayRotation = Quaternion.AngleAxis(halfFOV + coneDirection, Vector3.down);
-        Vector3 cone = new Vector3(PlayerManager.instance.player.transform.position.x, PlayerManager.instance.player.transform.position.y - 1.5f, PlayerManager.instance.player.transform.position.z);
+        Quaternion upRayRotation   = Quaternion.AngleAxis(-halfFOV + coneDirection, Vector3.down);   //Direction à droite du cône (Doublon avec PlayerView)
+        Quaternion downRayRotation = Quaternion.AngleAxis( halfFOV + coneDirection, Vector3.down);   //Direction à gauche du cône (Doublon avec PlayerView)
 
-        float distance = Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position);
-        maxPos = cone +( upRayRotation * PlayerManager.instance.player.transform.right * distance);
-        minPos = cone + (downRayRotation * PlayerManager.instance.player.transform.right * distance);
-        pullRight  = cone + (upRayRotation * PlayerManager.instance.player.transform.right * (distance - 2f));
-        pullLeft = cone + (downRayRotation * PlayerManager.instance.player.transform.right * (distance - 2f));
-        zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;
-        zone1 = Vector3.Distance(minPos, maxPos) * 0.1f;
+        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);   //Cone représente le centre du cercle (Doublon avec PlayerView)
+
+        float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.player.transform.localPosition);   //Distance Poisson-Joueur (Doublon avec PlayerView)
+
+        maxPos     = upRayRotation     * CameraManager.instance.mainCamera.transform.right *  distance      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
+        minPos     = downRayRotation   * CameraManager.instance.mainCamera.transform.right *  distance      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
+        pullRight  = cone + (upRayRotation     * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
+        pullLeft   = cone + (downRayRotation   * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
+
+        zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;       //Distance à partir de laquelle le poisson perd de l'endurance
+        zone1 = Vector3.Distance(minPos, maxPos) * 0.1f;       //Distance à partir de laquelle le joueur perd de la tension
     }
 
+
+    /*****************
+    *  Gizmos Draw  *
+    *****************/
     private void OnDrawGizmosSelected()
     {
+        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);
+
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, pullRight);
-        Gizmos.DrawLine(transform.position, pullLeft);
-        Gizmos.DrawLine(transform.position, maxPos);
-        Gizmos.DrawLine(transform.position, minPos);
+        Gizmos.DrawLine(transform.position,  pullLeft);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.localPosition, cone + maxPos);
+        Gizmos.DrawLine(transform.position, cone + minPos);
+
     }
 }

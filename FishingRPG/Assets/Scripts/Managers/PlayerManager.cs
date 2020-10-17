@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
     public bool blockLine;
     public bool pullTowards;
 
+    public float distancePlayerView;
+
     private void Awake()
     {
         Init();
