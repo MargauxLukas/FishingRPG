@@ -11,9 +11,12 @@ public class FishBehavior : MonoBehaviour
     public Vector3 minPos;
     public Vector3 pullLeft;
     public Vector3 pullRight;
+    public Vector3 forwardPoint;
 
     public float zone1;
     public float zone2;
+    public float farAway1;
+    public float farAway2;
 
     public int directionChoice = 0;
     public bool isDirectionChoosen = false;
@@ -90,6 +93,17 @@ public class FishBehavior : MonoBehaviour
     public void MovingAway()
     {
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * speed * Time.deltaTime);
+
+        Debug.Log(Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) + " > " + farAway1);
+        if (Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway1)
+        {
+            FishingRodManager.instance.fishingLine.TensionDown();
+            FishManager.instance.DownEndurance();
+        }
+        else if(Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway2)
+        {
+            FishManager.instance.DownEndurance();
+        }
     }
 
     public void MovingRight()
@@ -177,6 +191,10 @@ public class FishBehavior : MonoBehaviour
         {
             FishManager.instance.DownEndurance();
         }
+        else
+        {
+            FishingRodManager.instance.fishingLine.TensionUp();
+        }
     }
 
     /*public void PullTowards()
@@ -201,6 +219,7 @@ public class FishBehavior : MonoBehaviour
 
         Quaternion upRayRotation   = Quaternion.AngleAxis(-halfFOV + coneDirection, Vector3.down);   //Direction à droite du cône (Doublon avec PlayerView)
         Quaternion downRayRotation = Quaternion.AngleAxis( halfFOV + coneDirection, Vector3.down);   //Direction à gauche du cône (Doublon avec PlayerView)
+        Quaternion forwardRayRotation = Quaternion.AngleAxis(coneDirection, Vector3.down);           //Direction tout droit (Doublon avec PlayerView)
 
         Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);   //Cone représente le centre du cercle (Doublon avec PlayerView)
 
@@ -210,9 +229,13 @@ public class FishBehavior : MonoBehaviour
         minPos     = cone + FishManager.instance.minPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
         pullRight  = cone + (upRayRotation     * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
         pullLeft   = cone + (downRayRotation   * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
+        forwardPoint = forwardRayRotation * CameraManager.instance.mainCamera.transform.right * distance;                      //Point le plus éloigné en face
 
         zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;       //Distance à partir de laquelle le poisson perd de l'endurance
         zone1 = Vector3.Distance(minPos, maxPos) * 0.1f;       //Distance à partir de laquelle le joueur perd de la tension
+        farAway1 = Vector3.Distance(cone, forwardPoint) * 1.1f;
+        farAway2 = Vector3.Distance(cone, forwardPoint) * 1.2f;
+
     }
 
 
