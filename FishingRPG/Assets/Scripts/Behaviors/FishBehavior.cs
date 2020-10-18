@@ -40,6 +40,7 @@ public class FishBehavior : MonoBehaviour
         {
             if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
             {
+                SetMaxAndMinDistance();
                 if (!isDirectionChoosen)
                 {
                     MovingRightOrLeft();
@@ -100,26 +101,19 @@ public class FishBehavior : MonoBehaviour
         {
             ChangeDirection();
         }
-        else if(Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone1)
+
+        CheckTensionAndEndurance();
+
+        CalculateSpeed();
+        if (PlayerManager.instance.blockLine)
         {
-            FishingRodManager.instance.fishingLine.TensionDown();
-            FishManager.instance.DownEndurance();
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z), speed * Time.deltaTime);
         }
-        else if(Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone2)
+        else
         {
-            FishManager.instance.DownEndurance();
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), (speed * 2) * Time.deltaTime);
         }
-        
-            CalculateSpeed();
-            if (PlayerManager.instance.blockLine)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z), speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), (speed*2) * Time.deltaTime);
-            }
-        
+
     }
 
     public void MovingLeft()
@@ -130,33 +124,24 @@ public class FishBehavior : MonoBehaviour
         {
             ChangeDirection();
         }
-        else if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone1)
+
+        CheckTensionAndEndurance();
+
+        CalculateSpeed();
+        if (PlayerManager.instance.blockLine)
         {
-            FishingRodManager.instance.fishingLine.TensionDown();
-            FishManager.instance.DownEndurance();
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z), speed * Time.deltaTime);
         }
-        else if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone2)
+        else
         {
-            FishManager.instance.DownEndurance();
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), (speed * 2) * Time.deltaTime);
         }
- 
-        
-            CalculateSpeed();
-            if (PlayerManager.instance.blockLine)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z), speed  * Time.deltaTime);
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), (speed*2)  * Time.deltaTime);
-            }
-        
+
     }
 
     public void ChangeDirection()
     {
         CheckEndurance();
-        SetMaxAndMinDistance();
         if (directionChoice == 1)
         {
             directionChoice = 2;
@@ -178,6 +163,19 @@ public class FishBehavior : MonoBehaviour
         {
             speed = 5f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())*2;
             //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+        }
+    }
+
+    public void CheckTensionAndEndurance()
+    {
+        if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone1 || Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone1)
+        {
+            FishingRodManager.instance.fishingLine.TensionDown();
+            FishManager.instance.DownEndurance();
+        }
+        else if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone2 || Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone2)
+        {
+            FishManager.instance.DownEndurance();
         }
     }
 
@@ -208,8 +206,8 @@ public class FishBehavior : MonoBehaviour
 
         float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.player.transform.localPosition);   //Distance Poisson-Joueur (Doublon avec PlayerView)
 
-        maxPos     = upRayRotation     * CameraManager.instance.mainCamera.transform.right *  distance      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
-        minPos     = downRayRotation   * CameraManager.instance.mainCamera.transform.right *  distance      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
+        maxPos     = cone + FishManager.instance.maxPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
+        minPos     = cone + FishManager.instance.minPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
         pullRight  = cone + (upRayRotation     * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
         pullLeft   = cone + (downRayRotation   * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
 
@@ -230,8 +228,8 @@ public class FishBehavior : MonoBehaviour
         Gizmos.DrawLine(transform.position,  pullLeft);
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.localPosition, cone + maxPos);
-        Gizmos.DrawLine(transform.position, cone + minPos);
+        Gizmos.DrawLine(transform.localPosition, maxPos);
+        Gizmos.DrawLine(transform.position, minPos);
 
     }
 }

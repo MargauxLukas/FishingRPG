@@ -11,6 +11,9 @@ public class FishManager : MonoBehaviour
     public Material normalMat;
     public Text enduText;
 
+    public Vector3 minPosCone;
+    public Vector3 maxPosCone;
+
     private void Awake()
     {
         Init();
