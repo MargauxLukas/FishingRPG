@@ -17,15 +17,19 @@ public class PlayerFishing : MonoBehaviour
         {
             if (Input.GetButton("Left Bumper"))   //BlockLine
             {
-                PlayerManager.instance.IsBlockingLine();
+                //PlayerManager.instance.IsBlockingLine();
             }
             else if (Input.GetButton("Right Bumper"))   //Pull
             {
-                PlayerManager.instance.IsPullingTowards();
+                PlayerManager.instance.IsAerial();
             }
             else if (Input.GetAxis("Right Trigger") > 0.1f)
             {
-                PlayerManager.instance.IsAerial();
+                PlayerManager.instance.IsPullingTowards();
+            }
+            else if (Input.GetAxis("Left Trigger") > 0.1f)
+            {
+                PlayerManager.instance.IsBlockingLine();
             }
             else
             {
