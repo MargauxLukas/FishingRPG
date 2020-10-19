@@ -5,18 +5,24 @@ using UnityEngine.UIElements;
 
 public class FishBehavior : MonoBehaviour
 {
+    [Header("Stats Fish")]
     public float speed = 1f;
 
-    public Vector3 maxPos;
-    public Vector3 minPos;
-    public Vector3 pullLeft;
-    public Vector3 pullRight;
-    public Vector3 forwardPoint;
+    //Position de référence
+    private Vector3 maxPos;                         //Position la plus éloigné sur le cone à sa droite que le poisson cherche lorsqu'on bloque la ligne
+    private Vector3 minPos;                         //Position la plus éloigné sur le cone à sa gauche que le poisson cherche lorsqu'on bloque la ligne
+    private Vector3 pullLeft;                       //Position proche sur le cone à gauche que le poisson cherche à atteindre --- Lien avec pullDistance
+    private Vector3 pullRight;                      //Position proche sur le cone à droite que le poisson cherche à atteindre --- Lien avec pullDistance
+    private Vector3 forwardPoint;                   //Point le plus éloigné devant le joueur
 
-    public float zone1;
-    public float zone2;
-    public float farAway1;
-    public float farAway2;
+    [Header("Pull Values")]
+    public float pullDistance = 2f;                 //Défini le point que le poisson cherche à atteindre --> Position que le poisson cherche à atteindre lorsque ligne bloqué - pullDistance
+
+    //Zone de pénalité
+    private float zone1;
+    private float zone2;
+    private float farAway1;
+    private float farAway2;
 
     public int directionChoice = 0;
     public bool isDirectionChoosen = false;
@@ -227,8 +233,8 @@ public class FishBehavior : MonoBehaviour
 
         maxPos     = cone + FishManager.instance.maxPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
         minPos     = cone + FishManager.instance.minPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
-        pullRight  = cone + (upRayRotation     * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
-        pullLeft   = cone + (downRayRotation   * CameraManager.instance.mainCamera.transform.right * (distance - 2f));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
+        pullRight  = cone + (upRayRotation     * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
+        pullLeft   = cone + (downRayRotation   * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
         forwardPoint = forwardRayRotation * CameraManager.instance.mainCamera.transform.right * distance;                      //Point le plus éloigné en face
 
         zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;       //Distance à partir de laquelle le poisson perd de l'endurance
