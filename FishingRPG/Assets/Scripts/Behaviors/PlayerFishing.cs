@@ -25,6 +25,7 @@ public class PlayerFishing : MonoBehaviour
             }
             else if (Input.GetAxis("Right Trigger") > 0.1f)
             {
+                Debug.Log("RT");
                 PlayerManager.instance.IsPullingTowards();
             }
             else if (Input.GetAxis("Left Trigger") > 0.1f)

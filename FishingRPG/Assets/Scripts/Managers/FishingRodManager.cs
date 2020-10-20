@@ -101,6 +101,7 @@ public class FishingRodManager : MonoBehaviour
     public float GetPlayerForce()
     {
         direction = fishingRodGameObject.transform.localPosition.x;
+        Debug.Log(direction);
         return direction;
     }
 

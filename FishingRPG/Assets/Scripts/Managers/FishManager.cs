@@ -14,6 +14,8 @@ public class FishManager : MonoBehaviour
     public Vector3 minPosCone;
     public Vector3 maxPosCone;
 
+    public Text speedText;
+
     private void Awake()
     {
         Init();
@@ -52,5 +54,10 @@ public class FishManager : MonoBehaviour
     public void ChangeText()
     {
         enduText.text = currentFish.GetComponent<FishBehavior>().endurance.ToString();
+    }
+
+    public void ChangeSpeedText(float speed)
+    {
+        speedText.text = speed.ToString();
     }
 }
