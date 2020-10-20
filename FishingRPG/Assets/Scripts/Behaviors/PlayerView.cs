@@ -39,7 +39,7 @@ public class PlayerView : MonoBehaviour
     /*************************************
      *  Gizmos pour visualiser le cône   *
      *************************************/
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         float angle         = 30.0f;                    //Angle voulu
         float angleZ1       = angle*0.9f;               //Angle - 10% = Zone ou tension augmente

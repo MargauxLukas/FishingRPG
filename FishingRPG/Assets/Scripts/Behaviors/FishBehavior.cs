@@ -26,6 +26,8 @@ public class FishBehavior : MonoBehaviour
     private float farAway1;
     private float farAway2;
 
+    public float currentY;
+
     public int directionChoice = 0;
     public bool isDirectionChoosen = false;
 
@@ -33,6 +35,7 @@ public class FishBehavior : MonoBehaviour
     public float endurance = 100f;
 
     public bool isAerial = false;
+    public bool isInTheAir = false;
     public bool isOnWater = true;
 
     //Possiblement dans FishManager
@@ -69,11 +72,15 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            isAerial = false;
-            extenued = false;
-            endurance = 50f;
-            FishManager.instance.NotExtenued();
-            rb.velocity = new Vector3(0f, JumpHeight, 0f);
+            if(!isInTheAir)
+            {
+                Debug.Log("1 " + transform.position);
+                currentY = transform.position.y;
+                isInTheAir = true;
+                rb.velocity = new Vector3(0f, 20f, 0f);
+            }
+
+            Debug.Log("2 " + transform.position);
         }
     }
 
