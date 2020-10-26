@@ -34,23 +34,23 @@ public class FishBehavior : MonoBehaviour
     public bool extenued = false;
     public float endurance = 100f;
 
-    public bool isAerial = false;
     public bool isInTheAir = false;
     public bool isOnWater = true;
 
     //Possiblement dans FishManager
     public float JumpHeight = 20f;      //Valeur à obtenir avec formule (stats du player contre stats du fish)
-    Rigidbody rb;
+
+    public float timer = 0f;
+    public float maxTime = 2f;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
     }
-
 
     void Update()
     {
-        if (!isAerial)
+        if (!FishManager.instance.isAerial)
         {
             if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
             {
@@ -74,14 +74,29 @@ public class FishBehavior : MonoBehaviour
         {
             if(!isInTheAir)
             {
-                Debug.Log("1 " + transform.position);
-                currentY = transform.position.y;
-                isInTheAir = true;
-                rb.velocity = new Vector3(0f, 20f, 0f);
-            }
+                Debug.Log(timer);
+                timer += Time.deltaTime;
 
-            Debug.Log("2 " + transform.position);
+                transform.position = GetAerialPosition(timer/maxTime);
+
+                /*currentY = transform.position.y;
+                isInTheAir = true;
+                rb.velocity = new Vector3(0f, 20f, 0f);*/
+
+                if(timer >= maxTime)
+                {
+                    FishManager.instance.isAerial = false;
+                }
+            }
         }
+    }
+
+    public Vector3 GetAerialPosition(float currentTime )
+    {
+        //float x = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterX + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialX + currentTime * FishManager.instance.aerialEnterWaterX;
+        float y = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterY + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialY + currentTime * FishManager.instance.aerialEnterWaterY;
+        //float z = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterZ + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialZ + currentTime * FishManager.instance.aerialEnterWaterZ;
+        return new Vector3(transform.position.x , y, transform.position.z);
     }
 
     public void MovingRightOrLeft()

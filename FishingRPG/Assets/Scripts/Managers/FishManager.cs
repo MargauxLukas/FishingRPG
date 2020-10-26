@@ -16,6 +16,18 @@ public class FishManager : MonoBehaviour
 
     public Text speedText;
 
+    public bool isAerial = false;
+    public float aerialExitWaterX = 0f;
+    public float aerialExitWaterY = 0f;
+    public float aerialExitWaterZ = 0f;
+    public float aerialEnterWaterX = 0f;
+    public float aerialEnterWaterY = 0f;
+    public float aerialEnterWaterZ = 0f;
+
+    public float aerialX;
+    public float aerialY;
+    public float aerialZ;
+
     private void Awake()
     {
         Init();
@@ -30,7 +42,18 @@ public class FishManager : MonoBehaviour
     {
         if(currentFish.GetComponent<FishBehavior>().extenued)
         {
-            currentFish.GetComponent<FishBehavior>().isAerial = true;
+            isAerial = true;
+            aerialExitWaterX = currentFish.transform.position.x;
+            aerialExitWaterY = currentFish.transform.position.y;
+            aerialExitWaterZ = currentFish.transform.position.z;
+
+            aerialEnterWaterX = currentFish.transform.position.x;
+            aerialEnterWaterY = currentFish.transform.position.y;
+            aerialEnterWaterZ = currentFish.transform.position.z;
+
+            aerialX = currentFish.transform.position.x;
+            aerialY = currentFish.transform.position.y + 5f;
+            aerialZ = currentFish.transform.position.z;
         }
     }
 

@@ -29,7 +29,7 @@ public class FishingManager : MonoBehaviour
 
     private void Update()
     {
-        if(FishingRodManager.instance.bobber.GetComponent<CheckWater>().isWater && !readyToFish)
+        if (FishingRodManager.instance.bobber.GetComponent<CheckWater>().isWater && !readyToFish)
         {
             if(needToWait == 0f)
             {

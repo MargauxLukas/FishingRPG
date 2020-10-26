@@ -172,6 +172,17 @@ MonoBehaviour:
   enduText: {fileID: 102889561}
   minPosCone: {x: 0, y: 0, z: 0}
   maxPosCone: {x: 0, y: 0, z: 0}
+  speedText: {fileID: 665098164}
+  isAerial: 0
+  aerialExitWaterX: 0
+  aerialExitWaterY: 0
+  aerialExitWaterZ: 0
+  aerialEnterWaterX: 0
+  aerialEnterWaterY: 0
+  aerialEnterWaterZ: 0
+  aerialX: 0
+  aerialY: 0
+  aerialZ: 0
 --- !u!1 &26438268
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,9 +631,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Check
       objectReference: {fileID: 0}
+    - target: {fileID: 3201430608827339779, guid: 9ffd31e973c873c4ba3de6446c888803, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3201430608827339783, guid: 9ffd31e973c873c4ba3de6446c888803, type: 3}
       propertyPath: mouseSensitivity
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201430608827339783, guid: 9ffd31e973c873c4ba3de6446c888803, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ffd31e973c873c4ba3de6446c888803, type: 3}
