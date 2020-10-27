@@ -74,7 +74,6 @@ public class FishBehavior : MonoBehaviour
         {
             if(!isInTheAir)
             {
-                Debug.Log(timer);
                 timer += Time.deltaTime;
 
                 transform.position = GetAerialPosition(timer/maxTime);

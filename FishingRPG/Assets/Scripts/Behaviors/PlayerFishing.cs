@@ -19,8 +19,9 @@ public class PlayerFishing : MonoBehaviour
             {
                 //PlayerManager.instance.IsBlockingLine();
             }
-            else if (Input.GetButton("Right Bumper"))   //Pull
+            else if (Input.GetButton("Right Bumper") && !FishManager.instance.isAerial)   //Pull
             {
+                Debug.Log("test");
                 PlayerManager.instance.IsAerial();
             }
             else if (Input.GetAxis("Right Trigger") > 0.1f)
