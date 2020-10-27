@@ -54,7 +54,6 @@ public class PlayerView : MonoBehaviour
         halfFOV = angle / 1.0f;
         halfFOVZ1 = angleZ1 / 1.0f;
         halfFOVZ2 = angleZ2 / 1.0f;
-        coneDirection = 90;
 
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -77,9 +76,7 @@ public class PlayerView : MonoBehaviour
     }
 
     public void DrawCone()
-    {
-        if (freeCamera)
-        {
+    {      
             upRayRotation = Quaternion.AngleAxis(-halfFOV + coneDirection, Vector3.down);    //Direction à droite du cône
             downRayRotation = Quaternion.AngleAxis(halfFOV + coneDirection, Vector3.down);    //Direction à gauche du cône
             forwardRayRotation = Quaternion.AngleAxis(coneDirection, Vector3.down);    //Direction tout droit
@@ -101,8 +98,6 @@ public class PlayerView : MonoBehaviour
             //Utilitaire au cas ou 
             midPoint = (upRayDirection + downRayDirection) / 2;                                       //Milieu du point le plus à droite et du point le plus à gauche
 
-        }
-
             if (FishingManager.instance.currentFish != null && !FishManager.instance.isAerial)
             {
                 if (Vector3.Distance(new Vector3(FishingManager.instance.currentFish.transform.localPosition.x, transform.position.y - 1.5f, FishingManager.instance.currentFish.transform.localPosition.z), cone) < distanceFtoP)
@@ -119,7 +114,7 @@ public class PlayerView : MonoBehaviour
                 float normalizedFishToPlayer = Mathf.Sqrt(Mathf.Pow(distanceFtoP, 2) + Mathf.Pow(fishToCone, 2));    //JA
 
                 RayRightFish = upRayRotation * transform.right * (normalizedFishToPlayer * 1.109f);       //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône 
-                RayLeftFish = downRayRotation * transform.right * (normalizedFishToPlayer * 1.109f);       //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône 
+                RayLeftFish  = downRayRotation * transform.right * (normalizedFishToPlayer * 1.109f);       //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône 
 
                 if (distance > normalizedFishToPlayer * 1.109f)
                 {

@@ -255,7 +255,7 @@ public class FishBehavior : MonoBehaviour
 
         Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);   //Cone représente le centre du cercle (Doublon avec PlayerView)
 
-        float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.player.transform.localPosition);   //Distance Poisson-Joueur (Doublon avec PlayerView)
+        float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.playerView.transform.localPosition);   //Distance Poisson-Joueur (Doublon avec PlayerView)
 
         maxPos     = cone + FishManager.instance.maxPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
         minPos     = cone + FishManager.instance.minPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)

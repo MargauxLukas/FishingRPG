@@ -1264,6 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 458970817}
+  playerView: {fileID: 939733348}
   blockLine: 0
   pullTowards: 0
   distancePlayerView: 0
