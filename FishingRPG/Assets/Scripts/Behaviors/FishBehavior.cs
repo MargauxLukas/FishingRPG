@@ -84,6 +84,7 @@ public class FishBehavior : MonoBehaviour
 
                 if(timer >= maxTime)
                 {
+                    CameraManager.instance.SetOriginPoint();
                     FishManager.instance.isAerial = false;
                 }
             }
