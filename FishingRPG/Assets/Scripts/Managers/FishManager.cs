@@ -7,6 +7,7 @@ public class FishManager : MonoBehaviour
 {
     public static FishManager instance;
     public GameObject currentFish;
+    public FishBehavior currentFishBehavior;
     public Material canAerialMat;
     public Material normalMat;
     public Text enduText;
@@ -40,7 +41,7 @@ public class FishManager : MonoBehaviour
 
     public void IsExtenued()
     {
-        if(currentFish.GetComponent<FishBehavior>().extenued)
+        if(currentFishBehavior.extenued)
         {
             isAerial = true;
             aerialExitWaterX = currentFish.transform.position.x;
@@ -67,16 +68,25 @@ public class FishManager : MonoBehaviour
         currentFish.GetComponent<MeshRenderer>().material = normalMat;
     }
 
+    public void FishRecuperation()
+    {
+        currentFishBehavior.extenued = false;
+        currentFishBehavior.endurance = 20f;
+        isAerial = false;
+        NotExtenued();
+        CameraManager.instance.SetOriginPoint();
+    }
+
     public void DownEndurance()
     {
-        currentFish.GetComponent<FishBehavior>().endurance -= 0.2f;
+        currentFishBehavior.endurance -= 0.2f;
         ChangeText();
-        currentFish.GetComponent<FishBehavior>().CheckEndurance();
+        currentFishBehavior.CheckEndurance();
     }
 
     public void ChangeText()
     {
-        enduText.text = currentFish.GetComponent<FishBehavior>().endurance.ToString();
+        enduText.text = currentFishBehavior.endurance.ToString();
     }
 
     public void ChangeSpeedText(float speed)

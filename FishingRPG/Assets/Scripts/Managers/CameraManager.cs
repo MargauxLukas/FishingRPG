@@ -26,6 +26,10 @@ public class CameraManager : MonoBehaviour
         {
             mainCamera.transform.LookAt(target.transform);
         }
+        else
+        {
+            mainCamera.transform.rotation = baseRotation;
+        }
     }
 
     public void CameraLookAtGameObject(GameObject go)
