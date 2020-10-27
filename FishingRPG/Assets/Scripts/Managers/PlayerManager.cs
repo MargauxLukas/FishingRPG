@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -62,6 +63,15 @@ public class PlayerManager : MonoBehaviour
     public void IsAerial()
     {
         FishManager.instance.IsExtenued();
+    }
+
+    public void CheckDistanceWithWater()
+    {
+        Debug.Log(FishManager.instance.currentFishBehavior.timer + " > " + FishManager.instance.currentFishBehavior.maxTime * 0.85f);
+        if(FishManager.instance.currentFishBehavior.timer > FishManager.instance.currentFishBehavior.maxTime * 0.85f)
+        {
+            FishManager.instance.MoreAerial();
+        }
     }
 
     public void NothingPushed()

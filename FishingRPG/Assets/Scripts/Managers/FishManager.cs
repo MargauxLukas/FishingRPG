@@ -93,4 +93,18 @@ public class FishManager : MonoBehaviour
     {
         speedText.text = speed.ToString();
     }
+
+    public void MoreAerial()
+    {
+        Debug.Log("Boing Again");
+        aerialEnterWaterX = currentFish.transform.position.x;
+        aerialEnterWaterY = currentFish.transform.position.y;
+        aerialEnterWaterZ = currentFish.transform.position.z;
+
+        aerialX = currentFish.transform.position.x;
+        aerialY = currentFish.transform.position.y + 5f;
+        aerialZ = currentFish.transform.position.z;
+
+        currentFishBehavior.timer = 0f;
+    }
 }
