@@ -26,6 +26,12 @@ public class FishingLine : MonoBehaviour
         }
     }
 
+    public void TensionUp()
+    {
+        currentTension += 0.08f;
+        ChangeText();
+    }
+
     public void ChangeText()
     {
         textInt.text = currentTension.ToString();
