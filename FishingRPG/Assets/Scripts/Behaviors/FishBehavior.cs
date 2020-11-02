@@ -47,10 +47,7 @@ public class FishBehavior : MonoBehaviour
     [Range(0f,1f)]
     public float percentOfMaxTime = 0.85f;
 
-    private void Start()
-    {
-        
-    }
+    private bool bPull = true;
 
     void Update()
     {
@@ -126,8 +123,7 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingAway()
     {
-        Debug.Log("e");
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * baseSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * 1.2f * Time.deltaTime);
 
         //Debug.Log(Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) + " > " + farAway1);
         if (Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway1)
@@ -160,7 +156,7 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), (speed * 2) * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), speed * Time.deltaTime);
         }
 
     }
@@ -183,7 +179,7 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), (speed * 2) * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), speed * Time.deltaTime);
         }
 
     }
@@ -199,6 +195,9 @@ public class FishBehavior : MonoBehaviour
         {
             directionChoice = 1;
         }
+
+        bPull = true;
+        SetMaxAndMinDistance();
     }
 
     public void CalculateSpeed()
@@ -260,12 +259,10 @@ public class FishBehavior : MonoBehaviour
 
         Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);   //Cone représente le centre du cercle (Doublon avec PlayerView)
 
-        float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.playerView.transform.localPosition);   //Distance Poisson-Joueur (Doublon avec PlayerView)
+        float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.playerView.transform.position);   //Distance Poisson-Joueur (Doublon avec PlayerView)
 
         maxPos     = cone + FishManager.instance.maxPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
         minPos     = cone + FishManager.instance.minPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
-        pullRight  = cone + (upRayRotation     * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
-        pullLeft   = cone + (downRayRotation   * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
         forwardPoint = forwardRayRotation * CameraManager.instance.mainCamera.transform.right * distance;                      //Point le plus éloigné en face
 
         zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;       //Distance à partir de laquelle le poisson perd de l'endurance
@@ -273,6 +270,12 @@ public class FishBehavior : MonoBehaviour
         farAway1 = Vector3.Distance(cone, forwardPoint) * 1.1f;
         farAway2 = Vector3.Distance(cone, forwardPoint) * 1.2f;
 
+        if(bPull)
+        {
+            pullRight = cone + (upRayRotation * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
+            pullLeft = cone + (downRayRotation * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
+            bPull = false;
+        }
     }
 
 

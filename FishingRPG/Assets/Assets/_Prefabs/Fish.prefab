@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 5
   speed: 2
-  pullDistance: 2
+  pullDistance: 2.5
   currentY: 0
   directionChoice: 0
   isDirectionChoosen: 0
