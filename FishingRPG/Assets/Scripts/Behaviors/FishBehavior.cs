@@ -126,7 +126,8 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingAway()
     {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * speed * Time.deltaTime);
+        Debug.Log("e");
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * baseSpeed * Time.deltaTime);
 
         //Debug.Log(Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) + " > " + farAway1);
         if (Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway1)

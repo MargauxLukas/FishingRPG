@@ -29,7 +29,15 @@ public class FishingLine : MonoBehaviour
 
     public void TensionUp()
     {
-        currentTension += 0.08f;
+        if (currentTension <= maxTension)
+        {
+            currentTension += 0.08f;
+        }
+        else
+        {
+            currentTension = 100f;
+        }
+
         ChangeText();
     }
 
