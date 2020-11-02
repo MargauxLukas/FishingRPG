@@ -18,16 +18,16 @@ public class FishManager : MonoBehaviour
     public Text speedText;
 
     public bool isAerial = false;
-    public float aerialExitWaterX = 0f;
+    private float aerialExitWaterX = 0f;
     public float aerialExitWaterY = 0f;
-    public float aerialExitWaterZ = 0f;
-    public float aerialEnterWaterX = 0f;
+    private float aerialExitWaterZ = 0f;
+    private float aerialEnterWaterX = 0f;
     public float aerialEnterWaterY = 0f;
-    public float aerialEnterWaterZ = 0f;
+    private float aerialEnterWaterZ = 0f;
 
-    public float aerialX;
+    private float aerialX;
     public float aerialY;
-    public float aerialZ;
+    private float aerialZ;
 
     private void Awake()
     {

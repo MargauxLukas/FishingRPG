@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class FishBehavior : MonoBehaviour
 {
     [Header("Stats Fish")]
-    public float baseSpeed = 5f;
+    public float baseSpeed = 3f;
     public float speed = 1f;
 
     //Position de référence
@@ -42,6 +43,9 @@ public class FishBehavior : MonoBehaviour
 
     public float timer = 0f;
     public float maxTime = 2f;
+
+    [Range(0f,1f)]
+    public float percentOfMaxTime = 0.85f;
 
     private void Start()
     {
@@ -206,7 +210,7 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            speed = baseSpeed - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())*4;
+            speed = baseSpeed - Mathf.Abs(FishingRodManager.instance.GetPlayerForce()) * 4;
             FishManager.instance.ChangeSpeedText(speed);
             //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
         }

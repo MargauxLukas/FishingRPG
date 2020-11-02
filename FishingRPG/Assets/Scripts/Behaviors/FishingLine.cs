@@ -13,6 +13,7 @@ public class FishingLine : MonoBehaviour
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
+        currentTension = 100;
     }
 
     public void TensionDown()

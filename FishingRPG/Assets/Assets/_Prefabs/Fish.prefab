@@ -183,6 +183,7 @@ MonoBehaviour:
   JumpHeight: 20
   timer: 0
   maxTime: 2
+  percentOfMaxTime: 0.85
 --- !u!138 &1168737364579768549
 FixedJoint:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     public float distancePlayerView;
 
+    public float speed = 9f;
+
     private void Awake()
     {
         Init();
@@ -67,8 +69,7 @@ public class PlayerManager : MonoBehaviour
 
     public void CheckDistanceWithWater()
     {
-        Debug.Log(FishManager.instance.currentFishBehavior.timer + " > " + FishManager.instance.currentFishBehavior.maxTime * 0.85f);
-        if(FishManager.instance.currentFishBehavior.timer > FishManager.instance.currentFishBehavior.maxTime * 0.85f)
+        if(FishManager.instance.currentFishBehavior.timer > FishManager.instance.currentFishBehavior.maxTime * FishManager.instance.currentFishBehavior.percentOfMaxTime)
         {
             FishManager.instance.MoreAerial();
         }

@@ -13,6 +13,6 @@ public class CheckWater : MonoBehaviour
 
     private void Update()
     {
-        isWater = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);  
+        isWater = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);
     }
 }
