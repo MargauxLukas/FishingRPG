@@ -1,0 +1,718 @@
+fileFormatVersion: 2
+guid: 74211a9366e593b4bb978a634237fac9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7901742885145839997
+    second: PROTO_Items_0
+  - first:
+      213: -5361791354415887688
+    second: PROTO_Items_1
+  - first:
+      213: -7806077728167414497
+    second: PROTO_Items_2
+  - first:
+      213: 1801041397832817066
+    second: PROTO_Items_3
+  - first:
+      213: 1215678144506808303
+    second: PROTO_Items_4
+  - first:
+      213: -2463608746614697084
+    second: PROTO_Items_5
+  - first:
+      213: 3066997873938504852
+    second: PROTO_Items_6
+  - first:
+      213: 2924425054384464239
+    second: PROTO_Items_7
+  - first:
+      213: -517690874383007817
+    second: PROTO_Items_8
+  - first:
+      213: -203098229702429653
+    second: PROTO_Items_9
+  - first:
+      213: -6498885004146114487
+    second: PROTO_Items_10
+  - first:
+      213: -8141353174247148505
+    second: PROTO_Items_11
+  - first:
+      213: -797212960645620060
+    second: PROTO_Items_12
+  - first:
+      213: -4901076595703093327
+    second: PROTO_Items_13
+  - first:
+      213: -8011838492558332378
+    second: PROTO_Items_14
+  - first:
+      213: 2123104612139203186
+    second: PROTO_Items_15
+  - first:
+      213: -4451703148712559590
+    second: PROTO_Items_16
+  - first:
+      213: -7256533181217267927
+    second: PROTO_Items_17
+  - first:
+      213: 8470807541321977057
+    second: PROTO_Items_18
+  - first:
+      213: 7783586176458611231
+    second: PROTO_Items_19
+  - first:
+      213: 3891008279547168433
+    second: PROTO_Items_20
+  - first:
+      213: -5455834292364949510
+    second: PROTO_Items_21
+  - first:
+      213: -7813576706934307020
+    second: PROTO_Items_22
+  - first:
+      213: -4343660472621863413
+    second: PROTO_Items_23
+  - first:
+      213: 6071162247661557730
+    second: PROTO_Items_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PROTO_Items_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 921
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79869fe941a8ad60800000000000000
+      internalID: 7901742885145839997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 921
+        width: 116
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bac740db271795b0800000000000000
+      internalID: -5361791354415887688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 921
+        width: 181
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f153e732aad3ba390800000000000000
+      internalID: -7806077728167414497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_3
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 921
+        width: 161
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa91997eb959ef810800000000000000
+      internalID: 1801041397832817066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_4
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 921
+        width: 179
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7c88cd4d4fed010800000000000000
+      internalID: 1215678144506808303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_5
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 726
+        width: 141
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4835c70d5e08fcdd0800000000000000
+      internalID: -2463608746614697084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_6
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 722
+        width: 102
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c9bf2115a209a20800000000000000
+      internalID: 3066997873938504852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_7
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 714
+        width: 97
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61a6dab715a59820800000000000000
+      internalID: 2924425054384464239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_8
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 722
+        width: 120
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf70f084eac0d8f0800000000000000
+      internalID: -517690874383007817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_9
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 722
+        width: 160
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2473147c337e2df0800000000000000
+      internalID: -203098229702429653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_10
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 538
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94002c375825fc5a0800000000000000
+      internalID: -6498885004146114487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 538
+        width: 120
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724fff93c6a140f80800000000000000
+      internalID: -8141353174247148505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_12
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 526
+        width: 85
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae516e390bbfe4f0800000000000000
+      internalID: -797212960645620060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_13
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 538
+        width: 125
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7e220adc0ebfbb0800000000000000
+      internalID: -4901076595703093327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_14
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 538
+        width: 99
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e624de65b30d090800000000000000
+      internalID: -8011838492558332378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_15
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 351
+        width: 132
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27afc836568c67d10800000000000000
+      internalID: 2123104612139203186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_16
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 371
+        width: 186
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1cff77829f5832c0800000000000000
+      internalID: -4451703148712559590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_17
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 351
+        width: 121
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f95b8b48d9b4b90800000000000000
+      internalID: -7256533181217267927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_18
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 351
+        width: 133
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec423d149a5e8570800000000000000
+      internalID: 8470807541321977057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_19
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 351
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ad476636ad40c60800000000000000
+      internalID: 7783586176458611231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 168
+        width: 166
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b643803a63aff530800000000000000
+      internalID: 3891008279547168433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_21
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 158
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7413a0e9bf844b0800000000000000
+      internalID: -5455834292364949510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_22
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 158
+        width: 121
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4370ae51269909390800000000000000
+      internalID: -7813576706934307020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_23
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 158
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ee77850d738b3c0800000000000000
+      internalID: -4343660472621863413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROTO_Items_24
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 158
+        width: 125
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e711a9d5e9114450800000000000000
+      internalID: 6071162247661557730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5ba796262c9b0004ea7429e237603895
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
