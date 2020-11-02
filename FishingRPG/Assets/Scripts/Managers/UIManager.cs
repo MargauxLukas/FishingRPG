@@ -51,4 +51,9 @@ public class UIManager : MonoBehaviour
             currentItem.color = itemColor;
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
