@@ -8,8 +8,10 @@ using UnityEngine.UIElements;
 public class FishBehavior : MonoBehaviour
 {
     [Header("Stats Fish")]
-    public float baseSpeed = 3f;
-    public float speed = 1f;
+    public  float baseSpeed = 3f;
+    private float speed     = 1f;
+    public  float endurance = 100f;
+    public bool extenued    = false;
 
     //Position de référence
     private Vector3 maxPos;                         //Position la plus éloigné sur le cone à sa droite que le poisson cherche lorsqu'on bloque la ligne
@@ -27,20 +29,15 @@ public class FishBehavior : MonoBehaviour
     private float farAway1;
     private float farAway2;
 
-    public float currentY;
+    //Direction
+    private int directionChoice = 0;
+    private bool isDirectionChoosen = false;
 
-    public int directionChoice = 0;
-    public bool isDirectionChoosen = false;
-
-    public bool extenued = false;
-    public float endurance = 100f;
-
-    public bool isInTheAir = false;
-    public bool isOnWater = true;
-
+    [Header("Aerial")]
     //Possiblement dans FishManager
     public float JumpHeight = 20f;      //Valeur à obtenir avec formule (stats du player contre stats du fish)
 
+    [System.NonSerialized]
     public float timer = 0f;
     public float maxTime = 2f;
 
@@ -53,9 +50,9 @@ public class FishBehavior : MonoBehaviour
     {
         if (!FishManager.instance.isAerial)
         {
+            SetMaxAndMinDistance();
             if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
             {
-                SetMaxAndMinDistance();
                 if (!isDirectionChoosen)
                 {
                     MovingRightOrLeft();
@@ -68,26 +65,18 @@ public class FishBehavior : MonoBehaviour
             else
             {
                 MovingAway();
-                SetMaxAndMinDistance();
             }
         }
         else
         {
-            if(!isInTheAir)
+            timer += Time.deltaTime;
+
+            transform.position = GetAerialPosition(timer / maxTime);
+
+            if (timer >= maxTime)
             {
-                timer += Time.deltaTime;
-
-                transform.position = GetAerialPosition(timer/maxTime);
-
-                /*currentY = transform.position.y;
-                isInTheAir = true;
-                rb.velocity = new Vector3(0f, 20f, 0f);*/
-
-                if(timer >= maxTime)
-                {
-                    FishManager.instance.FishRecuperation();
-                    timer = 0f;
-                }
+                FishManager.instance.FishRecuperation();
+                timer = 0f;
             }
         }
     }
@@ -123,10 +112,12 @@ public class FishBehavior : MonoBehaviour
 
     public void MovingAway()
     {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * 1.2f * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * 1.2f * Time.deltaTime);
+        transform.Translate(Vector3.forward * 0.5f * Time.fixedDeltaTime, PlayerManager.instance.playerView.transform);
 
-        //Debug.Log(Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) + " > " + farAway1);
-        if (Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway1)
+        //A améliorer
+
+        /*if (Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway1)
         {
             FishingRodManager.instance.fishingLine.TensionDown();
             FishManager.instance.DownEndurance();
@@ -134,14 +125,11 @@ public class FishBehavior : MonoBehaviour
         else if(Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway2)
         {
             FishManager.instance.DownEndurance();
-        }
+        }*/
     }
 
     public void MovingRight()
     {
-        //Debug.Log("R et Zone 1 : " + (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) + " < " + zone1));
-        //Debug.Log("R et Zone 1 : " + Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) + " <  0.3f");
-
         if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) < 0.3f)
         {
             ChangeDirection();
@@ -150,21 +138,12 @@ public class FishBehavior : MonoBehaviour
         CheckTensionAndEndurance();
 
         CalculateSpeed();
-        if (PlayerManager.instance.blockLine)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z), speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), speed * Time.deltaTime);
-        }
-
+        if (PlayerManager.instance.blockLine){transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x   , transform.position.y, maxPos.z   ), speed * Time.deltaTime);}
+        else                                 {transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), speed * Time.deltaTime);}
     }
 
     public void MovingLeft()
     {
-        //Debug.Log("L et Zone 1 : " + (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) +" < " +zone1));
-
         if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)) < 0.3f)
         {
             ChangeDirection();
@@ -173,15 +152,8 @@ public class FishBehavior : MonoBehaviour
         CheckTensionAndEndurance();
 
         CalculateSpeed();
-        if (PlayerManager.instance.blockLine)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z), speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), speed * Time.deltaTime);
-        }
-
+        if (PlayerManager.instance.blockLine){transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x  , transform.position.y, minPos.z  ), speed * Time.deltaTime);}
+        else                                 {transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), speed * Time.deltaTime);}
     }
 
     public void ChangeDirection()
