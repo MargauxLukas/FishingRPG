@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -7,9 +8,14 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
 
     public GameObject player;
+    public GameObject playerView;
 
     public bool blockLine;
     public bool pullTowards;
+
+    public float distancePlayerView;
+
+    public float speed = 9f;
 
     private void Awake()
     {
@@ -59,6 +65,14 @@ public class PlayerManager : MonoBehaviour
     public void IsAerial()
     {
         FishManager.instance.IsExtenued();
+    }
+
+    public void CheckDistanceWithWater()
+    {
+        if(FishManager.instance.currentFishBehavior.timer > FishManager.instance.currentFishBehavior.maxTime * FishManager.instance.currentFishBehavior.percentOfMaxTime)
+        {
+            FishManager.instance.MoreAerial();
+        }
     }
 
     public void NothingPushed()

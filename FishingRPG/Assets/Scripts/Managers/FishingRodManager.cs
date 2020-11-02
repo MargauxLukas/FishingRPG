@@ -56,6 +56,7 @@ public class FishingRodManager : MonoBehaviour
         bobber.GetComponent<Rigidbody>().useGravity = true;
         bobber.GetComponent<Bobber>().Throw();
         CameraManager.instance.CameraLookAtGameObject(bobber);
+        CameraManager.instance.SaveBaseRotation();
         PlayerManager.instance.DisablePlayerMovement();
         PlayerManager.instance.EnableFishMovement();
     }
@@ -101,6 +102,10 @@ public class FishingRodManager : MonoBehaviour
     public float GetPlayerForce()
     {
         direction = fishingRodGameObject.transform.localPosition.x;
+        if(direction > 0)
+        {
+            direction *= 3f;
+        }
         return direction;
     }
 

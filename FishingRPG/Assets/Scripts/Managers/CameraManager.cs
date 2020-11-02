@@ -8,6 +8,7 @@ public class CameraManager : MonoBehaviour
     public Camera mainCamera;
 
     public GameObject target;
+    public Quaternion baseRotation;
 
     private void Awake()
     {
@@ -25,6 +26,10 @@ public class CameraManager : MonoBehaviour
         {
             mainCamera.transform.LookAt(target.transform);
         }
+        else
+        {
+            mainCamera.transform.rotation = baseRotation;
+        }
     }
 
     public void CameraLookAtGameObject(GameObject go)
@@ -36,5 +41,15 @@ public class CameraManager : MonoBehaviour
     public void FreeCameraEnable()
     {
         mainCamera.GetComponent<PlayerView>().freeCamera = true;
+    }
+
+    public void SaveBaseRotation()
+    {
+        baseRotation = mainCamera.transform.rotation;
+    }
+
+    public void SetOriginPoint()
+    {
+        mainCamera.transform.rotation = baseRotation;
     }
 }

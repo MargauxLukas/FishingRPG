@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bobber : MonoBehaviour
 {
-    public float throwPower = 1f;
+    public float throwPower = 1f;                           //Force ajouté lors du lancé du flotteur
 
     public void Throw()
     {
