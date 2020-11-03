@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e225f7cc96ea83344bcf54578668e745, type: 3}
-  m_Name: FishTest
+  m_Script: {fileID: 11500000, guid: 0c7ec19189c88394382f1e33a0649cdd, type: 3}
+  m_Name: DropTest
   m_EditorClassIdentifier: 
+  ID: 
   appearance: {fileID: 0}
-  species: 
-  tier: 0
-  life: 0
-  stamina: 0
-  strength: 0
-  weight: 0
-  speed: 0
-  magicResistance: 0
+  type: 
+  rarity: 
+  dropRate: 1
