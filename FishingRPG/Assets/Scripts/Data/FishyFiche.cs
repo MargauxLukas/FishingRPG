@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+[CreateAssetMenu(fileName = "NewFishyFiche", menuName = "Fishy Fiche", order = 10)]
 public class FishyFiche: ScriptableObject
 {
     [Header("Fish Type")]
