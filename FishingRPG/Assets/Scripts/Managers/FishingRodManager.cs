@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class FishingRodManager : MonoBehaviour
 {
     public static FishingRodManager instance;
 
+    [Header("FishingRod Components")]
     public GameObject fishingRodPivot;
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
     public FishingLine fishingLine;
 
+    [Header("Plus besoin si on prend le nouveau systeme de déplacement")]
     public GameObject[] positionGroup;
 
+    [Header("Pour montrer visuellement que le poisson est arrivé")]
     public Material catchMaterial;
     public Material dontCatchMaterial;
 
@@ -23,8 +27,13 @@ public class FishingRodManager : MonoBehaviour
 
     public bool bobberThrowed = false;
 
+    //Surement innutile plus tard
     public float direction = 0f;
-    public float speed = 1f;
+
+    [Header("Speed de la canne à peche")]
+    public float speed = 5f;
+    private float lastAxisValues = 0f;
+    private float currentAxis;
 
     private void Awake()
     {
@@ -89,7 +98,7 @@ public class FishingRodManager : MonoBehaviour
         bobber.GetComponent<MeshRenderer>().material = dontCatchMaterial;
     }
 
-    public void LeftFishingRod()
+    /*public void LeftFishingRod()
     {
         fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[0].transform.localPosition, speed * Time.fixedDeltaTime);
     }
@@ -97,6 +106,26 @@ public class FishingRodManager : MonoBehaviour
     public void RightFishingRod()
     {
         fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[2].transform.localPosition, speed * Time.fixedDeltaTime);
+    }*/
+
+    public void SetFishingRodPosition(float axisValue)
+    {
+        if (Mathf.Abs(axisValue - lastAxisValues) > 0.1f)
+        {
+            if (axisValue > 0)
+            {
+                lastAxisValues = axisValue;
+                currentAxis = axisValue * 0.5f;
+            }
+            else
+            {
+                lastAxisValues = axisValue;
+                currentAxis= axisValue * 1.5f;
+            }
+        }
+
+        Debug.Log(currentAxis);
+        fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
     }
 
     public float GetPlayerForce()

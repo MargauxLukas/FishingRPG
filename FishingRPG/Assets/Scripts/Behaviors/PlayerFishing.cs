@@ -44,15 +44,22 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.NothingPushed();
             }
 
+            FishingRodManager.instance.SetFishingRodPosition(Input.GetAxis("Right Stick (Horizontal)"));
 
-            if (Input.GetAxis("Right Stick (Horizontal)") < -0.2f)
+            /*if (Input.GetAxis("Right Stick (Horizontal)") < -0.2f)
             {
                 FishingRodManager.instance.LeftFishingRod();
             }
             else if (Input.GetAxis("Right Stick (Horizontal)") > 0.2f)
             {
                 FishingRodManager.instance.RightFishingRod();
-            }
+            }*/
+
+            /*if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
+            {
+
+
+            }*/
         }
     }
 }
