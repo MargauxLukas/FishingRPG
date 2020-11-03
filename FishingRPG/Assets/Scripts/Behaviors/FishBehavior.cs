@@ -13,6 +13,7 @@ public class FishBehavior : MonoBehaviour
     public  float endurance = 100f;
     public bool extenued    = false;
 
+
     //Position de référence
     private Vector3 maxPos;                         //Position la plus éloigné sur le cone à sa droite que le poisson cherche lorsqu'on bloque la ligne
     private Vector3 minPos;                         //Position la plus éloigné sur le cone à sa gauche que le poisson cherche lorsqu'on bloque la ligne
@@ -254,7 +255,7 @@ public class FishBehavior : MonoBehaviour
     /*****************
     *  Gizmos Draw  *
     *****************/
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);
 
