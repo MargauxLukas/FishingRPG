@@ -7,9 +7,9 @@ using UnityEditor;
 public class FishyFiche: ScriptableObject
 {
     [Header("Fish Type")]
-    public string ID;
+    public string ID = "PQS_0";
     public Sprite appearance;
-    public string species;
+    public string species = "Pequessivo";
     public int tier;
 
     [Header("Fish Constitution")]
