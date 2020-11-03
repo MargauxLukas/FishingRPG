@@ -8,9 +8,10 @@ using UnityEngine.UIElements;
 public class FishBehavior : MonoBehaviour
 {
     [Header("Stats Fish")]
-    public  float baseSpeed = 3f;
-    private float speed     = 1f;
-    public  float endurance = 100f;
+    public  float baseSpeed = 3f;                       //A prendre sur fishyFiche
+    private float speed     = 1f;                       
+    public  float endurance = 100f;                     //A prendre sur fishyFiche (Deviendra endurance actuel)
+    public float currentLife = 100f;                    //Max à prendre sur fishyFiche
     public bool extenued    = false;
 
 
