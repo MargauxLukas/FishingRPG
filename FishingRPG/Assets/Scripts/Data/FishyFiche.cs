@@ -12,7 +12,7 @@ public class FishyFiche: ScriptableObject
 
     [Header("Fish Constitution")]
     public float life;
-    public float energy;
+    public float stamina;
 
     [Header("Fish Stats")]
     public float strength;
