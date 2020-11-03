@@ -34,6 +34,7 @@ public class FishingRodManager : MonoBehaviour
     public float speed = 5f;
     private float lastAxisValues = 0f;
     private float currentAxis;
+    public float axisValueForCalcul;
 
     private void Awake()
     {
@@ -110,6 +111,7 @@ public class FishingRodManager : MonoBehaviour
 
     public void SetFishingRodPosition(float axisValue)
     {
+        axisValueForCalcul = axisValue;
         if (Mathf.Abs(axisValue - lastAxisValues) > 0.1f)
         {
             if (axisValue > 0)
@@ -123,8 +125,6 @@ public class FishingRodManager : MonoBehaviour
                 currentAxis= axisValue * 1.5f;
             }
         }
-
-        Debug.Log(currentAxis);
         fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
     }
 
@@ -142,7 +142,7 @@ public class FishingRodManager : MonoBehaviour
     {
         if(FishingManager.instance.fishIsGoingRight)
         {
-            if(direction > 0f)
+            if(axisValueForCalcul > 0f)
             {
                 return true;
             }
@@ -153,7 +153,7 @@ public class FishingRodManager : MonoBehaviour
         }
         else
         {
-            if (direction < 0f)
+            if (axisValueForCalcul < 0f)
             {
                 return true;
             }

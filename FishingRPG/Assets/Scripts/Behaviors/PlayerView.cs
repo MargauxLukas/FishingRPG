@@ -104,7 +104,6 @@ public class PlayerView : MonoBehaviour
                 {
                     distanceFtoP = Vector3.Distance(new Vector3(FishingManager.instance.currentFish.transform.localPosition.x, transform.position.y - 1.5f, FishingManager.instance.currentFish.transform.localPosition.z), cone);   //JP
                 }
-
                 PlayerManager.instance.distancePlayerView = distanceFtoP;
 
                 float radian = (angle / 2) * Mathf.Deg2Rad;

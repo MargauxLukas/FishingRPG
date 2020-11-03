@@ -171,9 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365f88d9d6c75d047b25d61ceeef20c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishStats: {fileID: 3403204536493358264}
   baseSpeed: 5
-  endurance: 30
-  currentLife: 100
+  currentStamina: 0
+  currentLife: 0
   extenued: 0
   pullDistance: 2.5
   JumpHeight: 20
@@ -205,4 +206,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb369db0b74a0354ca2feea728ba5272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fiche: {fileID: 0}
+  fiche: {fileID: 11400000, guid: bb08229e93e4f7d48a9add01ca3627e2, type: 2}
+  qBalancing: 0

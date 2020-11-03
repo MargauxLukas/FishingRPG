@@ -8,16 +8,18 @@ using UnityEngine.UIElements;
 public class FishBehavior : MonoBehaviour
 {
     [Header("Stats Fish")]
-    public  float baseSpeed = 3f;                       //A prendre sur fishyFiche
+    public FishStats fishStats;
+    private FishyFiche fishyFiche;
+    public  float baseSpeed = 3f;                     //A prendre sur fishyFiche
     private float speed     = 1f;                       
-    public  float endurance = 100f;                     //A prendre sur fishyFiche (Deviendra endurance actuel)
-    public float currentLife = 100f;                    //Max à prendre sur fishyFiche
+    public  float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
+    public float currentLife = 0f;                    //Max à prendre sur fishyFiche
     public bool extenued    = false;
-
 
     //Position de référence
     private Vector3 maxPos;                         //Position la plus éloigné sur le cone à sa droite que le poisson cherche lorsqu'on bloque la ligne
     private Vector3 minPos;                         //Position la plus éloigné sur le cone à sa gauche que le poisson cherche lorsqu'on bloque la ligne
+    private Vector3 midPos;
     private Vector3 pullLeft;                       //Position proche sur le cone à gauche que le poisson cherche à atteindre --- Lien avec pullDistance
     private Vector3 pullRight;                      //Position proche sur le cone à droite que le poisson cherche à atteindre --- Lien avec pullDistance
     private Vector3 forwardPoint;                   //Point le plus éloigné devant le joueur
@@ -47,6 +49,14 @@ public class FishBehavior : MonoBehaviour
     public float percentOfMaxTime = 0.85f;
 
     private bool bPull = true;
+
+    private void Start()
+    {
+        fishyFiche = fishStats.fiche;
+        currentStamina = fishyFiche.stamina;
+        currentLife = fishyFiche.life;
+        baseSpeed = UtilitiesManager.instance.GetVpL(fishyFiche.speed);
+    }
 
     void Update()
     {
@@ -103,11 +113,13 @@ public class FishBehavior : MonoBehaviour
         if (directionChoice == 1)
         {
             FishingManager.instance.fishIsGoingRight = true;
+            FishManager.instance.ChangeBoolText("Droite");
             MovingRight();
         }
         else
         {
             FishingManager.instance.fishIsGoingRight = false;
+            FishManager.instance.ChangeBoolText("Gauche");
             MovingLeft();
         }
     }
@@ -176,18 +188,74 @@ public class FishBehavior : MonoBehaviour
 
     public void CalculateSpeed()
     {
-        if(FishingRodManager.instance.IsSameDirection())
+        float pos = (Vector3.Distance(minPos, transform.position) - Vector3.Distance(midPos, minPos)) / Vector3.Distance(midPos, minPos);
+        /*if (FishingRodManager.instance.IsSameDirection())
         {
-            speed = baseSpeed + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())*4;
-            FishManager.instance.ChangeSpeedText(speed);
-            //Debug.Log("+ = " + (1f + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            if (FishingManager.instance.fishIsGoingRight)
+            {
+                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, 1);
+                Debug.Log("BaseSpeed = " + baseSpeed + " / Position Fish = " + pos + " / Position Player = " + FishingRodManager.instance.axisValueForCalcul + " / Poid Fish = " + fishyFiche.weight);
+            }
+            else
+            {
+                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, 1);
+                Debug.Log("BaseSpeed = " + baseSpeed + " / Position Fish = " + pos + " / Position Player = " + FishingRodManager.instance.axisValueForCalcul + " / Poid Fish = " + fishyFiche.weight);
+            }
         }
         else
         {
-            speed = baseSpeed - Mathf.Abs(FishingRodManager.instance.GetPlayerForce()) * 4;
-            FishManager.instance.ChangeSpeedText(speed);
-            //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            if (FishingManager.instance.fishIsGoingRight)
+            {
+                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, -1);
+                Debug.Log("BaseSpeed = " + baseSpeed + " / Position Fish = " + pos + " / Position Player = " + FishingRodManager.instance.axisValueForCalcul + " / Poid Fish = " + fishyFiche.weight);
+            }
+            else
+            {
+                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, -1);
+                Debug.Log("BaseSpeed = " + baseSpeed + " / Position Fish = " + pos + " / Position Player = " + FishingRodManager.instance.axisValueForCalcul + " / Poid Fish = " + fishyFiche.weight);
+            }
+        }*/
+        
+        if (FishingRodManager.instance.IsSameDirection())
+        {
+            if (FishingManager.instance.fishIsGoingRight)
+            {
+                //Debug.Log("1");
+                speed = baseSpeed + (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul -  pos/ 2))));
+                Debug.Log("1 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos / 2))));
+                FishManager.instance.ChangeSpeedText(speed);
+                //Debug.Log("+ = " + (1f + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            }
+            else
+            {
+                //Debug.Log("2");
+                speed = baseSpeed + (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos / 2))));
+                Debug.Log("2 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos / 2))));
+                FishManager.instance.ChangeSpeedText(speed);
+                //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            }
         }
+        else
+        {
+            if (FishingManager.instance.fishIsGoingRight)
+            {
+                //Debug.Log("3");
+                speed = baseSpeed - (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
+                Debug.Log("3 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
+                FishManager.instance.ChangeSpeedText(speed);
+                //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            }
+            else
+            {
+                //Debug.Log("4");
+                speed = baseSpeed - (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
+                Debug.Log("4 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
+                FishManager.instance.ChangeSpeedText(speed);
+                //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            }
+        }
+
+        FishManager.instance.ChangeSpeedText(speed);
     }
 
     public void CheckTensionAndEndurance()
@@ -214,7 +282,7 @@ public class FishBehavior : MonoBehaviour
 
     public void CheckEndurance()
     {
-        if(endurance <= 0)
+        if(currentStamina <= 0)
         {
             extenued = true;
             FishManager.instance.ExtenuedChange();
@@ -237,6 +305,8 @@ public class FishBehavior : MonoBehaviour
 
         maxPos     = cone + FishManager.instance.maxPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
         minPos     = cone + FishManager.instance.minPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
+        midPos = (maxPos + minPos) / 2;
+        midPos = new Vector3(midPos.x, transform.position.y, midPos.z);
         forwardPoint = forwardRayRotation * CameraManager.instance.mainCamera.transform.right * distance;                      //Point le plus éloigné en face
 
         zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;       //Distance à partir de laquelle le poisson perd de l'endurance
@@ -265,8 +335,10 @@ public class FishBehavior : MonoBehaviour
         Gizmos.DrawLine(transform.position,  pullLeft);
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.localPosition, maxPos);
+        Gizmos.DrawLine(transform.position, maxPos);
         Gizmos.DrawLine(transform.position, minPos);
+        Gizmos.DrawLine(transform.position, midPos);
+
 
     }
 }

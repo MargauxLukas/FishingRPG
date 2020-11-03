@@ -16,6 +16,7 @@ public class FishManager : MonoBehaviour
     public Vector3 maxPosCone;
 
     public Text speedText;
+    public Text boolIsGoingRight;
 
     public bool isAerial = false;
     private float aerialExitWaterX = 0f;
@@ -71,7 +72,7 @@ public class FishManager : MonoBehaviour
     public void FishRecuperation()
     {
         currentFishBehavior.extenued = false;
-        currentFishBehavior.endurance = 20f;
+        currentFishBehavior.currentStamina = 20f;
         isAerial = false;
         NotExtenued();
         CameraManager.instance.SetOriginPoint();
@@ -79,19 +80,24 @@ public class FishManager : MonoBehaviour
 
     public void DownEndurance()
     {
-        currentFishBehavior.endurance -= 0.2f;
+        currentFishBehavior.currentStamina -= 0.2f;
         ChangeText();
         currentFishBehavior.CheckEndurance();
     }
 
     public void ChangeText()
     {
-        enduText.text = currentFishBehavior.endurance.ToString();
+        enduText.text = currentFishBehavior.currentStamina.ToString();
     }
 
     public void ChangeSpeedText(float speed)
     {
         speedText.text = speed.ToString();
+    }
+
+    public void ChangeBoolText(string direction)
+    {
+        boolIsGoingRight.text = direction;
     }
 
     public void MoreAerial()

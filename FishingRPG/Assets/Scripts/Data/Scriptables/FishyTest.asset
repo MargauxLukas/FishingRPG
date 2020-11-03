@@ -16,11 +16,11 @@ MonoBehaviour:
   appearance: {fileID: 0}
   species: 
   tier: 0
-  life: 0
-  stamina: 0
-  strength: 0
-  weight: 0
-  speed: 0
-  magicResistance: 0
+  life: 100
+  stamina: 100
+  strength: 5
+  weight: 5
+  speed: 5
+  magicResistance: 5
   drops: []
   patterns: []

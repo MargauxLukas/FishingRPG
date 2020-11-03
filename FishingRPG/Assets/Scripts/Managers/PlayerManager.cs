@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject player;
     public GameObject playerView;
+    public PlayerStats playerStats;
 
     public bool blockLine;
     public bool pullTowards;
