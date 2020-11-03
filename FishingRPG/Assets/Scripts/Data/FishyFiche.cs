@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "NewFishyFiche", menuName = "Fishy Fiche", order = 10)]
+[CreateAssetMenu(fileName = "NewFishyFiche", menuName = "BFF Tools/Fishy Fiche", order = 10)]
 public class FishyFiche: ScriptableObject
 {
     [Header("Fish Type")]
+    public string ID;
     public Sprite appearance;
     public string species;
     public int tier;
@@ -20,4 +21,10 @@ public class FishyFiche: ScriptableObject
     public float weight;
     public float speed;
     public float magicResistance;
+
+    [Header("Butcher Drops")]
+    public FishyDrop[] drops;
+
+    [Header("Fish Patterns")]
+    public MonoBehaviour[] patterns;
 }
