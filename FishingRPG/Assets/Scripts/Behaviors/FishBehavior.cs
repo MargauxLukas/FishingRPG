@@ -198,7 +198,7 @@ public class FishBehavior : MonoBehaviour
             }
             else
             {
-                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, 1);
+                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, -1);
                 Debug.Log("BaseSpeed = " + baseSpeed + " / Position Fish = " + pos + " / Position Player = " + FishingRodManager.instance.axisValueForCalcul + " / Poid Fish = " + fishyFiche.weight);
             }
         }
@@ -206,7 +206,7 @@ public class FishBehavior : MonoBehaviour
         {
             if (FishingManager.instance.fishIsGoingRight)
             {
-                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, -1);
+                speed = UtilitiesManager.instance.GetVpF(baseSpeed, pos, FishingRodManager.instance.axisValueForCalcul, fishyFiche.weight, 1);
                 Debug.Log("BaseSpeed = " + baseSpeed + " / Position Fish = " + pos + " / Position Player = " + FishingRodManager.instance.axisValueForCalcul + " / Poid Fish = " + fishyFiche.weight);
             }
             else
@@ -221,7 +221,7 @@ public class FishBehavior : MonoBehaviour
             if (FishingManager.instance.fishIsGoingRight)
             {
                 //Debug.Log("1");
-                speed = baseSpeed + (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul -  pos/ 2))));
+                speed = (baseSpeed + (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul -  pos/ 2))))) * (PlayerManager.instance.playerStats.strenght / fishyFiche.weight);
                 Debug.Log("1 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos / 2))));
                 FishManager.instance.ChangeSpeedText(speed);
                 //Debug.Log("+ = " + (1f + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
@@ -229,7 +229,7 @@ public class FishBehavior : MonoBehaviour
             else
             {
                 //Debug.Log("2");
-                speed = baseSpeed + (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos / 2))));
+                speed = (baseSpeed + (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos / 2))))) * (PlayerManager.instance.playerStats.strenght / fishyFiche.weight);
                 Debug.Log("2 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos / 2))));
                 FishManager.instance.ChangeSpeedText(speed);
                 //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
@@ -240,7 +240,7 @@ public class FishBehavior : MonoBehaviour
             if (FishingManager.instance.fishIsGoingRight)
             {
                 //Debug.Log("3");
-                speed = baseSpeed - (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
+                speed = (baseSpeed - (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))))) * (PlayerManager.instance.playerStats.strenght / fishyFiche.weight);
                 Debug.Log("3 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
                 FishManager.instance.ChangeSpeedText(speed);
                 //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
@@ -248,7 +248,7 @@ public class FishBehavior : MonoBehaviour
             else
             {
                 //Debug.Log("4");
-                speed = baseSpeed - (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
+                speed = (baseSpeed - (baseSpeed * (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))))) * (PlayerManager.instance.playerStats.strenght / fishyFiche.weight);
                 Debug.Log("4 : " + (Mathf.Abs((FishingRodManager.instance.axisValueForCalcul - pos))));
                 FishManager.instance.ChangeSpeedText(speed);
                 //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
