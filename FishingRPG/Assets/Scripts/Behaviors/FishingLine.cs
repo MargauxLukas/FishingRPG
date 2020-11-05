@@ -23,6 +23,8 @@ public class FishingLine : MonoBehaviour
 
         if(currentTension <= 0)
         {
+            currentTension = 0;
+            ChangeText();
             LineIsBroken();
         }
     }
@@ -31,7 +33,7 @@ public class FishingLine : MonoBehaviour
     {
         if (currentTension <= maxTension)
         {
-            currentTension += 0.08f;
+            currentTension += 0.2f;
         }
         else
         {
