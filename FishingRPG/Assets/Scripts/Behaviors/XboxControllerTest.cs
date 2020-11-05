@@ -47,5 +47,10 @@ public class XboxControllerTest : MonoBehaviour
 		rightAnalogStickVertical = Input.GetAxis("Right Stick (Vertical)");
 		//dPadHorizontal = Input.GetAxis("D-Pad (Horizontal)");
 		//dPadVertical = Input.GetAxis("D-Pad (Vertical)");
+
+		if (Input.GetKey("escape"))
+		{
+			Application.Quit();
+		}
 	}
 }

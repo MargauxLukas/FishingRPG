@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/GA_LevelBlockout.unity
     guid: 47c790f78b05fc247a70fda8ab31f39d
+  - enabled: 1
+    path: Assets/_Scenes/ALC_ProtoScene.unity
+    guid: bb62b86839d35ad4faa5994b67fce8c5
   m_configObjects: {}
