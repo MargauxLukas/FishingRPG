@@ -63,7 +63,6 @@ public class FishingRodManager : MonoBehaviour
 
     public void LaunchBobber()
     {
-        bobber.GetComponent<Rigidbody>().useGravity = true;
         bobber.GetComponent<Bobber>().Throw();
         CameraManager.instance.CameraLookAtGameObject(bobber);
         CameraManager.instance.SaveBaseRotation();
@@ -75,13 +74,11 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
-        bobber.GetComponent<Rigidbody>().velocity = Vector3.zero;
         bobber.transform.position = bobberPosition.transform.position;
         bobber.transform.parent   = fishingRodGameObject.transform;
         fishingRodPivot.GetComponent<Rotate>().result = false;
         bobber.transform.localScale    = bobberScale;
         bobber.transform.localRotation = bobberRotation;
-        bobber.GetComponent<Rigidbody>().useGravity = false;
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();

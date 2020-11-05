@@ -24,6 +24,8 @@ public class PlayerView : MonoBehaviour
     float halfFOVZ2;                        //FieldOfView - 20%
     float coneDirection = 90;               //Direction dans un cercle allant de 0 à 380 Droite = 0 / Devant = 90 / Gauche = 180 / Arrière = 270 
 
+    public float bezierBobber = 1f;
+
     Quaternion upRayRotation;    //Direction à droite du cône
     Quaternion downRayRotation;    //Direction à gauche du cône
     Quaternion forwardRayRotation;    //Direction tout droit
@@ -39,11 +41,12 @@ public class PlayerView : MonoBehaviour
     Vector3 downRayDirectionZ1;                      //Point à gauche du cône - 10%
     Vector3 upRayDirectionZ2;                      //Point à droite du cône - 20%
     Vector3 downRayDirectionZ2;                      //Point à gauche du cône - 20%
+    public Vector3 bezierBobberDirection;
 
     Vector3 RayRightFish;
     Vector3 RayLeftFish;
 
-    Vector3 cone;
+    public Vector3 cone;
     Vector3 midPoint;
 
     private void Start()
@@ -92,17 +95,18 @@ public class PlayerView : MonoBehaviour
             downRayDirectionZ1 = downRayRotationZ1 * transform.right * rayRange;                      //Point à gauche du cône - 10%
             upRayDirectionZ2 = upRayRotationZ2 * transform.right * rayRange;                      //Point à droite du cône - 20%
             downRayDirectionZ2 = downRayRotationZ2 * transform.right * rayRange;                      //Point à gauche du cône - 20%
+            bezierBobberDirection = forwardRayRotation * transform.right * bezierBobber;             //Bezier bobber
 
-            cone = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);       //Cone représente le centre du cercle
+            cone = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);       //Cone représente le centre du cercle
 
             //Utilitaire au cas ou 
             midPoint = (upRayDirection + downRayDirection) / 2;                                       //Milieu du point le plus à droite et du point le plus à gauche
 
             if (FishingManager.instance.currentFish != null && !FishManager.instance.isAerial)
             {
-                if (Vector3.Distance(new Vector3(FishingManager.instance.currentFish.transform.localPosition.x, transform.position.y - 1.5f, FishingManager.instance.currentFish.transform.localPosition.z), cone) < distanceFtoP)
+                if (Vector3.Distance(new Vector3(FishingManager.instance.currentFish.transform.localPosition.x, transform.position.y - 3.25f, FishingManager.instance.currentFish.transform.localPosition.z), cone) < distanceFtoP)
                 {
-                    distanceFtoP = Vector3.Distance(new Vector3(FishingManager.instance.currentFish.transform.localPosition.x, transform.position.y - 1.5f, FishingManager.instance.currentFish.transform.localPosition.z), cone);   //JP
+                    distanceFtoP = Vector3.Distance(new Vector3(FishingManager.instance.currentFish.transform.localPosition.x, transform.position.y - 3.25f, FishingManager.instance.currentFish.transform.localPosition.z), cone);   //JP
                 }
                 PlayerManager.instance.distancePlayerView = distanceFtoP;
 
@@ -139,6 +143,9 @@ public class PlayerView : MonoBehaviour
         Gizmos.DrawRay(cone, downRayDirection);
         Gizmos.DrawRay(cone, midPoint);  //UTILITAIRE
         Gizmos.DrawLine(cone + downRayDirection, cone + upRayDirection); //Droite allant de l'extrémité droit à l'extrémité gauche du cône
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(cone, bezierBobberDirection);
 
         //Droite gauche et droite du cone -10%
         Gizmos.color = Color.red;

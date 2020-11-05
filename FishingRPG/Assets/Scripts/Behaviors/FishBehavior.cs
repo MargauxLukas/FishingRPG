@@ -299,7 +299,7 @@ public class FishBehavior : MonoBehaviour
         Quaternion downRayRotation = Quaternion.AngleAxis( halfFOV + coneDirection, Vector3.down);   //Direction à gauche du cône (Doublon avec PlayerView)
         Quaternion forwardRayRotation = Quaternion.AngleAxis(coneDirection, Vector3.down);           //Direction tout droit (Doublon avec PlayerView)
 
-        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);   //Cone représente le centre du cercle (Doublon avec PlayerView)
+        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 3.25f, CameraManager.instance.mainCamera.transform.position.z);   //Cone représente le centre du cercle (Doublon avec PlayerView)
 
         float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.playerView.transform.position);   //Distance Poisson-Joueur (Doublon avec PlayerView)
 
@@ -328,7 +328,7 @@ public class FishBehavior : MonoBehaviour
     *****************/
     private void OnDrawGizmos()
     {
-        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);
+        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 3.5f, CameraManager.instance.mainCamera.transform.position.z);
 
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, pullRight);

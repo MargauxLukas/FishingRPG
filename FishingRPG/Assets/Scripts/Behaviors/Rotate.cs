@@ -29,6 +29,7 @@ public class Rotate : MonoBehaviour
             if ((transform.rotation.eulerAngles.x > 270f || transform.rotation.eulerAngles.x == 0) && !isMax)
             {
                 transform.Rotate(new Vector3(-1f, 0f, 0f));
+                PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
             }
             else
             {
