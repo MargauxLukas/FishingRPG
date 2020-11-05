@@ -27,7 +27,13 @@ public class Bobber : MonoBehaviour
             {
                 timer = 0f;
                 canBeLaunch = false;
+                PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber = 1f;
             }
+        }
+
+        if(FishManager.instance.currentFish != null)
+        {
+            transform.position = new Vector3(FishManager.instance.currentFish.transform.position.x, transform.position.y, FishManager.instance.currentFish.transform.position.z);
         }
     }
 
@@ -40,7 +46,7 @@ public class Bobber : MonoBehaviour
 
     public Vector3 GetAerialPosition(float currentTime)
     {
-        float x = Mathf.Pow(1 - currentTime, 2) * bezier1.position.x + 2 * (1 - currentTime) * currentTime * bezier2.position.x + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.x +bezier3.x);
+        float x = Mathf.Pow(1 - currentTime, 2) * bezier1.position.x + 2 * (1 - currentTime) * currentTime * bezier2.position.x + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.x + bezier3.x);
         float y = Mathf.Pow(1 - currentTime, 2) * bezier1.position.y + 2 * (1 - currentTime) * currentTime * bezier2.position.x + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.y + bezier3.y);
         float z = Mathf.Pow(1 - currentTime, 2) * bezier1.position.z + 2 * (1 - currentTime) * currentTime * bezier2.position.x + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.z + bezier3.z); ;
         return new Vector3(x, y, z);

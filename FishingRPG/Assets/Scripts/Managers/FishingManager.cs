@@ -59,7 +59,6 @@ public class FishingManager : MonoBehaviour
                                 FishingRodManager.instance.bobber.transform.position.z),
                     Quaternion.identity,
                     dynamics          );
-        currentFish.GetComponent<FixedJoint>().connectedBody = FishingRodManager.instance.bobber.GetComponent<Rigidbody>();
         FishManager.instance.currentFish = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
         FishManager.instance.ChangeText();

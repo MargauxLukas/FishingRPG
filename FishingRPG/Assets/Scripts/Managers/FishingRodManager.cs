@@ -74,15 +74,16 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
+        bobber.transform.parent = fishingRodGameObject.transform;
         bobber.transform.position = bobberPosition.transform.position;
-        bobber.transform.parent   = fishingRodGameObject.transform;
+        //bobber.GetComponent<BobberBack>().ReturnToFishingRod(bobberPosition.transform.position);
         fishingRodPivot.GetComponent<Rotate>().result = false;
         bobber.transform.localScale    = bobberScale;
         bobber.transform.localRotation = bobberRotation;
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
-        FishManager.instance.currentFish.GetComponent<Destroy>().DestroyThisGameobject();
+        //FishManager.instance.currentFish.GetComponent<Destroy>().DestroyThisGameobject();
         //Fish Poisson
     }
 
