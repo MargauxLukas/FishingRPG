@@ -72,7 +72,7 @@ public class FishManager : MonoBehaviour
     public void FishRecuperation()
     {
         currentFishBehavior.extenued = false;
-        currentFishBehavior.currentStamina = 20f;
+        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
         isAerial = false;
         NotExtenued();
         CameraManager.instance.SetOriginPoint();
@@ -80,9 +80,22 @@ public class FishManager : MonoBehaviour
 
     public void DownEndurance()
     {
-        currentFishBehavior.currentStamina -= 0.2f;
-        ChangeText();
+        if (currentFishBehavior.currentStamina > 0)
+        {
+            currentFishBehavior.currentStamina -= 0.2f;
+            ChangeText();
+        }
+
         currentFishBehavior.CheckEndurance();
+    }
+
+    public void UpEndurance()
+    {
+        if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+        {
+            currentFishBehavior.currentStamina += 0.2f;
+            ChangeText();
+        }
     }
 
     public void ChangeText()

@@ -9,7 +9,7 @@ public class FishBehavior : MonoBehaviour
 {
     [Header("Stats Fish")]
     public FishStats fishStats;
-    private FishyFiche fishyFiche;
+    public FishyFiche fishyFiche;
     public  float baseSpeed = 3f;                     //A prendre sur fishyFiche
     private float speed     = 1f;                       
     public  float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
@@ -172,7 +172,7 @@ public class FishBehavior : MonoBehaviour
 
     public void ChangeDirection()
     {
-        CheckEndurance();
+        //CheckEndurance();
         if (directionChoice == 1)
         {
             directionChoice = 2;
@@ -284,8 +284,14 @@ public class FishBehavior : MonoBehaviour
     {
         if(currentStamina <= 0)
         {
+            currentStamina = 0;
             extenued = true;
             FishManager.instance.ExtenuedChange();
+        }
+
+        if(currentStamina > fishyFiche.stamina)
+        {
+            currentStamina = fishyFiche.stamina;
         }
     }
 
