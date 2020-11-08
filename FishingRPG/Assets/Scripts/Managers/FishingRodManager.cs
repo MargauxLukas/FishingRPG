@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.UI;
 
 public class FishingRodManager : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class FishingRodManager : MonoBehaviour
 
     public float distanceCP;
 
+    [Header("Texte")]
+    public Text distanceCPText;
+    public Text fCurrentText;
+    public Text fMaxText;
+
     private void Awake()
     {
         Init();
@@ -46,6 +52,7 @@ public class FishingRodManager : MonoBehaviour
     {
         bobberRotation = bobber.transform.localRotation;
         fishingLine = GetComponent<FishingLine>();
+        ChangeTextFMax();
     }
 
     private void Update()
@@ -59,6 +66,8 @@ public class FishingRodManager : MonoBehaviour
         if (FishingManager.instance.currentFish != null)
         {
             distanceCP = Vector3.Distance(pointC.position, bobber.transform.position);
+            ChangeTextCPDistance();
+            CheckFCurrent();
         }
     }
 
@@ -119,4 +128,31 @@ public class FishingRodManager : MonoBehaviour
         fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
         fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(50f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
     }
+
+    public void CheckFCurrent()
+    {
+        if(distanceCP > fishingLine.fCurrent && distanceCP < fishingLine.fMax)
+        {
+            fishingLine.fCurrent = distanceCP;
+            ChangeTextFCurrent();
+            fishingLine.isFCurrentAtMax();
+        }
+    }
+
+
+    #region Text Change
+    public void ChangeTextCPDistance()
+    {
+        distanceCPText.text = distanceCP.ToString();
+    }
+
+    public void ChangeTextFCurrent()
+    {
+        fCurrentText.text = fishingLine.fCurrent.ToString();
+    }
+    public void ChangeTextFMax()
+    {
+        fMaxText.text = fishingLine.fMax.ToString();
+    }
+    #endregion
 }

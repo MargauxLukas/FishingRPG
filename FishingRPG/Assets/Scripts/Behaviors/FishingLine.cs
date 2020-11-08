@@ -13,6 +13,8 @@ public class FishingLine : MonoBehaviour
     public float maxTension = 100;
     public Text textInt;
 
+    public bool isBlocked = false;
+
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
@@ -44,6 +46,21 @@ public class FishingLine : MonoBehaviour
         }
 
         ChangeText();
+    }
+
+    public void GetFCurrent()
+    {
+        fCurrent = Vector3.Distance(FishingRodManager.instance.pointC.position, FishingRodManager.instance.bobber.transform.position) * 1.1f;
+        FishingRodManager.instance.ChangeTextFCurrent();
+    }
+
+    public void isFCurrentAtMax()
+    {
+        if(fCurrent >= fMax)
+        {
+            isBlocked = true;
+            fCurrent = fMax;
+        }
     }
 
     public void ChangeText()

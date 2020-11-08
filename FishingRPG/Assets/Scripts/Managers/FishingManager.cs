@@ -44,6 +44,7 @@ public class FishingManager : MonoBehaviour
 
     public float SetTimer()
     {
+        FishingRodManager.instance.fishingLine.GetFCurrent();
         return Random.Range(2f, 5f);
     }
 

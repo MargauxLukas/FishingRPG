@@ -57,8 +57,6 @@ public class PlayerView : MonoBehaviour
         forwardRayDirection = forwardRayRotation * transform.right * rayRange;                   //Point le plus éloigné en face
         bezierBobberDirection = forwardRayRotation * transform.right * bezierBobber;             //Bezier bobber
 
-        Debug.Log(forwardRayDirection);
-
         cone = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);       //Cone représente le centre du cercle       
     }
 
