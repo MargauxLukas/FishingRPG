@@ -63,7 +63,16 @@ public class FishBehavior : MonoBehaviour
                 }
                 else
                 {
-                    transform.position += transform.right * 1f * Time.fixedDeltaTime;
+                    //RayCast à lancer ou GameObject devant le poisson pour savoir vers ou il va
+                    if (Vector3.Distance(transform.position + transform.right * 1f * Time.fixedDeltaTime, FishingRodManager.instance.pointC.transform.position) > FishingRodManager.instance.fishingLine.fMax)
+                    {
+                        //DONT MOVE
+                    }
+                    else
+                    {
+                        Debug.Log("hey");
+                        transform.position += transform.right * 1f * Time.fixedDeltaTime;
+                    }
                 }
             }
 

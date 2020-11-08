@@ -8,6 +8,7 @@ public class FishingLine : MonoBehaviour
 {
     public float fCurrent;
     public float fMax;
+    public float fCritique;
 
     public float currentTension = 100;
     public float maxTension = 100;

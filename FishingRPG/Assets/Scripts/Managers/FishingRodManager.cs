@@ -65,7 +65,7 @@ public class FishingRodManager : MonoBehaviour
 
         if (FishingManager.instance.currentFish != null)
         {
-            distanceCP = Vector3.Distance(pointC.position, bobber.transform.position);
+            distanceCP = Vector3.Distance(pointC.position, FishManager.instance.currentFish.transform.position);
             ChangeTextCPDistance();
             CheckFCurrent();
         }
