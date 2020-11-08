@@ -6,29 +6,29 @@ using UnityEngine.UI;
 public class FishManager : MonoBehaviour
 {
     public static FishManager instance;
+
+    [Header("Fish")]
     public GameObject currentFish;
     public FishBehavior currentFishBehavior;
+
+    [Header("Material Aerial")]
     public Material canAerialMat;
     public Material normalMat;
+
+    [Header("Text")]
     public Text enduText;
-
-    public Vector3 minPosCone;
-    public Vector3 maxPosCone;
-
     public Text speedText;
-    public Text boolIsGoingRight;
 
     public bool isAerial = false;
-    private float aerialExitWaterX = 0f;
-    public float aerialExitWaterY = 0f;
-    private float aerialExitWaterZ = 0f;
-    private float aerialEnterWaterX = 0f;
-    public float aerialEnterWaterY = 0f;
-    private float aerialEnterWaterZ = 0f;
-
+    private float aerialExitWaterX  = 0f;
     private float aerialX;
-    public float aerialY;
+    private float aerialEnterWaterX = 0f;
+    public float  aerialExitWaterY  = 0f;
+    public float  aerialY;
+    public float  aerialEnterWaterY = 0f;
+    private float aerialExitWaterZ  = 0f;
     private float aerialZ;
+    private float aerialEnterWaterZ = 0f;
 
     private void Awake()
     {
@@ -82,7 +82,7 @@ public class FishManager : MonoBehaviour
     {
         if (currentFishBehavior.currentStamina > 0)
         {
-            currentFishBehavior.currentStamina -= 0.2f;
+            currentFishBehavior.currentStamina -= 0.5f;
             ChangeText();
         }
 
@@ -93,7 +93,7 @@ public class FishManager : MonoBehaviour
     {
         if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
         {
-            currentFishBehavior.currentStamina += 0.2f;
+            currentFishBehavior.currentStamina += 0.5f;
             ChangeText();
         }
     }
@@ -106,11 +106,6 @@ public class FishManager : MonoBehaviour
     public void ChangeSpeedText(float speed)
     {
         speedText.text = speed.ToString();
-    }
-
-    public void ChangeBoolText(string direction)
-    {
-        boolIsGoingRight.text = direction;
     }
 
     public void MoreAerial()

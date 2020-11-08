@@ -14,9 +14,6 @@ public class FishingRodManager : MonoBehaviour
     public GameObject fishingRodGameObject;
     public FishingLine fishingLine;
 
-    [Header("Plus besoin si on prend le nouveau systeme de déplacement")]
-    public GameObject[] positionGroup;
-
     [Header("Pour montrer visuellement que le poisson est arrivé")]
     public Material catchMaterial;
     public Material dontCatchMaterial;
@@ -27,14 +24,10 @@ public class FishingRodManager : MonoBehaviour
 
     public bool bobberThrowed = false;
 
-    //Surement innutile plus tard
-    public float direction = 0f;
-
     [Header("Speed de la canne à peche")]
-    public float speed = 5f;
+    public float speed           = 5f;
     private float lastAxisValues = 0f;
     private float currentAxis;
-    public float axisValueForCalcul;
 
     private void Awake()
     {
@@ -64,8 +57,10 @@ public class FishingRodManager : MonoBehaviour
     public void LaunchBobber()
     {
         bobber.GetComponent<Bobber>().Throw();
+
         CameraManager.instance.CameraLookAtGameObject(bobber);
         CameraManager.instance.SaveBaseRotation();
+
         PlayerManager.instance.DisablePlayerMovement();
         PlayerManager.instance.EnableFishMovement();
     }
@@ -74,16 +69,17 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
-        bobber.transform.parent = fishingRodGameObject.transform;
-        bobber.transform.position = bobberPosition.transform.position;
-        //bobber.GetComponent<BobberBack>().ReturnToFishingRod(bobberPosition.transform.position);
-        fishingRodPivot.GetComponent<Rotate>().result = false;
-        bobber.transform.localScale    = bobberScale;
+        bobber.transform.parent        = fishingRodGameObject.transform   ;              //Reset parent
+        bobber.transform.position      = bobberPosition.transform.position;              //Reset Position
+        bobber.transform.localScale    = bobberScale   ;
         bobber.transform.localRotation = bobberRotation;
+
+        fishingRodPivot.GetComponent<Rotate>().result = false;                      //N'attend plus de pêcher un poisson
+
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
-        //FishManager.instance.currentFish.GetComponent<Destroy>().DestroyThisGameobject();
+
         //Fish Poisson
     }
 
@@ -97,69 +93,22 @@ public class FishingRodManager : MonoBehaviour
         bobber.GetComponent<MeshRenderer>().material = dontCatchMaterial;
     }
 
-    /*public void LeftFishingRod()
-    {
-        fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[0].transform.localPosition, speed * Time.fixedDeltaTime);
-    }
-
-    public void RightFishingRod()
-    {
-        fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[2].transform.localPosition, speed * Time.fixedDeltaTime);
-    }*/
-
     public void SetFishingRodPosition(float axisValue)
     {
-        axisValueForCalcul = axisValue;
         if (Mathf.Abs(axisValue - lastAxisValues) > 0.1f)
         {
             if (axisValue > 0)
             {
                 lastAxisValues = axisValue;
-                currentAxis = axisValue * 0.5f;
+                currentAxis    = axisValue * 0.5f;
             }
             else
             {
                 lastAxisValues = axisValue;
-                currentAxis= axisValue * 1.5f;
+                currentAxis    = axisValue * 1.5f;
             }
         }
         fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
         fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(50f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
-    }
-
-    public float GetPlayerForce()
-    {
-        direction = fishingRodGameObject.transform.localPosition.x;
-        if(direction > 0)
-        {
-            direction *= 3f;
-        }
-        return direction;
-    }
-
-    public bool IsSameDirection()
-    {
-        if(FishingManager.instance.fishIsGoingRight)
-        {
-            if(axisValueForCalcul > 0f)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            if (axisValueForCalcul < 0f)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
 }

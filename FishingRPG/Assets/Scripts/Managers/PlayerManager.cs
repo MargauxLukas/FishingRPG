@@ -14,8 +14,6 @@ public class PlayerManager : MonoBehaviour
     public bool blockLine;
     public bool pullTowards;
 
-    public float distancePlayerView;
-
     public float speed = 9f;
 
     private void Awake()
@@ -81,6 +79,5 @@ public class PlayerManager : MonoBehaviour
         blockLine = false;
         pullTowards = false;
         //FishingRod retourne progressivement vers 0 si poisson est opposé !
-
     }
 }

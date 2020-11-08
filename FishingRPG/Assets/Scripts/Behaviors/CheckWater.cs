@@ -14,6 +14,5 @@ public class CheckWater : MonoBehaviour
     private void Update()
     {
         isWater = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);
-        Debug.Log(isWater);
     }
 }

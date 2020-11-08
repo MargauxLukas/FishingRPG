@@ -7,7 +7,6 @@ public class Rotate : MonoBehaviour
 {
     Quaternion FishingRodRotaBase;
     bool isMax = false;
-    public float timeBeforeLaunch = 0.2f;
 
     public bool result = false;
 

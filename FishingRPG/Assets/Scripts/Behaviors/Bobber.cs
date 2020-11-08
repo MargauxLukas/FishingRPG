@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Bobber : MonoBehaviour
 {
-    public float throwPower = 1f;                           //Force ajouté lors du lancé du flotteur
     bool canBeLaunch = false;
 
-    [System.NonSerialized]
-    public float timer = 0f;
+    private float timer = 0f;
     public float maxTime = 2f;
 
     public Transform bezier1;
@@ -47,8 +45,8 @@ public class Bobber : MonoBehaviour
     public Vector3 GetAerialPosition(float currentTime)
     {
         float x = Mathf.Pow(1 - currentTime, 2) * bezier1.position.x + 2 * (1 - currentTime) * currentTime * bezier2.position.x + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.x + bezier3.x);
-        float y = Mathf.Pow(1 - currentTime, 2) * bezier1.position.y + 2 * (1 - currentTime) * currentTime * bezier2.position.x + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.y + bezier3.y);
-        float z = Mathf.Pow(1 - currentTime, 2) * bezier1.position.z + 2 * (1 - currentTime) * currentTime * bezier2.position.x + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.z + bezier3.z); ;
+        float y = Mathf.Pow(1 - currentTime, 2) * bezier1.position.y + 2 * (1 - currentTime) * currentTime * bezier2.position.y + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.y + bezier3.y);
+        float z = Mathf.Pow(1 - currentTime, 2) * bezier1.position.z + 2 * (1 - currentTime) * currentTime * bezier2.position.z + currentTime * (PlayerManager.instance.playerView.GetComponent<PlayerView>().cone.z + bezier3.z);
         return new Vector3(x, y, z);
     }
 

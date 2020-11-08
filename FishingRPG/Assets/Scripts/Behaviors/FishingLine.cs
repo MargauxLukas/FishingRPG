@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class FishingLine : MonoBehaviour
 {
-    public float currentTension = 1000;
-    public float maxTension = 1000;
+    public float currentTension = 100;
+    public float maxTension = 100;
     public Text textInt;
 
     public void LineIsBroken()
