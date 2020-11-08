@@ -5,6 +5,4 @@ using UnityEngine;
 public class FishStats : MonoBehaviour
 {
     public FishyFiche fiche;
-
-    public float qBalancing;
 }

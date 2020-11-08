@@ -19,7 +19,7 @@ public class FishyFiche: ScriptableObject
     [Header("Fish Stats")]
     public float strength;
     public float weight;
-    public float speed;
+    public float agility;
     public float magicResistance;
 
     [Header("Butcher Drops")]

@@ -36,7 +36,7 @@ public class FishBehavior : MonoBehaviour
         fishyFiche     = fishStats.fiche   ;
         currentStamina = fishyFiche.stamina;
         currentLife    = fishyFiche.life   ;
-        baseSpeed      = UtilitiesManager.instance.GetVpL(fishyFiche.speed);
+        baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
     }
 
     void Update()

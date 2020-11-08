@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class FishingLine : MonoBehaviour
 {
+    public float fCurrent;
+    public float fMax;
+
     public float currentTension = 100;
     public float maxTension = 100;
     public Text textInt;

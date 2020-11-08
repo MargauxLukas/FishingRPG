@@ -12,6 +12,7 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public Transform pointC;
     public FishingLine fishingLine;
 
     [Header("Pour montrer visuellement que le poisson est arrivé")]
@@ -28,6 +29,8 @@ public class FishingRodManager : MonoBehaviour
     public float speed           = 5f;
     private float lastAxisValues = 0f;
     private float currentAxis;
+
+    public float distanceCP;
 
     private void Awake()
     {
@@ -51,6 +54,11 @@ public class FishingRodManager : MonoBehaviour
         {
             bobberThrowed = true;
             LaunchBobber();
+        }
+
+        if (FishingManager.instance.currentFish != null)
+        {
+            distanceCP = Vector3.Distance(pointC.position, bobber.transform.position);
         }
     }
 

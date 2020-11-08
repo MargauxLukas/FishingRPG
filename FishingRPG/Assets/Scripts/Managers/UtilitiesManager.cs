@@ -6,8 +6,8 @@ public class UtilitiesManager : MonoBehaviour
 {
     public static UtilitiesManager instance;
 
-    public float getVplBalancing;
-    public float getVpjBalancing;
+    public float getFishSpeedBalancing;
+
 
     private void Awake()
     {
@@ -19,9 +19,9 @@ public class UtilitiesManager : MonoBehaviour
         instance = this;
     }
 
-    //Vitesse du poisson quand il est libre
-    public float GetVpL(float fishSpeed)
+    //Vitesse du poisson : Agilité * q
+    public float GetFishSpeed(float fishAgility)
     {
-        return fishSpeed * getVplBalancing;
+        return fishAgility * getFishSpeedBalancing;
     }
 }
