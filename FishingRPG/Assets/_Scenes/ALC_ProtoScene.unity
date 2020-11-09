@@ -269,6 +269,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9083004205984916571, guid: 137698eebcd9e5a4d9385e8ee43cabcf, type: 3}
   m_PrefabInstance: {fileID: 5935907168573559795}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &458970818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458970817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cba682bc3ed644ca322bf580f00ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strenght: 5
+  constitution: 5
+  dexterity: 5
+  intelligence: 5
+  speedMovement: 0
+  speedMovementWhileFishing: 0
+  distanceMax: 0
+  currentDistance: 0
+  fishRewindSpeed: 0
 --- !u!1 &665098162
 GameObject:
   m_ObjectHideFlags: 0
