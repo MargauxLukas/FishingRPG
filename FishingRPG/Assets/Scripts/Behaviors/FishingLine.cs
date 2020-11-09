@@ -13,6 +13,7 @@ public class FishingLine : MonoBehaviour
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
+        currentTension = 100;
     }
 
     public void TensionDown()
@@ -24,6 +25,20 @@ public class FishingLine : MonoBehaviour
         {
             LineIsBroken();
         }
+    }
+
+    public void TensionUp()
+    {
+        if (currentTension <= maxTension)
+        {
+            currentTension += 0.08f;
+        }
+        else
+        {
+            currentTension = 100f;
+        }
+
+        ChangeText();
     }
 
     public void ChangeText()
