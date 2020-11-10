@@ -30,6 +30,10 @@ public class FishManager : MonoBehaviour
     private float aerialZ;
     private float aerialEnterWaterZ = 0f;
 
+    private float timer = 0f;
+    private float maxTime = 1f;
+    private bool isEnduranceJustDown = false;
+
     private void Awake()
     {
         Init();
@@ -38,6 +42,20 @@ public class FishManager : MonoBehaviour
     public virtual void Init()
     {
         instance = this;
+    }
+
+    private void Update()
+    {
+        if(isEnduranceJustDown)
+        {
+            timer += Time.fixedDeltaTime;
+
+            if(timer >= maxTime)
+            {
+                isEnduranceJustDown = false;
+                timer = 0f;
+            }
+        }
     }
 
     public void IsExtenued()
@@ -80,13 +98,18 @@ public class FishManager : MonoBehaviour
 
     public void DownEndurance()
     {
-        if (currentFishBehavior.currentStamina > 0)
+        if (!isEnduranceJustDown)
         {
-            currentFishBehavior.currentStamina -= 0.5f;
-            ChangeText();
-        }
+            if (currentFishBehavior.currentStamina > 0)
+            {
+                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber();
+                ChangeText();
+            }
 
-        currentFishBehavior.CheckEndurance();
+            currentFishBehavior.CheckEndurance();
+
+            isEnduranceJustDown = true;
+        }
     }
 
     public void UpEndurance()

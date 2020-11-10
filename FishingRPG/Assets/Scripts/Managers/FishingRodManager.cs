@@ -131,12 +131,30 @@ public class FishingRodManager : MonoBehaviour
 
     public void CheckFCurrent()
     {
-        if(distanceCP > fishingLine.fCurrent && distanceCP < fishingLine.fMax)
+        if(fishingLine.isBlocked && distanceCP > fishingLine.fCurrent)
+        {
+            FishManager.instance.DownEndurance();
+            fishingLine.TensionDown();
+        }
+        else if(fishingLine.fCurrent >= fishingLine.fMax) 
+        { 
+            fishingLine.isFCurrentAtMax(); 
+        }
+        else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)
         {
             fishingLine.fCurrent = distanceCP;
             ChangeTextFCurrent();
-            fishingLine.isFCurrentAtMax();
         }
+    }
+
+    public bool CheckIfOverFCritique()
+    {
+        if(distanceCP > fishingLine.fCurrent + fishingLine.fMax)
+        {
+            return true;
+        }
+
+        return false;
     }
 
 
@@ -148,6 +166,15 @@ public class FishingRodManager : MonoBehaviour
 
     public void ChangeTextFCurrent()
     {
+        if(fishingLine.fCurrent < fishingLine.fMax)
+        {
+            fCurrentText.color = Color.green;
+        }
+        if (fishingLine.fCurrent >= fishingLine.fMax)
+        {
+            fCurrentText.color = Color.red;
+        }
+
         fCurrentText.text = fishingLine.fCurrent.ToString();
     }
     public void ChangeTextFMax()

@@ -54,6 +54,7 @@ public class PlayerManager : MonoBehaviour
     public void IsBlockingLine()
     {
         blockLine = true;
+        FishingRodManager.instance.fishingLine.isBlocked = true;
     }
 
     public void IsPullingTowards()
@@ -78,6 +79,10 @@ public class PlayerManager : MonoBehaviour
     {
         blockLine = false;
         pullTowards = false;
-        //FishingRod retourne progressivement vers 0 si poisson est opposé !
+
+        if (FishingRodManager.instance.fishingLine.fCurrent < FishingRodManager.instance.fishingLine.fMax)
+        {
+            FishingRodManager.instance.fishingLine.isBlocked = false;
+        }
     }
 }

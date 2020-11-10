@@ -16,22 +16,45 @@ public class FishingLine : MonoBehaviour
 
     public bool isBlocked = false;
 
+    private float timer = 0f;
+    private float maxTime = 1f;
+    private bool isTensionJustDown = false;
+
+    private void Update()
+    {
+        if(isTensionJustDown)
+        {
+            timer += Time.fixedDeltaTime;
+
+            if(timer >= maxTime)
+            {
+                isTensionJustDown = false;
+                timer = 0f;
+            }
+        }
+    }
+
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
-        currentTension = 100;
+        currentTension = maxTension;
     }
 
     public void TensionDown()
     {
-        currentTension -= 0.5f;
-        ChangeText();
-
-        if(currentTension <= 0)
+        if (!isTensionJustDown)
         {
-            currentTension = 0;
+            currentTension -= UtilitiesManager.instance.GetLossTensionNumber();
             ChangeText();
-            LineIsBroken();
+
+            if (currentTension <= 0)
+            {
+                currentTension = 0;
+                ChangeText();
+                LineIsBroken();
+            }
+
+            isTensionJustDown = true;
         }
     }
 
@@ -56,12 +79,9 @@ public class FishingLine : MonoBehaviour
     }
 
     public void isFCurrentAtMax()
-    {
-        if(fCurrent >= fMax)
-        {
+    {   
             isBlocked = true;
-            fCurrent = fMax;
-        }
+            fCurrent = fMax;    
     }
 
     public void ChangeText()

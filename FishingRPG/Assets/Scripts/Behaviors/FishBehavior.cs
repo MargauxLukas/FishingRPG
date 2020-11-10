@@ -63,14 +63,12 @@ public class FishBehavior : MonoBehaviour
                 }
                 else
                 {
-                    //RayCast à lancer ou GameObject devant le poisson pour savoir vers ou il va
-                    if (Vector3.Distance(transform.position + transform.right * 1f * Time.fixedDeltaTime, FishingRodManager.instance.pointC.transform.position) > FishingRodManager.instance.fishingLine.fMax)
+                    if (FishingRodManager.instance.CheckIfOverFCritique())
                     {
-                        //DONT MOVE
+                        //Poisson dépasse zone critique
                     }
                     else
                     {
-                        Debug.Log("hey");
                         transform.position += transform.right * 1f * Time.fixedDeltaTime;
                     }
                 }
@@ -99,6 +97,20 @@ public class FishBehavior : MonoBehaviour
                 timer = 0f;
             }
         }
+
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position, transform.right, out hit, 4f))
+        {
+            Debug.DrawRay(transform.position, transform.right * hit.distance, Color.yellow);
+            Debug.Log("HIT");
+            ChooseDirectionOpposite();
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.right * 4f, Color.white);
+            Debug.Log("Did not Hit");
+        }
     }
 
     public Vector3 GetAerialPosition(float currentTime )
@@ -113,6 +125,12 @@ public class FishBehavior : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0f, Random.Range(0, 360), 0f);
         directionHasChoosen = true;
+    }
+
+    public void ChooseDirectionOpposite()
+    {
+        //Mis pour le moment en random
+        transform.rotation = Quaternion.Euler(0f, Random.Range(0, 360), 0f);
     }
 
     public void CalculateSpeed()

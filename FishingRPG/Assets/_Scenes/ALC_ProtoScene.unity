@@ -608,6 +608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getFishSpeedBalancing: 0
+  qEnduranceLossBalancing: 17
+  qTensionLossBalancing: 40
 --- !u!1 &1158046327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2070,10 @@ PrefabInstance:
     - target: {fileID: 6755928522560432922, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
       propertyPath: fMax
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928522560432922, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: fCritique
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
