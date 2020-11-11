@@ -9,5 +9,5 @@ public class FishyDrop : ScriptableObject
     public Sprite appearance;
     public string type;
     public string rarity;
-    [Range(1f, 100f)] public float dropRate;
+    public float dropRate;
 }
