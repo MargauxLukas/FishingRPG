@@ -20,9 +20,11 @@ MonoBehaviour:
   stamina: 100
   strength: 10
   weight: 5
-  speed: 2
+  agility: 2
   magicResistance: 6
   drops:
-  - {fileID: 11400000, guid: db6e5514df0459a42babb40375b257f7, type: 2}
+  - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
   - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
+  - {fileID: 11400000, guid: 88b72cfa1a350424c995f8a1310dccb2, type: 2}
+  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
   patterns: []

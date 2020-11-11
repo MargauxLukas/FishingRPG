@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 
   appearance: {fileID: 0}
   type: Oeil de Pequessivo
-  rarity: "\xC9pic"
-  dropRate: 20
+  rarity: Epic
+  dropRate: 10
