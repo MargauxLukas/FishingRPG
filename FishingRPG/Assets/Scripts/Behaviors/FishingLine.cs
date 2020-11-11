@@ -95,7 +95,7 @@ public class FishingLine : MonoBehaviour
 
     public void FCurrentDown()
     {
-        fCurrent -= 0.01f;
+        fCurrent -= 0.05f;
     }
 
     public void GetFCurrent()

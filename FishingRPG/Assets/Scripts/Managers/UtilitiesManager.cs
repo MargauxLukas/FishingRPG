@@ -11,6 +11,7 @@ public class UtilitiesManager : MonoBehaviour
     public float qEnduranceLossBalancing;
     public float qTensionLossBalancing;
     public float qMultiplicatorBalancing;
+    public float qApplicatedForceBalancing;
     private void Awake()
     {
         Init();
@@ -25,6 +26,12 @@ public class UtilitiesManager : MonoBehaviour
     public float GetFishSpeed(float fishAgility)
     {
         return fishAgility * getFishSpeedBalancing;
+    }
+
+    //Force appliqué du Joueur sur le poisson quand CP > FCurrent
+    public float GetApplicatedForce()
+    {
+        return ((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (PlayerManager.instance.playerStats.strenght / FishManager.instance.currentFishBehavior.fishyFiche.weight) * qApplicatedForceBalancing;
     }
 
     //Perte d'endurance par seconde (Float)
