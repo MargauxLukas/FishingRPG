@@ -20,7 +20,7 @@ public class FishyFicheEditor : Editor
 
     SerializedProperty strength_s;
     SerializedProperty weight_s;
-    SerializedProperty speed_s;
+    SerializedProperty agility_s;
     SerializedProperty magicResistance_s;
 
     SerializedProperty drops_s;
@@ -43,7 +43,7 @@ public class FishyFicheEditor : Editor
 
         strength_s        = serializedObject.FindProperty(nameof(FishyFiche.strength       ));
         weight_s          = serializedObject.FindProperty(nameof(FishyFiche.weight         ));
-        speed_s           = serializedObject.FindProperty(nameof(FishyFiche.speed          ));
+        agility_s           = serializedObject.FindProperty(nameof(FishyFiche.agility          ));
         magicResistance_s = serializedObject.FindProperty(nameof(FishyFiche.magicResistance));
 
         drops_s           = serializedObject.FindProperty(nameof(FishyFiche.drops          ));
@@ -111,7 +111,7 @@ public class FishyFicheEditor : Editor
 
         EditorGUILayout.BeginHorizontal();
         GUI.contentColor = new Color32(0, 180, 85, 255);
-        EditorGUILayout.LabelField("Speed : " + speed_s.floatValue, whiteText);
+        EditorGUILayout.LabelField("Agility : " + agility_s.floatValue, whiteText);
         GUILayout.FlexibleSpace();
         GUI.contentColor = new Color32(36, 141, 206, 255);
         EditorGUILayout.LabelField("Magic Res. : " + magicResistance_s.floatValue, whiteText);
@@ -140,7 +140,7 @@ public class FishyFicheEditor : Editor
         {
             switch (currentFish.drops[i].rarity)
             {
-                case "Commun":
+                case "Common":
                     rarityColor = new Color32(0, 0, 0, 255);
                     break;
 
@@ -148,11 +148,11 @@ public class FishyFicheEditor : Editor
                     rarityColor = new Color32(0, 112, 221, 255);
                     break;
                 
-                case "Épic":
+                case "Epic":
                     rarityColor = new Color32(163, 53, 238, 255);
                     break;
                 
-                case "Légendaire":
+                case "Legendary":
                     rarityColor = new Color32(255, 128, 0, 255);
                     break;
             }

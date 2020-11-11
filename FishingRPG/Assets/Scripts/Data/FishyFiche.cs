@@ -7,7 +7,6 @@ using UnityEditor;
 public class FishyFiche: ScriptableObject
 {
     //Temporary values waiting for tsv import
-
     [Header("Fish Type")]
     public string ID = "PQS_0";
     public Sprite appearance;
@@ -21,7 +20,7 @@ public class FishyFiche: ScriptableObject
     [Header("Fish Stats")]
     public float strength = 10;
     public float weight = 5;
-    public float speed = 2;
+    public float agility = 2;
     public float magicResistance = 6;
 
     [Header("Butcher Drops")]
