@@ -83,7 +83,7 @@ public class FishingLine : MonoBehaviour
     {
         if (currentTension <= maxTension)
         {
-            currentTension += 0.2f;
+            currentTension += 0.3f;
         }
         else
         {

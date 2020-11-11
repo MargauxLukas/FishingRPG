@@ -167,6 +167,11 @@ public class FishingRodManager : MonoBehaviour
             fishingLine.isFCurrentAtMax(); 
         }
 
+        if(distanceCP < fishingLine.fCurrent)
+        {
+            fishingLine.TensionUp();
+        }
+
         ChangeTextFCurrent();
     }
 

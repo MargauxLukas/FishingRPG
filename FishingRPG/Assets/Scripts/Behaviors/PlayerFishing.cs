@@ -22,12 +22,10 @@ public class PlayerFishing : MonoBehaviour
 
             if (Input.GetAxis("Right Trigger") > 0.1f)
             {
-                Debug.Log("Ravale");
                 PlayerManager.instance.IsTakingLine();
             }
             if (Input.GetAxis("Left Trigger") > 0.1f)
             {
-                Debug.Log("Blocking");
                 PlayerManager.instance.IsBlockingLine();
             }
             
