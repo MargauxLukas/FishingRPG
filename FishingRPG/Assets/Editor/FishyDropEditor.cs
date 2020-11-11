@@ -56,7 +56,10 @@ public class FishyDropEditor : Editor
         //Initiation for colored texts
         GUIStyle whiteText = new GUIStyle(EditorStyles.label);
         whiteText.normal.textColor = Color.white;
+
+        //Label style for all stats
         float baseLabel = EditorGUIUtility.labelWidth;
+        EditorGUIUtility.labelWidth /= 2;
 
         #region Draw Rarity and Drop rate
         Color32 rarityColor = new Color32();
