@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3afaec6028b27418eb3e91b3c32ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getFishSpeedBalancing: 0.2
+  getFishSpeedBalancing: 0.6
   qEnduranceLossBalancing: 17
   qTensionLossBalancing: 20
   qMultiplicatorBalancing: 1.7
