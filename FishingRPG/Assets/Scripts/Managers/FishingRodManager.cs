@@ -172,7 +172,7 @@ public class FishingRodManager : MonoBehaviour
 
     public bool CheckIfOverFCritique()
     {
-        if(distanceCP > fishingLine.fCurrent + fishingLine.fMax)
+        if(distanceCP > fishingLine.fCurrent + fishingLine.fCritique)
         {
             FCritiqueText.color = Color.green;
             return true;

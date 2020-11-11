@@ -71,10 +71,10 @@ public class FishBehavior : MonoBehaviour
                         if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
                         {
                             transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                            Debug.Log("Force A : " + UtilitiesManager.instance.GetApplicatedForce());
+                            //Debug.Log("Force A : " + UtilitiesManager.instance.GetApplicatedForce());
                             transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
                             transform.rotation = saveDirection;
-                            Debug.Log("Vitesse base : " + baseSpeed);
+                            //Debug.Log("Vitesse base : " + baseSpeed);
                             transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
                         }
                         else
@@ -114,13 +114,11 @@ public class FishBehavior : MonoBehaviour
         if(Physics.Raycast(transform.position, transform.forward, out hit, 4f))
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-            Debug.Log("HIT");
             ChooseDirectionOpposite();
         }
         else
         {
             Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
-            Debug.Log("Did not Hit");
         }
     }
 
@@ -135,14 +133,15 @@ public class FishBehavior : MonoBehaviour
     public void ChooseDirection()
     {
         transform.rotation = Quaternion.Euler(0f, Random.Range(0, 360), 0f);
+
         saveDirection = transform.rotation;
         directionHasChoosen = true;
     }
 
     public void ChooseDirectionOpposite()
     {
-        //Mis pour le moment en random
-        transform.rotation = Quaternion.Euler(0f, Random.Range(0, 360), 0f);
+        //Debug.Log("HIT donc change direction : " + transform.rotation.y + " pour " + transform.rotation.y + 180f);
+        transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
     }
 
     public void CalculateSpeed()
