@@ -23,6 +23,7 @@ public class FishBehavior : MonoBehaviour
 
     [System.NonSerialized]
     public float timer         = 0f;
+    public float timerAerial   = 0f;
     public float maxTime       = 2f;
     public float timeDirection = 3f;
 
@@ -92,14 +93,14 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            timer += Time.deltaTime;
+            timerAerial += Time.deltaTime;
 
-            transform.position = GetAerialPosition(timer / maxTime);
+            transform.position = GetAerialPosition(timerAerial / maxTime);
 
-            if (timer >= maxTime)
+            if (timerAerial >= maxTime)
             {
                 FishManager.instance.FishRecuperation();
-                timer = 0f;
+                timerAerial = 0f;
             }
         }
 

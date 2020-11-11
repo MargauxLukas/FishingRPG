@@ -25,7 +25,7 @@ public class FishingLine : MonoBehaviour
 
     private void Update()
     {
-        if(isTensionJustDown)
+        /*if(isTensionJustDown)
         {
             timer += Time.fixedDeltaTime;
 
@@ -34,7 +34,7 @@ public class FishingLine : MonoBehaviour
                 isTensionJustDown = false;
                 timer = 0f;
             }
-        }
+        }*/
     }
 
     public void LineIsBroken()
@@ -45,9 +45,7 @@ public class FishingLine : MonoBehaviour
 
     public void TensionDown()
     {
-        if (!isTensionJustDown)
-        {
-            currentTension -= UtilitiesManager.instance.GetLossTensionNumber();
+            currentTension -= UtilitiesManager.instance.GetLossTensionNumber()/60;
             ChangeText();
 
             if (currentTension <= 0)
@@ -55,10 +53,7 @@ public class FishingLine : MonoBehaviour
                 currentTension = 0;
                 ChangeText();
                 LineIsBroken();
-            }
-
-            isTensionJustDown = true;
-        }
+            }    
     }
 
     public void TensionDownTakingLine()
