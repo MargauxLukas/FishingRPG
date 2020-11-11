@@ -7,25 +7,25 @@ using UnityEditor;
 public class FishyFiche: ScriptableObject
 {
     //Temporary values waiting for tsv import
-    [Header("Fish Type")]
+    //[Header("Fish Type")]
     public string ID = "PQS_0";
     public Sprite appearance;
     public string species = "Pequessivo";
     public int tier = 0;
 
-    [Header("Fish Constitution")]
+    //[Header("Fish Constitution")]
     public float life = 100;
     public float stamina = 100;
 
-    [Header("Fish Stats")]
+    //[Header("Fish Stats")]
     public float strength = 10;
     public float weight = 5;
     public float agility = 2;
     public float magicResistance = 6;
 
-    [Header("Butcher Drops")]
+    //[Header("Butcher Drops")]
     public FishyDrop[] drops;
 
-    [Header("Fish Patterns")]
+   //[Header("Fish Patterns")]
     public MonoBehaviour[] patterns;
 }

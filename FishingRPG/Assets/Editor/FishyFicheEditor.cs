@@ -57,7 +57,7 @@ public class FishyFicheEditor : Editor
     {
         #region Draw Title
         EditorGUILayout.BeginHorizontal();
-        var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 26, font = (Font)Resources.Load("GLECB", typeof(Font)) };
+        var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("GLECB", typeof(Font)) };
         EditorGUILayout.LabelField("#" + ID_s.stringValue + " - " + species_s.stringValue + " - Tier " + tier_s.intValue, titleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(50));
         EditorGUILayout.EndHorizontal();
         #endregion
@@ -75,10 +75,15 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.Space();
         #endregion
 
+        //Style for all subtitles
+        var subtitleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 25, font = (Font)Resources.Load("GLECB", typeof(Font)) };
+
+        //Initiation for colored texts
         GUIStyle whiteText = new GUIStyle(EditorStyles.label);
         whiteText.normal.textColor = Color.white;
         float baseLabel = EditorGUIUtility.labelWidth;
 
+        //Label style for all stats
         EditorGUIUtility.labelWidth /= 2;
 
         #region Draw Life and Stamina
@@ -102,6 +107,11 @@ public class FishyFicheEditor : Editor
 
         #region Stats
         EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Stats", subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
+
+        EditorGUILayout.BeginHorizontal();
         GUI.contentColor = new Color32(224, 0, 59, 255);
         EditorGUILayout.LabelField("Strength : " + strength_s.floatValue, whiteText);
         GUILayout.FlexibleSpace();
@@ -124,16 +134,23 @@ public class FishyFicheEditor : Editor
         Handles.color = Color.gray;
         Handles.DrawLine(new Vector2(rect2.x - 15, rect2.y), new Vector2(rect2.width + 15, rect2.y));
         EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
         #endregion
 
-        //Temporary waiting for tsv import
+        #region Draw Drops list
         EditorGUIUtility.labelWidth = baseLabel;
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Butcher's Drops" , subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
+
+        //Temporary waiting for tsv import
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(drops_s);
         EditorGUILayout.EndHorizontal();
         Repaint();
 
-        #region Draw Drops list
         EditorGUIUtility.labelWidth /= 2.5f;
         Color32 rarityColor = new Color32();
         for (int i = 0; i < currentFish.drops.Length; i++)
@@ -174,9 +191,15 @@ public class FishyFicheEditor : Editor
         Handles.color = Color.gray;
         Handles.DrawLine(new Vector2(rect3.x - 15, rect3.y), new Vector2(rect3.width + 15, rect3.y));
         EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
         #endregion
 
         #region Draw Patterns list
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Patterns", subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
+
         EditorGUIUtility.labelWidth = baseLabel;
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(patterns_s);
