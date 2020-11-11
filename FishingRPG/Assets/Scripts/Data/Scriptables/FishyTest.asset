@@ -20,7 +20,7 @@ MonoBehaviour:
   stamina: 100
   strength: 5
   weight: 5
-  speed: 5
+  agility: 5
   magicResistance: 5
   drops: []
   patterns: []

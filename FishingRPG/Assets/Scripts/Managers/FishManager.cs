@@ -112,6 +112,22 @@ public class FishManager : MonoBehaviour
         }
     }
 
+    public void DownEnduranceTakingLine()
+    {
+        if (!isEnduranceJustDown)
+        {
+            if (currentFishBehavior.currentStamina > 0)
+            {
+                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine();
+                ChangeText();
+            }
+
+            currentFishBehavior.CheckEndurance();
+
+            isEnduranceJustDown = true;
+        }
+    }
+
     public void UpEndurance()
     {
         if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)

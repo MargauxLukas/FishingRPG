@@ -10,6 +10,7 @@ public class UtilitiesManager : MonoBehaviour
 
     public float qEnduranceLossBalancing;
     public float qTensionLossBalancing;
+    public float qMultiplicatorBalancing;
     private void Awake()
     {
         Init();
@@ -36,5 +37,17 @@ public class UtilitiesManager : MonoBehaviour
     public float GetLossTensionNumber()
     {
         return ((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.fishyFiche.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing;
+    }
+
+    //Perte d'endurance par seconde (float) * multiplicateur
+    public float GetLossEnduranceNumberTakingLine()
+    {
+        return (((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * qEnduranceLossBalancing) * qMultiplicatorBalancing;
+    }
+
+    //Perte de Tension par seconde (Float) * multiplicateur
+    public float GetLossTensionNumberTakingLine()
+    {
+        return (((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.fishyFiche.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing) * qMultiplicatorBalancing;
     }
 }

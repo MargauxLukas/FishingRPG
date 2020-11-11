@@ -15,6 +15,9 @@ public class FishingLine : MonoBehaviour
     public Text textInt;
 
     public bool isBlocked = false;
+    public bool isTaken = false;
+    public Text textBlocked;
+    public Text textTaken  ;
 
     private float timer = 0f;
     private float maxTime = 1f;
@@ -58,6 +61,24 @@ public class FishingLine : MonoBehaviour
         }
     }
 
+    public void TensionDownTakingLine()
+    {
+        if (!isTensionJustDown)
+        {
+            currentTension -= UtilitiesManager.instance.GetLossTensionNumberTakingLine();
+            ChangeText();
+
+            if (currentTension <= 0)
+            {
+                currentTension = 0;
+                ChangeText();
+                LineIsBroken();
+            }
+
+            isTensionJustDown = true;
+        }
+    }
+
     public void TensionUp()
     {
         if (currentTension <= maxTension)
@@ -72,6 +93,11 @@ public class FishingLine : MonoBehaviour
         ChangeText();
     }
 
+    public void FCurrentDown()
+    {
+        fCurrent -= 0.01f;
+    }
+
     public void GetFCurrent()
     {
         fCurrent = Vector3.Distance(FishingRodManager.instance.pointC.position, FishingRodManager.instance.bobber.transform.position) * 1.1f;
@@ -79,9 +105,10 @@ public class FishingLine : MonoBehaviour
     }
 
     public void isFCurrentAtMax()
-    {   
-            isBlocked = true;
-            fCurrent = fMax;    
+    {
+        isBlocked = true;
+        fCurrent = fMax;
+        textBlocked.color = Color.green;
     }
 
     public void ChangeText()

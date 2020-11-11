@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerStats playerStats;
 
     public bool blockLine;
-    public bool pullTowards;
+    public bool takingLine;
 
     public float speed = 9f;
 
@@ -55,11 +55,14 @@ public class PlayerManager : MonoBehaviour
     {
         blockLine = true;
         FishingRodManager.instance.fishingLine.isBlocked = true;
+        FishingRodManager.instance.fishingLine.textBlocked.color = Color.green;
     }
 
-    public void IsPullingTowards()
+    public void IsTakingLine()
     {
-        pullTowards = true;
+        takingLine = true;
+        FishingRodManager.instance.fishingLine.isTaken = true;
+        FishingRodManager.instance.fishingLine.textTaken.color = Color.green;
     }
 
     public void IsAerial()
@@ -78,11 +81,15 @@ public class PlayerManager : MonoBehaviour
     public void NothingPushed()
     {
         blockLine = false;
-        pullTowards = false;
+        takingLine = false;
+
+        FishingRodManager.instance.fishingLine.isTaken = false;
+        FishingRodManager.instance.fishingLine.textTaken.color = Color.red;
 
         if (FishingRodManager.instance.fishingLine.fCurrent < FishingRodManager.instance.fishingLine.fMax)
         {
             FishingRodManager.instance.fishingLine.isBlocked = false;
+            FishingRodManager.instance.fishingLine.textBlocked.color = Color.red;
         }
     }
 }

@@ -131,20 +131,42 @@ public class FishingRodManager : MonoBehaviour
 
     public void CheckFCurrent()
     {
-        if(fishingLine.isBlocked && distanceCP > fishingLine.fCurrent)
+        if (fishingLine.isTaken)
         {
-            FishManager.instance.DownEndurance();
-            fishingLine.TensionDown();
+            if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
+            {
+                fishingLine.FCurrentDown();
+
+                if (distanceCP > fishingLine.fCurrent)
+                {
+                    FishManager.instance.DownEnduranceTakingLine();
+                    fishingLine.TensionDownTakingLine();
+                }
+            }
+            else
+            {
+                //Ravalement annulé
+            }
         }
-        else if(fishingLine.fCurrent >= fishingLine.fMax) 
-        { 
-            fishingLine.isFCurrentAtMax(); 
-        }
+        else if (fishingLine.isBlocked)
+        {
+            if (distanceCP > fishingLine.fCurrent)
+            {
+                FishManager.instance.DownEndurance();
+                fishingLine.TensionDown();
+            }
+        }     
         else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)
         {
             fishingLine.fCurrent = distanceCP;
-            ChangeTextFCurrent();
         }
+
+        if (fishingLine.fCurrent >= fishingLine.fMax) 
+        { 
+            fishingLine.isFCurrentAtMax(); 
+        }
+
+        ChangeTextFCurrent();
     }
 
     public bool CheckIfOverFCritique()

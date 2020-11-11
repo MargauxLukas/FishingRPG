@@ -31,6 +31,8 @@ public class FishBehavior : MonoBehaviour
 
     private bool directionHasChoosen = false;
 
+    private Quaternion saveDirection;
+
     private void Start()
     {
         fishyFiche     = fishStats.fiche   ;
@@ -43,7 +45,7 @@ public class FishBehavior : MonoBehaviour
     {
         if (!FishManager.instance.isAerial)
         {
-            if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
+            if (PlayerManager.instance.blockLine || PlayerManager.instance.takingLine)
             {
                 //Je sais pas 
             }
@@ -63,13 +65,21 @@ public class FishBehavior : MonoBehaviour
                 }
                 else
                 {
-                    if (FishingRodManager.instance.CheckIfOverFCritique())
+                    /*if (FishingRodManager.instance.CheckIfOverFCritique())
                     {
                         //Poisson dépasse zone critique
+                    }*/
+
+                    if(FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+                    {
+                        transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z));
+                        transform.position += transform.forward * 0.5f * Time.fixedDeltaTime;
+                        transform.rotation = saveDirection;
+                        transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
                     }
                     else
                     {
-                        transform.position += transform.right * 1f * Time.fixedDeltaTime;
+                        transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
                     }
                 }
             }
@@ -100,15 +110,15 @@ public class FishBehavior : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.right, out hit, 4f))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 4f))
         {
-            Debug.DrawRay(transform.position, transform.right * hit.distance, Color.yellow);
+            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
             Debug.Log("HIT");
             ChooseDirectionOpposite();
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.right * 4f, Color.white);
+            Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
             Debug.Log("Did not Hit");
         }
     }
@@ -124,6 +134,7 @@ public class FishBehavior : MonoBehaviour
     public void ChooseDirection()
     {
         transform.rotation = Quaternion.Euler(0f, Random.Range(0, 360), 0f);
+        saveDirection = transform.rotation;
         directionHasChoosen = true;
     }
 
