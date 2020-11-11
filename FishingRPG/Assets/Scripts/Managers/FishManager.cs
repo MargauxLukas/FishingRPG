@@ -46,7 +46,7 @@ public class FishManager : MonoBehaviour
 
     private void Update()
     {
-        if(isEnduranceJustDown)
+        /*if(isEnduranceJustDown)
         {
             timer += Time.fixedDeltaTime;
 
@@ -55,7 +55,7 @@ public class FishManager : MonoBehaviour
                 isEnduranceJustDown = false;
                 timer = 0f;
             }
-        }
+        }*/
     }
 
     public void IsExtenued()
@@ -98,34 +98,26 @@ public class FishManager : MonoBehaviour
 
     public void DownEndurance()
     {
-        if (!isEnduranceJustDown)
+        if (currentFishBehavior.currentStamina > 0)
         {
-            if (currentFishBehavior.currentStamina > 0)
-            {
-                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber();
-                ChangeText();
-            }
-
-            currentFishBehavior.CheckEndurance();
-
-            isEnduranceJustDown = true;
+            currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber()/60;
+            ChangeText();
         }
+
+        currentFishBehavior.CheckEndurance();
     }
 
     public void DownEnduranceTakingLine()
     {
-        if (!isEnduranceJustDown)
+        if (currentFishBehavior.currentStamina > 0)
         {
-            if (currentFishBehavior.currentStamina > 0)
-            {
-                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine();
-                ChangeText();
-            }
-
-            currentFishBehavior.CheckEndurance();
-
-            isEnduranceJustDown = true;
+            currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine()/60;
+            ChangeText();
         }
+
+        currentFishBehavior.CheckEndurance();
+
+        isEnduranceJustDown = true;
     }
 
     public void UpEndurance()
@@ -134,6 +126,12 @@ public class FishManager : MonoBehaviour
         {
             currentFishBehavior.currentStamina += 0.5f;
             ChangeText();
+        }
+
+        if (currentFishBehavior.currentStamina >= 50f)
+        {
+            currentFishBehavior.extenued = false;
+            NotExtenued();
         }
     }
 

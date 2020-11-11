@@ -87,13 +87,7 @@ public class FishBehavior : MonoBehaviour
 
             if(extenued)
             {
-                currentStamina += 1f;
-
-                if(currentStamina >= 50)
-                {
-                    extenued = false;
-                    FishManager.instance.NotExtenued();
-                }
+                FishManager.instance.UpEndurance();
             }
         }
         else
