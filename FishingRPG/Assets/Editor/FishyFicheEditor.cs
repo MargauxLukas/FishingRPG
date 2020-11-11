@@ -43,7 +43,7 @@ public class FishyFicheEditor : Editor
 
         strength_s        = serializedObject.FindProperty(nameof(FishyFiche.strength       ));
         weight_s          = serializedObject.FindProperty(nameof(FishyFiche.weight         ));
-        agility_s           = serializedObject.FindProperty(nameof(FishyFiche.agility          ));
+        agility_s         = serializedObject.FindProperty(nameof(FishyFiche.agility        ));
         magicResistance_s = serializedObject.FindProperty(nameof(FishyFiche.magicResistance));
 
         drops_s           = serializedObject.FindProperty(nameof(FishyFiche.drops          ));
@@ -179,6 +179,7 @@ public class FishyFicheEditor : Editor
             EditorGUILayout.LabelField(currentFish.drops[i].type, whiteText);
             EditorGUILayout.Separator();
             EditorGUILayout.LabelField(currentFish.drops[i].rarity, whiteText);
+            GUI.contentColor = new Color32((byte)(255 - currentFish.drops[i].dropRate * 2.55f), (byte)(0 + currentFish.drops[i].dropRate * 2.55f), 0, 255);
             EditorGUILayout.LabelField(currentFish.drops[i].dropRate + "%", whiteText);
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();

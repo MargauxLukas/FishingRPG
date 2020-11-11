@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7ec19189c88394382f1e33a0649cdd, type: 3}
-  m_Name: DropTest
+  m_Name: DropTest 1
   m_EditorClassIdentifier: 
-  ID: 
+  ID: ELI_C
   appearance: {fileID: 0}
-  type: Pouet
-  rarity: Commun
-  dropRate: 50
+  type: "\xC9caille Luisante"
+  rarity: Common
+  dropRate: 45
