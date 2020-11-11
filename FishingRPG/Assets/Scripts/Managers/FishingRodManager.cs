@@ -37,6 +37,7 @@ public class FishingRodManager : MonoBehaviour
     public Text distanceCPText;
     public Text fCurrentText;
     public Text fMaxText;
+    public Text FCritiqueText;
 
     private void Awake()
     {
@@ -173,9 +174,11 @@ public class FishingRodManager : MonoBehaviour
     {
         if(distanceCP > fishingLine.fCurrent + fishingLine.fMax)
         {
+            FCritiqueText.color = Color.green;
             return true;
         }
 
+        FCritiqueText.color = Color.red;
         return false;
     }
 

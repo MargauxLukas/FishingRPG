@@ -62,16 +62,15 @@ public class FishBehavior : MonoBehaviour
                 {
                     if (FishingRodManager.instance.CheckIfOverFCritique())
                     {
-                        transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z));
-                        Debug.Log("Force A : " + UtilitiesManager.instance.GetApplicatedForce());
+                        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
                         transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-                        //transform.rotation = saveDirection;
+                        transform.rotation = saveDirection;
                     }
                     else
                     {
                         if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
                         {
-                            transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z));
+                            transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
                             Debug.Log("Force A : " + UtilitiesManager.instance.GetApplicatedForce());
                             transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
                             transform.rotation = saveDirection;
