@@ -68,9 +68,10 @@ public class FishBehavior : MonoBehaviour
                     if(FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
                     {
                         transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z));
-                        Debug.Log(UtilitiesManager.instance.GetApplicatedForce());
+                        Debug.Log("Force A : " + UtilitiesManager.instance.GetApplicatedForce());
                         transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
                         transform.rotation = saveDirection;
+                        Debug.Log("Vitesse base : " + baseSpeed);
                         transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
                     }
                     else

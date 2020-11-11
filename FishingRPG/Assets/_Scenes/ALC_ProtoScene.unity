@@ -769,6 +769,7 @@ MonoBehaviour:
   qEnduranceLossBalancing: 17
   qTensionLossBalancing: 20
   qMultiplicatorBalancing: 1.7
+  qApplicatedForceBalancing: 2
 --- !u!1 &1158046327
 GameObject:
   m_ObjectHideFlags: 0
