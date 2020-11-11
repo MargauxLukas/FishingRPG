@@ -10,7 +10,7 @@ public class FishyFiche: ScriptableObject
     public string ID = "PQS_0";
     public Sprite appearance;
     public string species = "Pequessivo";
-    public int tier;
+    public int tier = 0;
 
     [Header("Fish Constitution")]
     public float life;
