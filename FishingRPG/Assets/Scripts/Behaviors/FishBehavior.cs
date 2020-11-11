@@ -45,11 +45,6 @@ public class FishBehavior : MonoBehaviour
     {
         if (!FishManager.instance.isAerial)
         {
-            if (PlayerManager.instance.blockLine || PlayerManager.instance.takingLine)
-            {
-                //Je sais pas 
-            }
-
             if(!directionHasChoosen)
             {
                 ChooseDirection();

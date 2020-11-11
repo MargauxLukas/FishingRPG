@@ -10,7 +10,7 @@ public class PlayerFishing : MonoBehaviour
     {
         if (isReadyToFish)
         {
-            if (Input.GetButton("Left Bumper"))   //BlockLine
+            if (Input.GetButton("Left Bumper"))  
             {
                 
             }
@@ -19,17 +19,26 @@ public class PlayerFishing : MonoBehaviour
                 if (!FishManager.instance.isAerial){PlayerManager.instance.IsAerial()              ;}
                 else                               {PlayerManager.instance.CheckDistanceWithWater();}
             }
-            else if (Input.GetAxis("Right Trigger") > 0.1f)
+
+            if (Input.GetAxis("Right Trigger") > 0.1f)
             {
+                Debug.Log("Ravale");
                 PlayerManager.instance.IsTakingLine();
             }
-            else if (Input.GetAxis("Left Trigger") > 0.1f)
+            if (Input.GetAxis("Left Trigger") > 0.1f)
             {
+                Debug.Log("Blocking");
                 PlayerManager.instance.IsBlockingLine();
             }
-            else
+            
+            if(Input.GetAxis("Right Trigger") < 0.1f)
             {
-                PlayerManager.instance.NothingPushed();
+                PlayerManager.instance.IsNotTakingLine();
+            }
+
+            if (Input.GetAxis("Left Trigger") < 0.1f)
+            {
+                PlayerManager.instance.IsNotBlockingLine();
             }
 
             FishingRodManager.instance.SetFishingRodPosition(Input.GetAxis("Right Stick (Horizontal)"));

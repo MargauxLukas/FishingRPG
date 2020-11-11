@@ -11,9 +11,6 @@ public class PlayerManager : MonoBehaviour
     public GameObject playerView;
     public PlayerStats playerStats;
 
-    public bool blockLine;
-    public bool takingLine;
-
     public float speed = 9f;
 
     private void Awake()
@@ -53,14 +50,12 @@ public class PlayerManager : MonoBehaviour
 
     public void IsBlockingLine()
     {
-        blockLine = true;
         FishingRodManager.instance.fishingLine.isBlocked = true;
         FishingRodManager.instance.fishingLine.textBlocked.color = Color.green;
     }
 
     public void IsTakingLine()
     {
-        takingLine = true;
         FishingRodManager.instance.fishingLine.isTaken = true;
         FishingRodManager.instance.fishingLine.textTaken.color = Color.green;
     }
@@ -78,18 +73,18 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void NothingPushed()
+    public void IsNotBlockingLine()
     {
-        blockLine = false;
-        takingLine = false;
+        FishingRodManager.instance.fishingLine.isBlocked = false;
+        FishingRodManager.instance.fishingLine.textBlocked.color = Color.red;
+    }
 
-        FishingRodManager.instance.fishingLine.isTaken = false;
-        FishingRodManager.instance.fishingLine.textTaken.color = Color.red;
-
+    public void IsNotTakingLine()
+    {
         if (FishingRodManager.instance.fishingLine.fCurrent < FishingRodManager.instance.fishingLine.fMax)
         {
-            FishingRodManager.instance.fishingLine.isBlocked = false;
-            FishingRodManager.instance.fishingLine.textBlocked.color = Color.red;
+            FishingRodManager.instance.fishingLine.isTaken = false;
+            FishingRodManager.instance.fishingLine.textTaken.color = Color.red;
         }
     }
 }
