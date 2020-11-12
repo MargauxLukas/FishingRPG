@@ -58,9 +58,7 @@ public class FishingLine : MonoBehaviour
 
     public void TensionDownTakingLine()
     {
-        if (!isTensionJustDown)
-        {
-            currentTension -= UtilitiesManager.instance.GetLossTensionNumberTakingLine();
+            currentTension -= UtilitiesManager.instance.GetLossTensionNumberTakingLine()/60;
             ChangeText();
 
             if (currentTension <= 0)
@@ -69,9 +67,6 @@ public class FishingLine : MonoBehaviour
                 ChangeText();
                 LineIsBroken();
             }
-
-            isTensionJustDown = true;
-        }
     }
 
     public void TensionUp()
