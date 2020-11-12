@@ -40,55 +40,59 @@ public class FishBehavior : MonoBehaviour
         currentStamina = fishyFiche.stamina;
         currentLife    = fishyFiche.life   ;
         baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
+
+        FishManager.instance.ChangeText();
     }
 
     void Update()
     {
         if (!FishManager.instance.isAerial)
         {
-            if(!directionHasChoosen)
+            if (!extenued)
             {
-                ChooseDirection();
-            }
-            else
-            {
-                timer += Time.deltaTime;
-
-                if (timer >= timeDirection)
+                if (!directionHasChoosen)
                 {
-                    directionHasChoosen = false;
-                    timer = 0f;
+                    ChooseDirection();
                 }
                 else
                 {
-                    if (FishingRodManager.instance.CheckIfOverFCritique())
+                    timer += Time.deltaTime;
+
+                    if (timer >= timeDirection)
                     {
-                        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                        transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-                        transform.rotation = saveDirection;
+                        directionHasChoosen = false;
+                        timer = 0f;
                     }
                     else
                     {
-                        if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+                        if (FishingRodManager.instance.CheckIfOverFCritique())
                         {
                             transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                            //Debug.Log("Force A : " + UtilitiesManager.instance.GetApplicatedForce());
                             transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
                             transform.rotation = saveDirection;
-                            //Debug.Log("Vitesse base : " + baseSpeed);
-                            transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
                         }
                         else
                         {
-                            transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+                            if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+                            {
+                                transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+                                transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+                                transform.rotation = saveDirection;
+                                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+                            }
+                            else
+                            {
+                                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+                            }
                         }
                     }
                 }
             }
-
-            if(extenued)
+            else
             {
                 FishManager.instance.UpEndurance();
+                transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+                transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
             }
         }
         else

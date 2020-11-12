@@ -67,7 +67,7 @@ public class PlayerManager : MonoBehaviour
 
     public void CheckDistanceWithWater()
     {
-        if(FishManager.instance.currentFishBehavior.timer > FishManager.instance.currentFishBehavior.maxTime * FishManager.instance.currentFishBehavior.percentOfMaxTime)
+        if(FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTime * FishManager.instance.currentFishBehavior.percentOfMaxTime)
         {
             FishManager.instance.MoreAerial();
         }

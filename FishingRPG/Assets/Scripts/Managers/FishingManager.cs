@@ -59,7 +59,6 @@ public class FishingManager : MonoBehaviour
                     dynamics          );
         FishManager.instance.currentFish         = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
-        FishManager.instance.ChangeText();
 
         PlayerManager.instance.FishingCanStart();
     }

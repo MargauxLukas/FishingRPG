@@ -156,6 +156,6 @@ public class FishManager : MonoBehaviour
         aerialY = currentFish.transform.position.y + 5f;
         aerialZ = currentFish.transform.position.z;
 
-        currentFishBehavior.timer = 0f;
+        currentFishBehavior.timerAerial = 0f;
     }
 }
