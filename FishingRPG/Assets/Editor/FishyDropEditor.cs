@@ -35,7 +35,7 @@ public class FishyDropEditor : Editor
     {
         #region Draw Title
         EditorGUILayout.BeginHorizontal();
-        var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("GLECB", typeof(Font)) };
+        var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("Fonts/GLECB", typeof(Font)) };
         EditorGUILayout.LabelField("#" + ID_s.stringValue + " - " + type_s.stringValue, titleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(50));
         EditorGUILayout.EndHorizontal();
         #endregion

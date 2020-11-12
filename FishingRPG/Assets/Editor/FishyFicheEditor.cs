@@ -57,7 +57,7 @@ public class FishyFicheEditor : Editor
     {
         #region Draw Title
         EditorGUILayout.BeginHorizontal();
-        var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("GLECB", typeof(Font)) };
+        var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("Fonts/GLECB", typeof(Font)) };
         EditorGUILayout.LabelField("#" + ID_s.stringValue + " - " + species_s.stringValue + " - Tier " + tier_s.intValue, titleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(50));
         EditorGUILayout.EndHorizontal();
         #endregion
@@ -76,7 +76,7 @@ public class FishyFicheEditor : Editor
         #endregion
 
         //Style for all subtitles
-        var subtitleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 25, font = (Font)Resources.Load("GLECB", typeof(Font)) };
+        var subtitleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 25, font = (Font)Resources.Load("Fonts/GLECB", typeof(Font)) };
 
         //Initiation for colored texts
         GUIStyle whiteText = new GUIStyle(EditorStyles.label);
