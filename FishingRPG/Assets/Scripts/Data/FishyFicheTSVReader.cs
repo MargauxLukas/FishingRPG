@@ -35,11 +35,8 @@ public class FishyFicheTSVReader : MonoBehaviour
             //Verify if ID already exist
             foreach (string file in Directory.GetFiles("Assets/Scripts/Data/Scriptables/FishyFiches"))
             {
-                if (file.Contains(".meta"))
-                {
-                    return;
-                }
-                else
+                //Adding all existing files in a list (excepting .meta)
+                if (!file.Contains(".meta"))
                 {
                     List<FishyFiche> fishyFiches = new List<FishyFiche>();
                     FishyFiche currentFishyFiche = (FishyFiche)AssetDatabase.LoadAssetAtPath(file, typeof(FishyFiche));
