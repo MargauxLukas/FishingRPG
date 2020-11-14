@@ -138,7 +138,7 @@ public class FishyFicheEditor : Editor
         #endregion
 
         #region Draw Drops list
-        EditorGUIUtility.labelWidth = baseLabel;
+        /*EditorGUIUtility.labelWidth = baseLabel;
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Butcher's Drops" , subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
@@ -184,7 +184,7 @@ public class FishyFicheEditor : Editor
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
         }
-        EditorGUILayout.Space();
+        EditorGUILayout.Space();*/
         #endregion
 
         #region Separator

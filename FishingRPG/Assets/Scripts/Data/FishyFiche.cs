@@ -8,20 +8,20 @@ public class FishyFiche: ScriptableObject
 {
     //Temporary values waiting for tsv import
     //[Header("Fish Type")]
-    public string ID = "PQS_0";
+    public string ID;
     public Sprite appearance;
-    public string species = "Pequessivo";
-    public int tier = 0;
+    public string species;
+    public int tier;
 
     //[Header("Fish Constitution")]
-    public float life = 100;
-    public float stamina = 100;
+    public float life;
+    public float stamina;
 
     //[Header("Fish Stats")]
-    public float strength = 10;
-    public float weight = 5;
-    public float agility = 2;
-    public float magicResistance = 6;
+    public float strength;
+    public float weight;
+    public float agility;
+    public float magicResistance;
 
     //[Header("Butcher Drops")]
     public FishyDrop[] drops;
