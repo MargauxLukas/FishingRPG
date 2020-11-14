@@ -25,7 +25,7 @@ public class PlayerView : MonoBehaviour
 
     public Vector3 cone;
 
-    public GameObject test;
+    //public GameObject test;
 
     private void Start()
     {
@@ -60,7 +60,7 @@ public class PlayerView : MonoBehaviour
         bezierBobberDirection = forwardRayRotation * transform.right * bezierBobber;             //Bezier bobber
         cone = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);       //Cone représente le centre du cercle 
 
-        test.transform.localPosition = cone + bezierBobberDirection;
+        //test.transform.localPosition = cone + bezierBobberDirection;
     }
 
     void OnDrawGizmos()

@@ -97,7 +97,6 @@ public class FishingRodManager : MonoBehaviour
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
-        bobber.GetComponent<Bobber>().create = false;
 
         //Fish Poisson
     }
