@@ -20,6 +20,7 @@ public class Rotate : MonoBehaviour
         if (Input.GetButtonUp("B Button") && !FishingRodManager.instance.bobberThrowed)
         {
             StartCoroutine("Throw");
+            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
             isMax = false;
         }
 

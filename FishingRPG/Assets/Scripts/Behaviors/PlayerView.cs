@@ -25,10 +25,12 @@ public class PlayerView : MonoBehaviour
 
     public Vector3 cone;
 
+    public GameObject test;
+
     private void Start()
     {
         rayRange = distance;
-
+        bezierBobberDirection = forwardRayRotation * transform.right * bezierBobber;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -56,8 +58,9 @@ public class PlayerView : MonoBehaviour
 
         forwardRayDirection = forwardRayRotation * transform.right * rayRange;                   //Point le plus éloigné en face
         bezierBobberDirection = forwardRayRotation * transform.right * bezierBobber;             //Bezier bobber
+        cone = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);       //Cone représente le centre du cercle 
 
-        cone = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);       //Cone représente le centre du cercle       
+        test.transform.localPosition = cone + bezierBobberDirection;
     }
 
     void OnDrawGizmos()

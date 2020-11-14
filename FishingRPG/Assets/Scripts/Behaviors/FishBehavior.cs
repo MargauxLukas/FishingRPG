@@ -27,9 +27,6 @@ public class FishBehavior : MonoBehaviour
     public float maxTime       = 2f;
     public float timeDirection = 3f;
 
-    [Range(0f,1f)]
-    public float percentOfMaxTime = 0.85f;
-
     private bool directionHasChoosen = false;
 
     private Quaternion saveDirection;
