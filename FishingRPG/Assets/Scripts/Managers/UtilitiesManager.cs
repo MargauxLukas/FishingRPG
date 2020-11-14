@@ -12,6 +12,9 @@ public class UtilitiesManager : MonoBehaviour
     public float qTensionLossBalancing;
     public float qMultiplicatorBalancing;
     public float qApplicatedForceBalancing;
+
+    [Range(0f, 1f)]
+    public float qPercentOfMaxTimeBalancing = 0.85f;
     private void Awake()
     {
         Init();
@@ -56,5 +59,10 @@ public class UtilitiesManager : MonoBehaviour
     public float GetLossTensionNumberTakingLine()
     {
         return (((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.fishyFiche.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing) * qMultiplicatorBalancing;
+    }
+
+    public float GetTimingForMoreAerial()
+    {
+        return (1 - qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility);
     }
 }

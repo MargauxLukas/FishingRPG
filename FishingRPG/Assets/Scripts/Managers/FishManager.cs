@@ -60,7 +60,7 @@ public class FishManager : MonoBehaviour
 
     public void IsExtenued()
     {
-        if(currentFishBehavior.extenued)
+        if(currentFishBehavior.exhausted)
         {
             isAerial = true;
             aerialExitWaterX = currentFish.transform.position.x;
@@ -89,7 +89,7 @@ public class FishManager : MonoBehaviour
 
     public void FishRecuperation()
     {
-        currentFishBehavior.extenued = false;
+        currentFishBehavior.exhausted = false;
         currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
         isAerial = false;
         NotExtenued();
@@ -130,7 +130,7 @@ public class FishManager : MonoBehaviour
 
         if (currentFishBehavior.currentStamina >= 50f)
         {
-            currentFishBehavior.extenued = false;
+            currentFishBehavior.exhausted = false;
             NotExtenued();
         }
     }

@@ -15,7 +15,7 @@ public class FishBehavior : MonoBehaviour
     private float speed          = 1f;                       
     public  float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
     public float currentLife     = 0f;                //Max à prendre sur fishyFiche
-    public bool extenued         = false;
+    public bool exhausted         = false;
 
     [Header("Aerial")]
     //Possiblement dans FishManager
@@ -48,7 +48,7 @@ public class FishBehavior : MonoBehaviour
     {
         if (!FishManager.instance.isAerial)
         {
-            if (!extenued)
+            if (!exhausted)
             {
                 if (!directionHasChoosen)
                 {
@@ -160,7 +160,7 @@ public class FishBehavior : MonoBehaviour
         if(currentStamina <= 0)
         {
             currentStamina = 0;
-            extenued = true;
+            exhausted = true;
             FishManager.instance.ExtenuedChange();
         }
 
