@@ -87,4 +87,10 @@ public class PlayerManager : MonoBehaviour
             FishingRodManager.instance.fishingLine.textTaken.color = Color.red;
         }
     }
+
+    public void CHEAT_SetFishToExhausted()
+    {
+        FishManager.instance.currentFishBehavior.currentStamina = 0f;
+        FishManager.instance.currentFishBehavior.CheckEndurance();
+    }
 }

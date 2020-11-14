@@ -39,6 +39,11 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.IsNotBlockingLine();
             }
 
+            if(Input.GetKey(KeyCode.E))
+            {
+                PlayerManager.instance.CHEAT_SetFishToExhausted();
+            }
+
             FishingRodManager.instance.SetFishingRodPosition(Input.GetAxis("Right Stick (Horizontal)"));
         }
     }
