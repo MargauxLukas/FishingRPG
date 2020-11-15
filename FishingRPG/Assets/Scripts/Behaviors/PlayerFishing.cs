@@ -10,21 +10,24 @@ public class PlayerFishing : MonoBehaviour
     {
         if (isReadyToFish)
         {
-            if (Input.GetButton("Left Bumper"))  
+            if (Input.GetButton("Left Bumper"))         //LB
             {
-                
+                if(FishManager.instance.isAerial && !FishManager.instance.isFelling)
+                {
+                    PlayerManager.instance.FellingFish();
+                }
             }
-            else if (Input.GetButton("Right Bumper"))   //Pull
+            else if (Input.GetButton("Right Bumper"))   //RB
             {
                 if (!FishManager.instance.isAerial){PlayerManager.instance.IsAerial()              ;}
                 else                               {PlayerManager.instance.CheckDistanceWithWater();}
             }
 
-            if (Input.GetAxis("Right Trigger") > 0.1f)
+            if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
             {
                 PlayerManager.instance.IsTakingLine();
             }
-            if (Input.GetAxis("Left Trigger") > 0.1f)
+            if (Input.GetAxis("Left Trigger") > 0.1f)   //LT
             {
                 PlayerManager.instance.IsBlockingLine();
             }

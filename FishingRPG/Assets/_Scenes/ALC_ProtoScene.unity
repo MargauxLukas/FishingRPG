@@ -3874,6 +3874,7 @@ MonoBehaviour:
   cHeightAerialBalancing: 3
   qTimeAerialBalancing: 1
   yTimeAerialBalancing: 0.75
+  qTimeFellingAerialBalancing: 2
 --- !u!1 &1158046327
 GameObject:
   m_ObjectHideFlags: 0

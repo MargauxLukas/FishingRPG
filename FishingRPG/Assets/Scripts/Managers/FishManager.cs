@@ -20,6 +20,7 @@ public class FishManager : MonoBehaviour
     public Text speedText;
 
     public bool isAerial = false;
+    public bool isFelling = false;
     private float aerialExitWaterX  = 0f;
     private float aerialX;
     private float aerialEnterWaterX = 0f;
@@ -91,6 +92,23 @@ public class FishManager : MonoBehaviour
         aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
         aerialZ = currentFish.transform.position.z;
 
+        isFelling = false;
+        currentFishBehavior.isFellDown = false;
+        currentFishBehavior.timerAerial = 0f;
+    }
+
+    public void FellAerial()
+    {
+        isFelling = true;
+        Debug.Log("Abattage");
+
+        currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeFellingAerial(currentFishBehavior.maxTimeAerial, currentFish.transform.position.y - aerialExitWaterY, aerialY);
+
+        aerialExitWaterX = currentFish.transform.position.x;
+        aerialExitWaterY = currentFish.transform.position.y;
+        aerialExitWaterZ = currentFish.transform.position.z;
+
+        currentFishBehavior.isFellDown = true;
         currentFishBehavior.timerAerial = 0f;
     }
 
@@ -107,10 +125,12 @@ public class FishManager : MonoBehaviour
     public void FishRecuperation()
     {
         currentFishBehavior.exhausted = false;
-        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+        currentFishBehavior.currentStamina = 50f;
         isAerial = false;
+        isFelling = false;
+        currentFishBehavior.isFellDown = false;
         NotExtenued();
-        CameraManager.instance.SetOriginPoint();
+        ChangeEnduranceText();
     }
 
     public void DownEndurance()
@@ -118,7 +138,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber()/60;
-            ChangeText();
+            ChangeEnduranceText();
         }
 
         currentFishBehavior.CheckEndurance();
@@ -129,7 +149,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine()/60;
-            ChangeText();
+            ChangeEnduranceText();
         }
 
         currentFishBehavior.CheckEndurance();
@@ -142,7 +162,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
         {
             currentFishBehavior.currentStamina += 0.5f;
-            ChangeText();
+            ChangeEnduranceText();
         }
 
         if (currentFishBehavior.currentStamina >= 50f)
@@ -152,7 +172,7 @@ public class FishManager : MonoBehaviour
         }
     }
 
-    public void ChangeText()
+    public void ChangeEnduranceText()
     {
         enduText.text = currentFishBehavior.currentStamina.ToString();
     }

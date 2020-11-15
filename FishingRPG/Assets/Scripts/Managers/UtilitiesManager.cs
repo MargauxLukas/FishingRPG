@@ -22,6 +22,8 @@ public class UtilitiesManager : MonoBehaviour
     public float qTimeAerialBalancing;
     public float yTimeAerialBalancing;
 
+    public float qTimeFellingAerialBalancing;
+
     private void Awake()
     {
         Init();
@@ -86,5 +88,16 @@ public class UtilitiesManager : MonoBehaviour
     public float GetTimeAerial(float heigthMax, int nbRebond)
     {
         return GetHeightMaxForAerial(heigthMax) * (qTimeAerialBalancing / 4) * Mathf.Pow(yTimeAerialBalancing, nbRebond);
+    }
+
+    //Temps de chute quand Abattement activé (notée Tca, float strictement positif)
+
+    public float GetTimeFellingAerial(float maxTime, float currentFishHeight, float maxHeight)
+    {
+        //Tmax = Temps pour faire l'aerial normalement
+        //HauP = Hauteur du poisson au moment ou LB appuyé
+        //Hmax = Hauteur Max normalement
+
+        return (maxTime / (2 * qTimeFellingAerialBalancing)) * (currentFishHeight / maxHeight);
     }
 }

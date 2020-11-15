@@ -47,9 +47,4 @@ public class CameraManager : MonoBehaviour
     {
         baseRotation = mainCamera.transform.rotation;
     }
-
-    public void SetOriginPoint()
-    {
-        mainCamera.transform.rotation = baseRotation;
-    }
 }

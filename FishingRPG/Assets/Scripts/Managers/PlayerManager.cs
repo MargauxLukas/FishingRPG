@@ -65,9 +65,14 @@ public class PlayerManager : MonoBehaviour
         FishManager.instance.IsExtenued();
     }
 
+    public void FellingFish()
+    {
+        FishManager.instance.FellAerial();
+    }
+
     public void CheckDistanceWithWater()
     {
-        Debug.Log(FishManager.instance.currentFishBehavior.timerAerial + " > " + (FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial()));
+        //Debug.Log(FishManager.instance.currentFishBehavior.timerAerial + " > " + (FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial()));
         if(FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial())
         {
             FishManager.instance.MoreAerial();

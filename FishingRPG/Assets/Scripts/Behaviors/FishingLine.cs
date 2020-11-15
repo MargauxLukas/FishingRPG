@@ -96,7 +96,6 @@ public class FishingLine : MonoBehaviour
 
     public void isFCurrentAtMax()
     {
-        Debug.Log("ok");
         isBlocked = true;
         fCurrent = fMax;
         textBlocked.color = Color.green;
