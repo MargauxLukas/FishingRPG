@@ -3870,6 +3870,10 @@ MonoBehaviour:
   qMultiplicatorBalancing: 1.7
   qApplicatedForceBalancing: 2
   qPercentOfMaxTimeBalancing: 0.85
+  bHeightAerialBalancing: 3.5
+  cHeightAerialBalancing: 3
+  qTimeAerialBalancing: 1
+  yTimeAerialBalancing: 0.75
 --- !u!1 &1158046327
 GameObject:
   m_ObjectHideFlags: 0

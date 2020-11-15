@@ -24,8 +24,10 @@ public class FishBehavior : MonoBehaviour
     [System.NonSerialized]
     public float timer         = 0f;
     public float timerAerial   = 0f;
-    public float maxTime       = 2f;
+    public float maxTimeAerial = 2f;
     public float timeDirection = 3f;
+    [System.NonSerialized]
+    public int nbRebond = 1;
 
     private bool directionHasChoosen = false;
 
@@ -96,9 +98,9 @@ public class FishBehavior : MonoBehaviour
         {
             timerAerial += Time.deltaTime;
 
-            transform.position = GetAerialPosition(timerAerial / maxTime);
+            transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
 
-            if (timerAerial >= maxTime)
+            if (timerAerial >= maxTimeAerial)
             {
                 FishManager.instance.FishRecuperation();
                 timerAerial = 0f;

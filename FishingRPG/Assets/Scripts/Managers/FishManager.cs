@@ -63,6 +63,7 @@ public class FishManager : MonoBehaviour
         if(currentFishBehavior.exhausted)
         {
             isAerial = true;
+            currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeAerial(currentFishBehavior.JumpHeight, currentFishBehavior.nbRebond);
             aerialExitWaterX = currentFish.transform.position.x;
             aerialExitWaterY = currentFish.transform.position.y;
             aerialExitWaterZ = currentFish.transform.position.z;
@@ -72,9 +73,25 @@ public class FishManager : MonoBehaviour
             aerialEnterWaterZ = currentFish.transform.position.z;
 
             aerialX = currentFish.transform.position.x;
-            aerialY = currentFish.transform.position.y + 5f;
+            aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
             aerialZ = currentFish.transform.position.z;
         }
+    }
+
+    public void MoreAerial()
+    {
+        Debug.Log("Boing Again");
+        currentFishBehavior.nbRebond++;
+        currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeAerial(currentFishBehavior.JumpHeight, currentFishBehavior.nbRebond);
+        aerialExitWaterX = currentFish.transform.position.x;
+        aerialExitWaterY = currentFish.transform.position.y;
+        aerialExitWaterZ = currentFish.transform.position.z;
+
+        aerialX = currentFish.transform.position.x;
+        aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
+        aerialZ = currentFish.transform.position.z;
+
+        currentFishBehavior.timerAerial = 0f;
     }
 
     public void ExtenuedChange()
@@ -143,19 +160,5 @@ public class FishManager : MonoBehaviour
     public void ChangeSpeedText(float speed)
     {
         speedText.text = speed.ToString();
-    }
-
-    public void MoreAerial()
-    {
-        Debug.Log("Boing Again");
-        aerialExitWaterX = currentFish.transform.position.x;
-        aerialExitWaterY = currentFish.transform.position.y;
-        aerialExitWaterZ = currentFish.transform.position.z;
-
-        aerialX = currentFish.transform.position.x;
-        aerialY = currentFish.transform.position.y + 5f;
-        aerialZ = currentFish.transform.position.z;
-
-        currentFishBehavior.timerAerial = 0f;
     }
 }

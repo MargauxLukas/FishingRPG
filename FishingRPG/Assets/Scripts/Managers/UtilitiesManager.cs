@@ -15,6 +15,13 @@ public class UtilitiesManager : MonoBehaviour
 
     [Range(0f, 1f)]
     public float qPercentOfMaxTimeBalancing = 0.85f;
+
+    public float bHeightAerialBalancing;
+    public float cHeightAerialBalancing;
+
+    public float qTimeAerialBalancing;
+    public float yTimeAerialBalancing;
+
     private void Awake()
     {
         Init();
@@ -61,8 +68,23 @@ public class UtilitiesManager : MonoBehaviour
         return (((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.fishyFiche.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing) * qMultiplicatorBalancing;
     }
 
+
+    //Timing (en seconde) pour renvoyer le poisson en l’air (aussi appelé “moment critique”, noté Tmc, float strictement positif)
+
     public float GetTimingForMoreAerial()
     {
         return (1 - qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility);
+    }
+
+    //Hauteur de projection du poisson dans les airs (notée Hpp, float strictement positif) [Déso par avance]
+    public float GetHeightMaxForAerial(float heightMax)
+    {
+        return (heightMax - heightMax / 4) * (float)System.Math.Tanh(bHeightAerialBalancing * (PlayerManager.instance.playerStats.strenght / FishManager.instance.currentFishBehavior.fishyFiche.weight) - cHeightAerialBalancing) + (heightMax + heightMax / 4);
+    }
+
+    //Durée de la projection dans les airs(notée Dpp, float strictement positif)
+    public float GetTimeAerial(float heigthMax, int nbRebond)
+    {
+        return GetHeightMaxForAerial(heigthMax) * (qTimeAerialBalancing / 4) * Mathf.Pow(yTimeAerialBalancing, nbRebond);
     }
 }
