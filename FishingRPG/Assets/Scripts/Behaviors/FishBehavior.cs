@@ -31,6 +31,7 @@ public class FishBehavior : MonoBehaviour
     public bool isFellDown = false;
 
     private bool directionHasChoosen = false;
+    public bool fellingFreeze = false;
 
     private Quaternion saveDirection;
 
@@ -97,7 +98,10 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            timerAerial += Time.deltaTime;
+            if(!fellingFreeze)
+            {
+                timerAerial += Time.deltaTime;
+            }
 
             transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
 

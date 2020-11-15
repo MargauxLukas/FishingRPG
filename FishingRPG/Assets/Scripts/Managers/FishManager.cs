@@ -100,6 +100,15 @@ public class FishManager : MonoBehaviour
     public void FellAerial()
     {
         isFelling = true;
+        currentFishBehavior.fellingFreeze = true;
+        
+        StartCoroutine(FellingFreeze());
+    }
+
+    IEnumerator FellingFreeze()
+    {
+        yield return new WaitForSeconds(0.2f);
+
         Debug.Log("Abattage");
 
         currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeFellingAerial(currentFishBehavior.maxTimeAerial, currentFish.transform.position.y - aerialExitWaterY, aerialY);
@@ -109,9 +118,10 @@ public class FishManager : MonoBehaviour
         aerialExitWaterZ = currentFish.transform.position.z;
 
         currentFishBehavior.isFellDown = true;
+        currentFishBehavior.fellingFreeze = false;
         currentFishBehavior.timerAerial = 0f;
-    }
 
+    }
     public void ExtenuedChange()
     {
         currentFish.GetComponent<MeshRenderer>().material = canAerialMat;
