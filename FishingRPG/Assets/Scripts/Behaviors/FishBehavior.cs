@@ -15,7 +15,8 @@ public class FishBehavior : MonoBehaviour
     private float speed          = 1f;                       
     public  float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
     public float currentLife     = 0f;                //Max à prendre sur fishyFiche
-    public bool exhausted         = false;
+    public bool exhausted        = false;
+    public bool isDead           = false;
 
     [Header("Aerial")]
     //Possiblement dans FishManager
@@ -43,6 +44,7 @@ public class FishBehavior : MonoBehaviour
         baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
 
         FishManager.instance.ChangeEnduranceText();
+        FishManager.instance.ChangeLifeText();
     }
 
     void Update()
@@ -91,7 +93,10 @@ public class FishBehavior : MonoBehaviour
             }
             else
             {
-                FishManager.instance.UpEndurance();
+                if (!isDead)
+                {
+                    FishManager.instance.UpEndurance();
+                }
                 transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
                 transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
             }
@@ -107,7 +112,6 @@ public class FishBehavior : MonoBehaviour
 
             if (timerAerial >= maxTimeAerial)
             {
-                Debug.Log("Finish Aerial");
                 FishManager.instance.FishRecuperation();
                 timerAerial = 0f;
             }
@@ -183,6 +187,18 @@ public class FishBehavior : MonoBehaviour
         if(currentStamina > fishyFiche.stamina)
         {
             currentStamina = fishyFiche.stamina;
+        }
+    }
+
+    public void CheckLife()
+    {
+        if(currentLife <= 0)
+        {
+            currentLife = 0;
+            isDead = true;
+            currentStamina = 0;
+            CheckEndurance();
+            FishManager.instance.ChangeEnduranceText();
         }
     }
 }

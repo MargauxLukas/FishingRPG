@@ -18,6 +18,7 @@ public class FishManager : MonoBehaviour
     [Header("Text")]
     public Text enduText;
     public Text speedText;
+    public Text lifeText;
 
     public bool isAerial = false;
     public bool isFelling = false;
@@ -121,7 +122,10 @@ public class FishManager : MonoBehaviour
         currentFishBehavior.fellingFreeze = false;
         currentFishBehavior.timerAerial = 0f;
 
+        yield return new WaitForSeconds(currentFishBehavior.maxTimeAerial);
+        AerialDamage();
     }
+
     public void ExtenuedChange()
     {
         currentFish.GetComponent<MeshRenderer>().material = canAerialMat;
@@ -182,6 +186,17 @@ public class FishManager : MonoBehaviour
         }
     }
 
+    public void AerialDamage()
+    {
+        if (currentFishBehavior.currentLife > 0f)
+        {
+            currentFishBehavior.currentLife -= UtilitiesManager.instance.GetFellingDamage();
+            ChangeLifeText();
+        }
+
+        currentFishBehavior.CheckLife();
+    }
+
     public void ChangeEnduranceText()
     {
         enduText.text = currentFishBehavior.currentStamina.ToString();
@@ -190,5 +205,10 @@ public class FishManager : MonoBehaviour
     public void ChangeSpeedText(float speed)
     {
         speedText.text = speed.ToString();
+    }
+
+    public void ChangeLifeText()
+    {
+        lifeText.text = currentFishBehavior.currentLife.ToString();
     }
 }

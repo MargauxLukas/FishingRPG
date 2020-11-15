@@ -24,6 +24,10 @@ public class UtilitiesManager : MonoBehaviour
 
     public float qTimeFellingAerialBalancing;
 
+    public float qFellingDamageBalancing;
+    [System.NonSerialized]
+    public float fellingDamage;
+
     private void Awake()
     {
         Init();
@@ -98,6 +102,13 @@ public class UtilitiesManager : MonoBehaviour
         //HauP = Hauteur du poisson au moment ou LB appuyé
         //Hmax = Hauteur Max normalement
 
+        fellingDamage = (currentFishHeight/maxHeight) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility) * qFellingDamageBalancing;
         return (maxTime / (2 * qTimeFellingAerialBalancing)) * (currentFishHeight / maxHeight);
+    }
+
+    //Dégat lors du claquage (Calculer lors du GetTimeFellingAerial pour éviter de devoir récupérer les variables de hauteurs plusieurs fois)
+    public float GetFellingDamage()
+    {
+        return fellingDamage;
     }
 }
