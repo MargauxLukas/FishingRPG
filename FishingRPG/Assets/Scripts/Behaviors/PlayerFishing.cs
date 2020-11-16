@@ -19,9 +19,8 @@ public class PlayerFishing : MonoBehaviour
                     PlayerManager.instance.FellingFish();
                 }
             }
-            else if (Input.GetButton("Right Bumper"))   //RB
+            else if (Input.GetButtonDown("Right Bumper"))   //RB
             {
-                
                 if (!FishManager.instance.isAerial){PlayerManager.instance.IsAerial();}
                 else 
                 {

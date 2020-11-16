@@ -140,6 +140,7 @@ public class FishManager : MonoBehaviour
     {
         currentFishBehavior.exhausted = false;
         currentFishBehavior.currentStamina = 50f;
+        currentFishBehavior.nbRebond = 1;
         isAerial = false;
         isFelling = false;
         currentFishBehavior.isFellDown = false;
