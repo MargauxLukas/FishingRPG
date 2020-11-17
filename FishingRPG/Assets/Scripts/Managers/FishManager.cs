@@ -22,15 +22,15 @@ public class FishManager : MonoBehaviour
 
     public bool isAerial = false;
     public bool isFelling = false;
-    private float aerialExitWaterX  = 0f;
-    private float aerialX;
-    private float aerialEnterWaterX = 0f;
+    public float aerialExitWaterX  = 0f;
+    public float aerialX;
+    public float aerialEnterWaterX = 0f;
     public float  aerialExitWaterY  = 0f;
     public float  aerialY;
     public float  aerialEnterWaterY = 0f;
-    private float aerialExitWaterZ  = 0f;
-    private float aerialZ;
-    private float aerialEnterWaterZ = 0f;
+    public float aerialExitWaterZ  = 0f;
+    public float aerialZ;
+    public float aerialEnterWaterZ = 0f;
 
     private float timer = 0f;
     private float maxTime = 1f;
@@ -182,6 +182,7 @@ public class FishManager : MonoBehaviour
 
         if (currentFishBehavior.currentStamina >= 50f)
         {
+            DebugManager.instance.vz.DesactivateZone();
             currentFishBehavior.exhausted = false;
             NotExtenued();
         }
@@ -196,6 +197,24 @@ public class FishManager : MonoBehaviour
         }
 
         currentFishBehavior.CheckLife();
+    }
+
+    public void SetFinishPoint()
+    {
+        aerialExitWaterX = currentFish.transform.position.x;
+        aerialExitWaterY = currentFish.transform.position.y;
+        aerialExitWaterZ = currentFish.transform.position.z;
+
+        aerialEnterWaterX = FishingManager.instance.finishFishDestination.transform.position.x;
+        aerialEnterWaterY = FishingManager.instance.finishFishDestination.transform.position.y;
+        aerialEnterWaterZ = FishingManager.instance.finishFishDestination.transform.position.z;
+
+        aerialX = FishingManager.instance.midFishDestination.transform.position.x;
+        aerialY = FishingManager.instance.midFishDestination.transform.position.y;
+        aerialZ = FishingManager.instance.midFishDestination.transform.position.z;
+
+        currentFishBehavior.inVictoryZone = true;
+        isAerial = true;
     }
 
     public void ChangeEnduranceText()

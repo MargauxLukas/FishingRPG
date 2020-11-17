@@ -87,8 +87,11 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
+        Debug.Log(bobber.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
         bobber.transform.parent        = fishingRodGameObject.transform   ;              //Reset parent
-        bobber.transform.position      = bobberPosition.transform.position;              //Reset Position
+        Debug.Log(bobber.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
+        StartCoroutine("Test");
+        Debug.Log(bobber.transform.localPosition + " et " + bobberPosition.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
         bobber.transform.localScale    = bobberScale   ;
         bobber.transform.localRotation = bobberRotation;
 
@@ -97,8 +100,16 @@ public class FishingRodManager : MonoBehaviour
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
+        Debug.Log(bobber.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
 
         //Fish Poisson
+    }
+
+    IEnumerator Test()
+    {
+        yield return new WaitForEndOfFrame();
+        Vector3 newVector = Vector3.Lerp(bobber.transform.localPosition , bobberPosition.transform.localPosition, 1f);
+        bobber.transform.localPosition = newVector;
     }
 
     public void SetBobberMaterialToSucces()

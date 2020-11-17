@@ -100,7 +100,7 @@ public class PlayerManager : MonoBehaviour
         FishManager.instance.currentFishBehavior.CheckEndurance();
     }
 
-    public void CHEAT_SetFishToDeadausted()
+    public void CHEAT_SetFishToDead()
     {
         FishManager.instance.currentFishBehavior.currentLife = 0f;
         FishManager.instance.currentFishBehavior.CheckLife();

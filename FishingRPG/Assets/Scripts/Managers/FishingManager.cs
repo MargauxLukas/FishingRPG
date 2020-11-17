@@ -15,6 +15,8 @@ public class FishingManager : MonoBehaviour
     public Transform dynamics;
 
     public GameObject currentFish;
+    public GameObject finishFishDestination;
+    public GameObject midFishDestination;
 
     private void Awake()
     {
@@ -59,7 +61,7 @@ public class FishingManager : MonoBehaviour
                     dynamics          );
         FishManager.instance.currentFish         = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
-
+        CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.FishingCanStart();
     }
 

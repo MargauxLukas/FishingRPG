@@ -45,20 +45,9 @@ public class FishingLine : MonoBehaviour
 
     public void TensionDown()
     {
-            currentTension -= UtilitiesManager.instance.GetLossTensionNumber()/60;
-            ChangeText();
-
-            if (currentTension <= 0)
-            {
-                currentTension = 0;
-                ChangeText();
-                LineIsBroken();
-            }    
-    }
-
-    public void TensionDownTakingLine()
-    {
-            currentTension -= UtilitiesManager.instance.GetLossTensionNumberTakingLine()/60;
+        if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
+        {
+            currentTension -= UtilitiesManager.instance.GetLossTensionNumber() / 60;
             ChangeText();
 
             if (currentTension <= 0)
@@ -67,9 +56,35 @@ public class FishingLine : MonoBehaviour
                 ChangeText();
                 LineIsBroken();
             }
+        }
+        else
+        {
+            Debug.Log("IsExhausted or Dead so Tension dont down");
+        }
     }
 
-    public void TensionUp()
+    public void TensionDownTakingLine()
+    {
+        if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
+        {
+            currentTension -= UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
+            ChangeText();
+
+            if (currentTension <= 0)
+            {
+                currentTension = 0;
+                ChangeText();
+                LineIsBroken();
+            }
+
+        }
+        else
+        {
+            Debug.Log("IsExhausted or Dead so Tension dont down");
+        }
+    }
+
+        public void TensionUp()
     {
         if (currentTension <= maxTension)
         {

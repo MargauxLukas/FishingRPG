@@ -65,7 +65,7 @@ public class PlayerFishing : MonoBehaviour
 
             if(Input.GetKey(KeyCode.D))
             {
-                PlayerManager.instance.CHEAT_SetFishToDeadausted();
+                PlayerManager.instance.CHEAT_SetFishToDead();
             }
 
             FishingRodManager.instance.SetFishingRodPosition(Input.GetAxis("Right Stick (Horizontal)"));
