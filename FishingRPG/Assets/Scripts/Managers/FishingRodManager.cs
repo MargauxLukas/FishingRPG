@@ -170,6 +170,7 @@ public class FishingRodManager : MonoBehaviour
         }     
         else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)    //Mettre à jour Fcurrent
         {
+            fishingLine.TensionUp();
             fishingLine.fCurrent = distanceCP;
         }
 

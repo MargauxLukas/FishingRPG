@@ -84,7 +84,7 @@ public class FishingLine : MonoBehaviour
         }
     }
 
-        public void TensionUp()
+    public void TensionUp()
     {
         if (currentTension <= maxTension)
         {
