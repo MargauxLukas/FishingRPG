@@ -35,7 +35,7 @@ public class FishyPatternEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        
+        base.OnInspectorGUI();
     }
 
     private void OnDisable()

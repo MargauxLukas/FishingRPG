@@ -71,75 +71,25 @@ public class FishBehavior : MonoBehaviour
                         }
                         else
                         {
-                            if (FishingRodManager.instance.CheckIfOverFCritique())
-                            {
-                                transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                                transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-                                transform.rotation = saveDirection;
-                            }
-                            else
-                            {
-                                if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
-                                {
-                                    transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                                    transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-                                    transform.rotation = saveDirection;
-                                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
-                                }
-                                else
-                                {
-                                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
-                                }
-                            }
+                            Idle();
                         }
                     }
                 }
                 else
                 {
-                    if (!isDead)
-                    {
-                        FishManager.instance.UpEndurance();
-                    }
-                    transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                    transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+                    ExhaustedAndDeath();
                 }
             }
             else
             {
-                if (!fellingFreeze)
-                {
-                    timerAerial += Time.deltaTime;
-                }
-
-                transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
-
-                if (timerAerial >= maxTimeAerial)
-                {
-                    FishManager.instance.FishRecuperation();
-                    timerAerial = 0f;
-                }
+                Aerial();
             }
 
-            RaycastHit hit;
-
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 4f))
-            {
-                Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-                ChooseDirectionOpposite();
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
-            }
+            DetectionWall();
         }
         else
         {
-            if (timerAerial <= maxTimeAerial)
-            {
-                timerAerial += Time.deltaTime;
-
-                transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
-            }         
+            Victory();    
         }
     }
 
@@ -174,6 +124,81 @@ public class FishBehavior : MonoBehaviour
     {
         //Debug.Log("HIT donc change direction : " + transform.rotation.y + " pour " + transform.rotation.y + 180f);
         transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
+    }
+
+    public void Idle()
+    {
+        if (FishingRodManager.instance.CheckIfOverFCritique())
+        {
+            transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+            transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+            transform.rotation = saveDirection;
+        }
+        else
+        {
+            if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+            {
+                transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+                transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+                transform.rotation = saveDirection;
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+            }
+            else
+            {
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+            }
+        }
+    }
+
+    public void ExhaustedAndDeath()
+    {
+        if (!isDead)
+        {
+            FishManager.instance.UpEndurance();
+        }
+        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+        transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+    }
+
+    public void Aerial()
+    {
+        if (!fellingFreeze)
+        {
+            timerAerial += Time.deltaTime;
+        }
+
+        transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+
+        if (timerAerial >= maxTimeAerial)
+        {
+            FishManager.instance.FishRecuperation();
+            timerAerial = 0f;
+        }
+    }
+
+    public void DetectionWall()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 4f))
+        {
+            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+            ChooseDirectionOpposite();
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
+        }
+    }
+
+    public void Victory()
+    {
+        if (timerAerial <= maxTimeAerial)
+        {
+            timerAerial += Time.deltaTime;
+
+            transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+        }
     }
 
     public void CalculateSpeed()
