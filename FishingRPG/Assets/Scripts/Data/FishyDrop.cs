@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewFishyDrop", menuName = "BFF Tools/Fishy Drop", order = 10)]
 public class FishyDrop : ScriptableObject
 {
-    public string ID;
+    public string ID = "ELI_C";
     public Sprite appearance;
-    public string type;
-    public string rarity;
-    [Range(1f, 100f)] public float dropRate;
+    public string type = "Écaille Luisante";
+    public string rarity = "Common";
+    public float dropRate = 45;
 }
