@@ -61,11 +61,14 @@ public class FishBehavior : MonoBehaviour
 
     void Update()
     {
-        idleTimer += Time.deltaTime;
-
-        if(idleTimer > idleMaxTime)
+        if (!FishManager.instance.isAerial)
         {
-            isIdle = false;
+            idleTimer += Time.deltaTime;
+
+            if (idleTimer > idleMaxTime)
+            {
+                isIdle = false;
+            }
         }
 
         if (isIdle)
@@ -114,8 +117,11 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            Debug.Log("Choose a Patern !");
-            fishPattern.startPattern(isRage);
+            if (gameObject.GetComponent<FishPatterns>().currentPattern == null)
+            {
+                Debug.Log("Choose a Patern !");
+                fishPattern.startPattern(isRage);
+            }
         }
     }
 
@@ -227,18 +233,6 @@ public class FishBehavior : MonoBehaviour
         }
     }
 
-    public void CalculateSpeed()
-    {
-        //Plus comme avant
-
-        FishManager.instance.ChangeSpeedText(baseSpeed);
-    }
-
-    public void CheckTensionAndEndurance()
-    {
-        //Plus comme avant
-    }
-
     public void CheckEndurance()
     {
         if(currentStamina <= 0)
@@ -247,6 +241,7 @@ public class FishBehavior : MonoBehaviour
             currentStamina = 0;
             exhausted = true;
             FishManager.instance.ExtenuedChange();
+            ResetRage();
         }
 
         if(currentStamina > fishyFiche.stamina)
@@ -272,5 +267,16 @@ public class FishBehavior : MonoBehaviour
     public void SetIdleMaxTime()
     {
         idleMaxTime = Random.Range(7, 16);
+    }
+
+    public void ResetStats()
+    {
+        baseSpeed = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
+    }
+
+    public void ResetRage()
+    {
+        isRage = false;
+        strength = fishyFiche.strength;
     }
 }

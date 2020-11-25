@@ -14,24 +14,39 @@ public class FeinteDuFourbe : MonoBehaviour
     {
         Debug.Log("Feinte du Fourbe");
 
-        if (!playOnce)
+        if ((FishManager.instance.currentFishBehavior.currentStamina - energyCost) > 0)
         {
-            if (costEnergyOverTime && (FishManager.instance.currentFishBehavior.currentStamina - energyCost) > 0) { FishManager.instance.currentFishBehavior.currentStamina -= energyCost; }
+            if (!playOnce)
+            {
+                if (!costEnergyOverTime)
+                {
+                    FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
+                    FishManager.instance.ChangeEnduranceText();
+                }
 
-            FishManager.instance.currentFishBehavior.baseSpeed += speedModifier;
-            playOnce = true;
+                FishManager.instance.currentFishBehavior.baseSpeed += speedModifier;
+                playOnce = true;
+            }
+
+            timer += Time.fixedDeltaTime;
+
+            if (timer > dotDuration)
+            {
+                if (costEnergyOverTime)
+                {
+                    FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
+                    FishManager.instance.ChangeEnduranceText();
+                }
+
+                FishManager.instance.currentFishBehavior.ChooseDirection();
+                timer = 0f;
+            }
+
+            FishManager.instance.currentFishBehavior.Idle();
         }
-
-        timer += Time.fixedDeltaTime;
-
-        if(timer > dotDuration)
+        else
         {
-            if (!costEnergyOverTime && (FishManager.instance.currentFishBehavior.currentStamina - energyCost) > 0) {FishManager.instance.currentFishBehavior.currentStamina -= energyCost;}
-
-            FishManager.instance.currentFishBehavior.ChooseDirection();
-            timer = 0f;
+            FishManager.instance.currentFish.GetComponent<FishPatterns>().ResetPattern();
         }
-
-        FishManager.instance.currentFishBehavior.Idle();
     }
 }

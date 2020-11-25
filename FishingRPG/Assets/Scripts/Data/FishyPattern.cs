@@ -7,7 +7,6 @@ using UnityEngine;
 public class FishyPattern : ScriptableObject
 {
     //Base variables
-    public MonoScript script;
     public int priorityCalm;
     public int priorityRage;
     public float duration;

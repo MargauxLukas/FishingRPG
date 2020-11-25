@@ -7,7 +7,7 @@ public class FishPatterns : MonoBehaviour
     private List<FishyPattern> fishyCalmPatterns = new List<FishyPattern>();
     private List<FishyPattern> fishyRagePatterns = new List<FishyPattern>();
 
-    private FishyPattern currentPattern = null;
+    public FishyPattern currentPattern = null;
 
     private int totalPrioritiesValuesCalm = 0;
     private int totalPrioritiesValuesRage = 0;
@@ -115,8 +115,15 @@ public class FishPatterns : MonoBehaviour
         }
         else
         {
-            FishManager.instance.currentFishBehavior.idleTimer = 0f;
-            FishManager.instance.currentFishBehavior.isIdle = true;
+            ResetPattern();
         }
+    }
+
+    public void ResetPattern()
+    {
+        currentPattern = null;
+        FishManager.instance.currentFishBehavior.ResetStats();
+        FishManager.instance.currentFishBehavior.idleTimer = 0f;
+        FishManager.instance.currentFishBehavior.isIdle = true;
     }
 }

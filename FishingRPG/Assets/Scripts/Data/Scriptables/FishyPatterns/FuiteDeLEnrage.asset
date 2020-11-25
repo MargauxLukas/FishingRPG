@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41a601a31e09107428e2275066727ed3, type: 3}
-  m_Name: FuiteDeLEnrage
+  m_Name: FuiteDelEnrage
   m_EditorClassIdentifier: 
   script: {fileID: 11500000, guid: f8666ff7ee01cac40988d7d6b906d21f, type: 3}
   priorityCalm: 7

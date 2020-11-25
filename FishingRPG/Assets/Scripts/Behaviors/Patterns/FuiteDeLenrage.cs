@@ -13,24 +13,39 @@ public class FuiteDeLenrage : MonoBehaviour
     {
         Debug.Log("Fuite de L'Enrage !");
 
-        if (!playOnce)
+        if ((FishManager.instance.currentFishBehavior.currentStamina - energyCost) > 0)
         {
-            if (costEnergyOverTime) { FishManager.instance.currentFishBehavior.currentStamina -= energyCost; }
+            if (!playOnce)
+            {
+                if (!costEnergyOverTime)
+                {
+                    FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
+                    FishManager.instance.ChangeEnduranceText();
+                }
 
-            FishManager.instance.currentFishBehavior.baseSpeed += speedModifier;
-            playOnce = true;
+                FishManager.instance.currentFishBehavior.baseSpeed += speedModifier;
+                playOnce = true;
+            }
+
+            timer += Time.fixedDeltaTime;
+
+            if (timer > dotDuration)
+            {
+                if (costEnergyOverTime)
+                {
+                    FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
+                    FishManager.instance.ChangeEnduranceText();
+                }
+
+                //Direction Opposé au joueur
+                timer = 0f;
+            }
+
+            FishManager.instance.currentFishBehavior.Idle();
         }
-
-        timer += Time.fixedDeltaTime;
-
-        if (timer > dotDuration)
+        else
         {
-            if (!costEnergyOverTime) { FishManager.instance.currentFishBehavior.currentStamina -= energyCost; }
-
-            //Direction Opposé au joueur
-            timer = 0f;
+            FishManager.instance.currentFish.GetComponent<FishPatterns>().ResetPattern();
         }
-
-        FishManager.instance.currentFishBehavior.Idle();
     }
 }
