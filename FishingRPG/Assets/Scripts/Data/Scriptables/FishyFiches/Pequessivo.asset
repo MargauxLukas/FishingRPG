@@ -23,4 +23,7 @@ MonoBehaviour:
   agility: 3
   magicResistance: 3
   drops: []
-  patterns: []
+  patterns:
+  - {fileID: 11400000, guid: 94c786d6a75b4c34bae7dd865772ba3f, type: 2}
+  - {fileID: 11400000, guid: 09dc8440f43dbcc4b879e8704cac7c30, type: 2}
+  - {fileID: 11400000, guid: 46a007261a1b4df4d8661da44698c689, type: 2}

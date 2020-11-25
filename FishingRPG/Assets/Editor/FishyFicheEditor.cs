@@ -48,7 +48,7 @@ public class FishyFicheEditor : Editor
 
         drops_s           = serializedObject.FindProperty(nameof(FishyFiche.drops          ));
 
-        patterns_s        = serializedObject.FindProperty(nameof(FishyFiche.patterns       ));
+        patterns_s        = serializedObject.FindProperty(nameof(FishyFiche.calmPatterns       ));
 
         fishSprite = (target as FishyFiche).appearance;
     }

@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41a601a31e09107428e2275066727ed3, type: 3}
-  m_Name: FeinteDuFourbe
+  m_Name: FuiteDeLEnrage
   m_EditorClassIdentifier: 
-  priority: 0
+  script: {fileID: 11500000, guid: f8666ff7ee01cac40988d7d6b906d21f, type: 3}
+  priorityCalm: 7
+  priorityRage: 9
   duration: 0
-  energyCost: 0
-  costEnergyOverTime: 0
+  energyCost: 20
+  costEnergyOverTime: 1
   DOTFrequency: 0
   triggerRageMode: 0
-  featureName: 
+  featureName: "La Fuite de l'Enrag\xE9"

@@ -22,7 +22,7 @@ public class FishyPatternEditor : Editor
     {
         currentPattern = (target as FishyPattern);
 
-        priority_s           = serializedObject.FindProperty(nameof(FishyPattern.priority          ));
+        priority_s           = serializedObject.FindProperty(nameof(FishyPattern.priorityCalm          ));
         duration_s           = serializedObject.FindProperty(nameof(FishyPattern.duration          ));
         energyCost_s         = serializedObject.FindProperty(nameof(FishyPattern.energyCost        ));
         costEnergyOverTime_s = serializedObject.FindProperty(nameof(FishyPattern.costEnergyOverTime));

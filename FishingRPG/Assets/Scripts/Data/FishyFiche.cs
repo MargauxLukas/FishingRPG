@@ -26,5 +26,6 @@ public class FishyFiche: ScriptableObject
     public FishyDrop[] drops;
 
    //[Header("Fish Patterns")]
-    public MonoBehaviour[] patterns;
+    public FishyPattern[] calmPatterns;
+    public FishyPattern[] ragePatterns;
 }

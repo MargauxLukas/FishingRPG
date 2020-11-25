@@ -19,6 +19,11 @@ public class FishBehavior : MonoBehaviour
     public bool isDead           = false;
     public bool inVictoryZone    = false;
 
+    [Header("Idle")]
+    public bool  isIdle      = true;
+    public float idleTimer   = 0f;
+    public float idleMaxTime = 0f;
+
     [Header("Aerial")]
     //Possiblement dans FishManager
     public float JumpHeight = 20f;                   //Valeur à obtenir avec formule (stats du player contre stats du fish)
@@ -39,6 +44,8 @@ public class FishBehavior : MonoBehaviour
 
     private void Start()
     {
+        SetIdleMaxTime();
+
         fishyFiche     = fishStats.fiche   ;
         currentStamina = fishyFiche.stamina;
         currentLife    = fishyFiche.life   ;
@@ -50,46 +57,60 @@ public class FishBehavior : MonoBehaviour
 
     void Update()
     {
-        if (!inVictoryZone)
-        {
-            if (!FishManager.instance.isAerial)
-            {
-                if (!exhausted)
-                {
-                    if (!directionHasChoosen)
-                    {
-                        ChooseDirection();
-                    }
-                    else
-                    {
-                        timer += Time.deltaTime;
+        idleTimer += Time.deltaTime;
 
-                        if (timer >= timeDirection)
+        if(idleTimer > idleMaxTime)
+        {
+            isIdle = false;
+        }
+
+        if (isIdle)
+        {
+            if (!inVictoryZone)
+            {
+                if (!FishManager.instance.isAerial)
+                {
+                    if (!exhausted)
+                    {
+                        if (!directionHasChoosen)
                         {
-                            directionHasChoosen = false;
-                            timer = 0f;
+                            ChooseDirection();
                         }
                         else
                         {
-                            Idle();
+                            timer += Time.deltaTime;
+
+                            if (timer >= timeDirection)
+                            {
+                                directionHasChoosen = false;
+                                timer = 0f;
+                            }
+                            else
+                            {
+                                Idle();
+                            }
                         }
+                    }
+                    else
+                    {
+                        ExhaustedAndDeath();
                     }
                 }
                 else
                 {
-                    ExhaustedAndDeath();
+                    Aerial();
                 }
+
+                DetectionWall();
             }
             else
             {
-                Aerial();
+                Victory();
             }
-
-            DetectionWall();
         }
         else
         {
-            Victory();    
+            //Launch Patterns
         }
     }
 
@@ -241,5 +262,10 @@ public class FishBehavior : MonoBehaviour
             FishManager.instance.ChangeLifeText();
             FishManager.instance.ChangeEnduranceText();
         }
+    }
+
+    public void SetIdleMaxTime()
+    {
+        idleMaxTime = Random.Range(7, 16);
     }
 }
