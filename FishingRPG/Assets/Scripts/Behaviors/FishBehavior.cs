@@ -242,6 +242,7 @@ public class FishBehavior : MonoBehaviour
             exhausted = true;
             FishManager.instance.ExtenuedChange();
             ResetRage();
+            //
         }
 
         if(currentStamina > fishyFiche.stamina)
