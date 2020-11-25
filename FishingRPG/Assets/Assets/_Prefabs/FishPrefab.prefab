@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishStats: {fileID: 3403204536493358264}
   fishyFiche: {fileID: 0}
+  fishPattern: {fileID: 3648344931775246446}
   baseSpeed: 5
   currentStamina: 0
   currentLife: 0
@@ -175,6 +176,7 @@ MonoBehaviour:
   timeDirection: 3
   isFellDown: 0
   fellingFreeze: 0
+  isRage: 0
 --- !u!114 &3403204536493358264
 MonoBehaviour:
   m_ObjectHideFlags: 0

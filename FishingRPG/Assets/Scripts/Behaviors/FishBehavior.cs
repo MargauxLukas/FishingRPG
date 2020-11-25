@@ -11,10 +11,11 @@ public class FishBehavior : MonoBehaviour
     [Header("Stats Fish")]
     public FishStats  fishStats ;
     public FishyFiche fishyFiche;
-    public  float baseSpeed      = 3f;                //A prendre sur fishyFiche
-    private float speed          = 1f;                       
+    public FishPatterns fishPattern;
+    public  float baseSpeed      = 3f;                //A prendre sur fishyFiche                      
     public  float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
     public float currentLife     = 0f;                //Max à prendre sur fishyFiche
+    public float strength        = 0f;
     public bool exhausted        = false;
     public bool isDead           = false;
     public bool inVictoryZone    = false;
@@ -42,6 +43,8 @@ public class FishBehavior : MonoBehaviour
 
     private Quaternion saveDirection;
 
+    public bool isRage = false;
+
     private void Start()
     {
         SetIdleMaxTime();
@@ -50,6 +53,7 @@ public class FishBehavior : MonoBehaviour
         currentStamina = fishyFiche.stamina;
         currentLife    = fishyFiche.life   ;
         baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
+        strength       = fishyFiche.strength;
 
         FishManager.instance.ChangeEnduranceText();
         FishManager.instance.ChangeLifeText();
@@ -110,7 +114,8 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            //Launch Patterns
+            Debug.Log("Choose a Patern !");
+            fishPattern.startPattern(isRage);
         }
     }
 
@@ -226,7 +231,7 @@ public class FishBehavior : MonoBehaviour
     {
         //Plus comme avant
 
-        FishManager.instance.ChangeSpeedText(speed);
+        FishManager.instance.ChangeSpeedText(baseSpeed);
     }
 
     public void CheckTensionAndEndurance()

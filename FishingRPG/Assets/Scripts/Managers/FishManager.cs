@@ -20,6 +20,7 @@ public class FishManager : MonoBehaviour
     public Text speedText;
     public Text lifeText;
 
+    [Header("Aerial Variables")]
     public bool isAerial = false;
     public bool isFelling = false;
     public float aerialExitWaterX  = 0f;
@@ -32,10 +33,6 @@ public class FishManager : MonoBehaviour
     public float aerialZ;
     public float aerialEnterWaterZ = 0f;
 
-    private float timer = 0f;
-    private float maxTime = 1f;
-    private bool isEnduranceJustDown = false;
-
     private void Awake()
     {
         Init();
@@ -44,20 +41,6 @@ public class FishManager : MonoBehaviour
     public virtual void Init()
     {
         instance = this;
-    }
-
-    private void Update()
-    {
-        /*if(isEnduranceJustDown)
-        {
-            timer += Time.fixedDeltaTime;
-
-            if(timer >= maxTime)
-            {
-                isEnduranceJustDown = false;
-                timer = 0f;
-            }
-        }*/
     }
 
     public void IsExtenued()
@@ -168,8 +151,6 @@ public class FishManager : MonoBehaviour
         }
 
         currentFishBehavior.CheckEndurance();
-
-        isEnduranceJustDown = true;
     }
 
     public void UpEndurance()
