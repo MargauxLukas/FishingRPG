@@ -12,15 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225f7cc96ea83344bcf54578668e745, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  ID: 
-  appearance: {fileID: 0}
-  species: 
+  ID: PQS_0
+  appearance: {fileID: 21300000, guid: 504ad7f948e76434f94d086d78203012, type: 3}
+  species: Pequessivo
   tier: 0
-  life: 0
-  stamina: 0
-  strength: 0
-  weight: 0
-  agility: 0
-  magicResistance: 0
-  drops: []
+  life: 100
+  stamina: 233
+  strength: 7
+  weight: 3
+  agility: 3
+  magicResistance: 3
+  drops:
+  - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
+  - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
+  - {fileID: 11400000, guid: 88b72cfa1a350424c995f8a1310dccb2, type: 2}
+  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
   patterns: []
