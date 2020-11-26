@@ -10,6 +10,7 @@ public class FishManager : MonoBehaviour
     [Header("Fish")]
     public GameObject currentFish;
     public FishBehavior currentFishBehavior;
+    public Transform savePos;
 
     [Header("Material Aerial")]
     public Material canAerialMat;
@@ -157,12 +158,13 @@ public class FishManager : MonoBehaviour
     {
         if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
         {
-            currentFishBehavior.currentStamina += 0.5f;
+            currentFishBehavior.currentStamina += 0.25f;
             ChangeEnduranceText();
         }
 
-        if (currentFishBehavior.currentStamina >= 50f)
+        if (currentFishBehavior.currentStamina > 50f)
         {
+            currentFishBehavior.currentStamina = 50f;
             DebugManager.instance.vz.DesactivateZone();
             currentFishBehavior.exhausted = false;
             NotExtenued();

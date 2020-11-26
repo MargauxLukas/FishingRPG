@@ -55,7 +55,7 @@ public class FishingManager : MonoBehaviour
         FishingRodManager.instance.SetBobberMaterialToSucces();
         currentFish = Instantiate(fishPrefab, 
                     new Vector3(FishingRodManager.instance.bobber.transform.position.x, 
-                                FishingRodManager.instance.bobber.transform.position.y - 1f,
+                                FishingRodManager.instance.bobber.transform.position.y - 0.6f,
                                 FishingRodManager.instance.bobber.transform.position.z),
                     Quaternion.identity,
                     dynamics          );

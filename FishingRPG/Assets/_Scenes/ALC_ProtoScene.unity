@@ -530,6 +530,7 @@ Transform:
   m_Children:
   - {fileID: 1210923389}
   - {fileID: 1791959272}
+  - {fileID: 2136209604}
   m_Father: {fileID: 909024939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4806,7 +4807,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 0
 --- !u!222 &1384828970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6785,6 +6786,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075409333}
   m_CullTransparentMesh: 0
+--- !u!1 &2136209603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2136209604}
+  m_Layer: 0
+  m_Name: SavePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2136209604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136209603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5, y: 18.037, z: -4.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 156331746}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2138219845
 GameObject:
   m_ObjectHideFlags: 0
@@ -7354,6 +7385,10 @@ PrefabInstance:
       propertyPath: FCritiqueText
       value: 
       objectReference: {fileID: 432310104}
+    - target: {fileID: 6755928522560432921, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6755928522560432922, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
       propertyPath: textInt
       value: 
@@ -7374,5 +7409,9 @@ PrefabInstance:
       propertyPath: textTaken
       value: 
       objectReference: {fileID: 992624662}
+    - target: {fileID: 6755928522560432922, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: currentTension
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}

@@ -27,7 +27,7 @@ public class FishingRodManager : MonoBehaviour
     public bool bobberThrowed = false;
 
     [Header("Speed de la canne à peche")]
-    public float speed           = 5f;
+    public float speed           = 10f;
     private float lastAxisValues = 0f;
     private float currentAxis;
 

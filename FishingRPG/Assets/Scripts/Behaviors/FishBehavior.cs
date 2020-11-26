@@ -107,8 +107,6 @@ public class FishBehavior : MonoBehaviour
                 {
                     Aerial();
                 }
-
-                DetectionWall();
             }
             else
             {
@@ -123,6 +121,8 @@ public class FishBehavior : MonoBehaviour
                 fishPattern.startPattern(isRage);
             }
         }
+
+        DetectionWall();
     }
 
     public Vector3 GetAerialPosition(float currentTime )
@@ -154,8 +154,14 @@ public class FishBehavior : MonoBehaviour
 
     public void ChooseDirectionOpposite()
     {
-        //Debug.Log("HIT donc change direction : " + transform.rotation.y + " pour " + transform.rotation.y + 180f);
+        Debug.Log("HIT donc change direction : " + transform.rotation.y + " pour " + transform.rotation.y + 180f);
         transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
+    }
+
+    public void ForceDirection()
+    {
+        timer = 0f;
+        transform.LookAt(new Vector3(FishManager.instance.savePos.position.x, transform.position.y, FishManager.instance.savePos.position.z));
     }
 
     public void Idle()
@@ -215,11 +221,17 @@ public class FishBehavior : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, 4f))
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-            ChooseDirectionOpposite();
+            ChooseDirection();
         }
         else
         {
             Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
+        }
+
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 2f))
+        {
+            Debug.Log("Force Direction");
+            ForceDirection();
         }
     }
 
@@ -242,7 +254,6 @@ public class FishBehavior : MonoBehaviour
             exhausted = true;
             FishManager.instance.ExtenuedChange();
             ResetRage();
-            //
         }
 
         if(currentStamina > fishyFiche.stamina)
