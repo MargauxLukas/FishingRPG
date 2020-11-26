@@ -45,6 +45,9 @@ public class FishBehavior : MonoBehaviour
 
     public bool isRage = false;
 
+    private Vector3 target;
+    private float distance;
+
     private void Start()
     {
         SetIdleMaxTime();
@@ -164,11 +167,50 @@ public class FishBehavior : MonoBehaviour
         transform.LookAt(new Vector3(FishManager.instance.savePos.position.x, transform.position.y, FishManager.instance.savePos.position.z));
     }
 
+    public void ChooseTarget()
+    {
+        distance = Vector3.Distance(transform.position, FishingRodManager.instance.pointC.position);
+
+        if (distance < 10f)
+        {
+            Debug.Log("TARGET : Point C");
+            target = FishingRodManager.instance.pointC.position;
+        }
+        else if(distance < 20)
+        {
+            Debug.Log("TARGET : NEAR");
+            if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
+            {
+                target = FishingRodManager.instance.listTargetNear[0].position;
+            }
+            else
+            {
+                target = FishingRodManager.instance.listTargetNear[1].position;
+            }
+            
+        }
+        else
+        {
+            Debug.Log("TARGET : FAR");
+
+            if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
+            {
+                target = FishingRodManager.instance.listTargetFar[0].position;
+            }
+            else
+            {
+                target = FishingRodManager.instance.listTargetFar[1].position;
+            }
+        }
+    }
+
     public void Idle()
     {
+        ChooseTarget();
+
         if (FishingRodManager.instance.CheckIfOverFCritique())
         {
-            transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+            transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
             transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
             transform.rotation = saveDirection;
         }
@@ -176,7 +218,7 @@ public class FishBehavior : MonoBehaviour
         {
             if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
             {
-                transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
                 transform.rotation = saveDirection;
                 transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;

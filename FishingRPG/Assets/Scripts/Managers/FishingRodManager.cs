@@ -14,6 +14,8 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
     public Transform pointC;
+    public List<Transform> listTargetFar = new List<Transform>();
+    public List<Transform> listTargetNear = new List<Transform>();
     public FishingLine fishingLine;
 
     [Header("Pour montrer visuellement que le poisson est arrivé")]
@@ -91,6 +93,7 @@ public class FishingRodManager : MonoBehaviour
         StartCoroutine("Test");
         bobber.transform.localScale    = bobberScale   ;
         bobber.transform.localRotation = bobberRotation;
+        SetFishingRodPosition(0f);
 
         fishingRodPivot.GetComponent<Rotate>().result = false;                      //N'attend plus de pêcher un poisson
 
