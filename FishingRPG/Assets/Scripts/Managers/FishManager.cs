@@ -7,9 +7,27 @@ public class FishManager : MonoBehaviour
 {
     public static FishManager instance;
     public GameObject currentFish;
+    public FishBehavior currentFishBehavior;
     public Material canAerialMat;
     public Material normalMat;
     public Text enduText;
+
+    public Vector3 minPosCone;
+    public Vector3 maxPosCone;
+
+    public Text speedText;
+
+    public bool isAerial = false;
+    private float aerialExitWaterX = 0f;
+    public float aerialExitWaterY = 0f;
+    private float aerialExitWaterZ = 0f;
+    private float aerialEnterWaterX = 0f;
+    public float aerialEnterWaterY = 0f;
+    private float aerialEnterWaterZ = 0f;
+
+    private float aerialX;
+    public float aerialY;
+    private float aerialZ;
 
     private void Awake()
     {
@@ -23,9 +41,20 @@ public class FishManager : MonoBehaviour
 
     public void IsExtenued()
     {
-        if(currentFish.GetComponent<FishBehavior>().extenued)
+        if(currentFishBehavior.extenued)
         {
-            currentFish.GetComponent<FishBehavior>().isAerial = true;
+            isAerial = true;
+            aerialExitWaterX = currentFish.transform.position.x;
+            aerialExitWaterY = currentFish.transform.position.y;
+            aerialExitWaterZ = currentFish.transform.position.z;
+
+            aerialEnterWaterX = currentFish.transform.position.x;
+            aerialEnterWaterY = currentFish.transform.position.y;
+            aerialEnterWaterZ = currentFish.transform.position.z;
+
+            aerialX = currentFish.transform.position.x;
+            aerialY = currentFish.transform.position.y + 5f;
+            aerialZ = currentFish.transform.position.z;
         }
     }
 
@@ -39,15 +68,43 @@ public class FishManager : MonoBehaviour
         currentFish.GetComponent<MeshRenderer>().material = normalMat;
     }
 
+    public void FishRecuperation()
+    {
+        currentFishBehavior.extenued = false;
+        currentFishBehavior.endurance = 20f;
+        isAerial = false;
+        NotExtenued();
+        CameraManager.instance.SetOriginPoint();
+    }
+
     public void DownEndurance()
     {
-        currentFish.GetComponent<FishBehavior>().endurance -= 0.2f;
+        currentFishBehavior.endurance -= 0.2f;
         ChangeText();
-        currentFish.GetComponent<FishBehavior>().CheckEndurance();
+        currentFishBehavior.CheckEndurance();
     }
 
     public void ChangeText()
     {
-        enduText.text = currentFish.GetComponent<FishBehavior>().endurance.ToString();
+        enduText.text = currentFishBehavior.endurance.ToString();
+    }
+
+    public void ChangeSpeedText(float speed)
+    {
+        speedText.text = speed.ToString();
+    }
+
+    public void MoreAerial()
+    {
+        Debug.Log("Boing Again");
+        aerialExitWaterX = currentFish.transform.position.x;
+        aerialExitWaterY = currentFish.transform.position.y;
+        aerialExitWaterZ = currentFish.transform.position.z;
+
+        aerialX = currentFish.transform.position.x;
+        aerialY = currentFish.transform.position.y + 5f;
+        aerialZ = currentFish.transform.position.z;
+
+        currentFishBehavior.timer = 0f;
     }
 }

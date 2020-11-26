@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 12f;
+    public float speed;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
 
@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    private void Start()
+    {
+        speed = PlayerManager.instance.speed;
+    }
 
     void Update()
     {
