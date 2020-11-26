@@ -55,6 +55,7 @@ public class FishyFicheEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        base.OnInspectorGUI();
         #region Draw Title
         EditorGUILayout.BeginHorizontal();
         var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("Fonts/GLECB", typeof(Font)) };
