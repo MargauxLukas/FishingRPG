@@ -10,7 +10,7 @@ public class FishingLine : MonoBehaviour
     public float fMax;
     public float fCritique;
 
-    public float currentTension = 100;
+    public float currentTension = 0;
     public float maxTension = 100;
     public Text textInt;
 
@@ -40,19 +40,20 @@ public class FishingLine : MonoBehaviour
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
-        currentTension = maxTension;
+        currentTension = 0f;
+        ChangeText();
     }
 
     public void TensionDown()
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            currentTension -= UtilitiesManager.instance.GetLossTensionNumber() / 60;
+            currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 60;
             ChangeText();
 
-            if (currentTension <= 0)
+            if (currentTension >= maxTension)
             {
-                currentTension = 0;
+                currentTension = maxTension;
                 ChangeText();
                 LineIsBroken();
             }
@@ -67,12 +68,12 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            currentTension -= UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
+            currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
             ChangeText();
 
-            if (currentTension <= 0)
+            if (currentTension >= maxTension )
             {
-                currentTension = 0;
+                currentTension = maxTension;
                 ChangeText();
                 LineIsBroken();
             }
@@ -86,13 +87,13 @@ public class FishingLine : MonoBehaviour
 
     public void TensionUp()
     {
-        if (currentTension <= maxTension)
+        if (currentTension > 0f)
         {
-            currentTension += 0.3f;
+            currentTension -= 0.3f;
         }
         else
         {
-            currentTension = 100f;
+            currentTension = 0f;
         }
 
         ChangeText();

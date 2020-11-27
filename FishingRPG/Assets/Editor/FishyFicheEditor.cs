@@ -48,13 +48,14 @@ public class FishyFicheEditor : Editor
 
         drops_s           = serializedObject.FindProperty(nameof(FishyFiche.drops          ));
 
-        patterns_s        = serializedObject.FindProperty(nameof(FishyFiche.patterns       ));
+        patterns_s        = serializedObject.FindProperty(nameof(FishyFiche.calmPatterns       ));
 
         fishSprite = (target as FishyFiche).appearance;
     }
 
     public override void OnInspectorGUI()
     {
+        base.OnInspectorGUI();
         #region Draw Title
         EditorGUILayout.BeginHorizontal();
         var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("Fonts/GLECB", typeof(Font)) };

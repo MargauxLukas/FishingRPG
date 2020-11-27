@@ -59,7 +59,7 @@ public class UtilitiesManager : MonoBehaviour
     //Perte de Tension par seconde (Float)
     public float GetLossTensionNumber()
     {
-        return ((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.fishyFiche.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing;
+        return ((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing;
     }
 
     //Perte d'endurance par seconde (float) * multiplicateur
@@ -71,7 +71,7 @@ public class UtilitiesManager : MonoBehaviour
     //Perte de Tension par seconde (Float) * multiplicateur
     public float GetLossTensionNumberTakingLine()
     {
-        return (((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.fishyFiche.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing) * qMultiplicatorBalancing;
+        return (((FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent) / FishingRodManager.instance.fishingLine.fCritique) * (FishManager.instance.currentFishBehavior.strength / PlayerManager.instance.playerStats.constitution) * qTensionLossBalancing) * qMultiplicatorBalancing;
     }
 
 

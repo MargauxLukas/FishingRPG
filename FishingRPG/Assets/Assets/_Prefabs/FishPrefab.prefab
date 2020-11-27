@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3777321972750495703}
   - component: {fileID: 2042084132484654825}
   - component: {fileID: 3403204536493358264}
+  - component: {fileID: 3648344931775246446}
   m_Layer: 10
   m_Name: FishPrefab
   m_TagString: Untagged
@@ -159,18 +160,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishStats: {fileID: 3403204536493358264}
   fishyFiche: {fileID: 0}
+  fishPattern: {fileID: 3648344931775246446}
   baseSpeed: 5
   currentStamina: 0
   currentLife: 0
   exhausted: 0
   isDead: 0
   inVictoryZone: 0
+  isIdle: 1
+  idleTimer: 0
+  idleMaxTime: 0
   JumpHeight: 10
   timerAerial: 0
   maxTimeAerial: 2
   timeDirection: 3
   isFellDown: 0
   fellingFreeze: 0
+  isRage: 0
 --- !u!114 &3403204536493358264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,4 +189,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb369db0b74a0354ca2feea728ba5272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fiche: {fileID: 11400000, guid: bb08229e93e4f7d48a9add01ca3627e2, type: 2}
+  fiche: {fileID: 11400000, guid: 14e9ee200659aab42a54c37bf0082e77, type: 2}
+--- !u!114 &3648344931775246446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777321972750495661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0ee08856249ff468e8b7ae7240fe50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

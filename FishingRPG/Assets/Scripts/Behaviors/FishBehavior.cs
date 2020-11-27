@@ -11,13 +11,19 @@ public class FishBehavior : MonoBehaviour
     [Header("Stats Fish")]
     public FishStats  fishStats ;
     public FishyFiche fishyFiche;
-    public  float baseSpeed      = 3f;                //A prendre sur fishyFiche
-    private float speed          = 1f;                       
+    public FishPatterns fishPattern;
+    public  float baseSpeed      = 3f;                //A prendre sur fishyFiche                      
     public  float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
     public float currentLife     = 0f;                //Max à prendre sur fishyFiche
+    public float strength        = 0f;
     public bool exhausted        = false;
     public bool isDead           = false;
     public bool inVictoryZone    = false;
+
+    [Header("Idle")]
+    public bool  isIdle      = true;
+    public float idleTimer   = 0f;
+    public float idleMaxTime = 0f;
 
     [Header("Aerial")]
     //Possiblement dans FishManager
@@ -37,12 +43,20 @@ public class FishBehavior : MonoBehaviour
 
     private Quaternion saveDirection;
 
+    public bool isRage = false;
+
+    private Vector3 target;
+    private float distance;
+
     private void Start()
     {
+        SetIdleMaxTime();
+
         fishyFiche     = fishStats.fiche   ;
         currentStamina = fishyFiche.stamina;
         currentLife    = fishyFiche.life   ;
         baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
+        strength       = fishyFiche.strength;
 
         FishManager.instance.ChangeEnduranceText();
         FishManager.instance.ChangeLifeText();
@@ -50,97 +64,68 @@ public class FishBehavior : MonoBehaviour
 
     void Update()
     {
-        if (!inVictoryZone)
+        if (!FishManager.instance.isAerial)
         {
-            if (!FishManager.instance.isAerial)
-            {
-                if (!exhausted)
-                {
-                    if (!directionHasChoosen)
-                    {
-                        ChooseDirection();
-                    }
-                    else
-                    {
-                        timer += Time.deltaTime;
+            idleTimer += Time.deltaTime;
 
-                        if (timer >= timeDirection)
+            if (idleTimer > idleMaxTime)
+            {
+                isIdle = false;
+            }
+        }
+
+        if (isIdle)
+        {
+            if (!inVictoryZone)
+            {
+                if (!FishManager.instance.isAerial)
+                {
+                    if (!exhausted)
+                    {
+                        if (!directionHasChoosen)
                         {
-                            directionHasChoosen = false;
-                            timer = 0f;
+                            ChooseDirection();
                         }
                         else
                         {
-                            if (FishingRodManager.instance.CheckIfOverFCritique())
+                            timer += Time.deltaTime;
+
+                            if (timer >= timeDirection)
                             {
-                                transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                                transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-                                transform.rotation = saveDirection;
+                                directionHasChoosen = false;
+                                timer = 0f;
                             }
                             else
                             {
-                                if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
-                                {
-                                    transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                                    transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-                                    transform.rotation = saveDirection;
-                                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
-                                }
-                                else
-                                {
-                                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
-                                }
+                                Idle();
                             }
                         }
+                    }
+                    else
+                    {
+                        ExhaustedAndDeath();
                     }
                 }
                 else
                 {
-                    if (!isDead)
-                    {
-                        FishManager.instance.UpEndurance();
-                    }
-                    transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-                    transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+                    Aerial();
                 }
             }
             else
             {
-                if (!fellingFreeze)
-                {
-                    timerAerial += Time.deltaTime;
-                }
-
-                transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
-
-                if (timerAerial >= maxTimeAerial)
-                {
-                    FishManager.instance.FishRecuperation();
-                    timerAerial = 0f;
-                }
-            }
-
-            RaycastHit hit;
-
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 4f))
-            {
-                Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-                ChooseDirectionOpposite();
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
+                Victory();
             }
         }
         else
         {
-            if (timerAerial <= maxTimeAerial)
+            if (gameObject.GetComponent<FishPatterns>().currentPattern == null)
             {
-                timerAerial += Time.deltaTime;
-
-                transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
-            }         
+                Debug.Log("Choose a Patern !");
+                fishPattern.startPattern(isRage);
+            }
         }
+
+        DetectionWall();
     }
 
     public Vector3 GetAerialPosition(float currentTime )
@@ -172,20 +157,134 @@ public class FishBehavior : MonoBehaviour
 
     public void ChooseDirectionOpposite()
     {
-        //Debug.Log("HIT donc change direction : " + transform.rotation.y + " pour " + transform.rotation.y + 180f);
+        Debug.Log("HIT donc change direction : " + transform.rotation.y + " pour " + transform.rotation.y + 180f);
         transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
     }
 
-    public void CalculateSpeed()
+    public void ForceDirection()
     {
-        //Plus comme avant
-
-        FishManager.instance.ChangeSpeedText(speed);
+        timer = 0f;
+        transform.LookAt(new Vector3(FishManager.instance.savePos.position.x, transform.position.y, FishManager.instance.savePos.position.z));
     }
 
-    public void CheckTensionAndEndurance()
+    public void ChooseTarget()
     {
-        //Plus comme avant
+        distance = Vector3.Distance(transform.position, FishingRodManager.instance.pointC.position);
+
+        if (distance < 10f)
+        {
+            Debug.Log("TARGET : Point C");
+            target = FishingRodManager.instance.pointC.position;
+        }
+        else if(distance < 20)
+        {
+            Debug.Log("TARGET : NEAR");
+            if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
+            {
+                target = FishingRodManager.instance.listTargetNear[0].position;
+            }
+            else
+            {
+                target = FishingRodManager.instance.listTargetNear[1].position;
+            }
+            
+        }
+        else
+        {
+            Debug.Log("TARGET : FAR");
+
+            if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
+            {
+                target = FishingRodManager.instance.listTargetFar[0].position;
+            }
+            else
+            {
+                target = FishingRodManager.instance.listTargetFar[1].position;
+            }
+        }
+    }
+
+    public void Idle()
+    {
+        ChooseTarget();
+
+        if (FishingRodManager.instance.CheckIfOverFCritique())
+        {
+            transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+            transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+            transform.rotation = saveDirection;
+        }
+        else
+        {
+            if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+            {
+                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+                transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+                transform.rotation = saveDirection;
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+            }
+            else
+            {
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+            }
+        }
+    }
+
+    public void ExhaustedAndDeath()
+    {
+        if (!isDead)
+        {
+            FishManager.instance.UpEndurance();
+        }
+        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+        transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+    }
+
+    public void Aerial()
+    {
+        if (!fellingFreeze)
+        {
+            timerAerial += Time.deltaTime;
+        }
+
+        transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+
+        if (timerAerial >= maxTimeAerial)
+        {
+            FishManager.instance.FishRecuperation();
+            timerAerial = 0f;
+        }
+    }
+
+    public void DetectionWall()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 4f))
+        {
+            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+            ChooseDirection();
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
+        }
+
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 2f))
+        {
+            Debug.Log("Force Direction");
+            ForceDirection();
+        }
+    }
+
+    public void Victory()
+    {
+        if (timerAerial <= maxTimeAerial)
+        {
+            timerAerial += Time.deltaTime;
+
+            transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+        }
     }
 
     public void CheckEndurance()
@@ -196,6 +295,7 @@ public class FishBehavior : MonoBehaviour
             currentStamina = 0;
             exhausted = true;
             FishManager.instance.ExtenuedChange();
+            ResetRage();
         }
 
         if(currentStamina > fishyFiche.stamina)
@@ -216,5 +316,21 @@ public class FishBehavior : MonoBehaviour
             FishManager.instance.ChangeLifeText();
             FishManager.instance.ChangeEnduranceText();
         }
+    }
+
+    public void SetIdleMaxTime()
+    {
+        idleMaxTime = Random.Range(7, 16);
+    }
+
+    public void ResetStats()
+    {
+        baseSpeed = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
+    }
+
+    public void ResetRage()
+    {
+        isRage = false;
+        strength = fishyFiche.strength;
     }
 }

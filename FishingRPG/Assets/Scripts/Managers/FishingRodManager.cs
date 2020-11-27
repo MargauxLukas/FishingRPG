@@ -14,6 +14,8 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
     public Transform pointC;
+    public List<Transform> listTargetFar = new List<Transform>();
+    public List<Transform> listTargetNear = new List<Transform>();
     public FishingLine fishingLine;
 
     [Header("Pour montrer visuellement que le poisson est arrivé")]
@@ -27,7 +29,7 @@ public class FishingRodManager : MonoBehaviour
     public bool bobberThrowed = false;
 
     [Header("Speed de la canne à peche")]
-    public float speed           = 5f;
+    public float speed           = 10f;
     private float lastAxisValues = 0f;
     private float currentAxis;
 
@@ -87,20 +89,17 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
-        Debug.Log(bobber.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
         bobber.transform.parent        = fishingRodGameObject.transform   ;              //Reset parent
-        Debug.Log(bobber.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
         StartCoroutine("Test");
-        Debug.Log(bobber.transform.localPosition + " et " + bobberPosition.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
         bobber.transform.localScale    = bobberScale   ;
         bobber.transform.localRotation = bobberRotation;
+        SetFishingRodPosition(0f);
 
         fishingRodPivot.GetComponent<Rotate>().result = false;                      //N'attend plus de pêcher un poisson
 
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
-        Debug.Log(bobber.transform.localPosition + " et son parent : " + bobber.transform.parent.name);
 
         //Fish Poisson
     }
