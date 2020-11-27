@@ -6,36 +6,21 @@ using UnityEngine.UI;
 
 public class FishingLine : MonoBehaviour
 {
-    public float fCurrent;
+    [Header("Tension Values")]
     public float fMax;
     public float fCritique;
+    [HideInInspector] public float fCurrent;
 
-    public float currentTension = 0;
+    [HideInInspector] public float currentTension = 0;
     public float maxTension = 100;
-    public Text textInt;
 
-    public bool isBlocked = false;
-    public bool isTaken = false;
+    [HideInInspector] public bool isBlocked = false;
+    [HideInInspector] public bool isTaken = false;
+
+    [Header("Texts")]
+    public Text textInt;
     public Text textBlocked;
     public Text textTaken  ;
-
-    private float timer = 0f;
-    private float maxTime = 1f;
-    private bool isTensionJustDown = false;
-
-    private void Update()
-    {
-        /*if(isTensionJustDown)
-        {
-            timer += Time.fixedDeltaTime;
-
-            if(timer >= maxTime)
-            {
-                isTensionJustDown = false;
-                timer = 0f;
-            }
-        }*/
-    }
 
     public void LineIsBroken()
     {
