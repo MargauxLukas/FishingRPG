@@ -12,14 +12,31 @@ public class PlayerView : MonoBehaviour
     public Transform playerBody;
     public bool freeCamera = true;
 
+    float distance = 30f;
+
+    float rayRange;                         //Range point du millieu = poisson
+    float coneDirection = 90;               //Direction dans un cercle allant de 0 à 380 Droite = 0 / Devant = 90 / Gauche = 180 / Arrière = 270 
+
+    public float bezierBobber = 1f;
+
+    Quaternion forwardRayRotation;    //Direction tout droit
+    Vector3 forwardRayDirection;                      //Point le plus éloigné en face
+    public Vector3 bezierBobberDirection;
+
+    public Vector3 cone;
+
+    //public GameObject test;
+
     private void Start()
     {
+        rayRange = distance;
+        bezierBobberDirection = forwardRayRotation * transform.right * bezierBobber;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-
+        //Changera surement vu que y'a plus de cone
         if (freeCamera)
         {
             float mouseX = Input.GetAxis("Right Stick (Horizontal)") * mouseSensitivity * Time.deltaTime;
@@ -31,59 +48,30 @@ public class PlayerView : MonoBehaviour
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
         }
+
+        DrawCone();
     }
 
-    /*************************************
-     *  Gizmos pour visualiser le cône   *
-     *************************************/
-    void OnDrawGizmosSelected()
+    public void DrawCone()
     {
-        float angle = 20.0f;
-        float angleZ1 = angle*0.9f;
-        float angleZ2 = angle*0.8f;
-        float rayRange = 30.0f;
-        float halfFOV = angle/1.0f;
-        float halfFOVZ1 = angleZ1 / 1.0f;
-        float halfFOVZ2 = angleZ2 / 1.0f;
-        float coneDirection = 90;
+        forwardRayRotation = Quaternion.AngleAxis(coneDirection, Vector3.down);                  //Direction tout droit
 
-        Quaternion upRayRotation     = Quaternion.AngleAxis(-halfFOV   + coneDirection, Vector3.down);
-        Quaternion downRayRotation   = Quaternion.AngleAxis(halfFOV    + coneDirection, Vector3.down);
-        Quaternion upRayRotationZ1   = Quaternion.AngleAxis(-halfFOVZ1 + coneDirection, Vector3.down);
-        Quaternion downRayRotationZ1 = Quaternion.AngleAxis(halfFOVZ1  + coneDirection, Vector3.down);
-        Quaternion upRayRotationZ2   = Quaternion.AngleAxis(-halfFOVZ2 + coneDirection, Vector3.down);
-        Quaternion downRayRotationZ2 = Quaternion.AngleAxis(halfFOVZ2  + coneDirection, Vector3.down);
+        forwardRayDirection = forwardRayRotation * transform.right * rayRange;                   //Point le plus éloigné en face
+        bezierBobberDirection = forwardRayRotation * transform.right * bezierBobber;             //Bezier bobber
+        cone = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);       //Cone représente le centre du cercle 
 
-        Vector3 upRayDirection     = upRayRotation     * transform.right * rayRange;
-        Vector3 downRayDirection   = downRayRotation   * transform.right * rayRange;
-        Vector3 upRayDirectionZ1   = upRayRotationZ1   * transform.right * rayRange;
-        Vector3 downRayDirectionZ1 = downRayRotationZ1 * transform.right * rayRange;
-        Vector3 upRayDirectionZ2   = upRayRotationZ2   * transform.right * rayRange;
-        Vector3 downRayDirectionZ2 = downRayRotationZ2 * transform.right * rayRange;
+        //test.transform.localPosition = cone + bezierBobberDirection;
+    }
 
-        Vector3 cone = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
+    void OnDrawGizmos()
+    {
+        /*****************
+         *  Gizmos Draw  *
+         *****************/
+        Gizmos.color = Color.white;
+        Gizmos.DrawLine(cone , cone + forwardRayDirection);
 
-        Gizmos.DrawRay(cone, upRayDirection);
-        Gizmos.DrawRay(cone, downRayDirection);
-        Gizmos.DrawLine(cone + downRayDirection, cone + upRayDirection);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(cone, upRayDirectionZ1);
-        Gizmos.DrawRay(cone, downRayDirectionZ1);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawRay(cone, upRayDirectionZ2);
-        Gizmos.DrawRay(cone, downRayDirectionZ2);
-
-
-        if (FishingManager.instance.currentFish != null)
-        {
-            float distance = Vector3.Distance(FishingManager.instance.currentFish.transform.position , PlayerManager.instance.player.transform.position);
-            //Debug.Log(distance);
-            Vector3 RayRightFish = upRayRotation * transform.right * distance;
-            Vector3 RayLeftFish = downRayRotation * transform.right * distance;
-
-            Gizmos.DrawLine(cone + RayRightFish, cone + RayLeftFish);
-        }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(cone, bezierBobberDirection);
     }
 }

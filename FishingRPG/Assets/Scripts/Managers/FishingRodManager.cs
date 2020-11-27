@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.UI;
 
 public class FishingRodManager : MonoBehaviour
 {
     public static FishingRodManager instance;
 
+    [Header("FishingRod Components")]
     public GameObject fishingRodPivot;
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public Transform pointC;
+    public List<Transform> listTargetFar = new List<Transform>();
+    public List<Transform> listTargetNear = new List<Transform>();
     public FishingLine fishingLine;
 
-    public GameObject[] positionGroup;
-
+    [Header("Pour montrer visuellement que le poisson est arrivé")]
     public Material catchMaterial;
     public Material dontCatchMaterial;
 
@@ -23,8 +28,18 @@ public class FishingRodManager : MonoBehaviour
 
     public bool bobberThrowed = false;
 
-    public float direction = 0f;
-    public float speed = 1f;
+    [Header("Speed de la canne à peche")]
+    public float speed           = 10f;
+    private float lastAxisValues = 0f;
+    private float currentAxis;
+
+    public float distanceCP;
+
+    [Header("Texte")]
+    public Text distanceCPText;
+    public Text fCurrentText;
+    public Text fMaxText;
+    public Text FCritiqueText;
 
     private void Awake()
     {
@@ -40,6 +55,7 @@ public class FishingRodManager : MonoBehaviour
     {
         bobberRotation = bobber.transform.localRotation;
         fishingLine = GetComponent<FishingLine>();
+        ChangeTextFMax();
     }
 
     private void Update()
@@ -49,13 +65,22 @@ public class FishingRodManager : MonoBehaviour
             bobberThrowed = true;
             LaunchBobber();
         }
+
+        if (FishingManager.instance.currentFish != null)
+        {
+            distanceCP = Vector3.Distance(pointC.position, FishManager.instance.currentFish.transform.position);
+            ChangeTextCPDistance();
+            CheckFCurrent();
+        }
     }
 
     public void LaunchBobber()
     {
-        bobber.GetComponent<Rigidbody>().useGravity = true;
         bobber.GetComponent<Bobber>().Throw();
+
         CameraManager.instance.CameraLookAtGameObject(bobber);
+        CameraManager.instance.SaveBaseRotation();
+
         PlayerManager.instance.DisablePlayerMovement();
         PlayerManager.instance.EnableFishMovement();
     }
@@ -64,18 +89,26 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
-        bobber.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        bobber.transform.position = bobberPosition.transform.position;
-        bobber.transform.parent   = fishingRodGameObject.transform;
-        fishingRodPivot.GetComponent<Rotate>().result = false;
-        bobber.transform.localScale    = bobberScale;
+        bobber.transform.parent        = fishingRodGameObject.transform   ;              //Reset parent
+        StartCoroutine("Test");
+        bobber.transform.localScale    = bobberScale   ;
         bobber.transform.localRotation = bobberRotation;
-        bobber.GetComponent<Rigidbody>().useGravity = false;
+        SetFishingRodPosition(0f);
+
+        fishingRodPivot.GetComponent<Rotate>().result = false;                      //N'attend plus de pêcher un poisson
+
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
-        FishManager.instance.currentFish.GetComponent<Destroy>().DestroyThisGameobject();
+
         //Fish Poisson
+    }
+
+    IEnumerator Test()
+    {
+        yield return new WaitForEndOfFrame();
+        Vector3 newVector = Vector3.Lerp(bobber.transform.localPosition , bobberPosition.transform.localPosition, 1f);
+        bobber.transform.localPosition = newVector;
     }
 
     public void SetBobberMaterialToSucces()
@@ -88,45 +121,106 @@ public class FishingRodManager : MonoBehaviour
         bobber.GetComponent<MeshRenderer>().material = dontCatchMaterial;
     }
 
-    public void LeftFishingRod()
+    public void SetFishingRodPosition(float axisValue)
     {
-        fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[0].transform.localPosition, speed * Time.fixedDeltaTime);
-    }
-
-    public void RightFishingRod()
-    {
-        fishingRodGameObject.transform.localPosition = Vector3.MoveTowards(fishingRodGameObject.transform.localPosition, positionGroup[2].transform.localPosition, speed * Time.fixedDeltaTime);
-    }
-
-    public float GetPlayerForce()
-    {
-        direction = fishingRodGameObject.transform.localPosition.x;
-        return direction;
-    }
-
-    public bool IsSameDirection()
-    {
-        if(FishingManager.instance.fishIsGoingRight)
+        if (Mathf.Abs(axisValue - lastAxisValues) > 0.1f)
         {
-            if(direction > 0f)
+            if (axisValue > 0)
             {
-                return true;
+                lastAxisValues = axisValue;
+                currentAxis    = axisValue * 0.5f;
             }
             else
             {
-                return false;
+                lastAxisValues = axisValue;
+                currentAxis    = axisValue * 1.5f;
             }
         }
-        else
+        fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
+        fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(50f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
+    }
+
+    public void CheckFCurrent()
+    {
+        if (fishingLine.isTaken)
         {
-            if (direction < 0f)
+            if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
             {
-                return true;
+                fishingLine.FCurrentDown();
+
+                if (distanceCP > fishingLine.fCurrent)
+                {
+                    FishManager.instance.DownEnduranceTakingLine();
+                    fishingLine.TensionDownTakingLine();
+                }
             }
             else
             {
-                return false;
+                //Ravalement annulé
             }
         }
+        else if (fishingLine.isBlocked)
+        {
+            if (distanceCP > fishingLine.fCurrent)
+            {
+                FishManager.instance.DownEndurance();
+                fishingLine.TensionDown();
+            }
+        }     
+        else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)    //Mettre à jour Fcurrent
+        {
+            fishingLine.TensionUp();
+            fishingLine.fCurrent = distanceCP;
+        }
+
+        if (distanceCP >= fishingLine.fMax) 
+        { 
+            fishingLine.isFCurrentAtMax(); 
+        }
+
+        if(distanceCP < fishingLine.fCurrent)
+        {
+            fishingLine.TensionUp();
+        }
+
+        ChangeTextFCurrent();
     }
+
+    public bool CheckIfOverFCritique()
+    {
+        if(distanceCP > fishingLine.fCurrent + fishingLine.fCritique)
+        {
+            FCritiqueText.color = Color.green;
+            return true;
+        }
+
+        FCritiqueText.color = Color.red;
+        return false;
+    }
+
+
+    #region Text Change
+    public void ChangeTextCPDistance()
+    {
+        distanceCPText.text = distanceCP.ToString();
+    }
+
+    public void ChangeTextFCurrent()
+    {
+        if(fishingLine.fCurrent < fishingLine.fMax)
+        {
+            fCurrentText.color = Color.green;
+        }
+        if (fishingLine.fCurrent >= fishingLine.fMax)
+        {
+            fCurrentText.color = Color.red;
+        }
+
+        fCurrentText.text = fishingLine.fCurrent.ToString();
+    }
+    public void ChangeTextFMax()
+    {
+        fMaxText.text = fishingLine.fMax.ToString();
+    }
+    #endregion
 }

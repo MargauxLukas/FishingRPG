@@ -8,6 +8,7 @@ public class CameraManager : MonoBehaviour
     public Camera mainCamera;
 
     public GameObject target;
+    public Quaternion baseRotation;
 
     private void Awake()
     {
@@ -21,7 +22,7 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if(!mainCamera.GetComponent<PlayerView>().freeCamera && !FishingRodManager.instance.bobber.GetComponent<CheckWater>().isWater)
+        if(!mainCamera.GetComponent<PlayerView>().freeCamera)
         {
             mainCamera.transform.LookAt(target.transform);
         }
@@ -36,5 +37,10 @@ public class CameraManager : MonoBehaviour
     public void FreeCameraEnable()
     {
         mainCamera.GetComponent<PlayerView>().freeCamera = true;
+    }
+
+    public void SaveBaseRotation()
+    {
+        baseRotation = mainCamera.transform.rotation;
     }
 }

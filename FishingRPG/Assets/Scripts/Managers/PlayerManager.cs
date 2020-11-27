@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -7,9 +8,10 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
 
     public GameObject player;
+    public GameObject playerView;
+    public PlayerStats playerStats;
 
-    public bool blockLine;
-    public bool pullTowards;
+    public float speed = 9f;
 
     private void Awake()
     {
@@ -48,12 +50,14 @@ public class PlayerManager : MonoBehaviour
 
     public void IsBlockingLine()
     {
-        blockLine = true;
+        FishingRodManager.instance.fishingLine.isBlocked = true;
+        FishingRodManager.instance.fishingLine.textBlocked.color = Color.green;
     }
 
-    public void IsPullingTowards()
+    public void IsTakingLine()
     {
-        pullTowards = true;
+        FishingRodManager.instance.fishingLine.isTaken = true;
+        FishingRodManager.instance.fishingLine.textTaken.color = Color.green;
     }
 
     public void IsAerial()
@@ -61,11 +65,44 @@ public class PlayerManager : MonoBehaviour
         FishManager.instance.IsExtenued();
     }
 
-    public void NothingPushed()
+    public void FellingFish()
     {
-        blockLine = false;
-        pullTowards = false;
-        //FishingRod retourne progressivement vers 0 si poisson est opposé !
+        FishManager.instance.FellAerial();
+    }
 
+    public void CheckDistanceWithWater()
+    {
+        //Debug.Log(FishManager.instance.currentFishBehavior.timerAerial + " > " + (FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial()));
+        if(FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial())
+        {
+            FishManager.instance.MoreAerial();
+        }
+    }
+
+    public void IsNotBlockingLine()
+    {
+        FishingRodManager.instance.fishingLine.isBlocked = false;
+        FishingRodManager.instance.fishingLine.textBlocked.color = Color.red;
+    }
+
+    public void IsNotTakingLine()
+    {
+        if (FishingRodManager.instance.fishingLine.fCurrent < FishingRodManager.instance.fishingLine.fMax)
+        {
+            FishingRodManager.instance.fishingLine.isTaken = false;
+            FishingRodManager.instance.fishingLine.textTaken.color = Color.red;
+        }
+    }
+
+    public void CHEAT_SetFishToExhausted()
+    {
+        FishManager.instance.currentFishBehavior.currentStamina = 0f;
+        FishManager.instance.currentFishBehavior.CheckEndurance();
+    }
+
+    public void CHEAT_SetFishToDead()
+    {
+        FishManager.instance.currentFishBehavior.currentLife = 0f;
+        FishManager.instance.currentFishBehavior.CheckLife();
     }
 }
