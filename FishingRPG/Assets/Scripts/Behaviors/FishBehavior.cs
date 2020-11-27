@@ -47,6 +47,8 @@ public class FishBehavior : MonoBehaviour
 
     private Vector3 target;
     private float distance;
+    private Quaternion baseRotate;
+    private int randomDirection;
 
     private void Start()
     {
@@ -57,6 +59,8 @@ public class FishBehavior : MonoBehaviour
         currentLife    = fishyFiche.life   ;
         baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
         strength       = fishyFiche.strength;
+        SetBaseRotation();
+
 
         FishManager.instance.ChangeEnduranceText();
         FishManager.instance.ChangeLifeText();
@@ -149,10 +153,33 @@ public class FishBehavior : MonoBehaviour
 
     public void ChooseDirection()
     {
-        transform.rotation = Quaternion.Euler(0f, Random.Range(0, 360), 0f);
+        randomDirection = Random.Range(1, 101);
+        Debug.Log("Rand -- >" + randomDirection);
+        for (int i = 0; i < 12; i++)
+        {
+            if(randomDirection < FishManager.instance.directionPercentList[i])
+            {
+                Debug.Log("Rotate -- >" + i);
+                ApplicateRotation(i);
+                break;
+            }
+            else
+            {
+                randomDirection -= FishManager.instance.directionPercentList[i];
+            }
+        }
 
         saveDirection = transform.rotation;
         directionHasChoosen = true;
+    }
+
+    public void ApplicateRotation(int i)
+    {
+        int value = -30 * i;
+        transform.rotation = baseRotate;
+        Debug.Log(transform.rotation);
+        transform.rotation *= Quaternion.Euler(0f, value, 0f);
+        Debug.Log(transform.rotation);
     }
 
     public void ChooseDirectionOpposite()
@@ -165,6 +192,13 @@ public class FishBehavior : MonoBehaviour
     {
         timer = 0f;
         transform.LookAt(new Vector3(FishManager.instance.savePos.position.x, transform.position.y, FishManager.instance.savePos.position.z));
+    }
+
+    //Call at Start, sert de valeur de base pour savoir ces différentes rotations.
+    public void SetBaseRotation()
+    {
+        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+        baseRotate = transform.rotation;
     }
 
     public void ChooseTarget()

@@ -7427,6 +7427,54 @@ PrefabInstance:
       propertyPath: savePos
       value: 
       objectReference: {fileID: 2136209604}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: sPercent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: sePercent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: esPercent
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: ePercent
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: enPercent
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: nePercent
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: nPercent
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: noPercent
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: onPercent
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: oPercent
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: osPercent
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755928521197353634, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: soPercent
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6755928522000929883, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
       propertyPath: player
       value: 
