@@ -10,10 +10,10 @@ public class FishingLine : MonoBehaviour
     public float fMax;
     public float fCritique;
     [HideInInspector] public float fCurrent;
-
     [HideInInspector] public float currentTension = 0;
     public float maxTension = 100;
 
+    [Header("Etat Ligne")]
     [HideInInspector] public bool isBlocked = false;
     [HideInInspector] public bool isTaken = false;
 
