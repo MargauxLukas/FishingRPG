@@ -16,7 +16,7 @@ public class FishingRodManager : MonoBehaviour
     public Transform pointC;
     public List<Transform> listTargetFar = new List<Transform>();
     public List<Transform> listTargetNear = new List<Transform>();
-    public FishingLine fishingLine;
+    [HideInInspector] public FishingLine fishingLine;
 
     [Header("Pour montrer visuellement que le poisson est arrivé")]
     public Material catchMaterial;
@@ -26,7 +26,7 @@ public class FishingRodManager : MonoBehaviour
     private Vector3 bobberScale = new Vector3(5f, 0.25f, 5f);
     private Quaternion bobberRotation;
 
-    public bool bobberThrowed = false;
+    [HideInInspector] public bool bobberThrowed = false;
 
     [Header("Speed de la canne à peche")]
     public float speed           = 10f;

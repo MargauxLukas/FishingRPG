@@ -8,8 +8,8 @@ public class FishManager : MonoBehaviour
     public static FishManager instance;
 
     [Header("Fish")]
-    public GameObject currentFish;
-    public FishBehavior currentFishBehavior;
+    [HideInInspector] public GameObject currentFish;
+    [HideInInspector] public FishBehavior currentFishBehavior;
     public Transform savePos;
 
     [Header("Material Aerial")]
@@ -21,19 +21,34 @@ public class FishManager : MonoBehaviour
     public Text speedText;
     public Text lifeText;
 
-    [Header("Aerial Variables")]
-    public bool isAerial = false;
-    public bool isFelling = false;
-    public float aerialExitWaterX  = 0f;
-    public float aerialX;
-    public float aerialEnterWaterX = 0f;
-    public float  aerialExitWaterY  = 0f;
-    public float  aerialY;
-    public float  aerialEnterWaterY = 0f;
-    public float aerialExitWaterZ  = 0f;
-    public float aerialZ;
-    public float aerialEnterWaterZ = 0f;
+    [Header("Aerial variables")]
+    [HideInInspector] public bool isAerial = false;
+    [HideInInspector] public bool isFelling = false;
+    [HideInInspector] public float aerialExitWaterX  = 0f;
+    [HideInInspector] public float aerialX;
+    [HideInInspector] public float aerialEnterWaterX = 0f;
+    [HideInInspector] public float  aerialExitWaterY  = 0f;
+    [HideInInspector] public float  aerialY;
+    [HideInInspector] public float  aerialEnterWaterY = 0f;
+    [HideInInspector] public float aerialExitWaterZ  = 0f;
+    [HideInInspector] public float aerialZ;
+    [HideInInspector] public float aerialEnterWaterZ = 0f;
 
+    [Header("Rotation Percent")]
+    public int sPercent;
+    public int sePercent;
+    public int esPercent;
+    public int ePercent;
+    public int enPercent;
+    public int nePercent;
+    public int nPercent;
+    public int noPercent;
+    public int onPercent;
+    public int oPercent;
+    public int osPercent;
+    public int soPercent;
+
+    [HideInInspector]public List<int> directionPercentList = new List<int>(11);
     private void Awake()
     {
         Init();
@@ -42,6 +57,11 @@ public class FishManager : MonoBehaviour
     public virtual void Init()
     {
         instance = this;
+    }
+
+    public void Start()
+    {
+        directionPercentList = new List<int>(new int[] { sPercent, sePercent, esPercent, ePercent, enPercent, nePercent, nPercent, noPercent, onPercent, oPercent, osPercent, soPercent });
     }
 
     public void IsExtenued()
