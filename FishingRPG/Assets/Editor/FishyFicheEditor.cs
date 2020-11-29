@@ -55,8 +55,6 @@ public class FishyFicheEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
-
         #region Draw Title
         EditorGUILayout.BeginHorizontal();
         var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("Fonts/GLECB", typeof(Font)) };
@@ -148,10 +146,10 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.Space();
 
         //Temporary waiting for tsv import
-        EditorGUILayout.BeginHorizontal();
+        /*EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(drops_s);
         EditorGUILayout.EndHorizontal();
-        Repaint();
+        Repaint();*/
 
         EditorGUIUtility.labelWidth /= 2.5f;
         Color32 rarityColor = new Color32();

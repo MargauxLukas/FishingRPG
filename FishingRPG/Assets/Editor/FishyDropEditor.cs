@@ -33,7 +33,7 @@ public class FishyDropEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
+        //base.OnInspectorGUI();
 
         #region Draw Title
         EditorGUILayout.BeginHorizontal();

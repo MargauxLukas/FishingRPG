@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewArmorSet", menuName = "BFF Tools/Armor Set", order = 10)]
-public class ArmorSet : ScriptableObject
+[CreateAssetMenu(fileName = "NewFishingRod", menuName = "BFF Tools/Fishing Rod", order = 10)]
+public class FishingRod : ScriptableObject
 {
     public string ID;
     public Sprite appearance;
-    public string itemType;
     public int upgradeState;
     public string itemName;
     public int tier;
+
+    public int rodTension;
+    public int gemSlots;
 
     public int strength;
     public int constitution;

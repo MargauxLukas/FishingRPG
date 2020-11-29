@@ -9,22 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e225f7cc96ea83344bcf54578668e745, type: 3}
-  m_Name: Test
+  m_Script: {fileID: 11500000, guid: 31dda8c0eb1cb9d48af82b0214b0f508, type: 3}
+  m_Name: PequessivoFR
   m_EditorClassIdentifier: 
-  ID: PQS_0
-  appearance: {fileID: 21300000, guid: 504ad7f948e76434f94d086d78203012, type: 3}
-  species: Pequessivo
-  tier: 0
-  life: 100
-  stamina: 233
-  strength: 7
-  weight: 3
-  agility: 3
-  magicResistance: 3
-  drops:
+  ID: PFR_1
+  appearance: {fileID: 21300000, guid: efd0d0e2eee846f44be1c0e8b95fdd8f, type: 3}
+  upgradeState: 1
+  itemName: Pequessivo Fishing Rod
+  tier: 1
+  rodTension: 120
+  gemPosition: 1
+  strength: 2
+  constitution: 0
+  dexterity: 0
+  intelligence: 0
+  components:
   - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
   - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
   - {fileID: 11400000, guid: 88b72cfa1a350424c995f8a1310dccb2, type: 2}
   - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
-  patterns: []
+  componentsQty: 01000000040000000200000002000000

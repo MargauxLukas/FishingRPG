@@ -18,7 +18,6 @@ public class FishyFicheTSVReader : MonoBehaviour
 
         //Load Text asset
         TextAsset TSVText = Resources.Load<TextAsset>("TextAssets/[TOOL] TSV Data Fish");
-        Debug.Log(TSVText);
 
         //Add each line of the tab in a list 'lines'
         lines = TSVText.text.Split(new char[] { '\n' });
@@ -37,17 +36,19 @@ public class FishyFicheTSVReader : MonoBehaviour
                 //Adding all existing files in a list (excepting .meta)
                 if (!file.Contains(".meta"))
                 {
+                    //Load asset at asset path as a FishyFiche
                     FishyFiche currentFishyFiche = (FishyFiche)AssetDatabase.LoadAssetAtPath(file, typeof(FishyFiche));
 
+                    //Verify if this fiche doesn't already exist
                     for (int fiche = 0; fiche < fishyFiches.Count; fiche++)
                     {
                         if (!currentFishyFiche.name.Contains(fishyFiches[fiche].name))
                         {
+                            //Then add it to the list
                             fishyFiches.Add(currentFishyFiche);
                         }
                     }
                 }
-                Debug.Log(fishyFiches.Count);
             }
 
             //Verify if line's ID already exist in project
@@ -57,19 +58,20 @@ public class FishyFicheTSVReader : MonoBehaviour
                 //If current Fishy Fiche name contains tab's ID, update Fishy Fiche
                 if (fishyFiches[j].name.Contains(blocks[0]))
                 {
-                    Debug.Log("This fiche already exist, update values...");
+                    Debug.Log("Fiche already exist, updating values...");
                     UpdateScriptable(fishyFiches[j]);
                 }
                 else
                 {
-                    Debug.Log("Fiche doesn't exist, creating new asset");
+                    Debug.Log("Fiche doesn't exist, creating new asset...");
                     CreateNewScriptable();
                 }
             }
 
+            //If existing files list is empty, create directly a new scriptable
             if(fishyFiches.Count == 0)
             {
-                Debug.Log("FishyFiche list empty");
+                Debug.Log("FishyFiche list empty, creating new asset...");
                 CreateNewScriptable();
             }
         }
@@ -77,15 +79,16 @@ public class FishyFicheTSVReader : MonoBehaviour
 
     public void CreateNewScriptable()
     {
+        //Create a local file path & a new instance of FishyFiche
         string localPath = "Assets/Scripts/Data/Scriptables/FishyFiches/" + blocks[0] + ".asset";
         FishyFiche asset = ScriptableObject.CreateInstance<FishyFiche>();
 
+        //Create the new asset at the created local path
         localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
         AssetDatabase.CreateAsset(asset, localPath);
         AssetDatabase.SaveAssets();
 
-        //fishyFiches.Add(asset);
-
+        //Then updates data values
         UpdateScriptable(asset);
 
     }

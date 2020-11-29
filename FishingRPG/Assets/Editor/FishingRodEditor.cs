@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(ArmorSet))]
-public class ArmorSetEditor : Editor
+[CustomEditor(typeof(FishingRod))]
+public class FishingRodEditor : Editor
 {
-    ArmorSet currentArmor;
+    FishingRod currentRod;
 
     SerializedProperty ID_s;
     SerializedProperty appearance_s;
-    SerializedProperty itemType_s;
     SerializedProperty upgradeState_s;
     SerializedProperty itemName_s;
     SerializedProperty tier_s;
+
+    SerializedProperty rodTension_s;
+    SerializedProperty gemSlots_s;
 
     SerializedProperty strength_s;
     SerializedProperty constitution_s;
@@ -23,28 +25,30 @@ public class ArmorSetEditor : Editor
     SerializedProperty components_s;
     SerializedProperty componentsQty_s;
 
-    Sprite armorSprite;
+    Sprite rodSprite;
 
     private void OnEnable()
     {
-        currentArmor = (target as ArmorSet);
+        currentRod = (target as FishingRod);
 
-        ID_s            = serializedObject.FindProperty(nameof(ArmorSet.ID           ));
-        appearance_s    = serializedObject.FindProperty(nameof(ArmorSet.appearance   ));
-        itemType_s      = serializedObject.FindProperty(nameof(ArmorSet.itemType     ));
-        upgradeState_s  = serializedObject.FindProperty(nameof(ArmorSet.upgradeState ));
-        itemName_s      = serializedObject.FindProperty(nameof(ArmorSet.itemName     ));
-        tier_s          = serializedObject.FindProperty(nameof(ArmorSet.tier         ));
+        ID_s            = serializedObject.FindProperty(nameof(FishingRod.ID           ));
+        appearance_s    = serializedObject.FindProperty(nameof(FishingRod.appearance   ));
+        upgradeState_s  = serializedObject.FindProperty(nameof(FishingRod.upgradeState ));
+        itemName_s      = serializedObject.FindProperty(nameof(FishingRod.itemName     ));
+        tier_s          = serializedObject.FindProperty(nameof(FishingRod.tier         ));
 
-        strength_s      = serializedObject.FindProperty(nameof(ArmorSet.strength     ));
-        constitution_s  = serializedObject.FindProperty(nameof(ArmorSet.constitution ));
-        dexterity_s     = serializedObject.FindProperty(nameof(ArmorSet.dexterity    ));
-        intelligence_s  = serializedObject.FindProperty(nameof(ArmorSet.intelligence ));
+        rodTension_s    = serializedObject.FindProperty(nameof(FishingRod.rodTension   ));
+        gemSlots_s   = serializedObject.FindProperty(nameof(FishingRod.gemSlots ));
 
-        components_s    = serializedObject.FindProperty(nameof(ArmorSet.components   ));
-        componentsQty_s = serializedObject.FindProperty(nameof(ArmorSet.componentsQty));
+        strength_s      = serializedObject.FindProperty(nameof(FishingRod.strength     ));
+        constitution_s  = serializedObject.FindProperty(nameof(FishingRod.constitution ));
+        dexterity_s     = serializedObject.FindProperty(nameof(FishingRod.dexterity    ));
+        intelligence_s  = serializedObject.FindProperty(nameof(FishingRod.intelligence ));
 
-        armorSprite = (target as ArmorSet).appearance;
+        components_s    = serializedObject.FindProperty(nameof(FishingRod.components   ));
+        componentsQty_s = serializedObject.FindProperty(nameof(FishingRod.componentsQty));
+
+        rodSprite = (target as FishingRod).appearance;
     }
 
     public override void OnInspectorGUI()
@@ -58,13 +62,13 @@ public class ArmorSetEditor : Editor
 
         #region Draw Sprite & Texture
         var layout = new GUILayoutOption[] { };
-        if (armorSprite != null) layout = new GUILayoutOption[] { GUILayout.Height(armorSprite.rect.height / 4) };
+        if (rodSprite != null) layout = new GUILayoutOption[] { GUILayout.Height(rodSprite.rect.height / 4) };
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(appearance_s, GUIContent.none, layout);
 
-        if (EditorGUI.EndChangeCheck()) armorSprite = (target as ArmorSet).appearance;
-        if (armorSprite != null) OnGUIDrawSprite(armorSprite.rect, armorSprite);
+        if (EditorGUI.EndChangeCheck()) rodSprite = (target as FishingRod).appearance;
+        if (rodSprite != null) OnGUIDrawSprite(rodSprite.rect, rodSprite);
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.Space();
         #endregion
@@ -80,13 +84,21 @@ public class ArmorSetEditor : Editor
         //Label style for all stats
         EditorGUIUtility.labelWidth /= 2;
 
-        #region Draw Type and Tier
+        #region Draw Tier
         EditorGUILayout.BeginHorizontal();
         GUI.contentColor = new Color32(0, 0, 0, 255);
-        EditorGUILayout.LabelField("Type : " + itemType_s.stringValue, whiteText);
+        EditorGUILayout.LabelField("Tier : " + tier_s.intValue, whiteText);
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
+        #endregion
+
+        #region Draw Tension and Gems Positions
+        EditorGUILayout.BeginHorizontal();
+        GUI.contentColor = new Color32(0, 0, 0, 255);
+        EditorGUILayout.LabelField("Max. Tension : " + rodTension_s.intValue, whiteText);
         GUILayout.FlexibleSpace();
         GUI.contentColor = new Color32(0, 0, 0, 255);
-        EditorGUILayout.LabelField("Tier : " + tier_s.intValue, whiteText);
+        EditorGUILayout.LabelField("Gems Slots : " + gemSlots_s.intValue, whiteText);
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.Space();
         #endregion
@@ -135,7 +147,7 @@ public class ArmorSetEditor : Editor
         EditorGUIUtility.labelWidth = baseLabel;
 
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Crafting Components" , subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
+        EditorGUILayout.LabelField("Crafting Components", subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.Space();
 
@@ -151,9 +163,9 @@ public class ArmorSetEditor : Editor
 
         EditorGUIUtility.labelWidth /= 2.5f;
         Color32 rarityColor = new Color32();
-        for (int i = 0; i < currentArmor.components.Length; i++)
+        for (int i = 0; i < currentRod.components.Length; i++)
         {
-            switch (currentArmor.components[i].rarity)
+            switch (currentRod.components[i].rarity)
             {
                 case "Common":
                     rarityColor = new Color32(0, 0, 0, 255);
@@ -162,11 +174,11 @@ public class ArmorSetEditor : Editor
                 case "Rare":
                     rarityColor = new Color32(0, 112, 221, 255);
                     break;
-                
+
                 case "Epic":
                     rarityColor = new Color32(163, 53, 238, 255);
                     break;
-                
+
                 case "Legendary":
                     rarityColor = new Color32(255, 128, 0, 255);
                     break;
@@ -174,7 +186,7 @@ public class ArmorSetEditor : Editor
 
             EditorGUILayout.BeginHorizontal();
             GUI.contentColor = rarityColor;
-            EditorGUILayout.LabelField(currentArmor.components[i].type + " (" + currentArmor.componentsQty[i].ToString() + ")", whiteText);
+            EditorGUILayout.LabelField(currentRod.components[i].type + " (" + currentRod.componentsQty[i].ToString() + ")", whiteText);
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
         }
@@ -210,4 +222,3 @@ public class ArmorSetEditor : Editor
         
     }
 }
-
