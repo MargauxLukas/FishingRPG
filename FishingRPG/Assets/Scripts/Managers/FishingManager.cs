@@ -9,7 +9,7 @@ public class FishingManager : MonoBehaviour
     private float timer      = 0f;
     private float needToWait = 0f;
 
-    private bool readyToFish = false;
+    public bool readyToFish = false;
 
     public GameObject fishPrefab;
     public Transform dynamics;
@@ -73,10 +73,11 @@ public class FishingManager : MonoBehaviour
 
         if (readyToFish)
         {
-            readyToFish = false;
             Destroy(currentFish);
         }
 
         FishingRodManager.instance.BobberBack();
+        FishingRodManager.instance.fishingLine.fCurrent = 0f;
+        FishingRodManager.instance.distanceCP = 0f;
     }
 }

@@ -1417,9 +1417,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPoint: {fileID: 1580231281}
   cableMaterial: {fileID: 2100000, guid: dc0931f46f2f8e240874f8e664fa771c, type: 2}
-  cableLength: 0.1
+  cableLength: 0
   totalSegments: 5
-  segmentsPerUnit: 2
+  segmentsPerUnit: 1
   cableWidth: 0.01
   verletIterations: 1
   solverIterations: 1
@@ -7655,6 +7655,10 @@ PrefabInstance:
       propertyPath: currentTension
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6755928522560432922, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
+      propertyPath: cableComponent
+      value: 
+      objectReference: {fileID: 323600403}
     - target: {fileID: 6755928522560432927, guid: 2bcad786e2f98f24ca091c80ef93d43b, type: 3}
       propertyPath: m_Name
       value: ()Fishing Rod Manager

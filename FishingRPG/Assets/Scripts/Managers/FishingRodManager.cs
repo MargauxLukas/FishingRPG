@@ -63,6 +63,7 @@ public class FishingRodManager : MonoBehaviour
         if(fishingRodPivot.GetComponent<Rotate>().result && !bobberThrowed)
         {
             bobberThrowed = true;
+            fishingLine.cableComponent.UpdateLineLength(Vector3.Distance(pointC.position, bobber.transform.position));
             LaunchBobber();
         }
 
@@ -109,6 +110,7 @@ public class FishingRodManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         Vector3 newVector = Vector3.Lerp(bobber.transform.localPosition , bobberPosition.transform.localPosition, 1f);
         bobber.transform.localPosition = newVector;
+        FishingManager.instance.readyToFish = false;
     }
 
     public void SetBobberMaterialToSucces()
@@ -207,6 +209,8 @@ public class FishingRodManager : MonoBehaviour
 
     public void ChangeTextFCurrent()
     {
+        fishingLine.cableComponent.UpdateLineLength(fishingLine.fCurrent);
+
         if(fishingLine.fCurrent < fishingLine.fMax)
         {
             fCurrentText.color = Color.green;
