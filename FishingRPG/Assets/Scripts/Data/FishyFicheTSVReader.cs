@@ -39,7 +39,13 @@ public class FishyFicheTSVReader : MonoBehaviour
                 {
                     FishyFiche currentFishyFiche = (FishyFiche)AssetDatabase.LoadAssetAtPath(file, typeof(FishyFiche));
 
-                    fishyFiches.Add(currentFishyFiche);
+                    for (int fiche = 0; fiche < fishyFiches.Count; fiche++)
+                    {
+                        if (!currentFishyFiche.name.Contains(fishyFiches[fiche].name))
+                        {
+                            fishyFiches.Add(currentFishyFiche);
+                        }
+                    }
                 }
                 Debug.Log(fishyFiches.Count);
             }
@@ -78,7 +84,7 @@ public class FishyFicheTSVReader : MonoBehaviour
         AssetDatabase.CreateAsset(asset, localPath);
         AssetDatabase.SaveAssets();
 
-        fishyFiches.Add(asset);
+        //fishyFiches.Add(asset);
 
         UpdateScriptable(asset);
 
