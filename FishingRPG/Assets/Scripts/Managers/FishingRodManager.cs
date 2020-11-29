@@ -13,6 +13,7 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public BendFishingRod bendFishingRod;
     public Transform pointC;
     public List<Transform> listTargetFar = new List<Transform>();
     public List<Transform> listTargetNear = new List<Transform>();
@@ -55,6 +56,7 @@ public class FishingRodManager : MonoBehaviour
     {
         bobberRotation = bobber.transform.localRotation;
         fishingLine = GetComponent<FishingLine>();
+        bendFishingRod.SetupValuePerFloat();
         ChangeTextFMax();
     }
 
@@ -139,7 +141,7 @@ public class FishingRodManager : MonoBehaviour
             }
         }
         fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
-        fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(50f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
+        fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
     }
 
     public void CheckFCurrent()

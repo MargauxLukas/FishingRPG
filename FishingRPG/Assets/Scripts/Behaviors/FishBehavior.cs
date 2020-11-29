@@ -203,12 +203,10 @@ public class FishBehavior : MonoBehaviour
 
         if (distance < 10f)
         {
-            Debug.Log("TARGET : Point C");
             target = FishingRodManager.instance.pointC.position;
         }
         else if(distance < 20)
         {
-            Debug.Log("TARGET : NEAR");
             if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
             {
                 target = FishingRodManager.instance.listTargetNear[0].position;
@@ -221,8 +219,6 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            Debug.Log("TARGET : FAR");
-
             if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
             {
                 target = FishingRodManager.instance.listTargetFar[0].position;
