@@ -12,6 +12,9 @@ public class PlayerManager : MonoBehaviour
     public PlayerStats playerStats;
     public PlayerGem playerGem;
 
+    public GameObject canvas;
+    private bool dataCheat = false;
+
     public float speed = 9f;
 
     private void Awake()
@@ -120,5 +123,19 @@ public class PlayerManager : MonoBehaviour
     {
         FishManager.instance.currentFishBehavior.currentLife = 0f;
         FishManager.instance.currentFishBehavior.CheckLife();
+    }
+
+    public void CHEAT_ShowData()
+    {
+        if (!dataCheat)
+        { 
+            canvas.SetActive(true);
+            dataCheat = true;
+        }
+        else 
+        { 
+            canvas.SetActive(false);
+            dataCheat = false;
+        }
     }
 }

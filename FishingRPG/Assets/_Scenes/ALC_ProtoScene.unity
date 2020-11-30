@@ -5330,6 +5330,7 @@ MonoBehaviour:
   playerView: {fileID: 3201430609473916959}
   playerStats: {fileID: 5935907168159974705}
   playerGem: {fileID: 1343009624}
+  canvas: {fileID: 2012618221}
   speed: 9
 --- !u!114 &1343009624
 MonoBehaviour:
@@ -7165,7 +7166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2012618222
 RectTransform:
   m_ObjectHideFlags: 0

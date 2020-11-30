@@ -47,5 +47,10 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            PlayerManager.instance.CHEAT_ShowData();
+        }
     }
 }

@@ -71,7 +71,6 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.UseGemThirdSlot();
             }
 
-
             if (Input.GetKey(KeyCode.E))
             {
                 PlayerManager.instance.CHEAT_SetFishToExhausted();
@@ -80,6 +79,11 @@ public class PlayerFishing : MonoBehaviour
             if(Input.GetKey(KeyCode.D))
             {
                 PlayerManager.instance.CHEAT_SetFishToDead();
+            }
+
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                PlayerManager.instance.CHEAT_ShowData();
             }
 
             FishingRodManager.instance.SetFishingRodPosition(Input.GetAxis("Right Stick (Horizontal)"));
