@@ -6,9 +6,20 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
     public GameObject firstSelectedButton;
 
     public Sprite[] itemsList;
+
+    private void Awake()
+    {
+        Init();
+    }
+
+    public virtual void Init()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
