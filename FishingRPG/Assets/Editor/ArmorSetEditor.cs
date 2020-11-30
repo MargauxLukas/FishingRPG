@@ -131,8 +131,8 @@ public class ArmorSetEditor : Editor
         EditorGUILayout.Space();
         #endregion
 
-        #region Draw Drops list
-        EditorGUIUtility.labelWidth = baseLabel;
+        #region Draw Components list
+        /*EditorGUIUtility.labelWidth = baseLabel;
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Crafting Components" , subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
@@ -149,7 +149,7 @@ public class ArmorSetEditor : Editor
         EditorGUILayout.EndHorizontal();
         Repaint();*/
 
-        EditorGUIUtility.labelWidth /= 2.5f;
+        /*EditorGUIUtility.labelWidth /= 2.5f;
         Color32 rarityColor = new Color32();
         for (int i = 0; i < currentArmor.components.Length; i++)
         {
@@ -178,7 +178,7 @@ public class ArmorSetEditor : Editor
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
         }
-        EditorGUILayout.Space();
+        EditorGUILayout.Space();*/
         #endregion
 
         serializedObject.ApplyModifiedProperties();
