@@ -95,10 +95,11 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
-        bobber.transform.parent        = fishingRodGameObject.transform   ;              //Reset parent
+        bobber.transform.parent        = fishingRodGameObject.transform.GetChild(0).GetChild(0).transform   ;              //Reset parent
         StartCoroutine("Test");
         bobber.transform.localRotation = bobberRotation;
         SetFishingRodPosition(0f);
+        bendFishingRod.ResetBendable();
 
         fishingRodPivot.GetComponent<Rotate>().result = false;                      //N'attend plus de pêcher un poisson
 
@@ -213,20 +214,27 @@ public class FishingRodManager : MonoBehaviour
 
     public void ChangeTextFCurrent()
     {
-        if (distanceCP < fishingLine.fCurrent && FishManager.instance.currentFish != null)
+        if (FishManager.instance.currentFish != null)
         {
-            if (fishingLine.fCurrent - distanceCP < 5f)
+            if (distanceCP < fishingLine.fCurrent)
             {
-                fishingLine.cableComponent.UpdateLineLength(distanceCP-5f + (fishingLine.fCurrent - distanceCP));
+                if (fishingLine.fCurrent - distanceCP < 5f)
+                {
+                    fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f + (fishingLine.fCurrent - distanceCP));
+                }
+                else
+                {
+                    fishingLine.cableComponent.UpdateLineLength(distanceCP);
+                }
             }
             else
             {
-                fishingLine.cableComponent.UpdateLineLength(distanceCP);
+                fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f);
             }
         }
         else
         {
-            fishingLine.cableComponent.UpdateLineLength(distanceCP-5f);
+            fishingLine.cableComponent.UpdateLineLength(0f);
         }
 
         if(fishingLine.fCurrent < fishingLine.fMax)

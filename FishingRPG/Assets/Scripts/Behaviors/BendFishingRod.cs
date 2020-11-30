@@ -23,9 +23,7 @@ public class BendFishingRod : MonoBehaviour
             CalculPosTarget();
             tbIK.weight = valuePos;
             transform.position = FishingManager.instance.currentFish.transform.position;        
-        }
-
-        
+        }    
     }
 
     public void SetupValuePerFloat()
@@ -36,5 +34,10 @@ public class BendFishingRod : MonoBehaviour
     public void CalculPosTarget()
     {
         valuePos = valuePerFloat * (FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent);
+    }
+
+    public void ResetBendable()
+    {
+        transform.position = basePosition.position;
     }
 }
