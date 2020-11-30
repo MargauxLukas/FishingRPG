@@ -65,7 +65,7 @@ public class FishyFicheEditor : Editor
 
         #region Draw Sprite & Texture
         var layout = new GUILayoutOption[] { };
-        if (fishSprite != null) layout = new GUILayoutOption[] { GUILayout.Height(fishSprite.rect.height / 16) };
+        if (fishSprite != null) layout = new GUILayoutOption[] { GUILayout.Height(fishSprite.rect.height / 5) };
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(appearance_s, GUIContent.none, layout);
@@ -139,7 +139,7 @@ public class FishyFicheEditor : Editor
         #endregion
 
         #region Draw Drops list
-        /*EditorGUIUtility.labelWidth = baseLabel;
+        EditorGUIUtility.labelWidth = baseLabel;
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Butcher's Drops" , subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
@@ -147,10 +147,10 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.Space();
 
         //Temporary waiting for tsv import
-        EditorGUILayout.BeginHorizontal();
+        /*EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(drops_s);
         EditorGUILayout.EndHorizontal();
-        Repaint();
+        Repaint();*/
 
         EditorGUIUtility.labelWidth /= 2.5f;
         Color32 rarityColor = new Color32();
@@ -185,7 +185,7 @@ public class FishyFicheEditor : Editor
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
         }
-        EditorGUILayout.Space();*/
+        EditorGUILayout.Space();
         #endregion
 
         #region Separator
@@ -214,9 +214,9 @@ public class FishyFicheEditor : Editor
 
     void OnGUIDrawSprite(Rect _pos, Sprite _sprite)
     {
-        Rect dimensions = new Rect(_sprite.rect.position, _sprite.rect.size/4);
-        float sWidth = dimensions.width /4;
-        float sHeight = dimensions.height /4;
+        Rect dimensions = new Rect(_sprite.rect.position, _sprite.rect.size/2);
+        float sWidth = dimensions.width /2;
+        float sHeight = dimensions.height /2;
         Rect pos = GUILayoutUtility.GetRect(sWidth, sHeight);
         pos.width = sWidth;
         pos.height = sHeight;
@@ -224,10 +224,10 @@ public class FishyFicheEditor : Editor
         if(Event.current.type == EventType.Repaint)
         {
             var tex = _sprite.texture;
-            dimensions.xMin /= tex.width /4;
-            dimensions.xMax /= tex.width /4;
-            dimensions.yMin /= tex.height /4;
-            dimensions.yMax /= tex.height /4;
+            dimensions.xMin /= tex.width /2;
+            dimensions.xMax /= tex.width /2;
+            dimensions.yMin /= tex.height /2;
+            dimensions.yMax /= tex.height /2;
 
             GUI.DrawTextureWithTexCoords(pos, tex, dimensions);
         }
