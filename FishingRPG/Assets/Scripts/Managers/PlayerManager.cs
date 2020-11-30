@@ -94,6 +94,21 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void UseGemFirstSlot()
+    {
+        
+    }
+
+    public void UseGemSecondSlot()
+    {
+
+    }
+
+    public void UseGemThirdSlot()
+    {
+
+    }
+
     public void CHEAT_SetFishToExhausted()
     {
         FishManager.instance.currentFishBehavior.currentStamina = 0f;
