@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7dc1d329f37144bb57e3a6af5463ec, type: 3}
   m_Name: FirstGem
   m_EditorClassIdentifier: 
-  gemName: 
-  duration: 0
-  cooldown: 0
+  gemName: FirstGem
+  duration: 30
+  cooldown: 45
   components: []

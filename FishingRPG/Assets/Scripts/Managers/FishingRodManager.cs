@@ -18,6 +18,9 @@ public class FishingRodManager : MonoBehaviour
     public List<Transform> listTargetFar = new List<Transform>();
     public List<Transform> listTargetNear = new List<Transform>();
     [HideInInspector] public FishingLine fishingLine;
+    public GemSlot slot1;
+    public GemSlot slot2;
+    public GemSlot slot3;
 
     [Header("Pour montrer visuellement que le poisson est arrivé")]
     public Material catchMaterial;
