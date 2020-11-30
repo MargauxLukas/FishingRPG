@@ -94,7 +94,6 @@ public class FishingRodManager : MonoBehaviour
         bobberThrowed = false;
         bobber.transform.parent        = fishingRodGameObject.transform   ;              //Reset parent
         StartCoroutine("Test");
-        bobber.transform.localScale    = bobberScale   ;
         bobber.transform.localRotation = bobberRotation;
         SetFishingRodPosition(0f);
 
