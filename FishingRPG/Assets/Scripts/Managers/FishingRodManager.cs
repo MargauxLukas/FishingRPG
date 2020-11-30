@@ -213,7 +213,21 @@ public class FishingRodManager : MonoBehaviour
 
     public void ChangeTextFCurrent()
     {
-        fishingLine.cableComponent.UpdateLineLength(fishingLine.fCurrent);
+        if (distanceCP < fishingLine.fCurrent && FishManager.instance.currentFish != null)
+        {
+            if (fishingLine.fCurrent - distanceCP < 5f)
+            {
+                fishingLine.cableComponent.UpdateLineLength(distanceCP-5f + (fishingLine.fCurrent - distanceCP));
+            }
+            else
+            {
+                fishingLine.cableComponent.UpdateLineLength(distanceCP);
+            }
+        }
+        else
+        {
+            fishingLine.cableComponent.UpdateLineLength(distanceCP-5f);
+        }
 
         if(fishingLine.fCurrent < fishingLine.fMax)
         {
