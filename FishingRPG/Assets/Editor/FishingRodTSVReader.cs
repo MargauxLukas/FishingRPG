@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEditor;
-using UnityEditor.Rendering;
 
-public class ArmorSetTSVReader : MonoBehaviour
+public class FishingRodTSVReader : MonoBehaviour
 {
     string[] lines;  //List of all tab's lines
     string[] blocks; //List of each line's columns
-    List<ArmorSet> armorSets = new List<ArmorSet>();  //List of all existing Fishy Fiches
+    List<FishingRod> fishingRods = new List<FishingRod>();  //List of all existing Fishy Fiches
 
     public void ReadTab()
     {
         Debug.Log("Read Tab");
-        armorSets.Clear();
+        fishingRods.Clear();
 
         //Load Text asset
-        TextAsset TSVText = Resources.Load<TextAsset>("TextAssets/[TOOL] TSV Data Armor");
+        TextAsset TSVText = Resources.Load<TextAsset>("TextAssets/[TOOL] TSV Data FishingRod");
 
         //Add each line of the tab in a list 'lines'
         lines = TSVText.text.Split(new char[] { '\n' });
@@ -30,48 +29,48 @@ public class ArmorSetTSVReader : MonoBehaviour
             blocks = lines[i].Split(new char[] { ';' });
 
             //Find all existing IDs
-            foreach (string file in Directory.GetFiles("Assets/Scripts/Data/Scriptables/ArmorSets"))
+            foreach (string file in Directory.GetFiles("Assets/Scripts/Data/Scriptables/FishingRods"))
             {
                 Debug.Log("Search files");
                 //Adding all existing files in a list (excepting .meta)
                 if (!file.Contains(".meta"))
                 {
                     //Load asset at asset path as a FishyFiche
-                    ArmorSet currentArmorSet = (ArmorSet)AssetDatabase.LoadAssetAtPath(file, typeof(ArmorSet));
+                    FishingRod currentFishingRod = (FishingRod)AssetDatabase.LoadAssetAtPath(file, typeof(FishingRod));
 
                     //Verify if this fiche doesn't already exist
-                    for (int armor = 0; armor < armorSets.Count; armor++)
+                    for (int rod = 0; rod < fishingRods.Count; rod++)
                     {
-                        if (!currentArmorSet.name.Contains(armorSets[armor].name))
+                        if (!currentFishingRod.name.Contains(fishingRods[rod].name))
                         {
                             //Then add it to the list
-                            armorSets.Add(currentArmorSet);
+                            fishingRods.Add(currentFishingRod);
                         }
                     }
                 }
             }
 
             //Verify if line's ID already exist in project
-            for (int j = 0; j < armorSets.Count; j++) //Read all existing ID's in 'fishyFiches' list
+            for (int j = 0; j < fishingRods.Count; j++) //Read all existing ID's in 'fishyFiches' list
             {
                 Debug.Log("Read all fiches");
                 //If current Fishy Fiche name contains tab's ID, update Fishy Fiche
-                if (armorSets[j].name.Contains(blocks[0]))
+                if (fishingRods[j].name.Contains(blocks[0]))
                 {
-                    Debug.Log("Armor already exist, updating values...");
-                    UpdateScriptable(armorSets[j]);
+                    Debug.Log("Rod already exist, updating values...");
+                    UpdateScriptable(fishingRods[j]);
                 }
                 else
                 {
-                    Debug.Log("Armor doesn't exist, creating new asset...");
+                    Debug.Log("Rod doesn't exist, creating new asset...");
                     CreateNewScriptable();
                 }
             }
 
             //If existing files list is empty, create directly a new scriptable
-            if (armorSets.Count == 0)
+            if (fishingRods.Count == 0)
             {
-                Debug.Log("ArmorSet list empty, creating new asset...");
+                Debug.Log("FishingRod list empty, creating new asset...");
                 CreateNewScriptable();
             }
         }
@@ -80,8 +79,8 @@ public class ArmorSetTSVReader : MonoBehaviour
     public void CreateNewScriptable()
     {
         //Create a local file path & a new instance of FishyFiche
-        string localPath = "Assets/Scripts/Data/Scriptables/ArmorSets/" + blocks[0] + ".asset";
-        ArmorSet asset = ScriptableObject.CreateInstance<ArmorSet>();
+        string localPath = "Assets/Scripts/Data/Scriptables/FishingRods/" + blocks[0] + ".asset";
+        FishingRod asset = ScriptableObject.CreateInstance<FishingRod>();
 
         //Create the new asset at the created local path
         localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
@@ -93,17 +92,19 @@ public class ArmorSetTSVReader : MonoBehaviour
 
     }
 
-    public void UpdateScriptable(ArmorSet _armorSet)
+    public void UpdateScriptable(FishingRod _fishingRod)
     {
-        _armorSet.ID       = blocks[0];
-        _armorSet.itemType = blocks[1];
-        _armorSet.upgradeState = int.Parse(blocks[2]);
-        _armorSet.itemName = blocks[3];
-        _armorSet.tier         = int.Parse(blocks[4]);
+        _fishingRod.ID       = blocks[0];
+        _fishingRod.upgradeState = int.Parse(blocks[1]);
+        _fishingRod.itemName = blocks[2];
+        _fishingRod.tier         = int.Parse(blocks[3]);
 
-        _armorSet.strength     = int.Parse(blocks[5]);
-        _armorSet.constitution = int.Parse(blocks[6]);
-        _armorSet.dexterity    = int.Parse(blocks[7]);
-        _armorSet.intelligence = int.Parse(blocks[8]);
+        _fishingRod.rodTension   = int.Parse(blocks[4]);
+        _fishingRod.gemSlots     = int.Parse(blocks[5]);
+
+        _fishingRod.strength     = int.Parse(blocks[6]);
+        _fishingRod.constitution = int.Parse(blocks[7]);
+        _fishingRod.dexterity    = int.Parse(blocks[8]);
+        _fishingRod.intelligence = int.Parse(blocks[9]);
     }
 }
