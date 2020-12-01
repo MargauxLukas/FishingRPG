@@ -25,6 +25,12 @@ MonoBehaviour:
   drops:
   - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
   - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
-  - {fileID: 11400000, guid: 88b72cfa1a350424c995f8a1310dccb2, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
-  patterns: []
+  calmPatterns:
+  - {fileID: 11400000, guid: 46a007261a1b4df4d8661da44698c689, type: 2}
+  - {fileID: 11400000, guid: 09dc8440f43dbcc4b879e8704cac7c30, type: 2}
+  - {fileID: 11400000, guid: 94c786d6a75b4c34bae7dd865772ba3f, type: 2}
+  ragePatterns:
+  - {fileID: 11400000, guid: 09dc8440f43dbcc4b879e8704cac7c30, type: 2}
+  - {fileID: 11400000, guid: 46a007261a1b4df4d8661da44698c689, type: 2}

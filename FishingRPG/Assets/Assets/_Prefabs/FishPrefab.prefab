@@ -175,7 +175,7 @@ MonoBehaviour:
   JumpHeight: 10
   timerAerial: 0
   maxTimeAerial: 2
-  isFellDown: 1
+  isFellDown: 0
   fellingFreeze: 0
   minTimeForChangeDirection: 3
   maxTimeForChangeDirection: 5

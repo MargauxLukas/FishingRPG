@@ -143,8 +143,6 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            //(1-t)*P0 + t*p1
-            Debug.Log("test");
             float y = (1- currentTime) * FishManager.instance.aerialExitWaterY + currentTime*FishManager.instance.aerialEnterWaterY;
 
             return new Vector3(transform.position.x, y, transform.position.z);

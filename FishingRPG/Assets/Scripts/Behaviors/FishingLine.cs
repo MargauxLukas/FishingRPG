@@ -63,7 +63,6 @@ public class FishingLine : MonoBehaviour
                 ChangeText();
                 LineIsBroken();
             }
-
         }
         else
         {
