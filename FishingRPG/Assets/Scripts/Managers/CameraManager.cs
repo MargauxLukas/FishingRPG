@@ -22,13 +22,9 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if(!mainCamera.GetComponent<PlayerView>().freeCamera && !FishingRodManager.instance.bobber.GetComponent<CheckWater>().isWater)
+        if(!mainCamera.GetComponent<PlayerView>().freeCamera)
         {
             mainCamera.transform.LookAt(target.transform);
-        }
-        else
-        {
-            mainCamera.transform.rotation = baseRotation;
         }
     }
 
@@ -46,10 +42,5 @@ public class CameraManager : MonoBehaviour
     public void SaveBaseRotation()
     {
         baseRotation = mainCamera.transform.rotation;
-    }
-
-    public void SetOriginPoint()
-    {
-        mainCamera.transform.rotation = baseRotation;
     }
 }

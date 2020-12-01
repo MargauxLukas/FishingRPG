@@ -25,7 +25,9 @@ public class FishyFicheEditor : Editor
 
     SerializedProperty drops_s;
 
-    SerializedProperty patterns_s;
+    SerializedProperty calmPatterns_s;
+    SerializedProperty ragePatterns_s;
+
 
     Sprite fishSprite;
 
@@ -48,7 +50,8 @@ public class FishyFicheEditor : Editor
 
         drops_s           = serializedObject.FindProperty(nameof(FishyFiche.drops          ));
 
-        patterns_s        = serializedObject.FindProperty(nameof(FishyFiche.patterns       ));
+        calmPatterns_s    = serializedObject.FindProperty(nameof(FishyFiche.calmPatterns   ));
+        ragePatterns_s    = serializedObject.FindProperty(nameof(FishyFiche.ragePatterns   ));
 
         fishSprite = (target as FishyFiche).appearance;
     }
@@ -138,7 +141,7 @@ public class FishyFicheEditor : Editor
         #endregion
 
         #region Draw Drops list
-        EditorGUIUtility.labelWidth = baseLabel;
+        /*EditorGUIUtility.labelWidth = baseLabel;
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Butcher's Drops" , subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
@@ -151,7 +154,7 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.EndHorizontal();
         Repaint();*/
 
-        EditorGUIUtility.labelWidth /= 2.5f;
+        /*EditorGUIUtility.labelWidth /= 2.5f;
         Color32 rarityColor = new Color32();
         for (int i = 0; i < currentFish.drops.Length; i++)
         {
@@ -184,7 +187,7 @@ public class FishyFicheEditor : Editor
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
         }
-        EditorGUILayout.Space();
+        EditorGUILayout.Space();*/
         #endregion
 
         #region Separator
@@ -195,7 +198,7 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.Space();
         #endregion
 
-        #region Draw Patterns list
+        #region Draw Patterns lists
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Patterns", subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
         EditorGUILayout.EndHorizontal();
@@ -203,7 +206,10 @@ public class FishyFicheEditor : Editor
 
         EditorGUIUtility.labelWidth = baseLabel;
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.PropertyField(patterns_s);
+        EditorGUILayout.PropertyField(calmPatterns_s);
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.PropertyField(ragePatterns_s);
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(patterns_s);

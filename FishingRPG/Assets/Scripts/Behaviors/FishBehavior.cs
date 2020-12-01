@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -8,264 +9,357 @@ using UnityEngine.UIElements;
 public class FishBehavior : MonoBehaviour
 {
     [Header("Stats Fish")]
-    public  float baseSpeed = 3f;
-    private float speed     = 1f;
-    public  float endurance = 100f;
-    public bool extenued    = false;
+    public FishStats  fishStats ;
+    public FishPatterns fishPattern;
+    [HideInInspector] public FishyFiche fishyFiche;
+    [HideInInspector] public float baseSpeed      = 3f;                                  //A prendre sur fishyFiche                      
+    [HideInInspector] public float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
+    [HideInInspector] public float currentLife    = 0f;                //Max à prendre sur fishyFiche
+    [HideInInspector] public float strength       = 0f;
 
+    [Header("State Fish")]
+    [HideInInspector] public bool exhausted        = false;
+    [HideInInspector] public bool isDead           = false;
+    [HideInInspector] public bool inVictoryZone    = false;
+    [HideInInspector] public bool isRage           = false;
 
-    //Position de référence
-    private Vector3 maxPos;                         //Position la plus éloigné sur le cone à sa droite que le poisson cherche lorsqu'on bloque la ligne
-    private Vector3 minPos;                         //Position la plus éloigné sur le cone à sa gauche que le poisson cherche lorsqu'on bloque la ligne
-    private Vector3 pullLeft;                       //Position proche sur le cone à gauche que le poisson cherche à atteindre --- Lien avec pullDistance
-    private Vector3 pullRight;                      //Position proche sur le cone à droite que le poisson cherche à atteindre --- Lien avec pullDistance
-    private Vector3 forwardPoint;                   //Point le plus éloigné devant le joueur
-
-    [Header("Pull Values")]
-    public float pullDistance = 2f;                 //Défini le point que le poisson cherche à atteindre --> Position que le poisson cherche à atteindre lorsque ligne bloqué - pullDistance
-
-    //Zone de pénalité
-    private float zone1;
-    private float zone2;
-    private float farAway1;
-    private float farAway2;
-
-    //Direction
-    private int directionChoice = 0;
-    private bool isDirectionChoosen = false;
+    [Header("Idle")]
+    [HideInInspector] public bool  isIdle      = true;
+    [HideInInspector] public float idleTimer   = 0f;
+                      public float idleMaxTime = 0f;
 
     [Header("Aerial")]
-    //Possiblement dans FishManager
-    public float JumpHeight = 20f;      //Valeur à obtenir avec formule (stats du player contre stats du fish)
+                           public float JumpHeight    = 20f;                   //Valeur à obtenir avec formule (stats du player contre stats du fish)
+    [System.NonSerialized] public float timer         = 0f;
+    [HideInInspector]      public float timerAerial   = 0f;
+                           public float maxTimeAerial = 2f;
+    [System.NonSerialized] public int nbRebond        = 1;
+    [HideInInspector]      public bool isFellDown = false;
+    [HideInInspector]      public bool fellingFreeze = false;
 
-    [System.NonSerialized]
-    public float timer = 0f;
-    public float maxTime = 2f;
+    [Header("Direction")]
+    public float minTimeForChangeDirection = 3f;
+    public float maxTimeForChangeDirection = 5f;
+    private float timeDirection            = 0f;
+    private int randomDirection;
+    private bool directionHasChoosen = false;
+    private Quaternion saveDirection;
+    private Quaternion baseRotate;
 
-    [Range(0f,1f)]
-    public float percentOfMaxTime = 0.85f;
+    private Vector3 target;
+    private float distance;
+    [HideInInspector] public bool canCollectTheFish = false;
 
-    private bool bPull = true;
+    private void Start()
+    {
+        SetIdleMaxTime();
+
+        fishyFiche     = fishStats.fiche   ;
+        currentStamina = fishyFiche.stamina;
+        currentLife    = fishyFiche.life   ;
+        baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
+        strength       = fishyFiche.strength;
+        SetBaseRotation();
+
+
+        FishManager.instance.ChangeEnduranceText();
+        FishManager.instance.ChangeLifeText();
+    }
 
     void Update()
     {
         if (!FishManager.instance.isAerial)
         {
-            SetMaxAndMinDistance();
-            if (PlayerManager.instance.blockLine || PlayerManager.instance.pullTowards)
+            idleTimer += Time.deltaTime;
+
+            if (idleTimer > idleMaxTime)
             {
-                if (!isDirectionChoosen)
+                isIdle = false;
+            }
+        }
+
+        if (isIdle)
+        {
+            if (!inVictoryZone)
+            {
+                if (!FishManager.instance.isAerial)
                 {
-                    MovingRightOrLeft();
+                    if (!exhausted)
+                    {
+                        if (!directionHasChoosen)
+                        {
+                            ChooseDirection();
+                        }
+                        else
+                        {
+                            timer += Time.deltaTime;
+
+                            if (timer >= timeDirection)
+                            {
+                                directionHasChoosen = false;
+                                timer = 0f;
+                            }
+                            else
+                            {
+                                Idle();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ExhaustedAndDeath();
+                    }
                 }
                 else
                 {
-                    Move();
+                    Aerial();
                 }
             }
             else
             {
-                MovingAway();
+                Victory();
             }
         }
         else
         {
-            timer += Time.deltaTime;
-
-            transform.position = GetAerialPosition(timer / maxTime);
-
-            if (timer >= maxTime)
+            if (gameObject.GetComponent<FishPatterns>().currentPattern == null)
             {
-                FishManager.instance.FishRecuperation();
-                timer = 0f;
+                Debug.Log("Choose a Patern !");
+                fishPattern.startPattern(isRage);
             }
         }
+
+        DetectionWall();
     }
 
     public Vector3 GetAerialPosition(float currentTime )
     {
-        //float x = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterX + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialX + currentTime * FishManager.instance.aerialEnterWaterX;
-        float y = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterY + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialY + currentTime * FishManager.instance.aerialEnterWaterY;
-        //float z = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterZ + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialZ + currentTime * FishManager.instance.aerialEnterWaterZ;
-        return new Vector3(transform.position.x , y, transform.position.z);
-    }
-
-    public void MovingRightOrLeft()
-    {
-        directionChoice = Random.Range(0, 2);
-        Move();
-        isDirectionChoosen = true;
-    }
-
-    public void Move()
-    {
-        if (directionChoice == 1)
+        if (!isFellDown)
         {
-            FishingManager.instance.fishIsGoingRight = true;
-            MovingRight();
+            float x = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterX + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialX + Mathf.Pow(currentTime,2) * FishManager.instance.aerialEnterWaterX;
+            float y = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterY + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialY + Mathf.Pow(currentTime, 2) * FishManager.instance.aerialEnterWaterY;
+            float z = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterZ + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialZ + Mathf.Pow(currentTime,2) * FishManager.instance.aerialEnterWaterZ;
+            return new Vector3(x, y, z);
         }
         else
         {
-            FishingManager.instance.fishIsGoingRight = false;
-            MovingLeft();
+            float y = (1- currentTime) * FishManager.instance.aerialExitWaterY + currentTime*FishManager.instance.aerialEnterWaterY;
+
+            return new Vector3(transform.position.x, y, transform.position.z);
         }
     }
 
-    public void MovingAway()
+    public void ChooseDirection()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), -1 * 1.2f * Time.deltaTime);
-        transform.Translate(Vector3.forward * 0.5f * Time.fixedDeltaTime, PlayerManager.instance.playerView.transform);
-
-        //A améliorer
-
-        /*if (Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway1)
+        randomDirection = Random.Range(1, 101);
+        for (int i = 0; i < 12; i++)
         {
-            FishingRodManager.instance.fishingLine.TensionDown();
-            FishManager.instance.DownEndurance();
-        }
-        else if(Vector3.Distance(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z)) > farAway2)
-        {
-            FishManager.instance.DownEndurance();
-        }*/
-    }
-
-    public void MovingRight()
-    {
-        if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z)) < 0.3f)
-        {
-            ChangeDirection();
+            if(randomDirection < FishManager.instance.directionPercentList[i])
+            {
+                ApplicateRotation(i);
+                break;
+            }
+            else
+            {
+                randomDirection -= FishManager.instance.directionPercentList[i];
+            }
         }
 
-        CheckTensionAndEndurance();
-
-        CalculateSpeed();
-        if (PlayerManager.instance.blockLine){transform.position = Vector3.MoveTowards(transform.position, new Vector3(maxPos.x   , transform.position.y, maxPos.z   ), speed * Time.deltaTime);}
-        else                                 {transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullRight.x, transform.position.y, pullRight.z), speed * Time.deltaTime);}
+        saveDirection = transform.rotation;
+        directionHasChoosen = true;
     }
 
-    public void MovingLeft()
+    public void ApplicateRotation(int i)
     {
-        if (Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < 0.3f || Vector3.Distance(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z)) < 0.3f)
+        int value = -30 * i;
+        transform.rotation = baseRotate;
+        transform.rotation *= Quaternion.Euler(0f, value, 0f);;
+        timeDirection = Random.Range(minTimeForChangeDirection, maxTimeForChangeDirection);
+    }
+
+    public void ChooseDirectionOpposite()
+    {
+        Debug.Log("HIT donc change direction : " + transform.rotation.y + " pour " + transform.rotation.y + 180f);
+        transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
+    }
+
+    public void ForceDirection()
+    {
+        timer = 0f;
+        transform.LookAt(new Vector3(FishManager.instance.savePos.position.x, transform.position.y, FishManager.instance.savePos.position.z));
+    }
+
+    //Call at Start, sert de valeur de base pour savoir ces différentes rotations.
+    public void SetBaseRotation()
+    {
+        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+        baseRotate = transform.rotation;
+    }
+
+    public void ChooseTarget()
+    {
+        distance = Vector3.Distance(transform.position, FishingRodManager.instance.pointC.position);
+
+        if (distance < 10f)
         {
-            ChangeDirection();
+            target = FishingRodManager.instance.pointC.position;
         }
-
-        CheckTensionAndEndurance();
-
-        CalculateSpeed();
-        if (PlayerManager.instance.blockLine){transform.position = Vector3.MoveTowards(transform.position, new Vector3(minPos.x  , transform.position.y, minPos.z  ), speed * Time.deltaTime);}
-        else                                 {transform.position = Vector3.MoveTowards(transform.position, new Vector3(pullLeft.x, transform.position.y, pullLeft.z), speed * Time.deltaTime);}
-    }
-
-    public void ChangeDirection()
-    {
-        CheckEndurance();
-        if (directionChoice == 1)
+        else if(distance < 20)
         {
-            directionChoice = 2;
+            if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
+            {
+                target = FishingRodManager.instance.listTargetNear[0].position;
+            }
+            else
+            {
+                target = FishingRodManager.instance.listTargetNear[1].position;
+            }
+            
         }
         else
         {
-            directionChoice = 1;
+            if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
+            {
+                target = FishingRodManager.instance.listTargetFar[0].position;
+            }
+            else
+            {
+                target = FishingRodManager.instance.listTargetFar[1].position;
+            }
         }
-
-        bPull = true;
-        SetMaxAndMinDistance();
     }
 
-    public void CalculateSpeed()
+    public void Idle()
     {
-        if(FishingRodManager.instance.IsSameDirection())
+        ChooseTarget();
+
+        if (FishingRodManager.instance.CheckIfOverFCritique())
         {
-            speed = baseSpeed + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())*4;
-            FishManager.instance.ChangeSpeedText(speed);
-            //Debug.Log("+ = " + (1f + Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+            transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+            transform.rotation = saveDirection;
         }
         else
         {
-            speed = baseSpeed - Mathf.Abs(FishingRodManager.instance.GetPlayerForce()) * 4;
-            FishManager.instance.ChangeSpeedText(speed);
-            //Debug.Log("- = " + (1f - Mathf.Abs(FishingRodManager.instance.GetPlayerForce())));
+            if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+            {
+                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+                transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+                transform.rotation = saveDirection;
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+            }
+            else
+            {
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+            }
         }
     }
 
-    public void CheckTensionAndEndurance()
+    public void ExhaustedAndDeath()
     {
-        if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone1 || Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone1)
+        if (!isDead)
         {
-            FishingRodManager.instance.fishingLine.TensionDown();
-            FishManager.instance.DownEndurance();
+            FishManager.instance.UpEndurance();
         }
-        else if (Vector3.Distance(transform.position, new Vector3(maxPos.x, transform.position.y, maxPos.z)) < zone2 || Vector3.Distance(transform.position, new Vector3(minPos.x, transform.position.y, minPos.z)) < zone2)
+        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+        transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+    }
+
+    public void Aerial()
+    {
+        if (!fellingFreeze)
         {
-            FishManager.instance.DownEndurance();
+            timerAerial += Time.deltaTime;
+        }
+
+        transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+
+        if (timerAerial >= maxTimeAerial)
+        {
+            FishManager.instance.FishRecuperation();
+            timerAerial = 0f;
+        }
+    }
+
+    public void DetectionWall()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 4f))
+        {
+            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+            ChooseDirection();
         }
         else
         {
-            FishingRodManager.instance.fishingLine.TensionUp();
+            Debug.DrawRay(transform.position, transform.forward * 4f, Color.white);
+        }
+
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 2f))
+        {
+            Debug.Log("Force Direction");
+            ForceDirection();
         }
     }
 
-    /*public void PullTowards()
+    public void Victory()
     {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(PlayerManager.instance.player.transform.position.x, transform.position.y, PlayerManager.instance.player.transform.position.z), speed * Time.deltaTime);
-    }*/
+        if (timerAerial <= maxTimeAerial)
+        {
+            timerAerial += Time.deltaTime;
+
+            transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+        }
+        else
+        {
+            canCollectTheFish = true;
+        }
+    }
 
     public void CheckEndurance()
     {
-        if(endurance <= 0)
+        if(currentStamina <= 0)
         {
-            extenued = true;
+            DebugManager.instance.vz.ActivateZone();
+            currentStamina = 0;
+            exhausted = true;
             FishManager.instance.ExtenuedChange();
+            ResetRage();
         }
-    }
 
-    public void SetMaxAndMinDistance()
-    {
-        float angle         = 30.0f;            //Angle voulu (Doublon avec PlayerView)
-        float halfFOV       = angle / 1.0f;     //FieldOfView (Doublon avec PlayerView)
-        float coneDirection = 90;               //Direction dans un cercle allant de 0 à 380 Droite = 0 / Devant = 90 / Gauche = 180 / Arrière = 270 (Doublon avec PlayerView)
-
-        Quaternion upRayRotation   = Quaternion.AngleAxis(-halfFOV + coneDirection, Vector3.down);   //Direction à droite du cône (Doublon avec PlayerView)
-        Quaternion downRayRotation = Quaternion.AngleAxis( halfFOV + coneDirection, Vector3.down);   //Direction à gauche du cône (Doublon avec PlayerView)
-        Quaternion forwardRayRotation = Quaternion.AngleAxis(coneDirection, Vector3.down);           //Direction tout droit (Doublon avec PlayerView)
-
-        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);   //Cone représente le centre du cercle (Doublon avec PlayerView)
-
-        float distance = Vector3.Distance(transform.localPosition, PlayerManager.instance.playerView.transform.position);   //Distance Poisson-Joueur (Doublon avec PlayerView)
-
-        maxPos     = cone + FishManager.instance.maxPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté droit du cône (Doublon avec PlayerView)
-        minPos     = cone + FishManager.instance.minPosCone      ;  //Point d'intersection entre le cercle de rayon Poisson-Joueur et le côté gauche du cône (Doublon avec PlayerView)
-        forwardPoint = forwardRayRotation * CameraManager.instance.mainCamera.transform.right * distance;                      //Point le plus éloigné en face
-
-        zone2 = Vector3.Distance(minPos, maxPos) * 0.2f;       //Distance à partir de laquelle le poisson perd de l'endurance
-        zone1 = Vector3.Distance(minPos, maxPos) * 0.1f;       //Distance à partir de laquelle le joueur perd de la tension
-        farAway1 = Vector3.Distance(cone, forwardPoint) * 1.1f;
-        farAway2 = Vector3.Distance(cone, forwardPoint) * 1.2f;
-
-        if(bPull)
+        if(currentStamina > fishyFiche.stamina)
         {
-            pullRight = cone + (upRayRotation * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que maxPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
-            pullLeft = cone + (downRayRotation * CameraManager.instance.mainCamera.transform.right * (distance - pullDistance));  //Pareil que minPos mais plus proche (Direction qu'il cherche à atteindre lorsqu'on l'attire vers soi)
-            bPull = false;
+            currentStamina = fishyFiche.stamina;
         }
     }
 
-
-    /*****************
-    *  Gizmos Draw  *
-    *****************/
-    private void OnDrawGizmos()
+    public void CheckLife()
     {
-        Vector3 cone = new Vector3(CameraManager.instance.mainCamera.transform.position.x, CameraManager.instance.mainCamera.transform.position.y - 1.5f, CameraManager.instance.mainCamera.transform.position.z);
+        if(currentLife <= 0)
+        {
+            DebugManager.instance.vz.ActivateZone();
+            currentLife = 0;
+            isDead = true;
+            currentStamina = 0;
+            CheckEndurance();
+            FishManager.instance.ChangeLifeText();
+            FishManager.instance.ChangeEnduranceText();
+        }
+    }
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, pullRight);
-        Gizmos.DrawLine(transform.position,  pullLeft);
+    public void SetIdleMaxTime()
+    {
+        idleMaxTime = Random.Range(7, 16);
+    }
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.localPosition, maxPos);
-        Gizmos.DrawLine(transform.position, minPos);
+    public void ResetStats()
+    {
+        baseSpeed = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
+    }
 
+    public void ResetRage()
+    {
+        isRage = false;
+        strength = fishyFiche.strength;
     }
 }

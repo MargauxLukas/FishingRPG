@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public enum FeatureType { Int, Float, Curve }
@@ -8,7 +9,8 @@ public enum FeatureType { Int, Float, Curve }
 public class FishyPattern : ScriptableObject
 {
     //Base variables
-    public int priority;
+    public int priorityCalm;
+    public int priorityRage;
     public float duration;
     public float energyCost;
     public bool costEnergyOverTime;

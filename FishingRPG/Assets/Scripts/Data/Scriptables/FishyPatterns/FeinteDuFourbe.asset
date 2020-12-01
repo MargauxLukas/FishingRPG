@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a601a31e09107428e2275066727ed3, type: 3}
   m_Name: FeinteDuFourbe
   m_EditorClassIdentifier: 
-  priority: 0
+  script: {fileID: 11500000, guid: 01adb65c6efec4f478ba8819ef7489b8, type: 3}
+  priorityCalm: 9
+  priorityRage: 7
   duration: 0
-  energyCost: 0
+  energyCost: 20
   costEnergyOverTime: 1
-  DOTFrequency: 0
+  DOTFrequency: 1
   triggerRageMode: 0
-  featureName: 
-  featureType: 0
+  featureName: La Feinte Du Fourbe

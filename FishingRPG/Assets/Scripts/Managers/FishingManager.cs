@@ -6,8 +6,8 @@ public class FishingManager : MonoBehaviour
 {
     public static FishingManager instance;
 
-    public float timer = 0f;
-    public float needToWait = 0f;
+    private float timer      = 0f;
+    private float needToWait = 0f;
 
     public bool readyToFish = false;
 
@@ -15,8 +15,9 @@ public class FishingManager : MonoBehaviour
     public Transform dynamics;
 
     public GameObject currentFish;
-    public bool isOnWater;
-    public bool fishIsGoingRight;
+    public GameObject finishFishDestination;
+    public GameObject midFishDestination;
+
     private void Awake()
     {
         Init();
@@ -31,10 +32,8 @@ public class FishingManager : MonoBehaviour
     {
         if (FishingRodManager.instance.bobber.GetComponent<CheckWater>().isWater && !readyToFish)
         {
-            if(needToWait == 0f)
-            {
-                needToWait = SetTimer();
-            }
+            if(needToWait == 0f){needToWait = SetTimer();}
+
             timer += Time.deltaTime;
 
             if(timer > needToWait)
@@ -47,6 +46,7 @@ public class FishingManager : MonoBehaviour
 
     public float SetTimer()
     {
+        FishingRodManager.instance.fishingLine.GetFCurrent();
         return Random.Range(2f, 5f);
     }
 
@@ -55,28 +55,35 @@ public class FishingManager : MonoBehaviour
         FishingRodManager.instance.SetBobberMaterialToSucces();
         currentFish = Instantiate(fishPrefab, 
                     new Vector3(FishingRodManager.instance.bobber.transform.position.x, 
-                                FishingRodManager.instance.bobber.transform.position.y - 1f,
+                                FishingRodManager.instance.bobber.transform.position.y - 0.6f,
                                 FishingRodManager.instance.bobber.transform.position.z),
                     Quaternion.identity,
                     dynamics          );
-        currentFish.GetComponent<FixedJoint>().connectedBody = FishingRodManager.instance.bobber.GetComponent<Rigidbody>();
-        FishManager.instance.currentFish = currentFish;
+        FishManager.instance.currentFish         = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
-        FishManager.instance.ChangeText();
+        FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
+        CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.FishingCanStart();
     }
 
     public void CancelFishing()
     {
         needToWait = 0f;
-        timer = 0f;
+        timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();
+
         if (readyToFish)
         {
-            readyToFish = false;
+            if(FishManager.instance.currentFishBehavior.canCollectTheFish)
+            {
+                PlayerManager.instance.playerInventory.AddThisFishToInventory(FishManager.instance.currentFishBehavior.fishyFiche.ID);
+            }
+
             Destroy(currentFish);
         }
 
         FishingRodManager.instance.BobberBack();
+        FishingRodManager.instance.fishingLine.fCurrent = 0f;
+        FishingRodManager.instance.distanceCP = 0f;
     }
 }
