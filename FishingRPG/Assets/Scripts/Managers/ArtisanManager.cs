@@ -8,20 +8,22 @@ public class ArtisanManager : MonoBehaviour
 {
     EventSystem _event;
 
-    GameObject firstSelected;
+    GameObject firstSelectedTab;
+    GameObject currentSelectedTab;
 
     void Start()
     {
         _event = EventSystemPointer.instance.gameObject.GetComponent<EventSystem>();
-        _event.firstSelectedGameObject = firstSelected;
+        firstSelectedTab = currentSelectedTab;
     }
 
     void Update()
     {
         if(Input.GetKey("Left Bumper"))
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<Button>().navigation.selectOnLeft.gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            ResetTabColor(currentSelectedTab);
+            currentSelectedTab = currentSelectedTab.GetComponent<TabNeighbours>().selectedOnLeft;
+            SetSelectedTabColor(currentSelectedTab);
         }
 
         if (Input.GetKey("Right Bumper"))
@@ -32,8 +34,19 @@ public class ArtisanManager : MonoBehaviour
 
         if (Input.GetKey("Vertical"))
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<FirstSelectedChild>().gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            
         }
+    }
+
+    void SetSelectedTabColor(GameObject _tab)
+    {
+        _tab.GetComponent<Image>().color = new Color32(254, 242, 184, 255);
+        _tab.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(66, 41, 36, 255);
+    }
+
+    void ResetTabColor(GameObject _tab)
+    {
+        _tab.GetComponent<Image>().color = new Color32(66, 41, 36, 255);
+        _tab.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(254, 242, 184, 255);
     }
 }

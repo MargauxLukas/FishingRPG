@@ -205,6 +205,9 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(patterns_s);
         EditorGUILayout.EndHorizontal();
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.PropertyField(patterns_s);
+        EditorGUILayout.EndHorizontal();
         Repaint();
         #endregion
 

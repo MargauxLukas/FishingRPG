@@ -54,7 +54,6 @@ public class UIManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(button);
-        Debug.Log("Bite");
     } 
 
     public void ButcherFish(Button b)
