@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject playerView;
     public PlayerStats playerStats;
     public PlayerGem playerGem;
+    public PlayerInventory playerInventory;
 
     public GameObject canvas;
     private bool dataCheat = false;

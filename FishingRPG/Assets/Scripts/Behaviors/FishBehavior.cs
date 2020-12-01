@@ -48,6 +48,7 @@ public class FishBehavior : MonoBehaviour
 
     private Vector3 target;
     private float distance;
+    [HideInInspector] public bool canCollectTheFish = false;
 
     private void Start()
     {
@@ -310,6 +311,10 @@ public class FishBehavior : MonoBehaviour
             timerAerial += Time.deltaTime;
 
             transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+        }
+        else
+        {
+            canCollectTheFish = true;
         }
     }
 
