@@ -179,6 +179,7 @@ MonoBehaviour:
   fellingFreeze: 0
   minTimeForChangeDirection: 3
   maxTimeForChangeDirection: 5
+  canCollectTheFish: 0
 --- !u!114 &3403204536493358264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb369db0b74a0354ca2feea728ba5272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fiche: {fileID: 11400000, guid: 14e9ee200659aab42a54c37bf0082e77, type: 2}
+  fiche: {fileID: 11400000, guid: bcbc63597a912ba469bdbec1e419af0a, type: 2}
 --- !u!114 &3648344931775246446
 MonoBehaviour:
   m_ObjectHideFlags: 0
