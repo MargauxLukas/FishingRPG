@@ -61,6 +61,7 @@ public class FishingManager : MonoBehaviour
                     dynamics          );
         FishManager.instance.currentFish         = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
+        FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
         CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.FishingCanStart();
     }

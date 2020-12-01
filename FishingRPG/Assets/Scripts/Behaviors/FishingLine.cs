@@ -18,8 +18,8 @@ public class FishingLine : MonoBehaviour
     [HideInInspector] public bool isTaken = false;
     public CableComponent cableComponent;
 
-    [Header("Texts")]
-    public Text textInt;
+    [Header("Texts/Jauge")]
+    public Image tensionJauge;
     public Text textBlocked;
     public Text textTaken  ;
 
@@ -27,7 +27,7 @@ public class FishingLine : MonoBehaviour
     {
         FishingManager.instance.CancelFishing();
         currentTension = 0f;
-        ChangeText();
+        UpdateJaugeTension();
     }
 
     public void TensionDown()
@@ -35,12 +35,12 @@ public class FishingLine : MonoBehaviour
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
             currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 60;
-            ChangeText();
+            UpdateJaugeTension();
 
             if (currentTension >= maxTension)
             {
                 currentTension = maxTension;
-                ChangeText();
+                UpdateJaugeTension();
                 LineIsBroken();
             }
         }
@@ -55,12 +55,12 @@ public class FishingLine : MonoBehaviour
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
             currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
-            ChangeText();
+            UpdateJaugeTension();
 
             if (currentTension >= maxTension )
             {
                 currentTension = maxTension;
-                ChangeText();
+                UpdateJaugeTension();
                 LineIsBroken();
             }
         }
@@ -81,7 +81,7 @@ public class FishingLine : MonoBehaviour
             currentTension = 0f;
         }
 
-        ChangeText();
+        UpdateJaugeTension();
     }
 
     public void FCurrentDown()
@@ -92,7 +92,7 @@ public class FishingLine : MonoBehaviour
     public void GetFCurrent()
     {
         fCurrent = Vector3.Distance(FishingRodManager.instance.pointC.position, FishingRodManager.instance.bobber.transform.position) * 1.1f;
-        FishingRodManager.instance.ChangeTextFCurrent();
+        FishingRodManager.instance.UpdateFCurrent();
     }
 
     public void isFCurrentAtMax()
@@ -102,8 +102,8 @@ public class FishingLine : MonoBehaviour
         textBlocked.color = Color.green;
     }
 
-    public void ChangeText()
+    public void UpdateJaugeTension()
     {
-        textInt.text = currentTension.ToString();
+        tensionJauge.fillAmount = currentTension/maxTension;
     }
 }

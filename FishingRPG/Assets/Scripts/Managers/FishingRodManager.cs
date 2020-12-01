@@ -39,11 +39,10 @@ public class FishingRodManager : MonoBehaviour
 
     public float distanceCP;
 
-    [Header("Texte")]
-    public Text distanceCPText;
-    public Text fCurrentText;
-    public Text fMaxText;
-    public Text FCritiqueText;
+    [Header("Jauge")]
+    public Scrollbar fishDistanceCP;
+    public Image fCurrentJauge;
+    public Scrollbar fishHook;
 
     private void Awake()
     {
@@ -60,7 +59,6 @@ public class FishingRodManager : MonoBehaviour
         bobberRotation = bobber.transform.localRotation;
         fishingLine = GetComponent<FishingLine>();
         bendFishingRod.SetupValuePerFloat();
-        ChangeTextFMax();
     }
 
     private void Update()
@@ -190,18 +188,18 @@ public class FishingRodManager : MonoBehaviour
             fishingLine.TensionUp();
         }
 
-        ChangeTextFCurrent();
+        UpdateFCurrent();
     }
 
     public bool CheckIfOverFCritique()
     {
         if(distanceCP > fishingLine.fCurrent + fishingLine.fCritique)
         {
-            FCritiqueText.color = Color.green;
+            //FCritiqueText.color = Color.green;
             return true;
         }
 
-        FCritiqueText.color = Color.red;
+        //FCritiqueText.color = Color.red;
         return false;
     }
 
@@ -209,10 +207,10 @@ public class FishingRodManager : MonoBehaviour
     #region Text Change
     public void ChangeTextCPDistance()
     {
-        distanceCPText.text = distanceCP.ToString();
+        fishDistanceCP.value = distanceCP/(fishingLine.fMax + fishingLine.fCritique);
     }
 
-    public void ChangeTextFCurrent()
+    public void UpdateFCurrent()
     {
         if (FishManager.instance.currentFish != null)
         {
@@ -237,20 +235,7 @@ public class FishingRodManager : MonoBehaviour
             fishingLine.cableComponent.UpdateLineLength(0f);
         }
 
-        if(fishingLine.fCurrent < fishingLine.fMax)
-        {
-            fCurrentText.color = Color.green;
-        }
-        if (fishingLine.fCurrent >= fishingLine.fMax)
-        {
-            fCurrentText.color = Color.red;
-        }
-
-        fCurrentText.text = fishingLine.fCurrent.ToString();
-    }
-    public void ChangeTextFMax()
-    {
-        fMaxText.text = fishingLine.fMax.ToString();
+        fCurrentJauge.fillAmount = fishHook.value = (fishingLine.fCurrent*100f)/((fishingLine.fMax + fishingLine.fCritique) * 100f);
     }
     #endregion
 }
