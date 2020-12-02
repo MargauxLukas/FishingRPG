@@ -10,43 +10,45 @@ public class FishBehavior : MonoBehaviour
 {
     [Header("Stats Fish")]
     public FishStats  fishStats ;
-    public FishyFiche fishyFiche;
     public FishPatterns fishPattern;
-    public  float baseSpeed      = 3f;                //A prendre sur fishyFiche                      
-    public  float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
-    public float currentLife     = 0f;                //Max à prendre sur fishyFiche
-    public float strength        = 0f;
-    public bool exhausted        = false;
-    public bool isDead           = false;
-    public bool inVictoryZone    = false;
+    [HideInInspector] public FishyFiche fishyFiche;
+    [HideInInspector] public float baseSpeed      = 3f;                                  //A prendre sur fishyFiche                      
+    [HideInInspector] public float currentStamina = 0f;                //A prendre sur fishyFiche (Deviendra endurance actuel)
+    [HideInInspector] public float currentLife    = 0f;                //Max à prendre sur fishyFiche
+    [HideInInspector] public float strength       = 0f;
+
+    [Header("State Fish")]
+    [HideInInspector] public bool exhausted        = false;
+    [HideInInspector] public bool isDead           = false;
+    [HideInInspector] public bool inVictoryZone    = false;
+    [HideInInspector] public bool isRage           = false;
 
     [Header("Idle")]
-    public bool  isIdle      = true;
-    public float idleTimer   = 0f;
-    public float idleMaxTime = 0f;
+    [HideInInspector] public bool  isIdle      = true;
+    [HideInInspector] public float idleTimer   = 0f;
+                      public float idleMaxTime = 0f;
 
     [Header("Aerial")]
-    //Possiblement dans FishManager
-    public float JumpHeight = 20f;                   //Valeur à obtenir avec formule (stats du player contre stats du fish)
+                           public float JumpHeight    = 20f;                   //Valeur à obtenir avec formule (stats du player contre stats du fish)
+    [System.NonSerialized] public float timer         = 0f;
+    [HideInInspector]      public float timerAerial   = 0f;
+                           public float maxTimeAerial = 2f;
+    [System.NonSerialized] public int nbRebond        = 1;
+    [HideInInspector]      public bool isFellDown = false;
+    [HideInInspector]      public bool fellingFreeze = false;
 
-    [System.NonSerialized]
-    public float timer         = 0f;
-    public float timerAerial   = 0f;
-    public float maxTimeAerial = 2f;
-    public float timeDirection = 3f;
-    [System.NonSerialized]
-    public int nbRebond = 1;
-    public bool isFellDown = false;
-
+    [Header("Direction")]
+    public float minTimeForChangeDirection = 3f;
+    public float maxTimeForChangeDirection = 5f;
+    private float timeDirection            = 0f;
+    private int randomDirection;
     private bool directionHasChoosen = false;
-    public bool fellingFreeze = false;
-
     private Quaternion saveDirection;
-
-    public bool isRage = false;
+    private Quaternion baseRotate;
 
     private Vector3 target;
     private float distance;
+    [HideInInspector] public bool canCollectTheFish = false;
 
     private void Start()
     {
@@ -57,6 +59,8 @@ public class FishBehavior : MonoBehaviour
         currentLife    = fishyFiche.life   ;
         baseSpeed      = UtilitiesManager.instance.GetFishSpeed(fishyFiche.agility);
         strength       = fishyFiche.strength;
+        SetBaseRotation();
+
 
         FishManager.instance.ChangeEnduranceText();
         FishManager.instance.ChangeLifeText();
@@ -139,8 +143,6 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            //(1-t)*P0 + t*p1
-            Debug.Log("test");
             float y = (1- currentTime) * FishManager.instance.aerialExitWaterY + currentTime*FishManager.instance.aerialEnterWaterY;
 
             return new Vector3(transform.position.x, y, transform.position.z);
@@ -149,10 +151,30 @@ public class FishBehavior : MonoBehaviour
 
     public void ChooseDirection()
     {
-        transform.rotation = Quaternion.Euler(0f, Random.Range(0, 360), 0f);
+        randomDirection = Random.Range(1, 101);
+        for (int i = 0; i < 12; i++)
+        {
+            if(randomDirection < FishManager.instance.directionPercentList[i])
+            {
+                ApplicateRotation(i);
+                break;
+            }
+            else
+            {
+                randomDirection -= FishManager.instance.directionPercentList[i];
+            }
+        }
 
         saveDirection = transform.rotation;
         directionHasChoosen = true;
+    }
+
+    public void ApplicateRotation(int i)
+    {
+        int value = -30 * i;
+        transform.rotation = baseRotate;
+        transform.rotation *= Quaternion.Euler(0f, value, 0f);;
+        timeDirection = Random.Range(minTimeForChangeDirection, maxTimeForChangeDirection);
     }
 
     public void ChooseDirectionOpposite()
@@ -167,18 +189,23 @@ public class FishBehavior : MonoBehaviour
         transform.LookAt(new Vector3(FishManager.instance.savePos.position.x, transform.position.y, FishManager.instance.savePos.position.z));
     }
 
+    //Call at Start, sert de valeur de base pour savoir ces différentes rotations.
+    public void SetBaseRotation()
+    {
+        transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+        baseRotate = transform.rotation;
+    }
+
     public void ChooseTarget()
     {
         distance = Vector3.Distance(transform.position, FishingRodManager.instance.pointC.position);
 
         if (distance < 10f)
         {
-            Debug.Log("TARGET : Point C");
             target = FishingRodManager.instance.pointC.position;
         }
         else if(distance < 20)
         {
-            Debug.Log("TARGET : NEAR");
             if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
             {
                 target = FishingRodManager.instance.listTargetNear[0].position;
@@ -191,8 +218,6 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            Debug.Log("TARGET : FAR");
-
             if (Input.GetAxis("Right Stick (Horizontal)") > 0.1f)
             {
                 target = FishingRodManager.instance.listTargetFar[0].position;
@@ -284,6 +309,10 @@ public class FishBehavior : MonoBehaviour
             timerAerial += Time.deltaTime;
 
             transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+        }
+        else
+        {
+            canCollectTheFish = true;
         }
     }
 

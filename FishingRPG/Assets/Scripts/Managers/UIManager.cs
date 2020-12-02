@@ -2,10 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
+    public GameObject firstSelectedButton;
+
     public Sprite[] itemsList;
+
+    private void Awake()
+    {
+        Init();
+    }
+
+    public virtual void Init()
+    {
+        instance = this;
+    }
+
+    private void Start()
+    {
+        ResetSelectedButton(firstSelectedButton);
+    }
+
+    private void Update()
+    {
+        Debug.Log(firstSelectedButton.name);
+    }
+
     public void LeaveVillage(Text txt)
     {
         txt.text = "Leaving village...";
@@ -15,19 +40,22 @@ public class UIManager : MonoBehaviour
     public void OpenMenu(GameObject go)
     {
         go.SetActive(true);
+        firstSelectedButton = EventSystem.current.currentSelectedGameObject;
+        ResetSelectedButton(firstSelectedButton);
     }
 
     public void CloseMenu(GameObject go)
     {
         go.SetActive(false);
+        ResetSelectedButton(firstSelectedButton);
     }
 
-    IEnumerator TextReset(Text txt)
+    public void ResetSelectedButton(GameObject button)
     {
-        yield return new WaitForSeconds(2f);
-        Debug.Log("Reset text");
-        txt.text = null;
-    }
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(button);
+        Debug.Log("Bite");
+    } 
 
     public void ButcherFish(Button b)
     {
@@ -55,5 +83,12 @@ public class UIManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    IEnumerator TextReset(Text txt)
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Reset text");
+        txt.text = null;
     }
 }

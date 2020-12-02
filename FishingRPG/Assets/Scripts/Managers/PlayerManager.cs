@@ -10,6 +10,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
     public GameObject playerView;
     public PlayerStats playerStats;
+    public PlayerGem playerGem;
+    public PlayerInventory playerInventory;
+
+    public GameObject canvas;
+    private bool dataCheat = false;
 
     public float speed = 9f;
 
@@ -94,6 +99,21 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void UseGemFirstSlot()
+    {
+        playerGem.PlayGem(FishingRodManager.instance.slot1.gem);
+    }
+
+    public void UseGemSecondSlot()
+    {
+        playerGem.PlayGem(FishingRodManager.instance.slot2.gem);
+    }
+
+    public void UseGemThirdSlot()
+    {
+        playerGem.PlayGem(FishingRodManager.instance.slot3.gem);
+    }
+
     public void CHEAT_SetFishToExhausted()
     {
         FishManager.instance.currentFishBehavior.currentStamina = 0f;
@@ -104,5 +124,19 @@ public class PlayerManager : MonoBehaviour
     {
         FishManager.instance.currentFishBehavior.currentLife = 0f;
         FishManager.instance.currentFishBehavior.CheckLife();
+    }
+
+    public void CHEAT_ShowData()
+    {
+        if (!dataCheat)
+        { 
+            canvas.SetActive(true);
+            dataCheat = true;
+        }
+        else 
+        { 
+            canvas.SetActive(false);
+            dataCheat = false;
+        }
     }
 }

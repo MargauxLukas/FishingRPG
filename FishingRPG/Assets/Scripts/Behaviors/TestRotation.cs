@@ -27,7 +27,7 @@ public class TestRotation : MonoBehaviour
 
         if(trente && !justOnce)
         {
-            transform.rotation *= Quaternion.Euler(0f, -30f, 0f);
+            transform.rotation *= Quaternion.Euler(0f, 30f, 0f);
             justOnce = true;
         }
     }

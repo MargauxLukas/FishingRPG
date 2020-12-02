@@ -9,7 +9,7 @@ public class FishingManager : MonoBehaviour
     private float timer      = 0f;
     private float needToWait = 0f;
 
-    private bool readyToFish = false;
+    public bool readyToFish = false;
 
     public GameObject fishPrefab;
     public Transform dynamics;
@@ -61,6 +61,7 @@ public class FishingManager : MonoBehaviour
                     dynamics          );
         FishManager.instance.currentFish         = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
+        FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
         CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.FishingCanStart();
     }
@@ -73,10 +74,16 @@ public class FishingManager : MonoBehaviour
 
         if (readyToFish)
         {
-            readyToFish = false;
+            if(FishManager.instance.currentFishBehavior.canCollectTheFish)
+            {
+                PlayerManager.instance.playerInventory.AddThisFishToInventory(FishManager.instance.currentFishBehavior.fishyFiche.ID);
+            }
+
             Destroy(currentFish);
         }
 
         FishingRodManager.instance.BobberBack();
+        FishingRodManager.instance.fishingLine.fCurrent = 0f;
+        FishingRodManager.instance.distanceCP = 0f;
     }
 }

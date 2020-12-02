@@ -13,10 +13,14 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public BendFishingRod bendFishingRod;
     public Transform pointC;
     public List<Transform> listTargetFar = new List<Transform>();
     public List<Transform> listTargetNear = new List<Transform>();
-    public FishingLine fishingLine;
+    [HideInInspector] public FishingLine fishingLine;
+    public GemSlot slot1;
+    public GemSlot slot2;
+    public GemSlot slot3;
 
     [Header("Pour montrer visuellement que le poisson est arrivé")]
     public Material catchMaterial;
@@ -26,7 +30,7 @@ public class FishingRodManager : MonoBehaviour
     private Vector3 bobberScale = new Vector3(5f, 0.25f, 5f);
     private Quaternion bobberRotation;
 
-    public bool bobberThrowed = false;
+    [HideInInspector] public bool bobberThrowed = false;
 
     [Header("Speed de la canne à peche")]
     public float speed           = 10f;
@@ -35,11 +39,10 @@ public class FishingRodManager : MonoBehaviour
 
     public float distanceCP;
 
-    [Header("Texte")]
-    public Text distanceCPText;
-    public Text fCurrentText;
-    public Text fMaxText;
-    public Text FCritiqueText;
+    [Header("Jauge")]
+    public Scrollbar fishDistanceCP;
+    public Image fCurrentJauge;
+    public Scrollbar fishHook;
 
     private void Awake()
     {
@@ -55,7 +58,7 @@ public class FishingRodManager : MonoBehaviour
     {
         bobberRotation = bobber.transform.localRotation;
         fishingLine = GetComponent<FishingLine>();
-        ChangeTextFMax();
+        bendFishingRod.SetupValuePerFloat();
     }
 
     private void Update()
@@ -63,6 +66,7 @@ public class FishingRodManager : MonoBehaviour
         if(fishingRodPivot.GetComponent<Rotate>().result && !bobberThrowed)
         {
             bobberThrowed = true;
+            fishingLine.cableComponent.UpdateLineLength(Vector3.Distance(pointC.position, bobber.transform.position));
             LaunchBobber();
         }
 
@@ -89,11 +93,11 @@ public class FishingRodManager : MonoBehaviour
     {
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
-        bobber.transform.parent        = fishingRodGameObject.transform   ;              //Reset parent
+        bobber.transform.parent        = fishingRodGameObject.transform.GetChild(0).GetChild(0).transform   ;              //Reset parent
         StartCoroutine("Test");
-        bobber.transform.localScale    = bobberScale   ;
         bobber.transform.localRotation = bobberRotation;
         SetFishingRodPosition(0f);
+        bendFishingRod.ResetBendable();
 
         fishingRodPivot.GetComponent<Rotate>().result = false;                      //N'attend plus de pêcher un poisson
 
@@ -109,6 +113,7 @@ public class FishingRodManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         Vector3 newVector = Vector3.Lerp(bobber.transform.localPosition , bobberPosition.transform.localPosition, 1f);
         bobber.transform.localPosition = newVector;
+        FishingManager.instance.readyToFish = false;
     }
 
     public void SetBobberMaterialToSucces()
@@ -137,7 +142,7 @@ public class FishingRodManager : MonoBehaviour
             }
         }
         fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
-        fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(50f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
+        fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
     }
 
     public void CheckFCurrent()
@@ -183,18 +188,18 @@ public class FishingRodManager : MonoBehaviour
             fishingLine.TensionUp();
         }
 
-        ChangeTextFCurrent();
+        UpdateFCurrent();
     }
 
     public bool CheckIfOverFCritique()
     {
         if(distanceCP > fishingLine.fCurrent + fishingLine.fCritique)
         {
-            FCritiqueText.color = Color.green;
+            //FCritiqueText.color = Color.green;
             return true;
         }
 
-        FCritiqueText.color = Color.red;
+        //FCritiqueText.color = Color.red;
         return false;
     }
 
@@ -202,25 +207,35 @@ public class FishingRodManager : MonoBehaviour
     #region Text Change
     public void ChangeTextCPDistance()
     {
-        distanceCPText.text = distanceCP.ToString();
+        fishDistanceCP.value = distanceCP/(fishingLine.fMax + fishingLine.fCritique);
     }
 
-    public void ChangeTextFCurrent()
+    public void UpdateFCurrent()
     {
-        if(fishingLine.fCurrent < fishingLine.fMax)
+        if (FishManager.instance.currentFish != null)
         {
-            fCurrentText.color = Color.green;
+            if (distanceCP < fishingLine.fCurrent)
+            {
+                if (fishingLine.fCurrent - distanceCP < 5f)
+                {
+                    fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f + (fishingLine.fCurrent - distanceCP));
+                }
+                else
+                {
+                    fishingLine.cableComponent.UpdateLineLength(distanceCP);
+                }
+            }
+            else
+            {
+                fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f);
+            }
         }
-        if (fishingLine.fCurrent >= fishingLine.fMax)
+        else
         {
-            fCurrentText.color = Color.red;
+            fishingLine.cableComponent.UpdateLineLength(0f);
         }
 
-        fCurrentText.text = fishingLine.fCurrent.ToString();
-    }
-    public void ChangeTextFMax()
-    {
-        fMaxText.text = fishingLine.fMax.ToString();
+        fCurrentJauge.fillAmount = fishHook.value = (fishingLine.fCurrent*100f)/((fishingLine.fMax + fishingLine.fCritique) * 100f);
     }
     #endregion
 }

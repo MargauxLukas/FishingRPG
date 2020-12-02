@@ -1,0 +1,8 @@
+Item ID;Item Type;Avancement;Item Name;Tier;Force (STR);Constitution (CON);Dextérité (DEX);Intelligence (INT);Composant 1 ID;Composant 1 Quantity;Composant 2 ID;Composant 2 Quantity;Composant 3 ID;Composant 3 Quantity;Composant 4 ID;Composant 4 Quantity
+PEH_1;Helmet;1;Pequessivo helmet;1;1;0;0;0;PFI_E;1;PST_C;2;;;;
+PCH_1;Chest;1;Pequessivo pauldrons;1;1;0;1;0;PSC_C;2;PST_C;1;;;;
+PBE_1;Belt;1;Pequessivo belt;1;1;0;0;0;PSC_C;2;PST_C;1;;;;
+PBO_1;Boots;1;Pequessivo boots;1;1;0;1;0;PFI_E;1;PLF_R;1;;;;
+PDF_1;Chest;1;Épaulières de Force Vicieux;1;13;3;4;5;DPS_C;4;ELI_C;2;GDP_L;1;;
+PDF_2;Chest;2;Épaulières de Force Brutal;3;14;4;5;6;DVV_R;5;DBR_C;2;QBR_E;2;;
+PDF_3;Chest;3;Épaulières de Force Inarétable;4;15;5;6;7;ESD_C;5;NGT_C;4;PIM_R;3;GAR_L;1

@@ -6,15 +6,16 @@ using UnityEngine;
 public class ArmorSet : ScriptableObject
 {
     public string ID;
-    public enum ItemType { Head, Shoulders, Waist, Boots };
+    public Sprite appearance;
+    public string itemType;
     public int upgradeState;
     public string itemName;
     public int tier;
 
     public int strength;
-    public float constitution;
-    public float dexterity;
-    public float intelligence;
+    public int constitution;
+    public int dexterity;
+    public int intelligence;
 
     public FishyDrop[] components;
     public int[] componentsQty;

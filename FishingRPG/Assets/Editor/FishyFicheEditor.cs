@@ -25,7 +25,9 @@ public class FishyFicheEditor : Editor
 
     SerializedProperty drops_s;
 
-    SerializedProperty patterns_s;
+    SerializedProperty calmPatterns_s;
+    SerializedProperty ragePatterns_s;
+
 
     Sprite fishSprite;
 
@@ -48,14 +50,14 @@ public class FishyFicheEditor : Editor
 
         drops_s           = serializedObject.FindProperty(nameof(FishyFiche.drops          ));
 
-        patterns_s        = serializedObject.FindProperty(nameof(FishyFiche.calmPatterns       ));
+        calmPatterns_s    = serializedObject.FindProperty(nameof(FishyFiche.calmPatterns   ));
+        ragePatterns_s    = serializedObject.FindProperty(nameof(FishyFiche.ragePatterns   ));
 
         fishSprite = (target as FishyFiche).appearance;
     }
 
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
         #region Draw Title
         EditorGUILayout.BeginHorizontal();
         var titleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 30, font = (Font)Resources.Load("Fonts/GLECB", typeof(Font)) };
@@ -65,7 +67,7 @@ public class FishyFicheEditor : Editor
 
         #region Draw Sprite & Texture
         var layout = new GUILayoutOption[] { };
-        if (fishSprite != null) layout = new GUILayoutOption[] { GUILayout.Height(fishSprite.rect.height / 16) };
+        if (fishSprite != null) layout = new GUILayoutOption[] { GUILayout.Height(fishSprite.rect.height / 5) };
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(appearance_s, GUIContent.none, layout);
@@ -147,12 +149,12 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.Space();
 
         //Temporary waiting for tsv import
-        EditorGUILayout.BeginHorizontal();
+        /*EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PropertyField(drops_s);
         EditorGUILayout.EndHorizontal();
-        Repaint();
+        Repaint();*/
 
-        EditorGUIUtility.labelWidth /= 2.5f;
+        /*EditorGUIUtility.labelWidth /= 2.5f;
         Color32 rarityColor = new Color32();
         for (int i = 0; i < currentFish.drops.Length; i++)
         {
@@ -196,7 +198,7 @@ public class FishyFicheEditor : Editor
         EditorGUILayout.Space();
         #endregion
 
-        #region Draw Patterns list
+        #region Draw Patterns lists
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Patterns", subtitleStyle, GUILayout.ExpandWidth(true), GUILayout.Height(30));
         EditorGUILayout.EndHorizontal();
@@ -204,7 +206,10 @@ public class FishyFicheEditor : Editor
 
         EditorGUIUtility.labelWidth = baseLabel;
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.PropertyField(patterns_s);
+        EditorGUILayout.PropertyField(calmPatterns_s);
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.PropertyField(ragePatterns_s);
         EditorGUILayout.EndHorizontal();
         Repaint();
         #endregion
@@ -214,9 +219,9 @@ public class FishyFicheEditor : Editor
 
     void OnGUIDrawSprite(Rect _pos, Sprite _sprite)
     {
-        Rect dimensions = new Rect(_sprite.rect.position, _sprite.rect.size/4);
-        float sWidth = dimensions.width /4;
-        float sHeight = dimensions.height /4;
+        Rect dimensions = new Rect(_sprite.rect.position, _sprite.rect.size/2);
+        float sWidth = dimensions.width /2;
+        float sHeight = dimensions.height /2;
         Rect pos = GUILayoutUtility.GetRect(sWidth, sHeight);
         pos.width = sWidth;
         pos.height = sHeight;
@@ -224,10 +229,10 @@ public class FishyFicheEditor : Editor
         if(Event.current.type == EventType.Repaint)
         {
             var tex = _sprite.texture;
-            dimensions.xMin /= tex.width /4;
-            dimensions.xMax /= tex.width /4;
-            dimensions.yMin /= tex.height /4;
-            dimensions.yMax /= tex.height /4;
+            dimensions.xMin /= tex.width /2;
+            dimensions.xMax /= tex.width /2;
+            dimensions.yMin /= tex.height /2;
+            dimensions.yMax /= tex.height /2;
 
             GUI.DrawTextureWithTexCoords(pos, tex, dimensions);
         }

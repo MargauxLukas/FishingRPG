@@ -6,42 +6,28 @@ using UnityEngine.UI;
 
 public class FishingLine : MonoBehaviour
 {
-    public float fCurrent;
+    [Header("Tension Values")]
     public float fMax;
     public float fCritique;
-
-    public float currentTension = 0;
+    [HideInInspector] public float fCurrent;
+    [HideInInspector] public float currentTension = 0;
     public float maxTension = 100;
-    public Text textInt;
 
-    public bool isBlocked = false;
-    public bool isTaken = false;
+    [Header("Etat Ligne")]
+    [HideInInspector] public bool isBlocked = false;
+    [HideInInspector] public bool isTaken = false;
+    public CableComponent cableComponent;
+
+    [Header("Texts/Jauge")]
+    public Image tensionJauge;
     public Text textBlocked;
     public Text textTaken  ;
-
-    private float timer = 0f;
-    private float maxTime = 1f;
-    private bool isTensionJustDown = false;
-
-    private void Update()
-    {
-        /*if(isTensionJustDown)
-        {
-            timer += Time.fixedDeltaTime;
-
-            if(timer >= maxTime)
-            {
-                isTensionJustDown = false;
-                timer = 0f;
-            }
-        }*/
-    }
 
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
         currentTension = 0f;
-        ChangeText();
+        UpdateJaugeTension();
     }
 
     public void TensionDown()
@@ -49,12 +35,12 @@ public class FishingLine : MonoBehaviour
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
             currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 60;
-            ChangeText();
+            UpdateJaugeTension();
 
             if (currentTension >= maxTension)
             {
                 currentTension = maxTension;
-                ChangeText();
+                UpdateJaugeTension();
                 LineIsBroken();
             }
         }
@@ -69,15 +55,14 @@ public class FishingLine : MonoBehaviour
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
             currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
-            ChangeText();
+            UpdateJaugeTension();
 
             if (currentTension >= maxTension )
             {
                 currentTension = maxTension;
-                ChangeText();
+                UpdateJaugeTension();
                 LineIsBroken();
             }
-
         }
         else
         {
@@ -96,7 +81,7 @@ public class FishingLine : MonoBehaviour
             currentTension = 0f;
         }
 
-        ChangeText();
+        UpdateJaugeTension();
     }
 
     public void FCurrentDown()
@@ -107,7 +92,7 @@ public class FishingLine : MonoBehaviour
     public void GetFCurrent()
     {
         fCurrent = Vector3.Distance(FishingRodManager.instance.pointC.position, FishingRodManager.instance.bobber.transform.position) * 1.1f;
-        FishingRodManager.instance.ChangeTextFCurrent();
+        FishingRodManager.instance.UpdateFCurrent();
     }
 
     public void isFCurrentAtMax()
@@ -117,8 +102,8 @@ public class FishingLine : MonoBehaviour
         textBlocked.color = Color.green;
     }
 
-    public void ChangeText()
+    public void UpdateJaugeTension()
     {
-        textInt.text = currentTension.ToString();
+        tensionJauge.fillAmount = currentTension/maxTension;
     }
 }

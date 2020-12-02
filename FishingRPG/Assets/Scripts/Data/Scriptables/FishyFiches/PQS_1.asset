@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e225f7cc96ea83344bcf54578668e745, type: 3}
+  m_Name: PQS_1
+  m_EditorClassIdentifier: 
+  ID: PQS_1
+  appearance: {fileID: 21300000, guid: 504ad7f948e76434f94d086d78203012, type: 3}
+  species: Pequessivo
+  tier: 1
+  life: 100
+  stamina: 233
+  strength: 7
+  weight: 3
+  agility: 3
+  magicResistance: 3
+  drops:
+  - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
+  - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
+  calmPatterns:
+  - {fileID: 11400000, guid: 46a007261a1b4df4d8661da44698c689, type: 2}
+  - {fileID: 11400000, guid: 09dc8440f43dbcc4b879e8704cac7c30, type: 2}
+  - {fileID: 11400000, guid: 94c786d6a75b4c34bae7dd865772ba3f, type: 2}
+  ragePatterns:
+  - {fileID: 11400000, guid: 09dc8440f43dbcc4b879e8704cac7c30, type: 2}
+  - {fileID: 11400000, guid: 46a007261a1b4df4d8661da44698c689, type: 2}

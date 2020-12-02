@@ -93,6 +93,11 @@ public class CableComponent : MonoBehaviour
 		RenderCable();
 	}
 
+	public void UpdateLineLength(float newLength)
+    {
+		cableLength = newLength;
+    }
+
 	/**
 	 * Render Cable
 	 * 

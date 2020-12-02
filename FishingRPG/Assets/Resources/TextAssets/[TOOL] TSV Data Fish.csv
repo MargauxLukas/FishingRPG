@@ -1,6 +1,2 @@
 ID;NAME;Tier;Point de Vie (PV);Stamina (STA);Force (STR);Poids (WEI);Agilité (AGI);Résistance Magique (MRS)
-PQS_0;Pequessivo;0;100;233;7;3;3;3
-VOV_1;Vol au Vent;1;122;113;9;8;12;10
-EVO_2;Evolve;2;248;100;18;18;12;12
-BRF_3;BriseRécif;3;408;77;20;26;26;18
-KAM_4;Kaimaha;4;506;100;40;40;26;26
+PQS_1;Pequessivo;1;100;233;7;3;3;3

@@ -97,12 +97,11 @@ public class FishPatterns : MonoBehaviour
     public void PlayPattern(string name)
     {
         timer += Time.fixedDeltaTime;
-
         if (currentPattern.duration < timer || currentPattern.duration == 0)
         {
             switch (name)
             {
-                case "FuiteDelEnrage":
+                case "FuiteDeLEnrage":
                     FuiteDeLenrage.Play(currentPattern.DOTFrequency, currentPattern.energyCost, currentPattern.costEnergyOverTime);
                     break;
                 case "FeinteDuFourbe":
