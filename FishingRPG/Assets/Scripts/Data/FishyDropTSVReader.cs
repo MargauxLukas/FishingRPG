@@ -36,11 +36,16 @@ public class FishyDropTSVReader : MonoBehaviour
                 if (!file.Contains(".meta"))
                 {
                     //Load asset at asset path as a FishyFiche
-                    FishyFiche currentFishyFiche = (FishyFiche)AssetDatabase.LoadAssetAtPath(file, typeof(FishyFiche));
+                    FishyDrop currentFishyDrop = (FishyDrop)AssetDatabase.LoadAssetAtPath(file, typeof(FishyDrop));
 
-                    if (file.Contains(blocks[0]))
+                    //Verify if this fiche doesn't already exist
+                    for (int drop = 0; drop < fishyDrops.Count; drop++)
                     {
-
+                        if (!currentFishyDrop.name.Contains(fishyDrops[drop].name))
+                        {
+                            //Then add it to the list
+                            fishyDrops.Add(currentFishyDrop);
+                        }
                     }
                 }
             }

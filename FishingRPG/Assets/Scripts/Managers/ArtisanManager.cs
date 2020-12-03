@@ -11,10 +11,11 @@ public class ArtisanManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start");
         currentSelectedTab = firstSelectedTab;
         SetSelectedTabColor(currentSelectedTab);
         SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
-    }
+    }    
 
     void Update()
     {
@@ -45,6 +46,18 @@ public class ArtisanManager : MonoBehaviour
 
             //Display items list
             SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+        }
+
+        if (Input.GetButtonDown("A Button"))
+        {
+            Debug.Log("Creating Object");
+            //CreateObject
+            //Delete components
+        }
+
+        if (Input.GetButtonDown("B Button"))
+        {
+            UIManager.instance.CloseMenu(gameObject);
         }
     }
 
