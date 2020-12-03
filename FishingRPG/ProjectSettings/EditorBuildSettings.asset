@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/ALC_ProtoSceneV2.unity
     guid: 63a8bc0423a06394bb151935640b958d
+  - enabled: 1
+    path: Assets/_Scenes/MAL_HubScene.unity
+    guid: 1a7577bf85409e246b51ea9c8bc93ebd
   m_configObjects: {}

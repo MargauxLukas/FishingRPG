@@ -52,5 +52,10 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerManager.instance.CHEAT_ShowData();
         }
+
+        if(Input.GetButton("A Button") && PlayerManager.instance.cb.isNearChest)
+        {
+            PlayerManager.instance.OpenChestMenu();
+        }
     }
 }

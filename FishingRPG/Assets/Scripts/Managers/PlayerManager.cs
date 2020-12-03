@@ -13,6 +13,11 @@ public class PlayerManager : MonoBehaviour
     public PlayerGem playerGem;
     public PlayerInventory playerInventory;
 
+    public GameObject hubGUI;
+    public GameObject aventureGUI;
+
+    public CheckBox cb;
+
     public GameObject canvas;
     private bool dataCheat = false;
 
@@ -52,6 +57,19 @@ public class PlayerManager : MonoBehaviour
     {
         player.GetComponent<PlayerFishing>().isReadyToFish = true;
     }
+
+    public void OpenChestMenu()
+    {
+        hubGUI.SetActive(true);
+        aventureGUI.SetActive(false);
+    }
+
+    public void LeaveChestMenu()
+    {
+        hubGUI.SetActive(false);
+        aventureGUI.SetActive(true);
+    }
+
 
     public void IsBlockingLine()
     {
