@@ -6,34 +6,92 @@ using UnityEngine.UI;
 
 public class ArtisanManager : MonoBehaviour
 {
-    EventSystem _event;
-
-    GameObject firstSelected;
+    public GameObject firstSelectedTab;
+    GameObject currentSelectedTab;
 
     void Start()
     {
-        _event = EventSystemPointer.instance.gameObject.GetComponent<EventSystem>();
-        _event.firstSelectedGameObject = firstSelected;
-    }
+        Debug.Log("Start");
+        currentSelectedTab = firstSelectedTab;
+        SetSelectedTabColor(currentSelectedTab);
+        SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+    }    
 
     void Update()
     {
-        if(Input.GetKey("Left Bumper"))
+        Debug.Log(currentSelectedTab);
+
+        if(Input.GetButtonDown("Left Bumper"))
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<Button>().navigation.selectOnLeft.gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            Debug.Log("Left");
+            ResetTabColor(currentSelectedTab);
+            ResetSelectChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts);
+
+            //Select tab
+            currentSelectedTab = currentSelectedTab.GetComponent<TabNeighbours>().selectedOnLeft;
+            SetSelectedTabColor(currentSelectedTab);
+
+            //Display items list
+            SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+        }
+        else if (Input.GetButtonDown("Right Bumper"))
+        {
+            Debug.Log("Right");
+            ResetTabColor(currentSelectedTab);
+            ResetSelectChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts);
+
+            //Select tab
+            currentSelectedTab = currentSelectedTab.GetComponent<TabNeighbours>().selectedOnRight;
+            SetSelectedTabColor(currentSelectedTab);
+
+            //Display items list
+            SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
         }
 
-        if (Input.GetKey("Right Bumper"))
+        if (Input.GetButtonDown("A Button"))
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<Button>().navigation.selectOnRight.gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            Debug.Log("Creating Object");
+            //CreateObject
+            //Delete components
         }
 
-        if (Input.GetKey("Vertical"))
+        if (Input.GetButtonDown("B Button"))
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<FirstSelectedChild>().gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            UIManager.instance.CloseMenu(gameObject);
         }
+    }
+
+    void SetSelectedTabColor(GameObject _tab)
+    {
+        _tab.GetComponent<Image>().color = new Color32(254, 242, 184, 255);
+        _tab.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(66, 41, 36, 255);
+    }
+
+    void ResetTabColor(GameObject _tab)
+    {
+        _tab.GetComponent<Image>().color = new Color32(66, 41, 36, 255);
+        _tab.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(254, 242, 184, 255);
+    }
+
+    void SetSelectedTabChilds(GameObject _list, GameObject _first)
+    {
+        _list.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(_first);
+    }
+
+    void ResetSelectChilds(GameObject _list)
+    {
+        _list.SetActive(false);
+    }
+
+    //////Event trigger functs\\\\\\
+    public void SelectedColor(Text _txt)
+    {
+        _txt.color = new Color32(201, 148, 111, 255);
+    }
+
+    public void DeselectedColor(Text _txt)
+    {
+        _txt.color = new Color32(66, 41, 36, 255);
     }
 }
