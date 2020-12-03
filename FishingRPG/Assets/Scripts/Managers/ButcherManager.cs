@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ButcherManager : MonoBehaviour
 {
+    bool fishReadyToCut = false;
+    bool cuttedFish = false;
+
     void Start()
     {
         
@@ -11,12 +14,28 @@ public class ButcherManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("A Button"))
+        if (Input.GetButtonDown("A Button") && !fishReadyToCut && !cuttedFish)
         {
-            Debug.Log("Cut");
+            Debug.Log("NewFish");
             //Move fish on cutting table
-            //Display Drops
-            //Add components to inventory
+        }
+        else if(Input.GetButtonDown("A Button") && cuttedFish)
+        {
+            Debug.Log("Get component");
+            //Add selected component in inventory
+        }
+
+        if(Input.GetButton("A Button") && fishReadyToCut)
+        {
+            Debug.Log("Cut Fish");
+            //Decrement a timer (1.2f secs for test)
+            //If timer = 0
+            //Display components (if > 3 display line2)
+        }
+
+        if(Input.GetButtonDown("Y Button") && cuttedFish)
+        {
+            //Add all components to inventory
         }
 
         if (Input.GetButtonDown("B Button"))
