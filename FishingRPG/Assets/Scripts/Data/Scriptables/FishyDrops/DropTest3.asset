@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7ec19189c88394382f1e33a0649cdd, type: 3}
   m_Name: DropTest3
   m_EditorClassIdentifier: 
-  ID: 
+  ID: PLF_R
   appearance: {fileID: 0}
-  type: Oeil de Pequessivo
+  type: Nageoire
   rarity: Epic
   dropRate: 30

@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
         switch(id)
         {
             case "PQS_1":
-                inventory.pequessivo++;
+                inventory.PQS_1++;
                 break;
             default:
                 Debug.Log("Don't find any case with id :" + id);

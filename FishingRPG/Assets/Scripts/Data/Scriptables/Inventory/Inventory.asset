@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760cca5a8ba8c64409cc545e95b7fe7e, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  pequessivo: 2
+  PQS_1: 2
+  PST_C: 14
+  PSC_C: 12
+  PFL_R: 5
+  PFI_E: 2
+  PBH_L: 1
+  PEH_1: 0
+  PCH_1: 0
+  PBE_1: 0
+  PBO_1: 0
+  PFR_1: 0
+  GPE_1: 0

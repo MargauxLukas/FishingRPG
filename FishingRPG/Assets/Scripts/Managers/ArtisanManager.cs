@@ -9,6 +9,18 @@ public class ArtisanManager : MonoBehaviour
     public GameObject firstSelectedTab;
     GameObject currentSelectedTab;
 
+    public List<Text> componentsList = new List<Text>();
+    public List<Text> componentsQuantityList = new List<Text>();
+    public Text title;
+    public Image image;
+    public Text bonusStats;
+    public Text description;
+
+    public Inventory inventory;
+
+    private string tempoString;
+    private bool canCraft = true;
+
     void Start()
     {
         Debug.Log("Start");
@@ -46,13 +58,6 @@ public class ArtisanManager : MonoBehaviour
 
             //Display items list
             SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
-        }
-
-        if (Input.GetButtonDown("A Button"))
-        {
-            Debug.Log("Creating Object");
-            //CreateObject
-            //Delete components
         }
 
         if (Input.GetButtonDown("B Button"))
@@ -93,5 +98,65 @@ public class ArtisanManager : MonoBehaviour
     public void DeselectedColor(Text _txt)
     {
         _txt.color = new Color32(66, 41, 36, 255);
+    }
+
+    public void UpdateText(ScriptablePointer sp)
+    {
+        for(int i = 0; i < sp.armor.components.Length; i++)
+        {
+            componentsList[i].text = sp.armor.components[i].type;
+
+            componentsQuantityList[i].text = inventory.GetVariable(sp.armor.components[i].ID) + "/" + sp.armor.componentsQty[i].ToString();
+
+            componentsList[i].gameObject.SetActive(true);
+            componentsQuantityList[i].gameObject.SetActive(true);
+        }
+
+        title.text = sp.armor.itemName;
+        image.sprite = sp.armor.appearance;
+
+
+        if(sp.armor.strength != 0)
+        {
+            tempoString = sp.armor.strength.ToString() + " strength\n"; 
+        }
+        if (sp.armor.constitution != 0)
+        {
+            tempoString += sp.armor.constitution.ToString() + " constitution\n";
+        }
+        if (sp.armor.dexterity != 0)
+        {
+            tempoString += sp.armor.dexterity.ToString() + " dexterity\n";
+        }
+        if (sp.armor.intelligence != 0)
+        {
+            tempoString += sp.armor.intelligence.ToString() + " intelligence\n";
+        }
+
+        bonusStats.text = tempoString;
+        //description.text = sp.armor.description;
+    }
+
+    public void CraftObject(ScriptablePointer sp)
+    {
+        Debug.Log("test");
+        for (int i = 0; i < sp.armor.components.Length; i++)
+        {
+            if(inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
+            {
+                canCraft = false;
+            }
+        }
+
+        if(canCraft)
+        {
+            for (int i = 0; i < sp.armor.components.Length; i++)
+            {
+                inventory.RemoveQty(sp.armor.components[i].ID, sp.armor.componentsQty[i]);
+            }
+
+            inventory.SetArmor(sp.armor.ID);
+            UpdateText(sp);
+        }
     }
 }

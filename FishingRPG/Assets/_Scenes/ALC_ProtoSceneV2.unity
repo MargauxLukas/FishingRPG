@@ -3724,7 +3724,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421373836}
-  - component: {fileID: 1421373835}
   m_Layer: 0
   m_Name: TerrainGroup_0
   m_TagString: Untagged
@@ -3732,18 +3731,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1421373835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421373834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca34a6148db2d54493f84f379293f33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1421373836
 Transform:
   m_ObjectHideFlags: 0
@@ -5506,7 +5493,7 @@ MonoBehaviour:
   currentFishBehavior: {fileID: 0}
   savePos: {fileID: 0}
   canAerialMat: {fileID: 2100000, guid: 2154821283097a14cafbff2c920a2a41, type: 2}
-  normalMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
+  normalMat: {fileID: 2100000, guid: 6ccf9d06d2860a84e87ef6728fdf2a3f, type: 2}
   enduText: {fileID: 300340328510500892}
   speedText: {fileID: 0}
   lifeText: {fileID: 300340328594554953}
