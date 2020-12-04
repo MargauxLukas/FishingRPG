@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8576b283468e6c4994a3dc4b6949d61, type: 3}
   m_Name: PBE_1
   m_EditorClassIdentifier: 
-  ID: 
-  appearance: {fileID: 0}
+  ID: PBE_1
+  appearance: {fileID: 21300000, guid: bdc1c98416d3cc34387a47cdacb16896, type: 3}
   itemType: 
   upgradeState: 0
   itemName: 

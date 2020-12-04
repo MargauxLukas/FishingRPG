@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7ec19189c88394382f1e33a0649cdd, type: 3}
   m_Name: DropTest2
   m_EditorClassIdentifier: 
-  ID: 
+  ID: PSC_C
   appearance: {fileID: 0}
-  type: Nageoire Dorsale Tranchante
+  type: Ecaille
   rarity: Rare
   dropRate: 60

@@ -13,8 +13,14 @@ public class PlayerManager : MonoBehaviour
     public PlayerGem playerGem;
     public PlayerInventory playerInventory;
 
+    public GameObject hubGUI;
+    public GameObject aventureGUI;
+
+    public CheckBox cb;
+
     public GameObject canvas;
     private bool dataCheat = false;
+    public bool isOnMenu = false;
 
     public float speed = 9f;
 
@@ -53,8 +59,24 @@ public class PlayerManager : MonoBehaviour
         player.GetComponent<PlayerFishing>().isReadyToFish = true;
     }
 
+    public void OpenChestMenu()
+    {
+        hubGUI.SetActive(true);
+        aventureGUI.SetActive(false);
+        PlayerManager.instance.isOnMenu = true;
+    }
+
+    public void LeaveChestMenu()
+    {
+        hubGUI.SetActive(false);
+        aventureGUI.SetActive(true);
+        PlayerManager.instance.isOnMenu = false;
+    }
+
+
     public void IsBlockingLine()
     {
+        Debug.Log("green");
         FishingRodManager.instance.fishingLine.isBlocked = true;
         FishingRodManager.instance.fishingLine.textBlocked.color = Color.green;
     }
@@ -86,6 +108,7 @@ public class PlayerManager : MonoBehaviour
 
     public void IsNotBlockingLine()
     {
+        Debug.Log("red");
         FishingRodManager.instance.fishingLine.isBlocked = false;
         FishingRodManager.instance.fishingLine.textBlocked.color = Color.red;
     }
