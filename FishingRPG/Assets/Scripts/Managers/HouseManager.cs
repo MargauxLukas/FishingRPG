@@ -30,4 +30,19 @@ public class HouseManager : MonoBehaviour
     {
         _txt.color = new Color32(39, 75, 94, 255);
     }
+
+    public void OpenMenu(GameObject _go)
+    {
+        _go.SetActive(true);
+    }
+
+    public void CloseMenu(GameObject _go)
+    {
+        _go.SetActive(false);
+    }
+
+    public void SetFirstSelected(GameObject _go)
+    {
+        EventSystem.current.SetSelectedGameObject(_go);
+    }
 }
