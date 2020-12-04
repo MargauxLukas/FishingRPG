@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject canvas;
     private bool dataCheat = false;
+    public bool isOnMenu = false;
 
     public float speed = 9f;
 
@@ -62,12 +63,14 @@ public class PlayerManager : MonoBehaviour
     {
         hubGUI.SetActive(true);
         aventureGUI.SetActive(false);
+        PlayerManager.instance.isOnMenu = true;
     }
 
     public void LeaveChestMenu()
     {
         hubGUI.SetActive(false);
         aventureGUI.SetActive(true);
+        PlayerManager.instance.isOnMenu = false;
     }
 
 
