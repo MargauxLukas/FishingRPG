@@ -93,17 +93,12 @@ public class ButcherManager : MonoBehaviour
         {
             Debug.Log("Y");
 
-            for (int i = 0; i < dropsFirstLine.transform.childCount; i++)
+            for(int i = 0; i < lootID.Count; i++)
             {
-                dropsFirstLine.transform.GetChild(i).transform.GetChild(0).gameObject.GetComponent<Image>().enabled = false;
+                dropList[i].enabled = false;
+                UIManager.instance.inventory.AddLoot(lootID[i]);
+                lootID[i] = "Empty";
             }
-
-            for (int k = 0; k < dropsSecondLine.transform.childCount; k++)
-            {
-                dropsSecondLine.transform.GetChild(k).transform.GetChild(0).gameObject.GetComponent<Image>().enabled = false;
-            }
-
-            //Add all components to inventory
         }
 
         if (Input.GetButtonDown("B Button"))

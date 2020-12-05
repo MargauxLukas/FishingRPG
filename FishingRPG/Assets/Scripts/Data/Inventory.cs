@@ -53,7 +53,7 @@ public class Inventory : ScriptableObject
             case "PSC_C":
                 PSC_C -= qty;
                 break;
-            case "PFL_R":
+            case "PLF_R":
                 PFL_R -= qty;
                 break;
             case "PFI_E":
@@ -109,7 +109,7 @@ public class Inventory : ScriptableObject
             case "PSC_C":
                 PSC_C++;
                 break;
-            case "PFL_R":
+            case "PLF_R":
                 PFL_R++;
                 break;
             case "PFI_E":

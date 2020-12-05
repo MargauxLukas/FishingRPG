@@ -16,4 +16,4 @@ MonoBehaviour:
   appearance: {fileID: 21300000, guid: 175d932c975809a4b8ebd7ed314ff7a6, type: 3}
   type: Ecaille
   rarity: Common
-  dropRate: 27
+  dropRate: 30
