@@ -112,7 +112,10 @@ public class FishBehavior : MonoBehaviour
                 }
                 else
                 {
-                    Aerial();
+                    if (!isDead)
+                    {
+                        Aerial();
+                    }
                 }
             }
             else
@@ -129,7 +132,10 @@ public class FishBehavior : MonoBehaviour
             }
         }
 
-        DetectionWall();
+        if (!exhausted)
+        {
+            DetectionWall();
+        }
     }
 
     public Vector3 GetAerialPosition(float currentTime )

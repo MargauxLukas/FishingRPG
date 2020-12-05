@@ -93,6 +93,8 @@ public class Inventory : ScriptableObject
     {
         if(PQS_1 > 0)
         {
+            PQS_1--;
+            fishTotal--;
             return "PQS_1";
         }
 

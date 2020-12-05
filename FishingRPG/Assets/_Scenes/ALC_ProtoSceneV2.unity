@@ -3254,6 +3254,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4373638234396413728, guid: 95c73f9302567db4fbc66b4b765243a5, type: 3}
   m_PrefabInstance: {fileID: 1075107909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1130215593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130215594}
+  m_Layer: 0
+  m_Name: SavePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1130215594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130215593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.22, y: 6.33, z: 48.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 300340329315882734}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193010449
 GameObject:
   m_ObjectHideFlags: 0
@@ -5491,7 +5521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFish: {fileID: 0}
   currentFishBehavior: {fileID: 0}
-  savePos: {fileID: 0}
+  savePos: {fileID: 1130215594}
   canAerialMat: {fileID: 2100000, guid: 2154821283097a14cafbff2c920a2a41, type: 2}
   normalMat: {fileID: 2100000, guid: 6ccf9d06d2860a84e87ef6728fdf2a3f, type: 2}
   enduText: {fileID: 300340328510500892}
@@ -8368,6 +8398,7 @@ Transform:
   m_Children:
   - {fileID: 2902220165543362540}
   - {fileID: 1393437048}
+  - {fileID: 1130215594}
   m_Father: {fileID: 300340330258618238}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
