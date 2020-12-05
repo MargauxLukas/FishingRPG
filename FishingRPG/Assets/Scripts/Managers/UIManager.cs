@@ -10,6 +10,12 @@ public class UIManager : MonoBehaviour
     public GameObject firstSelectedButton;
 
     public List<FishyFiche> fishyFishList = new List<FishyFiche>();
+    public List<ArmorSet> helmetList = new List<ArmorSet>();
+    public List<ArmorSet> pauldronsList = new List<ArmorSet>();
+    public List<ArmorSet> beltList = new List<ArmorSet>();
+    public List<ArmorSet> bootsList = new List<ArmorSet>();
+    public List<FishingRod> fishingRodList = new List<FishingRod>();
+    public List<Gem> gemList = new List<Gem>();
     public Inventory inventory;
 
     private void Awake()

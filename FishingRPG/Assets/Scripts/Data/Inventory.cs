@@ -10,18 +10,30 @@ public class Inventory : ScriptableObject
     public int PQS_1;
     public int PFS_1;
 
+    //Pequessivo Mats
     public int PST_C;
     public int PSC_C;
     public int PFL_R;
     public int PFI_E;
     public int PBH_L;
 
+    //Pequessivo Armor
     public bool PEH_1;
     public bool PCH_1;
     public bool PBE_1;
     public bool PBO_1;
+
+    //??? armor
+    public bool AEH_1;
+    public bool ACH_1;
+    public bool ABE_1;
+    public bool ABO_1;
+    public bool AFR_1;
+
+    //Fishing rod
     public bool PFR_1;
 
+    //Gems
     public bool GPE_1;
 
     public int GetVariable(string id)
@@ -123,5 +135,80 @@ public class Inventory : ScriptableObject
             case "Empty":
                 break;
         }
+    }
+
+    public bool CheckHelmet(string id)
+    {
+        switch(id)
+        {
+            case "PEH_1":
+                if(PEH_1)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }
+
+    public bool CheckPauldrons(string id)
+    {
+        switch (id)
+        {
+            case "PCH_1":
+                if (PCH_1)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }
+
+    public bool CheckBelt(string id)
+    {
+        switch (id)
+        {
+            case "PBE_1":
+                if (PBE_1)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }
+
+    public bool CheckBoots(string id)
+    {
+        switch (id)
+        {
+            case "PBO_1":
+                if (PBO_1)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }
+
+    public bool CheckFishingRod(string id)
+    {
+        switch (id)
+        {
+            case "PFR_1":
+                if (PFR_1)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }
+
+    public bool CheckGems(string id)
+    {
+        return true;
     }
 }
