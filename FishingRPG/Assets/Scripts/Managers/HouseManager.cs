@@ -45,4 +45,9 @@ public class HouseManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(_go);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

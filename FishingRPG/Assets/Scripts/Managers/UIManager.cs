@@ -54,6 +54,11 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(button);
     }
 
+    public void SetFirstSelected(GameObject _go)
+    {
+        EventSystem.current.SetSelectedGameObject(_go);
+    }
+
     public void Quit()
     {
         Application.Quit();
