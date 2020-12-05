@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760cca5a8ba8c64409cc545e95b7fe7e, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  fishTotal: 0
-  PQS_1: 0
+  fishTotal: 2
+  PQS_1: 2
   PFS_1: 0
   PST_C: 0
   PSC_C: 0

@@ -11151,7 +11151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &599915849
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12851,7 +12851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 160.4, y: 50.5}
+  m_AnchoredPosition: {x: 160.40002, y: 50.5}
   m_SizeDelta: {x: 585, y: 320}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &681605477
@@ -23376,7 +23376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1166738067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25449,8 +25449,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 1888179555}
-  fishyFishList: []
-  inventory: {fileID: 0}
+  fishyFishList:
+  - {fileID: 11400000, guid: bcbc63597a912ba469bdbec1e419af0a, type: 2}
+  inventory: {fileID: 11400000, guid: bafd2a44d9e916249a09d2602756395d, type: 2}
 --- !u!1 &1259292397
 GameObject:
   m_ObjectHideFlags: 0
@@ -26467,7 +26468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1305534686
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29032,7 +29033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1432690878
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35725,7 +35726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1866324767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38428,7 +38429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2032973013
 RectTransform:
   m_ObjectHideFlags: 0
