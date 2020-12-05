@@ -17,5 +17,7 @@ public class PlayerInventory : MonoBehaviour
                 Debug.Log("Don't find any case with id :" + id);
                 break;
         }
+
+        inventory.fishTotal++;
     }
 }

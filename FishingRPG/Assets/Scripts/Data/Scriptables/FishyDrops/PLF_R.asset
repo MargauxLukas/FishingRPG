@@ -9,20 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760cca5a8ba8c64409cc545e95b7fe7e, type: 3}
-  m_Name: Inventory
+  m_Script: {fileID: 11500000, guid: 0c7ec19189c88394382f1e33a0649cdd, type: 3}
+  m_Name: PLF_R
   m_EditorClassIdentifier: 
-  fishTotal: 0
-  PQS_1: 0
-  PFS_1: 0
-  PST_C: 0
-  PSC_C: 0
-  PFL_R: 0
-  PFI_E: 0
-  PBH_L: 0
-  PEH_1: 0
-  PCH_1: 0
-  PBE_1: 0
-  PBO_1: 0
-  PFR_1: 0
-  GPE_1: 0
+  ID: PLF_R
+  appearance: {fileID: 21300000, guid: 99cb534d44c6e084bad6df6b57a8c56c, type: 3}
+  type: Nageoire
+  rarity: Rare
+  dropRate: 20

@@ -4210,7 +4210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &599915849
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4320,11 +4320,11 @@ MonoBehaviour:
         - m_Target: {fileID: 1544894137}
           m_TargetAssemblyTypeName: ButcherManager, Assembly-CSharp
           m_MethodName: ClearDropList
-          m_Mode: 2
+          m_Mode: 3
           m_Arguments:
-            m_ObjectArgument: {fileID: 599915848}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -8074,6 +8074,7 @@ GameObject:
   - component: {fileID: 1006712309}
   - component: {fileID: 1006712311}
   - component: {fileID: 1006712310}
+  - component: {fileID: 1006712312}
   m_Layer: 5
   m_Name: Fish Pile
   m_TagString: Untagged
@@ -8140,6 +8141,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006712308}
   m_CullTransparentMesh: 0
+--- !u!114 &1006712312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006712308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d64d2e68bc99c4c828dcdc3ef09a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1029165617
 GameObject:
   m_ObjectHideFlags: 0
@@ -9220,7 +9233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1166738067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9330,11 +9343,11 @@ MonoBehaviour:
         - m_Target: {fileID: 1544894137}
           m_TargetAssemblyTypeName: ButcherManager, Assembly-CSharp
           m_MethodName: ClearDropList
-          m_Mode: 2
+          m_Mode: 3
           m_Arguments:
-            m_ObjectArgument: {fileID: 1166738066}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -10213,7 +10226,6 @@ MonoBehaviour:
   image: {fileID: 816544098}
   bonusStats: {fileID: 2040591200}
   description: {fileID: 1185326500}
-  inventory: {fileID: 11400000, guid: bafd2a44d9e916249a09d2602756395d, type: 2}
 --- !u!1 &1218687690
 GameObject:
   m_ObjectHideFlags: 0
@@ -10408,6 +10420,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 1888179555}
+  fishyFishList:
+  - {fileID: 11400000, guid: bcbc63597a912ba469bdbec1e419af0a, type: 2}
+  inventory: {fileID: 11400000, guid: bafd2a44d9e916249a09d2602756395d, type: 2}
 --- !u!1 &1282069709
 GameObject:
   m_ObjectHideFlags: 0
@@ -10682,7 +10697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1305534686
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10792,11 +10807,11 @@ MonoBehaviour:
         - m_Target: {fileID: 1544894137}
           m_TargetAssemblyTypeName: ButcherManager, Assembly-CSharp
           m_MethodName: ClearDropList
-          m_Mode: 2
+          m_Mode: 3
           m_Arguments:
-            m_ObjectArgument: {fileID: 1305534685}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -12171,7 +12186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1432690878
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12281,11 +12296,11 @@ MonoBehaviour:
         - m_Target: {fileID: 1544894137}
           m_TargetAssemblyTypeName: ButcherManager, Assembly-CSharp
           m_MethodName: ClearDropList
-          m_Mode: 2
+          m_Mode: 3
           m_Arguments:
-            m_ObjectArgument: {fileID: 1432690877}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -12944,6 +12959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1907a6f002a164ea24cae37621b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishPile: {fileID: 1006712308}
   fishPileInput: {fileID: 1243683619}
   fishToButch: {fileID: 2072289053}
   butchedFish: {fileID: 624069259}
@@ -12952,6 +12968,15 @@ MonoBehaviour:
   firstSelectedComp: {fileID: 2032973012}
   dropsFirstLine: {fileID: 1424431281}
   dropsSecondLine: {fileID: 1660230098}
+  numberLootList: 64000000500000003c00000028000000
+  totalNumberLootList: 0
+  dropList:
+  - {fileID: 2032973014}
+  - {fileID: 1432690879}
+  - {fileID: 1166738068}
+  - {fileID: 1305534687}
+  - {fileID: 599915850}
+  - {fileID: 1866324768}
   holdButtonImg: {fileID: 493546608}
   cuttingTime: 1.2
 --- !u!1 &1545180119
@@ -16029,7 +16054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1866324767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16139,11 +16164,11 @@ MonoBehaviour:
         - m_Target: {fileID: 1544894137}
           m_TargetAssemblyTypeName: ButcherManager, Assembly-CSharp
           m_MethodName: ClearDropList
-          m_Mode: 2
+          m_Mode: 3
           m_Arguments:
-            m_ObjectArgument: {fileID: 1866324766}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -17644,7 +17669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2032973013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17754,10 +17779,10 @@ MonoBehaviour:
         - m_Target: {fileID: 1544894137}
           m_TargetAssemblyTypeName: ButcherManager, Assembly-CSharp
           m_MethodName: ClearDropList
-          m_Mode: 2
+          m_Mode: 3
           m_Arguments:
-            m_ObjectArgument: {fileID: 2032973012}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

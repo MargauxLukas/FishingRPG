@@ -16,8 +16,6 @@ public class ArtisanManager : MonoBehaviour
     public Text bonusStats;
     public Text description;
 
-    public Inventory inventory;
-
     private string tempoString;
     private bool canCraft = true;
 
@@ -106,7 +104,7 @@ public class ArtisanManager : MonoBehaviour
         {
             componentsList[i].text = sp.armor.components[i].type;
 
-            componentsQuantityList[i].text = inventory.GetVariable(sp.armor.components[i].ID) + "/" + sp.armor.componentsQty[i].ToString();
+            componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) + "/" + sp.armor.componentsQty[i].ToString();
 
             componentsList[i].gameObject.SetActive(true);
             componentsQuantityList[i].gameObject.SetActive(true);
@@ -142,7 +140,7 @@ public class ArtisanManager : MonoBehaviour
         Debug.Log("test");
         for (int i = 0; i < sp.armor.components.Length; i++)
         {
-            if(inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
+            if(UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
             {
                 canCraft = false;
             }
@@ -152,10 +150,10 @@ public class ArtisanManager : MonoBehaviour
         {
             for (int i = 0; i < sp.armor.components.Length; i++)
             {
-                inventory.RemoveQty(sp.armor.components[i].ID, sp.armor.componentsQty[i]);
+                UIManager.instance.inventory.RemoveQty(sp.armor.components[i].ID, sp.armor.componentsQty[i]);
             }
 
-            inventory.SetArmor(sp.armor.ID);
+            UIManager.instance.inventory.SetArmor(sp.armor.ID);
             UpdateText(sp);
         }
     }
