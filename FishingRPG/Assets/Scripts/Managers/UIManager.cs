@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public GameObject firstSelectedButton;
 
+    public List<FishyFiche> fishyFishList = new List<FishyFiche>();
+    public Inventory inventory;
+
     private void Awake()
     {
         Init();

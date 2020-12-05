@@ -6,7 +6,9 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "NewInventory", menuName = "BFF Tools/Inventory", order = 10)]
 public class Inventory : ScriptableObject
 {
+    public int fishTotal;
     public int PQS_1;
+    public int PFS_1;
 
     public int PST_C;
     public int PSC_C;
@@ -61,6 +63,8 @@ public class Inventory : ScriptableObject
                 PBH_L -= qty;
                 break;
         }
+
+        fishTotal--;
     }
 
     public void SetArmor(string id)
@@ -83,5 +87,15 @@ public class Inventory : ScriptableObject
                 PFR_1 = true;
                 break;
         }
+    }
+
+    public string GetFish()
+    {
+        if(PQS_1 > 0)
+        {
+            return "PQS_1";
+        }
+
+        return null;
     }
 }
