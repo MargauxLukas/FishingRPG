@@ -108,7 +108,6 @@ public class PlayerManager : MonoBehaviour
 
     public void IsNotBlockingLine()
     {
-        Debug.Log("red");
         FishingRodManager.instance.fishingLine.isBlocked = false;
         FishingRodManager.instance.fishingLine.textBlocked.color = Color.red;
     }

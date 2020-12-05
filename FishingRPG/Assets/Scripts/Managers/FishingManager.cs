@@ -34,7 +34,7 @@ public class FishingManager : MonoBehaviour
         {
             if(needToWait == 0f){needToWait = SetTimer();}
 
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
 
             if(timer > needToWait)
             {
@@ -59,8 +59,10 @@ public class FishingManager : MonoBehaviour
                                 FishingRodManager.instance.bobber.transform.position.z),
                     Quaternion.identity,
                     dynamics          );
+        Debug.Log(currentFish.transform.position);
         FishManager.instance.currentFish         = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
+        FishManager.instance.isAerial = false;
         FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
         CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.FishingCanStart();
@@ -80,8 +82,10 @@ public class FishingManager : MonoBehaviour
             }
 
             Destroy(currentFish);
+            //currentFish.gameObject.SetActive(false);
         }
 
+        readyToFish = false;
         FishingRodManager.instance.BobberBack();
         FishingRodManager.instance.fishingLine.fCurrent = 0f;
         FishingRodManager.instance.distanceCP = 0f;
