@@ -23,21 +23,18 @@ public class ButcherManager : MonoBehaviour
     public List<int> numberLootList = new List<int>();
     public int totalNumberLootList = 0;
 
-    public List<Image> dropList = new List<Image>();
-    private List<float> percentDropLoot = new List<float>();
-    private string fishID;
-    private float totalDropLoot = 0f;
+    public List<Image> dropList = new List<Image>();                  //Image components de chaque case
+    private List<float> percentDropLoot = new List<float>();          //List des percentages de loot
+    private List<string> lootID = new List<string>();
+
+    private string fishID;                                            //Savoir quel poisson on découpe
+    private float totalDropLoot = 0f;                                 //Total de tous les percentages
     private float randomNumber = 0;
-    private FishyFiche actualFish;
+    private FishyFiche actualFish;                                    //Le fish choisi pour savoir quel sont les loots
 
     public Image holdButtonImg;
     public float cuttingTime;
     float cuttingTimer = 0;
-
-    private void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -115,9 +112,11 @@ public class ButcherManager : MonoBehaviour
         }
     }
 
-    public void ClearDropList(GameObject _go)
+    public void ClearDropList(int i)
     {
-        _go.GetComponent<Image>().enabled = false;
+        dropList[i].enabled = false;
+        UIManager.instance.inventory.AddLoot(lootID[i]);
+        lootID[i] = "Empty";
     }
 
     IEnumerator FishCanBeCut()
@@ -182,7 +181,7 @@ public class ButcherManager : MonoBehaviour
             {
                 if (randomNumber <= percentDropLoot[i])
                 {
-                    Debug.Log(actualFish.drops[i].name);
+                    lootID.Add(actualFish.drops[i].ID);
                     SetLoot(j,i);
                     break;
                 }

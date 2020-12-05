@@ -15,12 +15,12 @@ MonoBehaviour:
   fishTotal: 2
   PQS_1: 1
   PFS_1: 0
-  PST_C: 12
-  PSC_C: 11
-  PFL_R: 5
-  PFI_E: 2
-  PBH_L: 1
-  PEH_1: 1
+  PST_C: 0
+  PSC_C: 0
+  PFL_R: 0
+  PFI_E: 0
+  PBH_L: 0
+  PEH_1: 0
   PCH_1: 0
   PBE_1: 0
   PBO_1: 0

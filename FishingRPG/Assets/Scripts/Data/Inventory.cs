@@ -98,4 +98,28 @@ public class Inventory : ScriptableObject
 
         return null;
     }
+
+    public void AddLoot(string id)
+    {
+        switch (id)
+        {
+            case "PST_C":
+                PST_C++;
+                break;
+            case "PSC_C":
+                PSC_C++;
+                break;
+            case "PFL_R":
+                PFL_R++;
+                break;
+            case "PFI_E":
+                PFI_E++;
+                break;
+            case "PBH_L":
+                PBH_L++;
+                break;
+            case "Empty":
+                break;
+        }
+    }
 }
