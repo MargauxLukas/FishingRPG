@@ -5,4 +5,6 @@ using UnityEngine;
 public class ScriptablePointer : MonoBehaviour
 {
     public ArmorSet armor;
+    public FishingRod fishingRod;
+    public Gem gem;
 }

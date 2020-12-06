@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8576b283468e6c4994a3dc4b6949d61, type: 3}
   m_Name: PBO_1
   m_EditorClassIdentifier: 
-  ID: 
-  appearance: {fileID: 0}
-  itemType: 
+  ID: PBO_1
+  appearance: {fileID: 21300000, guid: 7c40bb211a4c95b448289b85bcb1dfae, type: 3}
+  itemType: Boots
   upgradeState: 0
   itemName: 
   tier: 0

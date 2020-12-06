@@ -10,6 +10,16 @@ public class Inventory : ScriptableObject
     public int PQS_1;
     public int PFS_1;
 
+    //Equiped
+    public ArmorSet equipedHelmet;
+    public ArmorSet equipedShoulders;
+    public ArmorSet equipedBelt;
+    public ArmorSet equipedBoots;
+    public FishingRod equipedFishingRod;
+    public Gem equipedGem1;
+    public Gem equipedGem2;
+    public Gem equipedGem3;
+
     //Pequessivo Mats
     public int PST_C;
     public int PSC_C;
@@ -209,6 +219,15 @@ public class Inventory : ScriptableObject
 
     public bool CheckGems(string id)
     {
-        return true;
+        switch(id)
+        {
+            case "GPE_1":
+                if(GPE_1)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
     }
 }

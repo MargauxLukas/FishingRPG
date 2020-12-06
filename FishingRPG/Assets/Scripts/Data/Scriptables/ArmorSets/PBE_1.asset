@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PBE_1
   m_EditorClassIdentifier: 
   ID: PBE_1
-  appearance: {fileID: 21300000, guid: bdc1c98416d3cc34387a47cdacb16896, type: 3}
-  itemType: 
+  appearance: {fileID: 21300000, guid: 0a57a2bc3a5f5784a8d3555f7f3063e7, type: 3}
+  itemType: Belt
   upgradeState: 0
   itemName: 
   tier: 0

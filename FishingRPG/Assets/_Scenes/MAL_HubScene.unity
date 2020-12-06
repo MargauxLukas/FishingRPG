@@ -909,6 +909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &32644455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,6 +1292,7 @@ GameObject:
   - component: {fileID: 75693204}
   - component: {fileID: 75693206}
   - component: {fileID: 75693205}
+  - component: {fileID: 75693207}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -1354,6 +1357,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75693203}
   m_CullTransparentMesh: 0
+--- !u!114 &75693207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75693203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &76652299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.48944, y: -38.771156}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &76652301
@@ -1533,6 +1551,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1490205758}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: GetGemInMovement
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1354838679}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2183,6 +2213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &111989764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2301,7 @@ GameObject:
   - component: {fileID: 115426841}
   - component: {fileID: 115426843}
   - component: {fileID: 115426842}
+  - component: {fileID: 115426844}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -2333,6 +2366,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115426840}
   m_CullTransparentMesh: 0
+--- !u!114 &115426844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115426840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &123669920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,7 +2611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18665, y: -38.771156}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127482982
@@ -2695,7 +2743,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 136234890}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &133943425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2782,6 +2842,7 @@ GameObject:
   - component: {fileID: 136234887}
   - component: {fileID: 136234889}
   - component: {fileID: 136234888}
+  - component: {fileID: 136234890}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -2846,6 +2907,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136234886}
   m_CullTransparentMesh: 0
+--- !u!114 &136234890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136234886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &144677111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,6 +2933,7 @@ GameObject:
   - component: {fileID: 144677112}
   - component: {fileID: 144677114}
   - component: {fileID: 144677113}
+  - component: {fileID: 144677115}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -2921,6 +2998,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144677111}
   m_CullTransparentMesh: 0
+--- !u!114 &144677115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144677111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &156542453
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,6 +3167,7 @@ GameObject:
   - component: {fileID: 157743250}
   - component: {fileID: 157743252}
   - component: {fileID: 157743251}
+  - component: {fileID: 157743253}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -3139,6 +3232,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157743249}
   m_CullTransparentMesh: 0
+--- !u!114 &157743253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157743249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &160384838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,6 +3418,7 @@ GameObject:
   - component: {fileID: 171410374}
   - component: {fileID: 171410376}
   - component: {fileID: 171410375}
+  - component: {fileID: 171410377}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -3374,6 +3483,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171410373}
   m_CullTransparentMesh: 0
+--- !u!114 &171410377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171410373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &172269042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &175321082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,7 +4296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95422, y: -38.771156}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221501483
@@ -4310,6 +4436,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1490205758}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: GetGemInMovement
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 144677115}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4495,6 +4633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &226129954
 GameObject:
   m_ObjectHideFlags: 0
@@ -4703,6 +4843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 11400000, guid: 3dfbf2549ff984143904d07b816e3801, type: 2}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &227031423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5255,7 +5397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41902, y: -38.771156}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279454766
@@ -5387,7 +5529,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipFishingRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1388294437}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &286155711
 GameObject:
   m_ObjectHideFlags: 0
@@ -5427,7 +5581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65141, y: -38.771156}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286155713
@@ -5559,7 +5713,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1144407999}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &295705297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5599,7 +5765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.72186, y: -38.771156}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295705299
@@ -5731,7 +5897,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 171410377}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &298764686
 GameObject:
   m_ObjectHideFlags: 0
@@ -5897,6 +6075,7 @@ GameObject:
   - component: {fileID: 304154146}
   - component: {fileID: 304154148}
   - component: {fileID: 304154147}
+  - component: {fileID: 304154149}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -5961,6 +6140,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304154145}
   m_CullTransparentMesh: 0
+--- !u!114 &304154149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304154145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &306201839
 GameObject:
   m_ObjectHideFlags: 0
@@ -6000,7 +6194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41902, y: -38.771156}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306201841
@@ -6132,7 +6326,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1758008315}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &306625557
 GameObject:
   m_ObjectHideFlags: 0
@@ -6332,7 +6538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.48944, y: -38.771156}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309618169
@@ -6464,7 +6670,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1501606781}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &310750525
 GameObject:
   m_ObjectHideFlags: 0
@@ -6552,6 +6770,7 @@ GameObject:
   - component: {fileID: 326612709}
   - component: {fileID: 326612711}
   - component: {fileID: 326612710}
+  - component: {fileID: 326612712}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -6616,6 +6835,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326612708}
   m_CullTransparentMesh: 0
+--- !u!114 &326612712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326612708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &331904012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6655,7 +6889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95422, y: -38.771156}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331904014
@@ -6787,7 +7021,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1993743278}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &334263084
 GameObject:
   m_ObjectHideFlags: 0
@@ -6945,6 +7191,7 @@ GameObject:
   - component: {fileID: 335197909}
   - component: {fileID: 335197911}
   - component: {fileID: 335197910}
+  - component: {fileID: 335197912}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -7009,6 +7256,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335197908}
   m_CullTransparentMesh: 0
+--- !u!114 &335197912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335197908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &340061869
 GameObject:
   m_ObjectHideFlags: 0
@@ -7189,6 +7451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &347753740
 GameObject:
   m_ObjectHideFlags: 0
@@ -7369,6 +7633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &355919038
 GameObject:
   m_ObjectHideFlags: 0
@@ -7836,7 +8102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18665, y: -38.771156}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396992670
@@ -7968,7 +8234,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipFishingRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2042005758}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &404126945
 GameObject:
   m_ObjectHideFlags: 0
@@ -8287,6 +8565,7 @@ GameObject:
   - component: {fileID: 431650447}
   - component: {fileID: 431650449}
   - component: {fileID: 431650448}
+  - component: {fileID: 431650450}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -8351,6 +8630,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431650446}
   m_CullTransparentMesh: 0
+--- !u!114 &431650450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431650446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &432290373
 GameObject:
   m_ObjectHideFlags: 0
@@ -8606,6 +8900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &436355278
 GameObject:
   m_ObjectHideFlags: 0
@@ -10093,7 +10389,31 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipGems
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2115280238}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetFirstSelected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1626938612}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &509916474
 GameObject:
   m_ObjectHideFlags: 0
@@ -10715,7 +11035,31 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipGems
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1014537434}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetFirstSelected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1626938612}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &543948976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11946,6 +12290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &647486654
 GameObject:
   m_ObjectHideFlags: 0
@@ -11985,7 +12331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41902, y: -38.771156}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647486656
@@ -12117,7 +12463,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2016851460}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &654785874
 GameObject:
   m_ObjectHideFlags: 0
@@ -13187,6 +13545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 11400000, guid: 2a0f58e388ea6334f9479a713fe63574, type: 2}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &690856284
 GameObject:
   m_ObjectHideFlags: 0
@@ -13273,6 +13633,7 @@ GameObject:
   - component: {fileID: 693571139}
   - component: {fileID: 693571141}
   - component: {fileID: 693571140}
+  - component: {fileID: 693571142}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -13337,6 +13698,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693571138}
   m_CullTransparentMesh: 0
+--- !u!114 &693571142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693571138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &702644708
 GameObject:
   m_ObjectHideFlags: 0
@@ -13376,7 +13752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88379, y: -38.771156}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &702644710
@@ -13508,7 +13884,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipFishingRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1053406120}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &706085408
 GameObject:
   m_ObjectHideFlags: 0
@@ -13548,7 +13936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.48944, y: -38.771156}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706085410
@@ -13680,7 +14068,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipFishingRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 326612712}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &711172108
 GameObject:
   m_ObjectHideFlags: 0
@@ -13887,6 +14287,7 @@ GameObject:
   - component: {fileID: 723732656}
   - component: {fileID: 723732658}
   - component: {fileID: 723732657}
+  - component: {fileID: 723732659}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -13951,6 +14352,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723732655}
   m_CullTransparentMesh: 0
+--- !u!114 &723732659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723732655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &744737857
 GameObject:
   m_ObjectHideFlags: 0
@@ -13990,7 +14406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88379, y: -38.771156}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744737859
@@ -14122,7 +14538,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 115426844}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &747590618
 GameObject:
   m_ObjectHideFlags: 0
@@ -14314,7 +14742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88379, y: -38.771156}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753489110
@@ -14446,7 +14874,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1314801330}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &758165678
 GameObject:
   m_ObjectHideFlags: 0
@@ -14767,6 +15207,7 @@ GameObject:
   - component: {fileID: 771025332}
   - component: {fileID: 771025334}
   - component: {fileID: 771025333}
+  - component: {fileID: 771025335}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -14831,6 +15272,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771025331}
   m_CullTransparentMesh: 0
+--- !u!114 &771025335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771025331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &774579083
 GameObject:
   m_ObjectHideFlags: 0
@@ -14842,6 +15298,7 @@ GameObject:
   - component: {fileID: 774579084}
   - component: {fileID: 774579086}
   - component: {fileID: 774579085}
+  - component: {fileID: 774579087}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -14906,6 +15363,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774579083}
   m_CullTransparentMesh: 0
+--- !u!114 &774579087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774579083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &788832871
 GameObject:
   m_ObjectHideFlags: 0
@@ -14917,6 +15389,7 @@ GameObject:
   - component: {fileID: 788832872}
   - component: {fileID: 788832874}
   - component: {fileID: 788832873}
+  - component: {fileID: 788832875}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -14981,6 +15454,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788832871}
   m_CullTransparentMesh: 0
+--- !u!114 &788832875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788832871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &799488101
 GameObject:
   m_ObjectHideFlags: 0
@@ -15399,7 +15887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41902, y: -38.771156}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &827682600
@@ -15531,7 +16019,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 335197912}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &841278914
 GameObject:
   m_ObjectHideFlags: 0
@@ -15609,6 +16109,7 @@ GameObject:
   - component: {fileID: 848901964}
   - component: {fileID: 848901966}
   - component: {fileID: 848901965}
+  - component: {fileID: 848901967}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -15673,6 +16174,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848901963}
   m_CullTransparentMesh: 0
+--- !u!114 &848901967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848901963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &851060054
 GameObject:
   m_ObjectHideFlags: 0
@@ -15929,6 +16445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &859665021
 GameObject:
   m_ObjectHideFlags: 0
@@ -16371,7 +16889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41902, y: -38.771156}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870342056
@@ -16511,6 +17029,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1490205758}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: GetGemInMovement
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 723732659}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -17160,6 +17690,7 @@ GameObject:
   - component: {fileID: 898613131}
   - component: {fileID: 898613133}
   - component: {fileID: 898613132}
+  - component: {fileID: 898613134}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -17224,6 +17755,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898613130}
   m_CullTransparentMesh: 0
+--- !u!114 &898613134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898613130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &905489472
 GameObject:
   m_ObjectHideFlags: 0
@@ -17402,6 +17948,7 @@ GameObject:
   - component: {fileID: 907987401}
   - component: {fileID: 907987403}
   - component: {fileID: 907987402}
+  - component: {fileID: 907987404}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -17466,6 +18013,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907987400}
   m_CullTransparentMesh: 0
+--- !u!114 &907987404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907987400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &911131292
 GameObject:
   m_ObjectHideFlags: 0
@@ -17505,7 +18067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.72186, y: -38.771156}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911131294
@@ -17645,6 +18207,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1490205758}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: GetGemInMovement
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1133911027}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -17899,6 +18473,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &931956199
 GameObject:
   m_ObjectHideFlags: 0
@@ -18002,6 +18578,7 @@ GameObject:
   - component: {fileID: 932494937}
   - component: {fileID: 932494939}
   - component: {fileID: 932494938}
+  - component: {fileID: 932494940}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -18066,6 +18643,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932494936}
   m_CullTransparentMesh: 0
+--- !u!114 &932494940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932494936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &932701048
 GameObject:
   m_ObjectHideFlags: 0
@@ -18246,6 +18838,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &932943271
 GameObject:
   m_ObjectHideFlags: 0
@@ -18564,6 +19158,7 @@ GameObject:
   - component: {fileID: 955150512}
   - component: {fileID: 955150514}
   - component: {fileID: 955150513}
+  - component: {fileID: 955150515}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -18628,6 +19223,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955150511}
   m_CullTransparentMesh: 0
+--- !u!114 &955150515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955150511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &958628181
 GameObject:
   m_ObjectHideFlags: 0
@@ -18639,6 +19249,7 @@ GameObject:
   - component: {fileID: 958628182}
   - component: {fileID: 958628184}
   - component: {fileID: 958628183}
+  - component: {fileID: 958628185}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -18703,6 +19314,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958628181}
   m_CullTransparentMesh: 0
+--- !u!114 &958628185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958628181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &959136321
 GameObject:
   m_ObjectHideFlags: 0
@@ -18961,7 +19587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65141, y: -38.771156}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966073585
@@ -19106,6 +19732,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: GetGemInMovement
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1431653725}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &966368027
 GameObject:
   m_ObjectHideFlags: 0
@@ -19117,6 +19755,7 @@ GameObject:
   - component: {fileID: 966368028}
   - component: {fileID: 966368030}
   - component: {fileID: 966368029}
+  - component: {fileID: 966368031}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -19181,6 +19820,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966368027}
   m_CullTransparentMesh: 0
+--- !u!114 &966368031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966368027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &968238531
 GameObject:
   m_ObjectHideFlags: 0
@@ -19502,6 +20156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1006712308
 GameObject:
   m_ObjectHideFlags: 0
@@ -19781,7 +20437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18665, y: -38.771156}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015355851
@@ -19926,6 +20582,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: GetGemInMovement
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 788832875}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1024402725
 GameObject:
   m_ObjectHideFlags: 0
@@ -19965,7 +20633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18665, y: -38.771156}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024402727
@@ -20097,7 +20765,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1087056750}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1029165617
 GameObject:
   m_ObjectHideFlags: 0
@@ -20490,7 +21170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.48944, y: -38.771156}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1048115317
@@ -20622,7 +21302,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1489339598}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1051007872
 GameObject:
   m_ObjectHideFlags: 0
@@ -20634,6 +21326,7 @@ GameObject:
   - component: {fileID: 1051007873}
   - component: {fileID: 1051007875}
   - component: {fileID: 1051007874}
+  - component: {fileID: 1051007876}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -20698,6 +21391,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051007872}
   m_CullTransparentMesh: 0
+--- !u!114 &1051007876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051007872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1053406116
 GameObject:
   m_ObjectHideFlags: 0
@@ -20709,6 +21417,7 @@ GameObject:
   - component: {fileID: 1053406117}
   - component: {fileID: 1053406119}
   - component: {fileID: 1053406118}
+  - component: {fileID: 1053406120}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -20773,6 +21482,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053406116}
   m_CullTransparentMesh: 0
+--- !u!114 &1053406120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053406116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1053841373
 GameObject:
   m_ObjectHideFlags: 0
@@ -20953,6 +21677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1065447123
 GameObject:
   m_ObjectHideFlags: 0
@@ -21189,6 +21915,7 @@ GameObject:
   - component: {fileID: 1087056747}
   - component: {fileID: 1087056749}
   - component: {fileID: 1087056748}
+  - component: {fileID: 1087056750}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -21253,6 +21980,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087056746}
   m_CullTransparentMesh: 0
+--- !u!114 &1087056750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087056746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1088090274
 GameObject:
   m_ObjectHideFlags: 0
@@ -21292,7 +22034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.72186, y: -38.771156}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088090276
@@ -21424,7 +22166,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1895037867}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1088393654
 GameObject:
   m_ObjectHideFlags: 0
@@ -22209,7 +22963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95422, y: -38.771156}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117293402
@@ -22341,7 +23095,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 771025335}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1128867908
 GameObject:
   m_ObjectHideFlags: 0
@@ -22503,6 +23269,7 @@ GameObject:
   - component: {fileID: 1133911024}
   - component: {fileID: 1133911026}
   - component: {fileID: 1133911025}
+  - component: {fileID: 1133911027}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -22567,6 +23334,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133911023}
   m_CullTransparentMesh: 0
+--- !u!114 &1133911027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133911023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1138285644
 GameObject:
   m_ObjectHideFlags: 0
@@ -22835,7 +23617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.48944, y: -38.771156}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143597022
@@ -22967,7 +23749,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 774579087}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1144407995
 GameObject:
   m_ObjectHideFlags: 0
@@ -22979,6 +23773,7 @@ GameObject:
   - component: {fileID: 1144407996}
   - component: {fileID: 1144407998}
   - component: {fileID: 1144407997}
+  - component: {fileID: 1144407999}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -23043,6 +23838,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144407995}
   m_CullTransparentMesh: 0
+--- !u!114 &1144407999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144407995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1153610107
 GameObject:
   m_ObjectHideFlags: 0
@@ -23082,7 +23892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65141, y: -38.771156}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153610109
@@ -23214,7 +24024,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 693571142}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1159899215
 GameObject:
   m_ObjectHideFlags: 0
@@ -24329,6 +25151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1192560254
 GameObject:
   m_ObjectHideFlags: 0
@@ -25065,7 +25889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41902, y: -38.771156}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219644920
@@ -25197,7 +26021,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1532922286}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1235260648
 GameObject:
   m_ObjectHideFlags: 0
@@ -25710,7 +26546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95422, y: -38.771156}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268414769
@@ -25842,7 +26678,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipFishingRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 958628185}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1273967239
 GameObject:
   m_ObjectHideFlags: 0
@@ -25854,6 +26702,7 @@ GameObject:
   - component: {fileID: 1273967240}
   - component: {fileID: 1273967242}
   - component: {fileID: 1273967241}
+  - component: {fileID: 1273967243}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -25918,6 +26767,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273967239}
   m_CullTransparentMesh: 0
+--- !u!114 &1273967243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273967239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1282069709
 GameObject:
   m_ObjectHideFlags: 0
@@ -26173,6 +27037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1297423984
 GameObject:
   m_ObjectHideFlags: 0
@@ -26988,6 +27854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1314801326
 GameObject:
   m_ObjectHideFlags: 0
@@ -26999,6 +27867,7 @@ GameObject:
   - component: {fileID: 1314801327}
   - component: {fileID: 1314801329}
   - component: {fileID: 1314801328}
+  - component: {fileID: 1314801330}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -27063,6 +27932,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314801326}
   m_CullTransparentMesh: 0
+--- !u!114 &1314801330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314801326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1321630038
 GameObject:
   m_ObjectHideFlags: 0
@@ -27271,6 +28155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 11400000, guid: ec4cd86c6204c1e4b9954e6d768f5ca7, type: 2}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1326030590
 GameObject:
   m_ObjectHideFlags: 0
@@ -27451,6 +28337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1331192158
 GameObject:
   m_ObjectHideFlags: 0
@@ -27648,7 +28536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65141, y: -38.771156}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345990493
@@ -27780,7 +28668,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 157743253}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1352706239
 GameObject:
   m_ObjectHideFlags: 0
@@ -27867,6 +28767,7 @@ GameObject:
   - component: {fileID: 1354838676}
   - component: {fileID: 1354838678}
   - component: {fileID: 1354838677}
+  - component: {fileID: 1354838679}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -27931,6 +28832,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354838675}
   m_CullTransparentMesh: 0
+--- !u!114 &1354838679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354838675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1357221375
 GameObject:
   m_ObjectHideFlags: 0
@@ -27942,6 +28858,7 @@ GameObject:
   - component: {fileID: 1357221376}
   - component: {fileID: 1357221378}
   - component: {fileID: 1357221377}
+  - component: {fileID: 1357221379}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -28006,6 +28923,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357221375}
   m_CullTransparentMesh: 0
+--- !u!114 &1357221379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357221375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1362582402
 GameObject:
   m_ObjectHideFlags: 0
@@ -28428,6 +29360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1388294433
 GameObject:
   m_ObjectHideFlags: 0
@@ -28439,6 +29373,7 @@ GameObject:
   - component: {fileID: 1388294434}
   - component: {fileID: 1388294436}
   - component: {fileID: 1388294435}
+  - component: {fileID: 1388294437}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -28503,6 +29438,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388294433}
   m_CullTransparentMesh: 0
+--- !u!114 &1388294437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388294433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1395773789
 GameObject:
   m_ObjectHideFlags: 0
@@ -28974,6 +29924,7 @@ GameObject:
   - component: {fileID: 1431653722}
   - component: {fileID: 1431653724}
   - component: {fileID: 1431653723}
+  - component: {fileID: 1431653725}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -29038,6 +29989,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431653721}
   m_CullTransparentMesh: 0
+--- !u!114 &1431653725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431653721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1432690877
 GameObject:
   m_ObjectHideFlags: 0
@@ -29544,6 +30510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1489339594
 GameObject:
   m_ObjectHideFlags: 0
@@ -29555,6 +30523,7 @@ GameObject:
   - component: {fileID: 1489339595}
   - component: {fileID: 1489339597}
   - component: {fileID: 1489339596}
+  - component: {fileID: 1489339598}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -29619,6 +30588,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489339594}
   m_CullTransparentMesh: 0
+--- !u!114 &1489339598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489339594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1490205758
 GameObject:
   m_ObjectHideFlags: 0
@@ -29789,7 +30773,31 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipGems
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1929679548}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetFirstSelected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1626938612}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1498199284
 GameObject:
   m_ObjectHideFlags: 0
@@ -29918,6 +30926,7 @@ GameObject:
   - component: {fileID: 1501606778}
   - component: {fileID: 1501606780}
   - component: {fileID: 1501606779}
+  - component: {fileID: 1501606781}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -29982,6 +30991,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501606777}
   m_CullTransparentMesh: 0
+--- !u!114 &1501606781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501606777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1506708432
 GameObject:
   m_ObjectHideFlags: 0
@@ -29993,6 +31017,7 @@ GameObject:
   - component: {fileID: 1506708433}
   - component: {fileID: 1506708435}
   - component: {fileID: 1506708434}
+  - component: {fileID: 1506708436}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -30057,6 +31082,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506708432}
   m_CullTransparentMesh: 0
+--- !u!114 &1506708436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506708432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1518480046
 GameObject:
   m_ObjectHideFlags: 0
@@ -30096,7 +31136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65141, y: -38.771156}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518480048
@@ -30228,7 +31268,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1273967243}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1531974822
 GameObject:
   m_ObjectHideFlags: 0
@@ -30409,6 +31461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1532922282
 GameObject:
   m_ObjectHideFlags: 0
@@ -30420,6 +31474,7 @@ GameObject:
   - component: {fileID: 1532922283}
   - component: {fileID: 1532922285}
   - component: {fileID: 1532922284}
+  - component: {fileID: 1532922286}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -30484,6 +31539,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532922282}
   m_CullTransparentMesh: 0
+--- !u!114 &1532922286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532922282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1544894135
 GameObject:
   m_ObjectHideFlags: 0
@@ -31037,7 +32107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65141, y: -38.771156}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574496635
@@ -31169,7 +32239,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipFishingRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 955150515}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1580589094
 GameObject:
   m_ObjectHideFlags: 0
@@ -31209,7 +32291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95422, y: -38.771156}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580589096
@@ -31341,7 +32423,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 898613134}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1588225792
 GameObject:
   m_ObjectHideFlags: 0
@@ -31798,7 +32892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.72186, y: -38.771156}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626358243
@@ -31930,7 +33024,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 304154149}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1626938612
 GameObject:
   m_ObjectHideFlags: 0
@@ -31970,7 +33076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88379, y: -38.771156}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626938614
@@ -32110,6 +33216,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1490205758}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: GetGemInMovement
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 848901967}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -33440,7 +34558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.72186, y: -38.771156}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706811770
@@ -33572,7 +34690,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipFishingRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 932494940}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1708421374
 GameObject:
   m_ObjectHideFlags: 0
@@ -33931,6 +35061,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1726920215
 GameObject:
   m_ObjectHideFlags: 0
@@ -34329,6 +35461,7 @@ GameObject:
   - component: {fileID: 1758008312}
   - component: {fileID: 1758008314}
   - component: {fileID: 1758008313}
+  - component: {fileID: 1758008315}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -34393,6 +35526,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758008311}
   m_CullTransparentMesh: 0
+--- !u!114 &1758008315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758008311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1761966941
 GameObject:
   m_ObjectHideFlags: 0
@@ -34787,7 +35935,7 @@ MonoBehaviour:
   - {fileID: 958628183}
   - {fileID: 932494938}
   - {fileID: 326612710}
-  gemRodList:
+  gemsList:
   - {fileID: 848901965}
   - {fileID: 1431653723}
   - {fileID: 723732657}
@@ -34795,7 +35943,15 @@ MonoBehaviour:
   - {fileID: 144677113}
   - {fileID: 1133911025}
   - {fileID: 1354838677}
-  indice: 0
+  helmetEquiped: {fileID: 1306891249}
+  shoulderEquiped: {fileID: 414033824}
+  beltEquiped: {fileID: 2043245249}
+  bootsEquiped: {fileID: 185979148}
+  fishingRodEquiped: {fileID: 1159899217}
+  gem1Equiped: {fileID: 1929679548}
+  gem2Equiped: {fileID: 2115280238}
+  gem3Equiped: {fileID: 1014537434}
+  gemMovement: {fileID: 0}
 --- !u!1 &1790947715
 GameObject:
   m_ObjectHideFlags: 0
@@ -34976,6 +36132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1792156264
 GameObject:
   m_ObjectHideFlags: 0
@@ -35201,7 +36359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18665, y: -38.771156}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821158096
@@ -35333,7 +36491,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1051007876}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1828915214
 GameObject:
   m_ObjectHideFlags: 0
@@ -36216,6 +37386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1888179555
 GameObject:
   m_ObjectHideFlags: 0
@@ -36371,6 +37543,7 @@ GameObject:
   - component: {fileID: 1895037864}
   - component: {fileID: 1895037866}
   - component: {fileID: 1895037865}
+  - component: {fileID: 1895037867}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -36435,6 +37608,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895037863}
   m_CullTransparentMesh: 0
+--- !u!114 &1895037867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895037863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1896242863
 GameObject:
   m_ObjectHideFlags: 0
@@ -37325,6 +38513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1953881597
 GameObject:
   m_ObjectHideFlags: 0
@@ -37971,6 +39161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1993743274
 GameObject:
   m_ObjectHideFlags: 0
@@ -37982,6 +39174,7 @@ GameObject:
   - component: {fileID: 1993743275}
   - component: {fileID: 1993743277}
   - component: {fileID: 1993743276}
+  - component: {fileID: 1993743278}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -38046,6 +39239,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993743274}
   m_CullTransparentMesh: 0
+--- !u!114 &1993743278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993743274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &1993833611
 GameObject:
   m_ObjectHideFlags: 0
@@ -38160,7 +39368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18665, y: -38.771156}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999050570
@@ -38292,7 +39500,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1506708436}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2015609863
 GameObject:
   m_ObjectHideFlags: 0
@@ -38379,6 +39599,7 @@ GameObject:
   - component: {fileID: 2016851457}
   - component: {fileID: 2016851459}
   - component: {fileID: 2016851458}
+  - component: {fileID: 2016851460}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -38443,6 +39664,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016851456}
   m_CullTransparentMesh: 0
+--- !u!114 &2016851460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016851456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &2024929101
 GameObject:
   m_ObjectHideFlags: 0
@@ -38703,7 +39939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88379, y: -38.771156}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034213122
@@ -38835,7 +40071,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1357221379}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2040591198
 GameObject:
   m_ObjectHideFlags: 0
@@ -39002,6 +40250,7 @@ GameObject:
   - component: {fileID: 2042005755}
   - component: {fileID: 2042005757}
   - component: {fileID: 2042005756}
+  - component: {fileID: 2042005758}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -39066,6 +40315,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042005754}
   m_CullTransparentMesh: 0
+--- !u!114 &2042005758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042005754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &2042685044
 GameObject:
   m_ObjectHideFlags: 0
@@ -39392,7 +40656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88379, y: -38.771156}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060756680
@@ -39524,7 +40788,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 431650450}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2066434384
 GameObject:
   m_ObjectHideFlags: 0
@@ -39910,7 +41186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95422, y: -38.771156}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075704785
@@ -40042,7 +41318,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 966368031}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2076266331
 GameObject:
   m_ObjectHideFlags: 0
@@ -40157,7 +41445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.48944, y: -38.771156}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078244066
@@ -40289,7 +41577,19 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 907987404}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2082330888
 GameObject:
   m_ObjectHideFlags: 0
@@ -40470,6 +41770,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &2086459249
 GameObject:
   m_ObjectHideFlags: 0
@@ -40650,6 +41952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
+  fishingRod: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!1 &2091368929
 GameObject:
   m_ObjectHideFlags: 0
@@ -41144,7 +42448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.72186, y: -38.771156}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135021110
@@ -41276,4 +42580,16 @@ MonoBehaviour:
   - eventID: 15
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: EquipArmor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 75693207}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

@@ -15,19 +15,27 @@ MonoBehaviour:
   fishTotal: 2
   PQS_1: 2
   PFS_1: 0
+  equipedHelmet: {fileID: 0}
+  equipedShoulders: {fileID: 0}
+  equipedBelt: {fileID: 0}
+  equipedBoots: {fileID: 0}
+  equipedFishingRod: {fileID: 0}
+  equipedGem1: {fileID: 0}
+  equipedGem2: {fileID: 0}
+  equipedGem3: {fileID: 0}
   PST_C: 2
   PSC_C: 2
   PFL_R: 0
   PFI_E: 5
   PBH_L: 2
   PEH_1: 1
-  PCH_1: 0
-  PBE_1: 0
-  PBO_1: 0
+  PCH_1: 1
+  PBE_1: 1
+  PBO_1: 1
   AEH_1: 0
   ACH_1: 0
   ABE_1: 0
   ABO_1: 0
   AFR_1: 0
-  PFR_1: 0
-  GPE_1: 0
+  PFR_1: 1
+  GPE_1: 1
