@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GearingManager : MonoBehaviour
@@ -188,5 +189,10 @@ public class GearingManager : MonoBehaviour
     {
         gemMovement = sp.gem;
         spMovement = sp;
+    }
+
+    public void ChangeScene(int i)
+    {
+        SceneManager.LoadScene(i);
     }
 }
