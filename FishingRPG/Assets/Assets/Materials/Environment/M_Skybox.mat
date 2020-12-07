@@ -76,7 +76,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _mult: 1
-    - _pwer: 1
+    - _pwer: 2
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Bottom: {r: 0.10208259, g: 0.6064161, b: 0.6981132, a: 0}
