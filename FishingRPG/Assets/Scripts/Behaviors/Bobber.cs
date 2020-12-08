@@ -28,7 +28,7 @@ public class Bobber : MonoBehaviour
 
         if (canBeLaunch)
         {
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
 
             transform.position = GetAerialPosition(timer / maxTime);
 
