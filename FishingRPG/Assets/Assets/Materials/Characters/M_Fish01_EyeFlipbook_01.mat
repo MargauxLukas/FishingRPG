@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Fish01_01
+  m_Name: M_Fish01_EyeFlipbook_01
   m_Shader: {fileID: -6465566751694194690, guid: 63cef04e7b3f1ca4f872100ff000c041, type: 3}
   m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
   m_LightmapFlags: 4
@@ -33,23 +33,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3306434E:
-        m_Texture: {fileID: 2800000, guid: 35979864dbbd1cd428e61e43fa5b9d4d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_485E3D61:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_485E3D61:
+        m_Texture: {fileID: 2800000, guid: 7074efd5cda3bf047989f4491fa4dd0a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_813BCA61:
-        m_Texture: {fileID: 2800000, guid: 58414bc6ae108424aa076bbd61fc044e, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1e765fde5af78543a9561b7c968833b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_9F519FF:
-        m_Texture: {fileID: 2800000, guid: c16f353bc85d3a048994990b8726c3ad, type: 3}
+        m_Texture: {fileID: 2800000, guid: 416dc2f6fdcb1c54eb106d4d3055b95c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D75F16F9:
-        m_Texture: {fileID: 2800000, guid: d1b67ac50ab810449a742b14d56a2158, type: 3}
+        m_Texture: {fileID: 2800000, guid: 44a30464655c1f040ab2edc5755585e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -118,14 +118,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_A06FE09E: 0
-    - Boolean_E6BD358E: 0
+    - Boolean_E6BD358E: 1
     - Vector1_2370A21A: 3.59
     - Vector1_24DD5470: 1.266
     - Vector1_27498395: 0.267
-    - Vector1_2E7ACF72: 1
+    - Vector1_2E7ACF72: 5
     - Vector1_304D799A: 0.1
     - Vector1_403CFD6B: 1
-    - Vector1_41F369C7: 150
+    - Vector1_41F369C7: 100
     - Vector1_452D94CB: -1
     - Vector1_4957EFE3: 9.22
     - Vector1_4CF4778B: 0
@@ -135,11 +135,11 @@ Material:
     - Vector1_6D9EC975: 2.01
     - Vector1_8119F34F: 0.058
     - Vector1_9E586B36: 2.83
-    - Vector1_ABE6B97B: 1
+    - Vector1_ABE6B97B: 15
     - Vector1_ACA782B4: 6
-    - Vector1_C555546F: 1
+    - Vector1_C555546F: 3
     - Vector1_CB934036: 3.31
-    - Vector1_D10C8DAB: 1
+    - Vector1_D10C8DAB: 15
     - Vector1_D7B7DE4B: 6
     - Vector1_D7C2DE26: 0.093
     - Vector1_F1CCDFF0: 0

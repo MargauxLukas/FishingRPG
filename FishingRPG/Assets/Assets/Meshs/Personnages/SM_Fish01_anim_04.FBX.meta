@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4efacb8494885614c92a144789e4330a
+guid: 42de6ecc10316484786f0f72e74e47f6
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
@@ -7,11 +7,17 @@ ModelImporter:
       74: 1827226128182048838
     second: Neutre
   - first:
-      74: -8805250911849089440
+      74: -5405653242291790180
     second: Nage
   - first:
-      74: 5963368517684959642
+      74: 4854180139978558704
     second: Croc
+  - first:
+      74: 1389121407789637250
+    second: Take 001 (3)
+  - first:
+      74: 4353825163953427278
+    second: Take 001 (4)
   - first:
       74: 8017390324079358001
     second: Hurt
@@ -47,15 +53,15 @@ ModelImporter:
       name: Neutre
       takeName: Take 001
       internalID: 0
-      firstFrame: -1
-      lastFrame: -1
+      firstFrame: 0
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -76,8 +82,8 @@ ModelImporter:
       name: Nage
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 59
+      firstFrame: 1
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -105,8 +111,8 @@ ModelImporter:
       name: Croc
       takeName: Take 001
       internalID: 0
-      firstFrame: 70
-      lastFrame: 99
+      firstFrame: 71
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -134,8 +140,8 @@ ModelImporter:
       name: Hurt
       takeName: Take 001
       internalID: 0
-      firstFrame: 110
-      lastFrame: 125
+      firstFrame: 111
+      lastFrame: 126
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
