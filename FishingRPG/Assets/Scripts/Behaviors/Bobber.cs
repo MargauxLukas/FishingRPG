@@ -85,4 +85,11 @@ public class Bobber : MonoBehaviour
     {
         realBezier2 = bezier2.position;
     }
+
+    public void StopMovement()
+    {
+        timer = 0f;
+        canBeLaunch = false;
+        PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber = 1f;
+    }
 }

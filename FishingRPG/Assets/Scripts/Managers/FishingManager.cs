@@ -10,6 +10,7 @@ public class FishingManager : MonoBehaviour
     private float needToWait = 0f;
 
     public bool readyToFish = false;
+    public bool isOnWater = false;
 
     public GameObject fishPrefab;
     public Transform dynamics;
@@ -30,7 +31,7 @@ public class FishingManager : MonoBehaviour
 
     private void Update()
     {
-        if (FishingRodManager.instance.bobber.GetComponent<CheckWater>().isWater && !readyToFish)
+        if (isOnWater && !readyToFish)
         {
             if(needToWait == 0f){needToWait = SetTimer();}
 
