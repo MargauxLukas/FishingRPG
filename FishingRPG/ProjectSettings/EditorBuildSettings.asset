@@ -5,22 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_Scenes/GA_SceneTravail/GA_OldBlockout.unity
-    guid: 47c790f78b05fc247a70fda8ab31f39d
-  - enabled: 0
-    path: Assets/_Scenes/ALC_ProtoScene.unity
-    guid: bb62b86839d35ad4faa5994b67fce8c5
-  - enabled: 0
-    path: Assets/_Scenes/ALC_ProtoSceneV2.unity
-    guid: 63a8bc0423a06394bb151935640b958d
   - enabled: 1
     path: Assets/_Scenes/ALC_REALScene.unity
     guid: d3b3041645bb9424fa12b6c69dd70cdf
   - enabled: 1
     path: Assets/_Scenes/MAL_HubScene.unity
     guid: 1a7577bf85409e246b51ea9c8bc93ebd
-  - enabled: 0
-    path: Assets/_Scenes/ALC_HubScene.unity
-    guid: a6f12db83109e214fa9c9d594b54e4f7
   m_configObjects: {}

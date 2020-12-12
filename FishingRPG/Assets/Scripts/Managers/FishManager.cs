@@ -129,14 +129,15 @@ public class FishManager : MonoBehaviour
         AerialDamage();
     }
 
+
     public void ExtenuedChange()
     {
-        currentFish.GetComponent<MeshRenderer>().material = canAerialMat;
+        //currentFish.GetComponent<MeshRenderer>().material = canAerialMat;
     }
 
     public void NotExtenued()
     {
-        currentFish.GetComponent<MeshRenderer>().material = normalMat;
+        //currentFish.GetComponent<MeshRenderer>().material = normalMat;
     }
 
     //Recuperation d'Endurance après Aerial
