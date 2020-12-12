@@ -10,4 +10,5 @@ public class FishyDrop : ScriptableObject
     public string type;
     public string rarity;
     public float dropRate;
+    public string description;
 }

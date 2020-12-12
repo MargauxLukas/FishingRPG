@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: PST_C
   appearance: {fileID: 21300000, guid: 8ffdcf7278a267d42943f6b90a491dcb, type: 3}
-  type: Dent
+  type: Pequessivo Sharp Teeth
   rarity: Common
   dropRate: 30
+  description: '*Nom nom nom*'
