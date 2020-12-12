@@ -15,11 +15,11 @@ MonoBehaviour:
   fishTotal: 0
   PQS_1: 0
   PFS_1: 0
-  equipedHelmet: {fileID: 0}
+  equipedHelmet: {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
   equipedShoulders: {fileID: 0}
   equipedBelt: {fileID: 0}
   equipedBoots: {fileID: 0}
-  equipedFishingRod: {fileID: 0}
+  equipedFishingRod: {fileID: 11400000, guid: 2fb310c7908eea14f85df257654e7595, type: 2}
   equipedGem1: {fileID: 0}
   equipedGem2: {fileID: 0}
   equipedGem3: {fileID: 0}
