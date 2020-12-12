@@ -29,6 +29,11 @@ public class PlayerManager : MonoBehaviour
         Init();
     }
 
+    private void Start()
+    {
+        UpdateStats();
+    }
+
     public virtual void Init()
     {
         instance = this;
@@ -159,6 +164,59 @@ public class PlayerManager : MonoBehaviour
         { 
             canvas.SetActive(false);
             dataCheat = false;
+        }
+    }
+
+    public void ResetStats()
+    {
+        playerStats.strenght     = 3;
+        playerStats.constitution = 3;
+        playerStats.dexterity    = 3;
+        playerStats.intelligence = 3;
+    }
+
+    public void UpdateStats()
+    {
+        ResetStats();
+
+        if(playerInventory.inventory.equipedHelmet != null)
+        {
+            playerStats.strenght     += playerInventory.inventory.equipedHelmet.strength;
+            playerStats.constitution += playerInventory.inventory.equipedHelmet.constitution;
+            playerStats.dexterity    += playerInventory.inventory.equipedHelmet.dexterity;
+            playerStats.intelligence += playerInventory.inventory.equipedHelmet.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedShoulders != null)
+        {
+            playerStats.strenght     += playerInventory.inventory.equipedShoulders.strength;
+            playerStats.constitution += playerInventory.inventory.equipedShoulders.constitution;
+            playerStats.dexterity    += playerInventory.inventory.equipedShoulders.dexterity;
+            playerStats.intelligence += playerInventory.inventory.equipedShoulders.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedBelt != null)
+        {
+            playerStats.strenght     += playerInventory.inventory.equipedBelt.strength;
+            playerStats.constitution += playerInventory.inventory.equipedBelt.constitution;
+            playerStats.dexterity    += playerInventory.inventory.equipedBelt.dexterity;
+            playerStats.intelligence += playerInventory.inventory.equipedBelt.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedBoots != null)
+        {
+            playerStats.strenght     += playerInventory.inventory.equipedBoots.strength;
+            playerStats.constitution += playerInventory.inventory.equipedBoots.constitution;
+            playerStats.dexterity    += playerInventory.inventory.equipedBoots.dexterity;
+            playerStats.intelligence += playerInventory.inventory.equipedBoots.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedFishingRod != null)
+        {
+            playerStats.strenght     += playerInventory.inventory.equipedFishingRod.strength;
+            playerStats.constitution += playerInventory.inventory.equipedFishingRod.constitution;
+            playerStats.dexterity    += playerInventory.inventory.equipedFishingRod.dexterity;
+            playerStats.intelligence += playerInventory.inventory.equipedFishingRod.intelligence;
         }
     }
 }
