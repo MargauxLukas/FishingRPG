@@ -17,6 +17,7 @@ public class Bobber : MonoBehaviour
     public List<GameObject> debugBezier = new List<GameObject>();
 
     public bool isDebugBezierCurve = false;
+    public bool stopMovementJustOneTime = false;
 
     private void Update()
     {

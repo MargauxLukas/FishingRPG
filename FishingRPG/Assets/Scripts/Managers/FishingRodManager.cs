@@ -13,6 +13,7 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public CheckWater checkWaterScript;
     public BendFishingRod bendFishingRod;
     public Transform pointC;
     public List<Transform> listTargetFar = new List<Transform>();

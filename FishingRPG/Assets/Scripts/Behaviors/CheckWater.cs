@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CheckWater : MonoBehaviour
 {
-    [System.NonSerialized] public bool isWater = false;
-    [System.NonSerialized] public bool isFloor = false;
+    public bool isWater = false;
+    public bool isFloor = false;
 
     public LayerMask waterMask;                                                         //Mask de detection
     public Transform waterCheck;                                                        //Position du Bobber
@@ -15,12 +15,16 @@ public class CheckWater : MonoBehaviour
     public Transform floorCheck;
     public float floorDistance = 0.4f;
 
+    public bool justOneTime = false;
+
+    //Lorsque Collision, stop chercher collision jusqu'à que Bobber Back
     private void Update()
     {
+
         FishingManager.instance.isOnWater = isWater = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);
         isFloor = Physics.CheckSphere(floorCheck.position, floorDistance, floorMask);
 
-        if(isWater || isFloor)
+        if (isFloor || isWater)
         {
             FishingRodManager.instance.bobber.GetComponent<Bobber>().StopMovement();
         }
