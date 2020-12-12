@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8576b283468e6c4994a3dc4b6949d61, type: 3}
   m_Name: PDF_1
   m_EditorClassIdentifier: 
-  ID: 
+  ID: PDF_1
   appearance: {fileID: 0}
   itemType: 
   upgradeState: 0

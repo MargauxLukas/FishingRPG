@@ -13,6 +13,7 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public CheckWater checkWaterScript;
     public BendFishingRod bendFishingRod;
     public Transform pointC;
     public List<Transform> listTargetFar = new List<Transform>();
@@ -153,10 +154,14 @@ public class FishingRodManager : MonoBehaviour
             {
                 fishingLine.FCurrentDown();
 
-                if (distanceCP > fishingLine.fCurrent)
+                if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
                 {
-                    FishManager.instance.DownEnduranceTakingLine();
-                    fishingLine.TensionDownTakingLine();
+                    FishManager.instance.DownStaminaTakingLine();
+                    fishingLine.TensionUpTakingLine();
+                }
+                else if(FishManager.instance.currentFishBehavior.exhausted)
+                {
+                    fishingLine.TensionDown();
                 }
             }
             else
@@ -168,13 +173,13 @@ public class FishingRodManager : MonoBehaviour
         {
             if (distanceCP > fishingLine.fCurrent)
             {
-                FishManager.instance.DownEndurance();
-                fishingLine.TensionDown();
+                FishManager.instance.DownStamina();
+                fishingLine.TensionUp();
             }
-        }     
+        }
         else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)    //Mettre à jour Fcurrent
         {
-            fishingLine.TensionUp();
+            fishingLine.TensionDown();
             fishingLine.fCurrent = distanceCP;
         }
 
@@ -185,7 +190,12 @@ public class FishingRodManager : MonoBehaviour
 
         if(distanceCP < fishingLine.fCurrent)
         {
-            fishingLine.TensionUp();
+            fishingLine.TensionDown();
+        }
+
+        if (!fishingLine.isTaken && !fishingLine.isBlocked && !FishManager.instance.currentFishBehavior.exhausted)
+        {
+            FishManager.instance.LowUpStamina();
         }
 
         UpdateFCurrent();

@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int pequessivoQty = 0;
+    public Inventory inventory;
 
     public void AddThisFishToInventory(string id)
     {
         switch(id)
         {
             case "PQS_1":
-                pequessivoQty++;
+                inventory.PQS_1++;
                 break;
             default:
                 Debug.Log("Don't find any case with id :" + id);
                 break;
         }
+
+        inventory.fishTotal++;
     }
 }

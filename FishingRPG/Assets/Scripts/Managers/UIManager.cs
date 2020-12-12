@@ -9,7 +9,14 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public GameObject firstSelectedButton;
 
-    public Sprite[] itemsList;
+    public List<FishyFiche> fishyFishList = new List<FishyFiche>();
+    public List<ArmorSet> helmetList = new List<ArmorSet>();
+    public List<ArmorSet> pauldronsList = new List<ArmorSet>();
+    public List<ArmorSet> beltList = new List<ArmorSet>();
+    public List<ArmorSet> bootsList = new List<ArmorSet>();
+    public List<FishingRod> fishingRodList = new List<FishingRod>();
+    public List<Gem> gemList = new List<Gem>();
+    public Inventory inventory;
 
     private void Awake()
     {
@@ -54,30 +61,11 @@ public class UIManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(button);
-        Debug.Log("Bite");
-    } 
+    }
 
-    public void ButcherFish(Button b)
+    public void SetFirstSelected(GameObject _go)
     {
-        Transform itemsGroup = b.transform.GetChild(0);
-
-        for (int i = 0; i < itemsGroup.childCount - 1; i++)
-        {
-            Image currentItem = itemsGroup.GetChild(i).gameObject.GetComponent<Image>();
-            currentItem.sprite = null;
-            currentItem.color = new Color32(255, 255, 255, 0);
-        }
-
-        int craftedItems = Random.Range(2, 6);
-
-        for (int i = 0; i < craftedItems; i++)
-        {
-            Image currentItem = itemsGroup.GetChild(i).gameObject.GetComponent<Image>();
-            Color itemColor = new Color32((byte)Random.Range(0, 255), (byte)Random.Range(0, 255), (byte)Random.Range(0, 255), 255);
-
-            currentItem.sprite = itemsList[Random.Range(0, itemsList.Length - 1)];
-            currentItem.color = itemColor;
-        }
+        EventSystem.current.SetSelectedGameObject(_go);
     }
 
     public void Quit()

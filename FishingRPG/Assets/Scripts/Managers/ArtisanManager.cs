@@ -6,34 +6,155 @@ using UnityEngine.UI;
 
 public class ArtisanManager : MonoBehaviour
 {
-    EventSystem _event;
+    public GameObject firstSelectedTab;
+    GameObject currentSelectedTab;
 
-    GameObject firstSelected;
+    public List<Text> componentsList = new List<Text>();
+    public List<Text> componentsQuantityList = new List<Text>();
+    public Text title;
+    public Image image;
+    public Text bonusStats;
+    public Text description;
+
+    private string tempoString;
+    private bool canCraft = true;
 
     void Start()
     {
-        _event = EventSystemPointer.instance.gameObject.GetComponent<EventSystem>();
-        _event.firstSelectedGameObject = firstSelected;
-    }
+        Debug.Log("Start");
+        currentSelectedTab = firstSelectedTab;
+        SetSelectedTabColor(currentSelectedTab);
+        SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+    }    
 
     void Update()
     {
-        if(Input.GetKey("Left Bumper"))
+        Debug.Log(currentSelectedTab);
+
+        if(Input.GetButtonDown("Left Bumper"))
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<Button>().navigation.selectOnLeft.gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            Debug.Log("Left");
+            ResetTabColor(currentSelectedTab);
+            ResetSelectChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts);
+
+            //Select tab
+            currentSelectedTab = currentSelectedTab.GetComponent<TabNeighbours>().selectedOnLeft;
+            SetSelectedTabColor(currentSelectedTab);
+
+            //Display items list
+            SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+        }
+        else if (Input.GetButtonDown("Right Bumper"))
+        {
+            Debug.Log("Right");
+            ResetTabColor(currentSelectedTab);
+            ResetSelectChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts);
+
+            //Select tab
+            currentSelectedTab = currentSelectedTab.GetComponent<TabNeighbours>().selectedOnRight;
+            SetSelectedTabColor(currentSelectedTab);
+
+            //Display items list
+            SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
         }
 
-        if (Input.GetKey("Right Bumper"))
+        if (Input.GetButtonDown("B Button"))
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<Button>().navigation.selectOnRight.gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            UIManager.instance.CloseMenu(gameObject);
+        }
+    }
+
+    void SetSelectedTabColor(GameObject _tab)
+    {
+        _tab.GetComponent<Image>().color = new Color32(254, 242, 184, 255);
+        _tab.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(66, 41, 36, 255);
+    }
+
+    void ResetTabColor(GameObject _tab)
+    {
+        _tab.GetComponent<Image>().color = new Color32(66, 41, 36, 255);
+        _tab.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(254, 242, 184, 255);
+    }
+
+    void SetSelectedTabChilds(GameObject _list, GameObject _first)
+    {
+        _list.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(_first);
+    }
+
+    void ResetSelectChilds(GameObject _list)
+    {
+        _list.SetActive(false);
+    }
+
+    //////Event trigger functs\\\\\\
+    public void SelectedColor(Text _txt)
+    {
+        _txt.color = new Color32(201, 148, 111, 255);
+    }
+
+    public void DeselectedColor(Text _txt)
+    {
+        _txt.color = new Color32(66, 41, 36, 255);
+    }
+
+    public void UpdateText(ScriptablePointer sp)
+    {
+        for(int i = 0; i < sp.armor.components.Length; i++)
+        {
+            componentsList[i].text = sp.armor.components[i].type;
+
+            componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) + "/" + sp.armor.componentsQty[i].ToString();
+
+            componentsList[i].gameObject.SetActive(true);
+            componentsQuantityList[i].gameObject.SetActive(true);
         }
 
-        if (Input.GetKey("Vertical"))
+        title.text = sp.armor.itemName;
+        image.sprite = sp.armor.appearance;
+
+
+        if(sp.armor.strength != 0)
         {
-            GameObject nextSelected = EventSystem.current.currentSelectedGameObject.GetComponent<FirstSelectedChild>().gameObject;
-            _event.SetSelectedGameObject(nextSelected);
+            tempoString = sp.armor.strength.ToString() + " strength\n"; 
+        }
+        if (sp.armor.constitution != 0)
+        {
+            tempoString += sp.armor.constitution.ToString() + " constitution\n";
+        }
+        if (sp.armor.dexterity != 0)
+        {
+            tempoString += sp.armor.dexterity.ToString() + " dexterity\n";
+        }
+        if (sp.armor.intelligence != 0)
+        {
+            tempoString += sp.armor.intelligence.ToString() + " intelligence\n";
+        }
+
+        bonusStats.text = tempoString;
+        //description.text = sp.armor.description;
+    }
+
+    public void CraftObject(ScriptablePointer sp)
+    {
+        Debug.Log("test");
+        for (int i = 0; i < sp.armor.components.Length; i++)
+        {
+            if(UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
+            {
+                canCraft = false;
+            }
+        }
+
+        if(canCraft)
+        {
+            for (int i = 0; i < sp.armor.components.Length; i++)
+            {
+                UIManager.instance.inventory.RemoveQty(sp.armor.components[i].ID, sp.armor.componentsQty[i]);
+            }
+
+            UIManager.instance.inventory.SetArmor(sp.armor.ID);
+            UpdateText(sp);
         }
     }
 }

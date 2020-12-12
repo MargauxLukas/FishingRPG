@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8576b283468e6c4994a3dc4b6949d61, type: 3}
   m_Name: PBE_1
   m_EditorClassIdentifier: 
-  ID: 
-  appearance: {fileID: 0}
-  itemType: 
+  ID: PBE_1
+  appearance: {fileID: 21300000, guid: 0a57a2bc3a5f5784a8d3555f7f3063e7, type: 3}
+  itemType: Belt
   upgradeState: 0
   itemName: 
   tier: 0

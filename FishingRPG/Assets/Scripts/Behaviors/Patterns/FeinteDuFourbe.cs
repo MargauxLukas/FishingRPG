@@ -21,7 +21,7 @@ public class FeinteDuFourbe : MonoBehaviour
                 if (!costEnergyOverTime)
                 {
                     FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
-                    FishManager.instance.ChangeEnduranceText();
+                    FishManager.instance.ChangeStaminaText();
                 }
 
                 FishManager.instance.currentFishBehavior.baseSpeed += speedModifier;
@@ -35,7 +35,7 @@ public class FeinteDuFourbe : MonoBehaviour
                 if (costEnergyOverTime)
                 {
                     FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
-                    FishManager.instance.ChangeEnduranceText();
+                    FishManager.instance.ChangeStaminaText();
                 }
 
                 FishManager.instance.currentFishBehavior.ChooseDirection();
