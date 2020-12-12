@@ -17,8 +17,7 @@ public class FishManager : MonoBehaviour
     public Material normalMat;
 
     [Header("Text")]
-    public Text enduText;
-    public Text speedText;
+    public Text staminaText;
     public Text lifeText;
 
     [Header("Aerial variables")]
@@ -64,7 +63,7 @@ public class FishManager : MonoBehaviour
         directionPercentList = new List<int>(new int[] { sPercent, sePercent, esPercent, ePercent, enPercent, nePercent, nPercent, noPercent, onPercent, oPercent, osPercent, soPercent });
     }
 
-    public void IsExtenued()
+    public void IsExhausted()
     {
         if(currentFishBehavior.exhausted)
         {
@@ -140,55 +139,75 @@ public class FishManager : MonoBehaviour
         currentFish.GetComponent<MeshRenderer>().material = normalMat;
     }
 
+    //Recuperation d'Endurance après Aerial
     public void FishRecuperation()
     {
         currentFishBehavior.exhausted = false;
-        currentFishBehavior.currentStamina = 50f;
+        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina/2;
         currentFishBehavior.nbRebond = 1;
         isAerial = false;
         isFelling = false;
         currentFishBehavior.isFellDown = false;
         NotExtenued();
-        ChangeEnduranceText();
+        ChangeStaminaText();
     }
 
-    public void DownEndurance()
+    //Perte d'endurance lorsque la ligne est bloqué
+    public void DownStamina()
     {
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber()/60;
-            ChangeEnduranceText();
+            ChangeStaminaText();
         }
 
-        currentFishBehavior.CheckEndurance();
+        currentFishBehavior.CheckStamina();
     }
 
-    public void DownEnduranceTakingLine()
+    //Perte d'endurance lorsque la ligne est remonté
+    public void DownStaminaTakingLine()
     {
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine()/60;
-            ChangeEnduranceText();
+            ChangeStaminaText();
         }
 
-        currentFishBehavior.CheckEndurance();
+        currentFishBehavior.CheckStamina();
     }
 
-    public void UpEndurance()
+    //Récupération d'endurance lorsque extenué
+    public void UpStamina()
     {
         if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
         {
-            currentFishBehavior.currentStamina += 0.25f;
-            ChangeEnduranceText();
+            currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina*0.15f)/60;
+            ChangeStaminaText();
         }
 
-        if (currentFishBehavior.currentStamina > 50f)
+        if (currentFishBehavior.currentStamina > (currentFishBehavior.fishyFiche.stamina/2))
         {
-            currentFishBehavior.currentStamina = 50f;
+            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina / 2;
             DebugManager.instance.vz.DesactivateZone();
             currentFishBehavior.exhausted = false;
             NotExtenued();
+            ChangeStaminaText();
         }
+    }
+
+    //Récupération d'endurance lorsque pas extenué et qu'il n'en perd pas
+    public void LowUpStamina()
+    {
+        if(currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+        {
+            currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.02f) / 60;
+            ChangeStaminaText();
+        }
+        else
+        {
+            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+            ChangeStaminaText();
+        }      
     }
 
     public void AerialDamage()
@@ -220,14 +239,9 @@ public class FishManager : MonoBehaviour
         isAerial = true;
     }
 
-    public void ChangeEnduranceText()
+    public void ChangeStaminaText()
     {
-        enduText.text = currentFishBehavior.currentStamina.ToString();
-    }
-
-    public void ChangeSpeedText(float speed)
-    {
-        speedText.text = speed.ToString();
+        staminaText.text = currentFishBehavior.currentStamina.ToString();
     }
 
     public void ChangeLifeText()
