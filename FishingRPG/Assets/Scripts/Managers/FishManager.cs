@@ -144,6 +144,7 @@ public class FishManager : MonoBehaviour
     public void FishRecuperation()
     {
         currentFishBehavior.exhausted = false;
+        currentFishBehavior.animator.SetBool("isDead", false);
         currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina/2;
         currentFishBehavior.nbRebond = 1;
         isAerial = false;
@@ -191,6 +192,7 @@ public class FishManager : MonoBehaviour
             currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina / 2;
             DebugManager.instance.vz.DesactivateZone();
             currentFishBehavior.exhausted = false;
+            currentFishBehavior.animator.SetBool("isDead", false);
             NotExtenued();
             ChangeStaminaText();
         }
@@ -216,6 +218,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentLife > 0f)
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetFellingDamage();
+            FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
             ChangeLifeText();
         }
 

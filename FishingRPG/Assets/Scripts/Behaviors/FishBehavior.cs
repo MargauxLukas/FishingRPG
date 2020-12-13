@@ -50,6 +50,8 @@ public class FishBehavior : MonoBehaviour
     private float distance;
     [HideInInspector] public bool canCollectTheFish = false;
 
+    public Animator animator;
+
     private void Start()
     {
         SetIdleMaxTime();
@@ -61,6 +63,7 @@ public class FishBehavior : MonoBehaviour
         strength       = fishyFiche.strength;
         SetBaseRotation();
 
+        animator = transform.GetChild(0).GetComponent<Animator>();
 
         FishManager.instance.ChangeStaminaText();
         FishManager.instance.ChangeLifeText();
@@ -330,6 +333,7 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
+            animator.SetBool("isDead", true);
             FishManager.instance.ExtenuedChange();
             ResetRage();
         }
@@ -367,6 +371,7 @@ public class FishBehavior : MonoBehaviour
     public void ResetRage()
     {
         isRage = false;
+        animator.SetBool("isRage", false);
         strength = fishyFiche.strength;
     }
 

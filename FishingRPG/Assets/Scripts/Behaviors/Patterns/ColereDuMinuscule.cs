@@ -13,6 +13,7 @@ public class ColereDuMinuscule : MonoBehaviour
         FishManager.instance.currentFishBehavior.strength += 2;
         FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
         FishManager.instance.currentFishBehavior.isRage = true;
+        FishManager.instance.currentFishBehavior.animator.SetBool("isRage", true);
 
         FishManager.instance.currentFish.GetComponent<FishPatterns>().ResetPattern();
     }
