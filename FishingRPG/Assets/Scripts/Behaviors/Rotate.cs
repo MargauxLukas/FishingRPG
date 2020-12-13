@@ -6,7 +6,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     Quaternion FishingRodRotaBase;
-    bool isMax = false;
+    [HideInInspector] public bool isMax = false;
 
     public bool result = false;
 
@@ -21,18 +21,21 @@ public class Rotate : MonoBehaviour
         {
             StartCoroutine("Throw");
             FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
+            Debug.Log("isMax false");
             isMax = false;
         }
 
         if (Input.GetButton("B Button") && !FishingRodManager.instance.bobberThrowed)
         {
-            if ((transform.rotation.eulerAngles.x > 270f || transform.rotation.eulerAngles.x == 0) && !isMax)
+            Debug.Log(transform.rotation.eulerAngles.x + " > 270f || " + transform.rotation.eulerAngles.x + " == 0");
+            if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
             {
                 transform.Rotate(new Vector3(-1f, 0f, 0f));
                 PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
             }
             else
             {
+                Debug.Log("isMax true");
                 isMax = true;
             }
         }
@@ -55,6 +58,13 @@ public class Rotate : MonoBehaviour
             yield return null;
         }
         transform.localRotation = FishingRodRotaBase;
+    }
+
+    public void ResetRotation()
+    {
+        transform.localRotation = Quaternion.Euler(360, 0, 0);
+        transform.parent.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
+        transform.parent.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 }
 

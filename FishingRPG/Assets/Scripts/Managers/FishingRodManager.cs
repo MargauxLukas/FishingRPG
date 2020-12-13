@@ -106,6 +106,9 @@ public class FishingRodManager : MonoBehaviour
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
 
+        //Debug.Log("isMax false");
+        fishingRodPivot.GetComponent<Rotate>().ResetRotation();
+
         //Fish Poisson
     }
 
