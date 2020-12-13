@@ -73,14 +73,23 @@ public class FishManager : MonoBehaviour
             aerialExitWaterY = currentFish.transform.position.y;
             aerialExitWaterZ = currentFish.transform.position.z;
 
+            /*
             aerialEnterWaterX = currentFish.transform.position.x;
             aerialEnterWaterY = currentFish.transform.position.y;
             aerialEnterWaterZ = currentFish.transform.position.z;
+            */
 
             aerialX = currentFish.transform.position.x;
             aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
             aerialZ = currentFish.transform.position.z;
         }
+    }
+
+    public void SetAerialEnterWater()
+    {
+        aerialEnterWaterX = currentFish.transform.position.x;
+        aerialEnterWaterY = currentFish.transform.position.y;
+        aerialEnterWaterZ = currentFish.transform.position.z;
     }
 
     public void MoreAerial()

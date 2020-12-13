@@ -65,6 +65,7 @@ public class FishBehavior : MonoBehaviour
 
         animator = transform.GetChild(0).GetComponent<Animator>();
 
+        FishManager.instance.SetAerialEnterWater();
         FishManager.instance.ChangeStaminaText();
         FishManager.instance.ChangeLifeText();
     }
