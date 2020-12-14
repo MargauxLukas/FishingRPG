@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: PLF_R
   appearance: {fileID: 21300000, guid: 99cb534d44c6e084bad6df6b57a8c56c, type: 3}
-  type: Nageoire
+  type: Pequessivo Little Flipper
   rarity: Rare
   dropRate: 20
+  description: Flipper le Dauphin

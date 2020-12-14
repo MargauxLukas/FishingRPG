@@ -19,6 +19,11 @@ public class ButcherManager : MonoBehaviour
     public GameObject firstSelectedComp;
     public GameObject dropsFirstLine;
     public GameObject dropsSecondLine;
+    public List<GameObject> dropsHighlights = new List<GameObject>();
+
+    public GameObject dropInfoFrame;
+    public Text dropInfoTitle;
+    public Text dropInfoDescription;
 
     public List<int> numberLootList = new List<int>();
     public int totalNumberLootList = 0;
@@ -96,9 +101,31 @@ public class ButcherManager : MonoBehaviour
             for(int i = 0; i < lootID.Count; i++)
             {
                 dropList[i].enabled = false;
+                dropList[i].GetComponent<FishyDropInfo>().dropName = "";
+                dropList[i].GetComponent<FishyDropInfo>().description = "";
+                yInput.SetActive(false);
                 UIManager.instance.inventory.AddLoot(lootID[i]);
                 lootID[i] = "Empty";
             }
+
+            dropInfoTitle.text = "";
+            dropInfoDescription.text = "";
+            dropInfoFrame.SetActive(false);
+
+            componentsGroup.SetActive(false);
+            butchedFish.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+
+            for (int i = 0; i < dropsHighlights.Count; i++)
+            {
+                dropsHighlights[i].SetActive(false);
+            }
+
+            fishPileInput.SetActive(true);
+
+            fishReadyToCut = false;
+            cuttedFish = false;
+            isCutting = false;
         }
 
         if (Input.GetButtonDown("B Button"))
@@ -123,6 +150,7 @@ public class ButcherManager : MonoBehaviour
 
     public void HowManyLoot()
     {
+        Debug.Log("pouet");
         foreach(int i in numberLootList)
         {
             totalNumberLootList += i;
@@ -191,6 +219,35 @@ public class ButcherManager : MonoBehaviour
     public void SetLoot(int j, int i)
     {
         dropList[j].sprite = actualFish.drops[i].appearance;
-        dropList[j].gameObject.SetActive(true);
+        dropList[j].gameObject.GetComponent<FishyDropInfo>().dropName = actualFish.drops[i].type;
+        dropList[j].gameObject.GetComponent<FishyDropInfo>().rarity = actualFish.drops[i].rarity;
+        dropList[j].gameObject.GetComponent<FishyDropInfo>().description = actualFish.drops[i].description;
+        dropList[j].enabled = true;
+        dropInfoFrame.SetActive(true);
+    }
+
+    public void SetLootInfos(FishyDropInfo _infos)
+    {
+        switch (_infos.rarity)
+        {
+            case "Common":
+                dropInfoTitle.color = new Color32(0, 180, 85, 255);
+                break;
+
+            case "Rare":
+                dropInfoTitle.color = new Color32(0, 112, 221, 255);
+                break;
+
+            case "Epic":
+                dropInfoTitle.color = new Color32(163, 53, 238, 255);
+                break;
+
+            case "Legendary":
+                dropInfoTitle.color = new Color32(255, 128, 0, 255);
+                break;
+        }
+
+        dropInfoTitle.text = _infos.dropName;
+        dropInfoDescription.text = _infos.description;
     }
 }
