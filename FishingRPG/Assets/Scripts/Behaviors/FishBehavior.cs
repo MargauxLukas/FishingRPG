@@ -244,34 +244,31 @@ public class FishBehavior : MonoBehaviour
     {
         ChooseTarget();
 
-
-        if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) > 5f)
+        if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) < 5f)
         {
-            if (FishingRodManager.instance.CheckIfOverFCritique())
+            Debug.Log("Trop proche, je m'éloigne !");
+            ForceDirection();
+        }
+
+        if (FishingRodManager.instance.CheckIfOverFCritique())
+        {
+            transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+            transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+            transform.rotation = saveDirection;
+        }
+        else
+        {
+            if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
             {
                 transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
                 transform.rotation = saveDirection;
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
             }
             else
             {
-                if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
-                {
-                    transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
-                    transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-                    transform.rotation = saveDirection;
-                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
-                }
-                else
-                {
-                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
-                }
+                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
             }
-        }
-        else
-        {
-            Debug.Log("Trop proche, je m'éloigne !");
-            ForceDirection();
         }
     }
 
