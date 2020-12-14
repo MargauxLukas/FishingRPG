@@ -41,9 +41,12 @@ public class ButcherManager : MonoBehaviour
     public float cuttingTime;
     float cuttingTimer = 0;
 
+    bool canReset = true;
+    bool dropListCleared = false;
+
     void Update()
     {
-        if (Input.GetButtonDown("Submit") && !fishReadyToCut && !cuttedFish && fishPile.activeSelf)
+        if (Input.GetButtonDown("Submit") && !fishReadyToCut && !cuttedFish && fishPile.active)
         {
             Debug.Log("NewFish");
             fishToButch.SetActive(true);
@@ -101,44 +104,76 @@ public class ButcherManager : MonoBehaviour
             for(int i = 0; i < lootID.Count; i++)
             {
                 dropList[i].enabled = false;
-                dropList[i].GetComponent<FishyDropInfo>().dropName = "";
-                dropList[i].GetComponent<FishyDropInfo>().description = "";
-                yInput.SetActive(false);
+                dropList[i].GetComponent<FishyDropInfo>().dropName = string.Empty;
+                dropList[i].GetComponent<FishyDropInfo>().description = string.Empty;
                 UIManager.instance.inventory.AddLoot(lootID[i]);
                 lootID[i] = "Empty";
             }
 
-            dropInfoTitle.text = "";
-            dropInfoDescription.text = "";
-            dropInfoFrame.SetActive(false);
-
-            componentsGroup.SetActive(false);
-            butchedFish.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(null);
-
-            for (int i = 0; i < dropsHighlights.Count; i++)
-            {
-                dropsHighlights[i].SetActive(false);
-            }
-
-            fishPileInput.SetActive(true);
-
-            fishReadyToCut = false;
-            cuttedFish = false;
-            isCutting = false;
+            ResetButcherToDefault();
         }
 
         if (Input.GetButtonDown("B Button"))
         {
             UIManager.instance.CloseMenu(gameObject);
         }
+
+        if(Input.GetButtonUp("Submit") && dropListCleared)
+        {
+            fishReadyToCut = false;
+            cuttedFish = false;
+            isCutting = false;
+            dropListCleared = false;
+        }
     }
 
     public void ClearDropList(int i)
     {
+        canReset = true;
         dropList[i].enabled = false;
         UIManager.instance.inventory.AddLoot(lootID[i]);
         lootID[i] = "Empty";
+        dropInfoTitle.text = "";
+        dropInfoDescription.text = "";
+        dropList[i].GetComponent<FishyDropInfo>().dropName = string.Empty;
+        dropList[i].GetComponent<FishyDropInfo>().description = string.Empty;
+
+        foreach (string str in lootID)
+        {
+            if(!str.Equals("Empty"))
+            {
+                canReset = false;
+            }
+        }
+
+        if (canReset)
+        {
+            ResetButcherToDefault();
+        }
+    }
+
+    public void ResetButcherToDefault()
+    {
+        dropInfoTitle.text = "";
+        dropInfoDescription.text = "";
+        dropInfoFrame.SetActive(false);
+
+        yInput.SetActive(false);
+
+        componentsGroup.SetActive(false);
+        butchedFish.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+
+        for (int i = 0; i < dropsHighlights.Count; i++)
+        {
+            dropsHighlights[i].SetActive(false);
+        }
+
+        fishPileInput.SetActive(true);
+
+        dropListCleared = true;
+
+        lootID.Clear();
     }
 
     IEnumerator FishCanBeCut()
@@ -150,7 +185,8 @@ public class ButcherManager : MonoBehaviour
 
     public void HowManyLoot()
     {
-        Debug.Log("pouet");
+        totalNumberLootList = 0;
+
         foreach(int i in numberLootList)
         {
             totalNumberLootList += i;

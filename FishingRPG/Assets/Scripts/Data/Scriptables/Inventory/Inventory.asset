@@ -23,11 +23,11 @@ MonoBehaviour:
   equipedGem1: {fileID: 0}
   equipedGem2: {fileID: 0}
   equipedGem3: {fileID: 0}
-  PST_C: 11
-  PSC_C: 3
-  PFL_R: 11
-  PFI_E: 3
-  PBH_L: 5
+  PST_C: 34
+  PSC_C: 22
+  PFL_R: 20
+  PFI_E: 15
+  PBH_L: 10
   PEH_1: 0
   PCH_1: 0
   PBE_1: 0
