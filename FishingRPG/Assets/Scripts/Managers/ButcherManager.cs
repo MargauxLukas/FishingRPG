@@ -103,6 +103,7 @@ public class ButcherManager : MonoBehaviour
                 dropList[i].enabled = false;
                 dropList[i].GetComponent<FishyDropInfo>().dropName = "";
                 dropList[i].GetComponent<FishyDropInfo>().description = "";
+                yInput.SetActive(false);
                 UIManager.instance.inventory.AddLoot(lootID[i]);
                 lootID[i] = "Empty";
             }
@@ -149,6 +150,7 @@ public class ButcherManager : MonoBehaviour
 
     public void HowManyLoot()
     {
+        Debug.Log("pouet");
         foreach(int i in numberLootList)
         {
             totalNumberLootList += i;

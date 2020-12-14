@@ -15,6 +15,7 @@ public class FishyDropEditor : Editor
     SerializedProperty type_s;
     SerializedProperty rarity_s;
     SerializedProperty dropRate_s;
+    SerializedProperty description_s;
 
     Sprite dropSprite;
 
@@ -22,11 +23,12 @@ public class FishyDropEditor : Editor
     {
         currentDrop = (target as FishyDrop);
 
-        ID_s         = serializedObject.FindProperty(nameof(FishyDrop.ID        ));
-        appearance_s = serializedObject.FindProperty(nameof(FishyDrop.appearance));
-        type_s       = serializedObject.FindProperty(nameof(FishyDrop.type      ));
-        rarity_s     = serializedObject.FindProperty(nameof(FishyDrop.rarity    ));
-        dropRate_s   = serializedObject.FindProperty(nameof(FishyDrop.dropRate  ));
+        ID_s          = serializedObject.FindProperty(nameof(FishyDrop.ID         ));
+        appearance_s  = serializedObject.FindProperty(nameof(FishyDrop.appearance ));
+        type_s        = serializedObject.FindProperty(nameof(FishyDrop.type       ));
+        rarity_s      = serializedObject.FindProperty(nameof(FishyDrop.rarity     ));
+        dropRate_s    = serializedObject.FindProperty(nameof(FishyDrop.dropRate   ));
+        description_s = serializedObject.FindProperty(nameof(FishyDrop.description));
 
         dropSprite = (target as FishyDrop).appearance;
     }
@@ -93,6 +95,13 @@ public class FishyDropEditor : Editor
         EditorGUILayout.LabelField("Drop rate : " + dropRate_s.floatValue + "%", whiteText);
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.Space();
+        #endregion
+
+        #region Draw Description
+        EditorGUILayout.BeginHorizontal();
+        var descStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Italic};
+        EditorGUILayout.LabelField(description_s.stringValue, descStyle);
+        EditorGUILayout.EndHorizontal();
         #endregion
 
         serializedObject.ApplyModifiedProperties();
