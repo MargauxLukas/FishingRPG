@@ -26,6 +26,7 @@ public class FishingLine : MonoBehaviour
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
+        CameraManager.instance.ScreenShake(0.35f);
         currentTension = 0f;
         UpdateJaugeTension();
     }

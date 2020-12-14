@@ -10,6 +10,8 @@ public class CameraManager : MonoBehaviour
     public GameObject target;
     public Quaternion baseRotation;
 
+    public CameraShake camShake;
+
     private void Awake()
     {
         Init();
@@ -22,7 +24,7 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if(!mainCamera.GetComponent<PlayerView>().freeCamera)
+        if (!mainCamera.GetComponent<PlayerView>().freeCamera)
         {
             mainCamera.transform.LookAt(target.transform);
         }
@@ -42,5 +44,10 @@ public class CameraManager : MonoBehaviour
     public void SaveBaseRotation()
     {
         baseRotation = mainCamera.transform.rotation;
+    }
+
+    public void ScreenShake(float seconds)
+    {
+        camShake.shakeDuration = seconds;
     }
 }

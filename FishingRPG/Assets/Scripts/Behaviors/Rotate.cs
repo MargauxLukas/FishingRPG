@@ -27,7 +27,6 @@ public class Rotate : MonoBehaviour
 
         if (Input.GetButton("B Button") && !FishingRodManager.instance.bobberThrowed)
         {
-            Debug.Log(transform.rotation.eulerAngles.x + " > 270f || " + transform.rotation.eulerAngles.x + " == 0");
             if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
             {
                 transform.Rotate(new Vector3(-1f, 0f, 0f));
