@@ -244,25 +244,34 @@ public class FishBehavior : MonoBehaviour
     {
         ChooseTarget();
 
-        if (FishingRodManager.instance.CheckIfOverFCritique())
+
+        if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) > 5f)
         {
-            transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
-            transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
-            transform.rotation = saveDirection;
-        }
-        else
-        {
-            if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+            if (FishingRodManager.instance.CheckIfOverFCritique())
             {
                 transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
                 transform.rotation = saveDirection;
-                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
             }
             else
             {
-                transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+                if (FishingRodManager.instance.distanceCP > FishingRodManager.instance.fishingLine.fCurrent)
+                {
+                    transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+                    transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
+                    transform.rotation = saveDirection;
+                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+                }
+                else
+                {
+                    transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
+                }
             }
+        }
+        else
+        {
+            Debug.Log("Trop proche, je m'éloigne !");
+            ForceDirection();
         }
     }
 
