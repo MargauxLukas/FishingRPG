@@ -37,7 +37,6 @@ public class Rotate : MonoBehaviour
             {
                 StartCoroutine("Throw");
                 FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-                Debug.Log("isMax false");
                 isMax = false;
             }
 

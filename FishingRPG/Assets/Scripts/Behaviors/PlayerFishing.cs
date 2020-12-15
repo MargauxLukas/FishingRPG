@@ -23,14 +23,12 @@ public class PlayerFishing : MonoBehaviour
             {
                 if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
                 {
-                    Debug.Log("1");
                     FishManager.instance.SetFinishPoint();
                 }
                 else
                 {
                     if (FishManager.instance.currentFishBehavior.exhausted && !FishManager.instance.currentFishBehavior.isDead)
                     {
-                        Debug.Log("2");
                         if (!FishManager.instance.isAerial) { PlayerManager.instance.IsAerial(); }
                         else
                         {

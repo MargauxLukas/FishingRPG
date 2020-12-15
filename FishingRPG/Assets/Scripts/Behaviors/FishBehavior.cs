@@ -290,12 +290,16 @@ public class FishBehavior : MonoBehaviour
         if (!fellingFreeze)
         {
             timerAerial += Time.deltaTime;
+            //Debug.Log(timerAerial);
         }
 
         transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
 
         if (timerAerial >= maxTimeAerial)
         {
+            Debug.Log(timerAerial);
+            //Debug.Log("===============================");
+
             FishManager.instance.FishRecuperation();
             timerAerial = 0f;
         }
