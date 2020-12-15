@@ -13,8 +13,7 @@ public class FishManager : MonoBehaviour
     public Transform savePos;
 
     [Header("Material Aerial")]
-    public Material canAerialMat;
-    public Material normalMat;
+    public ExhaustedDebug exhaustedDebug;
 
     [Header("Text")]
     public Text staminaText;
@@ -141,19 +140,19 @@ public class FishManager : MonoBehaviour
 
     public void ExtenuedChange()
     {
-        //currentFish.GetComponent<MeshRenderer>().material = canAerialMat;
+        exhaustedDebug.SetToGreen();
     }
 
     public void NotExtenued()
     {
-        //currentFish.GetComponent<MeshRenderer>().material = normalMat;
+        exhaustedDebug.SetToRed();
     }
 
     //Recuperation d'Endurance après Aerial
     public void FishRecuperation()
     {
         currentFishBehavior.exhausted = false;
-        currentFishBehavior.animator.SetBool("isDead", false);
+        currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
         currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina/2;
         currentFishBehavior.nbRebond = 1;
         isAerial = false;
@@ -201,7 +200,7 @@ public class FishManager : MonoBehaviour
             currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina / 2;
             DebugManager.instance.vz.DesactivateZone();
             currentFishBehavior.exhausted = false;
-            currentFishBehavior.animator.SetBool("isDead", false);
+            currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
             NotExtenued();
             ChangeStaminaText();
         }

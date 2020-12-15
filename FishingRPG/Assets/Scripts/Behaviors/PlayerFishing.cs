@@ -81,6 +81,12 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.UseGemThirdSlot();
             }
 
+            if(Input.GetButton("A Button"))
+            {
+                FishingManager.instance.CancelFishing();
+                FishingRodManager.instance.bobberThrowed = false;
+            }
+
             if (Input.GetKey(KeyCode.E))
             {
                 PlayerManager.instance.CHEAT_SetFishToExhausted();
