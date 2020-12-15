@@ -24,5 +24,7 @@ MonoBehaviour:
   intelligence: 1
   description: Never wear this inside or you will scratch the floor. - 1st rule of
     the FellGiant Family
-  components: []
-  componentsQty: 
+  components:
+  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
+  - {fileID: 11400000, guid: b8af79a582570ec40a4302eddd0fe86d, type: 2}
+  componentsQty: 0100000001000000

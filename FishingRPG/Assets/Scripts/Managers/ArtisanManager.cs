@@ -19,6 +19,12 @@ public class ArtisanManager : MonoBehaviour
     private string tempoString;
     private bool canCraft = true;
 
+    private bool isCrafting = false;
+    private float craftingTimer;
+    private float craftingTime = 1.2f;
+
+    public Image holdButtonImg;
+
     void Start()
     {
         Debug.Log("Start");
@@ -56,6 +62,37 @@ public class ArtisanManager : MonoBehaviour
 
             //Display items list
             SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+        }
+
+        if (Input.GetButton("Submit"))
+        {
+            Debug.Log("Cut Fish");
+            isCrafting = true;
+
+            craftingTimer += Time.fixedDeltaTime;
+
+            if (craftingTimer < craftingTime)
+            {
+                holdButtonImg.fillAmount = craftingTimer / craftingTime;
+            }
+
+            if (craftingTimer >= craftingTime)
+            {
+                Debug.Log(EventSystem.current);
+                ScriptablePointer sp = EventSystem.current.gameObject.GetComponent<ScriptablePointer>();
+                CraftObject(sp);
+                craftingTimer = 0;
+                isCrafting = false;
+                holdButtonImg.fillAmount = 0;
+            }
+        }
+
+        if (Input.GetButtonUp("Submit") && isCrafting)
+        {
+            Debug.Log("Release");
+            craftingTimer = 0;
+            isCrafting = false;
+            holdButtonImg.fillAmount = 0;
         }
 
         if (Input.GetButtonDown("B Button"))
@@ -102,6 +139,17 @@ public class ArtisanManager : MonoBehaviour
     {
         for(int i = 0; i < sp.armor.components.Length; i++)
         {
+            if (UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
+            {
+                componentsList[i].color = new Color32(255, 0, 56, 255);
+                componentsQuantityList[i].color = new Color32(255, 0, 56, 255);
+            }
+            else
+            {
+                componentsList[i].color = new Color32(62, 40, 31, 255);
+                componentsQuantityList[i].color = new Color32(62, 40, 31, 255);
+            }
+
             componentsList[i].text = sp.armor.components[i].type;
 
             componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) + "/" + sp.armor.componentsQty[i].ToString();
@@ -132,7 +180,7 @@ public class ArtisanManager : MonoBehaviour
         }
 
         bonusStats.text = tempoString;
-        //description.text = sp.armor.description;
+        description.text = sp.armor.description;
     }
 
     public void CraftObject(ScriptablePointer sp)

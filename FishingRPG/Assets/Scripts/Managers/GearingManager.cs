@@ -34,6 +34,12 @@ public class GearingManager : MonoBehaviour
     public Text gearInfoStats;
     public Text gearInfoDescription;
 
+    private bool isLeaving;
+    private float leavingTimer;
+    private float leavingTime = 1.2f;
+
+    public Image holdButtonImg;
+
     void Start()
     {
 
@@ -41,6 +47,36 @@ public class GearingManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButton("Y Button"))
+        {
+            Debug.Log("Cut Fish");
+            isLeaving = true;
+
+            leavingTimer += Time.fixedDeltaTime;
+
+            if (leavingTimer < leavingTime)
+            {
+                holdButtonImg.fillAmount = leavingTimer / leavingTime;
+            }
+
+            if (leavingTimer >= leavingTime)
+            {
+                leavingTimer = 0;
+                isLeaving = false;
+                holdButtonImg.fillAmount = 0;
+
+                ChangeScene(0);
+            }
+        }
+
+        if (Input.GetButtonUp("Y Button") && isLeaving)
+        {
+            Debug.Log("Release");
+            leavingTimer = 0;
+            isLeaving = false;
+            holdButtonImg.fillAmount = 0;
+        }
+
         if (Input.GetButtonDown("B Button"))
         {
             for (int i = 0; i < gridHighlights.Count; i++)
@@ -268,7 +304,16 @@ public class GearingManager : MonoBehaviour
         }
 
         gearInfoTitle.text = _infos.itemName;
-        gearInfoUpgrade.text = "Rank " + _infos.upgrade;
+
+        if(_infos.upgrade > 0)
+        {
+            gearInfoUpgrade.text = "Rank " + _infos.upgrade;
+        }
+        else
+        {
+            gearInfoUpgrade.text = string.Empty;
+        }
+
         gearInfoStats.text = string.Empty;
 
         if (_infos.strength > 0)

@@ -15,12 +15,12 @@ MonoBehaviour:
   fishTotal: 100
   PQS_1: 100
   PFS_1: 0
-  equipedHelmet: {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
+  equipedHelmet: {fileID: 0}
   equipedShoulders: {fileID: 11400000, guid: 3dfbf2549ff984143904d07b816e3801, type: 2}
-  equipedBelt: {fileID: 0}
-  equipedBoots: {fileID: 0}
+  equipedBelt: {fileID: 11400000, guid: ec4cd86c6204c1e4b9954e6d768f5ca7, type: 2}
+  equipedBoots: {fileID: 11400000, guid: 2a0f58e388ea6334f9479a713fe63574, type: 2}
   equipedFishingRod: {fileID: 11400000, guid: 2fb310c7908eea14f85df257654e7595, type: 2}
-  equipedGem1: {fileID: 0}
+  equipedGem1: {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
   equipedGem2: {fileID: 0}
   equipedGem3: {fileID: 0}
   PST_C: 44
@@ -28,7 +28,7 @@ MonoBehaviour:
   PFL_R: 28
   PFI_E: 19
   PBH_L: 13
-  PEH_1: 1
+  PEH_1: 0
   PCH_1: 1
   PBE_1: 1
   PBO_1: 1
