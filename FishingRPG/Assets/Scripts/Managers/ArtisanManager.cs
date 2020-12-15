@@ -79,7 +79,7 @@ public class ArtisanManager : MonoBehaviour
             if (craftingTimer >= craftingTime)
             {
                 Debug.Log(EventSystem.current);
-                ScriptablePointer sp = EventSystem.current.gameObject.GetComponent<ScriptablePointer>();
+                ScriptablePointer sp = EventSystem.current.currentSelectedGameObject.GetComponent<ScriptablePointer>();
                 CraftObject(sp);
                 craftingTimer = 0;
                 isCrafting = false;
