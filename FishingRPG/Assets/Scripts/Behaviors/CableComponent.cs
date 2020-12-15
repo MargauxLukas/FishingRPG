@@ -219,18 +219,20 @@ public class CableComponent : MonoBehaviour
 		}
 	}
 
-	/**
-	 * TODO: I'll implement this constraint to reinforce cable stiffness 
-	 * 
-	 * As the system has more particles, the verlet integration aproach 
-	 * may get way too loose cable simulation. This constraint is intended 
-	 * to reinforce the cable stiffness.
-	 * // throw new System.NotImplementedException ();
-	 **/
 	void SolveStiffnessConstraint(CableParticle cableParticle, float distance)
 	{
 
 
+	}
+
+	public void ActivateLine()
+    {
+		line.enabled = true;
+    }
+
+	public void DesactivateLine()
+	{
+		line.enabled = false;
 	}
 
 	#endregion

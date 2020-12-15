@@ -71,6 +71,7 @@ public class FishingManager : MonoBehaviour
 
     public void CancelFishing()
     {
+        FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
         needToWait = 0f;
         timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();
