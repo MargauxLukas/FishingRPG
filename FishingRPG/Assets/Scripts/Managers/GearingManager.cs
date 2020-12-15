@@ -304,7 +304,16 @@ public class GearingManager : MonoBehaviour
         }
 
         gearInfoTitle.text = _infos.itemName;
-        gearInfoUpgrade.text = "Rank " + _infos.upgrade;
+
+        if(_infos.upgrade > 0)
+        {
+            gearInfoUpgrade.text = "Rank " + _infos.upgrade;
+        }
+        else
+        {
+            gearInfoUpgrade.text = string.Empty;
+        }
+
         gearInfoStats.text = string.Empty;
 
         if (_infos.strength > 0)

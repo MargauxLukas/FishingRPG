@@ -132,7 +132,7 @@ public class ArtisanManager : MonoBehaviour
         }
 
         bonusStats.text = tempoString;
-        //description.text = sp.armor.description;
+        description.text = sp.armor.description;
     }
 
     public void CraftObject(ScriptablePointer sp)
