@@ -18,7 +18,7 @@ public class CheckFishVictoryZone : MonoBehaviour
         {
             isNearVictoryZone = Physics.CheckSphere(fishCheck.position, victoryDistance, victoryMask);
 
-            if (isNearVictoryZone)
+            if (isNearVictoryZone && (FishManager.instance.currentFishBehavior.isDead || FishManager.instance.currentFishBehavior.exhausted))
             {
                 rbButtonVictory.SetActive(true);
                 rbButtonVictory.transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, rbButtonVictory.transform.position.y, PlayerManager.instance.player.transform.position.z));
