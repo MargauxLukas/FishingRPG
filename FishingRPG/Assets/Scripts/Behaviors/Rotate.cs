@@ -23,6 +23,8 @@ public class Rotate : MonoBehaviour
 
     private Vector3 imageTarget;
 
+    private bool axisRelease = false;
+
     private void Start()
     {
         FishingRodRotaBase = transform.localRotation;
@@ -33,25 +35,37 @@ public class Rotate : MonoBehaviour
     {
         if (isReleaseButton)
         {
-            if (Input.GetButtonUp("B Button") && !FishingRodManager.instance.bobberThrowed)
+            if (!PlayerManager.instance.isPressingRT)
             {
-                StartCoroutine("Throw");
-                FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-                FishingRodManager.instance.fishingLine.cableComponent.ActivateLine();
-                isMax = false;
-            }
-
-            if (Input.GetButton("B Button") && !FishingRodManager.instance.bobberThrowed)
-            {
-                if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
+                if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
                 {
-                    transform.Rotate(new Vector3(-1f, 0f, 0f));
-                    PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
+                    StartCoroutine("Throw");
+                    FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
+                    FishingRodManager.instance.fishingLine.cableComponent.ActivateLine();
+                    isMax = false;
+                    axisRelease = false;
                 }
-                else
+
+                if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)
                 {
-                    Debug.Log("isMax true");
-                    isMax = true;
+                    axisRelease = true;
+                    if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
+                    {
+                        transform.Rotate(new Vector3(-1f, 0f, 0f));
+                        PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
+                    }
+                    else
+                    {
+                        Debug.Log("isMax true");
+                        isMax = true;
+                    }
+                }
+            }
+            else
+            {
+                if(Input.GetAxis("Right Trigger") == 0)
+                {
+                    PlayerManager.instance.isPressingRT = false;
                 }
             }
         }

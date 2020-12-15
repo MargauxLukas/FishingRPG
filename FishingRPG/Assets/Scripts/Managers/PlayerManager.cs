@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour
     public bool isOnMenu = false;
 
     public float speed = 9f;
+    public bool isPressingRT = false;
 
     private void Awake()
     {
