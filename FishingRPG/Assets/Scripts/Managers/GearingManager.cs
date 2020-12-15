@@ -59,6 +59,13 @@ public class GearingManager : MonoBehaviour
             if(UIManager.instance.inventory.CheckHelmet(UIManager.instance.helmetList[i].ID))
             {
                 helmetList[indice].sprite = UIManager.instance.helmetList[i].appearance;
+                helmetList[indice].transform.parent.GetComponent<GearingInfos>().itemName = UIManager.instance.helmetList[i].itemName;
+                helmetList[indice].transform.parent.GetComponent<GearingInfos>().upgrade = UIManager.instance.helmetList[i].upgradeState;
+                helmetList[indice].transform.parent.GetComponent<GearingInfos>().strength = UIManager.instance.helmetList[i].strength;
+                helmetList[indice].transform.parent.GetComponent<GearingInfos>().constitution = UIManager.instance.helmetList[i].constitution;
+                helmetList[indice].transform.parent.GetComponent<GearingInfos>().dexterity = UIManager.instance.helmetList[i].dexterity;
+                helmetList[indice].transform.parent.GetComponent<GearingInfos>().intelligence = UIManager.instance.helmetList[i].intelligence;
+                helmetList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.helmetList[i].description;
                 helmetList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.helmetList[i];
                 helmetList[indice].gameObject.SetActive(true);
                 indice++;
@@ -72,6 +79,13 @@ public class GearingManager : MonoBehaviour
             if(UIManager.instance.inventory.CheckPauldrons(UIManager.instance.pauldronsList[i].ID))
             {
                 pauldronsList[indice].sprite = UIManager.instance.pauldronsList[i].appearance;
+                pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().itemName = UIManager.instance.pauldronsList[i].itemName;
+                pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().upgrade = UIManager.instance.pauldronsList[i].upgradeState;
+                pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().strength = UIManager.instance.pauldronsList[i].strength;
+                pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().constitution = UIManager.instance.pauldronsList[i].constitution;
+                pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().dexterity = UIManager.instance.pauldronsList[i].dexterity;
+                pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().intelligence = UIManager.instance.pauldronsList[i].intelligence;
+                pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.pauldronsList[i].description;
                 pauldronsList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.pauldronsList[i];
                 pauldronsList[indice].gameObject.SetActive(true);
                 indice++;
@@ -85,6 +99,13 @@ public class GearingManager : MonoBehaviour
             if(UIManager.instance.inventory.CheckBelt(UIManager.instance.beltList[i].ID))
             {
                 beltList[indice].sprite = UIManager.instance.beltList[i].appearance;
+                beltList[indice].transform.parent.GetComponent<GearingInfos>().itemName = UIManager.instance.beltList[i].itemName;
+                beltList[indice].transform.parent.GetComponent<GearingInfos>().upgrade = UIManager.instance.beltList[i].upgradeState;
+                beltList[indice].transform.parent.GetComponent<GearingInfos>().strength = UIManager.instance.beltList[i].strength;
+                beltList[indice].transform.parent.GetComponent<GearingInfos>().constitution = UIManager.instance.beltList[i].constitution;
+                beltList[indice].transform.parent.GetComponent<GearingInfos>().dexterity = UIManager.instance.beltList[i].dexterity;
+                beltList[indice].transform.parent.GetComponent<GearingInfos>().intelligence = UIManager.instance.beltList[i].intelligence;
+                beltList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.beltList[i].description;
                 beltList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.beltList[i];
                 beltList[indice].gameObject.SetActive(true);
                 indice++;
@@ -98,6 +119,13 @@ public class GearingManager : MonoBehaviour
             if(UIManager.instance.inventory.CheckBoots(UIManager.instance.bootsList[i].ID))
             {
                 bootsList[indice].sprite = UIManager.instance.bootsList[i].appearance;
+                bootsList[indice].transform.parent.GetComponent<GearingInfos>().itemName = UIManager.instance.bootsList[i].itemName;
+                bootsList[indice].transform.parent.GetComponent<GearingInfos>().upgrade = UIManager.instance.bootsList[i].upgradeState;
+                bootsList[indice].transform.parent.GetComponent<GearingInfos>().strength = UIManager.instance.bootsList[i].strength;
+                bootsList[indice].transform.parent.GetComponent<GearingInfos>().constitution = UIManager.instance.bootsList[i].constitution;
+                bootsList[indice].transform.parent.GetComponent<GearingInfos>().dexterity = UIManager.instance.bootsList[i].dexterity;
+                bootsList[indice].transform.parent.GetComponent<GearingInfos>().intelligence = UIManager.instance.bootsList[i].intelligence;
+                bootsList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.bootsList[i].description;
                 bootsList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.bootsList[i];
                 bootsList[indice].gameObject.SetActive(true);
                 indice++;
@@ -111,6 +139,13 @@ public class GearingManager : MonoBehaviour
             if(UIManager.instance.inventory.CheckFishingRod(UIManager.instance.fishingRodList[i].ID))
             {
                 fishingRodList[indice].sprite = UIManager.instance.fishingRodList[i].appearance;
+                fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().itemName = UIManager.instance.fishingRodList[i].itemName;
+                fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().upgrade = UIManager.instance.fishingRodList[i].upgradeState;
+                fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().strength = UIManager.instance.fishingRodList[i].strength;
+                fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().constitution = UIManager.instance.fishingRodList[i].constitution;
+                fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().dexterity = UIManager.instance.fishingRodList[i].dexterity;
+                fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().intelligence = UIManager.instance.fishingRodList[i].intelligence;
+                fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.fishingRodList[i].description;
                 fishingRodList[indice].gameObject.GetComponent<ScriptablePointer>().fishingRod = UIManager.instance.fishingRodList[i];
                 fishingRodList[indice].gameObject.SetActive(true);
                 indice++;
@@ -124,6 +159,9 @@ public class GearingManager : MonoBehaviour
             if (UIManager.instance.inventory.CheckGems(UIManager.instance.gemList[i].ID))
             {
                 gemsList[indice].sprite = UIManager.instance.gemList[i].appearance;
+                gemsList[indice].transform.parent.GetComponent<GearingInfos>().itemName = UIManager.instance.gemList[i].gemName;
+                gemsList[indice].transform.parent.GetComponent<GearingInfos>().upgrade = UIManager.instance.gemList[i].upgradeState;
+                gemsList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.gemList[i].description;
                 gemsList[indice].gameObject.GetComponent<ScriptablePointer>().gem = UIManager.instance.gemList[i];
                 gemsList[indice].gameObject.SetActive(true);
                 indice++;
@@ -229,13 +267,13 @@ public class GearingManager : MonoBehaviour
         {
             gearInfoStats.text += "+" + _infos.strength + " strength";
         }
-        if(_infos.weight > 0)
+        if(_infos.constitution > 0)
         {
-            gearInfoStats.text += "\n+" + _infos.weight + " weight";
+            gearInfoStats.text += "\n+" + _infos.constitution + " weight";
         }
-        if(_infos.agility > 0)
+        if(_infos.dexterity > 0)
         {
-            gearInfoStats.text += "\n+" + _infos.agility + " agility";
+            gearInfoStats.text += "\n+" + _infos.dexterity + " agility";
         }
         if(_infos.intelligence > 0)
         {
