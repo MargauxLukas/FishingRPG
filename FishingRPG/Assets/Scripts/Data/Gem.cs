@@ -11,6 +11,7 @@ public class Gem : ScriptableObject
     public Sprite appearance;
     public int upgradeState;
 
+    public string stats;
     public string description;
 
     //stats

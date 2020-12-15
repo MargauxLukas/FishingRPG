@@ -15,12 +15,14 @@ MonoBehaviour:
   ID: PBO_1
   appearance: {fileID: 21300000, guid: 7c40bb211a4c95b448289b85bcb1dfae, type: 3}
   itemType: Boots
-  upgradeState: 0
-  itemName: 
-  tier: 0
-  strength: 0
-  constitution: 0
-  dexterity: 0
-  intelligence: 0
+  upgradeState: 1
+  itemName: Pequessivo Boots
+  tier: 1
+  strength: 2
+  constitution: 1
+  dexterity: 2
+  intelligence: 1
+  description: Never wear this inside or you will scratch the floor. - 1st rule of
+    the FellGiant Family
   components: []
   componentsQty: 

@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: PFR_1
   appearance: {fileID: 21300000, guid: efd0d0e2eee846f44be1c0e8b95fdd8f, type: 3}
-  upgradeState: 0
-  itemName: FishingRod
-  tier: 0
-  rodTension: 0
-  gemSlots: 0
-  strength: 0
+  upgradeState: 1
+  itemName: Pequessivo Fishing Rod
+  tier: 1
+  rodTension: 120
+  gemSlots: 1
+  strength: 2
   constitution: 0
   dexterity: 0
   intelligence: 0
+  description: A classic fishing rod crafter by every beginner fisherman. It's kind
+    of a rite of passage before fishing bigger monster.
   components: []
   componentsQty: 

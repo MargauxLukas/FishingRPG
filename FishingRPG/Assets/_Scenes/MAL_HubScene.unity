@@ -1677,7 +1677,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1790606143}
           m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
-          m_MethodName: SetLootInfos
+          m_MethodName: SetGemInfos
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 76652305}
@@ -1749,6 +1749,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &87304459
 GameObject:
@@ -2973,6 +2974,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &133943425
 GameObject:
@@ -4937,7 +4939,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1790606143}
           m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
-          m_MethodName: SetLootInfos
+          m_MethodName: SetGemInfos
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 221501487}
@@ -5009,6 +5011,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &224511006
 GameObject:
@@ -6280,6 +6283,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &286155711
 GameObject:
@@ -6496,6 +6500,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &295705297
 GameObject:
@@ -6712,6 +6717,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &298764686
 GameObject:
@@ -7173,6 +7179,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &306625557
 GameObject:
@@ -7550,6 +7557,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &310750525
 GameObject:
@@ -8010,6 +8018,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &334263084
 GameObject:
@@ -9018,10 +9027,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0adebd074b6d7c34db721732a5b612be, type: 3}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -9029,7 +9038,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pequessivo Helmet
+  m_Text: 
 --- !u!222 &379204466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9411,6 +9420,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &404126945
 GameObject:
@@ -14080,6 +14090,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &654785874
 GameObject:
@@ -15657,6 +15668,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &706085408
 GameObject:
@@ -15873,6 +15885,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &711172108
 GameObject:
@@ -16375,6 +16388,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &747495865
 GameObject:
@@ -16818,6 +16832,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &758165678
 GameObject:
@@ -18070,6 +18085,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &833170646
 GameObject:
@@ -19199,7 +19215,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1790606143}
           m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
-          m_MethodName: SetLootInfos
+          m_MethodName: SetGemInfos
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 870342060}
@@ -19271,6 +19287,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &871918442
 GameObject:
@@ -20574,7 +20591,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1790606143}
           m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
-          m_MethodName: SetLootInfos
+          m_MethodName: SetGemInfos
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 911131298}
@@ -20646,6 +20663,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &911560841
 GameObject:
@@ -22201,7 +22219,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1790606143}
           m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
-          m_MethodName: SetLootInfos
+          m_MethodName: SetGemInfos
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 966073589}
@@ -22273,6 +22291,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &966368027
 GameObject:
@@ -23159,7 +23178,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1790606143}
           m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
-          m_MethodName: SetLootInfos
+          m_MethodName: SetGemInfos
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1015355855}
@@ -23231,6 +23250,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1024259953
 GameObject:
@@ -23303,13 +23323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '+1 strength
-
-    +2 agility
-
-    -1 intelligence
-
-    0 '
+  m_Text: 
 --- !u!222 &1024259956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23533,6 +23547,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1028843970
 GameObject:
@@ -24252,6 +24267,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1050739175
 GameObject:
@@ -25224,6 +25240,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1088393654
 GameObject:
@@ -26263,6 +26280,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1128867908
 GameObject:
@@ -26951,6 +26969,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1144407995
 GameObject:
@@ -27258,6 +27277,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1159899215
 GameObject:
@@ -29394,6 +29414,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1235260648
 GameObject:
@@ -30084,6 +30105,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1273967239
 GameObject:
@@ -32286,6 +32308,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1352706239
 GameObject:
@@ -35058,8 +35081,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
+  m_Text: 
 --- !u!222 &1504653450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35374,6 +35396,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1531974822
 GameObject:
@@ -36537,6 +36560,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1580589094
 GameObject:
@@ -36753,6 +36777,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1588225792
 GameObject:
@@ -37386,6 +37411,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1626938612
 GameObject:
@@ -37542,7 +37568,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1790606143}
           m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
-          m_MethodName: SetLootInfos
+          m_MethodName: SetGemInfos
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1626938618}
@@ -37614,6 +37640,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1629212972
 GameObject:
@@ -38041,7 +38068,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rang 1
+  m_Text: 
 --- !u!222 &1643428387
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39346,6 +39373,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1708421374
 GameObject:
@@ -41334,6 +41362,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1828915214
 GameObject:
@@ -44705,6 +44734,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2015609863
 GameObject:
@@ -45412,6 +45442,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2040591198
 GameObject:
@@ -46161,6 +46192,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2066434384
 GameObject:
@@ -46724,6 +46756,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2076266331
 GameObject:
@@ -47015,6 +47048,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2082330888
 GameObject:
@@ -48126,6 +48160,7 @@ MonoBehaviour:
   constitution: 0
   dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2145571889
 GameObject:

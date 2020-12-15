@@ -161,6 +161,7 @@ public class GearingManager : MonoBehaviour
                 gemsList[indice].sprite = UIManager.instance.gemList[i].appearance;
                 gemsList[indice].transform.parent.GetComponent<GearingInfos>().itemName = UIManager.instance.gemList[i].gemName;
                 gemsList[indice].transform.parent.GetComponent<GearingInfos>().upgrade = UIManager.instance.gemList[i].upgradeState;
+                gemsList[indice].transform.parent.GetComponent<GearingInfos>().gemStats = UIManager.instance.gemList[i].stats;
                 gemsList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.gemList[i].description;
                 gemsList[indice].gameObject.GetComponent<ScriptablePointer>().gem = UIManager.instance.gemList[i];
                 gemsList[indice].gameObject.SetActive(true);
@@ -262,8 +263,9 @@ public class GearingManager : MonoBehaviour
 
         gearInfoTitle.text = _infos.itemName;
         gearInfoUpgrade.text = "Rank " + _infos.upgrade;
-        
-        if(_infos.strength > 0)
+        gearInfoStats.text = string.Empty;
+
+        if (_infos.strength > 0)
         {
             gearInfoStats.text += "+" + _infos.strength + " strength";
         }
@@ -279,5 +281,16 @@ public class GearingManager : MonoBehaviour
         {
             gearInfoStats.text += "\n+" + _infos.intelligence + " intelligence";
         }
+
+        gearInfoDescription.text = _infos.description;
+    }
+
+    public void SetGemInfos(GearingInfos _infos)
+    {
+        Debug.Log(_infos.gemStats);
+        gearInfoTitle.text = _infos.itemName;
+        gearInfoUpgrade.text = "Rank " + _infos.upgrade;
+        gearInfoStats.text = _infos.gemStats;
+        gearInfoDescription.text = _infos.description;
     }
 }

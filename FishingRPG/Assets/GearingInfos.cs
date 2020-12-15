@@ -10,5 +10,6 @@ public class GearingInfos : MonoBehaviour
     public int constitution;
     public int dexterity;
     public int intelligence;
+    public string gemStats;
     public string description;
 }
