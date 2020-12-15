@@ -43,7 +43,7 @@ public class FirstGem : MonoBehaviour
         }
     }
 
-    public void Play(Gem gem, Material mat)
+    public void Play(Gem gem)
     {
         if (!played)
         {
@@ -78,16 +78,5 @@ public class FirstGem : MonoBehaviour
         PlayerManager.instance.playerStats.dexterity -= 1;
 
         //StartCoroutine(FadeMat());
-    }
-
-    IEnumerator FadeMat()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        FishingRodManager.instance.slot1.mat.color = new Color(FishingRodManager.instance.slot1.mat.color.r, FishingRodManager.instance.slot1.mat.color.g, FishingRodManager.instance.slot1.mat.color.b, FishingRodManager.instance.slot1.mat.color.a + valueToAdd);
-
-        if (color.a != 1f)
-        {
-            StartCoroutine(FadeMat());
-        }
     }
 }

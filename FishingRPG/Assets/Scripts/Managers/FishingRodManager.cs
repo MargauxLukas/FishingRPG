@@ -45,6 +45,9 @@ public class FishingRodManager : MonoBehaviour
     public Image fCurrentJauge;
     public Scrollbar fishHook;
 
+    [Header("FishingRodAnimator")]
+    public Animator animFishingRod;
+
     private void Awake()
     {
         Init();
@@ -162,10 +165,12 @@ public class FishingRodManager : MonoBehaviour
         {
             if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
             {
+                animFishingRod.SetBool("Turn", true);
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
                 {
+                    Debug.Log("eeee");
                     FishManager.instance.DownStaminaTakingLine();
                     fishingLine.TensionUpTakingLine();
                 }
@@ -206,6 +211,11 @@ public class FishingRodManager : MonoBehaviour
         if (!fishingLine.isTaken && !fishingLine.isBlocked && !FishManager.instance.currentFishBehavior.exhausted)
         {
             FishManager.instance.LowUpStamina();
+        }
+
+        if (!fishingLine.isTaken)
+        {
+            animFishingRod.SetBool("Turn", false);
         }
 
         UpdateFCurrent();

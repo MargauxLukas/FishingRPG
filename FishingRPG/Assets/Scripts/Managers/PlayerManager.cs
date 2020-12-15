@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject aventureGUI;
 
     public CheckBox cb;
+    public CheckHub ch;
     public CheckFishVictoryZone cfvz;
 
     public GameObject canvas;
@@ -34,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         UpdateStats();
+        UpdateGem();
     }
 
     public virtual void Init()
@@ -136,17 +138,38 @@ public class PlayerManager : MonoBehaviour
 
     public void UseGemFirstSlot()
     {
-        playerGem.PlayGem(FishingRodManager.instance.slot1.gem);
+        if (FishingRodManager.instance.slot1.gem)
+        {
+            playerGem.PlayGem(FishingRodManager.instance.slot1.gem);
+        }
+        else
+        {
+            Debug.Log("Pas de gemme équipé en Slot 1");
+        }
     }
 
     public void UseGemSecondSlot()
     {
-        playerGem.PlayGem(FishingRodManager.instance.slot2.gem);
+        if (FishingRodManager.instance.slot2.gem)
+        {
+            playerGem.PlayGem(FishingRodManager.instance.slot2.gem);
+        }
+        else
+        {
+            Debug.Log("Pas de gemme équipé en Slot 2");
+        }
     }
 
     public void UseGemThirdSlot()
     {
-        playerGem.PlayGem(FishingRodManager.instance.slot3.gem);
+        if (FishingRodManager.instance.slot3.gem)
+        {
+            playerGem.PlayGem(FishingRodManager.instance.slot3.gem);
+        }
+        else
+        {
+            Debug.Log("Pas de gemme équipé en Slot 3");
+        }
     }
 
     public void CHEAT_SetFishToExhausted()
@@ -225,6 +248,27 @@ public class PlayerManager : MonoBehaviour
             playerStats.constitution += playerInventory.inventory.equipedFishingRod.constitution;
             playerStats.dexterity    += playerInventory.inventory.equipedFishingRod.dexterity;
             playerStats.intelligence += playerInventory.inventory.equipedFishingRod.intelligence;
+        }
+    }
+
+    public void UpdateGem()
+    {
+        if(playerInventory.inventory.equipedGem1 != null)
+        {
+            FishingRodManager.instance.slot1.gem = playerInventory.inventory.equipedGem1;
+            FishingRodManager.instance.slot1.visual.SetActive(true);
+        }
+
+        if (playerInventory.inventory.equipedGem2 != null)
+        {
+            FishingRodManager.instance.slot2.gem = playerInventory.inventory.equipedGem2;
+            FishingRodManager.instance.slot2.visual.SetActive(true);
+        }
+
+        if (playerInventory.inventory.equipedGem3 != null)
+        {
+            FishingRodManager.instance.slot2.gem = playerInventory.inventory.equipedGem3;
+            FishingRodManager.instance.slot2.visual.SetActive(true);
         }
     }
 }
