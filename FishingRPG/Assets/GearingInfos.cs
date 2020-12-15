@@ -7,8 +7,9 @@ public class GearingInfos : MonoBehaviour
     public string itemName;
     public int upgrade;
     public int strength;
-    public int weight;
-    public int agility;
+    public int constitution;
+    public int dexterity;
     public int intelligence;
+    public string gemStats;
     public string description;
 }

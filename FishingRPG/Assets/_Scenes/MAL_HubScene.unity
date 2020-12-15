@@ -1560,9 +1560,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &76652301
@@ -1675,6 +1675,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetGemInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 76652305}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -1734,9 +1746,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &87304459
 GameObject:
@@ -2784,9 +2797,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127482982
@@ -2899,6 +2912,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 127482986}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -2946,9 +2971,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &133943425
 GameObject:
@@ -4796,9 +4822,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221501483
@@ -4911,6 +4937,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetGemInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 221501487}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -4970,9 +5008,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &224511006
 GameObject:
@@ -6067,9 +6106,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279454766
@@ -6182,6 +6221,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 279454770}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -6229,9 +6280,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &286155711
 GameObject:
@@ -6271,9 +6323,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286155713
@@ -6386,6 +6438,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 286155717}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -6433,9 +6497,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &295705297
 GameObject:
@@ -6475,9 +6540,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295705299
@@ -6590,6 +6655,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 295705303}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -6637,9 +6714,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &298764686
 GameObject:
@@ -6924,9 +7002,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306201841
@@ -7039,6 +7117,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 306201845}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -7086,9 +7176,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &306625557
 GameObject:
@@ -7289,9 +7380,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309618169
@@ -7404,6 +7495,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 309618173}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -7451,9 +7554,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &310750525
 GameObject:
@@ -7737,9 +7841,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331904014
@@ -7852,6 +7956,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 331904018}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -7899,9 +8015,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &334263084
 GameObject:
@@ -8910,10 +9027,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0adebd074b6d7c34db721732a5b612be, type: 3}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8921,7 +9038,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pequessivo Helmet
+  m_Text: 
 --- !u!222 &379204466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9126,9 +9243,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396992670
@@ -9241,6 +9358,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 396992674}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -9288,9 +9417,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &404126945
 GameObject:
@@ -13783,9 +13913,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647486656
@@ -13898,6 +14028,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 647486660}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -13945,9 +14087,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &654785874
 GameObject:
@@ -15348,9 +15491,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &702644710
@@ -15463,6 +15606,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 702644714}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -15510,9 +15665,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &706085408
 GameObject:
@@ -15552,9 +15708,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706085410
@@ -15667,6 +15823,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 706085414}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -15714,9 +15882,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &711172108
 GameObject:
@@ -16042,9 +16211,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744737859
@@ -16157,6 +16326,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 744737863}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -16204,9 +16385,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &747495865
 GameObject:
@@ -16473,9 +16655,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753489110
@@ -16588,6 +16770,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 753489114}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -16635,9 +16829,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &758165678
 GameObject:
@@ -17713,9 +17908,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &827682600
@@ -17828,6 +18023,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 827682604}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -17875,9 +18082,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &833170646
 GameObject:
@@ -18890,9 +19098,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870342056
@@ -19005,6 +19213,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetGemInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 870342060}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -19064,9 +19284,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &871918442
 GameObject:
@@ -20253,9 +20474,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911131294
@@ -20368,6 +20589,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetGemInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 911131298}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -20427,9 +20660,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &911560841
 GameObject:
@@ -21868,9 +22102,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966073585
@@ -21983,6 +22217,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetGemInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 966073589}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -22042,9 +22288,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &966368027
 GameObject:
@@ -22814,9 +23061,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015355851
@@ -22929,6 +23176,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetGemInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1015355855}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -22988,9 +23247,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1024259953
 GameObject:
@@ -23063,13 +23323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '+1 strength
-
-    +2 agility
-
-    -1 intelligence
-
-    0 '
+  m_Text: 
 --- !u!222 &1024259956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23116,9 +23370,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024402727
@@ -23231,6 +23485,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1024402731}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -23278,9 +23544,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1028843970
 GameObject:
@@ -23823,9 +24090,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1048115317
@@ -23938,6 +24205,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1048115321}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -23985,9 +24264,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1050739175
 GameObject:
@@ -24783,9 +25063,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088090276
@@ -24898,6 +25178,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1088090280}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -24945,9 +25237,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1088393654
 GameObject:
@@ -25810,9 +26103,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117293402
@@ -25925,6 +26218,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1117293406}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -25972,9 +26277,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1128867908
 GameObject:
@@ -26486,9 +26792,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143597022
@@ -26601,6 +26907,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1143597026}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -26648,9 +26966,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1144407995
 GameObject:
@@ -26781,9 +27100,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153610109
@@ -26896,6 +27215,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1153610113}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -26943,9 +27274,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1159899215
 GameObject:
@@ -28905,9 +29237,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219644920
@@ -29020,6 +29352,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1219644924}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -29067,9 +29411,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1235260648
 GameObject:
@@ -29583,9 +29928,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268414769
@@ -29698,6 +30043,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1268414773}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -29745,9 +30102,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1273967239
 GameObject:
@@ -31773,9 +32131,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345990493
@@ -31888,6 +32246,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1345990497}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -31935,9 +32305,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1352706239
 GameObject:
@@ -34710,8 +35081,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
+  m_Text: 
 --- !u!222 &1504653450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34849,9 +35219,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518480048
@@ -34964,6 +35334,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1518480052}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -35011,9 +35393,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1531974822
 GameObject:
@@ -36000,9 +36383,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574496635
@@ -36115,6 +36498,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1574496639}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -36162,9 +36557,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1580589094
 GameObject:
@@ -36204,9 +36600,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580589096
@@ -36319,6 +36715,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1580589100}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -36366,9 +36774,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1588225792
 GameObject:
@@ -36825,9 +37234,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626358243
@@ -36940,6 +37349,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1626358247}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -36987,9 +37408,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1626938612
 GameObject:
@@ -37029,9 +37451,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626938614
@@ -37144,6 +37566,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetGemInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1626938618}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -37203,9 +37637,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1629212972
 GameObject:
@@ -37633,7 +38068,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rang 1
+  m_Text: 
 --- !u!222 &1643428387
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38761,9 +39196,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706811770
@@ -38876,6 +39311,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1706811774}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -38923,9 +39370,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1708421374
 GameObject:
@@ -40162,7 +40610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1790606142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40243,6 +40691,49 @@ MonoBehaviour:
   - {fileID: 144677113}
   - {fileID: 1133911025}
   - {fileID: 1354838677}
+  gridHighlights:
+  - {fileID: 277991811}
+  - {fileID: 1130578791}
+  - {fileID: 657594071}
+  - {fileID: 111989764}
+  - {fileID: 1857983629}
+  - {fileID: 271389943}
+  - {fileID: 1300611049}
+  - {fileID: 1128867908}
+  - {fileID: 87304459}
+  - {fileID: 432290373}
+  - {fileID: 509916474}
+  - {fileID: 1847896791}
+  - {fileID: 1766648074}
+  - {fileID: 133943425}
+  - {fileID: 1206949525}
+  - {fileID: 1074219474}
+  - {fileID: 1713278623}
+  - {fileID: 878351083}
+  - {fileID: 1065447123}
+  - {fileID: 488493698}
+  - {fileID: 1106296992}
+  - {fileID: 1953881597}
+  - {fileID: 1928734210}
+  - {fileID: 245736224}
+  - {fileID: 298764686}
+  - {fileID: 1993833611}
+  - {fileID: 1035478971}
+  - {fileID: 449311078}
+  - {fileID: 760903926}
+  - {fileID: 1297423984}
+  - {fileID: 198819850}
+  - {fileID: 2073909756}
+  - {fileID: 1872893965}
+  - {fileID: 1708421374}
+  - {fileID: 672464387}
+  - {fileID: 619256948}
+  - {fileID: 959136321}
+  - {fileID: 1550582159}
+  - {fileID: 1896242863}
+  - {fileID: 377217307}
+  - {fileID: 1362582402}
+  - {fileID: 1011196755}
   helmetEquiped: {fileID: 1306891249}
   shoulderEquiped: {fileID: 414033824}
   beltEquiped: {fileID: 2043245249}
@@ -40252,10 +40743,10 @@ MonoBehaviour:
   gem2Equiped: {fileID: 2115280238}
   gem3Equiped: {fileID: 1014537434}
   gemMovement: {fileID: 0}
-  gearInfoTitle: {fileID: 0}
-  gearInfoUpgrade: {fileID: 0}
-  gearInfoStats: {fileID: 0}
-  gearInfoDescription: {fileID: 0}
+  gearInfoTitle: {fileID: 379204465}
+  gearInfoUpgrade: {fileID: 1643428386}
+  gearInfoStats: {fileID: 1024259955}
+  gearInfoDescription: {fileID: 1504653449}
 --- !u!1 &1790947715
 GameObject:
   m_ObjectHideFlags: 0
@@ -40737,9 +41228,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821158096
@@ -40852,6 +41343,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1821158100}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -40899,9 +41402,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &1828915214
 GameObject:
@@ -44096,9 +44600,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999050570
@@ -44211,6 +44715,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1999050574}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -44258,9 +44774,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2015609863
 GameObject:
@@ -44791,9 +45308,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034213122
@@ -44906,6 +45423,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2034213126}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -44953,9 +45482,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2040591198
 GameObject:
@@ -45528,9 +46058,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.88382, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060756680
@@ -45643,6 +46173,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2060756684}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -45690,9 +46232,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2066434384
 GameObject:
@@ -46079,9 +46622,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075704785
@@ -46194,6 +46737,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2075704789}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -46241,9 +46796,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2076266331
 GameObject:
@@ -46358,9 +46914,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078244066
@@ -46473,6 +47029,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2078244070}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -46520,9 +47088,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2082330888
 GameObject:
@@ -47457,9 +48026,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135021110
@@ -47572,6 +48141,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1790606143}
+          m_TargetAssemblyTypeName: GearingManager, Assembly-CSharp
+          m_MethodName: SetLootInfos
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2135021114}
+            m_ObjectArgumentAssemblyTypeName: GearingInfos, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -47619,9 +48200,10 @@ MonoBehaviour:
   itemName: 
   upgrade: 0
   strength: 0
-  weight: 0
-  agility: 0
+  constitution: 0
+  dexterity: 0
   intelligence: 0
+  gemStats: 
   description: 
 --- !u!1 &2145571889
 GameObject:

@@ -9,6 +9,11 @@ public class Gem : ScriptableObject
     public string ID;
     public string gemName;
     public Sprite appearance;
+    public int upgradeState;
+
+    public string stats;
+    public string description;
+
     //stats
     public int duration;
     public int cooldown;
