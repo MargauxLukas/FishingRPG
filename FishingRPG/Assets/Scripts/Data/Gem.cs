@@ -18,4 +18,5 @@ public class Gem : ScriptableObject
     public int duration;
     public int cooldown;
     public FishyDrop[] components;
+    public int[] componentsQty;
 }

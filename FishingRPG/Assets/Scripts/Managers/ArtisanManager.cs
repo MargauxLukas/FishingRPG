@@ -158,6 +158,12 @@ public class ArtisanManager : MonoBehaviour
             componentsQuantityList[i].gameObject.SetActive(true);
         }
 
+        for (int i = 3; i >= sp.armor.components.Length; i--)
+        {
+            componentsList[i].gameObject.SetActive(false);
+            componentsQuantityList[i].gameObject.SetActive(false);
+        }
+
         title.text = sp.armor.itemName;
         image.sprite = sp.armor.appearance;
 
@@ -183,26 +189,160 @@ public class ArtisanManager : MonoBehaviour
         description.text = sp.armor.description;
     }
 
-    public void CraftObject(ScriptablePointer sp)
+    public void UpdateTextRod(ScriptablePointer sp)
     {
-        Debug.Log("test");
-        for (int i = 0; i < sp.armor.components.Length; i++)
+        for (int i = 0; i < sp.fishingRod.components.Length; i++)
         {
-            if(UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
+            if (UIManager.instance.inventory.GetVariable(sp.fishingRod.components[i].ID) < sp.fishingRod.componentsQty[i])
             {
-                canCraft = false;
+                componentsList[i].color = new Color32(255, 0, 56, 255);
+                componentsQuantityList[i].color = new Color32(255, 0, 56, 255);
             }
+            else
+            {
+                componentsList[i].color = new Color32(62, 40, 31, 255);
+                componentsQuantityList[i].color = new Color32(62, 40, 31, 255);
+            }
+
+            componentsList[i].text = sp.fishingRod.components[i].type;
+
+            componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.fishingRod.components[i].ID) + "/" + sp.fishingRod.componentsQty[i].ToString();
+
+            componentsList[i].gameObject.SetActive(true);
+            componentsQuantityList[i].gameObject.SetActive(true);
         }
 
-        if(canCraft)
+        for (int i = 3; i >= sp.fishingRod.components.Length; i--)
+        {
+            componentsList[i].gameObject.SetActive(false);
+            componentsQuantityList[i].gameObject.SetActive(false);
+        }
+
+        title.text = sp.fishingRod.itemName;
+        image.sprite = sp.fishingRod.appearance;
+
+
+        if (sp.fishingRod.strength != 0)
+        {
+            tempoString = "+" + sp.fishingRod.strength.ToString() + " strength\n";
+        }
+        if (sp.fishingRod.constitution != 0)
+        {
+            tempoString += "+" + sp.fishingRod.constitution.ToString() + " constitution\n";
+        }
+        if (sp.fishingRod.dexterity != 0)
+        {
+            tempoString += "+" + sp.fishingRod.dexterity.ToString() + " dexterity\n";
+        }
+        if (sp.fishingRod.intelligence != 0)
+        {
+            tempoString += "+" + sp.fishingRod.intelligence.ToString() + " intelligence\n";
+        }
+
+        bonusStats.text = tempoString;
+        description.text = sp.fishingRod.description;
+    }
+
+    public void UpdateTextGem(ScriptablePointer sp)
+    {
+        for (int i = 0; i < sp.gem.components.Length; i++)
+        {
+            if (UIManager.instance.inventory.GetVariable(sp.gem.components[i].ID) < sp.gem.componentsQty[i])
+            {
+                componentsList[i].color = new Color32(255, 0, 56, 255);
+                componentsQuantityList[i].color = new Color32(255, 0, 56, 255);
+            }
+            else
+            {
+                componentsList[i].color = new Color32(62, 40, 31, 255);
+                componentsQuantityList[i].color = new Color32(62, 40, 31, 255);
+            }
+
+            componentsList[i].text = sp.gem.components[i].type;
+
+            componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.gem.components[i].ID) + "/" + sp.gem.componentsQty[i].ToString();
+
+            componentsList[i].gameObject.SetActive(true);
+            componentsQuantityList[i].gameObject.SetActive(true);
+        }
+
+        for(int i = 3; i >= sp.gem.components.Length;i--)
+        {
+            componentsList[i].gameObject.SetActive(false);
+            componentsQuantityList[i].gameObject.SetActive(false);
+        }
+
+        title.text = sp.gem.gemName;
+        image.sprite = sp.gem.appearance;
+
+        bonusStats.text = sp.gem.stats;
+        description.text = sp.gem.description;
+    }
+
+    public void CraftObject(ScriptablePointer sp)
+    {
+        if (sp.armor != null)
         {
             for (int i = 0; i < sp.armor.components.Length; i++)
             {
-                UIManager.instance.inventory.RemoveQty(sp.armor.components[i].ID, sp.armor.componentsQty[i]);
+                if (UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
+                {
+                    canCraft = false;
+                }
             }
 
-            UIManager.instance.inventory.SetArmor(sp.armor.ID);
-            UpdateText(sp);
+            if (canCraft)
+            {
+                for (int i = 0; i < sp.armor.components.Length; i++)
+                {
+                    UIManager.instance.inventory.RemoveQty(sp.armor.components[i].ID, sp.armor.componentsQty[i]);
+                }
+
+                UIManager.instance.inventory.SetArmor(sp.armor.ID);
+                UpdateText(sp);
+            }
+        }
+        else if(sp.fishingRod != null)
+        {
+            for (int i = 0; i < sp.fishingRod.components.Length; i++)
+            {
+                if (UIManager.instance.inventory.GetVariable(sp.fishingRod.components[i].ID) < sp.fishingRod.componentsQty[i])
+                {
+                    canCraft = false;
+                }
+            }
+
+            if (canCraft)
+            {
+                for (int i = 0; i < sp.fishingRod.components.Length; i++)
+                {
+                    UIManager.instance.inventory.RemoveQty(sp.fishingRod.components[i].ID, sp.fishingRod.componentsQty[i]);
+                }
+
+                UIManager.instance.inventory.SetArmor(sp.fishingRod.ID);
+                UpdateTextRod(sp);
+            }
+        }
+        else if(sp.gem != null)
+        {
+            for (int i = 0; i < sp.gem.components.Length; i++)
+            {
+                if (UIManager.instance.inventory.GetVariable(sp.gem.components[i].ID) < sp.gem.componentsQty[i])
+                {
+                    canCraft = false;
+                }
+            }
+
+            if (canCraft)
+            {
+                for (int i = 0; i < sp.gem.components.Length; i++)
+                {
+                    UIManager.instance.inventory.RemoveQty(sp.gem.components[i].ID, sp.gem.componentsQty[i]);
+                }
+
+                UIManager.instance.inventory.SetArmor(sp.gem.ID);
+                UpdateTextGem(sp);
+            }
         }
     }
 }

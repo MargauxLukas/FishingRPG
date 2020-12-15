@@ -927,6 +927,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1213941396}
+          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
+          m_MethodName: UpdateTextGem
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 32484995}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -985,7 +997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
   fishingRod: {fileID: 0}
-  gem: {fileID: 0}
+  gem: {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
 --- !u!1 &32644455
 GameObject:
   m_ObjectHideFlags: 0
@@ -35539,6 +35551,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1213941396}
+          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
+          m_MethodName: UpdateTextRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1531974828}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -35669,7 +35693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
-  fishingRod: {fileID: 0}
+  fishingRod: {fileID: 11400000, guid: 2fb310c7908eea14f85df257654e7595, type: 2}
   gem: {fileID: 0}
 --- !u!1 &1532520222
 GameObject:

@@ -23,3 +23,4 @@ MonoBehaviour:
   cooldown: 45
   components:
   - {fileID: 11400000, guid: 9bc4e260fda4fd14fbdc8e4868b24da0, type: 2}
+  componentsQty: 01000000
