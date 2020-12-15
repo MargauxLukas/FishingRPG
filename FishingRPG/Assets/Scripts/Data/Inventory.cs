@@ -54,7 +54,7 @@ public class Inventory : ScriptableObject
                 return PST_C;
             case "PSC_C":
                 return PSC_C;
-            case "PFL_R":
+            case "PLF_R":
                 return PFL_R;
             case "PFI_E":
                 return PFI_E;

@@ -102,6 +102,17 @@ public class ArtisanManager : MonoBehaviour
     {
         for(int i = 0; i < sp.armor.components.Length; i++)
         {
+            if (UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
+            {
+                componentsList[i].color = new Color32(255, 0, 56, 255);
+                componentsQuantityList[i].color = new Color32(255, 0, 56, 255);
+            }
+            else
+            {
+                componentsList[i].color = new Color32(62, 40, 31, 255);
+                componentsQuantityList[i].color = new Color32(62, 40, 31, 255);
+            }
+
             componentsList[i].text = sp.armor.components[i].type;
 
             componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) + "/" + sp.armor.componentsQty[i].ToString();
