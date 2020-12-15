@@ -13,6 +13,7 @@ public class GearingManager : MonoBehaviour
     public List<Image> bootsList = new List<Image>();
     public List<Image> fishingRodList = new List<Image>();
     public List<Image> gemsList = new List<Image>();
+    public List<GameObject> gridHighlights = new List<GameObject>();
 
     public Image helmetEquiped;
     public Image shoulderEquiped;
@@ -42,6 +43,11 @@ public class GearingManager : MonoBehaviour
     {
         if (Input.GetButtonDown("B Button"))
         {
+            for (int i = 0; i < gridHighlights.Count; i++)
+            {
+                gridHighlights[i].SetActive(false);
+            }
+
             UIManager.instance.CloseMenu(gameObject);
         }
     }

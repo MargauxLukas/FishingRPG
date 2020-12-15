@@ -40691,6 +40691,49 @@ MonoBehaviour:
   - {fileID: 144677113}
   - {fileID: 1133911025}
   - {fileID: 1354838677}
+  gridHighlights:
+  - {fileID: 277991811}
+  - {fileID: 1130578791}
+  - {fileID: 657594071}
+  - {fileID: 111989764}
+  - {fileID: 1857983629}
+  - {fileID: 271389943}
+  - {fileID: 1300611049}
+  - {fileID: 1128867908}
+  - {fileID: 87304459}
+  - {fileID: 432290373}
+  - {fileID: 509916474}
+  - {fileID: 1847896791}
+  - {fileID: 1766648074}
+  - {fileID: 133943425}
+  - {fileID: 1206949525}
+  - {fileID: 1074219474}
+  - {fileID: 1713278623}
+  - {fileID: 878351083}
+  - {fileID: 1065447123}
+  - {fileID: 488493698}
+  - {fileID: 1106296992}
+  - {fileID: 1953881597}
+  - {fileID: 1928734210}
+  - {fileID: 245736224}
+  - {fileID: 298764686}
+  - {fileID: 1993833611}
+  - {fileID: 1035478971}
+  - {fileID: 449311078}
+  - {fileID: 760903926}
+  - {fileID: 1297423984}
+  - {fileID: 198819850}
+  - {fileID: 2073909756}
+  - {fileID: 1872893965}
+  - {fileID: 1708421374}
+  - {fileID: 672464387}
+  - {fileID: 619256948}
+  - {fileID: 959136321}
+  - {fileID: 1550582159}
+  - {fileID: 1896242863}
+  - {fileID: 377217307}
+  - {fileID: 1362582402}
+  - {fileID: 1011196755}
   helmetEquiped: {fileID: 1306891249}
   shoulderEquiped: {fileID: 414033824}
   beltEquiped: {fileID: 2043245249}
