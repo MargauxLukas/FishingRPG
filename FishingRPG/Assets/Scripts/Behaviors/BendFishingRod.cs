@@ -33,6 +33,7 @@ public class BendFishingRod : MonoBehaviour
 
     public void CalculPosTarget()
     {
+        //Debug.Log(valuePerFloat + " * " +(FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent));
         valuePos = valuePerFloat * (FishingRodManager.instance.distanceCP - FishingRodManager.instance.fishingLine.fCurrent);
     }
 
