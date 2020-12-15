@@ -43,6 +43,7 @@ public class ButcherManager : MonoBehaviour
 
     bool canReset = true;
     bool dropListCleared = false;
+    bool canQuitButcher = true;
 
     void Update()
     {
@@ -86,6 +87,8 @@ public class ButcherManager : MonoBehaviour
                 cuttingTimer = 0;
                 isCutting = false;
                 holdButtonImg.fillAmount = 0;
+
+                canQuitButcher = false;
             }
         }
 
@@ -113,8 +116,9 @@ public class ButcherManager : MonoBehaviour
             ResetButcherToDefault();
         }
 
-        if (Input.GetButtonDown("B Button"))
+        if (Input.GetButtonDown("B Button") && canQuitButcher)
         {
+            ResetButcherToDefault();
             UIManager.instance.CloseMenu(gameObject);
         }
 
@@ -172,6 +176,7 @@ public class ButcherManager : MonoBehaviour
         fishPileInput.SetActive(true);
 
         dropListCleared = true;
+        canQuitButcher = true;
 
         lootID.Clear();
     }

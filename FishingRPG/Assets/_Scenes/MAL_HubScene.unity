@@ -1535,6 +1535,7 @@ GameObject:
   - component: {fileID: 76652302}
   - component: {fileID: 76652301}
   - component: {fileID: 76652304}
+  - component: {fileID: 76652305}
   m_Layer: 5
   m_Name: Item Background (6)
   m_TagString: Untagged
@@ -1559,9 +1560,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &76652301
@@ -1718,6 +1719,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &76652305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76652299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &87304459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,6 +2759,7 @@ GameObject:
   - component: {fileID: 127482983}
   - component: {fileID: 127482982}
   - component: {fileID: 127482985}
+  - component: {fileID: 127482986}
   m_Layer: 5
   m_Name: Item Background (3)
   m_TagString: Untagged
@@ -2763,9 +2784,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127482982
@@ -2910,6 +2931,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &127482986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127482980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &133943425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,6 +4771,7 @@ GameObject:
   - component: {fileID: 221501484}
   - component: {fileID: 221501483}
   - component: {fileID: 221501486}
+  - component: {fileID: 221501487}
   m_Layer: 5
   m_Name: Item Background (4)
   m_TagString: Untagged
@@ -4755,9 +4796,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221501483
@@ -4914,6 +4955,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &221501487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221501481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &224511006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5982,6 +6042,7 @@ GameObject:
   - component: {fileID: 279454767}
   - component: {fileID: 279454766}
   - component: {fileID: 279454769}
+  - component: {fileID: 279454770}
   m_Layer: 5
   m_Name: Item Background (2)
   m_TagString: Untagged
@@ -6006,9 +6067,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279454766
@@ -6153,6 +6214,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &279454770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279454764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &286155711
 GameObject:
   m_ObjectHideFlags: 0
@@ -6166,6 +6246,7 @@ GameObject:
   - component: {fileID: 286155714}
   - component: {fileID: 286155713}
   - component: {fileID: 286155716}
+  - component: {fileID: 286155717}
   m_Layer: 5
   m_Name: Item Background (1)
   m_TagString: Untagged
@@ -6190,9 +6271,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286155713
@@ -6337,6 +6418,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &286155717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286155711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &295705297
 GameObject:
   m_ObjectHideFlags: 0
@@ -6350,6 +6450,7 @@ GameObject:
   - component: {fileID: 295705300}
   - component: {fileID: 295705299}
   - component: {fileID: 295705302}
+  - component: {fileID: 295705303}
   m_Layer: 5
   m_Name: Item Background (5)
   m_TagString: Untagged
@@ -6374,9 +6475,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295705299
@@ -6521,6 +6622,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &295705303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295705297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &298764686
 GameObject:
   m_ObjectHideFlags: 0
@@ -6779,6 +6899,7 @@ GameObject:
   - component: {fileID: 306201842}
   - component: {fileID: 306201841}
   - component: {fileID: 306201844}
+  - component: {fileID: 306201845}
   m_Layer: 5
   m_Name: Item Background (2)
   m_TagString: Untagged
@@ -6803,9 +6924,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306201841
@@ -6950,6 +7071,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &306201845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306201839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &306625557
 GameObject:
   m_ObjectHideFlags: 0
@@ -7124,6 +7264,7 @@ GameObject:
   - component: {fileID: 309618170}
   - component: {fileID: 309618169}
   - component: {fileID: 309618172}
+  - component: {fileID: 309618173}
   m_Layer: 5
   m_Name: Item Background (6)
   m_TagString: Untagged
@@ -7148,9 +7289,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309618169
@@ -7295,6 +7436,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &309618173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309618167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &310750525
 GameObject:
   m_ObjectHideFlags: 0
@@ -7552,6 +7712,7 @@ GameObject:
   - component: {fileID: 331904015}
   - component: {fileID: 331904014}
   - component: {fileID: 331904017}
+  - component: {fileID: 331904018}
   m_Layer: 5
   m_Name: Item Background (4)
   m_TagString: Untagged
@@ -7576,9 +7737,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331904014
@@ -7723,6 +7884,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &331904018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331904012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &334263084
 GameObject:
   m_ObjectHideFlags: 0
@@ -8921,6 +9101,7 @@ GameObject:
   - component: {fileID: 396992671}
   - component: {fileID: 396992670}
   - component: {fileID: 396992673}
+  - component: {fileID: 396992674}
   m_Layer: 5
   m_Name: Item Background (3)
   m_TagString: Untagged
@@ -8945,9 +9126,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396992670
@@ -9092,6 +9273,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &396992674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396992668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &404126945
 GameObject:
   m_ObjectHideFlags: 0
@@ -13558,6 +13758,7 @@ GameObject:
   - component: {fileID: 647486657}
   - component: {fileID: 647486656}
   - component: {fileID: 647486659}
+  - component: {fileID: 647486660}
   m_Layer: 5
   m_Name: Item Background (2)
   m_TagString: Untagged
@@ -13582,9 +13783,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647486656
@@ -13729,6 +13930,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &647486660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647486654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &654785874
 GameObject:
   m_ObjectHideFlags: 0
@@ -15103,6 +15323,7 @@ GameObject:
   - component: {fileID: 702644711}
   - component: {fileID: 702644710}
   - component: {fileID: 702644713}
+  - component: {fileID: 702644714}
   m_Layer: 5
   m_Name: Item Background
   m_TagString: Untagged
@@ -15127,9 +15348,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88381, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &702644710
@@ -15274,6 +15495,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &702644714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702644708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &706085408
 GameObject:
   m_ObjectHideFlags: 0
@@ -15287,6 +15527,7 @@ GameObject:
   - component: {fileID: 706085411}
   - component: {fileID: 706085410}
   - component: {fileID: 706085413}
+  - component: {fileID: 706085414}
   m_Layer: 5
   m_Name: Item Background (6)
   m_TagString: Untagged
@@ -15311,9 +15552,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706085410
@@ -15458,6 +15699,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &706085414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706085408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &711172108
 GameObject:
   m_ObjectHideFlags: 0
@@ -15757,6 +16017,7 @@ GameObject:
   - component: {fileID: 744737860}
   - component: {fileID: 744737859}
   - component: {fileID: 744737862}
+  - component: {fileID: 744737863}
   m_Layer: 5
   m_Name: Item Background
   m_TagString: Untagged
@@ -15781,9 +16042,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88381, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744737859
@@ -15928,6 +16189,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &744737863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744737857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &747495865
 GameObject:
   m_ObjectHideFlags: 0
@@ -16168,6 +16448,7 @@ GameObject:
   - component: {fileID: 753489110}
   - component: {fileID: 753489112}
   - component: {fileID: 753489113}
+  - component: {fileID: 753489114}
   m_Layer: 5
   m_Name: Item Background
   m_TagString: Untagged
@@ -16192,9 +16473,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88381, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753489110
@@ -16339,6 +16620,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &753489114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753489108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &758165678
 GameObject:
   m_ObjectHideFlags: 0
@@ -17388,6 +17688,7 @@ GameObject:
   - component: {fileID: 827682601}
   - component: {fileID: 827682600}
   - component: {fileID: 827682603}
+  - component: {fileID: 827682604}
   m_Layer: 5
   m_Name: Item Background (2)
   m_TagString: Untagged
@@ -17412,9 +17713,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &827682600
@@ -17559,6 +17860,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &827682604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827682598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &833170646
 GameObject:
   m_ObjectHideFlags: 0
@@ -18545,6 +18865,7 @@ GameObject:
   - component: {fileID: 870342057}
   - component: {fileID: 870342056}
   - component: {fileID: 870342059}
+  - component: {fileID: 870342060}
   m_Layer: 5
   m_Name: Item Background (2)
   m_TagString: Untagged
@@ -18569,9 +18890,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870342056
@@ -18728,6 +19049,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &870342060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870342054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &871918442
 GameObject:
   m_ObjectHideFlags: 0
@@ -19888,6 +20228,7 @@ GameObject:
   - component: {fileID: 911131295}
   - component: {fileID: 911131294}
   - component: {fileID: 911131297}
+  - component: {fileID: 911131298}
   m_Layer: 5
   m_Name: Item Background (5)
   m_TagString: Untagged
@@ -19912,9 +20253,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911131294
@@ -20071,6 +20412,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &911131298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911131292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &911560841
 GameObject:
   m_ObjectHideFlags: 0
@@ -21483,6 +21843,7 @@ GameObject:
   - component: {fileID: 966073586}
   - component: {fileID: 966073585}
   - component: {fileID: 966073588}
+  - component: {fileID: 966073589}
   m_Layer: 5
   m_Name: Item Background (1)
   m_TagString: Untagged
@@ -21507,9 +21868,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966073585
@@ -21666,6 +22027,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &966073589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966073583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &966368027
 GameObject:
   m_ObjectHideFlags: 0
@@ -22409,6 +22789,7 @@ GameObject:
   - component: {fileID: 1015355852}
   - component: {fileID: 1015355851}
   - component: {fileID: 1015355854}
+  - component: {fileID: 1015355855}
   m_Layer: 5
   m_Name: Item Background (3)
   m_TagString: Untagged
@@ -22433,9 +22814,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015355851
@@ -22592,6 +22973,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1015355855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015355849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1024259953
 GameObject:
   m_ObjectHideFlags: 0
@@ -22691,6 +23091,7 @@ GameObject:
   - component: {fileID: 1024402728}
   - component: {fileID: 1024402727}
   - component: {fileID: 1024402730}
+  - component: {fileID: 1024402731}
   m_Layer: 5
   m_Name: Item Background (3)
   m_TagString: Untagged
@@ -22715,9 +23116,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024402727
@@ -22862,6 +23263,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1024402731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024402725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1028843970
 GameObject:
   m_ObjectHideFlags: 0
@@ -23378,6 +23798,7 @@ GameObject:
   - component: {fileID: 1048115318}
   - component: {fileID: 1048115317}
   - component: {fileID: 1048115320}
+  - component: {fileID: 1048115321}
   m_Layer: 5
   m_Name: Item Background (6)
   m_TagString: Untagged
@@ -23402,9 +23823,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1048115317
@@ -23549,6 +23970,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1048115321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048115315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1050739175
 GameObject:
   m_ObjectHideFlags: 0
@@ -24318,6 +24758,7 @@ GameObject:
   - component: {fileID: 1088090277}
   - component: {fileID: 1088090276}
   - component: {fileID: 1088090279}
+  - component: {fileID: 1088090280}
   m_Layer: 5
   m_Name: Item Background (5)
   m_TagString: Untagged
@@ -24342,9 +24783,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088090276
@@ -24489,6 +24930,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1088090280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088090274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1088393654
 GameObject:
   m_ObjectHideFlags: 0
@@ -25325,6 +25785,7 @@ GameObject:
   - component: {fileID: 1117293403}
   - component: {fileID: 1117293402}
   - component: {fileID: 1117293405}
+  - component: {fileID: 1117293406}
   m_Layer: 5
   m_Name: Item Background (4)
   m_TagString: Untagged
@@ -25349,9 +25810,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117293402
@@ -25496,6 +25957,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1117293406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117293400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1128867908
 GameObject:
   m_ObjectHideFlags: 0
@@ -25981,6 +26461,7 @@ GameObject:
   - component: {fileID: 1143597023}
   - component: {fileID: 1143597022}
   - component: {fileID: 1143597025}
+  - component: {fileID: 1143597026}
   m_Layer: 5
   m_Name: Item Background (6)
   m_TagString: Untagged
@@ -26005,9 +26486,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143597022
@@ -26152,6 +26633,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1143597026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143597020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1144407995
 GameObject:
   m_ObjectHideFlags: 0
@@ -26256,6 +26756,7 @@ GameObject:
   - component: {fileID: 1153610110}
   - component: {fileID: 1153610109}
   - component: {fileID: 1153610112}
+  - component: {fileID: 1153610113}
   m_Layer: 5
   m_Name: Item Background (1)
   m_TagString: Untagged
@@ -26280,9 +26781,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153610109
@@ -26427,6 +26928,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1153610113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153610107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1159899215
 GameObject:
   m_ObjectHideFlags: 0
@@ -28360,6 +28880,7 @@ GameObject:
   - component: {fileID: 1219644921}
   - component: {fileID: 1219644920}
   - component: {fileID: 1219644923}
+  - component: {fileID: 1219644924}
   m_Layer: 5
   m_Name: Item Background (2)
   m_TagString: Untagged
@@ -28384,9 +28905,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.41904, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219644920
@@ -28531,6 +29052,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1219644924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219644918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1235260648
 GameObject:
   m_ObjectHideFlags: 0
@@ -29018,6 +29558,7 @@ GameObject:
   - component: {fileID: 1268414770}
   - component: {fileID: 1268414769}
   - component: {fileID: 1268414772}
+  - component: {fileID: 1268414773}
   m_Layer: 5
   m_Name: Item Background (4)
   m_TagString: Untagged
@@ -29042,9 +29583,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268414769
@@ -29189,6 +29730,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1268414773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268414767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1273967239
 GameObject:
   m_ObjectHideFlags: 0
@@ -31188,6 +31748,7 @@ GameObject:
   - component: {fileID: 1345990494}
   - component: {fileID: 1345990493}
   - component: {fileID: 1345990496}
+  - component: {fileID: 1345990497}
   m_Layer: 5
   m_Name: Item Background (1)
   m_TagString: Untagged
@@ -31212,9 +31773,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345990493
@@ -31359,6 +31920,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1345990497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345990491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1352706239
 GameObject:
   m_ObjectHideFlags: 0
@@ -34244,6 +34824,7 @@ GameObject:
   - component: {fileID: 1518480049}
   - component: {fileID: 1518480048}
   - component: {fileID: 1518480051}
+  - component: {fileID: 1518480052}
   m_Layer: 5
   m_Name: Item Background (1)
   m_TagString: Untagged
@@ -34268,9 +34849,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518480048
@@ -34415,6 +34996,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1518480052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518480046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1531974822
 GameObject:
   m_ObjectHideFlags: 0
@@ -35375,6 +35975,7 @@ GameObject:
   - component: {fileID: 1574496636}
   - component: {fileID: 1574496635}
   - component: {fileID: 1574496638}
+  - component: {fileID: 1574496639}
   m_Layer: 5
   m_Name: Item Background (1)
   m_TagString: Untagged
@@ -35399,9 +36000,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.65143, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574496635
@@ -35546,6 +36147,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1574496639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574496633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1580589094
 GameObject:
   m_ObjectHideFlags: 0
@@ -35559,6 +36179,7 @@ GameObject:
   - component: {fileID: 1580589097}
   - component: {fileID: 1580589096}
   - component: {fileID: 1580589099}
+  - component: {fileID: 1580589100}
   m_Layer: 5
   m_Name: Item Background (4)
   m_TagString: Untagged
@@ -35583,9 +36204,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580589096
@@ -35730,6 +36351,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1580589100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580589094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1588225792
 GameObject:
   m_ObjectHideFlags: 0
@@ -36160,6 +36800,7 @@ GameObject:
   - component: {fileID: 1626358244}
   - component: {fileID: 1626358243}
   - component: {fileID: 1626358246}
+  - component: {fileID: 1626358247}
   m_Layer: 5
   m_Name: Item Background (5)
   m_TagString: Untagged
@@ -36184,9 +36825,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626358243
@@ -36331,6 +36972,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1626358247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626358241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1626938612
 GameObject:
   m_ObjectHideFlags: 0
@@ -36344,6 +37004,7 @@ GameObject:
   - component: {fileID: 1626938615}
   - component: {fileID: 1626938614}
   - component: {fileID: 1626938617}
+  - component: {fileID: 1626938618}
   m_Layer: 5
   m_Name: Item Background
   m_TagString: Untagged
@@ -36368,9 +37029,9 @@ RectTransform:
   m_Father: {fileID: 441998392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88381, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626938614
@@ -36527,6 +37188,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1626938618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626938612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1629212972
 GameObject:
   m_ObjectHideFlags: 0
@@ -38056,6 +38736,7 @@ GameObject:
   - component: {fileID: 1706811771}
   - component: {fileID: 1706811770}
   - component: {fileID: 1706811773}
+  - component: {fileID: 1706811774}
   m_Layer: 5
   m_Name: Item Background (5)
   m_TagString: Untagged
@@ -38080,9 +38761,9 @@ RectTransform:
   m_Father: {fileID: 1633809336}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706811770
@@ -38227,6 +38908,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1706811774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706811768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1708421374
 GameObject:
   m_ObjectHideFlags: 0
@@ -39462,7 +40162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1790606142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39552,6 +40252,10 @@ MonoBehaviour:
   gem2Equiped: {fileID: 2115280238}
   gem3Equiped: {fileID: 1014537434}
   gemMovement: {fileID: 0}
+  gearInfoTitle: {fileID: 0}
+  gearInfoUpgrade: {fileID: 0}
+  gearInfoStats: {fileID: 0}
+  gearInfoDescription: {fileID: 0}
 --- !u!1 &1790947715
 GameObject:
   m_ObjectHideFlags: 0
@@ -40008,6 +40712,7 @@ GameObject:
   - component: {fileID: 1821158097}
   - component: {fileID: 1821158096}
   - component: {fileID: 1821158099}
+  - component: {fileID: 1821158100}
   m_Layer: 5
   m_Name: Item Background (3)
   m_TagString: Untagged
@@ -40032,9 +40737,9 @@ RectTransform:
   m_Father: {fileID: 799488102}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821158096
@@ -40179,6 +40884,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1821158100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821158094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &1828915214
 GameObject:
   m_ObjectHideFlags: 0
@@ -43347,6 +44071,7 @@ GameObject:
   - component: {fileID: 1999050571}
   - component: {fileID: 1999050570}
   - component: {fileID: 1999050573}
+  - component: {fileID: 1999050574}
   m_Layer: 5
   m_Name: Item Background (3)
   m_TagString: Untagged
@@ -43371,9 +44096,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.18668, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999050570
@@ -43518,6 +44243,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1999050574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999050568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &2015609863
 GameObject:
   m_ObjectHideFlags: 0
@@ -44022,6 +44766,7 @@ GameObject:
   - component: {fileID: 2034213123}
   - component: {fileID: 2034213122}
   - component: {fileID: 2034213125}
+  - component: {fileID: 2034213126}
   m_Layer: 5
   m_Name: Item Background
   m_TagString: Untagged
@@ -44046,9 +44791,9 @@ RectTransform:
   m_Father: {fileID: 1235260649}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88381, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034213122
@@ -44193,6 +44938,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2034213126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034213120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &2040591198
 GameObject:
   m_ObjectHideFlags: 0
@@ -44739,6 +45503,7 @@ GameObject:
   - component: {fileID: 2060756681}
   - component: {fileID: 2060756680}
   - component: {fileID: 2060756683}
+  - component: {fileID: 2060756684}
   m_Layer: 5
   m_Name: Item Background
   m_TagString: Untagged
@@ -44763,9 +45528,9 @@ RectTransform:
   m_Father: {fileID: 580974316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.88381, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060756680
@@ -44910,6 +45675,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2060756684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060756678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &2066434384
 GameObject:
   m_ObjectHideFlags: 0
@@ -45270,6 +46054,7 @@ GameObject:
   - component: {fileID: 2075704786}
   - component: {fileID: 2075704785}
   - component: {fileID: 2075704788}
+  - component: {fileID: 2075704789}
   m_Layer: 5
   m_Name: Item Background (4)
   m_TagString: Untagged
@@ -45294,9 +46079,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403.95428, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075704785
@@ -45441,6 +46226,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2075704789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075704783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &2076266331
 GameObject:
   m_ObjectHideFlags: 0
@@ -45529,6 +46333,7 @@ GameObject:
   - component: {fileID: 2078244067}
   - component: {fileID: 2078244066}
   - component: {fileID: 2078244069}
+  - component: {fileID: 2078244070}
   m_Layer: 5
   m_Name: Item Background (6)
   m_TagString: Untagged
@@ -45553,9 +46358,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.4895, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078244066
@@ -45700,6 +46505,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2078244070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078244064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &2082330888
 GameObject:
   m_ObjectHideFlags: 0
@@ -46608,6 +47432,7 @@ GameObject:
   - component: {fileID: 2135021111}
   - component: {fileID: 2135021110}
   - component: {fileID: 2135021113}
+  - component: {fileID: 2135021114}
   m_Layer: 5
   m_Name: Item Background (5)
   m_TagString: Untagged
@@ -46632,9 +47457,9 @@ RectTransform:
   m_Father: {fileID: 911560842}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 493.7219, y: -38.771156}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135021110
@@ -46779,6 +47604,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2135021114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135021108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0129c73afe3e1e647ba26755493fdb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  upgrade: 0
+  strength: 0
+  weight: 0
+  agility: 0
+  intelligence: 0
+  description: 
 --- !u!1 &2145571889
 GameObject:
   m_ObjectHideFlags: 0

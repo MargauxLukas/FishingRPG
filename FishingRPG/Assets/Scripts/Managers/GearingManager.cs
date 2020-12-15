@@ -28,6 +28,11 @@ public class GearingManager : MonoBehaviour
 
     private int indice = 0;
 
+    public Text gearInfoTitle;
+    public Text gearInfoUpgrade;
+    public Text gearInfoStats;
+    public Text gearInfoDescription;
+
     void Start()
     {
 
@@ -194,5 +199,47 @@ public class GearingManager : MonoBehaviour
     public void ChangeScene(int i)
     {
         SceneManager.LoadScene(i);
+    }
+
+    public void SetLootInfos(GearingInfos _infos)
+    {
+        switch (_infos.upgrade)
+        {
+            case 1:
+                gearInfoTitle.color = new Color32(0, 180, 85, 255);
+                break;
+
+            case 2:
+                gearInfoTitle.color = new Color32(0, 112, 221, 255);
+                break;
+
+            case 3:
+                gearInfoTitle.color = new Color32(163, 53, 238, 255);
+                break;
+
+            case 4:
+                gearInfoTitle.color = new Color32(255, 128, 0, 255);
+                break;
+        }
+
+        gearInfoTitle.text = _infos.itemName;
+        gearInfoUpgrade.text = "Rank " + _infos.upgrade;
+        
+        if(_infos.strength > 0)
+        {
+            gearInfoStats.text += "+" + _infos.strength + " strength";
+        }
+        if(_infos.weight > 0)
+        {
+            gearInfoStats.text += "\n+" + _infos.weight + " weight";
+        }
+        if(_infos.agility > 0)
+        {
+            gearInfoStats.text += "\n+" + _infos.agility + " agility";
+        }
+        if(_infos.intelligence > 0)
+        {
+            gearInfoStats.text += "\n+" + _infos.intelligence + " intelligence";
+        }
     }
 }
