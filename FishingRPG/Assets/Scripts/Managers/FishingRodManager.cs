@@ -77,6 +77,13 @@ public class FishingRodManager : MonoBehaviour
             ChangeTextCPDistance();
             CheckFCurrent();
         }
+        else
+        {
+            if(fishingLine.currentTension > 0)
+            {
+                fishingLine.TensionDown();
+            }
+        }
     }
 
     public void LaunchBobber()
