@@ -19,6 +19,12 @@ public class ArtisanManager : MonoBehaviour
     private string tempoString;
     private bool canCraft = true;
 
+    private bool isCrafting = false;
+    private float craftingTimer;
+    private float craftingTime = 1.2f;
+
+    public Image holdButtonImg;
+
     void Start()
     {
         Debug.Log("Start");
@@ -56,6 +62,37 @@ public class ArtisanManager : MonoBehaviour
 
             //Display items list
             SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+        }
+
+        if (Input.GetButton("Submit"))
+        {
+            Debug.Log("Cut Fish");
+            isCrafting = true;
+
+            craftingTimer += Time.fixedDeltaTime;
+
+            if (craftingTimer < craftingTime)
+            {
+                holdButtonImg.fillAmount = craftingTimer / craftingTime;
+            }
+
+            if (craftingTimer >= craftingTime)
+            {
+                Debug.Log(EventSystem.current);
+                ScriptablePointer sp = EventSystem.current.gameObject.GetComponent<ScriptablePointer>();
+                CraftObject(sp);
+                craftingTimer = 0;
+                isCrafting = false;
+                holdButtonImg.fillAmount = 0;
+            }
+        }
+
+        if (Input.GetButtonUp("Submit") && isCrafting)
+        {
+            Debug.Log("Release");
+            craftingTimer = 0;
+            isCrafting = false;
+            holdButtonImg.fillAmount = 0;
         }
 
         if (Input.GetButtonDown("B Button"))
