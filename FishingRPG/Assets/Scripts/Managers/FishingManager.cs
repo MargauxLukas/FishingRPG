@@ -60,12 +60,12 @@ public class FishingManager : MonoBehaviour
                                 FishingRodManager.instance.bobber.transform.position.z),
                     Quaternion.identity,
                     dynamics          );
-        Debug.Log(currentFish.transform.position);
         FishManager.instance.currentFish         = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
         FishManager.instance.isAerial = false;
         FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
         CameraManager.instance.CameraLookAtGameObject(currentFish);
+        PlayerManager.instance.cfvz.fishCheck = currentFish.transform;
         PlayerManager.instance.FishingCanStart();
     }
 

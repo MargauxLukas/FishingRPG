@@ -88,7 +88,7 @@ public class FishBehavior : MonoBehaviour
             {
                 if (!FishManager.instance.isAerial)
                 {
-                    if (!exhausted)
+                    if (!exhausted && !isDead)
                     {
                         LowStaminaRecuperation();
 
@@ -279,6 +279,7 @@ public class FishBehavior : MonoBehaviour
             FishManager.instance.UpStamina();
         }
         transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
+        Debug.Log("test1");
         transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
     }
 

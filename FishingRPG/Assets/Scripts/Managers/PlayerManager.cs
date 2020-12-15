@@ -14,9 +14,11 @@ public class PlayerManager : MonoBehaviour
     public PlayerInventory playerInventory;
 
     public GameObject hubGUI;
+    public GameObject inventoryGUI;
     public GameObject aventureGUI;
 
     public CheckBox cb;
+    public CheckFishVictoryZone cfvz;
 
     public GameObject canvas;
     private bool dataCheat = false;
@@ -76,6 +78,13 @@ public class PlayerManager : MonoBehaviour
         hubGUI.SetActive(false);
         aventureGUI.SetActive(true);
         PlayerManager.instance.isOnMenu = false;
+    }
+
+    public void OpenInventoryMenu()
+    {
+        inventoryGUI.SetActive(true);
+        aventureGUI.SetActive(false);
+        PlayerManager.instance.isOnMenu = true;
     }
 
 

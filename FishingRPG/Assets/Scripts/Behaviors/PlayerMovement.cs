@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Values")]
     public float speed;
-    public float gravity    = -9.81f;
+    public float gravity = -9.81f;
     public float jumpHeight = 2f;
 
     [Header("Ground")]
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.fixedDeltaTime);
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
@@ -59,9 +59,17 @@ public class PlayerMovement : MonoBehaviour
             PlayerManager.instance.CHEAT_ShowData();
         }
 
-        if(Input.GetButton("A Button") && PlayerManager.instance.cb.isNearChest)
+        if (Input.GetButton("A Button"))
         {
-            PlayerManager.instance.OpenChestMenu();
+            /*if (PlayerManager.instance.cb.isNearHub)
+            {
+                PlayerManager.instance.OpenChestMenu();
+            }*/
+
+            if (PlayerManager.instance.cb.isNearChest)
+            {
+                PlayerManager.instance.OpenInventoryMenu();
+            }
         }
     }
 }
