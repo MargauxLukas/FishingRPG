@@ -21,20 +21,30 @@ public class PlayerFishing : MonoBehaviour
             }
             else if (Input.GetButtonDown("Right Bumper"))   //RB
             {
-                if (!FishManager.instance.isAerial){PlayerManager.instance.IsAerial();}
-                else 
+                if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
                 {
-                    //REPARER je rentre dedans quand j'appuie la premiere fois pour Aerial
-                    if (!hasJustPressRB)
+                    FishManager.instance.SetFinishPoint();
+                }
+                else
+                {
+                    if (FishManager.instance.currentFishBehavior.exhausted)
                     {
-                        PlayerManager.instance.CheckDistanceWithWater();
-                        hasJustPressRB = true;
-                        StartCoroutine(WaitCooldownTime());
-                    }
-                    else
-                    {
-                        //Faut il remettre le CoolDown à 0 et re-attendre 0.5f seconds ?
-                        Debug.Log("Déjà appuyé sur RB y'a pas longtemps");
+                        if (!FishManager.instance.isAerial) { PlayerManager.instance.IsAerial(); }
+                        else
+                        {
+                            //REPARER je rentre dedans quand j'appuie la premiere fois pour Aerial
+                            if (!hasJustPressRB)
+                            {
+                                PlayerManager.instance.CheckDistanceWithWater();
+                                hasJustPressRB = true;
+                                StartCoroutine(WaitCooldownTime());
+                            }
+                            else
+                            {
+                                //Faut il remettre le CoolDown à 0 et re-attendre 0.5f seconds ?
+                                Debug.Log("Déjà appuyé sur RB y'a pas longtemps");
+                            }
+                        }
                     }
                 }
             }

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class CheckBox : MonoBehaviour
 {
-    public GameObject aButton;
+    public GameObject aButtonChest;
 
-    [System.NonSerialized]
-    public bool isNearChest = false;
+    [System.NonSerialized] public bool isNearChest = false;
 
     public LayerMask chestMask;                                                         
     public Transform chestCheck;                                                        
@@ -17,14 +16,14 @@ public class CheckBox : MonoBehaviour
     {
         isNearChest = Physics.CheckSphere(chestCheck.position, chestDistance, chestMask);
 
-        if(isNearChest)
+        if (isNearChest)
         {
-            aButton.SetActive(true);
-            aButton.transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, aButton.transform.position.y, PlayerManager.instance.player.transform.position.z));
+            aButtonChest.SetActive(true);
+            aButtonChest.transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, aButtonChest.transform.position.y, PlayerManager.instance.player.transform.position.z));
         }
         else
         {
-            aButton.SetActive(false);
+            aButtonChest.SetActive(false);
         }
     }
 }

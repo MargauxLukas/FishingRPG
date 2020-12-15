@@ -18,17 +18,6 @@ public class VictoryZone : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.name.Contains("FishPrefab"))
-        {
-            if (FishManager.instance.currentFishBehavior.isDead || FishManager.instance.currentFishBehavior.exhausted)
-            {
-                FishManager.instance.SetFinishPoint();
-            }
-        }
-    }
-
     public void ActivateZone()
     {
         victoryZoneMeshRenderer.material = openMat;
