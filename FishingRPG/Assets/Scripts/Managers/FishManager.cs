@@ -116,7 +116,7 @@ public class FishManager : MonoBehaviour
 
     IEnumerator FellingFreeze()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         Debug.Log("Abattage");
 
