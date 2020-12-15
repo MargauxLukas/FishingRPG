@@ -289,7 +289,7 @@ public class FishBehavior : MonoBehaviour
     {
         if (!fellingFreeze)
         {
-            timerAerial += Time.deltaTime;
+            timerAerial += Time.fixedDeltaTime;
             //Debug.Log(timerAerial);
         }
 
@@ -330,7 +330,7 @@ public class FishBehavior : MonoBehaviour
     {
         if (timerAerial <= maxTimeAerial)
         {
-            timerAerial += Time.deltaTime;
+            timerAerial += Time.fixedDeltaTime;
 
             transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
         }
