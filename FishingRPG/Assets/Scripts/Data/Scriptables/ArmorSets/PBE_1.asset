@@ -23,5 +23,7 @@ MonoBehaviour:
   dexterity: 1
   intelligence: 1
   description: It always annoyed Maera that this belt looked better on Bal than her.
-  components: []
-  componentsQty: 
+  components:
+  - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
+  - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
+  componentsQty: 0200000001000000

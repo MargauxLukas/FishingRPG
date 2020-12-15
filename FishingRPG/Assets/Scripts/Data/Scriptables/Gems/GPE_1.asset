@@ -21,4 +21,5 @@ MonoBehaviour:
     in a crimson gem also called a "Last Teardrop".
   duration: 30
   cooldown: 45
-  components: []
+  components:
+  - {fileID: 11400000, guid: 9bc4e260fda4fd14fbdc8e4868b24da0, type: 2}

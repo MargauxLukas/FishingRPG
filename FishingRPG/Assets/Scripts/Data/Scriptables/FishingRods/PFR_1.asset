@@ -25,5 +25,7 @@ MonoBehaviour:
   intelligence: 0
   description: A classic fishing rod crafter by every beginner fisherman. It's kind
     of a rite of passage before fishing bigger monster.
-  components: []
-  componentsQty: 
+  components:
+  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
+  - {fileID: 11400000, guid: b8af79a582570ec40a4302eddd0fe86d, type: 2}
+  componentsQty: 0100000001000000
