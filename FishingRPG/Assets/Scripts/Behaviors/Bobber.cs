@@ -17,6 +17,7 @@ public class Bobber : MonoBehaviour
     public List<GameObject> debugBezier = new List<GameObject>();
 
     public bool isDebugBezierCurve = false;
+    public bool stopMovementJustOneTime = false;
 
     private void Update()
     {
@@ -84,5 +85,12 @@ public class Bobber : MonoBehaviour
     public void SetSecondBezierPoint()
     {
         realBezier2 = bezier2.position;
+    }
+
+    public void StopMovement()
+    {
+        timer = 0f;
+        canBeLaunch = false;
+        PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber = 1f;
     }
 }

@@ -2,44 +2,99 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Rotate : MonoBehaviour
 {
     Quaternion FishingRodRotaBase;
-    bool isMax = false;
+    [HideInInspector] public bool isMax = false;
 
     public bool result = false;
+
+    private float holdingButtonTimer;
+    public float holdingButtonMaxTimer;
+    public Image holdButtonImage;
+
+    private bool isCancelFishing = false;
+
+    private bool isReleaseButton = true;
+
+    private bool playOneTimeAnimation;
+
+    private Vector3 imageTarget;
 
     private void Start()
     {
         FishingRodRotaBase = transform.localRotation;
+        imageTarget = new Vector3(transform.position.x, transform.position.y + 20f, transform.position.z);
     }
 
     void Update()
     {
-        if (Input.GetButtonUp("B Button") && !FishingRodManager.instance.bobberThrowed)
+        if (isReleaseButton)
         {
-            StartCoroutine("Throw");
-            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-            isMax = false;
+            if (Input.GetButtonUp("B Button") && !FishingRodManager.instance.bobberThrowed)
+            {
+                StartCoroutine("Throw");
+                FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
+                Debug.Log("isMax false");
+                isMax = false;
+            }
+
+            if (Input.GetButton("B Button") && !FishingRodManager.instance.bobberThrowed)
+            {
+                if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
+                {
+                    transform.Rotate(new Vector3(-1f, 0f, 0f));
+                    PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
+                }
+                else
+                {
+                    Debug.Log("isMax true");
+                    isMax = true;
+                }
+            }
+        }
+        else
+        {
+            if (Input.GetButtonUp("B Button"))
+            {
+                isReleaseButton = true;
+            }
         }
 
-        if (Input.GetButton("B Button") && !FishingRodManager.instance.bobberThrowed)
+        if (Input.GetButton("B Button") && FishingRodManager.instance.bobberThrowed)
         {
-            if ((transform.rotation.eulerAngles.x > 270f || transform.rotation.eulerAngles.x == 0) && !isMax)
+            holdButtonImage.gameObject.SetActive(true);
+
+            isCancelFishing = true;
+            isReleaseButton = false;
+            holdingButtonTimer += Time.fixedDeltaTime;
+
+            if (holdingButtonTimer < holdingButtonMaxTimer)
             {
-                transform.Rotate(new Vector3(-1f, 0f, 0f));
-                PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
+                holdButtonImage.fillAmount = holdingButtonTimer / holdingButtonMaxTimer;
             }
-            else
+
+            if (holdingButtonTimer >= holdingButtonMaxTimer)
             {
-                isMax = true;
+                FishingManager.instance.CancelFishing();
+                FishingRodManager.instance.bobberThrowed = false;
+
+                holdingButtonTimer = 0;
+                holdButtonImage.fillAmount = 0f;
+                isCancelFishing = false;
+                holdButtonImage.gameObject.SetActive(false);
             }
         }
-        else if(Input.GetButtonUp("B Button") && FishingRodManager.instance.bobberThrowed)
+
+        if(Input.GetButtonUp("B Button") && isCancelFishing)
         {
-            FishingManager.instance.CancelFishing();
-            FishingRodManager.instance.bobberThrowed = false;
+            holdButtonImage.gameObject.SetActive(false);
+            holdingButtonTimer = 0;
+            holdButtonImage.fillAmount = 0f;
+            isCancelFishing = false;
+            isReleaseButton = true;
         }
     }
 
@@ -55,6 +110,13 @@ public class Rotate : MonoBehaviour
             yield return null;
         }
         transform.localRotation = FishingRodRotaBase;
+    }
+
+    public void ResetRotation()
+    {
+        transform.localRotation = Quaternion.Euler(360, 0, 0);
+        transform.parent.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
+        transform.parent.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 }
 

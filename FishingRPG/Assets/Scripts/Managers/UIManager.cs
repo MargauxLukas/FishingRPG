@@ -33,11 +33,6 @@ public class UIManager : MonoBehaviour
         ResetSelectedButton(firstSelectedButton);
     }
 
-    private void Update()
-    {
-        Debug.Log(firstSelectedButton.name);
-    }
-
     public void LeaveVillage(Text txt)
     {
         txt.text = "Leaving village...";

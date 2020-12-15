@@ -50,6 +50,8 @@ public class FishBehavior : MonoBehaviour
     private float distance;
     [HideInInspector] public bool canCollectTheFish = false;
 
+    public Animator animator;
+
     private void Start()
     {
         SetIdleMaxTime();
@@ -61,8 +63,10 @@ public class FishBehavior : MonoBehaviour
         strength       = fishyFiche.strength;
         SetBaseRotation();
 
+        animator = transform.GetChild(0).GetComponent<Animator>();
 
-        FishManager.instance.ChangeEnduranceText();
+        FishManager.instance.SetAerialEnterWater();
+        FishManager.instance.ChangeStaminaText();
         FishManager.instance.ChangeLifeText();
     }
 
@@ -70,7 +74,7 @@ public class FishBehavior : MonoBehaviour
     {
         if (!FishManager.instance.isAerial)
         {
-            idleTimer += Time.deltaTime;
+            idleTimer += Time.fixedDeltaTime;
 
             if (idleTimer > idleMaxTime)
             {
@@ -86,13 +90,15 @@ public class FishBehavior : MonoBehaviour
                 {
                     if (!exhausted)
                     {
+                        LowStaminaRecuperation();
+
                         if (!directionHasChoosen)
                         {
                             ChooseDirection();
                         }
                         else
                         {
-                            timer += Time.deltaTime;
+                            timer += Time.fixedDeltaTime;
 
                             if (timer >= timeDirection)
                             {
@@ -219,8 +225,7 @@ public class FishBehavior : MonoBehaviour
             else
             {
                 target = FishingRodManager.instance.listTargetNear[1].position;
-            }
-            
+            }    
         }
         else
         {
@@ -238,6 +243,12 @@ public class FishBehavior : MonoBehaviour
     public void Idle()
     {
         ChooseTarget();
+
+        if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) < 5f)
+        {
+            Debug.Log("Trop proche, je m'éloigne !");
+            ForceDirection();
+        }
 
         if (FishingRodManager.instance.CheckIfOverFCritique())
         {
@@ -265,7 +276,7 @@ public class FishBehavior : MonoBehaviour
     {
         if (!isDead)
         {
-            FishManager.instance.UpEndurance();
+            FishManager.instance.UpStamina();
         }
         transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
         transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
@@ -322,13 +333,14 @@ public class FishBehavior : MonoBehaviour
         }
     }
 
-    public void CheckEndurance()
+    public void CheckStamina()
     {
         if(currentStamina <= 0)
         {
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
+            animator.SetBool("isDead", true);
             FishManager.instance.ExtenuedChange();
             ResetRage();
         }
@@ -347,9 +359,9 @@ public class FishBehavior : MonoBehaviour
             currentLife = 0;
             isDead = true;
             currentStamina = 0;
-            CheckEndurance();
+            CheckStamina();
             FishManager.instance.ChangeLifeText();
-            FishManager.instance.ChangeEnduranceText();
+            FishManager.instance.ChangeStaminaText();
         }
     }
 
@@ -366,6 +378,12 @@ public class FishBehavior : MonoBehaviour
     public void ResetRage()
     {
         isRage = false;
+        animator.SetBool("isRage", false);
         strength = fishyFiche.strength;
+    }
+
+    public void LowStaminaRecuperation()
+    {
+
     }
 }

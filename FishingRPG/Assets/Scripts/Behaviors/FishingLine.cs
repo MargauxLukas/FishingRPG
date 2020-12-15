@@ -26,11 +26,13 @@ public class FishingLine : MonoBehaviour
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
+        CameraManager.instance.ScreenShake(0.35f);
         currentTension = 0f;
         UpdateJaugeTension();
     }
 
-    public void TensionDown()
+    //Augmentation tension Blocked
+    public void TensionUp()
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
@@ -50,7 +52,8 @@ public class FishingLine : MonoBehaviour
         }
     }
 
-    public void TensionDownTakingLine()
+    //Augmentation tension Take Line
+    public void TensionUpTakingLine()
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
@@ -66,11 +69,11 @@ public class FishingLine : MonoBehaviour
         }
         else
         {
-            Debug.Log("IsExhausted or Dead so Tension dont down");
+            Debug.Log("IsExhausted or Dead so Tension dont up");
         }
     }
 
-    public void TensionUp()
+    public void TensionDown()
     {
         if (currentTension > 0f)
         {

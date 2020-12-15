@@ -81,7 +81,6 @@ public class PlayerManager : MonoBehaviour
 
     public void IsBlockingLine()
     {
-        Debug.Log("green");
         FishingRodManager.instance.fishingLine.isBlocked = true;
         FishingRodManager.instance.fishingLine.textBlocked.color = Color.green;
     }
@@ -94,7 +93,7 @@ public class PlayerManager : MonoBehaviour
 
     public void IsAerial()
     {
-        FishManager.instance.IsExtenued();
+        FishManager.instance.IsExhausted();
     }
 
     public void FellingFish()
@@ -144,7 +143,7 @@ public class PlayerManager : MonoBehaviour
     public void CHEAT_SetFishToExhausted()
     {
         FishManager.instance.currentFishBehavior.currentStamina = 0f;
-        FishManager.instance.currentFishBehavior.CheckEndurance();
+        FishManager.instance.currentFishBehavior.CheckStamina();
     }
 
     public void CHEAT_SetFishToDead()
