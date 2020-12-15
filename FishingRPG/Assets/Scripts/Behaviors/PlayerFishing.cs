@@ -14,7 +14,7 @@ public class PlayerFishing : MonoBehaviour
         {
             if (Input.GetButton("Left Bumper"))         //LB
             {
-                if(FishManager.instance.isAerial && !FishManager.instance.isFelling)
+                if(FishManager.instance.isAerial && !FishManager.instance.isFelling && !FishManager.instance.currentFishBehavior.isDead)
                 {
                     PlayerManager.instance.FellingFish();
                 }
@@ -23,12 +23,14 @@ public class PlayerFishing : MonoBehaviour
             {
                 if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
                 {
+                    Debug.Log("1");
                     FishManager.instance.SetFinishPoint();
                 }
                 else
                 {
-                    if (FishManager.instance.currentFishBehavior.exhausted)
+                    if (FishManager.instance.currentFishBehavior.exhausted && !FishManager.instance.currentFishBehavior.isDead)
                     {
+                        Debug.Log("2");
                         if (!FishManager.instance.isAerial) { PlayerManager.instance.IsAerial(); }
                         else
                         {

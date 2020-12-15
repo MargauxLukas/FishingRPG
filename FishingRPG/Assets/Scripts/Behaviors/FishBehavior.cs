@@ -280,8 +280,8 @@ public class FishBehavior : MonoBehaviour
         {
             FishManager.instance.UpStamina();
         }
+
         transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-        Debug.Log("test1");
         transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
     }
 
@@ -366,7 +366,7 @@ public class FishBehavior : MonoBehaviour
             isDead = true;
             animator.SetBool("isDeadOrExhausted", true);
             currentStamina = 0;
-            CheckStamina();
+            //CheckStamina();
             FishManager.instance.ChangeLifeText();
             FishManager.instance.ChangeStaminaText();
         }

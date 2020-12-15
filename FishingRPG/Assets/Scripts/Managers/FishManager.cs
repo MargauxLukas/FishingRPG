@@ -72,11 +72,10 @@ public class FishManager : MonoBehaviour
             aerialExitWaterY = currentFish.transform.position.y;
             aerialExitWaterZ = currentFish.transform.position.z;
 
-            /*
+            
             aerialEnterWaterX = currentFish.transform.position.x;
-            aerialEnterWaterY = currentFish.transform.position.y;
             aerialEnterWaterZ = currentFish.transform.position.z;
-            */
+            
 
             aerialX = currentFish.transform.position.x;
             aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
@@ -86,9 +85,7 @@ public class FishManager : MonoBehaviour
 
     public void SetAerialEnterWater()
     {
-        aerialEnterWaterX = currentFish.transform.position.x;
         aerialEnterWaterY = currentFish.transform.position.y;
-        aerialEnterWaterZ = currentFish.transform.position.z;
     }
 
     public void MoreAerial()
@@ -189,36 +186,42 @@ public class FishManager : MonoBehaviour
     //Récupération d'endurance lorsque extenué
     public void UpStamina()
     {
-        if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+        if (!currentFishBehavior.isDead)
         {
-            currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina*0.15f)/60;
-            ChangeStaminaText();
-        }
+            if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+            {
+                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.15f) / 60;
+                ChangeStaminaText();
+            }
 
-        if (currentFishBehavior.currentStamina > (currentFishBehavior.fishyFiche.stamina/2))
-        {
-            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina / 2;
-            DebugManager.instance.vz.DesactivateZone();
-            currentFishBehavior.exhausted = false;
-            currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
-            NotExtenued();
-            ChangeStaminaText();
+            if (currentFishBehavior.currentStamina > (currentFishBehavior.fishyFiche.stamina / 2))
+            {
+                currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina / 2;
+                DebugManager.instance.vz.DesactivateZone();
+                currentFishBehavior.exhausted = false;
+                currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+                NotExtenued();
+                ChangeStaminaText();
+            }
         }
     }
 
     //Récupération d'endurance lorsque pas extenué et qu'il n'en perd pas
     public void LowUpStamina()
     {
-        if(currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+        if (!currentFishBehavior.isDead)
         {
-            currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.02f) / 60;
-            ChangeStaminaText();
+            if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+            {
+                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.02f) / 60;
+                ChangeStaminaText();
+            }
+            else
+            {
+                currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+                ChangeStaminaText();
+            }
         }
-        else
-        {
-            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
-            ChangeStaminaText();
-        }      
     }
 
     public void AerialDamage()
