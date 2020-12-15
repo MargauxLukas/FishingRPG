@@ -36,6 +36,7 @@ public class CableComponent : MonoBehaviour
 	{
 		InitCableParticles();
 		InitLineRenderer();
+		DesactivateLine();
 	}
 
 	/**
