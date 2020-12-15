@@ -14,7 +14,7 @@ public class PlayerFishing : MonoBehaviour
         {
             if (Input.GetButton("Left Bumper"))         //LB
             {
-                if(FishManager.instance.isAerial && !FishManager.instance.isFelling)
+                if(FishManager.instance.isAerial && !FishManager.instance.isFelling && !FishManager.instance.currentFishBehavior.isDead)
                 {
                     PlayerManager.instance.FellingFish();
                 }
@@ -27,7 +27,7 @@ public class PlayerFishing : MonoBehaviour
                 }
                 else
                 {
-                    if (FishManager.instance.currentFishBehavior.exhausted)
+                    if (FishManager.instance.currentFishBehavior.exhausted && !FishManager.instance.currentFishBehavior.isDead)
                     {
                         if (!FishManager.instance.isAerial) { PlayerManager.instance.IsAerial(); }
                         else
@@ -79,6 +79,12 @@ public class PlayerFishing : MonoBehaviour
             if (Input.GetAxis("D-Pad (Vertical)") == 1)
             {
                 PlayerManager.instance.UseGemThirdSlot();
+            }
+
+            if(Input.GetButton("A Button"))
+            {
+                FishingManager.instance.CancelFishing();
+                FishingRodManager.instance.bobberThrowed = false;
             }
 
             if (Input.GetKey(KeyCode.E))

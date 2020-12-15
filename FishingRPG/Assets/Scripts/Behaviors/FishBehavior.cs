@@ -48,6 +48,8 @@ public class FishBehavior : MonoBehaviour
 
     private Vector3 target;
     private float distance;
+
+    public GameObject aButton;
     [HideInInspector] public bool canCollectTheFish = false;
 
     public Animator animator;
@@ -278,8 +280,8 @@ public class FishBehavior : MonoBehaviour
         {
             FishManager.instance.UpStamina();
         }
+
         transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, transform.position.y, FishingRodManager.instance.pointC.position.z));
-        Debug.Log("test1");
         transform.position += transform.forward * UtilitiesManager.instance.GetApplicatedForce() * Time.fixedDeltaTime;
     }
 
@@ -288,12 +290,16 @@ public class FishBehavior : MonoBehaviour
         if (!fellingFreeze)
         {
             timerAerial += Time.deltaTime;
+            //Debug.Log(timerAerial);
         }
 
         transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
 
         if (timerAerial >= maxTimeAerial)
         {
+            Debug.Log(timerAerial);
+            //Debug.Log("===============================");
+
             FishManager.instance.FishRecuperation();
             timerAerial = 0f;
         }
@@ -331,6 +337,9 @@ public class FishBehavior : MonoBehaviour
         else
         {
             canCollectTheFish = true;
+            FishManager.instance.NotExtenued();
+            aButton.SetActive(true);
+            aButton.transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, aButton.transform.position.y, PlayerManager.instance.player.transform.position.z));
         }
     }
 
@@ -341,7 +350,7 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
-            animator.SetBool("isDead", true);
+            animator.SetBool("isDeadOrExhausted", true);
             FishManager.instance.ExtenuedChange();
             ResetRage();
         }
@@ -359,8 +368,9 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentLife = 0;
             isDead = true;
+            animator.SetBool("isDeadOrExhausted", true);
             currentStamina = 0;
-            CheckStamina();
+            //CheckStamina();
             FishManager.instance.ChangeLifeText();
             FishManager.instance.ChangeStaminaText();
         }
