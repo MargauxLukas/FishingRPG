@@ -101,7 +101,7 @@ public class FishManager : MonoBehaviour
         aerialExitWaterZ = currentFish.transform.position.z;
 
         aerialX = currentFish.transform.position.x;
-        aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
+        //aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
         aerialZ = currentFish.transform.position.z;
 
         isFelling = false;
