@@ -212,9 +212,9 @@ public class FishManager : MonoBehaviour
                 ChangeStaminaText();
             }
 
-            if (currentFishBehavior.currentStamina > (currentFishBehavior.fishyFiche.stamina / 2))
+            if (currentFishBehavior.currentStamina > currentFishBehavior.fishyFiche.stamina)
             {
-                currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina / 2;
+                currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
                 DebugManager.instance.vz.DesactivateZone();
                 currentFishBehavior.exhausted = false;
                 currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
