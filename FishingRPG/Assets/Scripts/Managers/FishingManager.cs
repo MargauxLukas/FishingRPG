@@ -76,6 +76,7 @@ public class FishingManager : MonoBehaviour
         timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();
         FishingRodManager.instance.animFishingRod.SetBool("Turn", false);
+        FishManager.instance.currentFishBehavior.fishPattern.ResetOncePlay();
 
         if (readyToFish)
         {
