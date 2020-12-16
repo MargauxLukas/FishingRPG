@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Init();
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     public virtual void Init()
