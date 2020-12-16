@@ -87,6 +87,7 @@ public class FishingManager : MonoBehaviour
             if (FishManager.instance.currentFishBehavior.canCollectTheFish)
             {
                 PlayerManager.instance.playerInventory.AddThisFishToInventory(FishManager.instance.currentFishBehavior.fishyFiche.ID);
+                FishManager.instance.currentFishBehavior.canCollectTheFish = false;
             }
 
             Destroy(currentFish);
