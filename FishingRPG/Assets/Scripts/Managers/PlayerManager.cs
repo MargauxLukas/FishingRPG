@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,9 +14,10 @@ public class PlayerManager : MonoBehaviour
     public PlayerGem playerGem;
     public PlayerInventory playerInventory;
 
-    public GameObject hubGUI;
+    public GameObject chestGUI;
     public GameObject inventoryGUI;
-    public GameObject aventureGUI;
+    public GameObject fishStockGUI;
+    public GameObject combatGUI;
 
     public CheckBox cb;
     public CheckHub ch;
@@ -27,6 +29,8 @@ public class PlayerManager : MonoBehaviour
 
     public float speed = 9f;
     public bool isPressingRT = false;
+
+    public GameObject firstChestSelected;
 
     private void Awake()
     {
@@ -71,23 +75,24 @@ public class PlayerManager : MonoBehaviour
 
     public void OpenChestMenu()
     {
-        hubGUI.SetActive(true);
-        aventureGUI.SetActive(false);
-        PlayerManager.instance.isOnMenu = true;
+        chestGUI.SetActive(true);
+        combatGUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(firstChestSelected);
+        isOnMenu = true;
     }
 
     public void LeaveChestMenu()
     {
-        hubGUI.SetActive(false);
-        aventureGUI.SetActive(true);
-        PlayerManager.instance.isOnMenu = false;
+        chestGUI.SetActive(false);
+        combatGUI.SetActive(true);
+        isOnMenu = false;
     }
 
     public void OpenInventoryMenu()
     {
         inventoryGUI.SetActive(true);
-        aventureGUI.SetActive(false);
-        PlayerManager.instance.isOnMenu = true;
+        combatGUI.SetActive(false);
+        isOnMenu = true;
     }
 
 

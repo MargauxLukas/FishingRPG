@@ -61,15 +61,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("A Button"))
         {
-            if (PlayerManager.instance.ch.isNearHub)
+            if (PlayerManager.instance.cb.isNearChest)
             {
                 PlayerManager.instance.OpenChestMenu();
             }
 
-            if (PlayerManager.instance.cb.isNearChest)
+            /*if (PlayerManager.instance.cb.isNearChest)
             {
                 PlayerManager.instance.OpenInventoryMenu();
-            }
+            }*/
         }
     }
 }

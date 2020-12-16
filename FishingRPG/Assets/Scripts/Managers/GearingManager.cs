@@ -84,7 +84,7 @@ public class GearingManager : MonoBehaviour
                 gridHighlights[i].SetActive(false);
             }
 
-            UIManager.instance.CloseMenu(gameObject);
+            PlayerManager.instance.LeaveChestMenu();
         }
     }
 
