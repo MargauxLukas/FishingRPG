@@ -40,10 +40,7 @@ public class GearingManager : MonoBehaviour
 
     public Image holdButtonImg;
 
-    void Start()
-    {
-
-    }
+    public Text statsText;
 
     void Update()
     {
@@ -65,16 +62,20 @@ public class GearingManager : MonoBehaviour
                 isLeaving = false;
                 holdButtonImg.fillAmount = 0;
 
-                if(PlayerManager.instance.playerInventory.inventory.fishTotal > 9)
+                if (SceneManager.GetActiveScene().buildIndex == 0)
                 {
-                    PlayerManager.instance.playerInventory.inventory.fishTotal = 9;
-                    PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
-                    PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
-                }
-                else
-                {
-                    PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
-                    PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
+                    if (PlayerManager.instance.playerInventory.inventory.fishTotal > 9)
+                    {
+                        PlayerManager.instance.playerInventory.inventory.fishTotal = 9;
+                        PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
+                        PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
+                    }
+                    else
+                    {
+                        PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
+                        PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
+                    }
+
                 }
 
                 if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -103,7 +104,14 @@ public class GearingManager : MonoBehaviour
                 gridHighlights[i].SetActive(false);
             }
 
-            PlayerManager.instance.LeaveChestMenu();
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                PlayerManager.instance.LeaveChestMenu();
+            }
+            else
+            {
+                UIManager.instance.CloseMenu(gameObject);
+            }
         }
     }
 
@@ -129,6 +137,15 @@ public class GearingManager : MonoBehaviour
                 helmetList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.helmetList[i].description;
                 helmetList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.helmetList[i];
                 helmetList[indice].gameObject.SetActive(true);
+
+                if (UIManager.instance.inventory.equipedHelmet != null)
+                {
+                    if (UIManager.instance.inventory.equipedHelmet.ID == UIManager.instance.helmetList[i].ID)
+                    {
+                        helmetList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
                 indice++;
             }
         }
@@ -149,6 +166,15 @@ public class GearingManager : MonoBehaviour
                 pauldronsList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.pauldronsList[i].description;
                 pauldronsList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.pauldronsList[i];
                 pauldronsList[indice].gameObject.SetActive(true);
+
+                if (UIManager.instance.inventory.equipedShoulders != null)
+                {
+                    if (UIManager.instance.inventory.equipedShoulders.ID == UIManager.instance.pauldronsList[i].ID)
+                    {
+                        pauldronsList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
                 indice++;
             }
         }
@@ -169,6 +195,15 @@ public class GearingManager : MonoBehaviour
                 beltList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.beltList[i].description;
                 beltList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.beltList[i];
                 beltList[indice].gameObject.SetActive(true);
+
+                if (UIManager.instance.inventory.equipedBelt != null)
+                {
+                    if (UIManager.instance.inventory.equipedBelt.ID == UIManager.instance.beltList[i].ID)
+                    {
+                        beltList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
                 indice++;
             }
         }
@@ -189,6 +224,15 @@ public class GearingManager : MonoBehaviour
                 bootsList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.bootsList[i].description;
                 bootsList[indice].gameObject.GetComponent<ScriptablePointer>().armor = UIManager.instance.bootsList[i];
                 bootsList[indice].gameObject.SetActive(true);
+
+                if (UIManager.instance.inventory.equipedBoots != null)
+                {
+                    if (UIManager.instance.inventory.equipedBoots.ID == UIManager.instance.bootsList[i].ID)
+                    {
+                        bootsList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
                 indice++;
             }
         }
@@ -209,6 +253,15 @@ public class GearingManager : MonoBehaviour
                 fishingRodList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.fishingRodList[i].description;
                 fishingRodList[indice].gameObject.GetComponent<ScriptablePointer>().fishingRod = UIManager.instance.fishingRodList[i];
                 fishingRodList[indice].gameObject.SetActive(true);
+
+                if (UIManager.instance.inventory.equipedFishingRod != null)
+                {
+                    if (UIManager.instance.inventory.equipedFishingRod.ID == UIManager.instance.fishingRodList[i].ID)
+                    {
+                        fishingRodList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
                 indice++;
             }
         }
@@ -226,10 +279,99 @@ public class GearingManager : MonoBehaviour
                 gemsList[indice].transform.parent.GetComponent<GearingInfos>().description = UIManager.instance.gemList[i].description;
                 gemsList[indice].gameObject.GetComponent<ScriptablePointer>().gem = UIManager.instance.gemList[i];
                 gemsList[indice].gameObject.SetActive(true);
+
+                if (UIManager.instance.inventory.equipedGem1 != null)
+                {
+                    if (UIManager.instance.inventory.equipedGem1.ID == UIManager.instance.gemList[i].ID)
+                    {
+                        gemsList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
+                if (UIManager.instance.inventory.equipedGem2 != null)
+                {
+                    if (UIManager.instance.inventory.equipedGem2.ID == UIManager.instance.gemList[i].ID)
+                    {
+                        gemsList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
+                if (UIManager.instance.inventory.equipedGem3 != null)
+                {
+                    if (UIManager.instance.inventory.equipedGem3.ID == UIManager.instance.gemList[i].ID)
+                    {
+                        gemsList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+
                 indice++;
             }
         }
+
+        UpdateEquipped();
     }
+
+    public void UpdateEquipped()
+    {
+        if (UIManager.instance.inventory.equipedHelmet != null)
+        {
+            helmetEquiped.sprite = UIManager.instance.inventory.equipedHelmet.appearance;
+            helmetEquiped.enabled = true;
+        }
+
+        if (UIManager.instance.inventory.equipedShoulders != null)
+        {
+            shoulderEquiped.sprite = UIManager.instance.inventory.equipedShoulders.appearance;
+            shoulderEquiped.enabled = true;
+        }
+
+        if (UIManager.instance.inventory.equipedBelt != null)
+        {
+            beltEquiped.sprite = UIManager.instance.inventory.equipedBelt.appearance;
+            beltEquiped.enabled = true;
+        }
+
+        if (UIManager.instance.inventory.equipedBoots != null)
+        {
+            bootsEquiped.sprite = UIManager.instance.inventory.equipedBoots.appearance;
+            bootsEquiped.enabled = true;
+        }
+
+        if (UIManager.instance.inventory.equipedFishingRod != null)
+        {
+            fishingRodEquiped.sprite = UIManager.instance.inventory.equipedFishingRod.appearance;
+            fishingRodEquiped.enabled = true;
+        }
+
+        if (UIManager.instance.inventory.equipedGem1 != null)
+        {
+            gem1Equiped.sprite = UIManager.instance.inventory.equipedGem1.appearance;
+            gem1Equiped.enabled = true;
+        }
+
+        if (UIManager.instance.inventory.equipedGem2 != null)
+        {
+            gem2Equiped.sprite = UIManager.instance.inventory.equipedGem2.appearance;
+            gem2Equiped.enabled = true;
+        }
+
+        if (UIManager.instance.inventory.equipedGem3 != null)
+        {
+            gem3Equiped.sprite = UIManager.instance.inventory.equipedGem3.appearance;
+            gem3Equiped.enabled = true;
+        }
+    }
+
+    public void UpdateStats(ArmorSet armor)
+    {
+
+    }
+
+    public void UpdateStats(FishingRod fishingRod)
+    {
+
+    }
+
 
     public void EquipArmor(ScriptablePointer sp)
     {
