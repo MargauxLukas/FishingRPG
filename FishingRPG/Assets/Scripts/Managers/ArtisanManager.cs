@@ -9,6 +9,7 @@ public class ArtisanManager : MonoBehaviour
     public GameObject firstSelectedTab;
     GameObject currentSelectedTab;
 
+    public List<Image> componentsImages = new List<Image>();
     public List<Text> componentsList = new List<Text>();
     public List<Text> componentsQuantityList = new List<Text>();
     public Text title;
@@ -150,10 +151,12 @@ public class ArtisanManager : MonoBehaviour
                 componentsQuantityList[i].color = new Color32(62, 40, 31, 255);
             }
 
+            componentsImages[i].transform.GetChild(0).GetComponent<Image>().sprite = sp.armor.components[i].appearance;
             componentsList[i].text = sp.armor.components[i].type;
 
             componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) + "/" + sp.armor.componentsQty[i].ToString();
 
+            componentsImages[i].gameObject.SetActive(true);
             componentsList[i].gameObject.SetActive(true);
             componentsQuantityList[i].gameObject.SetActive(true);
         }
