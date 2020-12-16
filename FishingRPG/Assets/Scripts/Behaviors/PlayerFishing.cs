@@ -75,15 +75,15 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.IsNotBlockingLine();
             }
 
-            if(Input.GetAxis("D-Pad (Horizontal)") == 1)
+            if(Input.GetAxis("D-Pad (Vertical)") == 1)
             {
                 PlayerManager.instance.UseGemFirstSlot();
             }
-            if (Input.GetAxis("D-Pad (Horizontal)") == -1)
+            if (Input.GetAxis("D-Pad (Horizontal)") == 1)
             {
                 PlayerManager.instance.UseGemSecondSlot();
             }
-            if (Input.GetAxis("D-Pad (Vertical)") == 1)
+            if (Input.GetAxis("D-Pad (Vertical)") == -1)
             {
                 PlayerManager.instance.UseGemThirdSlot();
             }
