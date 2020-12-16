@@ -65,7 +65,14 @@ public class GearingManager : MonoBehaviour
                 isLeaving = false;
                 holdButtonImg.fillAmount = 0;
 
-                ChangeScene(0);
+                if (SceneManager.GetActiveScene().buildIndex == 1)
+                {
+                    ChangeScene(0);
+                }
+                else
+                {
+                    ChangeScene(1);
+                }
             }
         }
 

@@ -32,6 +32,8 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject firstChestSelected;
 
+    public GearingManager gearingManager;
+
     private void Awake()
     {
         Init();
@@ -75,6 +77,7 @@ public class PlayerManager : MonoBehaviour
 
     public void OpenChestMenu()
     {
+        gearingManager.UpdateGear();
         chestGUI.SetActive(true);
         combatGUI.SetActive(false);
         EventSystem.current.SetSelectedGameObject(firstChestSelected);
@@ -85,6 +88,8 @@ public class PlayerManager : MonoBehaviour
     {
         chestGUI.SetActive(false);
         combatGUI.SetActive(true);
+        UpdateStats();
+        UpdateGem();
         isOnMenu = false;
     }
 
@@ -207,7 +212,7 @@ public class PlayerManager : MonoBehaviour
     public void ResetStats()
     {
         playerStats.strenght     = 3;
-        playerStats.constitution = 3;
+        playerStats.constitution = 7;
         playerStats.dexterity    = 3;
         playerStats.intelligence = 3;
     }

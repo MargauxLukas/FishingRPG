@@ -28,7 +28,7 @@ MonoBehaviour:
   PFL_R: 10
   PFI_E: 30
   PBH_L: 8
-  PEH_1: 0
+  PEH_1: 1
   PCH_1: 0
   PBE_1: 0
   PBO_1: 0

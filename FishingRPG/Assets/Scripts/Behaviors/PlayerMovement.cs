@@ -31,45 +31,46 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-
         if (!PlayerManager.instance.isOnMenu)
         {
-            x = Input.GetAxisRaw("Horizontal");
-            z = Input.GetAxisRaw("Vertical");
-        }
-
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.fixedDeltaTime);
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
-
-        if (Input.GetKey(KeyCode.P))
-        {
-            PlayerManager.instance.CHEAT_ShowData();
-        }
-
-        if (Input.GetButton("A Button"))
-        {
-            if (PlayerManager.instance.cb.isNearChest)
+            if (isGrounded && velocity.y < 0)
             {
-                PlayerManager.instance.OpenChestMenu();
+                velocity.y = -2f;
             }
 
-            /*if (PlayerManager.instance.cb.isNearChest)
+            x = Input.GetAxisRaw("Horizontal");
+            z = Input.GetAxisRaw("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.fixedDeltaTime);
+
+            if (Input.GetButtonDown("Jump") && isGrounded)
             {
-                PlayerManager.instance.OpenInventoryMenu();
-            }*/
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+
+            velocity.y += gravity * Time.deltaTime;
+
+            controller.Move(velocity * Time.deltaTime);
+
+            if (Input.GetKey(KeyCode.P))
+            {
+                PlayerManager.instance.CHEAT_ShowData();
+            }
+
+            if (Input.GetButton("A Button"))
+            {
+                if (PlayerManager.instance.cb.isNearChest)
+                {
+                    Debug.Log("ff");
+                    PlayerManager.instance.OpenChestMenu();
+                }
+
+                /*if (PlayerManager.instance.cb.isNearChest)
+                {
+                    PlayerManager.instance.OpenInventoryMenu();
+                }*/
+            }
         }
     }
 }

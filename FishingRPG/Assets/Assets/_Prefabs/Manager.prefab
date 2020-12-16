@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &337680484976252742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337680484976252743}
+  - component: {fileID: 337680484976252736}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &337680484976252743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337680484976252742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &337680484976252736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337680484976252742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638882efcb6144d4583b3b985dda7a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 0}
+  fishyFishList:
+  - {fileID: 11400000, guid: bcbc63597a912ba469bdbec1e419af0a, type: 2}
+  helmetList:
+  - {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
+  pauldronsList:
+  - {fileID: 11400000, guid: 3dfbf2549ff984143904d07b816e3801, type: 2}
+  beltList:
+  - {fileID: 11400000, guid: ec4cd86c6204c1e4b9954e6d768f5ca7, type: 2}
+  bootsList:
+  - {fileID: 11400000, guid: 2a0f58e388ea6334f9479a713fe63574, type: 2}
+  fishingRodList:
+  - {fileID: 11400000, guid: 2fb310c7908eea14f85df257654e7595, type: 2}
+  gemList:
+  - {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
+  inventory: {fileID: 11400000, guid: bafd2a44d9e916249a09d2602756395d, type: 2}
