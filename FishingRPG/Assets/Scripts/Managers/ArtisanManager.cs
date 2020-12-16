@@ -163,6 +163,8 @@ public class ArtisanManager : MonoBehaviour
 
         for (int i = 3; i >= sp.armor.components.Length; i--)
         {
+            componentsImages[i].gameObject.SetActive(false);
+            componentsImages[i].gameObject.SetActive(false);
             componentsList[i].gameObject.SetActive(false);
             componentsQuantityList[i].gameObject.SetActive(false);
         }
@@ -207,16 +209,19 @@ public class ArtisanManager : MonoBehaviour
                 componentsQuantityList[i].color = new Color32(62, 40, 31, 255);
             }
 
+            componentsImages[i].transform.GetChild(0).GetComponent<Image>().sprite = sp.fishingRod.components[i].appearance;
             componentsList[i].text = sp.fishingRod.components[i].type;
 
             componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.fishingRod.components[i].ID) + "/" + sp.fishingRod.componentsQty[i].ToString();
 
+            componentsImages[i].gameObject.SetActive(true);
             componentsList[i].gameObject.SetActive(true);
             componentsQuantityList[i].gameObject.SetActive(true);
         }
 
         for (int i = 3; i >= sp.fishingRod.components.Length; i--)
         {
+            componentsImages[i].gameObject.SetActive(false);
             componentsList[i].gameObject.SetActive(false);
             componentsQuantityList[i].gameObject.SetActive(false);
         }
@@ -261,16 +266,19 @@ public class ArtisanManager : MonoBehaviour
                 componentsQuantityList[i].color = new Color32(62, 40, 31, 255);
             }
 
+            componentsImages[i].transform.GetChild(0).GetComponent<Image>().sprite = sp.gem.components[i].appearance;
             componentsList[i].text = sp.gem.components[i].type;
 
             componentsQuantityList[i].text = UIManager.instance.inventory.GetVariable(sp.gem.components[i].ID) + "/" + sp.gem.componentsQty[i].ToString();
 
+            componentsImages[i].gameObject.SetActive(true);
             componentsList[i].gameObject.SetActive(true);
             componentsQuantityList[i].gameObject.SetActive(true);
         }
 
-        for(int i = 3; i >= sp.gem.components.Length;i--)
+        for(int i = 3; i >= sp.gem.components.Length; i--)
         {
+            componentsImages[i].gameObject.SetActive(false);
             componentsList[i].gameObject.SetActive(false);
             componentsQuantityList[i].gameObject.SetActive(false);
         }
