@@ -41,6 +41,18 @@ public class GearingManager : MonoBehaviour
     public Image holdButtonImg;
 
     public Text statsText;
+    public int strength;
+    public int constitution;
+    public int dexterity;
+    public int intelligence;
+
+    private void Start()
+    {
+        strength = 3;
+        constitution = 7;
+        dexterity = 3;
+        intelligence = 3;
+    }
 
     void Update()
     {
@@ -122,6 +134,8 @@ public class GearingManager : MonoBehaviour
 
     public void UpdateGear()
     {
+        DefaultStats();
+
         //Casque
         for (int i = 0; i < UIManager.instance.helmetList.Count; i++)
         {
@@ -143,6 +157,7 @@ public class GearingManager : MonoBehaviour
                     if (UIManager.instance.inventory.equipedHelmet.ID == UIManager.instance.helmetList[i].ID)
                     {
                         helmetList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                        UpdateStats(UIManager.instance.inventory.equipedHelmet);
                     }
                 }
 
@@ -172,6 +187,7 @@ public class GearingManager : MonoBehaviour
                     if (UIManager.instance.inventory.equipedShoulders.ID == UIManager.instance.pauldronsList[i].ID)
                     {
                         pauldronsList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                        UpdateStats(UIManager.instance.inventory.equipedShoulders);
                     }
                 }
 
@@ -201,6 +217,7 @@ public class GearingManager : MonoBehaviour
                     if (UIManager.instance.inventory.equipedBelt.ID == UIManager.instance.beltList[i].ID)
                     {
                         beltList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                        UpdateStats(UIManager.instance.inventory.equipedBelt);
                     }
                 }
 
@@ -230,6 +247,7 @@ public class GearingManager : MonoBehaviour
                     if (UIManager.instance.inventory.equipedBoots.ID == UIManager.instance.bootsList[i].ID)
                     {
                         bootsList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                        UpdateStats(UIManager.instance.inventory.equipedBoots);
                     }
                 }
 
@@ -259,6 +277,7 @@ public class GearingManager : MonoBehaviour
                     if (UIManager.instance.inventory.equipedFishingRod.ID == UIManager.instance.fishingRodList[i].ID)
                     {
                         fishingRodList[indice].transform.parent.GetChild(1).gameObject.SetActive(true);
+                        UpdateStats(UIManager.instance.inventory.equipedFishingRod);
                     }
                 }
 
@@ -309,6 +328,7 @@ public class GearingManager : MonoBehaviour
         }
 
         UpdateEquipped();
+        SetText();
     }
 
     public void UpdateEquipped()
@@ -362,14 +382,33 @@ public class GearingManager : MonoBehaviour
         }
     }
 
+    public void DefaultStats()
+    {
+        strength = 3;
+        constitution = 7;
+        dexterity = 3;
+        intelligence = 3;
+    }
+
     public void UpdateStats(ArmorSet armor)
     {
-
+        strength     += armor.strength;
+        constitution += armor.constitution;
+        dexterity    += armor.dexterity;
+        intelligence += armor.intelligence;
     }
 
     public void UpdateStats(FishingRod fishingRod)
     {
+        strength += fishingRod.strength;
+        constitution += fishingRod.constitution;
+        dexterity += fishingRod.dexterity;
+        intelligence += fishingRod.intelligence;
+    }
 
+    public void SetText()
+    {
+        statsText.text = strength + "\n" + constitution + "\n" + dexterity + "\n" + intelligence;
     }
 
 
@@ -378,36 +417,74 @@ public class GearingManager : MonoBehaviour
         switch(sp.armor.itemType)
         {
             case "Helmet":
+                if(UIManager.instance.inventory.equipedHelmet != null)
+                {
+                    strength -= UIManager.instance.inventory.equipedHelmet.strength;
+                    constitution -= UIManager.instance.inventory.equipedHelmet.constitution;
+                    dexterity -= UIManager.instance.inventory.equipedHelmet.dexterity;
+                    intelligence -= UIManager.instance.inventory.equipedHelmet.intelligence;
+                }
                 helmetEquiped.sprite = sp.armor.appearance;
                 helmetEquiped.enabled = true;
                 UIManager.instance.inventory.equipedHelmet = sp.armor;
                 break;
             case "Shoulders":
+                if (UIManager.instance.inventory.equipedShoulders != null)
+                {
+                    strength -= UIManager.instance.inventory.equipedShoulders.strength;
+                    constitution -= UIManager.instance.inventory.equipedShoulders.constitution;
+                    dexterity -= UIManager.instance.inventory.equipedShoulders.dexterity;
+                    intelligence -= UIManager.instance.inventory.equipedShoulders.intelligence;
+                }
                 shoulderEquiped.sprite = sp.armor.appearance;
                 shoulderEquiped.enabled = true;
                 UIManager.instance.inventory.equipedShoulders = sp.armor;
                 break;
             case "Belt":
+                if (UIManager.instance.inventory.equipedBelt != null)
+                {
+                    strength -= UIManager.instance.inventory.equipedBelt.strength;
+                    constitution -= UIManager.instance.inventory.equipedBelt.constitution;
+                    dexterity -= UIManager.instance.inventory.equipedBelt.dexterity;
+                    intelligence -= UIManager.instance.inventory.equipedBelt.intelligence;
+                }
                 beltEquiped.sprite = sp.armor.appearance;
                 beltEquiped.enabled = true;
                 UIManager.instance.inventory.equipedBelt = sp.armor;
                 break;
             case "Boots":
+                if (UIManager.instance.inventory.equipedBoots != null)
+                {
+                    strength -= UIManager.instance.inventory.equipedBoots.strength;
+                    constitution -= UIManager.instance.inventory.equipedBoots.constitution;
+                    dexterity -= UIManager.instance.inventory.equipedBoots.dexterity;
+                    intelligence -= UIManager.instance.inventory.equipedBoots.intelligence;
+                }
                 bootsEquiped.sprite = sp.armor.appearance;
                 bootsEquiped.enabled = true;
                 UIManager.instance.inventory.equipedBoots = sp.armor;
                 break;
         }
 
+        UpdateStats(sp.armor);
+        SetText();
         sp.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
     }
 
     public void EquipFishingRod(ScriptablePointer sp)
     {
+        if (UIManager.instance.inventory.equipedFishingRod != null)
+        {
+            strength -= UIManager.instance.inventory.equipedFishingRod.strength;
+            constitution -= UIManager.instance.inventory.equipedFishingRod.constitution;
+            dexterity -= UIManager.instance.inventory.equipedFishingRod.dexterity;
+            intelligence -= UIManager.instance.inventory.equipedFishingRod.intelligence;
+        }
         fishingRodEquiped.sprite = sp.fishingRod.appearance;
         fishingRodEquiped.enabled = true;
         UIManager.instance.inventory.equipedFishingRod = sp.fishingRod;
-
+        UpdateStats(sp.fishingRod);
+        SetText();
         sp.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
     }
 

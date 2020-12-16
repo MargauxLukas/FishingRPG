@@ -42069,6 +42069,7 @@ MonoBehaviour:
   gearInfoStats: {fileID: 1024259955}
   gearInfoDescription: {fileID: 1504653449}
   holdButtonImg: {fileID: 1088542765}
+  statsText: {fileID: 306625559}
 --- !u!1 &1790947715
 GameObject:
   m_ObjectHideFlags: 0

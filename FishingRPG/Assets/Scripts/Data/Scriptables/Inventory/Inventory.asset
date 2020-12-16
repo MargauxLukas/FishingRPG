@@ -31,7 +31,7 @@ MonoBehaviour:
   PFI_E: 20
   PBH_L: 20
   PEH_1: 1
-  PCH_1: 0
+  PCH_1: 1
   PBE_1: 0
   PBO_1: 0
   AEH_1: 0

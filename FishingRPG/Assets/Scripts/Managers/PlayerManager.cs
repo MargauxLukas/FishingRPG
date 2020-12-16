@@ -39,6 +39,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject firstChestSelected;
 
     public GearingManager gearingManager;
+    public Text statsText;
+    private int strength;
+    private int constitution;
+    private int dexterity;
+    private int intelligence;
 
     //Inventaire
     public GameObject fish1;
@@ -118,6 +123,7 @@ public class PlayerManager : MonoBehaviour
     {
         inventoryGUI.SetActive(true);
         combatGUI.SetActive(false);
+        UpdateInventoryStats();
         UpdateInventoryFish(playerInventory.inventory.currentFishOnMe);
         isPause = true;
     }
@@ -154,6 +160,16 @@ public class PlayerManager : MonoBehaviour
         fishStockGUI.SetActive(false);
         combatGUI.SetActive(true);
         isFishStock = false;
+    }
+
+    public void UpdateInventoryStats()
+    {
+        strength = gearingManager.strength;
+        constitution = gearingManager.constitution;
+        dexterity = gearingManager.dexterity;
+        intelligence = gearingManager.intelligence;
+
+        statsText.text = strength + "\n" + constitution + "\n" + dexterity + "\n" + intelligence;
     }
 
     public void StockOneFish(Image im)
