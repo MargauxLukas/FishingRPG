@@ -66,6 +66,8 @@ public class FishingManager : MonoBehaviour
         FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
         CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.cfvz.fishCheck = currentFish.transform;
+        FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(true);
+        FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(true);
         PlayerManager.instance.FishingCanStart();
     }
 
@@ -79,6 +81,8 @@ public class FishingManager : MonoBehaviour
 
         if (readyToFish)
         {
+            FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(false);
+            FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(false);
             FishManager.instance.currentFishBehavior.fishPattern.ResetOncePlay();
             if (FishManager.instance.currentFishBehavior.canCollectTheFish)
             {

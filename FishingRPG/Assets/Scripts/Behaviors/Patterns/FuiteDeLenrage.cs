@@ -21,7 +21,7 @@ public class FuiteDeLenrage : MonoBehaviour
                 if (!costEnergyOverTime)
                 {
                     FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
-                    FishManager.instance.ChangeStaminaText();
+                    FishManager.instance.ChangeStaminaJauge();
                 }
 
                 FishManager.instance.currentFishBehavior.baseSpeed += speedModifier;
@@ -35,7 +35,7 @@ public class FuiteDeLenrage : MonoBehaviour
                 if (costEnergyOverTime)
                 {
                     FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
-                    FishManager.instance.ChangeStaminaText();
+                    FishManager.instance.ChangeStaminaJauge();
                 }
 
                 //Direction Opposé au joueur

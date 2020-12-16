@@ -68,8 +68,8 @@ public class FishBehavior : MonoBehaviour
         animator = transform.GetChild(0).GetComponent<Animator>();
 
         FishManager.instance.SetAerialEnterWater();
-        FishManager.instance.ChangeStaminaText();
-        FishManager.instance.ChangeLifeText();
+        FishManager.instance.staminaJauge.fillAmount = FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina;
+        FishManager.instance.ChangeLifeJauge();
     }
 
     void Update()
@@ -373,8 +373,8 @@ public class FishBehavior : MonoBehaviour
             animator.SetBool("isDeadOrExhausted", true);
             currentStamina = 0;
             //CheckStamina();
-            FishManager.instance.ChangeLifeText();
-            FishManager.instance.ChangeStaminaText();
+            FishManager.instance.ChangeLifeJauge();
+            FishManager.instance.staminaJauge.fillAmount = FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina;
         }
     }
 
