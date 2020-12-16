@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject inventoryGUI;
     public GameObject fishStockGUI;
     public GameObject combatGUI;
+    public GameObject questGUI;
 
     public CheckBox cb;
     public CheckHub ch;
@@ -29,6 +30,7 @@ public class PlayerManager : MonoBehaviour
     public bool isOnMenu = false;
     public bool isPause = false;
     public bool isFishStock = false;
+    public bool isQuestMenu = false;
 
 
     public float speed = 9f;
@@ -117,6 +119,18 @@ public class PlayerManager : MonoBehaviour
         inventoryGUI.SetActive(false);
         combatGUI.SetActive(true);
         isPause = false;
+    }
+
+    public void OpenQuestMenu()
+    {
+        questGUI.SetActive(true);
+        isQuestMenu = true;
+    }
+
+    public void LeaveQuestMenu()
+    {
+        questGUI.SetActive(false);
+        isQuestMenu = false;
     }
 
     public void OpenFishingStockMenu()

@@ -77,9 +77,18 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerManager.instance.OpenInventoryMenu();
         }
-        else if((Input.GetButtonDown("Menu Button") || Input.GetButton("B Button")) && PlayerManager.instance.isPause)
+        else if((Input.GetButtonDown("Menu Button") || Input.GetButton("B Button")) && PlayerManager.instance.isPause && !PlayerManager.instance.isQuestMenu)
         {
             PlayerManager.instance.LeaveInventoryMenu();
+        }
+
+        if(Input.GetButtonDown("X Button") && PlayerManager.instance.isPause)
+        {
+            PlayerManager.instance.OpenQuestMenu();
+        }
+        else if(Input.GetButtonUp("B Button") && PlayerManager.instance.isPause && PlayerManager.instance.isQuestMenu)
+        {
+            PlayerManager.instance.LeaveQuestMenu();
         }
 
         if (Input.GetButton("B Button") && PlayerManager.instance.isFishStock)
