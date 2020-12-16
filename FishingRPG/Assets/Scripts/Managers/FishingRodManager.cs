@@ -157,6 +157,14 @@ public class FishingRodManager : MonoBehaviour
         }
         fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
         fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
+
+
+        //  /!\ Valeur au pif pour tester, need calcul d'un nombre entre 0f et 1f
+        if(FishManager.instance.isAerial)
+        {
+            FishManager.instance.aerialEnterWaterX += currentAxis*0.2f;
+            FishManager.instance.UpdateAerial();
+        }
     }
 
     public void CheckFCurrent()
@@ -170,7 +178,6 @@ public class FishingRodManager : MonoBehaviour
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
                 {
-                    Debug.Log("eeee");
                     FishManager.instance.DownStaminaTakingLine();
                     fishingLine.TensionUpTakingLine();
                 }

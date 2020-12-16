@@ -77,7 +77,7 @@ public class FishingLine : MonoBehaviour
     {
         if (currentTension > 0f)
         {
-            currentTension -= 0.3f;
+            currentTension -= 0.6f;
         }
         else
         {
@@ -90,7 +90,13 @@ public class FishingLine : MonoBehaviour
     public void FCurrentDown()
     {
         fCurrent -= 0.05f;
-        Debug.Log(fCurrent);
+
+        if(FishManager.instance.isAerial)
+        {
+            FishManager.instance.aerialEnterWaterZ -= 0.05f;
+            FishManager.instance.UpdateAerial();
+        }
+
     }
 
     public void GetFCurrent()

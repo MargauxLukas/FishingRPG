@@ -17,6 +17,7 @@ MonoBehaviour:
   duration: 0
   energyCost: 20
   costEnergyOverTime: 1
-  DOTFrequency: 1
+  DOTFrequency: 0.8
   triggerRageMode: 0
   featureName: "La Fuite de l'Enrag\xE9"
+  featureType: 0

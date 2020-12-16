@@ -38,8 +38,8 @@ public class FishBehavior : MonoBehaviour
     [HideInInspector]      public bool fellingFreeze = false;
 
     [Header("Direction")]
-    public float minTimeForChangeDirection = 3f;
-    public float maxTimeForChangeDirection = 5f;
+    public float minTimeForChangeDirection = 1f;
+    public float maxTimeForChangeDirection = 3f;
     private float timeDirection            = 0f;
     private int randomDirection;
     private bool directionHasChoosen = false;
@@ -157,9 +157,11 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            float y = (1- currentTime) * FishManager.instance.aerialExitWaterY + currentTime*FishManager.instance.aerialEnterWaterY;
+            float x = (1 - currentTime) * FishManager.instance.aerialExitWaterX + currentTime * FishManager.instance.aerialEnterWaterX;
+            float y = (1- currentTime)  * FishManager.instance.aerialExitWaterY + currentTime * FishManager.instance.aerialEnterWaterY;
+            float z = (1 - currentTime) * FishManager.instance.aerialExitWaterZ + currentTime * FishManager.instance.aerialEnterWaterZ;
 
-            return new Vector3(transform.position.x, y, transform.position.z);
+            return new Vector3(x, y, z);
         }
     }
 
@@ -378,7 +380,7 @@ public class FishBehavior : MonoBehaviour
 
     public void SetIdleMaxTime()
     {
-        idleMaxTime = Random.Range(7, 16);
+        idleMaxTime = Random.Range(5, 10);
     }
 
     public void ResetStats()

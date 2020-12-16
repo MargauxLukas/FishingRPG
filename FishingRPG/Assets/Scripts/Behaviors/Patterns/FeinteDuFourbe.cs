@@ -46,6 +46,7 @@ public class FeinteDuFourbe : MonoBehaviour
         }
         else
         {
+            playOnce = false;
             FishManager.instance.currentFish.GetComponent<FishPatterns>().ResetPattern();
         }
     }

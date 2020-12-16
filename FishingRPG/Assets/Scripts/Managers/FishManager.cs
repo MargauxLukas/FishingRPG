@@ -46,6 +46,11 @@ public class FishManager : MonoBehaviour
     public int osPercent;
     public int soPercent;
 
+    //Debug Aerial
+    public bool debugAerialFish = false;
+    public GameObject test1;
+    public GameObject test2;
+
     [HideInInspector]public List<int> directionPercentList = new List<int>(11);
     private void Awake()
     {
@@ -71,15 +76,28 @@ public class FishManager : MonoBehaviour
             aerialExitWaterX = currentFish.transform.position.x;
             aerialExitWaterY = currentFish.transform.position.y;
             aerialExitWaterZ = currentFish.transform.position.z;
-
             
             aerialEnterWaterX = currentFish.transform.position.x;
             aerialEnterWaterZ = currentFish.transform.position.z;
             
-
             aerialX = currentFish.transform.position.x;
             aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
             aerialZ = currentFish.transform.position.z;
+
+            if (debugAerialFish)
+            {
+                test1.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+                test2.transform.position = new Vector3(aerialX, aerialY, aerialZ);
+            }
+        }
+    }
+
+    public void UpdateAerial()
+    {
+        if (debugAerialFish)
+        {
+            test1.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+            test2.transform.position = new Vector3(aerialX, aerialY, aerialZ);
         }
     }
 
@@ -150,7 +168,7 @@ public class FishManager : MonoBehaviour
     {
         currentFishBehavior.exhausted = false;
         currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
-        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina/2;
+        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
         currentFishBehavior.nbRebond = 1;
         isAerial = false;
         isFelling = false;
@@ -190,7 +208,7 @@ public class FishManager : MonoBehaviour
         {
             if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
             {
-                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.15f) / 60;
+                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.50f) / 60;
                 ChangeStaminaText();
             }
 
