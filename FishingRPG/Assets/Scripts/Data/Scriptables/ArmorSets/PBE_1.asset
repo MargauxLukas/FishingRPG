@@ -19,7 +19,7 @@ MonoBehaviour:
   itemName: Pequessivo Belt
   tier: 1
   strength: 3
-  constitution: 1
+  constitution: 0
   dexterity: 1
   intelligence: 1
   description: It always annoyed Maera that this belt looked better on Bal than her.

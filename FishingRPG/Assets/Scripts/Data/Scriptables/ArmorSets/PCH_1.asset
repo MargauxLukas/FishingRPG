@@ -19,7 +19,7 @@ MonoBehaviour:
   itemName: Pequessivo Pauldrons
   tier: 1
   strength: 2
-  constitution: 1
+  constitution: 0
   dexterity: 2
   intelligence: 1
   description: Anyone looks taller wearing this. It's kind of reassuring when you
