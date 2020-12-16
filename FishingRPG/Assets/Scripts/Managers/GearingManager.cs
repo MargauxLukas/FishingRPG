@@ -65,6 +65,18 @@ public class GearingManager : MonoBehaviour
                 isLeaving = false;
                 holdButtonImg.fillAmount = 0;
 
+                if(PlayerManager.instance.playerInventory.inventory.fishTotal > 9)
+                {
+                    PlayerManager.instance.playerInventory.inventory.fishTotal = 9;
+                    PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
+                    PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
+                }
+                else
+                {
+                    PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
+                    PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
+                }
+
                 if (SceneManager.GetActiveScene().buildIndex == 1)
                 {
                     ChangeScene(0);

@@ -7,6 +7,8 @@ using UnityEditor;
 public class Inventory : ScriptableObject
 {
     public int fishTotal;
+    public int currentFishOnMe;
+    public int fishNumberOnStock;
     public int PQS_1;
     public int PFS_1;
 

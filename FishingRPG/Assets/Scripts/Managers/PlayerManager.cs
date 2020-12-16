@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject canvas;
     private bool dataCheat = false;
     public bool isOnMenu = false;
+    public bool isPause = false;
+    public bool isFishStock = false;
+
 
     public float speed = 9f;
     public bool isPressingRT = false;
@@ -33,6 +37,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject firstChestSelected;
 
     public GearingManager gearingManager;
+
+    //Inventaire
+    public GameObject fish1;
+    public GameObject fish2;
+    public GameObject fish3;
+
+    public GameObject selectedRef;
 
     private void Awake()
     {
@@ -97,9 +108,70 @@ public class PlayerManager : MonoBehaviour
     {
         inventoryGUI.SetActive(true);
         combatGUI.SetActive(false);
-        isOnMenu = true;
+        UpdateInventoryFish(playerInventory.inventory.currentFishOnMe);
+        isPause = true;
     }
 
+    public void LeaveInventoryMenu()
+    {
+        inventoryGUI.SetActive(false);
+        combatGUI.SetActive(true);
+        isPause = false;
+    }
+
+    public void OpenFishingStockMenu()
+    {
+        fishStockGUI.SetActive(true);
+        combatGUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(selectedRef);
+        isFishStock = true;
+    }
+
+    public void LeaveFishingStockMenu()
+    {
+        fishStockGUI.SetActive(false);
+        combatGUI.SetActive(true);
+        isFishStock = false;
+    }
+
+    public void StockOneFish(Image im)
+    {
+        if (playerInventory.inventory.currentFishOnMe > 0)
+        {
+            playerInventory.inventory.currentFishOnMe--;
+            playerInventory.inventory.fishNumberOnStock++;
+
+            im.enabled = true;
+            im.transform.parent.GetChild(0).gameObject.SetActive(true);
+        }
+    }
+
+    public void UpdateInventoryFish(int fishTotal)
+    {
+        switch(fishTotal)
+        {
+            case 0:
+                fish1.SetActive(false);
+                fish2.SetActive(false);
+                fish3.SetActive(false);
+                break;
+            case 1:
+                fish1.SetActive(true);
+                fish2.SetActive(false);
+                fish3.SetActive(false);
+                break;
+            case 2:
+                fish1.SetActive(true);
+                fish2.SetActive(true);
+                fish3.SetActive(false);
+                break;
+            case 3:
+                fish1.SetActive(true);
+                fish2.SetActive(true);
+                fish3.SetActive(true);
+                break;
+        }
+    }
 
     public void IsBlockingLine()
     {

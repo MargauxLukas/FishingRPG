@@ -37,28 +37,35 @@ public class Rotate : MonoBehaviour
         {
             if (!PlayerManager.instance.isPressingRT)
             {
-                if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
+                if (PlayerManager.instance.playerInventory.inventory.currentFishOnMe < 3)
                 {
-                    StartCoroutine("Throw");
-                    FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-                    FishingRodManager.instance.fishingLine.cableComponent.ActivateLine();
-                    isMax = false;
-                    axisRelease = false;
-                }
+                    if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
+                    {
+                        StartCoroutine("Throw");
+                        FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
+                        FishingRodManager.instance.fishingLine.cableComponent.ActivateLine();
+                        isMax = false;
+                        axisRelease = false;
+                    }
 
-                if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)
+                    if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)
+                    {
+                        axisRelease = true;
+                        if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
+                        {
+                            transform.Rotate(new Vector3(-1f, 0f, 0f));
+                            PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
+                        }
+                        else
+                        {
+                            Debug.Log("isMax true");
+                            isMax = true;
+                        }
+                    }
+                }
+                else
                 {
-                    axisRelease = true;
-                    if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
-                    {
-                        transform.Rotate(new Vector3(-1f, 0f, 0f));
-                        PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
-                    }
-                    else
-                    {
-                        Debug.Log("isMax true");
-                        isMax = true;
-                    }
+                    Debug.Log("Trop de poisson");
                 }
             }
             else

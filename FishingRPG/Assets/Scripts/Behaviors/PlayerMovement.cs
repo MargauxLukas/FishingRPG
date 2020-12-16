@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (!PlayerManager.instance.isOnMenu)
+        if (!PlayerManager.instance.isOnMenu && !PlayerManager.instance.isPause && !PlayerManager.instance.isFishStock)
         {
             if (isGrounded && velocity.y < 0)
             {
@@ -66,11 +66,25 @@ public class PlayerMovement : MonoBehaviour
                     PlayerManager.instance.OpenChestMenu();
                 }
 
-                /*if (PlayerManager.instance.cb.isNearChest)
+                if (PlayerManager.instance.ch.isNearFishingStock)
                 {
-                    PlayerManager.instance.OpenInventoryMenu();
-                }*/
+                    PlayerManager.instance.OpenFishingStockMenu();
+                }
             }
+        }
+
+        if (Input.GetButtonDown("Menu Button") && !PlayerManager.instance.isPause && !PlayerManager.instance.isFishStock)
+        {
+            PlayerManager.instance.OpenInventoryMenu();
+        }
+        else if((Input.GetButtonDown("Menu Button") || Input.GetButton("B Button")) && PlayerManager.instance.isPause)
+        {
+            PlayerManager.instance.LeaveInventoryMenu();
+        }
+
+        if (Input.GetButton("B Button") && PlayerManager.instance.isFishStock)
+        {
+            PlayerManager.instance.LeaveFishingStockMenu();
         }
     }
 }

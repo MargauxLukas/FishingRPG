@@ -37,7 +37,7 @@ public class XboxControllerTest : MonoBehaviour
 		leftTrigger = Input.GetAxis("Left Trigger");
 		rightTrigger = Input.GetAxis("Right Trigger");
 		//viewButton = Input.GetButton("View Button");
-		//menuButton = Input.GetButton("Menu Button");
+		menuButton = Input.GetButton("Menu Button");
 		//lClickButton = Input.GetButton("L-Click Button");
 		//rClickButton = Input.GetButton("R-Click Button");
 		//xBoxGuideHomeButton = Input.GetButton("Xbox Guide/Home Button");

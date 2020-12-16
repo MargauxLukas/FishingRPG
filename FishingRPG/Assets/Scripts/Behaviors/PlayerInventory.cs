@@ -19,5 +19,6 @@ public class PlayerInventory : MonoBehaviour
         }
 
         inventory.fishTotal++;
+        inventory.currentFishOnMe++;
     }
 }

@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class CheckHub : MonoBehaviour
 {
-    public GameObject aButtonHub;
+    public GameObject aButtonFishingStock;
 
-    [System.NonSerialized] public bool isNearHub = false;
+    [System.NonSerialized] public bool isNearFishingStock = false;
 
-    public LayerMask hubMask;
-    public Transform hubCheck;
-    public float hubDistance = 0.5f;
+    public LayerMask fishingStockMask;
+    public Transform fishingStockCheck;
+    public float fishingStockDistance = 0.5f;
 
     private void Update()
     {
-        isNearHub = Physics.CheckSphere(hubCheck.position, hubDistance, hubMask);
+        isNearFishingStock = Physics.CheckSphere(fishingStockCheck.position, fishingStockDistance, fishingStockMask);
 
-        if (isNearHub)
+        if (isNearFishingStock)
         {
-            aButtonHub.SetActive(true);
-            aButtonHub.transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, aButtonHub.transform.position.y, PlayerManager.instance.player.transform.position.z));
+            aButtonFishingStock.SetActive(true);
+            aButtonFishingStock.transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, aButtonFishingStock.transform.position.y, PlayerManager.instance.player.transform.position.z));
         }
         else
         {
-            aButtonHub.SetActive(false);
+            aButtonFishingStock.SetActive(false);
         }
     }
 }
