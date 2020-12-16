@@ -63,6 +63,11 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(_go);
     }
 
+    public void SetButcherSelected()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
     public void Quit()
     {
         Application.Quit();
