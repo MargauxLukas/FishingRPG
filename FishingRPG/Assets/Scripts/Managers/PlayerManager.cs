@@ -47,6 +47,14 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject selectedRef;
 
+    //Gem
+    public Image cooldownGem1;
+    public Image cooldownGem2;
+    public Image cooldownGem3;
+    public Image durationGem1;
+    public Image durationGem2;
+    public Image durationGem3;
+
     private void Awake()
     {
         Init();
@@ -237,7 +245,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (FishingRodManager.instance.slot1.gem)
         {
-            playerGem.PlayGem(FishingRodManager.instance.slot1.gem);
+            playerGem.PlayGem(FishingRodManager.instance.slot1.gem, 1);
         }
         else
         {
@@ -249,7 +257,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (FishingRodManager.instance.slot2.gem)
         {
-            playerGem.PlayGem(FishingRodManager.instance.slot2.gem);
+            playerGem.PlayGem(FishingRodManager.instance.slot2.gem, 2);
         }
         else
         {
@@ -261,7 +269,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (FishingRodManager.instance.slot3.gem)
         {
-            playerGem.PlayGem(FishingRodManager.instance.slot3.gem);
+            playerGem.PlayGem(FishingRodManager.instance.slot3.gem, 3);
         }
         else
         {
@@ -366,6 +374,42 @@ public class PlayerManager : MonoBehaviour
         {
             FishingRodManager.instance.slot2.gem = playerInventory.inventory.equipedGem3;
             FishingRodManager.instance.slot2.visual.SetActive(true);
+        }
+    }
+
+    public void UpdateUIGem(int i, float timer, float max)
+    {
+        if (i == 1)
+        {
+            durationGem1.fillAmount = timer / max;
+        }
+
+        if (i == 2)
+        {
+            durationGem2.fillAmount = timer / max;
+        }
+
+        if (i == 3)
+        {
+            durationGem3.fillAmount = timer / max;
+        }
+    }
+
+    public void UpdateUIGemCD(int i, float timer, float max)
+    {
+        if (i == 1)
+        {
+            cooldownGem1.fillAmount = timer / max;
+        }
+
+        if (i == 2)
+        {
+            cooldownGem2.fillAmount = timer / max;
+        }
+
+        if (i == 3)
+        {
+            cooldownGem3.fillAmount = timer / max;
         }
     }
 }

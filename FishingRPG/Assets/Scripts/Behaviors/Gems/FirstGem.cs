@@ -12,6 +12,8 @@ public class FirstGem : MonoBehaviour
     private float duration = 0f;
     private float cooldown = 0f;
 
+    private int slot;
+
     private Color color;
     private float valueToAdd = 0f;
 
@@ -20,6 +22,7 @@ public class FirstGem : MonoBehaviour
         if (playTimerDuration)
         {
             timer += Time.fixedDeltaTime;
+            PlayerManager.instance.UpdateUIGem(slot, timer, duration);
             if (timer > duration)
             {
                 RemoveEffect();
@@ -32,7 +35,7 @@ public class FirstGem : MonoBehaviour
         if(playTimerCD)
         {
             timer += Time.fixedDeltaTime;
-
+            PlayerManager.instance.UpdateUIGemCD(slot, timer, cooldown);
             if (timer > cooldown)
             {
                 Debug.Log("CD finish");
@@ -41,14 +44,16 @@ public class FirstGem : MonoBehaviour
                 timer = 0f;
             }
         }
+
     }
 
-    public void Play(Gem gem)
+    public void Play(Gem gem, int i)
     {
         if (!played)
         {
             duration = gem.duration;
             cooldown = gem.cooldown;
+            slot = i;
 
             GemEffect();
             //mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, 0f);

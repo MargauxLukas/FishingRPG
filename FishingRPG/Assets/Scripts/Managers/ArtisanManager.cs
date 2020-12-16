@@ -38,6 +38,15 @@ public class ArtisanManager : MonoBehaviour
     {
         Debug.Log(currentSelectedTab);
 
+        if(Input.GetKeyUp(KeyCode.C))
+        {
+            UIManager.instance.inventory.PST_C += 10;
+            UIManager.instance.inventory.PSC_C += 10;
+            UIManager.instance.inventory.PFL_R += 10;
+            UIManager.instance.inventory.PFI_E += 10;
+            UIManager.instance.inventory.PBH_L += 10;
+        }
+
         if(Input.GetButtonDown("Left Bumper"))
         {
             Debug.Log("Left");

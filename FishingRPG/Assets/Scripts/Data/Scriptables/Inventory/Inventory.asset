@@ -22,14 +22,14 @@ MonoBehaviour:
   equipedBelt: {fileID: 0}
   equipedBoots: {fileID: 0}
   equipedFishingRod: {fileID: 11400000, guid: 2fb310c7908eea14f85df257654e7595, type: 2}
-  equipedGem1: {fileID: 0}
+  equipedGem1: {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
   equipedGem2: {fileID: 0}
   equipedGem3: {fileID: 0}
-  PST_C: 44
-  PSC_C: 36
-  PFL_R: 11
-  PFI_E: 31
-  PBH_L: 8
+  PST_C: 0
+  PSC_C: 40
+  PFL_R: 20
+  PFI_E: 20
+  PBH_L: 20
   PEH_1: 0
   PCH_1: 0
   PBE_1: 0
@@ -40,4 +40,4 @@ MonoBehaviour:
   ABO_1: 0
   AFR_1: 0
   PFR_1: 1
-  GPE_1: 0
+  GPE_1: 1
