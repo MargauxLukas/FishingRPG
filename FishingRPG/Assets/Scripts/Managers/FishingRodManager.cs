@@ -45,6 +45,9 @@ public class FishingRodManager : MonoBehaviour
     public Image fCurrentJauge;
     public Scrollbar fishHook;
 
+    [Header("FishingRodAnimator")]
+    public Animator animFishingRod;
+
     private void Awake()
     {
         Init();
@@ -154,6 +157,14 @@ public class FishingRodManager : MonoBehaviour
         }
         fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
         fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
+
+
+        //  /!\ Valeur au pif pour tester, need calcul d'un nombre entre 0f et 1f
+        if(FishManager.instance.isAerial)
+        {
+            FishManager.instance.aerialEnterWaterX += currentAxis*0.2f;
+            FishManager.instance.UpdateAerial();
+        }
     }
 
     public void CheckFCurrent()
@@ -162,6 +173,7 @@ public class FishingRodManager : MonoBehaviour
         {
             if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
             {
+                animFishingRod.SetBool("Turn", true);
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
@@ -206,6 +218,11 @@ public class FishingRodManager : MonoBehaviour
         if (!fishingLine.isTaken && !fishingLine.isBlocked && !FishManager.instance.currentFishBehavior.exhausted)
         {
             FishManager.instance.LowUpStamina();
+        }
+
+        if (!fishingLine.isTaken)
+        {
+            animFishingRod.SetBool("Turn", false);
         }
 
         UpdateFCurrent();

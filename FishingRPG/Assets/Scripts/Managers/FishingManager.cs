@@ -71,13 +71,16 @@ public class FishingManager : MonoBehaviour
 
     public void CancelFishing()
     {
+        FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
         needToWait = 0f;
         timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();
+        FishingRodManager.instance.animFishingRod.SetBool("Turn", false);
 
         if (readyToFish)
         {
-            if(FishManager.instance.currentFishBehavior.canCollectTheFish)
+            FishManager.instance.currentFishBehavior.fishPattern.ResetOncePlay();
+            if (FishManager.instance.currentFishBehavior.canCollectTheFish)
             {
                 PlayerManager.instance.playerInventory.AddThisFishToInventory(FishManager.instance.currentFishBehavior.fishyFiche.ID);
             }

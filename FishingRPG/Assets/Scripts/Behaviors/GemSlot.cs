@@ -5,5 +5,5 @@ using UnityEngine;
 public class GemSlot : MonoBehaviour
 {
     public Gem gem;
-    public Material mat;
+    public GameObject visual;
 }

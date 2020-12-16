@@ -6,10 +6,10 @@ public class PlayerGem : MonoBehaviour
 {
     public void PlayGem(Gem gem)
     {
-        switch (gem.name)
+        switch (gem.ID)
         {
-            case "FirstGem":
-                GemManager.instance.firstGem.Play(gem, FishingRodManager.instance.slot1.mat);
+            case "GPE_1":
+                GemManager.instance.firstGem.Play(gem);
                 break;
             case "gem2":
                 

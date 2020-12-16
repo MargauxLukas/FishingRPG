@@ -108,6 +108,9 @@ public class Inventory : ScriptableObject
             case "PFR_1":
                 PFR_1 = true;
                 break;
+            case "GPE_1":
+                GPE_1 = true;
+                break;
         }
     }
 

@@ -125,4 +125,11 @@ public class FishPatterns : MonoBehaviour
         FishManager.instance.currentFishBehavior.idleTimer = 0f;
         FishManager.instance.currentFishBehavior.isIdle = true;
     }
+
+    public void ResetOncePlay()
+    {
+        FuiteDeLenrage.ResetPlayOnce();
+        FeinteDuFourbe.ResetPlayOnce();
+        ResetPattern();
+    }
 }
