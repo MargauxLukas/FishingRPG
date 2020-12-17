@@ -19,7 +19,7 @@ MonoBehaviour:
   itemName: Pequessivo Helmet
   tier: 1
   strength: 3
-  constitution: 1
+  constitution: 0
   dexterity: 1
   intelligence: 1
   description: Pequessivo just attacks without truly thinking. Sometimes that's the
