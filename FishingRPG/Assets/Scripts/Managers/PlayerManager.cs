@@ -60,6 +60,15 @@ public class PlayerManager : MonoBehaviour
     public Image durationGem2;
     public Image durationGem3;
 
+    public Image helmetEquiped;
+    public Image shoulderEquiped;
+    public Image beltEquiped;
+    public Image bootsEquiped;
+    public Image fishingRodEquiped;
+    public Image gem1Equiped;
+    public Image gem2Equiped;
+    public Image gem3Equiped;
+
     private void Awake()
     {
         Init();
@@ -67,6 +76,13 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        /*
+        strength = 3;
+        constitution = 7;
+        dexterity = 3;
+        intelligence = 3;
+        */
+
         UpdateStats();
         UpdateGem();
     }
@@ -123,7 +139,7 @@ public class PlayerManager : MonoBehaviour
     {
         inventoryGUI.SetActive(true);
         combatGUI.SetActive(false);
-        UpdateInventoryStats();
+        UpdateStatsInventory();
         UpdateInventoryFish(playerInventory.inventory.currentFishOnMe);
         isPause = true;
     }
@@ -164,11 +180,6 @@ public class PlayerManager : MonoBehaviour
 
     public void UpdateInventoryStats()
     {
-        strength = gearingManager.strength;
-        constitution = gearingManager.constitution;
-        dexterity = gearingManager.dexterity;
-        intelligence = gearingManager.intelligence;
-
         statsText.text = strength + "\n" + constitution + "\n" + dexterity + "\n" + intelligence;
     }
 
@@ -327,6 +338,14 @@ public class PlayerManager : MonoBehaviour
         playerStats.intelligence = 3;
     }
 
+    public void ResetStatsInventory()
+    {
+        strength = 3;
+        constitution = 7;
+        dexterity = 3;
+        intelligence = 3;
+    }
+
     public void UpdateStats()
     {
         ResetStats();
@@ -337,6 +356,11 @@ public class PlayerManager : MonoBehaviour
             playerStats.constitution += playerInventory.inventory.equipedHelmet.constitution;
             playerStats.dexterity    += playerInventory.inventory.equipedHelmet.dexterity;
             playerStats.intelligence += playerInventory.inventory.equipedHelmet.intelligence;
+            helmetEquiped.sprite = playerInventory.inventory.equipedHelmet.appearance;
+        }
+        else
+        {
+            helmetEquiped.enabled = false;
         }
 
         if (playerInventory.inventory.equipedShoulders != null)
@@ -345,6 +369,11 @@ public class PlayerManager : MonoBehaviour
             playerStats.constitution += playerInventory.inventory.equipedShoulders.constitution;
             playerStats.dexterity    += playerInventory.inventory.equipedShoulders.dexterity;
             playerStats.intelligence += playerInventory.inventory.equipedShoulders.intelligence;
+            shoulderEquiped.sprite = playerInventory.inventory.equipedShoulders.appearance;
+        }
+        else
+        {
+            shoulderEquiped.enabled = false;
         }
 
         if (playerInventory.inventory.equipedBelt != null)
@@ -353,6 +382,11 @@ public class PlayerManager : MonoBehaviour
             playerStats.constitution += playerInventory.inventory.equipedBelt.constitution;
             playerStats.dexterity    += playerInventory.inventory.equipedBelt.dexterity;
             playerStats.intelligence += playerInventory.inventory.equipedBelt.intelligence;
+            beltEquiped.sprite = playerInventory.inventory.equipedBelt.appearance;
+        }
+        else
+        {
+            beltEquiped.enabled = false;
         }
 
         if (playerInventory.inventory.equipedBoots != null)
@@ -361,6 +395,11 @@ public class PlayerManager : MonoBehaviour
             playerStats.constitution += playerInventory.inventory.equipedBoots.constitution;
             playerStats.dexterity    += playerInventory.inventory.equipedBoots.dexterity;
             playerStats.intelligence += playerInventory.inventory.equipedBoots.intelligence;
+            bootsEquiped.sprite = playerInventory.inventory.equipedBoots.appearance;
+        }
+        else
+        {
+            bootsEquiped.enabled = false;
         }
 
         if (playerInventory.inventory.equipedFishingRod != null)
@@ -369,7 +408,86 @@ public class PlayerManager : MonoBehaviour
             playerStats.constitution += playerInventory.inventory.equipedFishingRod.constitution;
             playerStats.dexterity    += playerInventory.inventory.equipedFishingRod.dexterity;
             playerStats.intelligence += playerInventory.inventory.equipedFishingRod.intelligence;
+            fishingRodEquiped.sprite = playerInventory.inventory.equipedFishingRod.appearance;
         }
+        else
+        {
+            fishingRodEquiped.enabled = false;
+        }
+
+        if (playerInventory.inventory.equipedGem1 != null)
+        {
+            gem1Equiped.sprite = playerInventory.inventory.equipedGem1.appearance;
+        }
+        else
+        {
+            gem1Equiped.enabled = false;
+        }
+
+        if (playerInventory.inventory.equipedGem2 != null)
+        {
+            gem2Equiped.sprite = playerInventory.inventory.equipedGem2.appearance;
+        }
+        else
+        {
+            gem2Equiped.enabled = false;
+        }
+
+        if (playerInventory.inventory.equipedGem3 != null)
+        {
+            gem3Equiped.sprite = playerInventory.inventory.equipedGem3.appearance;
+        }
+        else
+        {
+            gem3Equiped.enabled = false;
+        }
+    }
+
+    public void UpdateStatsInventory()
+    {
+        ResetStatsInventory();
+
+        if (playerInventory.inventory.equipedHelmet != null)
+        {
+            strength += playerInventory.inventory.equipedHelmet.strength;
+            constitution += playerInventory.inventory.equipedHelmet.constitution;
+            dexterity += playerInventory.inventory.equipedHelmet.dexterity;
+            intelligence += playerInventory.inventory.equipedHelmet.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedShoulders != null)
+        {
+            strength += playerInventory.inventory.equipedShoulders.strength;
+            constitution += playerInventory.inventory.equipedShoulders.constitution;
+            dexterity += playerInventory.inventory.equipedShoulders.dexterity;
+            intelligence += playerInventory.inventory.equipedShoulders.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedBelt != null)
+        {
+            strength += playerInventory.inventory.equipedBelt.strength;
+            constitution += playerInventory.inventory.equipedBelt.constitution;
+            dexterity += playerInventory.inventory.equipedBelt.dexterity;
+            intelligence += playerInventory.inventory.equipedBelt.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedBoots != null)
+        {
+            strength += playerInventory.inventory.equipedBoots.strength;
+            constitution += playerInventory.inventory.equipedBoots.constitution;
+            dexterity += playerInventory.inventory.equipedBoots.dexterity;
+            intelligence += playerInventory.inventory.equipedBoots.intelligence;
+        }
+
+        if (playerInventory.inventory.equipedFishingRod != null)
+        {
+            strength += playerInventory.inventory.equipedFishingRod.strength;
+            constitution += playerInventory.inventory.equipedFishingRod.constitution;
+            dexterity += playerInventory.inventory.equipedFishingRod.dexterity;
+            intelligence += playerInventory.inventory.equipedFishingRod.intelligence;
+        }
+
+        UpdateInventoryStats();
     }
 
     public void UpdateGem()

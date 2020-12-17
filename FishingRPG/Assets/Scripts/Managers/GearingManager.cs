@@ -46,16 +46,18 @@ public class GearingManager : MonoBehaviour
     public int dexterity;
     public int intelligence;
 
-    private void Start()
-    {
-        strength = 3;
-        constitution = 7;
-        dexterity = 3;
-        intelligence = 3;
-    }
+    public bool advertise = false;
+    public bool needToAccept = false;
+    public GameObject advertissement;
 
     void Update()
     {
+        if(Input.GetButton("A Button") && needToAccept)
+        {
+            advertise = false;
+            advertissement.SetActive(false);
+        }
+
         if (Input.GetButton("Y Button"))
         {
             Debug.Log("Cut Fish");
@@ -92,11 +94,29 @@ public class GearingManager : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().buildIndex == 1)
                 {
-                    ChangeScene(0);
+                    if (UIManager.instance.inventory.fishTotal > 0 && !needToAccept)
+                    {
+                        advertise = true;
+                    }
+                }
+
+                if (!advertise)
+                {
+                    if (SceneManager.GetActiveScene().buildIndex == 1)
+                    {
+                        UIManager.instance.inventory.fishTotal = 0;
+                        needToAccept = false;
+                        ChangeScene(0);
+                    }
+                    else
+                    {
+                        ChangeScene(1);
+                    }
                 }
                 else
                 {
-                    ChangeScene(1);
+                    advertissement.SetActive(true);
+                    needToAccept = true;
                 }
             }
         }

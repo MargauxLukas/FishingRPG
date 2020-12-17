@@ -17,7 +17,7 @@ MonoBehaviour:
   fishNumberOnStock: 0
   PQS_1: 0
   PFS_1: 0
-  equipedHelmet: {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
+  equipedHelmet: {fileID: 0}
   equipedShoulders: {fileID: 0}
   equipedBelt: {fileID: 0}
   equipedBoots: {fileID: 0}
@@ -26,12 +26,12 @@ MonoBehaviour:
   equipedGem2: {fileID: 0}
   equipedGem3: {fileID: 0}
   PST_C: 0
-  PSC_C: 40
-  PFL_R: 20
-  PFI_E: 20
-  PBH_L: 20
-  PEH_1: 1
-  PCH_1: 1
+  PSC_C: 0
+  PFL_R: 0
+  PFI_E: 0
+  PBH_L: 0
+  PEH_1: 0
+  PCH_1: 0
   PBE_1: 0
   PBO_1: 0
   AEH_1: 0
