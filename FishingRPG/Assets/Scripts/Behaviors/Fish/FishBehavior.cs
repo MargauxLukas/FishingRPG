@@ -72,7 +72,7 @@ public class FishBehavior : MonoBehaviour
         FishManager.instance.ChangeLifeJauge();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!FishManager.instance.isAerial)
         {
