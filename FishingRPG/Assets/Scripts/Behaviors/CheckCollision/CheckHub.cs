@@ -12,7 +12,7 @@ public class CheckHub : MonoBehaviour
     public Transform fishingStockCheck;
     public float fishingStockDistance = 0.5f;
 
-    private void Update()
+    private void FixedUpdate()
     {
         isNearFishingStock = Physics.CheckSphere(fishingStockCheck.position, fishingStockDistance, fishingStockMask);
 

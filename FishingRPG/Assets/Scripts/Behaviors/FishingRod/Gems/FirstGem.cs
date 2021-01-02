@@ -17,7 +17,7 @@ public class FirstGem : MonoBehaviour
     private Color color;
     private float valueToAdd = 0f;
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (playTimerDuration)
         {

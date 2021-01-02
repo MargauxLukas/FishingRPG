@@ -18,9 +18,8 @@ public class CheckWater : MonoBehaviour
     public bool justOneTime = false;
 
     //Lorsque Collision, stop chercher collision jusqu'à que Bobber Back
-    private void Update()
+    private void FixedUpdate()
     {
-
         FishingManager.instance.isOnWater = isWater = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);
         isFloor = Physics.CheckSphere(floorCheck.position, floorDistance, floorMask);
 

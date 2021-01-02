@@ -12,7 +12,7 @@ public class CheckFishVictoryZone : MonoBehaviour
     public Transform fishCheck;
     public float victoryDistance = 0.5f;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (fishCheck != null)
         {

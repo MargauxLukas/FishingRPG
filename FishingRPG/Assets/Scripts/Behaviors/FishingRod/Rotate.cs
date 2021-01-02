@@ -31,7 +31,7 @@ public class Rotate : MonoBehaviour
         imageTarget = new Vector3(transform.position.x, transform.position.y + 20f, transform.position.z);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isReleaseButton)
         {
