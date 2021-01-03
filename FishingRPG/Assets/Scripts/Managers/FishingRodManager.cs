@@ -65,7 +65,7 @@ public class FishingRodManager : MonoBehaviour
         bendFishingRod.SetupValuePerFloat();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(fishingRodPivot.GetComponent<Rotate>().result && !bobberThrowed)
         {
