@@ -303,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 429.40002, y: -0.99993896}
+  m_AnchoredPosition: {x: 429.40002, y: -1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17324723
@@ -5611,22 +5611,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1455975920}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 15
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1213941396}
-          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
-          m_MethodName: CraftObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 226129960}
-            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -15877,22 +15861,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 266651760}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 15
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1213941396}
-          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
-          m_MethodName: CraftObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 688868663}
-            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -32693,22 +32661,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1691705718}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 15
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1213941396}
-          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
-          m_MethodName: CraftObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1321630044}
-            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
