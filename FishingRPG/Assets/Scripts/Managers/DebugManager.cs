@@ -11,6 +11,12 @@ public class DebugManager : MonoBehaviour
     private void Awake()
     {
         Init();
+
+#if UNITY_EDITOR
+        QualitySettings.vSyncCount = 0; // VSync must be disabled.
+        Application.targetFrameRate = 10;
+#endif
+
     }
 
     public virtual void Init()
