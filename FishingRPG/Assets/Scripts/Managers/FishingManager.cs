@@ -29,7 +29,7 @@ public class FishingManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isOnWater && !readyToFish)
         {
