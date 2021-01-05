@@ -49,6 +49,7 @@ public class FishingRodManager : MonoBehaviour
     public Animator animFishingRod;
 
     public float speedNumberAnimation = 0;
+    public float speedAnimation = 0;
     public bool upSpeedNumberAnimation = false;
     public bool downSpeedNumberAnimation = false;
 
@@ -189,7 +190,13 @@ public class FishingRodManager : MonoBehaviour
         {
             if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
             {
-                AnimationReelUp(1);
+
+                speedAnimation += 1f * Time.fixedDeltaTime;
+                if(speedAnimation > 1f)
+                {
+                    speedAnimation = 1f;
+                }
+                AnimationReelUp(speedAnimation);
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
@@ -217,7 +224,14 @@ public class FishingRodManager : MonoBehaviour
         }
         else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)    //Mettre à jour Fcurrent
         {
-            AnimationReelUp(-1);
+            speedAnimation += -1f * Time.fixedDeltaTime;
+
+            if (speedAnimation < -1f)
+            {
+                speedAnimation = -1f;
+            }
+            AnimationReelUp(speedAnimation);
+
             fishingLine.TensionDown();
             fishingLine.fCurrent = distanceCP;
         }
@@ -239,14 +253,34 @@ public class FishingRodManager : MonoBehaviour
 
         if (distanceCP < fishingLine.fCurrent && !fishingLine.isTaken)
         {
-            animFishingRod.SetFloat("SpeedMultiplier", 0);
+            if (speedAnimation > 0f)
+            {
+                speedAnimation += -1f * Time.fixedDeltaTime;
+
+                if (speedAnimation < 0)
+                {
+                    speedAnimation = 0f;
+                }
+            }
+
+            if (speedAnimation < 0f)
+            {
+                speedAnimation += 1f * Time.fixedDeltaTime;
+
+                if (speedAnimation > 0f)
+                {
+                    speedAnimation = 0f;
+                }
+            }
+
+
+            animFishingRod.SetFloat("SpeedMultiplier", speedAnimation);
         }
             UpdateFCurrent();
     }
 
-    public void AnimationReelUp(int choosenSpeed)
+    public void AnimationReelUp(float choosenSpeed)
     {
-        upSpeedNumberAnimation = true;
         animFishingRod.SetFloat("SpeedMultiplier", choosenSpeed);
     }
 
