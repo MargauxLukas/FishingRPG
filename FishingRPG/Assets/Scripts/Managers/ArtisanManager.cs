@@ -25,7 +25,7 @@ public class ArtisanManager : MonoBehaviour
     private float craftingTime = 1.2f;
 
     public Image holdButtonImg;
-
+    public GameObject WwiseGlobal;
 
     void Start()
     {
@@ -92,6 +92,7 @@ public class ArtisanManager : MonoBehaviour
                 Debug.Log(EventSystem.current);
                 ScriptablePointer sp = EventSystem.current.currentSelectedGameObject.GetComponent<ScriptablePointer>();
                 CraftObject(sp);
+                WwiseGlobal.GetComponent<WwiseHubManager>().OnItemCrafted.Post(gameObject);
               
                 craftingTimer = 0;
                 isCrafting = false;
