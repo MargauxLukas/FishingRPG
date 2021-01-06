@@ -3,9 +3,9 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}" PersistMode="Standalone">
 			<ChildrenList>
-				<ActorMixer Name="UI" ID="{BD2E397E-AC93-49E2-8300-7571F41BF58D}" ShortID="1053701391">
+				<ActorMixer Name="General UI" ID="{BD2E397E-AC93-49E2-8300-7571F41BF58D}" ShortID="1053701391">
 					<PropertyList>
-						<Property Name="Color" Type="int16" Value="24"/>
+						<Property Name="Color" Type="int16" Value="15"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
@@ -13,9 +13,163 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+							<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="Dépeceur" ID="{4D05032A-FEDE-46B4-96E8-645D92D0B5D8}" ShortID="115810136">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="CraftSoundSequence" ID="{9F811D21-F594-4849-B9DB-AED988135BD2}" ShortID="201211526">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+											<ObjectRef Name="CraftSound_TimeStretch" ID="{C5E823C6-377F-4FCA-82C4-2966EAE9BD8B}" WorkUnitID="{73C441B9-0303-487B-8FDD-BC4F76FBD12E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CraftSound" ID="{00678320-AED8-4366-9336-F0A130288210}" ShortID="423163716">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AnvilSound_SFX" ID="{ECFFDCFE-AF9A-4CDB-8A4D-59BF52B91C62}" ShortID="798154358">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.209456947162427"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.197820450097847"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.81824853228963E-02"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.674916829745601"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AnvilSound_SFX.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="664235949"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AnvilSound_SFX" ID="{ECFFDCFE-AF9A-4CDB-8A4D-59BF52B91C62}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CraftSound_01" ID="{335A81D8-DBCD-4924-B531-C268F9FE4330}" ShortID="278033315">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AnvilSound_SFX" ID="{3BEC1BD2-B4D4-40EE-9681-68E28AC08995}" ShortID="664235949">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.116364970645793"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.36147015655577"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.92002201565559"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AnvilSound_SFX.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="1006425973"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AnvilSound_SFX" ID="{3BEC1BD2-B4D4-40EE-9681-68E28AC08995}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CraftSound_02" ID="{D703694B-9809-4A76-A5DB-6012C136DF8C}" ShortID="357739706">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AnvilSound_SFX" ID="{393D8117-03B2-4522-B88A-4559AA259537}" ShortID="1006425973">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.279275929549902"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.66475782778864"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.33967465753425"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AnvilSound_SFX.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="798154358"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AnvilSound_SFX" ID="{393D8117-03B2-4522-B88A-4559AA259537}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="CraftSound" ID="{00678320-AED8-4366-9336-F0A130288210}"/>
+										<ItemRef Name="CraftSound_01" ID="{335A81D8-DBCD-4924-B531-C268F9FE4330}"/>
+										<ItemRef Name="CraftSound_02" ID="{D703694B-9809-4A76-A5DB-6012C136DF8C}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Artisan" ID="{12DA492A-DA33-4F0F-915A-1BA6364CB4C4}" ShortID="12826430">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="Maison" ID="{CD6EE0B9-E10F-45C3-90A5-F001AF8EEA8E}" ShortID="551180459">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="Inventaire" ID="{E1CC5698-257F-40EB-A335-D03D9ED2FBF1}" ShortID="304048311">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Fish" ID="{3142815D-9223-4AB9-A524-30CDB91EB398}" ShortID="435148890">
 					<ReferenceList>

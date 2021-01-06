@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2E965764-BEA8-476F-8613-DEA899943175}" SchemaVersion="94">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{2E965764-BEA8-476F-8613-DEA899943175}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2E965764-BEA8-476F-8613-DEA899943175}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="HUB" ID="{AB80C344-64AE-4E16-92C3-94D1B7DA1964}" ShortID="620981083">
+					<ChildrenList>
+						<Folder Name="Artisan" ID="{FE55E03A-A644-4096-A804-B0256498D248}" ShortID="567510339">
+							<ChildrenList>
+								<Event Name="OnItemCrafted" ID="{C9B30E88-6184-4EFF-B8E3-B39526C77616}">
+									<ChildrenList>
+										<Action Name="" ID="{CE15D2AE-FE61-43A3-B910-67799B0F6D4A}" ShortID="515298344">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CraftSoundSequence" ID="{9F811D21-F594-4849-B9DB-AED988135BD2}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

@@ -26,6 +26,7 @@ public class ArtisanManager : MonoBehaviour
 
     public Image holdButtonImg;
 
+
     void Start()
     {
         Debug.Log("Start");
@@ -91,6 +92,7 @@ public class ArtisanManager : MonoBehaviour
                 Debug.Log(EventSystem.current);
                 ScriptablePointer sp = EventSystem.current.currentSelectedGameObject.GetComponent<ScriptablePointer>();
                 CraftObject(sp);
+              
                 craftingTimer = 0;
                 isCrafting = false;
                 holdButtonImg.fillAmount = 0;

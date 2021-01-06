@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="4034923124" Name="OnItemCrafted" ObjectPath="\Events\Default Work Unit\HUB\Artisan\OnItemCrafted" DurationType="OneShot" DurationMin="1.850203" DurationMax="1.850203"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="664235949" Language="SFX">
+					<ShortName>AnvilSound_SFX.wav</ShortName>
+					<Path>SFX\AnvilSound_SFX_B092DBC7.wem</Path>
+				</File>
+				<File Id="798154358" Language="SFX">
+					<ShortName>AnvilSound_SFX.wav</ShortName>
+					<Path>SFX\AnvilSound_SFX_49C5FDF1.wem</Path>
+				</File>
+				<File Id="1006425973" Language="SFX">
+					<ShortName>AnvilSound_SFX.wav</ShortName>
+					<Path>SFX\AnvilSound_SFX_8A9BCBAD.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
