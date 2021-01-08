@@ -12,7 +12,7 @@ public class CheckWaterLevel : MonoBehaviour
 
     public LayerMask waterMask;                                                         //Mask de detection
     public Transform waterCheck;                                                        //Position du Bobber
-    public float waterDistance = 0.2f;                                                  //Rayon de la sphere de detection
+    public float waterDistance = 0.1f;                                                  //Rayon de la sphere de detection
 
     private void Start()
     {
