@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEditor;
-using UnityEditor.Rendering;
 
 public class FishyFicheTSVReader : MonoBehaviour
 {
