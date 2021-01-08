@@ -1,0 +1,538 @@
+fileFormatVersion: 2
+guid: de553bd4d4ad1e046be16bfc458ba47c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8206889519879812686
+    second: T_Fish_01_EYE_BC03_0
+  - first:
+      213: 653828736732731776
+    second: T_Fish_01_EYE_BC03_1
+  - first:
+      213: 8101285071405729338
+    second: T_Fish_01_EYE_BC03_2
+  - first:
+      213: -5721874546595722552
+    second: T_Fish_01_EYE_BC03_3
+  - first:
+      213: 1866940276176814858
+    second: T_Fish_01_EYE_BC03_4
+  - first:
+      213: -4180021922611448260
+    second: T_Fish_01_EYE_BC03_5
+  - first:
+      213: -6101970586655409266
+    second: T_Fish_01_EYE_BC03_6
+  - first:
+      213: -743855394702501520
+    second: T_Fish_01_EYE_BC03_7
+  - first:
+      213: 3583537601604616032
+    second: T_Fish_01_EYE_BC03_8
+  - first:
+      213: -1961798509686196438
+    second: T_Fish_01_EYE_BC03_9
+  - first:
+      213: -910671478164836248
+    second: T_Fish_01_EYE_BC03_10
+  - first:
+      213: 4583569355294442849
+    second: T_Fish_01_EYE_BC03_11
+  - first:
+      213: -8945516380819305498
+    second: T_Fish_01_EYE_BC03_12
+  - first:
+      213: 4253300503965070511
+    second: T_Fish_01_EYE_BC03_13
+  - first:
+      213: 6484058091726122588
+    second: T_Fish_01_EYE_BC03_14
+  - first:
+      213: -3973055059015717013
+    second: T_Fish_01_EYE_BC03_15
+  - first:
+      213: -1928099694596750032
+    second: T_Fish_01_EYE_BC03_16
+  - first:
+      213: 5276362844750836575
+    second: T_Fish_01_EYE_BC03_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 555
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b900b0b6754b1e80800000000000000
+      internalID: -8206889519879812686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_1
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 555
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08995ec95cdd21900800000000000000
+      internalID: 653828736732731776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_2
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 555
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36405999db8d6070800000000000000
+      internalID: 8101285071405729338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca00d86a61d790b0800000000000000
+      internalID: -5721874546595722552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_4
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 444
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03836a2a44b8e910800000000000000
+      internalID: 1866940276176814858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_5
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 444
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36366545349df5c0800000000000000
+      internalID: -4180021922611448260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bb580c412715ba0800000000000000
+      internalID: -6101970586655409266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_7
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 333
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079df7aa57b4da5f0800000000000000
+      internalID: -743855394702501520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_8
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 333
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ff5e656784bb130800000000000000
+      internalID: 3583537601604616032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27734546aa46c4e0800000000000000
+      internalID: -1961798509686196438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_10
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 222
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860b7e49d15ac53f0800000000000000
+      internalID: -910671478164836248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_11
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 222
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16501b93b0c1c9f30800000000000000
+      internalID: 4583569355294442849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 111
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ebc3dc3f342bd380800000000000000
+      internalID: -8945516380819305498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_13
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 111
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4f3ddf542c60b30800000000000000
+      internalID: 4253300503965070511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_14
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 111
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e255cfa700cf950800000000000000
+      internalID: 6484058091726122588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fac46597fdcd8c0800000000000000
+      internalID: -3973055059015717013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_16
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03585041b830e35e0800000000000000
+      internalID: -1928099694596750032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Fish_01_EYE_BC03_17
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 297
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53717b4d08693940800000000000000
+      internalID: 5276362844750836575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8b77b89154dedb942aaebae47c140ab3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -17,6 +17,8 @@ public class ArmorSet : ScriptableObject
     public int dexterity;
     public int intelligence;
 
+    public string description;
+
     public FishyDrop[] components;
     public int[] componentsQty;
 }

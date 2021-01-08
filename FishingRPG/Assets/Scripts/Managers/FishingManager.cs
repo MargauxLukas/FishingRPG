@@ -29,7 +29,7 @@ public class FishingManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isOnWater && !readyToFish)
         {
@@ -66,20 +66,28 @@ public class FishingManager : MonoBehaviour
         FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
         CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.cfvz.fishCheck = currentFish.transform;
+        FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(true);
+        FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(true);
         PlayerManager.instance.FishingCanStart();
     }
 
     public void CancelFishing()
     {
+        FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
         needToWait = 0f;
         timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();
+        FishingRodManager.instance.animFishingRod.SetBool("Turn", false);
 
         if (readyToFish)
         {
-            if(FishManager.instance.currentFishBehavior.canCollectTheFish)
+            FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(false);
+            FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(false);
+            FishManager.instance.currentFishBehavior.fishPattern.ResetOncePlay();
+            if (FishManager.instance.currentFishBehavior.canCollectTheFish)
             {
                 PlayerManager.instance.playerInventory.AddThisFishToInventory(FishManager.instance.currentFishBehavior.fishyFiche.ID);
+                FishManager.instance.currentFishBehavior.canCollectTheFish = false;
             }
 
             Destroy(currentFish);

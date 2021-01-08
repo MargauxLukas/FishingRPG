@@ -79,7 +79,8 @@ public class UtilitiesManager : MonoBehaviour
 
     public float GetTimingForMoreAerial()
     {
-        return (1 - qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility);
+        Debug.Log((FishManager.instance.currentFishBehavior.maxTimeAerial * qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility));
+        return (FishManager.instance.currentFishBehavior.maxTimeAerial*qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility);
     }
 
     //Hauteur de projection du poisson dans les airs (notée Hpp, float strictement positif) [Déso par avance]
@@ -102,7 +103,7 @@ public class UtilitiesManager : MonoBehaviour
         //HauP = Hauteur du poisson au moment ou LB appuyé
         //Hmax = Hauteur Max normalement
 
-        fellingDamage = (currentFishHeight/maxHeight) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility) * qFellingDamageBalancing;
+        fellingDamage = (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility) * qFellingDamageBalancing;
         return (maxTime / (2 * qTimeFellingAerialBalancing)) * (currentFishHeight / maxHeight);
     }
 

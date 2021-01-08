@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Init();
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     public virtual void Init()
@@ -61,6 +62,11 @@ public class UIManager : MonoBehaviour
     public void SetFirstSelected(GameObject _go)
     {
         EventSystem.current.SetSelectedGameObject(_go);
+    }
+
+    public void SetButcherSelected()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void Quit()

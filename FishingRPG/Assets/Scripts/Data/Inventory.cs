@@ -7,6 +7,8 @@ using UnityEditor;
 public class Inventory : ScriptableObject
 {
     public int fishTotal;
+    public int currentFishOnMe;
+    public int fishNumberOnStock;
     public int PQS_1;
     public int PFS_1;
 
@@ -54,7 +56,7 @@ public class Inventory : ScriptableObject
                 return PST_C;
             case "PSC_C":
                 return PSC_C;
-            case "PFL_R":
+            case "PLF_R":
                 return PFL_R;
             case "PFI_E":
                 return PFI_E;
@@ -107,6 +109,9 @@ public class Inventory : ScriptableObject
                 break;
             case "PFR_1":
                 PFR_1 = true;
+                break;
+            case "GPE_1":
+                GPE_1 = true;
                 break;
         }
     }

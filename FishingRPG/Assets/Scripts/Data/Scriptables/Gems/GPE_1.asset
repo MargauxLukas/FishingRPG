@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: GPE_1
   m_EditorClassIdentifier: 
   ID: GPE_1
-  gemName: FirstGem
+  gemName: Pequessivo Cristallized Blood
   appearance: {fileID: 21300000, guid: 7f9a849cf4e61054680faba646e13bf3, type: 3}
+  upgradeState: 1
+  stats: +1 Strength / +1 Dexterity for 30 seconds
+  description: Blood inside the hearth takes some much pressure that it can crystalize
+    in a crimson gem also called a "Last Teardrop".
   duration: 30
   cooldown: 45
-  components: []
+  components:
+  - {fileID: 11400000, guid: 9bc4e260fda4fd14fbdc8e4868b24da0, type: 2}
+  componentsQty: 01000000

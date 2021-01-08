@@ -18,6 +18,8 @@ public class FishManager : MonoBehaviour
     [Header("Text")]
     public Text staminaText;
     public Text lifeText;
+    public Image staminaJauge;
+    public Image lifeJauge;
 
     [Header("Aerial variables")]
     [HideInInspector] public bool isAerial = false;
@@ -46,6 +48,11 @@ public class FishManager : MonoBehaviour
     public int osPercent;
     public int soPercent;
 
+    //Debug Aerial
+    public bool debugAerialFish = false;
+    public GameObject test1;
+    public GameObject test2;
+
     [HideInInspector]public List<int> directionPercentList = new List<int>(11);
     private void Awake()
     {
@@ -71,24 +78,34 @@ public class FishManager : MonoBehaviour
             aerialExitWaterX = currentFish.transform.position.x;
             aerialExitWaterY = currentFish.transform.position.y;
             aerialExitWaterZ = currentFish.transform.position.z;
-
-            /*
+            
             aerialEnterWaterX = currentFish.transform.position.x;
-            aerialEnterWaterY = currentFish.transform.position.y;
             aerialEnterWaterZ = currentFish.transform.position.z;
-            */
-
+            
             aerialX = currentFish.transform.position.x;
             aerialY = currentFish.transform.position.y + UtilitiesManager.instance.GetHeightMaxForAerial(currentFishBehavior.JumpHeight);
             aerialZ = currentFish.transform.position.z;
+
+            if (debugAerialFish)
+            {
+                test1.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+                test2.transform.position = new Vector3(aerialX, aerialY, aerialZ);
+            }
+        }
+    }
+
+    public void UpdateAerial()
+    {
+        if (debugAerialFish)
+        {
+            test1.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+            test2.transform.position = new Vector3(aerialX, aerialY, aerialZ);
         }
     }
 
     public void SetAerialEnterWater()
     {
-        aerialEnterWaterX = currentFish.transform.position.x;
         aerialEnterWaterY = currentFish.transform.position.y;
-        aerialEnterWaterZ = currentFish.transform.position.z;
     }
 
     public void MoreAerial()
@@ -119,7 +136,7 @@ public class FishManager : MonoBehaviour
 
     IEnumerator FellingFreeze()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         Debug.Log("Abattage");
 
@@ -153,13 +170,14 @@ public class FishManager : MonoBehaviour
     {
         currentFishBehavior.exhausted = false;
         currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
-        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina/2;
+        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
         currentFishBehavior.nbRebond = 1;
         isAerial = false;
         isFelling = false;
         currentFishBehavior.isFellDown = false;
         NotExtenued();
-        ChangeStaminaText();
+        staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+        //ChangeStaminaText();
     }
 
     //Perte d'endurance lorsque la ligne est bloqué
@@ -168,7 +186,8 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber()/60;
-            ChangeStaminaText();
+            staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            //ChangeStaminaText();
         }
 
         currentFishBehavior.CheckStamina();
@@ -180,7 +199,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine()/60;
-            ChangeStaminaText();
+            staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
         }
 
         currentFishBehavior.CheckStamina();
@@ -189,36 +208,42 @@ public class FishManager : MonoBehaviour
     //Récupération d'endurance lorsque extenué
     public void UpStamina()
     {
-        if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+        if (!currentFishBehavior.isDead)
         {
-            currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina*0.15f)/60;
-            ChangeStaminaText();
-        }
+            if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+            {
+                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.50f) / 60;
+                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            }
 
-        if (currentFishBehavior.currentStamina > (currentFishBehavior.fishyFiche.stamina/2))
-        {
-            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina / 2;
-            DebugManager.instance.vz.DesactivateZone();
-            currentFishBehavior.exhausted = false;
-            currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
-            NotExtenued();
-            ChangeStaminaText();
+            if (currentFishBehavior.currentStamina > currentFishBehavior.fishyFiche.stamina)
+            {
+                currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+                DebugManager.instance.vz.DesactivateZone();
+                currentFishBehavior.exhausted = false;
+                currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+                NotExtenued();
+                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            }
         }
     }
 
     //Récupération d'endurance lorsque pas extenué et qu'il n'en perd pas
     public void LowUpStamina()
     {
-        if(currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+        if (!currentFishBehavior.isDead)
         {
-            currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.02f) / 60;
-            ChangeStaminaText();
+            if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
+            {
+                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.02f) / 60;
+                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            }
+            else
+            {
+                currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            }
         }
-        else
-        {
-            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
-            ChangeStaminaText();
-        }      
     }
 
     public void AerialDamage()
@@ -227,7 +252,7 @@ public class FishManager : MonoBehaviour
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetFellingDamage();
             FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
-            ChangeLifeText();
+            lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
         }
 
         currentFishBehavior.CheckLife();
@@ -251,13 +276,13 @@ public class FishManager : MonoBehaviour
         isAerial = true;
     }
 
-    public void ChangeStaminaText()
+    public void ChangeStaminaJauge()
     {
-        staminaText.text = currentFishBehavior.currentStamina.ToString();
+        staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
     }
 
-    public void ChangeLifeText()
+    public void ChangeLifeJauge()
     {
-        lifeText.text = currentFishBehavior.currentLife.ToString();
+        lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
     }
 }
