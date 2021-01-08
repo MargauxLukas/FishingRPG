@@ -8,6 +8,16 @@
 						<Property Name="TimeStretch" Type="Real32" Value="90"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="BuildingSoundTimeStretch" ID="{14B1FD7D-B4EB-4301-A042-D2CFB93893C7}" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+					<PropertyList>
+						<Property Name="TimeStretch" Type="Real32" Value="80"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="FilTimeStretch" ID="{381B7855-3590-482B-9130-68A566A74AD7}" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+					<PropertyList>
+						<Property Name="TimeStretch" Type="Real32" Value="136"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

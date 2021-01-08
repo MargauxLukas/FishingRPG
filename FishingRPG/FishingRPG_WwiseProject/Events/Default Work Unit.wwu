@@ -3,16 +3,153 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{2E965764-BEA8-476F-8613-DEA899943175}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="HUB" ID="{AB80C344-64AE-4E16-92C3-94D1B7DA1964}" ShortID="620981083">
+				<Folder Name="UI" ID="{780D9815-4548-4523-8FAD-AEC6F882FF54}" ShortID="383383102">
 					<ChildrenList>
-						<Folder Name="Artisan" ID="{FE55E03A-A644-4096-A804-B0256498D248}" ShortID="567510339">
+						<Folder Name="HUB" ID="{AB80C344-64AE-4E16-92C3-94D1B7DA1964}" ShortID="620981083">
 							<ChildrenList>
-								<Event Name="OnItemCrafted" ID="{C9B30E88-6184-4EFF-B8E3-B39526C77616}">
+								<Folder Name="Artisan" ID="{FE55E03A-A644-4096-A804-B0256498D248}" ShortID="567510339">
 									<ChildrenList>
-										<Action Name="" ID="{CE15D2AE-FE61-43A3-B910-67799B0F6D4A}" ShortID="515298344">
+										<Event Name="OnItemCrafted" ID="{C9B30E88-6184-4EFF-B8E3-B39526C77616}">
+											<ChildrenList>
+												<Action Name="" ID="{CE15D2AE-FE61-43A3-B910-67799B0F6D4A}" ShortID="515298344">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="CraftSoundSequence" ID="{9F811D21-F594-4849-B9DB-AED988135BD2}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OnItemCantCraft" ID="{4D7C9DFE-057B-4059-8F79-7A56F94C7776}">
+											<ChildrenList>
+												<Action Name="" ID="{797A72BE-CE72-4C5E-A62B-B153D6BEBD1E}" ShortID="883998125">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="CantCraftSound" ID="{06E8BB98-A6B4-4076-9223-F885778B5415}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OnCraftTerminated" ID="{4F22C5C0-8801-4A0E-AE73-0A9C7BC54DCE}">
+											<ChildrenList>
+												<Action Name="" ID="{E8490D73-F326-4D3C-8543-77F5C859C94B}" ShortID="119170624">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="CraftTerminatedSound" ID="{ED06B59E-B7FE-40E4-A007-26FF40F164A3}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="GoFishing" ID="{5F8BA502-8479-46AE-BC0E-9E5ABBD75118}" ShortID="440072148">
+									<ChildrenList>
+										<Event Name="OnHubLeave" ID="{25ED89AC-6973-4A8D-AF41-4198A2C89BDF}">
+											<ChildrenList>
+												<Action Name="" ID="{1DDBB9DB-7136-494F-9F73-B234E087F04A}" ShortID="824926824">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="HubLeaveSound" ID="{860FC327-DB94-4473-9E2D-56BC1AB256CF}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OnSnapSnackGemEquipped" ID="{1F414868-C700-4394-995A-A5E0A2017D61}">
+											<ChildrenList>
+												<Action Name="" ID="{08AF72FC-93CC-4867-8688-5A9C83B79921}" ShortID="442022320">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="SnapSnackGemSound" ID="{310EC9A2-E637-49C8-A5F0-7E4DF95AFCCF}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OnReefCrusherGemEquipped" ID="{26F638DA-7C6A-4038-803C-A470DFFBF674}">
+											<ChildrenList>
+												<Action Name="" ID="{807A18E4-10D5-4B02-B830-F51F45DF9719}" ShortID="132744620">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ReefCrusherGemSound" ID="{ED0A9F2A-5730-4C9D-A251-EC4E2347AA55}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OnStuffEquipped" ID="{ABC77DA1-E1A6-4113-B253-06E13E7BB0FA}">
+											<ChildrenList>
+												<Action Name="" ID="{301D707C-75D1-450F-ADC3-38F66E2E14D1}" ShortID="119864369">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="StuffEquipedRandomContainer" ID="{92776B52-B4E8-48C5-A97E-B9D2019C6F45}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Dépeceur" ID="{BD68C540-A1CD-4509-82C7-D0EEC85FD68D}" ShortID="709648949">
+									<ChildrenList>
+										<Event Name="OnDecoupeStarted" ID="{18FE544C-A0E2-426F-85F9-5109841C2513}">
+											<ChildrenList>
+												<Action Name="" ID="{70553B1C-8965-4D6D-A328-69AA49E157E6}" ShortID="192110402">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="DecoupeSequenceContainter" ID="{61091994-118B-4120-9BA3-CB5E352385B9}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OnDecoupeEnded" ID="{0D554E2E-4041-4D12-9E0B-1FE36D610ABF}">
+											<ChildrenList>
+												<Action Name="" ID="{DB9626BE-17DC-4D69-B7EE-34F0C401263A}" ShortID="960936712">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="DecoupeEndedSound" ID="{380488AA-4D9B-4B2D-B136-9FCA487ADBB5}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Maison" ID="{BFFC2140-FBA5-4149-9D89-EC77AD9E717E}" ShortID="187951842">
+									<ChildrenList>
+										<Event Name="OnSaveStarted" ID="{6AD77B58-35C3-4258-AAD2-0B0F094910DF}">
+											<ChildrenList>
+												<Action Name="" ID="{972F7D82-1343-474E-8505-A01C6CF93B9E}" ShortID="55777764">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="DuringSaveSound" ID="{76C49054-5C1C-42A9-8BFB-A2646668C05D}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OnSaveConfirmed" ID="{1A0C5201-351F-4918-AF6A-BB0A4E4DA0C5}">
+											<ChildrenList>
+												<Action Name="" ID="{323ABB9E-C878-421D-8DA6-A34009EDF1D3}" ShortID="203070695">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="SaveConfirmatedSound" ID="{4B348C80-82E4-4E4E-B452-54102073913E}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Event Name="OnBuildingOpen" ID="{59A7DDFA-3A6A-430E-A717-AB1470B480CC}">
+									<ChildrenList>
+										<Action Name="" ID="{D1D54F05-D48D-4FB0-8D67-A3F01F63617F}" ShortID="170409086">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="CraftSoundSequence" ID="{9F811D21-F594-4849-B9DB-AED988135BD2}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+													<ObjectRef Name="BuildingOpenedSounds" ID="{EB2540BD-7765-458E-916E-9E41CBEC4F27}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -20,6 +157,75 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="General UI" ID="{3F6314EC-A33F-428F-ABD5-A2FD856E510B}" ShortID="677961371">
+							<ChildrenList>
+								<Event Name="OnCursorMove" ID="{4946FB5D-863A-4D75-8351-C272758C27FD}">
+									<ChildrenList>
+										<Action Name="" ID="{70BF5614-470E-4786-90D8-76A5D8262DDA}" ShortID="782124380">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CursorMoveSound" ID="{DA4822E0-21A0-40CC-A461-EF1D4F3BBC98}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnCursorSelect" ID="{E662EE38-B713-41E6-914C-7D067D1429E7}">
+									<ChildrenList>
+										<Action Name="" ID="{B9245964-FB99-4EDD-8903-B6DCB2D60B5B}" ShortID="1055278509">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CursorSelectionSound" ID="{E7E535C0-30F3-4756-8285-E3274A7031DE}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Character" ID="{9AFC82C0-A087-43FF-A51C-9CE1A37D6E56}" ShortID="718067890">
+					<ChildrenList>
+						<Folder Name="Canne" ID="{A29E49F5-DFF2-4225-8282-165A147E7F91}" ShortID="370599349">
+							<ChildrenList>
+								<Event Name="OnFilTendu" ID="{2C7AB592-1E13-4DD8-B956-13E2A9B51FEA}">
+									<ChildrenList>
+										<Action Name="" ID="{91D3C80A-7D68-452C-ABAD-E5BA4C1709C6}" ShortID="739426248">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FilTenduRandomContainer" ID="{BD96739F-3C39-4FDE-AB71-1496E3194CEE}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnMoulinetOn" ID="{E124984E-6664-4E9F-8251-D831604CCED4}">
+									<ChildrenList>
+										<Action Name="" ID="{93869E11-A910-4786-902A-F0F9CE3BD635}" ShortID="669607066">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UseMoulinetSound" ID="{6A4DC7C1-0033-4C8E-B10C-FCECB1CCC32F}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnFilDeroule" ID="{60D3D0A5-E6D9-4DB9-88E9-3DBC7CB536F8}"/>
+							</ChildrenList>
+						</Folder>
+						<Event Name="OnGemUsed" ID="{4EA43EDA-133F-482F-A4C3-3AEC2A92BD68}">
+							<ChildrenList>
+								<Action Name="" ID="{15A50EC6-A086-4EC5-8AC4-112A42D29379}" ShortID="995114360">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GemEquippedSwitchContainer" ID="{3670260D-2741-4FE0-BD75-B7F9A3224E4C}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnCharacterWalk" ID="{BB8EDA30-F4BA-4122-AF53-2C7176B4BEA4}"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

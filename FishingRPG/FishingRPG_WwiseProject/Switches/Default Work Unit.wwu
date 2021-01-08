@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}" SchemaVersion="94">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Materials" ID="{444ED8C7-AAA0-4A74-8056-BD237063755A}">
+					<ChildrenList>
+						<Switch Name="Sand" ID="{703E0BF5-05FE-4993-85B9-4D751EA3A171}"/>
+						<Switch Name="Rock" ID="{78D7D99B-C5D2-4D02-B123-B198AF0D4BA0}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="GemEquipped" ID="{D1B1B8B3-7FB5-4184-99BA-EDD627322C95}">
+					<ChildrenList>
+						<Switch Name="SnapSnack" ID="{C41971DA-E793-43A7-848D-CD77E496895B}"/>
+						<Switch Name="ReefCrusher" ID="{3AF170C1-12A3-402C-A936-C95FB651A41B}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>
