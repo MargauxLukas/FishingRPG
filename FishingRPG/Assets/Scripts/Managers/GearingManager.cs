@@ -75,6 +75,8 @@ public class GearingManager : MonoBehaviour
                 leavingTimer = 0;
                 isLeaving = false;
                 holdButtonImg.fillAmount = 0;
+                //Play Sound
+                AkSoundEngine.PostEvent("OnHubLeave", gameObject);
 
                 if (SceneManager.GetActiveScene().buildIndex == 0)
                 {

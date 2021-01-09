@@ -29,11 +29,12 @@
 				<Event Id="1516238081" Name="OnDecoupeEnded" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeEnded" DurationType="OneShot" DurationMin="0.373039" DurationMax="0.373039"/>
 				<Event Id="3872903362" Name="OnDecoupeStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeStarted" DurationType="OneShot" DurationMin="1.416706" DurationMax="1.416706"/>
 				<Event Id="2964522841" Name="OnFilTendu" ObjectPath="\Events\Default Work Unit\Character\Canne\OnFilTendu" DurationType="OneShot" DurationMin="25.206055" DurationMax="25.206055"/>
+				<Event Id="2058057925" Name="OnFishOnTable" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnFishOnTable" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
 				<Event Id="1864058544" Name="OnFishPickUp" ObjectPath="\Events\Default Work Unit\Fishes\OnFishPickUp" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 				<Event Id="199235004" Name="OnGemUsed" ObjectPath="\Events\Default Work Unit\Character\OnGemUsed" DurationType="OneShot" DurationMin="2.750000" DurationMax="2.750000"/>
 				<Event Id="1441617756" Name="OnHubLeave" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnHubLeave" DurationType="OneShot" DurationMin="1.422945" DurationMax="1.422945"/>
 				<Event Id="3649038553" Name="OnItemCantCraft" ObjectPath="\Events\Default Work Unit\UI\HUB\Artisan\OnItemCantCraft" DurationType="OneShot" DurationMin="0.928938" DurationMax="0.928938"/>
-				<Event Id="4034923124" Name="OnItemCrafted" ObjectPath="\Events\Default Work Unit\UI\HUB\Artisan\OnItemCrafted" DurationType="OneShot" DurationMin="2.363115" DurationMax="2.363115"/>
+				<Event Id="4034923124" Name="OnItemCrafted" ObjectPath="\Events\Default Work Unit\UI\HUB\Artisan\OnItemCrafted" DurationType="OneShot" DurationMin="2.372517" DurationMax="2.372517"/>
 				<Event Id="2022985720" Name="OnMoulinetOn" ObjectPath="\Events\Default Work Unit\Character\Canne\OnMoulinetOn" DurationType="Infinite"/>
 				<Event Id="3602476226" Name="OnReefCrusherGemEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnReefCrusherGemEquipped" DurationType="OneShot" DurationMin="0.879864" DurationMax="0.879864"/>
 				<Event Id="4211819432" Name="OnSaveConfirmed" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveConfirmed" DurationType="OneShot" DurationMin="1.162930" DurationMax="1.162930"/>
@@ -47,6 +48,10 @@
 					<ShortName>Moulinet qui remonte.wav</ShortName>
 					<Path>SFX\Moulinet qui remonte_AD5FD57C.wem</Path>
 				</File>
+				<File Id="51199783" Language="SFX">
+					<ShortName>Food Eat 02.wav</ShortName>
+					<Path>SFX\Food Eat 02_10C4C929.wem</Path>
+				</File>
 				<File Id="51797224" Language="SFX">
 					<ShortName>Page qui se tourne.wav</ShortName>
 					<Path>SFX\Page qui se tourne_175D8643.wem</Path>
@@ -58,6 +63,10 @@
 				<File Id="101618568" Language="SFX">
 					<ShortName>Footstep Sand Walking 2_02.wav</ShortName>
 					<Path>SFX\Footstep Sand Walking 2_02_10C4C929.wem</Path>
+				</File>
+				<File Id="103338287" Language="SFX">
+					<ShortName>Stone 10.wav</ShortName>
+					<Path>SFX\Stone 10_10C4C929.wem</Path>
 				</File>
 				<File Id="120652217" Language="SFX">
 					<ShortName>Fil tendu 1.wav</ShortName>
@@ -131,6 +140,10 @@
 					<ShortName>Equipement fabriqué.wav</ShortName>
 					<Path>SFX\Equipement fabriqué_4C815F03.wem</Path>
 				</File>
+				<File Id="488794485" Language="SFX">
+					<ShortName>Blacksmith 01.wav</ShortName>
+					<Path>SFX\Blacksmith 01_9389EBD4.wem</Path>
+				</File>
 				<File Id="498524427" Language="SFX">
 					<ShortName>Footstep Sand Walking 1_02.wav</ShortName>
 					<Path>SFX\Footstep Sand Walking 1_02_10C4C929.wem</Path>
@@ -159,9 +172,9 @@
 					<ShortName>Footstep Sand Walking 2_01.wav</ShortName>
 					<Path>SFX\Footstep Sand Walking 2_01_10C4C929.wem</Path>
 				</File>
-				<File Id="664235949" Language="SFX">
-					<ShortName>AnvilSound_SFX.wav</ShortName>
-					<Path>SFX\AnvilSound_SFX_E68D6891.wem</Path>
+				<File Id="658065750" Language="SFX">
+					<ShortName>Blacksmith 03.wav</ShortName>
+					<Path>SFX\Blacksmith 03_5B27E500.wem</Path>
 				</File>
 				<File Id="676316682" Language="SFX">
 					<ShortName>Lancement aventure.wav</ShortName>
@@ -187,21 +200,25 @@
 					<ShortName>Fil tendu 1.wav</ShortName>
 					<Path>SFX\Fil tendu 1_83D2414E.wem</Path>
 				</File>
-				<File Id="798154358" Language="SFX">
-					<ShortName>AnvilSound_SFX.wav</ShortName>
-					<Path>SFX\AnvilSound_SFX_DDA30730.wem</Path>
-				</File>
 				<File Id="823275461" Language="SFX">
 					<ShortName>Footstep Concrete Walking 1_03.wav</ShortName>
 					<Path>SFX\Footstep Concrete Walking 1_03_10C4C929.wem</Path>
+				</File>
+				<File Id="832936103" Language="SFX">
+					<ShortName>Blacksmith 04.wav</ShortName>
+					<Path>SFX\Blacksmith 04_5E6DFDF0.wem</Path>
 				</File>
 				<File Id="995520828" Language="SFX">
 					<ShortName>Mouvement de canne.wav</ShortName>
 					<Path>SFX\Mouvement de canne_10C4C929.wem</Path>
 				</File>
-				<File Id="1006425973" Language="SFX">
-					<ShortName>AnvilSound_SFX.wav</ShortName>
-					<Path>SFX\AnvilSound_SFX_490BF830.wem</Path>
+				<File Id="1033835399" Language="SFX">
+					<ShortName>Food Eat 01.wav</ShortName>
+					<Path>SFX\Food Eat 01_10C4C929.wem</Path>
+				</File>
+				<File Id="1049070991" Language="SFX">
+					<ShortName>Food Eat 03.wav</ShortName>
+					<Path>SFX\Food Eat 03_10C4C929.wem</Path>
 				</File>
 				<File Id="1052333509" Language="SFX">
 					<ShortName>Footstep Concrete Walking 1_01.wav</ShortName>

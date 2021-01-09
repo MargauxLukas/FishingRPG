@@ -57,6 +57,9 @@ public class ButcherManager : MonoBehaviour
             ShowGoodFish(fishID);
 
             StartCoroutine(FishCanBeCut());
+
+            //Play Sound
+            AkSoundEngine.PostEvent("OnFishOnTable", gameObject);
         }
 
         if(Input.GetButton("Submit") && fishReadyToCut)
@@ -75,7 +78,10 @@ public class ButcherManager : MonoBehaviour
             {
                 cuttedFish = true;
                 fishToButch.SetActive(false);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnDecoupeStarted", gameObject);
                 butchedFish.SetActive(true);
+                AkSoundEngine.PostEvent("OnDecoupeEnded", gameObject);
 
                 //Display Components (if > 3 display line2)
                 HowManyLoot();

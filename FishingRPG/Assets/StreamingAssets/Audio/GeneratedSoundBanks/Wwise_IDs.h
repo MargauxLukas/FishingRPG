@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID ONDECOUPEENDED = 1516238081U;
         static const AkUniqueID ONDECOUPESTARTED = 3872903362U;
         static const AkUniqueID ONFILTENDU = 2964522841U;
+        static const AkUniqueID ONFISHONTABLE = 2058057925U;
         static const AkUniqueID ONFISHPICKUP = 1864058544U;
         static const AkUniqueID ONGEMUSED = 199235004U;
         static const AkUniqueID ONHUBLEAVE = 1441617756U;

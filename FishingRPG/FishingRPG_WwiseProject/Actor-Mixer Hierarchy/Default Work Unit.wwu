@@ -236,6 +236,220 @@
 												<ActiveSource Name="Coupe" ID="{5331A97C-6577-4A4A-AAA8-ECE36B46AF56}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<RandomSequenceContainer Name="FishOnTableSounds" ID="{1CD58B8F-DCC5-4105-8BCE-9D7F0FF94BB8}" ShortID="700969937">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<BlendContainer Name="FishOnTableBlend" ID="{5A09257B-C298-493B-A93D-1FD880723FED}" ShortID="242036265">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Stone 10" ID="{45FFE4DE-674B-42D5-9A3F-353B26B3E59C}" ShortID="610679693">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Stone 10" ID="{D720F7A6-D303-4EFA-8CFD-DF0598A30BE8}" ShortID="103338287">
+																	<Language>SFX</Language>
+																	<AudioFile>Stone 10.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Stone 10" ID="{D720F7A6-D303-4EFA-8CFD-DF0598A30BE8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Food Eat 01_01" ID="{44CBA2DD-40AA-4E5A-8FB2-B0AB746AD26D}" ShortID="322032364">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Food Eat 01" ID="{27951392-E831-42E9-9023-F4D963BA56EE}" ShortID="1018138889">
+																	<Language>SFX</Language>
+																	<AudioFile>Food Eat 01.wav</AudioFile>
+																	<ConvertedFileIDList>
+																		<File ID="1033835399"/>
+																	</ConvertedFileIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Food Eat 01" ID="{27951392-E831-42E9-9023-F4D963BA56EE}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+												<BlendContainer Name="FishOnTableBlend_01" ID="{29D5B2B0-9945-4848-ABB2-5356A3F28D0E}" ShortID="810471230">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Stone 10" ID="{15AC5601-EAB1-45B7-923B-E98196D6F4F8}" ShortID="122849380">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Stone 10" ID="{73874EDA-6E81-4426-8B2F-CCB2E5AFB77E}" ShortID="74322229">
+																	<Language>SFX</Language>
+																	<AudioFile>Stone 10.wav</AudioFile>
+																	<ConvertedFileIDList>
+																		<File ID="103338287"/>
+																	</ConvertedFileIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Stone 10" ID="{73874EDA-6E81-4426-8B2F-CCB2E5AFB77E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Food Eat 02" ID="{29F8CE3E-7812-46B5-9A4D-1C293A7B8DA1}" ShortID="320983344">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Food Eat 02" ID="{DFAAE51B-F289-468F-AF7D-DD4B8C24FF16}" ShortID="51199783">
+																	<Language>SFX</Language>
+																	<AudioFile>Food Eat 02.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Food Eat 02" ID="{DFAAE51B-F289-468F-AF7D-DD4B8C24FF16}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+												<BlendContainer Name="FishOnTableBlend_02" ID="{567648EA-3295-4C2C-A9F6-B1CA45AF36B7}" ShortID="767551576">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Stone 10" ID="{1F9AB64F-05AB-4D32-A57C-30CA9A36FDB6}" ShortID="764798442">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Stone 10" ID="{6A4C74F0-AD18-474C-8640-D6D9896C1916}" ShortID="762991680">
+																	<Language>SFX</Language>
+																	<AudioFile>Stone 10.wav</AudioFile>
+																	<ConvertedFileIDList>
+																		<File ID="103338287"/>
+																	</ConvertedFileIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Stone 10" ID="{6A4C74F0-AD18-474C-8640-D6D9896C1916}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Food Eat 02" ID="{18B53C59-FF8D-468A-81EA-D23950C4AE26}" ShortID="889224371">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Food Eat 02" ID="{F7E66D7E-E186-4960-9EB8-9DE9BB98F827}" ShortID="802587330">
+																	<Language>SFX</Language>
+																	<AudioFile>Food Eat 02.wav</AudioFile>
+																	<ConvertedFileIDList>
+																		<File ID="51199783"/>
+																	</ConvertedFileIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Food Eat 02" ID="{F7E66D7E-E186-4960-9EB8-9DE9BB98F827}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Food Eat 03" ID="{C90EFE39-4104-4353-97BB-68CF5177468F}" ShortID="872013743">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Food Eat 03" ID="{817B78CD-EFD9-4285-A0EF-1E8B07390DF5}" ShortID="1049070991">
+																	<Language>SFX</Language>
+																	<AudioFile>Food Eat 03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Food Eat 03" ID="{817B78CD-EFD9-4285-A0EF-1E8B07390DF5}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+											</ChildrenList>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Artisan" ID="{12DA492A-DA33-4F0F-915A-1BA6364CB4C4}" ShortID="12826430">
@@ -252,6 +466,7 @@
 											<PropertyList>
 												<Property Name="OverrideEffect" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="4"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
@@ -269,6 +484,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<Sound Name="CraftSound" ID="{00678320-AED8-4366-9336-F0A130288210}" ShortID="423163716">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
@@ -298,6 +520,13 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="CraftSound_01" ID="{335A81D8-DBCD-4924-B531-C268F9FE4330}" ShortID="278033315">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
@@ -326,6 +555,13 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="CraftSound_02" ID="{D703694B-9809-4A76-A5DB-6012C136DF8C}" ShortID="357739706">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
@@ -384,11 +620,86 @@
 														<ActiveSource Name="Equipement fabriqué" ID="{9A13AB97-4EC1-4018-84D8-2416FC1604AC}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<Sound Name="Blacksmith 01" ID="{07652894-46B0-42BD-B111-4FC81C7BB534}" ShortID="1022886348">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Blacksmith 01" ID="{2D0BE23C-5509-450F-BE30-126BD43BDB6A}" ShortID="488794485">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="8.77568493150685E-02"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.3638698630137"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Blacksmith 01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Blacksmith 01" ID="{2D0BE23C-5509-450F-BE30-126BD43BDB6A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Blacksmith 03" ID="{AF77BD95-3CD6-4F9A-8D92-8081FF06D371}" ShortID="808029478">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Blacksmith 03" ID="{64BB5A43-A8F2-4C67-B980-99CA5F335DEF}" ShortID="658065750">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="4.79452054794521E-02"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.75"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Blacksmith 03.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Blacksmith 03" ID="{64BB5A43-A8F2-4C67-B980-99CA5F335DEF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Blacksmith 04" ID="{7492DA79-B361-4B2D-B739-95D0C5754AB1}" ShortID="439222664">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Blacksmith 04" ID="{BF65427B-DF8C-4886-8334-0918B1FA39EA}" ShortID="832936103">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.123287671232877"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.755136986301372"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Blacksmith 04.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Blacksmith 04" ID="{BF65427B-DF8C-4886-8334-0918B1FA39EA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
 											<Playlist>
 												<ItemRef Name="CraftSound" ID="{00678320-AED8-4366-9336-F0A130288210}"/>
 												<ItemRef Name="CraftSound_01" ID="{335A81D8-DBCD-4924-B531-C268F9FE4330}"/>
 												<ItemRef Name="CraftSound_02" ID="{D703694B-9809-4A76-A5DB-6012C136DF8C}"/>
+												<ItemRef Name="Blacksmith 01" ID="{07652894-46B0-42BD-B111-4FC81C7BB534}"/>
+												<ItemRef Name="Blacksmith 03" ID="{AF77BD95-3CD6-4F9A-8D92-8081FF06D371}"/>
+												<ItemRef Name="Blacksmith 04" ID="{7492DA79-B361-4B2D-B739-95D0C5754AB1}"/>
 												<ItemRef Name="CraftTerminatedSound" ID="{ED06B59E-B7FE-40E4-A007-26FF40F164A3}"/>
 											</Playlist>
 										</RandomSequenceContainer>
@@ -717,7 +1028,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="OnFishPickUp" ID="{3B5DFAD3-5951-420B-9AEB-086403FECC69}" ShortID="12740107">
+						<Sound Name="FishPickUpSound" ID="{3B5DFAD3-5951-420B-9AEB-086403FECC69}" ShortID="12740107">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
@@ -736,6 +1047,233 @@
 								<ActiveSource Name="Poisson dans inventaire" ID="{FCC159D2-A4B3-48A1-BDD3-1658AEEABADA}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Folder Name="SnapSnack" ID="{F501CB82-CA35-472F-9990-DA52BC8D42B8}" ShortID="612966678">
+							<ChildrenList>
+								<Sound Name="Catapulte2" ID="{7018AA7B-D122-4647-83ED-9E3255940B3B}" ShortID="669961476">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_8" ID="{0D5D8E0F-0736-47AD-A25F-3BCAE92F3489}" ShortID="347896685">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_8.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_8" ID="{0D5D8E0F-0736-47AD-A25F-3BCAE92F3489}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Catapulte1" ID="{8E0C90FC-2C25-4FFE-9AC3-04FA19C57F91}" ShortID="503107871">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_15 - Aggressive" ID="{57DE4C95-AD09-43D1-8766-24BA5357504D}" ShortID="999590192">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_15 - Aggressive.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_15 - Aggressive" ID="{57DE4C95-AD09-43D1-8766-24BA5357504D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Feinte" ID="{53E9249C-6022-4C58-B58C-0C1543E10768}" ShortID="71158089">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_13 - Aggressive" ID="{E0D55211-9A57-4EED-BAC6-F31CCE416608}" ShortID="96695506">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_13 - Aggressive.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_13 - Aggressive" ID="{E0D55211-9A57-4EED-BAC6-F31CCE416608}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Fuite" ID="{3881F9F6-AE56-4C69-A8C0-4F055FC4F164}" ShortID="163150554">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_14 - Growl" ID="{4C5DA0B8-6A23-4654-B98F-E61F8C5414B2}" ShortID="609164108">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_14 - Growl.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_14 - Growl" ID="{4C5DA0B8-6A23-4654-B98F-E61F8C5414B2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+						<SwitchContainer Name="RageSounds" ID="{A1E4BB44-455D-494F-8844-FA0A84C3301F}" ShortID="1058279285">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="CurrentFishInCombat" ID="{CB635CA0-D3FA-4074-9AAE-7A0A0543763A}" WorkUnitID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Cute Creature_9 - Dying" ID="{6FFB7064-6E7F-4EC4-A654-4CEECE79668F}" ShortID="111651735">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_9 - Dying" ID="{339B0B88-B867-4DFE-974C-C959FF1093DE}" ShortID="740789736">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_9 - Dying.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_9 - Dying" ID="{339B0B88-B867-4DFE-974C-C959FF1093DE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Cute Creature_9 - Dying" ID="{6FFB7064-6E7F-4EC4-A654-4CEECE79668F}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
+										<ItemList>
+											<ItemRef Name="Cute Creature_9 - Dying" ID="{6FFB7064-6E7F-4EC4-A654-4CEECE79668F}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<SwitchContainer Name="DeathSounds" ID="{4D6BED31-9316-4A76-B71B-81F9384848FF}" ShortID="654176372">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="CurrentFishInCombat" ID="{CB635CA0-D3FA-4074-9AAE-7A0A0543763A}" WorkUnitID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Cute Creature_10 - Growl" ID="{D8213C21-8E1E-4DEA-8C4D-0DD9AE6808A7}" ShortID="917004418">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_10 - Growl" ID="{F526509B-9083-4EF1-B7EB-7051BF833CCA}" ShortID="71148004">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_10 - Growl.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_10 - Growl" ID="{F526509B-9083-4EF1-B7EB-7051BF833CCA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Cute Creature_10 - Growl" ID="{D8213C21-8E1E-4DEA-8C4D-0DD9AE6808A7}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
+										<ItemList>
+											<ItemRef Name="Cute Creature_10 - Growl" ID="{D8213C21-8E1E-4DEA-8C4D-0DD9AE6808A7}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<SwitchContainer Name="DammageSounds" ID="{3B535563-9872-4963-BD6B-448A3EAC601F}" ShortID="392423545">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="CurrentFishInCombat" ID="{CB635CA0-D3FA-4074-9AAE-7A0A0543763A}" WorkUnitID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Cute Creature_11 - Growl" ID="{AEB0A55C-9EE9-4643-A361-82F1D8E84D02}" ShortID="510421472">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_11 - Growl" ID="{14F72054-D915-4662-8562-A3AD290A6508}" ShortID="402958532">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_11 - Growl.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_11 - Growl" ID="{14F72054-D915-4662-8562-A3AD290A6508}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Cute Creature_11 - Growl" ID="{AEB0A55C-9EE9-4643-A361-82F1D8E84D02}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
+										<ItemList>
+											<ItemRef Name="Cute Creature_11 - Growl" ID="{AEB0A55C-9EE9-4643-A361-82F1D8E84D02}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="CharacterController" ID="{ABF9EBEA-6BA0-411A-A9DC-583DA7C4E369}" ShortID="360649046">

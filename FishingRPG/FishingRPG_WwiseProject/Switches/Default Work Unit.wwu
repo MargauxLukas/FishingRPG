@@ -16,6 +16,12 @@
 						<Switch Name="ReefCrusher" ID="{3AF170C1-12A3-402C-A936-C95FB651A41B}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="CurrentFishInCombat" ID="{CB635CA0-D3FA-4074-9AAE-7A0A0543763A}">
+					<ChildrenList>
+						<Switch Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
+						<Switch Name="ReefCrusher" ID="{CEE19877-AE47-499F-AFEA-46C69E1EBCF7}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

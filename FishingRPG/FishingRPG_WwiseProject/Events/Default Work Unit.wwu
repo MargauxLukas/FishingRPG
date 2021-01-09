@@ -105,6 +105,17 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="OnFishOnTable" ID="{37256AEE-26A1-478A-8A71-81DC37A0F5D3}">
+											<ChildrenList>
+												<Action Name="" ID="{E9C4852A-3B45-4ACA-A260-33E2E9DBBC95}" ShortID="821388133">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="FishOnTableSounds" ID="{1CD58B8F-DCC5-4105-8BCE-9D7F0FF94BB8}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Maison" ID="{BFFC2140-FBA5-4149-9D89-EC77AD9E717E}" ShortID="187951842">
@@ -257,7 +268,88 @@
 								<Action Name="" ID="{BE285087-CECA-49B1-8B63-6D14D0EE9947}" ShortID="243977340">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="OnFishPickUp" ID="{3B5DFAD3-5951-420B-9AEB-086403FECC69}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+											<ObjectRef Name="FishPickUpSound" ID="{3B5DFAD3-5951-420B-9AEB-086403FECC69}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="SnapSnack" ID="{C4876D44-275D-455E-A73B-EFBD794BA093}" ShortID="1027990720">
+							<ChildrenList>
+								<Event Name="OnFuite" ID="{D0A82BBD-2FC7-48D7-B109-F4CA9D0E5FE8}">
+									<ChildrenList>
+										<Action Name="" ID="{A3F9BE3A-58C9-4F41-B9A4-1929A81656A0}" ShortID="831922972">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Fuite" ID="{3881F9F6-AE56-4C69-A8C0-4F055FC4F164}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnCatapulte1" ID="{41D5A0E7-5492-40DB-9566-34E38FF0C1AB}">
+									<ChildrenList>
+										<Action Name="" ID="{B8F5AAD9-BB3D-4955-9117-24DCE9A0C2DC}" ShortID="389640562">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Catapulte1" ID="{8E0C90FC-2C25-4FFE-9AC3-04FA19C57F91}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnFeinte" ID="{5CB28449-BFF7-425C-B261-F03199CBC3C0}">
+									<ChildrenList>
+										<Action Name="" ID="{C13B8D99-EBAA-4885-8AB2-112E73ACB467}" ShortID="818139814">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Feinte" ID="{53E9249C-6022-4C58-B58C-0C1543E10768}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnCatapulte2" ID="{13791F43-1C7B-470F-B0B1-F5FB3C1B6595}">
+									<ChildrenList>
+										<Action Name="" ID="{3A2788C6-27CC-48C1-980B-BBD0A74D53C7}" ShortID="518023624">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Catapulte2" ID="{7018AA7B-D122-4647-83ED-9E3255940B3B}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Event Name="OnDammage" ID="{4B50EA93-7D3E-406D-8C2E-5EAA4DA2E2F4}">
+							<ChildrenList>
+								<Action Name="" ID="{FB974B76-0FE3-4AED-98E5-A10C653CFFF8}" ShortID="352712124">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DammageSounds" ID="{3B535563-9872-4963-BD6B-448A3EAC601F}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnRage" ID="{E7E6D7E4-1B77-44F5-8E00-C9107A9D0D0E}">
+							<ChildrenList>
+								<Action Name="" ID="{CD538E8C-B804-4470-BD30-BD071C13500E}" ShortID="718310672">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="RageSounds" ID="{A1E4BB44-455D-494F-8844-FA0A84C3301F}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnDeath" ID="{51882E3E-EF09-4E72-9A27-14A361A92DFC}">
+							<ChildrenList>
+								<Action Name="" ID="{7EC33D86-066F-44F8-A0C1-E7ACE3D3D11B}" ShortID="30562856">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DeathSounds" ID="{4D6BED31-9316-4A76-B71B-81F9384848FF}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
