@@ -16,28 +16,45 @@ namespace AK
         static const AkUniqueID ONBOUCHONPLOP = 2840255079U;
         static const AkUniqueID ONBUILDINGLEFT = 1031692393U;
         static const AkUniqueID ONBUILDINGOPEN = 3452353930U;
+        static const AkUniqueID ONCATAPULTE1 = 2761680336U;
+        static const AkUniqueID ONCATAPULTE2 = 2761680339U;
         static const AkUniqueID ONCURSORMOVE = 3337813975U;
         static const AkUniqueID ONCURSORSELECT = 3049358912U;
+        static const AkUniqueID ONDAMMAGE = 3835741630U;
+        static const AkUniqueID ONDEATH = 2598090648U;
         static const AkUniqueID ONDECOUPEENDED = 1516238081U;
         static const AkUniqueID ONDECOUPESTARTED = 3872903362U;
+        static const AkUniqueID ONFEINTE = 1548071689U;
         static const AkUniqueID ONFILTENDU = 2964522841U;
         static const AkUniqueID ONFISHONTABLE = 2058057925U;
         static const AkUniqueID ONFISHPICKUP = 1864058544U;
+        static const AkUniqueID ONFUITE = 1040454059U;
+        static const AkUniqueID ONGEMEQUIPPED = 2769488228U;
         static const AkUniqueID ONGEMUSED = 199235004U;
         static const AkUniqueID ONHUBLEAVE = 1441617756U;
         static const AkUniqueID ONITEMCANTCRAFT = 3649038553U;
         static const AkUniqueID ONITEMCRAFTED = 4034923124U;
         static const AkUniqueID ONMOULINETON = 2022985720U;
-        static const AkUniqueID ONREEFCRUSHERGEMEQUIPPED = 3602476226U;
+        static const AkUniqueID ONRAGE = 2833632849U;
         static const AkUniqueID ONSAVECONFIRMED = 4211819432U;
         static const AkUniqueID ONSAVESTARTED = 3303690716U;
-        static const AkUniqueID ONSNAPSNACKGEMEQUIPPED = 3677679810U;
         static const AkUniqueID ONSTUFFEQUIPPED = 667664411U;
         static const AkUniqueID ONWIRELAUNCHED = 4012222691U;
     } // namespace EVENTS
 
     namespace SWITCHES
     {
+        namespace CURRENTFISHINCOMBAT
+        {
+            static const AkUniqueID GROUP = 4033446347U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID REEFCRUSHER = 671422745U;
+                static const AkUniqueID SNAPSNACK = 654028457U;
+            } // namespace SWITCH
+        } // namespace CURRENTFISHINCOMBAT
+
         namespace GEMEQUIPPED
         {
             static const AkUniqueID GROUP = 1502211265U;

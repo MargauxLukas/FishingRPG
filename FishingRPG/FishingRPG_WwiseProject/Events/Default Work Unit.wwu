@@ -46,23 +46,12 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="OnSnapSnackGemEquipped" ID="{1F414868-C700-4394-995A-A5E0A2017D61}">
+										<Event Name="OnGemEquipped" ID="{1F414868-C700-4394-995A-A5E0A2017D61}">
 											<ChildrenList>
 												<Action Name="" ID="{08AF72FC-93CC-4867-8688-5A9C83B79921}" ShortID="442022320">
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="SnapSnackGemSound" ID="{310EC9A2-E637-49C8-A5F0-7E4DF95AFCCF}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="OnReefCrusherGemEquipped" ID="{26F638DA-7C6A-4038-803C-A470DFFBF674}">
-											<ChildrenList>
-												<Action Name="" ID="{807A18E4-10D5-4B02-B830-F51F45DF9719}" ShortID="132744620">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="ReefCrusherGemSound" ID="{ED0A9F2A-5730-4C9D-A251-EC4E2347AA55}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>

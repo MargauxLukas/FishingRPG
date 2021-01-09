@@ -326,6 +326,8 @@ public class ArtisanManager : MonoBehaviour
                 if (UIManager.instance.inventory.GetVariable(sp.armor.components[i].ID) < sp.armor.componentsQty[i])
                 {
                     canCraft = false;
+                    //Play Sound
+                    AkSoundEngine.PostEvent("OnItemCantCraft", gameObject);
                 }
             }
 

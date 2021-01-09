@@ -489,8 +489,12 @@ public class GearingManager : MonoBehaviour
                 bootsEquiped.enabled = true;
                 UIManager.instance.inventory.equipedBoots = sp.armor;
                 break;
+
+                
         }
 
+        //Play Sound
+        AkSoundEngine.PostEvent("OnStuffEquipped", gameObject);
         UpdateStats(sp.armor);
         SetText();
         sp.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
@@ -511,6 +515,11 @@ public class GearingManager : MonoBehaviour
         UpdateStats(sp.fishingRod);
         SetText();
         sp.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
+
+        //Play Sound
+        AkSoundEngine.PostEvent("OnStuffEquipped", gameObject);
+
+
     }
 
     public void EquipGems(Image im)
@@ -530,7 +539,8 @@ public class GearingManager : MonoBehaviour
         {
             UIManager.instance.inventory.equipedGem3 = gemMovement;
         }
-
+        //Play Sound
+        AkSoundEngine.PostEvent("OnGemEquipped", gameObject);
         spMovement.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
     }
 
