@@ -234,20 +234,26 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="OnMoulinetBlocked" ID="{4FF2F019-C828-4B80-9875-896E445C7296}"/>
 							</ChildrenList>
 						</Folder>
-						<Event Name="OnGemUsed" ID="{4EA43EDA-133F-482F-A4C3-3AEC2A92BD68}">
-							<ChildrenList>
-								<Action Name="" ID="{15A50EC6-A086-4EC5-8AC4-112A42D29379}" ShortID="995114360">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="GemEquippedSwitchContainer" ID="{3670260D-2741-4FE0-BD75-B7F9A3224E4C}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="OnCharacterWalk" ID="{BB8EDA30-F4BA-4122-AF53-2C7176B4BEA4}"/>
+						<Folder Name="Gemmes" ID="{532EA680-CA13-47D3-9571-D0D290243C93}" ShortID="1003614010">
+							<ChildrenList>
+								<Event Name="OnGemUsed" ID="{4EA43EDA-133F-482F-A4C3-3AEC2A92BD68}">
+									<ChildrenList>
+										<Action Name="" ID="{15A50EC6-A086-4EC5-8AC4-112A42D29379}" ShortID="995114360">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GemEquippedSwitchContainer" ID="{3670260D-2741-4FE0-BD75-B7F9A3224E4C}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnGemReady" ID="{8413AF88-1FF6-46FC-99B1-716D622C359A}"/>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Fishes" ID="{638B8129-2600-40F5-8BFE-B9D17C263222}" ShortID="342882507">
@@ -344,6 +350,16 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="OnFishSlammed" ID="{C719EC25-9DD7-420D-815E-9E3A94D97A7A}"/>
+						<Event Name="OnFishCatched" ID="{890265C1-0536-41B0-A0EE-2585B0FDA10D}"/>
+						<Folder Name="Aerial" ID="{F739CAEA-E797-4E22-AC27-C0E656F26C94}" ShortID="683976509">
+							<ChildrenList>
+								<Event Name="OnFishAerial" ID="{ED3DB7CC-0CA4-4D5B-8ECB-4665A24F7106}"/>
+								<Event Name="OnFishReadyForAerial" ID="{22AD340F-27BD-4877-B682-61CCF115B4FB}"/>
+								<Event Name="OnFishReadyForBounce" ID="{2EDE796D-E903-4967-AF73-D2EAC52D9B7A}"/>
+								<Event Name="OnFishBounce" ID="{6F12C52D-6564-4F5D-AEC0-C073E76AD6E3}"/>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
