@@ -139,10 +139,13 @@ public class GearingManager : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
                 PlayerManager.instance.LeaveChestMenu();
+                
             }
             else
             {
                 UIManager.instance.CloseMenu(gameObject);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
             }
         }
     }

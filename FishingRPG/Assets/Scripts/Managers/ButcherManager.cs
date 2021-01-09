@@ -120,6 +120,8 @@ public class ButcherManager : MonoBehaviour
         {
             ResetButcherToDefault();
             UIManager.instance.CloseMenu(gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
         }
 
         if(Input.GetButtonUp("Submit") && dropListCleared)
