@@ -25,7 +25,8 @@ public class ArtisanManager : MonoBehaviour
     private float craftingTime = 1.2f;
 
     public Image holdButtonImg;
-    public GameObject WwiseGlobal;
+
+
 
     void Start()
     {
@@ -33,6 +34,8 @@ public class ArtisanManager : MonoBehaviour
         currentSelectedTab = firstSelectedTab;
         SetSelectedTabColor(currentSelectedTab);
         SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
+
+      
     }    
 
     void Update()
@@ -58,6 +61,10 @@ public class ArtisanManager : MonoBehaviour
             currentSelectedTab = currentSelectedTab.GetComponent<TabNeighbours>().selectedOnLeft;
             SetSelectedTabColor(currentSelectedTab);
 
+            //Play Sound
+            AkSoundEngine.PostEvent("OnCursorSelect", gameObject);
+         
+
             //Display items list
             SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
         }
@@ -70,6 +77,9 @@ public class ArtisanManager : MonoBehaviour
             //Select tab
             currentSelectedTab = currentSelectedTab.GetComponent<TabNeighbours>().selectedOnRight;
             SetSelectedTabColor(currentSelectedTab);
+
+            //Play Sound
+            AkSoundEngine.PostEvent("OnCursorSelect", gameObject);
 
             //Display items list
             SetSelectedTabChilds(currentSelectedTab.GetComponent<TabNeighbours>().tabsTexts, currentSelectedTab.GetComponent<TabNeighbours>().selectedChild);
@@ -92,8 +102,10 @@ public class ArtisanManager : MonoBehaviour
                 Debug.Log(EventSystem.current);
                 ScriptablePointer sp = EventSystem.current.currentSelectedGameObject.GetComponent<ScriptablePointer>();
                 CraftObject(sp);
-                WwiseGlobal.GetComponent<WwiseHubManager>().OnItemCrafted.Post(gameObject);
-              
+
+                //Play Sound
+                AkSoundEngine.PostEvent("OnItemCrafted", gameObject);
+
                 craftingTimer = 0;
                 isCrafting = false;
                 holdButtonImg.fillAmount = 0;
@@ -111,6 +123,8 @@ public class ArtisanManager : MonoBehaviour
         if (Input.GetButtonDown("B Button"))
         {
             UIManager.instance.CloseMenu(gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
         }
     }
 
@@ -118,6 +132,7 @@ public class ArtisanManager : MonoBehaviour
     {
         _tab.GetComponent<Image>().color = new Color32(254, 242, 184, 255);
         _tab.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(66, 41, 36, 255);
+        
     }
 
     void ResetTabColor(GameObject _tab)

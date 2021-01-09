@@ -31,17 +31,6 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="OnCraftTerminated" ID="{4F22C5C0-8801-4A0E-AE73-0A9C7BC54DCE}">
-											<ChildrenList>
-												<Action Name="" ID="{E8490D73-F326-4D3C-8543-77F5C859C94B}" ShortID="119170624">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="CraftTerminatedSound" ID="{ED06B59E-B7FE-40E4-A007-26FF40F164A3}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="GoFishing" ID="{5F8BA502-8479-46AE-BC0E-9E5ABBD75118}" ShortID="440072148">
@@ -149,7 +138,18 @@
 										<Action Name="" ID="{D1D54F05-D48D-4FB0-8D67-A3F01F63617F}" ShortID="170409086">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="BuildingOpenedSounds" ID="{EB2540BD-7765-458E-916E-9E41CBEC4F27}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+													<ObjectRef Name="BuildingOpenedSound" ID="{EB2540BD-7765-458E-916E-9E41CBEC4F27}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnBuildingLeft" ID="{9B1B0DB7-7A93-4158-A074-41D796D5A683}">
+									<ChildrenList>
+										<Action Name="" ID="{056232F3-A3DF-4F9F-B4B1-5C33F1E68064}" ShortID="583667159">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BuildingLeftSound" ID="{56221FB4-CEDF-4946-BCCF-320E3BE1FE7E}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -212,6 +212,28 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="OnFilDeroule" ID="{60D3D0A5-E6D9-4DB9-88E9-3DBC7CB536F8}"/>
+								<Event Name="OnWireLaunched" ID="{6B0B4507-B6AA-4261-9F24-9D2A77102FC1}">
+									<ChildrenList>
+										<Action Name="" ID="{C045190F-118E-46A1-BD55-704A790CA91A}" ShortID="559778997">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="WireLaunchedSound" ID="{6BDA15DF-F76C-4486-9BAF-3FEF49DC7182}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnBouchonPlop" ID="{E0602863-42ED-4238-B83A-77B236AB62C6}">
+									<ChildrenList>
+										<Action Name="" ID="{D1B984B6-E16B-456E-B747-15ED68E62AB8}" ShortID="274062122">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BouchonPlopSound" ID="{3A12453A-1F51-4CE2-9E12-F2DFB8AF73CC}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="OnGemUsed" ID="{4EA43EDA-133F-482F-A4C3-3AEC2A92BD68}">
@@ -226,6 +248,21 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="OnCharacterWalk" ID="{BB8EDA30-F4BA-4122-AF53-2C7176B4BEA4}"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Fishes" ID="{638B8129-2600-40F5-8BFE-B9D17C263222}" ShortID="342882507">
+					<ChildrenList>
+						<Event Name="OnFishPickUp" ID="{D1DD8DFC-533E-4C50-BF14-FE527D1648BE}">
+							<ChildrenList>
+								<Action Name="" ID="{BE285087-CECA-49B1-8B63-6D14D0EE9947}" ShortID="243977340">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="OnFishPickUp" ID="{3B5DFAD3-5951-420B-9AEB-086403FECC69}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

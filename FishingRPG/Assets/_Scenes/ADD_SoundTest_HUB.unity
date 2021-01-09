@@ -12465,6 +12465,8 @@ GameObject:
   - component: {fileID: 521825010}
   - component: {fileID: 521825011}
   - component: {fileID: 521825007}
+  - component: {fileID: 521825013}
+  - component: {fileID: 521825012}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12596,6 +12598,43 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &521825012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521825006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff186ef24b6577e43b76b47e50eb7e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCamera: {fileID: 521825006}
+--- !u!114 &521825013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521825006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f7d440ef4ddb9489b6a805f4891032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0d5963d3b3ff6bf4ca2e9b61e17840bc, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &529772195
 GameObject:
   m_ObjectHideFlags: 0
@@ -30262,7 +30301,6 @@ MonoBehaviour:
   bonusStats: {fileID: 2040591200}
   description: {fileID: 1185326500}
   holdButtonImg: {fileID: 867546646}
-  WwiseGlobal: {fileID: 2114653927}
 --- !u!1 &1218687690
 GameObject:
   m_ObjectHideFlags: 0
@@ -49969,7 +50007,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2114653929}
   - component: {fileID: 2114653928}
-  - component: {fileID: 2114653930}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -50017,26 +50054,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2114653930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114653927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff186ef24b6577e43b76b47e50eb7e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainSoundBank:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0d5963d3b3ff6bf4ca2e9b61e17840bc, type: 2}
-  OnItemCrafted:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 66f6f69f1acf60f4faa4073a208e974e, type: 2}
 --- !u!1 &2115280236
 GameObject:
   m_ObjectHideFlags: 0

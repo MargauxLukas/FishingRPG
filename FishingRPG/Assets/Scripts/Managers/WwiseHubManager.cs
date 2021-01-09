@@ -6,16 +6,21 @@ public class WwiseHubManager : MonoBehaviour
 {
 
     //Wwise declaration
-    public AK.Wwise.Bank MainSoundBank;
-    public AK.Wwise.Event OnItemCrafted;
+    // public AK.Wwise.Bank MainSoundBank;
+    // public AK.Wwise.Event OnItemCrafted;
 
-
-    public void Awake()
-
+    // General UI Sounds
+    public GameObject gameCamera;
+    private void Start()
     {
-
-        MainSoundBank.Load();
-
+    }
+    public void OnMovingCursor()
+    {
+        AkSoundEngine.PostEvent("OnCursorMove", gameCamera);
+    }
+   public void OnSelectingCursor()
+    {
+        AkSoundEngine.PostEvent("OnCursorSelect", gameCamera);
     }
 
 }

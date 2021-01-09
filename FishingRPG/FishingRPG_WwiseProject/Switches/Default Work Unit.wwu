@@ -7,6 +7,7 @@
 					<ChildrenList>
 						<Switch Name="Sand" ID="{703E0BF5-05FE-4993-85B9-4D751EA3A171}"/>
 						<Switch Name="Rock" ID="{78D7D99B-C5D2-4D02-B123-B198AF0D4BA0}"/>
+						<Switch Name="Gravel" ID="{6DE2AF6C-92BC-4B0F-80E8-E02291C98B42}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="GemEquipped" ID="{D1B1B8B3-7FB5-4184-99BA-EDD627322C95}">
