@@ -45,7 +45,7 @@ public class ButcherManager : MonoBehaviour
     bool dropListCleared = false;
     bool canQuitButcher = true;
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetButtonDown("Submit") && !fishReadyToCut && !cuttedFish && fishPile.active)
         {

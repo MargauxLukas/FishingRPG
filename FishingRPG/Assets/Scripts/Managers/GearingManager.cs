@@ -50,7 +50,7 @@ public class GearingManager : MonoBehaviour
     public bool needToAccept = false;
     public GameObject advertissement;
 
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetButton("A Button") && needToAccept)
         {

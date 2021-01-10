@@ -38,7 +38,7 @@ public class ArtisanManager : MonoBehaviour
       
     }    
 
-    void Update()
+    void FixedUpdate()
     {
         Debug.Log(currentSelectedTab);
 

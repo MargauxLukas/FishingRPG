@@ -41,7 +41,7 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 60;
+            currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 50;
             UpdateJaugeTension();
 
             if (currentTension >= maxTension)
@@ -82,7 +82,7 @@ public class FishingLine : MonoBehaviour
     {
         if (currentTension > 0f)
         {
-            currentTension -= 0.6f;
+            currentTension -= 55f * Time.fixedDeltaTime;
         }
         else
         {
