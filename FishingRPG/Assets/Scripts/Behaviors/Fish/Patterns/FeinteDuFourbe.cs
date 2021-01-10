@@ -10,6 +10,8 @@ public class FeinteDuFourbe : MonoBehaviour
 
     static float timer = 50f;
 
+    public GameObject snapSnack;
+
     public static void Play(float dotDuration, float energyCost, bool costEnergyOverTime)
     {
         Debug.Log("Feinte du Fourbe");
@@ -19,6 +21,8 @@ public class FeinteDuFourbe : MonoBehaviour
         {
             if (!playOnce)
             {
+                //Play Sound
+                //AkSoundEngine.PostEvent("OnFeinte", gameObject);
                 if (!costEnergyOverTime)
                 {
                     FishManager.instance.currentFishBehavior.currentStamina -= energyCost;

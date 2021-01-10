@@ -45,6 +45,8 @@ public class UIManager : MonoBehaviour
         go.SetActive(true);
         firstSelectedButton = EventSystem.current.currentSelectedGameObject;
         ResetSelectedButton(firstSelectedButton);
+        //Play Sound
+        AkSoundEngine.PostEvent("OnBuildingOpen", gameObject);
     }
 
     public void CloseMenu(GameObject go)

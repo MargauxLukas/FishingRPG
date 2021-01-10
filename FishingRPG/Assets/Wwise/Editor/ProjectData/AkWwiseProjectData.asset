@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456b86dd99d944e44b8a4a43234fd771, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 25bb17835f2dca4c9948c17d689ac71c
+    GuidInternal: 
+    m_lastTime: -8585916800186496344
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: ddb38413c7dcf44fa99a5d29de4ee270
+    GuidInternal: 
+    m_lastTime: -8585916649591995864
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: c6696a3f48a9024390a5019ef35870fe
+    GuidInternal: 
+    m_lastTime: -8585916614343333179
+    List:
+    - name: Main
+      guid: 81c8f97c13174f479e10bb2390f7e986
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit\Main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 6457962ea8be6f478613dea899943175
+    GuidInternal: 
+    m_lastTime: -8585916614343096175
+    List:
+    - name: OnItemCrafted
+      guid: 880eb3c98461ff4eb8e3b39526c77616
+      id: 4034923124
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: Artisan
+        ObjectType: 4
+      - ElementName: OnItemCrafted
+        ObjectType: 3
+      Path: Default Work Unit\HUB\Artisan\OnItemCrafted
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: f2aacdff97dad4408f368a80ecb84ced
+    GuidInternal: 
+    m_lastTime: -8585916800187345852
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7fd463754542364c8dbf7f82382932ca
+    GuidInternal: 
+    m_lastTime: -8585916800187415808
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 93043757e961a84d89243dc2d535baf4
+    GuidInternal: 
+    m_lastTime: -8585916800187115970
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 04d797a619788c44aa95f67f8e1336db
+    GuidInternal: 
+    m_lastTime: -8585916800186876127
+    List: []
+  ExpandedItems:
+  - /FishingRPG_WwiseProject
+  - /FishingRPG_WwiseProject/Events
+  - /FishingRPG_WwiseProject/Events/Default Work Unit
+  - /FishingRPG_WwiseProject/Events/Default Work Unit/HUB
+  - /FishingRPG_WwiseProject/Events/Default Work Unit/HUB/Artisan
+  - /FishingRPG_WwiseProject/SoundBanks
+  - /FishingRPG_WwiseProject/SoundBanks/Default Work Unit
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
