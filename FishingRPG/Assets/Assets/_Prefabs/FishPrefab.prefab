@@ -220,8 +220,8 @@ MonoBehaviour:
   maxTimeAerial: 2
   isFellDown: 0
   fellingFreeze: 0
-  minTimeForChangeDirection: 1
-  maxTimeForChangeDirection: 3
+  minTimeForChangeDirection: 0.5
+  maxTimeForChangeDirection: 2
   aButton: {fileID: 7738792073316754151}
   canCollectTheFish: 0
   animator: {fileID: 0}
