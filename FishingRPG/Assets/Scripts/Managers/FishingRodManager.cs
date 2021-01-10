@@ -48,6 +48,11 @@ public class FishingRodManager : MonoBehaviour
     [Header("FishingRodAnimator")]
     public Animator animFishingRod;
 
+    public float speedNumberAnimation = 0;
+    public float speedAnimation = 0;
+    public bool upSpeedNumberAnimation = false;
+    public bool downSpeedNumberAnimation = false;
+
     private void Awake()
     {
         Init();
@@ -87,6 +92,18 @@ public class FishingRodManager : MonoBehaviour
                 fishingLine.TensionDown();
             }
         }
+
+        /*if(upSpeedNumberAnimation && speedNumberAnimation < 1)
+        {
+            Debug.Log("test : " + speedNumberAnimation);
+            speedNumberAnimation = Mathf.Lerp(speedNumberAnimation, 1, 1f);
+            Debug.Log("test : " + speedNumberAnimation);
+        }
+
+        if (downSpeedNumberAnimation && speedNumberAnimation != 0)
+        {
+            speedNumberAnimation = Mathf.Lerp(1, 0, 1f);
+        }*/
     }
 
     public void LaunchBobber()
@@ -160,7 +177,7 @@ public class FishingRodManager : MonoBehaviour
 
 
         //  /!\ Valeur au pif pour tester, need calcul d'un nombre entre 0f et 1f
-        if(FishManager.instance.isAerial)
+        if(FishManager.instance.isAerial && !FishManager.instance.currentFishBehavior.isDead)
         {
             FishManager.instance.aerialEnterWaterX += currentAxis*0.2f;
             FishManager.instance.UpdateAerial();
@@ -173,7 +190,13 @@ public class FishingRodManager : MonoBehaviour
         {
             if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
             {
-                animFishingRod.SetBool("Turn", true);
+
+                speedAnimation += 1f * Time.fixedDeltaTime;
+                if(speedAnimation > 1f)
+                {
+                    speedAnimation = 1f;
+                }
+                AnimationReelUp(speedAnimation);
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
@@ -201,6 +224,14 @@ public class FishingRodManager : MonoBehaviour
         }
         else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)    //Mettre à jour Fcurrent
         {
+            speedAnimation += -1f * Time.fixedDeltaTime;
+
+            if (speedAnimation < -1f)
+            {
+                speedAnimation = -1f;
+            }
+            AnimationReelUp(speedAnimation);
+
             fishingLine.TensionDown();
             fishingLine.fCurrent = distanceCP;
         }
@@ -220,12 +251,43 @@ public class FishingRodManager : MonoBehaviour
             FishManager.instance.LowUpStamina();
         }
 
-        if (!fishingLine.isTaken)
+        if (distanceCP < fishingLine.fCurrent && !fishingLine.isTaken)
         {
-            animFishingRod.SetBool("Turn", false);
-        }
+            if (speedAnimation > 0f)
+            {
+                speedAnimation += -1f * Time.fixedDeltaTime;
 
-        UpdateFCurrent();
+                if (speedAnimation < 0)
+                {
+                    speedAnimation = 0f;
+                }
+            }
+
+            if (speedAnimation < 0f)
+            {
+                speedAnimation += 1f * Time.fixedDeltaTime;
+
+                if (speedAnimation > 0f)
+                {
+                    speedAnimation = 0f;
+                }
+            }
+
+
+            animFishingRod.SetFloat("SpeedMultiplier", speedAnimation);
+        }
+            UpdateFCurrent();
+    }
+
+    public void AnimationReelUp(float choosenSpeed)
+    {
+        animFishingRod.SetFloat("SpeedMultiplier", choosenSpeed);
+    }
+
+    public void AnimationReelDown(int choosenSpeed)
+    {
+        downSpeedNumberAnimation = true;
+        animFishingRod.speed = choosenSpeed * speedNumberAnimation;
     }
 
     public bool CheckIfOverFCritique()
