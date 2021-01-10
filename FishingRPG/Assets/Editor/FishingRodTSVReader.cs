@@ -97,14 +97,15 @@ public class FishingRodTSVReader : MonoBehaviour
         _fishingRod.ID       = blocks[0];
         _fishingRod.upgradeState = int.Parse(blocks[1]);
         _fishingRod.itemName = blocks[2];
-        _fishingRod.tier         = int.Parse(blocks[3]);
+        _fishingRod.description = blocks[3];
+        _fishingRod.tier         = int.Parse(blocks[4]);
 
-        _fishingRod.rodTension   = int.Parse(blocks[4]);
-        _fishingRod.gemSlots     = int.Parse(blocks[5]);
+        _fishingRod.rodTension   = int.Parse(blocks[5]);
+        _fishingRod.gemSlots     = int.Parse(blocks[6]);
 
-        _fishingRod.strength     = int.Parse(blocks[6]);
-        _fishingRod.constitution = int.Parse(blocks[7]);
-        _fishingRod.dexterity    = int.Parse(blocks[8]);
-        _fishingRod.intelligence = int.Parse(blocks[9]);
+        _fishingRod.strength     = int.Parse(blocks[7]);
+        _fishingRod.constitution = int.Parse(blocks[8]);
+        _fishingRod.dexterity    = int.Parse(blocks[9]);
+        _fishingRod.intelligence = int.Parse(blocks[10]);
     }
 }
