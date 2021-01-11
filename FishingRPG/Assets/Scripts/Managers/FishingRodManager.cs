@@ -199,6 +199,8 @@ public class FishingRodManager : MonoBehaviour
                     speedAnimation = 1f;
                 }
                 AnimationReelUp(speedAnimation);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnFilDeroule", gameObject);
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)

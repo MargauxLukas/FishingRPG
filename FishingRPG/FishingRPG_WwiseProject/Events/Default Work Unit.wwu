@@ -360,6 +360,17 @@
 								<Event Name="OnFishBounce" ID="{6F12C52D-6564-4F5D-AEC0-C073E76AD6E3}"/>
 							</ChildrenList>
 						</Folder>
+						<Event Name="OnPattern" ID="{9496A788-EE3F-493C-8D38-9E0E9C4C6D8A}">
+							<ChildrenList>
+								<Action Name="" ID="{EC2F45CA-7DCB-4B75-8443-53935DD816DE}" ShortID="736347357">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PatternSounds" ID="{62594E5E-1673-4F58-A4E7-4123EE1DED01}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

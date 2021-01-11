@@ -394,6 +394,10 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentLife = 0;
             isDead = true;
+            //Set Switch
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnDeath", gameObject);
             animator.SetBool("isDeadOrExhausted", true);
             currentStamina = 0;
             //CheckStamina();
