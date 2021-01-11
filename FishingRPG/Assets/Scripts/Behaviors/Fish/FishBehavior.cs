@@ -326,6 +326,7 @@ public class FishBehavior : MonoBehaviour
         if (timerAerial >= maxTimeAerial)
         {
             FishManager.instance.FishRecuperation();
+            ChooseDirection();
             timerAerial = 0f;
         }
     }

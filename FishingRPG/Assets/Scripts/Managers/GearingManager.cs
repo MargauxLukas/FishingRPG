@@ -50,7 +50,7 @@ public class GearingManager : MonoBehaviour
     public bool needToAccept = false;
     public GameObject advertissement;
 
-    void FixedUpdate()
+    void Update()
     {
         if(Input.GetButton("A Button") && needToAccept)
         {
@@ -63,7 +63,7 @@ public class GearingManager : MonoBehaviour
             Debug.Log("Cut Fish");
             isLeaving = true;
 
-            leavingTimer += Time.fixedDeltaTime;
+            leavingTimer += Time.deltaTime;
 
             if (leavingTimer < leavingTime)
             {
