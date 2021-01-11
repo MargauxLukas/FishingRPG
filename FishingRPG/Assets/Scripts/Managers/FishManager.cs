@@ -270,6 +270,10 @@ public class FishManager : MonoBehaviour
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetAerialRebondDamage();
             FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
             lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
+            // Set Switch
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnDammage", gameObject);
         }
 
         currentFishBehavior.CheckLife();
