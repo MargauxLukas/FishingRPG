@@ -1082,6 +1082,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Folder Name="SnapSnack" ID="{F501CB82-CA35-472F-9990-DA52BC8D42B8}" ShortID="612966678">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Sound Name="Catapulte2" ID="{7018AA7B-D122-4647-83ED-9E3255940B3B}" ShortID="669961476">
 									<ReferenceList>
@@ -1331,13 +1338,6 @@
 							</GroupingInfo>
 						</SwitchContainer>
 						<SwitchContainer Name="PatternSounds" ID="{62594E5E-1673-4F58-A4E7-4123EE1DED01}" ShortID="208822438">
-							<PropertyList>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
@@ -2280,101 +2280,6 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
-								<BlendContainer Name="TestBlendContainer" ID="{23A0AB5B-FB30-4279-A041-23CB96AEB210}" ShortID="164780616">
-									<PropertyList>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="UseMoulinetSound_01" ID="{80AC3283-E084-4ED6-B8A6-66D0618BA8D7}" ShortID="202583540">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="OverrideEffect" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Moulinet qui remonte" ID="{AE5A5D64-57A5-43B9-9E8F-36FA09DC0BF1}" ShortID="640922969">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.39376598173516"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.836752711187215"/>
-														<Property Name="TrimEnd" Type="Real64" Value="12.6989529109589"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Moulinet qui remonte.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="3392704"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Moulinet qui remonte" ID="{AE5A5D64-57A5-43B9-9E8F-36FA09DC0BF1}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="DerouleFilTest_01" ID="{392CAF1B-598A-4174-8466-44449188563C}" ShortID="1057911880">
-											<PropertyList>
-												<Property Name="InitialDelay" Type="Real64">
-													<ValueList>
-														<Value>2</Value>
-													</ValueList>
-												</Property>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="OverrideEffect" Type="bool" Value="True"/>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>300</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-12</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="Effect0" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
-													<ObjectRef Name="FilTimeStretch" ID="{381B7855-3590-482B-9130-68A566A74AD7}" WorkUnitID="{73C441B9-0303-487B-8FDD-BC4F76FBD12E}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="DerouleFilTest" ID="{2A00B55F-8B16-452F-93F7-D21EDDC9083E}" ShortID="407162948">
-													<PropertyList>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>DerouleFilTest.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="DerouleFilTest" ID="{2A00B55F-8B16-452F-93F7-D21EDDC9083E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-								</BlendContainer>
 								<BlendContainer Name="WireLaunchedSound" ID="{6BDA15DF-F76C-4486-9BAF-3FEF49DC7182}" ShortID="568839857">
 									<ReferenceList>
 										<Reference Name="Conversion">

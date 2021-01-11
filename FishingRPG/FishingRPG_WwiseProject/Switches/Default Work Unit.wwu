@@ -28,6 +28,7 @@
 						<Switch Name="Fuite" ID="{DB4C9344-0DC9-4F1A-A187-554FFC330698}"/>
 						<Switch Name="Feinte" ID="{441FA646-5322-42B4-BAA8-4D9199024414}"/>
 						<Switch Name="Catapulte2" ID="{45DAB4C5-195F-470F-BD97-0E661E441C2E}"/>
+						<Switch Name="RageMinuscule" ID="{77939B4C-FB76-4F8A-851B-01A0FC9B924A}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>
