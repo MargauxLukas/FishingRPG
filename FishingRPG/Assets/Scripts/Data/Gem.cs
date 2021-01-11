@@ -10,6 +10,7 @@ public class Gem : ScriptableObject
     public string gemName;
     public Sprite appearance;
     public int upgradeState;
+    public int tier;
 
     public string stats;
     public string description;

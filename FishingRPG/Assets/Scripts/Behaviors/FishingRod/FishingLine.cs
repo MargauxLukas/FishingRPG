@@ -23,6 +23,11 @@ public class FishingLine : MonoBehaviour
     public Text textBlocked;
     public Text textTaken  ;
 
+    [Header("Fishing Line Bezier")]
+    public CheckWaterLevel checkWaterLevelScript;
+    public Transform playerPoint;     //Point allant de 0 à 1 entre le joueur et le niveau de l'eau sous ses pieds
+    public Transform fishPoint;		//Point allant de 0 à 1 entre le poisson et le niveau de l'eau sous le joueur
+
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
@@ -36,7 +41,7 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 60;
+            currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 50;
             UpdateJaugeTension();
 
             if (currentTension >= maxTension)
@@ -77,7 +82,7 @@ public class FishingLine : MonoBehaviour
     {
         if (currentTension > 0f)
         {
-            currentTension -= 0.6f;
+            currentTension -= 55f * Time.fixedDeltaTime;
         }
         else
         {
@@ -116,4 +121,12 @@ public class FishingLine : MonoBehaviour
     {
         tensionJauge.fillAmount = currentTension/maxTension;
     }
+
+    #region Bezier Fishing Line
+    public void CheckWaterLevel()
+    {
+        checkWaterLevelScript.canStartTheDetection = true;
+    }
+
+    #endregion
 }

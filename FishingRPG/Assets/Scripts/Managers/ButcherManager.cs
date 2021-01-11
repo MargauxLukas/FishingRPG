@@ -45,7 +45,7 @@ public class ButcherManager : MonoBehaviour
     bool dropListCleared = false;
     bool canQuitButcher = true;
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetButtonDown("Submit") && !fishReadyToCut && !cuttedFish && fishPile.active)
         {
@@ -57,6 +57,9 @@ public class ButcherManager : MonoBehaviour
             ShowGoodFish(fishID);
 
             StartCoroutine(FishCanBeCut());
+
+            //Play Sound
+            AkSoundEngine.PostEvent("OnFishOnTable", gameObject);
         }
 
         if(Input.GetButton("Submit") && fishReadyToCut)
@@ -75,7 +78,10 @@ public class ButcherManager : MonoBehaviour
             {
                 cuttedFish = true;
                 fishToButch.SetActive(false);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnDecoupeStarted", gameObject);
                 butchedFish.SetActive(true);
+                AkSoundEngine.PostEvent("OnDecoupeEnded", gameObject);
 
                 //Display Components (if > 3 display line2)
                 HowManyLoot();
@@ -120,6 +126,8 @@ public class ButcherManager : MonoBehaviour
         {
             ResetButcherToDefault();
             UIManager.instance.CloseMenu(gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
         }
 
         if(Input.GetButtonUp("Submit") && dropListCleared)

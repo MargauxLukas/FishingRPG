@@ -50,7 +50,7 @@ public class GearingManager : MonoBehaviour
     public bool needToAccept = false;
     public GameObject advertissement;
 
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetButton("A Button") && needToAccept)
         {
@@ -75,6 +75,8 @@ public class GearingManager : MonoBehaviour
                 leavingTimer = 0;
                 isLeaving = false;
                 holdButtonImg.fillAmount = 0;
+                //Play Sound
+                AkSoundEngine.PostEvent("OnHubLeave", gameObject);
 
                 if (SceneManager.GetActiveScene().buildIndex == 0)
                 {
@@ -139,10 +141,13 @@ public class GearingManager : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
                 PlayerManager.instance.LeaveChestMenu();
+                
             }
             else
             {
                 UIManager.instance.CloseMenu(gameObject);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
             }
         }
     }
@@ -484,8 +489,12 @@ public class GearingManager : MonoBehaviour
                 bootsEquiped.enabled = true;
                 UIManager.instance.inventory.equipedBoots = sp.armor;
                 break;
+
+                
         }
 
+        //Play Sound
+        AkSoundEngine.PostEvent("OnStuffEquipped", gameObject);
         UpdateStats(sp.armor);
         SetText();
         sp.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
@@ -506,6 +515,11 @@ public class GearingManager : MonoBehaviour
         UpdateStats(sp.fishingRod);
         SetText();
         sp.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
+
+        //Play Sound
+        AkSoundEngine.PostEvent("OnStuffEquipped", gameObject);
+
+
     }
 
     public void EquipGems(Image im)
@@ -525,7 +539,8 @@ public class GearingManager : MonoBehaviour
         {
             UIManager.instance.inventory.equipedGem3 = gemMovement;
         }
-
+        //Play Sound
+        AkSoundEngine.PostEvent("OnGemEquipped", gameObject);
         spMovement.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
     }
 

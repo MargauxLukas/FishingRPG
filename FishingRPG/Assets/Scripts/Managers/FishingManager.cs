@@ -77,7 +77,7 @@ public class FishingManager : MonoBehaviour
         needToWait = 0f;
         timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();
-        FishingRodManager.instance.animFishingRod.SetBool("Turn", false);
+        FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 0);
 
         if (readyToFish)
         {

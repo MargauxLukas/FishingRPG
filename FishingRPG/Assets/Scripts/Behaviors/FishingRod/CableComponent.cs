@@ -7,7 +7,7 @@ public class CableComponent : MonoBehaviour
 {
 	#region Class members
 
-	[SerializeField] private Transform endPoint;
+	[SerializeField] private Transform endPoint;        //Position du Flotteur
 	[SerializeField] private Material cableMaterial;
 
 	// Cable config
@@ -48,10 +48,8 @@ public class CableComponent : MonoBehaviour
 	void InitCableParticles()
 	{
 		// Calculate segments to use
-		if (totalSegments > 0)
-			segments = totalSegments;
-		else
-			segments = Mathf.CeilToInt(cableLength * segmentsPerUnit);
+		if (totalSegments > 0) { segments = totalSegments; }
+		else                   { segments = Mathf.CeilToInt(cableLength * segmentsPerUnit);}
 
 		Vector3 cableDirection = (endPoint.position - transform.position).normalized;
 		float initialSegmentLength = cableLength / segments;
@@ -229,11 +227,13 @@ public class CableComponent : MonoBehaviour
 	public void ActivateLine()
     {
 		line.enabled = true;
+		FishingRodManager.instance.fishingLine.CheckWaterLevel();
     }
 
 	public void DesactivateLine()
 	{
 		line.enabled = false;
+		FishingRodManager.instance.fishingLine.checkWaterLevelScript.ResetPosition();
 	}
 
 	#endregion

@@ -23,8 +23,6 @@ public class BobbingHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
         if (Input.GetAxisRaw("Horizontal")>0.1f || Input.GetAxisRaw("Vertical")>0.1f || Input.GetAxisRaw("Horizontal") < -0.1f || Input.GetAxisRaw("Vertical")<-0.1f)
         {
             normeVector = Mathf.Sqrt(Mathf.Pow(Input.GetAxisRaw("Horizontal"),2) + Mathf.Pow(Input.GetAxisRaw("Vertical"),2));
@@ -38,7 +36,5 @@ public class BobbingHead : MonoBehaviour
             timer = 0;
             transform.localPosition = new Vector3(Mathf.Lerp(transform.localPosition.x, defaultPosX, Time.deltaTime * walkingBobbingSpeed), transform.localPosition.y , transform.localPosition.z);
         }
-
-
     }
 }

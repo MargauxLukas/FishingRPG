@@ -172,8 +172,10 @@ public class FishingRodManager : MonoBehaviour
                 currentAxis    = axisValue * 1.5f;
             }
         }
-        fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed*Time.fixedDeltaTime);
-        fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0 , -50*axisValue), speed*Time.fixedDeltaTime);
+
+            fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed * Time.fixedDeltaTime);
+            fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0, -50 * axisValue), speed * Time.fixedDeltaTime);
+        
 
 
         //  /!\ Valeur au pif pour tester, need calcul d'un nombre entre 0f et 1f
@@ -253,6 +255,7 @@ public class FishingRodManager : MonoBehaviour
 
         if (distanceCP < fishingLine.fCurrent && !fishingLine.isTaken)
         {
+            Debug.Log("tt");
             if (speedAnimation > 0f)
             {
                 speedAnimation += -1f * Time.fixedDeltaTime;
@@ -273,7 +276,7 @@ public class FishingRodManager : MonoBehaviour
                 }
             }
 
-
+            Debug.Log(speedAnimation);
             animFishingRod.SetFloat("SpeedMultiplier", speedAnimation);
         }
             UpdateFCurrent();

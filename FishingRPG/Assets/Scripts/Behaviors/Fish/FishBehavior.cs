@@ -38,8 +38,8 @@ public class FishBehavior : MonoBehaviour
     [HideInInspector]      public bool fellingFreeze = false;
 
     [Header("Direction")]
-    public float minTimeForChangeDirection = 1f;
-    public float maxTimeForChangeDirection = 3f;
+    public float minTimeForChangeDirection = 0.5f;
+    public float maxTimeForChangeDirection = 2f;
     private float timeDirection            = 0f;
     private int randomDirection;
     private bool directionHasChoosen = false;
@@ -325,9 +325,6 @@ public class FishBehavior : MonoBehaviour
 
         if (timerAerial >= maxTimeAerial)
         {
-            Debug.Log(timerAerial);
-            //Debug.Log("===============================");
-
             FishManager.instance.FishRecuperation();
             timerAerial = 0f;
         }
