@@ -103,11 +103,24 @@ public class FishPatterns : MonoBehaviour
             {
                 case "FuiteDeLEnrage":
                     FuiteDeLenrage.Play(currentPattern.DOTFrequency, currentPattern.energyCost, currentPattern.costEnergyOverTime);
+                    //Set Switch
+                    AkSoundEngine.SetSwitch("PatternPlayed", "Fuite", gameObject);
+                    //Play Sound
+                    AkSoundEngine.PostEvent("OnPattern", gameObject);
                     break;
                 case "FeinteDuFourbe":
                     FeinteDuFourbe.Play(currentPattern.DOTFrequency, currentPattern.energyCost, currentPattern.costEnergyOverTime);
+                    //Set Switch
+                    AkSoundEngine.SetSwitch("PatternPlayed", "Feinte", gameObject);
+                    //Play Sound
+                    AkSoundEngine.PostEvent("OnPattern", gameObject);
+
                     break;
                 case "ColereDuMinuscule":
+                    //Set Switch
+                    AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
+                    //Play Sound
+                    AkSoundEngine.PostEvent("OnRage", gameObject);
                     ColereDuMinuscule.Play(currentPattern.energyCost);
                     break;
             }

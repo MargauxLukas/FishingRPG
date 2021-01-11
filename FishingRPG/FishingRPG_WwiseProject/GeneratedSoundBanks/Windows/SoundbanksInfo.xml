@@ -24,25 +24,22 @@
 				<Event Id="2840255079" Name="OnBouchonPlop" ObjectPath="\Events\Default Work Unit\Character\Canne\OnBouchonPlop" DurationType="OneShot" DurationMin="0.966983" DurationMax="0.966983"/>
 				<Event Id="1031692393" Name="OnBuildingLeft" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingLeft" DurationType="OneShot" DurationMin="1.750000" DurationMax="1.750000"/>
 				<Event Id="3452353930" Name="OnBuildingOpen" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingOpen" DurationType="OneShot" DurationMin="1.521115" DurationMax="1.521115"/>
-				<Event Id="2761680336" Name="OnCatapulte1" ObjectPath="\Events\Default Work Unit\Fishes\SnapSnack\OnCatapulte1" DurationType="OneShot" DurationMin="0.608083" DurationMax="0.608083"/>
-				<Event Id="2761680339" Name="OnCatapulte2" ObjectPath="\Events\Default Work Unit\Fishes\SnapSnack\OnCatapulte2" DurationType="OneShot" DurationMin="0.260000" DurationMax="0.260000"/>
 				<Event Id="3337813975" Name="OnCursorMove" ObjectPath="\Events\Default Work Unit\UI\General UI\OnCursorMove" DurationType="OneShot" DurationMin="0.657534" DurationMax="0.657534"/>
 				<Event Id="3049358912" Name="OnCursorSelect" ObjectPath="\Events\Default Work Unit\UI\General UI\OnCursorSelect" DurationType="OneShot" DurationMin="0.589041" DurationMax="0.589041"/>
 				<Event Id="3835741630" Name="OnDammage" ObjectPath="\Events\Default Work Unit\Fishes\OnDammage" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 				<Event Id="2598090648" Name="OnDeath" ObjectPath="\Events\Default Work Unit\Fishes\OnDeath" DurationType="OneShot" DurationMin="1.284375" DurationMax="1.284375"/>
 				<Event Id="1516238081" Name="OnDecoupeEnded" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeEnded" DurationType="OneShot" DurationMin="0.373039" DurationMax="0.373039"/>
 				<Event Id="3872903362" Name="OnDecoupeStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeStarted" DurationType="OneShot" DurationMin="1.416706" DurationMax="1.416706"/>
-				<Event Id="1548071689" Name="OnFeinte" ObjectPath="\Events\Default Work Unit\Fishes\SnapSnack\OnFeinte" DurationType="OneShot" DurationMin="0.988604" DurationMax="0.988604"/>
 				<Event Id="2964522841" Name="OnFilTendu" ObjectPath="\Events\Default Work Unit\Character\Canne\OnFilTendu" DurationType="OneShot" DurationMin="25.206055" DurationMax="25.206055"/>
 				<Event Id="2058057925" Name="OnFishOnTable" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnFishOnTable" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
 				<Event Id="1864058544" Name="OnFishPickUp" ObjectPath="\Events\Default Work Unit\Fishes\OnFishPickUp" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
-				<Event Id="1040454059" Name="OnFuite" ObjectPath="\Events\Default Work Unit\Fishes\SnapSnack\OnFuite" DurationType="OneShot" DurationMin="1.858167" DurationMax="1.858167"/>
 				<Event Id="2769488228" Name="OnGemEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnGemEquipped" DurationType="OneShot" DurationMin="1.152559" DurationMax="1.152559"/>
-				<Event Id="199235004" Name="OnGemUsed" ObjectPath="\Events\Default Work Unit\Character\OnGemUsed" DurationType="OneShot" DurationMin="2.750000" DurationMax="2.750000"/>
+				<Event Id="199235004" Name="OnGemUsed" ObjectPath="\Events\Default Work Unit\Character\Gemmes\OnGemUsed" DurationType="OneShot" DurationMin="2.750000" DurationMax="2.750000"/>
 				<Event Id="1441617756" Name="OnHubLeave" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnHubLeave" DurationType="OneShot" DurationMin="1.422945" DurationMax="1.422945"/>
 				<Event Id="3649038553" Name="OnItemCantCraft" ObjectPath="\Events\Default Work Unit\UI\HUB\Artisan\OnItemCantCraft" DurationType="OneShot" DurationMin="0.928938" DurationMax="0.928938"/>
 				<Event Id="4034923124" Name="OnItemCrafted" ObjectPath="\Events\Default Work Unit\UI\HUB\Artisan\OnItemCrafted" DurationType="OneShot" DurationMin="2.372517" DurationMax="2.372517"/>
 				<Event Id="2022985720" Name="OnMoulinetOn" ObjectPath="\Events\Default Work Unit\Character\Canne\OnMoulinetOn" DurationType="Infinite"/>
+				<Event Id="3537971040" Name="OnPattern" ObjectPath="\Events\Default Work Unit\Fishes\OnPattern" DurationType="OneShot" DurationMin="0.260000" DurationMax="1.858167"/>
 				<Event Id="2833632849" Name="OnRage" ObjectPath="\Events\Default Work Unit\Fishes\OnRage" DurationType="OneShot" DurationMin="1.142729" DurationMax="1.142729"/>
 				<Event Id="4211819432" Name="OnSaveConfirmed" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveConfirmed" DurationType="OneShot" DurationMin="1.162930" DurationMax="1.162930"/>
 				<Event Id="3303690716" Name="OnSaveStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveStarted" DurationType="OneShot" DurationMin="0.995716" DurationMax="0.995716"/>
@@ -132,7 +129,7 @@
 				</File>
 				<File Id="365895690" Language="SFX">
 					<ShortName>Ploup.wav</ShortName>
-					<Path>SFX\Ploup_178AF0E2.wem</Path>
+					<Path>SFX\Ploup_76D08050.wem</Path>
 				</File>
 				<File Id="394773237" Language="SFX">
 					<ShortName>Poisson dans inventaire.wav</ShortName>
@@ -164,7 +161,7 @@
 				</File>
 				<File Id="488794485" Language="SFX">
 					<ShortName>Blacksmith 01.wav</ShortName>
-					<Path>SFX\Blacksmith 01_9389EBD4.wem</Path>
+					<Path>SFX\Blacksmith 01_85029E83.wem</Path>
 				</File>
 				<File Id="498524427" Language="SFX">
 					<ShortName>Footstep Sand Walking 1_02.wav</ShortName>
@@ -176,7 +173,7 @@
 				</File>
 				<File Id="542338779" Language="SFX">
 					<ShortName>DerouleFilTest.wav</ShortName>
-					<Path>SFX\DerouleFilTest_394EFE4F.wem</Path>
+					<Path>SFX\DerouleFilTest_30519FEC.wem</Path>
 				</File>
 				<File Id="562110775" Language="SFX">
 					<ShortName>Equiper Gemme 1.wav</ShortName>
@@ -200,7 +197,7 @@
 				</File>
 				<File Id="658065750" Language="SFX">
 					<ShortName>Blacksmith 03.wav</ShortName>
-					<Path>SFX\Blacksmith 03_5B27E500.wem</Path>
+					<Path>SFX\Blacksmith 03_F88298A4.wem</Path>
 				</File>
 				<File Id="676316682" Language="SFX">
 					<ShortName>Lancement aventure.wav</ShortName>
@@ -236,7 +233,7 @@
 				</File>
 				<File Id="832936103" Language="SFX">
 					<ShortName>Blacksmith 04.wav</ShortName>
-					<Path>SFX\Blacksmith 04_5E6DFDF0.wem</Path>
+					<Path>SFX\Blacksmith 04_5C03C17F.wem</Path>
 				</File>
 				<File Id="995520828" Language="SFX">
 					<ShortName>Mouvement de canne.wav</ShortName>

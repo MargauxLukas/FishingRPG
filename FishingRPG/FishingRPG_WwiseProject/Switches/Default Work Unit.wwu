@@ -22,6 +22,14 @@
 						<Switch Name="ReefCrusher" ID="{CEE19877-AE47-499F-AFEA-46C69E1EBCF7}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="PatternPlayed" ID="{6CBE0BC1-373A-4AF9-BDB5-5B9F55B51400}">
+					<ChildrenList>
+						<Switch Name="Catapulte1" ID="{C8CC0463-EB3D-4145-8E97-8D3F1AE4541E}"/>
+						<Switch Name="Fuite" ID="{DB4C9344-0DC9-4F1A-A187-554FFC330698}"/>
+						<Switch Name="Feinte" ID="{441FA646-5322-42B4-BAA8-4D9199024414}"/>
+						<Switch Name="Catapulte2" ID="{45DAB4C5-195F-470F-BD97-0E661E441C2E}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
