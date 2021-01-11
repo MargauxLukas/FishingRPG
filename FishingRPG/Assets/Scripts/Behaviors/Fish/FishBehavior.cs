@@ -38,8 +38,8 @@ public class FishBehavior : MonoBehaviour
     [HideInInspector]      public bool fellingFreeze = false;
 
     [Header("Direction")]
-    public float minTimeForChangeDirection = 1f;
-    public float maxTimeForChangeDirection = 3f;
+    public float minTimeForChangeDirection = 0.5f;
+    public float maxTimeForChangeDirection = 2f;
     private float timeDirection            = 0f;
     private int randomDirection;
     private bool directionHasChoosen = false;
@@ -53,6 +53,10 @@ public class FishBehavior : MonoBehaviour
     [HideInInspector] public bool canCollectTheFish = false;
 
     public Animator animator;
+
+    float x;
+    float y;
+    float z;
 
     private void Start()
     {
@@ -72,7 +76,7 @@ public class FishBehavior : MonoBehaviour
         FishManager.instance.ChangeLifeJauge();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!FishManager.instance.isAerial)
         {
@@ -150,19 +154,41 @@ public class FishBehavior : MonoBehaviour
     {
         if (!isFellDown)
         {
-            float x = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterX + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialX + Mathf.Pow(currentTime,2) * FishManager.instance.aerialEnterWaterX;
-            float y = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterY + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialY + Mathf.Pow(currentTime, 2) * FishManager.instance.aerialEnterWaterY;
-            float z = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterZ + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialZ + Mathf.Pow(currentTime,2) * FishManager.instance.aerialEnterWaterZ;
+            LookAtFrontPoint(currentTime);
+
+            x = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterX + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialX + Mathf.Pow(currentTime,2) * FishManager.instance.aerialEnterWaterX;
+            y = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterY + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialY + Mathf.Pow(currentTime, 2) * FishManager.instance.aerialEnterWaterY;
+            z = Mathf.Pow(1 - currentTime, 2) * FishManager.instance.aerialExitWaterZ + 2 * (1 - currentTime) * currentTime * FishManager.instance.aerialZ + Mathf.Pow(currentTime,2) * FishManager.instance.aerialEnterWaterZ;
             return new Vector3(x, y, z);
         }
         else
         {
-            float x = (1 - currentTime) * FishManager.instance.aerialExitWaterX + currentTime * FishManager.instance.aerialEnterWaterX;
-            float y = (1- currentTime)  * FishManager.instance.aerialExitWaterY + currentTime * FishManager.instance.aerialEnterWaterY;
-            float z = (1 - currentTime) * FishManager.instance.aerialExitWaterZ + currentTime * FishManager.instance.aerialEnterWaterZ;
+            LookAtFrontPointFellDown(currentTime);
+
+            x = (1 - currentTime) * FishManager.instance.aerialExitWaterX + currentTime * FishManager.instance.aerialEnterWaterX;
+            y = (1- currentTime)  * FishManager.instance.aerialExitWaterY + currentTime * FishManager.instance.aerialEnterWaterY;
+            z = (1 - currentTime) * FishManager.instance.aerialExitWaterZ + currentTime * FishManager.instance.aerialEnterWaterZ;
 
             return new Vector3(x, y, z);
         }
+    }
+
+    public void LookAtFrontPoint(float currentTime)
+    {
+        x = Mathf.Pow(1 - (currentTime+0.1f), 2) * FishManager.instance.aerialExitWaterX + 2 * (1 - (currentTime + 0.1f)) * (currentTime + 0.1f) * FishManager.instance.aerialX + Mathf.Pow(currentTime + 0.1f, 2) * FishManager.instance.aerialEnterWaterX;
+        y = Mathf.Pow(1 - (currentTime + 0.1f), 2) * FishManager.instance.aerialExitWaterY + 2 * (1 - (currentTime + 0.1f)) * (currentTime + 0.1f) * FishManager.instance.aerialY + Mathf.Pow(currentTime + 0.1f, 2) * FishManager.instance.aerialEnterWaterY;
+        z = Mathf.Pow(1 - (currentTime + 0.1f), 2) * FishManager.instance.aerialExitWaterZ + 2 * (1 - (currentTime + 0.1f)) * (currentTime + 0.1f) * FishManager.instance.aerialZ + Mathf.Pow(currentTime + 0.1f, 2) * FishManager.instance.aerialEnterWaterZ;
+
+        transform.LookAt(new Vector3(x, y, z));
+    }
+
+    public void LookAtFrontPointFellDown(float currentTime)
+    {
+        x = (1 - (currentTime + 0.1f)) * FishManager.instance.aerialExitWaterX + (currentTime + 0.1f) * FishManager.instance.aerialEnterWaterX;
+        y = (1 - (currentTime + 0.1f)) * FishManager.instance.aerialExitWaterY + (currentTime + 0.1f) * FishManager.instance.aerialEnterWaterY;
+        z = (1 - (currentTime + 0.1f)) * FishManager.instance.aerialExitWaterZ + (currentTime + 0.1f) * FishManager.instance.aerialEnterWaterZ;
+
+        transform.LookAt(new Vector3(x, y, z));
     }
 
     public void ChooseDirection()
@@ -299,10 +325,8 @@ public class FishBehavior : MonoBehaviour
 
         if (timerAerial >= maxTimeAerial)
         {
-            Debug.Log(timerAerial);
-            //Debug.Log("===============================");
-
             FishManager.instance.FishRecuperation();
+            ChooseDirection();
             timerAerial = 0f;
         }
     }

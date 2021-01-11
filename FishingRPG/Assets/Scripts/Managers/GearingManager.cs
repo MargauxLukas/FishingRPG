@@ -63,7 +63,7 @@ public class GearingManager : MonoBehaviour
             Debug.Log("Cut Fish");
             isLeaving = true;
 
-            leavingTimer += Time.fixedDeltaTime;
+            leavingTimer += Time.deltaTime;
 
             if (leavingTimer < leavingTime)
             {

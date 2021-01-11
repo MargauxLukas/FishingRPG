@@ -67,7 +67,7 @@ public class ButcherManager : MonoBehaviour
             Debug.Log("Cut Fish");
             isCutting = true;
 
-            cuttingTimer += Time.fixedDeltaTime;
+            cuttingTimer += Time.deltaTime;
 
             if (cuttingTimer < cuttingTime)
             {

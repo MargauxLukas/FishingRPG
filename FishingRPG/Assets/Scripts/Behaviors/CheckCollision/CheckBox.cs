@@ -12,7 +12,7 @@ public class CheckBox : MonoBehaviour
     public Transform chestCheck;                                                        
     public float chestDistance = 0.5f;                                                  
 
-    private void Update()
+    private void FixedUpdate()
     {
         isNearChest = Physics.CheckSphere(chestCheck.position, chestDistance, chestMask);
 

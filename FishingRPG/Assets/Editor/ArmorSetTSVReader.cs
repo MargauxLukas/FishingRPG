@@ -99,10 +99,11 @@ public class ArmorSetTSVReader : MonoBehaviour
         _armorSet.upgradeState = int.Parse(blocks[2]);
         _armorSet.itemName = blocks[3];
         _armorSet.tier         = int.Parse(blocks[4]);
+        _armorSet.description = blocks[5];
 
-        _armorSet.strength     = int.Parse(blocks[5]);
-        _armorSet.constitution = int.Parse(blocks[6]);
-        _armorSet.dexterity    = int.Parse(blocks[7]);
-        _armorSet.intelligence = int.Parse(blocks[8]);
+        _armorSet.strength     = int.Parse(blocks[6]);
+        _armorSet.constitution = int.Parse(blocks[7]);
+        _armorSet.dexterity    = int.Parse(blocks[8]);
+        _armorSet.intelligence = int.Parse(blocks[9]);
     }
 }

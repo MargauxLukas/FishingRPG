@@ -19,7 +19,7 @@ public class Bobber : MonoBehaviour
     public bool isDebugBezierCurve = false;
     public bool stopMovementJustOneTime = false;
 
-    private void Update()
+    private void FixedUpdate()
     {
         //DEBUG
         if (isDebugBezierCurve)

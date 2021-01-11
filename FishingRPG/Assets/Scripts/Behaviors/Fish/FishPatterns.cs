@@ -33,7 +33,7 @@ public class FishPatterns : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(currentPattern != null)
         {

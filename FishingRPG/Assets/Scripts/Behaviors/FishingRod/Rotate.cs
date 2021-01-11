@@ -31,7 +31,7 @@ public class Rotate : MonoBehaviour
         imageTarget = new Vector3(transform.position.x, transform.position.y + 20f, transform.position.z);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isReleaseButton)
         {
@@ -53,8 +53,8 @@ public class Rotate : MonoBehaviour
                         axisRelease = true;
                         if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
                         {
-                            transform.Rotate(new Vector3(-1f, 0f, 0f));
-                            PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.3f;
+                            transform.Rotate(new Vector3(-2f, 0f, 0f));
+                            PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
                         }
                         else
                         {
@@ -121,7 +121,7 @@ public class Rotate : MonoBehaviour
 
     IEnumerator Throw()
     {
-        for (float t = 0f; t < 1f; t += 2f * Time.deltaTime)
+        for (float t = 0f; t < 1f; t += 2f * Time.fixedDeltaTime)
         {
             if(t > 0.25f)
             {

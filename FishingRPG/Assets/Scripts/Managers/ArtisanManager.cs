@@ -90,7 +90,7 @@ public class ArtisanManager : MonoBehaviour
             Debug.Log("Cut Fish");
             isCrafting = true;
 
-            craftingTimer += Time.fixedDeltaTime;
+            craftingTimer += Time.deltaTime;
 
             if (craftingTimer < craftingTime)
             {
