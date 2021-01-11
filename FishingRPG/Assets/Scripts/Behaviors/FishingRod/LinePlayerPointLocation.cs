@@ -10,19 +10,16 @@ public class LinePlayerPointLocation : MonoBehaviour
     private float distance;
     private float r;
 
-    private float playerPointX;
-    private float playerPointZ;
+    private float playerPointY;
 
     private void Update()
     {
         r = UtilitiesManager.instance.CalculateR();
 
-        playerPointX = upPoint.position.x + (downPoint.position.x - upPoint.position.x) * r;
-        playerPointZ = upPoint.position.z + (downPoint.position.z - upPoint.position.z) * r;
-    }
+        Debug.Log("Player Point t = " + r);
 
-    public void CheckDistance()
-    {
+        playerPointY = downPoint.position.y * (1 - r) + upPoint.position.y * r;
 
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, playerPointY, gameObject.transform.position.z);
     }
 }
