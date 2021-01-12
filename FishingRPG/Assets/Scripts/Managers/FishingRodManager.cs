@@ -199,6 +199,8 @@ public class FishingRodManager : MonoBehaviour
                     speedAnimation = 1f;
                 }
                 AnimationReelUp(speedAnimation);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnFilDeroule", gameObject);
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
@@ -255,7 +257,6 @@ public class FishingRodManager : MonoBehaviour
 
         if (distanceCP < fishingLine.fCurrent && !fishingLine.isTaken)
         {
-            Debug.Log("tt");
             if (speedAnimation > 0f)
             {
                 speedAnimation += -1f * Time.fixedDeltaTime;
@@ -276,7 +277,6 @@ public class FishingRodManager : MonoBehaviour
                 }
             }
 
-            Debug.Log(speedAnimation);
             animFishingRod.SetFloat("SpeedMultiplier", speedAnimation);
         }
             UpdateFCurrent();

@@ -45,7 +45,7 @@ public class ButcherManager : MonoBehaviour
     bool dropListCleared = false;
     bool canQuitButcher = true;
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetButtonDown("Submit") && !fishReadyToCut && !cuttedFish && fishPile.active)
         {
@@ -67,7 +67,7 @@ public class ButcherManager : MonoBehaviour
             Debug.Log("Cut Fish");
             isCutting = true;
 
-            cuttingTimer += Time.fixedDeltaTime;
+            cuttingTimer += Time.deltaTime;
 
             if (cuttingTimer < cuttingTime)
             {

@@ -50,7 +50,7 @@ public class GearingManager : MonoBehaviour
     public bool needToAccept = false;
     public GameObject advertissement;
 
-    void FixedUpdate()
+    void Update()
     {
         if(Input.GetButton("A Button") && needToAccept)
         {
@@ -63,7 +63,7 @@ public class GearingManager : MonoBehaviour
             Debug.Log("Cut Fish");
             isLeaving = true;
 
-            leavingTimer += Time.fixedDeltaTime;
+            leavingTimer += Time.deltaTime;
 
             if (leavingTimer < leavingTime)
             {
@@ -91,7 +91,6 @@ public class GearingManager : MonoBehaviour
                         PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
                         PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
                     }
-
                 }
 
                 if (SceneManager.GetActiveScene().buildIndex == 1)

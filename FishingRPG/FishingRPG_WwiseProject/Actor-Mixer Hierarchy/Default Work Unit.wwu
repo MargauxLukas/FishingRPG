@@ -1082,6 +1082,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Folder Name="SnapSnack" ID="{F501CB82-CA35-472F-9990-DA52BC8D42B8}" ShortID="612966678">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Sound Name="Catapulte2" ID="{7018AA7B-D122-4647-83ED-9E3255940B3B}" ShortID="669961476">
 									<ReferenceList>
@@ -1157,6 +1164,28 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Cute Creature_14 - Growl" ID="{4C5DA0B8-6A23-4654-B98F-E61F8C5414B2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Cute Creature_9 - Dying_01" ID="{4E2A6FA5-A591-48F4-93D6-FE6B1C1D57C3}" ShortID="1028451292">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_9 - Dying" ID="{593721F7-F78C-40B2-A8AB-3EF3DB5D7B37}" ShortID="134856877">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_9 - Dying.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="740789736"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_9 - Dying" ID="{593721F7-F78C-40B2-A8AB-3EF3DB5D7B37}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -1303,6 +1332,151 @@
 										<SwitchRef Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
 										<ItemList>
 											<ItemRef Name="Cute Creature_11 - Growl" ID="{AEB0A55C-9EE9-4643-A361-82F1D8E84D02}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<SwitchContainer Name="PatternSounds" ID="{62594E5E-1673-4F58-A4E7-4123EE1DED01}" ShortID="208822438">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="PatternPlayed" ID="{6CBE0BC1-373A-4AF9-BDB5-5B9F55B51400}" WorkUnitID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Catapulte2" ID="{43D5AF5F-C64B-44FD-A626-EA67D5E998A4}" ShortID="87507144">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_8" ID="{720750A5-736E-40DE-9781-A129D2E47CEF}" ShortID="515885742">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_8.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="347896685"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_8" ID="{720750A5-736E-40DE-9781-A129D2E47CEF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Feinte" ID="{8153D88E-B51F-474C-8496-04E0E4035193}" ShortID="269028140">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_13 - Aggressive" ID="{AFE841CE-2D0B-4A79-BCCD-DB7F30D5697A}" ShortID="813597689">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_13 - Aggressive.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="96695506"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_13 - Aggressive" ID="{AFE841CE-2D0B-4A79-BCCD-DB7F30D5697A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Catapulte1" ID="{C9902FFB-4BDB-4393-8EB1-8F86146C0BAD}" ShortID="54183182">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_15 - Aggressive" ID="{E3E6CC34-BBB3-4C42-BDD5-E3D306D1CAAD}" ShortID="170184817">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_15 - Aggressive.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="999590192"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_15 - Aggressive" ID="{E3E6CC34-BBB3-4C42-BDD5-E3D306D1CAAD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Fuite" ID="{F1347517-C387-4F53-B379-F4697A427A2F}" ShortID="846741932">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_14 - Growl" ID="{F440126C-64C8-4FB5-8F15-AEF2B6578FE9}" ShortID="276442001">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_14 - Growl.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="609164108"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_14 - Growl" ID="{F440126C-64C8-4FB5-8F15-AEF2B6578FE9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Fuite" ID="{F1347517-C387-4F53-B379-F4697A427A2F}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Catapulte2" ID="{43D5AF5F-C64B-44FD-A626-EA67D5E998A4}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Feinte" ID="{8153D88E-B51F-474C-8496-04E0E4035193}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Catapulte1" ID="{C9902FFB-4BDB-4393-8EB1-8F86146C0BAD}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Fuite" ID="{DB4C9344-0DC9-4F1A-A187-554FFC330698}"/>
+										<ItemList>
+											<ItemRef Name="Fuite" ID="{F1347517-C387-4F53-B379-F4697A427A2F}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Feinte" ID="{441FA646-5322-42B4-BAA8-4D9199024414}"/>
+										<ItemList>
+											<ItemRef Name="Feinte" ID="{8153D88E-B51F-474C-8496-04E0E4035193}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Catapulte1" ID="{C8CC0463-EB3D-4145-8E97-8D3F1AE4541E}"/>
+										<ItemList>
+											<ItemRef Name="Catapulte1" ID="{C9902FFB-4BDB-4393-8EB1-8F86146C0BAD}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Catapulte2" ID="{45DAB4C5-195F-470F-BD97-0E661E441C2E}"/>
+										<ItemList>
+											<ItemRef Name="Catapulte2" ID="{43D5AF5F-C64B-44FD-A626-EA67D5E998A4}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
@@ -2106,101 +2280,6 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
-								<BlendContainer Name="TestBlendContainer" ID="{23A0AB5B-FB30-4279-A041-23CB96AEB210}" ShortID="164780616">
-									<PropertyList>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="UseMoulinetSound_01" ID="{80AC3283-E084-4ED6-B8A6-66D0618BA8D7}" ShortID="202583540">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="OverrideEffect" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Moulinet qui remonte" ID="{AE5A5D64-57A5-43B9-9E8F-36FA09DC0BF1}" ShortID="640922969">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.39376598173516"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.836752711187215"/>
-														<Property Name="TrimEnd" Type="Real64" Value="12.6989529109589"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Moulinet qui remonte.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="3392704"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Moulinet qui remonte" ID="{AE5A5D64-57A5-43B9-9E8F-36FA09DC0BF1}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="DerouleFilTest_01" ID="{392CAF1B-598A-4174-8466-44449188563C}" ShortID="1057911880">
-											<PropertyList>
-												<Property Name="InitialDelay" Type="Real64">
-													<ValueList>
-														<Value>2</Value>
-													</ValueList>
-												</Property>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="OverrideEffect" Type="bool" Value="True"/>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>300</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-12</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="Effect0" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
-													<ObjectRef Name="FilTimeStretch" ID="{381B7855-3590-482B-9130-68A566A74AD7}" WorkUnitID="{73C441B9-0303-487B-8FDD-BC4F76FBD12E}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="DerouleFilTest" ID="{2A00B55F-8B16-452F-93F7-D21EDDC9083E}" ShortID="407162948">
-													<PropertyList>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>DerouleFilTest.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="DerouleFilTest" ID="{2A00B55F-8B16-452F-93F7-D21EDDC9083E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-								</BlendContainer>
 								<BlendContainer Name="WireLaunchedSound" ID="{6BDA15DF-F76C-4486-9BAF-3FEF49DC7182}" ShortID="568839857">
 									<ReferenceList>
 										<Reference Name="Conversion">
