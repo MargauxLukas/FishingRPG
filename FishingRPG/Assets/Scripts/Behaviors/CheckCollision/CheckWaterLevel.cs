@@ -17,7 +17,6 @@ public class CheckWaterLevel : MonoBehaviour
     private void Start()
     {
         basePosition = waterCheck.transform.localPosition;
-        Debug.Log(basePosition);
     }
 
     private void FixedUpdate()
