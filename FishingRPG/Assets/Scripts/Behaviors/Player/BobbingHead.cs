@@ -21,13 +21,20 @@ public class BobbingHead : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+       
+
         if (Input.GetAxisRaw("Horizontal")>0.1f || Input.GetAxisRaw("Vertical")>0.1f || Input.GetAxisRaw("Horizontal") < -0.1f || Input.GetAxisRaw("Vertical")<-0.1f)
         {
             normeVector = Mathf.Sqrt(Mathf.Pow(Input.GetAxisRaw("Horizontal"),2) + Mathf.Pow(Input.GetAxisRaw("Vertical"),2));
             //Player is moving
-            timer += Time.deltaTime * walkingBobbingSpeed * normeVector;
+            timer += Time.fixedDeltaTime * walkingBobbingSpeed * normeVector;
+
+            if (Mathf.Abs(Mathf.Sin(timer)) > 0.996f) Debug.Log("Pas");
+            //Debug.Log(Mathf.Abs(Mathf.Sin(timer)));
+            //Debug.Log(Mathf.Abs(Mathf.Sin(Time.fixedDeltaTime * walkingBobbingSpeed * normeVector)));
+
             transform.localPosition = new Vector3(defaultPosX + Mathf.Sin(timer) * bobbingAmount * normeVector, defaultPosY + Mathf.Abs(Mathf.Sin(timer)) *1 * bobbingAmount * normeVector, transform.localPosition.z);
         }
         else
@@ -36,5 +43,7 @@ public class BobbingHead : MonoBehaviour
             timer = 0;
             transform.localPosition = new Vector3(Mathf.Lerp(transform.localPosition.x, defaultPosX, Time.deltaTime * walkingBobbingSpeed), transform.localPosition.y , transform.localPosition.z);
         }
+
+
     }
 }
