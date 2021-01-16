@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4373638234396413728}
   - component: {fileID: 800958317043957893}
   - component: {fileID: 3240731433552852047}
+  - component: {fileID: 4428466418495755875}
   m_Layer: 0
   m_Name: P_Roche_Falaise_01 1
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4428466418495755875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4033422486416889242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.424587, y: 13.865086, z: 12.426331}
+  m_Center: {x: 0.28901434, y: 5.24145, z: -0.46577543}

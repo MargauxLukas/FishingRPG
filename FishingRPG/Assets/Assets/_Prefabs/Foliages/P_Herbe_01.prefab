@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5442152399094817205}
   m_Layer: 0
-  m_Name: SM_Herbe
+  m_Name: P_Herbe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8456255490477550726}
-  m_LocalRotation: {x: 0.012604515, y: 0.23247206, z: -0.0069413898, w: 0.9724966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
