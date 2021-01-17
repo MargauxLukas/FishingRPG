@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BobbingHead : MonoBehaviour
 {
-    public float walkingBobbingSpeed = 6f;
+    public float walkingBobbingSpeed = 5f;
     public float bobbingAmount = 0.05f;
     public PlayerMovement controller;
     float normeVector;
