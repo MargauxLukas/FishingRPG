@@ -39,6 +39,7 @@ public class FishingManager : MonoBehaviour
 
             if(timer > needToWait)
             {
+                FishingRodManager.instance.fishingLine.CheckWaterLevel();
                 readyToFish = true;
                 CatchSomething();
             }
