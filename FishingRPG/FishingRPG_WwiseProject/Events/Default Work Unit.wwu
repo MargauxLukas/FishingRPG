@@ -237,7 +237,17 @@
 								<Event Name="OnMoulinetBlocked" ID="{4FF2F019-C828-4B80-9875-896E445C7296}"/>
 							</ChildrenList>
 						</Folder>
-						<Event Name="OnCharacterWalk" ID="{BB8EDA30-F4BA-4122-AF53-2C7176B4BEA4}"/>
+						<Event Name="OnCharacterWalk" ID="{BB8EDA30-F4BA-4122-AF53-2C7176B4BEA4}">
+							<ChildrenList>
+								<Action Name="" ID="{7BDA5D58-BCAD-4226-A5CC-69E36FEA88ED}" ShortID="658012889">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FootstepsSwitchContainer" ID="{0B61D597-0A6C-4777-A5C6-1F9CE2A0515F}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Folder Name="Gemmes" ID="{532EA680-CA13-47D3-9571-D0D290243C93}" ShortID="1003614010">
 							<ChildrenList>
 								<Event Name="OnGemUsed" ID="{4EA43EDA-133F-482F-A4C3-3AEC2A92BD68}">

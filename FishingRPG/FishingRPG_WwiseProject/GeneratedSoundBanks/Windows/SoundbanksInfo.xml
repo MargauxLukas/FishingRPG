@@ -24,6 +24,7 @@
 				<Event Id="2840255079" Name="OnBouchonPlop" ObjectPath="\Events\Default Work Unit\Character\Canne\OnBouchonPlop" DurationType="OneShot" DurationMin="0.966983" DurationMax="0.966983"/>
 				<Event Id="1031692393" Name="OnBuildingLeft" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingLeft" DurationType="OneShot" DurationMin="1.750000" DurationMax="1.750000"/>
 				<Event Id="3452353930" Name="OnBuildingOpen" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingOpen" DurationType="OneShot" DurationMin="1.521115" DurationMax="1.521115"/>
+				<Event Id="3871435048" Name="OnCharacterWalk" ObjectPath="\Events\Default Work Unit\Character\OnCharacterWalk" DurationType="OneShot" DurationMin="0.624989" DurationMax="2.000000"/>
 				<Event Id="3337813975" Name="OnCursorMove" ObjectPath="\Events\Default Work Unit\UI\General UI\OnCursorMove" DurationType="OneShot" DurationMin="0.657534" DurationMax="0.657534"/>
 				<Event Id="3049358912" Name="OnCursorSelect" ObjectPath="\Events\Default Work Unit\UI\General UI\OnCursorSelect" DurationType="OneShot" DurationMin="0.589041" DurationMax="0.589041"/>
 				<Event Id="3835741630" Name="OnDammage" ObjectPath="\Events\Default Work Unit\Fishes\OnDammage" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
@@ -183,6 +184,10 @@
 					<ShortName>Footstep Concrete Walking 2_02.wav</ShortName>
 					<Path>SFX\Footstep Concrete Walking 2_02_10C4C929.wem</Path>
 				</File>
+				<File Id="591573219" Language="SFX">
+					<ShortName>Footstep Gravel Walking 1_02.wav</ShortName>
+					<Path>SFX\Footstep Gravel Walking 1_02_10C4C929.wem</Path>
+				</File>
 				<File Id="609164108" Language="SFX">
 					<ShortName>Cute Creature_14 - Growl.wav</ShortName>
 					<Path>SFX\Cute Creature_14 - Growl_10C4C929.wem</Path>
@@ -199,9 +204,17 @@
 					<ShortName>Blacksmith 03.wav</ShortName>
 					<Path>SFX\Blacksmith 03_F88298A4.wem</Path>
 				</File>
+				<File Id="675357428" Language="SFX">
+					<ShortName>Footstep Gravel Walking 2_01.wav</ShortName>
+					<Path>SFX\Footstep Gravel Walking 2_01_10C4C929.wem</Path>
+				</File>
 				<File Id="676316682" Language="SFX">
 					<ShortName>Lancement aventure.wav</ShortName>
 					<Path>SFX\Lancement aventure_3B579D5E.wem</Path>
+				</File>
+				<File Id="678263057" Language="SFX">
+					<ShortName>Footstep Gravel Walking 2_02.wav</ShortName>
+					<Path>SFX\Footstep Gravel Walking 2_02_10C4C929.wem</Path>
 				</File>
 				<File Id="699512289" Language="SFX">
 					<ShortName>Special Click 26.wav</ShortName>
@@ -227,6 +240,10 @@
 					<ShortName>Cute Creature_9 - Dying.wav</ShortName>
 					<Path>SFX\Cute Creature_9 - Dying_10C4C929.wem</Path>
 				</File>
+				<File Id="809764217" Language="SFX">
+					<ShortName>Footstep Gravel Walking 2_03.wav</ShortName>
+					<Path>SFX\Footstep Gravel Walking 2_03_10C4C929.wem</Path>
+				</File>
 				<File Id="823275461" Language="SFX">
 					<ShortName>Footstep Concrete Walking 1_03.wav</ShortName>
 					<Path>SFX\Footstep Concrete Walking 1_03_10C4C929.wem</Path>
@@ -235,6 +252,10 @@
 					<ShortName>Blacksmith 04.wav</ShortName>
 					<Path>SFX\Blacksmith 04_5C03C17F.wem</Path>
 				</File>
+				<File Id="909138305" Language="SFX">
+					<ShortName>Footstep Gravel Walking 1_01.wav</ShortName>
+					<Path>SFX\Footstep Gravel Walking 1_01_10C4C929.wem</Path>
+				</File>
 				<File Id="995520828" Language="SFX">
 					<ShortName>Mouvement de canne.wav</ShortName>
 					<Path>SFX\Mouvement de canne_10C4C929.wem</Path>
@@ -242,6 +263,10 @@
 				<File Id="999590192" Language="SFX">
 					<ShortName>Cute Creature_15 - Aggressive.wav</ShortName>
 					<Path>SFX\Cute Creature_15 - Aggressive_10C4C929.wem</Path>
+				</File>
+				<File Id="1016499437" Language="SFX">
+					<ShortName>Footstep Gravel Walking 1_03.wav</ShortName>
+					<Path>SFX\Footstep Gravel Walking 1_03_10C4C929.wem</Path>
 				</File>
 				<File Id="1033835399" Language="SFX">
 					<ShortName>Food Eat 01.wav</ShortName>
