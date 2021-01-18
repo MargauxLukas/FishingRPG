@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Fish_02
   m_Shader: {fileID: -6465566751694194690, guid: ae6a58f8cfad62640bb785b60c4b636f, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -70,31 +70,31 @@ Material:
     m_Floats:
     - Boolean_A06FE09E: 0
     - Boolean_E6BD358E: 0
-    - Vector1_2370A21A: 7
-    - Vector1_24DD5470: 0
-    - Vector1_27498395: 0.15
+    - Vector1_2370A21A: 0.8
+    - Vector1_24DD5470: 0.17
+    - Vector1_27498395: 0.11
     - Vector1_2E7ACF72: 1
-    - Vector1_304D799A: 0.005
-    - Vector1_403CFD6B: 1
+    - Vector1_304D799A: 0.0037
+    - Vector1_403CFD6B: 0.3
     - Vector1_41F369C7: 150
-    - Vector1_452D94CB: 1
-    - Vector1_4957EFE3: 133
-    - Vector1_4CF4778B: 1
-    - Vector1_5ADF925B: 0.005
-    - Vector1_5B0FD45E: 15
-    - Vector1_627BFA0A: 15
-    - Vector1_6D9EC975: 15
-    - Vector1_8119F34F: 0.005
-    - Vector1_9E586B36: 7
-    - Vector1_ABE6B97B: 15
-    - Vector1_ACA782B4: 7
+    - Vector1_452D94CB: -1
+    - Vector1_4957EFE3: 0
+    - Vector1_4CF4778B: 0
+    - Vector1_5ADF925B: 0.006
+    - Vector1_5B0FD45E: 1.82
+    - Vector1_627BFA0A: 0.28
+    - Vector1_6D9EC975: 13
+    - Vector1_8119F34F: 0.0071
+    - Vector1_9E586B36: 1
+    - Vector1_ABE6B97B: 1
+    - Vector1_ACA782B4: 1.1
     - Vector1_C555546F: 1
-    - Vector1_CB934036: 7
-    - Vector1_D7B7DE4B: 7
-    - Vector1_D7C2DE26: 0.268
+    - Vector1_CB934036: 1.8
+    - Vector1_D7B7DE4B: 0.9
+    - Vector1_D7C2DE26: 0.042
     - Vector1_F1CCDFF0: 0
-    - Vector1_F2277CF8: 2.4
-    - Vector1_F3D909FD: 0.5
+    - Vector1_F2277CF8: 0.03
+    - Vector1_F3D909FD: 0.03
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
