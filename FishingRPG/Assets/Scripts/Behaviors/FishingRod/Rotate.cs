@@ -33,7 +33,7 @@ public class Rotate : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isReleaseButton)
+        if (isReleaseButton && FishingManager.instance.isInFishingRod)
         {
             if (!PlayerManager.instance.isPressingRT)
             {

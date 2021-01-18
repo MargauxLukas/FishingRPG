@@ -19,6 +19,7 @@ public class FishingManager : MonoBehaviour
     public GameObject finishFishDestination;
     public GameObject midFishDestination;
 
+    public bool isInFishingRod = false;
     private void Awake()
     {
         Init();
