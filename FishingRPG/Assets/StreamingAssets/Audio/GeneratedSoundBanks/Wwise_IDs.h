@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID ONBOUCHONPLOP = 2840255079U;
         static const AkUniqueID ONBUILDINGLEFT = 1031692393U;
         static const AkUniqueID ONBUILDINGOPEN = 3452353930U;
+        static const AkUniqueID ONCHARACTERWALK = 3871435048U;
         static const AkUniqueID ONCURSORMOVE = 3337813975U;
         static const AkUniqueID ONCURSORSELECT = 3049358912U;
         static const AkUniqueID ONDAMMAGE = 3835741630U;
