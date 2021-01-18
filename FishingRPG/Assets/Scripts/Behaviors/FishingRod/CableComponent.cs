@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
-
+using System.Collections.Generic;
 
 public class CableComponent : MonoBehaviour
 {
@@ -26,7 +26,17 @@ public class CableComponent : MonoBehaviour
 
 	private LineRenderer line;
 	private CableParticle[] points;
+	private Vector3 cableDirection;
+	private Vector3 initialPosition;
 
+	private float t;
+	public Transform p1;
+	public Transform p2;
+	public Transform p3;
+	public Transform p4;
+
+	//Debug
+	public List<Transform> cubes = new List<Transform>();
 	#endregion
 
 
@@ -51,16 +61,59 @@ public class CableComponent : MonoBehaviour
 		if (totalSegments > 0) { segments = totalSegments; }
 		else                   { segments = Mathf.CeilToInt(cableLength * segmentsPerUnit);}
 
-		Vector3 cableDirection = (endPoint.position - transform.position).normalized;
+		cableDirection = (endPoint.position - transform.position).normalized;
 		float initialSegmentLength = cableLength / segments;
 		points = new CableParticle[segments + 1];
 
+			// Foreach point
+			for (int pointIdx = 0; pointIdx <= segments; pointIdx++)
+			{
+				// Initial position
+				initialPosition = transform.position + (cableDirection * (initialSegmentLength * pointIdx));
+				points[pointIdx] = new CableParticle(initialPosition);
+			}
+		
+
+		// Bind start and end particles with their respective gameobjects
+		CableParticle start = points[0];
+		CableParticle end = points[segments];
+		start.Bind(this.transform);
+		end.Bind(endPoint.transform);
+	}
+
+	void UpdateCableParticles()
+	{
+		cableDirection = (endPoint.position - transform.position).normalized;
+		float initialSegmentLength = cableLength / segments;
+		points = new CableParticle[segments + 1];
+
+		float value = 1 / (float)segments;
+
+
+		Vector3 initialPosition;
 		// Foreach point
 		for (int pointIdx = 0; pointIdx <= segments; pointIdx++)
 		{
 			// Initial position
-			Vector3 initialPosition = transform.position + (cableDirection * (initialSegmentLength * pointIdx));
+			t = value * (pointIdx + 1);
+
+			initialPosition.x = Mathf.Pow(1 - t, 3) * p1.position.x
+								+ 3 * Mathf.Pow((1 - t), 2) * p2.position.x * t
+								+ 3 * (1 - t) * p3.position.x * Mathf.Pow(t, 2)
+								+ Mathf.Pow(t, 3) * p4.position.x;
+			initialPosition.y = Mathf.Pow(1 - t, 3) * p1.position.y
+								+ 3 * Mathf.Pow((1 - t), 2) * p2.position.y * t
+								+ 3 * (1 - t) * p3.position.y * Mathf.Pow(t, 2)
+								+ Mathf.Pow(t, 3) * p4.position.y;
+			initialPosition.z = Mathf.Pow(1 - t, 3) * p1.position.z
+								+ 3 * Mathf.Pow((1 - t), 2) * p2.position.z * t
+								+ 3 * (1 - t) * p3.position.z * Mathf.Pow(t, 2)
+								+ Mathf.Pow(t, 3) * p4.position.z;
+			Debug.Log(pointIdx + "  " + initialPosition);
+
 			points[pointIdx] = new CableParticle(initialPosition);
+
+			//cubes[pointIdx].position = initialPosition;
 		}
 
 		// Bind start and end particles with their respective gameobjects
@@ -90,6 +143,11 @@ public class CableComponent : MonoBehaviour
 	void Update()
 	{
 		RenderCable();
+
+		if(FishManager.instance.currentFish != null)
+        {
+			//UpdateCableParticles();
+		}
 	}
 
 	public void UpdateLineLength(float newLength)

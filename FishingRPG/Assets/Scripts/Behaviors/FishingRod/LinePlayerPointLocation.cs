@@ -16,7 +16,7 @@ public class LinePlayerPointLocation : MonoBehaviour
     {
         r = UtilitiesManager.instance.CalculateR();
 
-        Debug.Log("Player Point t = " + r);
+        //Debug.Log("Player Point t = " + r);
 
         playerPointY = downPoint.position.y * (1 - r) + upPoint.position.y * r;
 

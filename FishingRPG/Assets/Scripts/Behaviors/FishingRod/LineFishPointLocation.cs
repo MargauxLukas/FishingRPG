@@ -14,7 +14,7 @@ public class LineFishPointLocation : MonoBehaviour
     {
         r = UtilitiesManager.instance.CalculateR();
 
-        Debug.Log("Fish Point t = " + r);
+        //Debug.Log("Fish Point t = " + r);
 
         fishPointX = nearPoint.position.x * (1 - r) + farPoint.position.x * r;
         fishPointZ = nearPoint.position.z * (1 - r) + farPoint.position.z * r;

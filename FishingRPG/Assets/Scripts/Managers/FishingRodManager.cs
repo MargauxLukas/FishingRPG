@@ -18,7 +18,7 @@ public class FishingRodManager : MonoBehaviour
     public Transform pointC;
     public List<Transform> listTargetFar = new List<Transform>();
     public List<Transform> listTargetNear = new List<Transform>();
-    [HideInInspector] public FishingLine fishingLine;
+    public FishingLine fishingLine;
     public GemSlot slot1;
     public GemSlot slot2;
     public GemSlot slot3;
@@ -66,7 +66,6 @@ public class FishingRodManager : MonoBehaviour
     private void Start()
     {
         bobberRotation = bobber.transform.localRotation;
-        fishingLine = GetComponent<FishingLine>();
         bendFishingRod.SetupValuePerFloat();
     }
 
