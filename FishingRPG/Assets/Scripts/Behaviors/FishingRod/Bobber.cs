@@ -38,6 +38,7 @@ public class Bobber : MonoBehaviour
                 timer = 0f;
                 canBeLaunch = false;
                 PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber = 1f;
+                Debug.Log("1");
             }
         }
 

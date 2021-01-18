@@ -43,7 +43,8 @@ public class Rotate : MonoBehaviour
                     {
                         StartCoroutine("Throw");
                         FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-                        FishingRodManager.instance.fishingLine.cableComponent.ActivateLine();
+                        //FishingRodManager.instance.fishingLine.cableComponent.ActivateLine();
+                        //FishingRodManager.instance.fishingLine.CheckWaterLevel();
                         isMax = false;
                         axisRelease = false;
                     }

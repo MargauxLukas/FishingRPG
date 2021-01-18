@@ -39,6 +39,7 @@ public class FishingManager : MonoBehaviour
 
             if(timer > needToWait)
             {
+                FishingRodManager.instance.fishingLine.CheckWaterLevel();
                 readyToFish = true;
                 CatchSomething();
             }
@@ -69,6 +70,7 @@ public class FishingManager : MonoBehaviour
         FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(true);
         FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(true);
         PlayerManager.instance.FishingCanStart();
+        //FishingRodManager.instance.fishingLine.cableComponent.InitCableParticles();
     }
 
     public void CancelFishing()
