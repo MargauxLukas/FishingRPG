@@ -34,7 +34,7 @@ public class PlayerView : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void FixedUpdate()
+    void Update()  //passe en Update
     {
         //Changera surement vu que y'a plus de cone
         if (freeCamera)

@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     public bool isQuestMenu = false;
 
 
-    public float speed = 9f;
+    public float speed = 5.5f;
     public bool isPressingRT = false;
 
     public GameObject firstChestSelected;

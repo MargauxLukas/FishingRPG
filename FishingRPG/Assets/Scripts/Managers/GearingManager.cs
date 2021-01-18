@@ -91,7 +91,6 @@ public class GearingManager : MonoBehaviour
                         PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
                         PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
                     }
-
                 }
 
                 if (SceneManager.GetActiveScene().buildIndex == 1)
