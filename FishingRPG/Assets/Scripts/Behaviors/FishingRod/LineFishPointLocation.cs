@@ -14,11 +14,16 @@ public class LineFishPointLocation : MonoBehaviour
     {
         r = UtilitiesManager.instance.CalculateR();
 
-        //Debug.Log("Fish Point t = " + r);
+        if(r < 0)
+        {
+            r = 0f;
+        }
 
-        fishPointX = nearPoint.position.x * (1 - r) + farPoint.position.x * r;
-        fishPointZ = nearPoint.position.z * (1 - r) + farPoint.position.z * r;
+        Debug.Log("Fish Point t = " + r);
 
-        gameObject.transform.position = new Vector3(fishPointX, nearPoint.transform.position.y, fishPointZ);
+        fishPointX = farPoint.position.x * (1 - r) + nearPoint.position.x * r;
+        fishPointZ = farPoint.position.z * (1 - r) + nearPoint.position.z * r;
+
+        gameObject.transform.position = new Vector3(fishPointX, farPoint.transform.position.y, fishPointZ);
     }
 }
