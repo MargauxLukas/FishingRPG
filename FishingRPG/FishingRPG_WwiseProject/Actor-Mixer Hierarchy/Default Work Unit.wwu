@@ -2015,153 +2015,6 @@
 										<ActiveSource Name="Moulinet qui remonte" ID="{26D03C81-2EB9-4277-851E-7E14C696DFC0}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<RandomSequenceContainer Name="FilTenduRandomContainer" ID="{BD96739F-3C39-4FDE-AB71-1496E3194CEE}" ShortID="322354106">
-									<PropertyList>
-										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-										<Property Name="Pitch" Type="int32">
-											<ValueList>
-												<Value>400</Value>
-											</ValueList>
-										</Property>
-										<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
-										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="FilTenduSound" ID="{41383176-F12C-4166-92D0-A0491E6A0089}" ShortID="1027843732">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Fil tendu 1" ID="{84B73E5A-B135-4EAC-8EC0-C67C1B66C5A4}" ShortID="711011926">
-													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimEnd" Type="Real64" Value="4.39954580479453"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Fil tendu 1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Fil tendu 1" ID="{84B73E5A-B135-4EAC-8EC0-C67C1B66C5A4}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="FilTenduSound_01" ID="{16E17F4D-299E-4D9D-82A6-AC86ABF8F3D5}" ShortID="525102395">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Fil tendu 1" ID="{410C63B6-92DD-409E-8D53-2EF14E5108E5}" ShortID="731080799">
-													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="4.75353224885845"/>
-														<Property Name="TrimEnd" Type="Real64" Value="8.19225770547947"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Fil tendu 1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Fil tendu 1" ID="{410C63B6-92DD-409E-8D53-2EF14E5108E5}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="FilTenduSound_02" ID="{97B17E7C-3A82-4164-9779-505F64C909AE}" ShortID="179929058">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Fil tendu 1" ID="{32BEF130-150D-4EB3-8C04-AAC0AC34C12E}" ShortID="120652217">
-													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="11.6815526541096"/>
-														<Property Name="TrimEnd" Type="Real64" Value="14.0077492865297"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Fil tendu 1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Fil tendu 1" ID="{32BEF130-150D-4EB3-8C04-AAC0AC34C12E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="FilTenduSound_03" ID="{02C88DBB-9D1C-44D9-B202-74A7D0173442}" ShortID="671328217">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Fil tendu 1" ID="{3D07E84E-776F-4EF5-98DF-358F0E53DE3A}" ShortID="247694654">
-													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="13.754901826484"/>
-														<Property Name="TrimEnd" Type="Real64" Value="16.1316679509132"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Fil tendu 1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Fil tendu 1" ID="{3D07E84E-776F-4EF5-98DF-358F0E53DE3A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="FilTenduSound_04" ID="{CF2668B3-F271-48F8-B102-EDE9C1FD33F0}" ShortID="838128450">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Fil tendu 1" ID="{81E026CD-6767-4AC6-A407-C165766032CF}" ShortID="269556306">
-													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="15.7271120148402"/>
-														<Property Name="TrimEnd" Type="Real64" Value="19.0646984874429"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Fil tendu 1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Fil tendu 1" ID="{81E026CD-6767-4AC6-A407-C165766032CF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="FilDerouleStartRandomContainer" ID="{B8FECDFF-7029-4FED-9CAB-87219C1793E1}" ShortID="441739189">
 									<PropertyList>
 										<Property Name="Inclusion" Type="bool">
@@ -2178,39 +2031,6 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
 										</Reference>
 									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="DerouleFilTest" ID="{324F2F6F-4453-4F67-80FF-FACDA6B8A5AA}" ShortID="1023544794">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>600</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="DerouleFilTest" ID="{DA421B38-9AE4-40ED-BE41-C8DB511A6BA2}" ShortID="865609187">
-													<PropertyList>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="2.27659153387382"/>
-														<Property Name="TrimEnd" Type="Real64" Value="3.79431922312306"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>DerouleFilTest.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="DerouleFilTest" ID="{DA421B38-9AE4-40ED-BE41-C8DB511A6BA2}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="FilDerouleDuringRandom" ID="{B786DAB3-970C-42EA-8CC1-22A11358460E}" ShortID="559005894">
 									<PropertyList>
@@ -2322,7 +2142,6 @@
 														<Value>0.5</Value>
 													</ValueList>
 												</Property>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="OverrideEffect" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
@@ -2381,6 +2200,254 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Ploup" ID="{20A07C00-CF6F-4580-88B8-9F763CB3F91A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DerouleFilTest" ID="{324F2F6F-4453-4F67-80FF-FACDA6B8A5AA}" ShortID="1023544794">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>450</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="Effect0">
+											<Custom>
+												<Effect Name="Wwise_Time_Stretch_(Custom)" ID="{86DCF9D2-3422-4FF1-85F0-3B142167F588}" ShortID="893354433" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+													<PropertyList>
+														<Property Name="TimeStretch" Type="Real32" Value="188"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DerouleFilTest" ID="{DA421B38-9AE4-40ED-BE41-C8DB511A6BA2}" ShortID="865609187">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.51772768924924"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.700489702730432"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.27659153387382"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.79431922312306"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>DerouleFilTest.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DerouleFilTest" ID="{DA421B38-9AE4-40ED-BE41-C8DB511A6BA2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="FilTenduSequenceContainer" ID="{2A6F3B0D-394F-4C90-9945-2AA088E31DBF}" ShortID="596255173">
+									<PropertyList>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="FilTenduRandomContainer" ID="{BD96739F-3C39-4FDE-AB71-1496E3194CEE}" ShortID="322354106">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>400</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="FilTenduSound" ID="{41383176-F12C-4166-92D0-A0491E6A0089}" ShortID="1027843732">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Fil tendu 1" ID="{84B73E5A-B135-4EAC-8EC0-C67C1B66C5A4}" ShortID="711011926">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="4.39954580479453"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Fil tendu 1.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Fil tendu 1" ID="{84B73E5A-B135-4EAC-8EC0-C67C1B66C5A4}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="FilTenduSound_01" ID="{16E17F4D-299E-4D9D-82A6-AC86ABF8F3D5}" ShortID="525102395">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Fil tendu 1" ID="{410C63B6-92DD-409E-8D53-2EF14E5108E5}" ShortID="731080799">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="4.75353224885845"/>
+																<Property Name="TrimEnd" Type="Real64" Value="8.19225770547947"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Fil tendu 1.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Fil tendu 1" ID="{410C63B6-92DD-409E-8D53-2EF14E5108E5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="FilTenduSound_02" ID="{97B17E7C-3A82-4164-9779-505F64C909AE}" ShortID="179929058">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Fil tendu 1" ID="{32BEF130-150D-4EB3-8C04-AAC0AC34C12E}" ShortID="120652217">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="11.6815526541096"/>
+																<Property Name="TrimEnd" Type="Real64" Value="14.0077492865297"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Fil tendu 1.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Fil tendu 1" ID="{32BEF130-150D-4EB3-8C04-AAC0AC34C12E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="FilTenduSound_03" ID="{02C88DBB-9D1C-44D9-B202-74A7D0173442}" ShortID="671328217">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Fil tendu 1" ID="{3D07E84E-776F-4EF5-98DF-358F0E53DE3A}" ShortID="247694654">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="13.754901826484"/>
+																<Property Name="TrimEnd" Type="Real64" Value="16.1316679509132"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Fil tendu 1.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Fil tendu 1" ID="{3D07E84E-776F-4EF5-98DF-358F0E53DE3A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="FilTenduSound_04" ID="{CF2668B3-F271-48F8-B102-EDE9C1FD33F0}" ShortID="838128450">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Fil tendu 1" ID="{81E026CD-6767-4AC6-A407-C165766032CF}" ShortID="269556306">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.809111872146119"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="15.7271120148402"/>
+																<Property Name="TrimEnd" Type="Real64" Value="19.0646984874429"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Fil tendu 1.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Fil tendu 1" ID="{81E026CD-6767-4AC6-A407-C165766032CF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="FilTenduRandomContainer" ID="{BD96739F-3C39-4FDE-AB71-1496E3194CEE}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<Sound Name="BlockMoulinetSound" ID="{04B0707B-C3AF-4FF8-A5C1-450DFCA53D34}" ShortID="798386963">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>680</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F596EFB8-E5FB-4253-87C6-B210A0EB38AE}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Moulinet qui remonte" ID="{B4526CCF-98F7-44E1-81DB-052D29A54223}" ShortID="666089292">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.39376598173516"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.836752711187215"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.57506392694065"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Moulinet qui remonte.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Moulinet qui remonte" ID="{B4526CCF-98F7-44E1-81DB-052D29A54223}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
