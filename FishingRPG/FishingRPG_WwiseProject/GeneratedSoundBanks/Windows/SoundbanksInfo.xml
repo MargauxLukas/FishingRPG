@@ -205,6 +205,10 @@
 					<ShortName>Blacksmith 03.wav</ShortName>
 					<Path>SFX\Blacksmith 03_F88298A4.wem</Path>
 				</File>
+				<File Id="666089292" Language="SFX">
+					<ShortName>Moulinet qui remonte.wav</ShortName>
+					<Path>SFX\Moulinet qui remonte_E118BF86.wem</Path>
+				</File>
 				<File Id="675357428" Language="SFX">
 					<ShortName>Footstep Gravel Walking 2_01.wav</ShortName>
 					<Path>SFX\Footstep Gravel Walking 2_01_10C4C929.wem</Path>

@@ -1499,6 +1499,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<SwitchContainer Name="FootstepsSwitchContainer" ID="{0B61D597-0A6C-4777-A5C6-1F9CE2A0515F}" ShortID="941868216">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
