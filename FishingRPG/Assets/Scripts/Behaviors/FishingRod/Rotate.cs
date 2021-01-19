@@ -56,17 +56,16 @@ public class Rotate : MonoBehaviour
                         if (goodZone)
                         {
                             StartCoroutine("Throw");
-                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-                            isMax = false;
-                            axisRelease = false;
+                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAura.transform.position);
                         }
                         else
                         {
-                            Debug.Log("La");
                             StartCoroutine("FailedThrow");
-                            isMax = false;
-                            axisRelease = false;
                         }
+
+                        isMax = false;
+                        axisRelease = false;
+                        bobberAura.active = false;
                     }
 
                     if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
