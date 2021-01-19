@@ -2144,6 +2144,11 @@
 										</Sound>
 										<Sound Name="DerouleFilTest_02" ID="{C98F4CFD-0F07-4DD7-A7C4-FC361605CDC3}" ShortID="489801899">
 											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
 												<Property Name="InitialDelay" Type="Real64">
 													<ValueList>
 														<Value>0.5</Value>
