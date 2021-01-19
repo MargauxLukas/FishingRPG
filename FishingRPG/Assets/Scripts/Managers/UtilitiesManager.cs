@@ -120,6 +120,6 @@ public class UtilitiesManager : MonoBehaviour
 
     public float CalculateR()
     {
-        return (FishingRodManager.instance.fishingLine.fCurrent - FishingRodManager.instance.distanceCP) / (FishingRodManager.instance.fishingLine.fMax - FishingRodManager.instance.distanceCP);
+        return (FishingRodManager.instance.fishingLine.fCurrent - FishingRodManager.instance.distanceCP) / ((FishingRodManager.instance.fishingLine.fMax+FishingRodManager.instance.fishingLine.fCritique) - FishingRodManager.instance.distanceCP);
     }
 }

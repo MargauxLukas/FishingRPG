@@ -19,6 +19,11 @@ public class CheckWaterLevel : MonoBehaviour
         basePosition = waterCheck.transform.localPosition;
     }
 
+    private void Update()
+    {
+        waterCheck.position = new Vector3(transform.position.x, waterCheck.position.y, transform.position.z);
+    }
+
     public void ResetPosition()
     {
         waterCheck.transform.localPosition = basePosition;
