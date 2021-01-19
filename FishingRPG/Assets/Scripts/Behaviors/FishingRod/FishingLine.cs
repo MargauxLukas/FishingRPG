@@ -129,7 +129,7 @@ public class FishingLine : MonoBehaviour
     #region Bezier Fishing Line
     public void CheckWaterLevel()
     {
-        checkWaterLevelScript.canStartTheDetection = true;
+        checkWaterLevelScript.SetPositionOnWater();
     }
 
     #endregion
