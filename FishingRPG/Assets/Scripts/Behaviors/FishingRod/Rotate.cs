@@ -25,6 +25,18 @@ public class Rotate : MonoBehaviour
 
     private bool axisRelease = false;
 
+    //New Bobber launch
+    public GameObject bobberAura;
+    public Camera mainCamera;
+    RaycastHit hit;
+    Vector3 raycastOrigin;
+    public LayerMask layer;
+
+    public Color yellowArrow;
+    public Color redArrow;
+
+    bool goodZone = true;                   //La flêche est dans une zone correcte ?
+
     private void Start()
     {
         FishingRodRotaBase = transform.localRotation;
@@ -41,15 +53,23 @@ public class Rotate : MonoBehaviour
                 {
                     if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
                     {
-                        StartCoroutine("Throw");
-                        FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-                        //FishingRodManager.instance.fishingLine.cableComponent.ActivateLine();
-                        //FishingRodManager.instance.fishingLine.CheckWaterLevel();
-                        isMax = false;
-                        axisRelease = false;
+                        if (goodZone)
+                        {
+                            StartCoroutine("Throw");
+                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
+                            isMax = false;
+                            axisRelease = false;
+                        }
+                        else
+                        {
+                            Debug.Log("La");
+                            StartCoroutine("FailedThrow");
+                            isMax = false;
+                            axisRelease = false;
+                        }
                     }
 
-                    if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)
+                    if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
                     {
                         axisRelease = true;
                         if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
@@ -59,8 +79,27 @@ public class Rotate : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("isMax true");
                             isMax = true;
+                        }
+
+                        //Aura bobber
+                        raycastOrigin = mainCamera.transform.position;
+
+                        if(Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80 , layer))
+                        {
+                            bobberAura.transform.position = new Vector3(hit.point.x, hit.point.y + 0.7f, hit.point.z);
+                            bobberAura.active = true;
+
+                            if(hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8 )
+                            {
+                                bobberAura.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
+                                goodZone = false;
+                            }
+                            else
+                            {
+                                bobberAura.gameObject.GetComponent<SpriteRenderer>().color = yellowArrow;
+                                goodZone = true;
+                            }
                         }
                     }
                 }
@@ -128,6 +167,16 @@ public class Rotate : MonoBehaviour
             {
                 result = true;
             }
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, FishingRodRotaBase, t);
+            yield return null;
+        }
+        transform.localRotation = FishingRodRotaBase;
+    }
+
+    IEnumerator FailedThrow()
+    {
+        for (float t = 0f; t < 1f; t += 2f * Time.fixedDeltaTime)
+        {
             transform.localRotation = Quaternion.Lerp(transform.localRotation, FishingRodRotaBase, t);
             yield return null;
         }
