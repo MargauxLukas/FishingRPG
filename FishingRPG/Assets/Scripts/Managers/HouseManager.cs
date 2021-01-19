@@ -18,6 +18,8 @@ public class HouseManager : MonoBehaviour
         if (Input.GetButtonDown("B Button"))
         {
             UIManager.instance.CloseMenu(gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
         }
     }
 

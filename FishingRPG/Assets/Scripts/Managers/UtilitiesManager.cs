@@ -112,4 +112,14 @@ public class UtilitiesManager : MonoBehaviour
     {
         return fellingDamage;
     }
+
+    public float GetAerialRebondDamage()
+    {
+        return (((PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility) * qFellingDamageBalancing)/3);
+    }
+
+    public float CalculateR()
+    {
+        return (FishingRodManager.instance.fishingLine.fCurrent - FishingRodManager.instance.distanceCP) / (FishingRodManager.instance.fishingLine.fMax - FishingRodManager.instance.distanceCP);
+    }
 }

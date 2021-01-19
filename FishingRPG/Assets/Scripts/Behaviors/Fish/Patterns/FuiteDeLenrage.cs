@@ -7,6 +7,8 @@ public class FuiteDeLenrage : MonoBehaviour
     static bool playOnce = false;
     static int speedModifier = 5;
 
+    public GameObject snapSnack;
+
     static float timer = 50f;
 
     public static void Play(float dotDuration, float energyCost, bool costEnergyOverTime)
@@ -18,8 +20,11 @@ public class FuiteDeLenrage : MonoBehaviour
         {
             if (!playOnce)
             {
+                //Play Sound
+                //AkSoundEngine.PostEvent("OnFuite", snapSnack);
                 if (!costEnergyOverTime)
                 {
+                    
                     FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
                     FishManager.instance.ChangeStaminaJauge();
                 }

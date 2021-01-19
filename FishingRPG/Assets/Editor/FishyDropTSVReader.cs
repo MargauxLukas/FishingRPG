@@ -73,5 +73,6 @@ public class FishyDropTSVReader : MonoBehaviour
         _fishyDrop.type   = blocks[1];
         _fishyDrop.rarity = blocks[2];
         _fishyDrop.dropRate = int.Parse(blocks[3]);
+        _fishyDrop.description = blocks[4];
     }
 }

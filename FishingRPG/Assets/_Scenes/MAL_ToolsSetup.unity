@@ -406,6 +406,10 @@ GameObject:
   - component: {fileID: 1792107976}
   - component: {fileID: 1792107977}
   - component: {fileID: 1792107978}
+  - component: {fileID: 1792107979}
+  - component: {fileID: 1792107982}
+  - component: {fileID: 1792107981}
+  - component: {fileID: 1792107980}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -475,3 +479,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cbecca15d52e44ebc12ed74b6581e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1792107979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792107973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbe27015f13d1b44a4afb676f342b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1792107980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792107973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2969fc938fc84b64791c116c21f2f1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines: []
+  blocks: []
+  uDialogues: []
+--- !u!114 &1792107981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792107973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423967f86e162ce43ba582087861473f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines: []
+  blocks: []
+  bDialogues: []
+--- !u!114 &1792107982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792107973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5986abd55716b4bb9022a9de7d2ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines: []
+  blocks: []
+  aDialogues: []

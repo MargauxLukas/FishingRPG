@@ -123,6 +123,7 @@ public class FishManager : MonoBehaviour
 
         isFelling = false;
         currentFishBehavior.isFellDown = false;
+        AerialRebondDamage();
         currentFishBehavior.timerAerial = 0f;
     }
 
@@ -136,7 +137,7 @@ public class FishManager : MonoBehaviour
 
     IEnumerator FellingFreeze()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
 
         Debug.Log("Abattage");
 
@@ -212,7 +213,7 @@ public class FishManager : MonoBehaviour
         {
             if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
             {
-                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.50f) / 60;
+                currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.50f) / 45;
                 staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
             }
 
@@ -253,6 +254,26 @@ public class FishManager : MonoBehaviour
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetFellingDamage();
             FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
             lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
+            //Set Switch
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnDammage", gameObject);
+        }
+
+        currentFishBehavior.CheckLife();
+    }
+
+    public void AerialRebondDamage()
+    {
+        if (currentFishBehavior.currentLife > 0f)
+        {
+            currentFishBehavior.currentLife -= UtilitiesManager.instance.GetAerialRebondDamage();
+            FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
+            lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
+            // Set Switch
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnDammage", gameObject);
         }
 
         currentFishBehavior.CheckLife();

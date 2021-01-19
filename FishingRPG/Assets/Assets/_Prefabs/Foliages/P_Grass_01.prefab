@@ -85,6 +85,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (3)
@@ -163,6 +167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (23)
@@ -241,6 +249,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (14)
@@ -319,6 +331,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (10)
@@ -397,6 +413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (13)
@@ -475,6 +495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (6)
@@ -553,6 +577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (24)
@@ -631,6 +659,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (11)
@@ -709,6 +741,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (9)
@@ -787,6 +823,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (15)
@@ -865,6 +905,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (4)
@@ -943,6 +987,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (16)
@@ -1021,6 +1069,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (17)
@@ -1099,6 +1151,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (18)
@@ -1177,6 +1233,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (27)
@@ -1255,6 +1315,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (29)
@@ -1333,6 +1397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (22)
@@ -1411,6 +1479,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (20)
@@ -1489,6 +1561,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (28)
@@ -1567,6 +1643,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (25)
@@ -1645,6 +1725,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (1)
@@ -1723,6 +1807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (19)
@@ -1801,6 +1889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (7)
@@ -1879,6 +1971,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (30)
@@ -1957,6 +2053,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (21)
@@ -2035,6 +2135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (12)
@@ -2113,6 +2217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (26)
@@ -2191,6 +2299,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (8)
@@ -2269,6 +2381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (5)
@@ -2347,6 +2463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6448732819056950518}
     m_Modifications:
+    - target: {fileID: 8043300341265218268, guid: dda78330cd637734c858d6efe584f568, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8403566802953280265, guid: dda78330cd637734c858d6efe584f568, type: 3}
       propertyPath: m_Name
       value: P_Foliage_Basic_01 (2)

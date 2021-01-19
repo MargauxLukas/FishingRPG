@@ -13,7 +13,7 @@ public class BendFishingRod : MonoBehaviour
     private float valuePerFloat = 0f;
     private float valuePos = 0f;
 
-    void Update()
+    void FixedUpdate()
     {
         if (FishingManager.instance.currentFish != null)
         {
