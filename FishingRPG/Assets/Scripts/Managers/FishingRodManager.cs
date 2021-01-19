@@ -74,7 +74,6 @@ public class FishingRodManager : MonoBehaviour
         if(fishingRodPivot.GetComponent<Rotate>().result && !bobberThrowed)
         {
             bobberThrowed = true;
-            fishingLine.cableComponent.UpdateLineLength(Vector3.Distance(pointC.position, bobber.transform.position));
             LaunchBobber();
         }
 
@@ -313,29 +312,6 @@ public class FishingRodManager : MonoBehaviour
 
     public void UpdateFCurrent()
     {
-        if (FishManager.instance.currentFish != null)
-        {
-            if (distanceCP < fishingLine.fCurrent)
-            {
-                if (fishingLine.fCurrent - distanceCP < 5f)
-                {
-                    fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f + (fishingLine.fCurrent - distanceCP));
-                }
-                else
-                {
-                    fishingLine.cableComponent.UpdateLineLength(distanceCP);
-                }
-            }
-            else
-            {
-                fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f);
-            }
-        }
-        else
-        {
-            fishingLine.cableComponent.UpdateLineLength(0f);
-        }
-
         fCurrentJauge.fillAmount = fishHook.value = (fishingLine.fCurrent*100f)/((fishingLine.fMax + fishingLine.fCritique) * 100f);
     }
     #endregion

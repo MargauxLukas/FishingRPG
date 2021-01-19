@@ -49,9 +49,10 @@ public class PlayerView : MonoBehaviour
             playerBody.Rotate(Vector3.up * mouseX);
         }
 
-        DrawCone();
+        //DrawCone();
     }
 
+    /*
     public void DrawCone()
     {
         forwardRayRotation = Quaternion.AngleAxis(coneDirection, Vector3.down);                  //Direction tout droit
@@ -61,17 +62,19 @@ public class PlayerView : MonoBehaviour
         cone = new Vector3(transform.position.x, transform.position.y - 3.25f, transform.position.z);       //Cone représente le centre du cercle 
 
         //test.transform.localPosition = cone + bezierBobberDirection;
-    }
+    }*/
 
+    /*
     void OnDrawGizmos()
     {
         /*****************
          *  Gizmos Draw  *
-         *****************/
+         ****************
         Gizmos.color = Color.white;
         Gizmos.DrawLine(cone , cone + forwardRayDirection);
 
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(cone, bezierBobberDirection);
-    }
+    }*/
+
 }
