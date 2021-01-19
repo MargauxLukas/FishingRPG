@@ -48,28 +48,37 @@ public class BobbingHead : MonoBehaviour
             {
                 if ((Mathf.Cos(timer) > 0 && Mathf.Cos(oldTimer) < 0) || ((Mathf.Cos(timer) < 0 && Mathf.Cos(oldTimer) > 0)))   //si cos(oldTimer) et cos(timer) sont de signes différents
                 {
-                    /*
+                    
                     Debug.Log("Pas");
                     //Play Sound
-                    AkSoundEngine.PostEvent("OnCharacterWalk", gameObject);         //à enlever si ça te sert plus à rien ADRIEN
-                    */
+                    AkSoundEngine.PostEvent("OnCharacterWalk", gameObject);      
+                    
 
                     string textureName = terrainTextureDetector.GetTerrainTextureAtPlayerPosition();
 
-                    if (textureName == "New Layer")
+                    if (textureName == "NewLayer")
                     {
                         Debug.Log("Marche sur Gravier");
+                        //Set Materials to Gravel
+                        AkSoundEngine.SetSwitch("Materials", "Gravel", gameObject);
                     }
-                    else if (textureName == "New Layer 2")
+                    else if (textureName == "NewLayer 2")
                     {
                         Debug.Log("Marche sur Rocher");
+                        //Set Materials to Rock
+                        AkSoundEngine.SetSwitch("Materials", "Rock", gameObject);
                     }
-                    else if (textureName == "New Layer 3")
+                    else if (textureName == "NewLayer 3")
                     {
+                        //Set Materials to Sand
+                        AkSoundEngine.SetSwitch("Materials", "Sand", gameObject);
                         Debug.Log("Marche sur sable");
                     }
                     else
                     {
+                        //Set Materials to Sand
+                        AkSoundEngine.SetSwitch("Materials", "Sand", gameObject);
+        
                         Debug.Log("Nom de layer non reconnu");  //ducoup son par défaut ou pas de son comme vous voulez
                     }
 

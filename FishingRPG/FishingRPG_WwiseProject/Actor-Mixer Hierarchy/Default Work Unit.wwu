@@ -2437,10 +2437,11 @@
 									<ChildrenList>
 										<AudioFileSource Name="Moulinet qui remonte" ID="{B4526CCF-98F7-44E1-81DB-052D29A54223}" ShortID="666089292">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.39376598173516"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.19688299086758"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.442986729452055"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.836752711187215"/>
-												<Property Name="TrimEnd" Type="Real64" Value="1.57506392694065"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.84577803938357"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Moulinet qui remonte.wav</AudioFile>
