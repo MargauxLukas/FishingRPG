@@ -16,7 +16,6 @@ public class FishingLine : MonoBehaviour
     [Header("Etat Ligne")]
     [HideInInspector] public bool isBlocked = false;
     [HideInInspector] public bool isTaken = false;
-    public CableComponent cableComponent;
 
     [Header("Texts/Jauge")]
     public Image tensionJauge;

@@ -60,7 +60,6 @@ public class GearingManager : MonoBehaviour
 
         if (Input.GetButton("Y Button"))
         {
-            Debug.Log("Cut Fish");
             isLeaving = true;
 
             leavingTimer += Time.deltaTime;
@@ -75,7 +74,7 @@ public class GearingManager : MonoBehaviour
                 leavingTimer = 0;
                 isLeaving = false;
                 holdButtonImg.fillAmount = 0;
-                //Play Sound
+
                 AkSoundEngine.PostEvent("OnHubLeave", gameObject);
 
                 if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -103,14 +102,16 @@ public class GearingManager : MonoBehaviour
 
                 if (!advertise)
                 {
-                    if (SceneManager.GetActiveScene().buildIndex == 1)
+                    if (SceneManager.GetActiveScene().buildIndex == 2)
                     {
                         UIManager.instance.inventory.fishTotal = 0;
                         needToAccept = false;
-                        ChangeScene(0);
+                        SceneLoading.instance.sceneIndex = 0;
+                        ChangeScene(1);
                     }
                     else
                     {
+                        SceneLoading.instance.sceneIndex = 2;
                         ChangeScene(1);
                     }
                 }

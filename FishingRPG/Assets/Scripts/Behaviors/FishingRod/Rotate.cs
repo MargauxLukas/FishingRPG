@@ -19,8 +19,6 @@ public class Rotate : MonoBehaviour
 
     private bool isReleaseButton = true;
 
-    private bool playOneTimeAnimation;
-
     private Vector3 imageTarget;
 
     private bool axisRelease = false;
@@ -56,17 +54,16 @@ public class Rotate : MonoBehaviour
                         if (goodZone)
                         {
                             StartCoroutine("Throw");
-                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetSecondBezierPoint();
-                            isMax = false;
-                            axisRelease = false;
+                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAura.transform.position);
                         }
                         else
                         {
-                            Debug.Log("La");
                             StartCoroutine("FailedThrow");
-                            isMax = false;
-                            axisRelease = false;
                         }
+
+                        isMax = false;
+                        axisRelease = false;
+                        bobberAura.SetActive(false);
                     }
 
                     if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
@@ -88,9 +85,9 @@ public class Rotate : MonoBehaviour
                         if(Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80 , layer))
                         {
                             bobberAura.transform.position = new Vector3(hit.point.x, hit.point.y + 0.7f, hit.point.z);
-                            bobberAura.active = true;
+                            bobberAura.SetActive(true);
 
-                            if(hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8 )
+                            if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8 )
                             {
                                 bobberAura.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
                                 goodZone = false;

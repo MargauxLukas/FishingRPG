@@ -22,7 +22,6 @@ public class LinePlayerPointLocation : MonoBehaviour
             r = 0f;
         }
 
-        Debug.Log("Player : " + r);
         playerPointY = upPoint.position.y * (1 - r) + downPoint.position.y * r;
 
         gameObject.transform.position = new Vector3(FishingRodPointC.transform.position.x, playerPointY, FishingRodPointC.transform.position.z);
