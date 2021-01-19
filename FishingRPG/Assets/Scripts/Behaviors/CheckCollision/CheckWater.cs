@@ -27,7 +27,8 @@ public class CheckWater : MonoBehaviour
         if (isFloor || isWater)
         {
             FishingRodManager.instance.bobber.GetComponent<Bobber>().StopMovement();
-            
+            //Play Sound
+            AkSoundEngine.PostEvent("OnBouchonPlop", gameObject);
         }
     }
 }
