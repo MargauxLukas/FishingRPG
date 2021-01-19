@@ -1916,6 +1916,12 @@
 								</GroupingBehaviorList>
 								<GroupingList>
 									<Grouping>
+										<SwitchRef Name="Gravel" ID="{6DE2AF6C-92BC-4B0F-80E8-E02291C98B42}"/>
+										<ItemList>
+											<ItemRef Name="Gravel" ID="{6CA66FE8-16FF-4A3C-9CFC-48420F62C3C5}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
 										<SwitchRef Name="Rock" ID="{78D7D99B-C5D2-4D02-B123-B198AF0D4BA0}"/>
 										<ItemList>
 											<ItemRef Name="Rock" ID="{AE2F324B-C511-4EB5-9D77-A0A821E12945}"/>
