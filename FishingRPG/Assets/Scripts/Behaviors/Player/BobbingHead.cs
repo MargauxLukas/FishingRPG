@@ -42,7 +42,6 @@ public class BobbingHead : MonoBehaviour
             {
                 if ((Mathf.Cos(timer) > 0 && Mathf.Cos(oldTimer) < 0) || ((Mathf.Cos(timer) < 0 && Mathf.Cos(oldTimer) > 0)))   //si cos(oldTimer) et cos(timer) sont de signes différents
                 {
-                    Debug.Log("Pas");
                     //Play Sound
                     AkSoundEngine.PostEvent("OnCharacterWalk", gameObject);
                 }

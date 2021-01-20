@@ -93,4 +93,6 @@ public class Bobber : MonoBehaviour
         canBeLaunch = false;
         PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber = 1f;
     }
+
+
 }

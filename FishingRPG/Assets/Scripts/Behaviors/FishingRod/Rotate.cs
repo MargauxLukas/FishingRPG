@@ -43,8 +43,6 @@ public class Rotate : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("RelaseButton : " + isReleaseButton);
-
         if (Input.GetButtonUp("B Button"))
         {
             isReleaseButton = true;
