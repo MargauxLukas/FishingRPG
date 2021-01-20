@@ -53,6 +53,20 @@ public class FishingRodManager : MonoBehaviour
     public bool upSpeedNumberAnimation = false;
     public bool downSpeedNumberAnimation = false;
 
+    [Header("Tweaking Debug")]
+    public float mulAxisRight = 0.5f;
+    public float mulAxisLeft = 1.5f;
+    
+    
+    public float mulPosX = 1f;
+    public float mulPosY = 1f;
+    public float mulPosZ = 1f;
+
+    public float mulRotX = 0f;
+    public float mulRotY = 0f;
+    public float mulRotZ = 0f;
+
+
     private void Awake()
     {
         Init();
@@ -163,17 +177,19 @@ public class FishingRodManager : MonoBehaviour
             if (axisValue > 0)
             {
                 lastAxisValues = axisValue;
-                currentAxis    = axisValue * 0.5f;
+                currentAxis    = axisValue * mulAxisRight;
             }
             else
             {
                 lastAxisValues = axisValue;
-                currentAxis    = axisValue * 1.5f;
+                currentAxis    = axisValue * mulAxisLeft;
             }
         }
 
-            fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed * Time.fixedDeltaTime);
-            fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0, -50 * axisValue), speed * Time.fixedDeltaTime);
+            fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition,
+                                                                        new Vector3(currentAxis*mulPosX, Mathf.Abs(axisValue)*mulPosY, Mathf.Abs(axisValue)*mulPosZ), //fishingRodGameObject.transform.localPosition.z
+                                                                        speed * Time.fixedDeltaTime);
+            fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(mulRotX * Mathf.Abs(axisValue), mulRotY * axisValue, mulRotZ * axisValue), speed * Time.fixedDeltaTime);   //changé
         
 
 
