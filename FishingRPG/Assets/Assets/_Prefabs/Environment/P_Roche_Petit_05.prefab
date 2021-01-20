@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1845694487722603432}
   - component: {fileID: 4501855881294169954}
   m_Layer: 0
-  m_Name: SM_Roche_Petit_05
+  m_Name: P_Roche_Petit_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
