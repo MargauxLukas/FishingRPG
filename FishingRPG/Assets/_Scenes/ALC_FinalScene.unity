@@ -40357,7 +40357,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4160014022292808052}
-  - component: {fileID: 8264241612042237444}
   - component: {fileID: 6102382198156278299}
   - component: {fileID: 6102382198156278301}
   - component: {fileID: 6102382198156278300}
@@ -70402,7 +70401,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6835830746776593928}
-  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
   m_LocalPosition: {x: -0.3129995, y: 1.1979997, z: -0.07499933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -77021,8 +77020,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.609573, y: 3.591217, z: 3.6565645}
-  m_Center: {x: 3.0013142, y: -0.101472855, z: -0.5526605}
+  m_Size: {x: 17.609573, y: 7.152405, z: 5.2441278}
+  m_Center: {x: 3.001315, y: 1.679121, z: 0.24112034}
 --- !u!54 &7341231068546936088
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -78435,7 +78434,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7341231068959487793}
-  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
   m_LocalPosition: {x: -0.313, y: 1.198, z: -0.075}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -80065,7 +80064,6 @@ MonoBehaviour:
   maxTension: 100
   isBlocked: 0
   isTaken: 0
-  cableComponent: {fileID: 8264241612042237444}
   tensionJauge: {fileID: 8264241612638964207}
   textBlocked: {fileID: 8264241611912131272}
   textTaken: {fileID: 8264241612711065089}
@@ -81233,45 +81231,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8264241612042237444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6102382198156278298}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0be13cd9fa623a4588a748aef159f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endPoint: {fileID: 2364653597506621328}
-  cableMaterial: {fileID: 2100000, guid: dc0931f46f2f8e240874f8e664fa771c, type: 2}
-  cableLength: 0
-  totalSegments: 10
-  segmentsPerUnit: 1
-  cableWidth: 0.02
-  verletIterations: 1
-  solverIterations: 1
-  stiffness: 1
-  p1: {fileID: 4160014022292808052}
-  p2: {fileID: 7341231066875797726}
-  p3: {fileID: 7341231067636185845}
-  p4: {fileID: 2364653597506621328}
-  cubes:
-  - {fileID: 7341231066860136385}
-  - {fileID: 7341231066896288176}
-  - {fileID: 7341231066933541523}
-  - {fileID: 7341231067677404217}
-  - {fileID: 7341231067767978564}
-  - {fileID: 7341231068137296518}
-  - {fileID: 7341231068760126758}
-  - {fileID: 7341231068837858851}
-  - {fileID: 7341231067062118039}
-  - {fileID: 7341231067318791686}
-  - {fileID: 7341231067474108758}
-  - {fileID: 7341231067899741443}
-  - {fileID: 7341231067292782570}
 --- !u!224 &8264241612100063784
 RectTransform:
   m_ObjectHideFlags: 0

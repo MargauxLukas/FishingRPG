@@ -41,8 +41,58 @@ public class Rotate : MonoBehaviour
         imageTarget = new Vector3(transform.position.x, transform.position.y + 20f, transform.position.z);
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        Debug.Log("RelaseButton : " + isReleaseButton);
+
+        if (Input.GetButtonUp("B Button"))
+        {
+            isReleaseButton = true;
+            holdButtonImage.gameObject.SetActive(false);
+            holdingButtonTimer = 0;
+            holdButtonImage.fillAmount = 0f;
+
+            if(isCancelFishing)
+            {
+                isCancelFishing = false;
+            }
+        }
+     
+        /*
+        if (Input.GetButtonUp("B Button") && isCancelFishing)
+        {
+            holdButtonImage.gameObject.SetActive(false);
+            holdingButtonTimer = 0;
+            holdButtonImage.fillAmount = 0f;
+            isCancelFishing = false;
+            isReleaseButton = true;
+        }*/
+
+        if (Input.GetButton("B Button") && FishingRodManager.instance.bobberThrowed)
+        {
+            holdButtonImage.gameObject.SetActive(true);
+
+            isCancelFishing = true;
+            isReleaseButton = false;
+            holdingButtonTimer += Time.deltaTime;
+
+            if (holdingButtonTimer < holdingButtonMaxTimer)
+            {
+                holdButtonImage.fillAmount = holdingButtonTimer / holdingButtonMaxTimer;
+            }
+
+            if (holdingButtonTimer >= holdingButtonMaxTimer)
+            {
+                FishingManager.instance.CancelFishing();
+                FishingRodManager.instance.bobberThrowed = false;
+
+                holdingButtonTimer = 0;
+                holdButtonImage.fillAmount = 0f;
+                isCancelFishing = false;
+                holdButtonImage.gameObject.SetActive(false);
+            }
+        }
+
         if (isReleaseButton && FishingManager.instance.isInFishingRod)
         {
             if (!PlayerManager.instance.isPressingRT)
@@ -82,12 +132,12 @@ public class Rotate : MonoBehaviour
                         //Aura bobber
                         raycastOrigin = mainCamera.transform.position;
 
-                        if(Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80 , layer))
+                        if (Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80, layer))
                         {
                             bobberAura.transform.position = new Vector3(hit.point.x, hit.point.y + 0.7f, hit.point.z);
                             bobberAura.SetActive(true);
 
-                            if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8 )
+                            if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8)
                             {
                                 bobberAura.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
                                 goodZone = false;
@@ -107,52 +157,11 @@ public class Rotate : MonoBehaviour
             }
             else
             {
-                if(Input.GetAxis("Right Trigger") == 0)
+                if (Input.GetAxis("Right Trigger") == 0)
                 {
                     PlayerManager.instance.isPressingRT = false;
                 }
             }
-        }
-        else
-        {
-            if (Input.GetButtonUp("B Button"))
-            {
-                isReleaseButton = true;
-            }
-        }
-
-        if (Input.GetButton("B Button") && FishingRodManager.instance.bobberThrowed)
-        {
-            holdButtonImage.gameObject.SetActive(true);
-
-            isCancelFishing = true;
-            isReleaseButton = false;
-            holdingButtonTimer += Time.fixedDeltaTime;
-
-            if (holdingButtonTimer < holdingButtonMaxTimer)
-            {
-                holdButtonImage.fillAmount = holdingButtonTimer / holdingButtonMaxTimer;
-            }
-
-            if (holdingButtonTimer >= holdingButtonMaxTimer)
-            {
-                FishingManager.instance.CancelFishing();
-                FishingRodManager.instance.bobberThrowed = false;
-
-                holdingButtonTimer = 0;
-                holdButtonImage.fillAmount = 0f;
-                isCancelFishing = false;
-                holdButtonImage.gameObject.SetActive(false);
-            }
-        }
-
-        if(Input.GetButtonUp("B Button") && isCancelFishing)
-        {
-            holdButtonImage.gameObject.SetActive(false);
-            holdingButtonTimer = 0;
-            holdButtonImage.fillAmount = 0f;
-            isCancelFishing = false;
-            isReleaseButton = true;
         }
     }
 

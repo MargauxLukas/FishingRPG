@@ -18,7 +18,6 @@ public class DebugManager : MonoBehaviour
         Application.targetFrameRate = 10;
 #endif
        */
-     
     }
 
     public virtual void Init()
