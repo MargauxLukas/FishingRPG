@@ -81719,6 +81719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23084eb8fb6a0b4d8e7484f930a855a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swirlsScript: {fileID: 2061390184}
   readyToFish: 0
   isOnWater: 0
   fishPrefab: {fileID: 3848222990756419138, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
