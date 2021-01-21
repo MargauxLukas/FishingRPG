@@ -12,12 +12,15 @@ public class PlayerFishing : MonoBehaviour
     {
         if (isReadyToFish)
         {
-            Debug.Log("tt");
             if (Input.GetButton("Left Bumper"))         //LB
             {
                 if(FishManager.instance.isAerial && !FishManager.instance.isFelling && !FishManager.instance.currentFishBehavior.isDead)
                 {
                     PlayerManager.instance.FellingFish();
+                }
+                else
+                {
+                    FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().FellFailRotation();
                 }
             }
             else if (Input.GetButtonDown("Right Bumper"))   //RB
@@ -45,8 +48,13 @@ public class PlayerFishing : MonoBehaviour
                             {
                                 //Faut il remettre le CoolDown à 0 et re-attendre 0.5f seconds ?
                                 Debug.Log("Déjà appuyé sur RB y'a pas longtemps");
+                                FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialFailRotation();
                             }
                         }
+                    }
+                    else
+                    {
+                        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialFailRotation();
                     }
                 }
             }

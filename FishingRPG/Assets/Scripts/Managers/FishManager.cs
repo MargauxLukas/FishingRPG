@@ -132,7 +132,8 @@ public class FishManager : MonoBehaviour
     {
         isFelling = true;
         currentFishBehavior.fellingFreeze = true;
-        
+
+        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().FellRotation();
         StartCoroutine(FellingFreeze());
     }
 

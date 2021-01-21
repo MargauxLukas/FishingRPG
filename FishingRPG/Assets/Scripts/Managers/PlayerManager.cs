@@ -242,11 +242,13 @@ public class PlayerManager : MonoBehaviour
 
     public void IsAerial()
     {
+        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialRotation();
         FishManager.instance.IsExhausted();
     }
 
     public void FellingFish()
     {
+        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().FellRotation();
         FishManager.instance.FellAerial();
     }
 
@@ -256,6 +258,10 @@ public class PlayerManager : MonoBehaviour
         if(FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial())
         {
             FishManager.instance.MoreAerial();
+        }
+        else
+        {
+            FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialFailRotation();
         }
     }
 
