@@ -21,6 +21,7 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="389117517" Name="AMBWind" ObjectPath="\Events\Default Work Unit\Ambiant\AMBWind" DurationType="Infinite"/>
 				<Event Id="2840255079" Name="OnBouchonPlop" ObjectPath="\Events\Default Work Unit\Character\Canne\OnBouchonPlop" DurationType="OneShot" DurationMin="0.966983" DurationMax="0.966983"/>
 				<Event Id="1031692393" Name="OnBuildingLeft" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingLeft" DurationType="OneShot" DurationMin="1.750000" DurationMax="1.750000"/>
 				<Event Id="3452353930" Name="OnBuildingOpen" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingOpen" DurationType="OneShot" DurationMin="1.521115" DurationMax="1.521115"/>
@@ -200,6 +201,10 @@
 				<File Id="498524427" Language="SFX">
 					<ShortName>Footstep Sand Walking 1_02.wav</ShortName>
 					<Path>SFX\Footstep Sand Walking 1_02_10C4C929.wem</Path>
+				</File>
+				<File Id="504513037" Language="SFX">
+					<ShortName>QP01 0002 Wind mod soft.wav</ShortName>
+					<Path>SFX\QP01 0002 Wind mod soft_5AD90456.wem</Path>
 				</File>
 				<File Id="517957175" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
