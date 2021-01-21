@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7335966339470269809}
   - component: {fileID: 4767730689934748091}
   m_Layer: 0
-  m_Name: SM_Grass_NotAlone01
+  m_Name: P_Algae_NotAlone01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6425121255500171374}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -16.94384, y: 1.1707004, z: 9.04106}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
