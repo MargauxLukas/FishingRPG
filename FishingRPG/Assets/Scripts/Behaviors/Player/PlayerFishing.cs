@@ -12,6 +12,7 @@ public class PlayerFishing : MonoBehaviour
     {
         if (isReadyToFish)
         {
+            Debug.Log("tt");
             if (Input.GetButton("Left Bumper"))         //LB
             {
                 if(FishManager.instance.isAerial && !FishManager.instance.isFelling && !FishManager.instance.currentFishBehavior.isDead)
@@ -110,6 +111,14 @@ public class PlayerFishing : MonoBehaviour
             }
 
             FishingRodManager.instance.SetFishingRodPosition(Input.GetAxis("Right Stick (Horizontal)"));
+        }
+        else
+        {
+            if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
+            {
+                Debug.Log("RT");
+                PlayerManager.instance.IsTakingLineBobber();
+            }
         }
     }
 
