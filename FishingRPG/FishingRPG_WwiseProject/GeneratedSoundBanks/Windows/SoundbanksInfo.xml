@@ -54,7 +54,7 @@
 				<Event Id="667664411" Name="OnStuffEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped" DurationType="OneShot" DurationMin="0.354452" DurationMax="0.686644"/>
 				<Event Id="4012222691" Name="OnWireLaunched" ObjectPath="\Events\Default Work Unit\Character\Canne\OnWireLaunched" DurationType="OneShot" DurationMin="0.750000" DurationMax="0.750000"/>
 				<Event Id="2381105352" Name="SPLGull" ObjectPath="\Events\Default Work Unit\Ambiant\SPLGull" MaxAttenuation="30.000000" DurationType="Infinite"/>
-				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="287.638580" DurationMax="287.638580"/>
+				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="80.000000" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3392704" Language="SFX">
@@ -99,7 +99,7 @@
 				</File>
 				<File Id="113874636" Language="SFX">
 					<ShortName>QP05 0472 Surf surges rock jetty busier.wav</ShortName>
-					<Path>SFX\QP05 0472 Surf surges rock jetty busier_10C4C929.wem</Path>
+					<Path>SFX\QP05 0472 Surf surges rock jetty busier_D79FB2B7.wem</Path>
 				</File>
 				<File Id="120652217" Language="SFX">
 					<ShortName>Fil tendu 1.wav</ShortName>
@@ -279,7 +279,7 @@
 				</File>
 				<File Id="725282829" Language="SFX">
 					<ShortName>QP01 0102 Wetland killdeer fly across isolated.wav</ShortName>
-					<Path>SFX\QP01 0102 Wetland killdeer fly across isolated_8E0A5CB9.wem</Path>
+					<Path>SFX\QP01 0102 Wetland killdeer fly across isolated_81C807B7.wem</Path>
 				</File>
 				<File Id="730476892" Language="SFX">
 					<ShortName>Equiper gemme 2.wav</ShortName>
