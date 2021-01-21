@@ -330,7 +330,7 @@ public class FishBehavior : MonoBehaviour
                                                                   FishingRodManager.instance.bobber.transform.position.z));
 
         x = (1 - currentTime) * spawnPoint.x + currentTime * FishingRodManager.instance.bobber.transform.position.x;
-        y = (1 - currentTime) * spawnPoint.y + currentTime * FishingRodManager.instance.bobber.transform.position.y;
+        y = (1 - currentTime) * spawnPoint.y + currentTime * FishingRodManager.instance.bobber.transform.position.y-0.6f;
         z = (1 - currentTime) * spawnPoint.z + currentTime * FishingRodManager.instance.bobber.transform.position.z;
 
         return new Vector3(x, y, z);

@@ -15,7 +15,10 @@ public class CheckSwirls : MonoBehaviour
         FishingManager.instance.isOnSwirl = Physics.CheckSphere(swirlCheck.position, swirlDistance, swirlMask);
         colliders = Physics.OverlapSphere(swirlCheck.position, swirlDistance, swirlMask);
 
-        FishingManager.instance.snapChance = colliders[0].gameObject.GetComponent<FishSpawner>().snapChance;
-        FishingManager.instance.reefChance = colliders[0].gameObject.GetComponent<FishSpawner>().reefChance;
+        if (colliders.Length != 0)
+        {
+            FishingManager.instance.snapChance = colliders[0].gameObject.GetComponent<FishSpawner>().snapChance;
+            FishingManager.instance.reefChance = colliders[0].gameObject.GetComponent<FishSpawner>().reefChance;
+        }
     }
 }
