@@ -9,8 +9,6 @@ public class LineRendererColor : MonoBehaviour
     private Color matCol;
 
     public Gradient gr;
-    GradientColorKey[] colorKeys;
-    GradientAlphaKey[] alphaKeys;
     [Range(0, 1)] public float grTime;
 
     private void Start()
