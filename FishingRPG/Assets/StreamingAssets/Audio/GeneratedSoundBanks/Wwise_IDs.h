@@ -46,6 +46,8 @@ namespace AK
         static const AkUniqueID ONSAVESTARTED = 3303690716U;
         static const AkUniqueID ONSTUFFEQUIPPED = 667664411U;
         static const AkUniqueID ONWIRELAUNCHED = 4012222691U;
+        static const AkUniqueID SPLBIRD = 2367124489U;
+        static const AkUniqueID SPLFROG = 1146909130U;
         static const AkUniqueID SPLGULL = 2381105352U;
         static const AkUniqueID SPLSEA = 728211669U;
     } // namespace EVENTS
