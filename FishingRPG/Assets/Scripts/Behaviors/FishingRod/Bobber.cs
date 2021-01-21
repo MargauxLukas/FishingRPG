@@ -12,7 +12,7 @@ public class Bobber : MonoBehaviour
     public Transform bezier1;
     public Transform bezier2;
     private Vector3 bezier3;
-    private Vector3 realBezier2;
+    //private Vector3 realBezier2;
 
     public List<GameObject> debugBezier = new List<GameObject>();
 
@@ -38,7 +38,6 @@ public class Bobber : MonoBehaviour
                 timer = 0f;
                 canBeLaunch = false;
                 PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber = 1f;
-                Debug.Log("1");
             }
         }
 
@@ -51,19 +50,13 @@ public class Bobber : MonoBehaviour
     public void Throw()
     {
         GetComponent<MoveToDynamic>().GameObjectToDynamics();
-        bezier3 = PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobberDirection + PlayerManager.instance.playerView.GetComponent<PlayerView>().cone;
-        canBeLaunch = true;
     }
 
     public Vector3 GetAerialPosition(float currentTime)
     {
-        /*capsule1Debug.transform.position = bezier1.position;
-        capsule2Debug.transform.position = realBezier2;
-        capsule3Debug.transform.position = bezier3;*/
-
-        float x = Mathf.Pow(1 - currentTime, 2) * bezier1.position.x + 2 * (1 - currentTime) * currentTime * realBezier2.x + Mathf.Pow(currentTime,2) * bezier3.x;
-        float y = Mathf.Pow(1 - currentTime, 2) * bezier1.position.y + 2 * (1 - currentTime) * currentTime * realBezier2.y + Mathf.Pow(currentTime,2) * bezier3.y;
-        float z = Mathf.Pow(1 - currentTime, 2) * bezier1.position.z + 2 * (1 - currentTime) * currentTime * realBezier2.z + Mathf.Pow(currentTime,2) * bezier3.z;
+        float x = Mathf.Pow(1 - currentTime, 2) * bezier1.position.x + 2 * (1 - currentTime) * currentTime * bezier2.position.x + Mathf.Pow(currentTime,2) * bezier3.x;
+        float y = Mathf.Pow(1 - currentTime, 2) * bezier1.position.y + 2 * (1 - currentTime) * currentTime * bezier2.position.y + Mathf.Pow(currentTime,2) * bezier3.y;
+        float z = Mathf.Pow(1 - currentTime, 2) * bezier1.position.z + 2 * (1 - currentTime) * currentTime * bezier2.position.z + Mathf.Pow(currentTime,2) * bezier3.z;
         return new Vector3(x, y, z);
     }
 
@@ -74,18 +67,24 @@ public class Bobber : MonoBehaviour
 
         for(int i = 0; i < debugBezier.Count; i++)
         {
-            float x = Mathf.Pow(1 - distance, 2) * bezier1.position.x + 2 * (1 - distance) * distance * realBezier2.x + Mathf.Pow(distance,2) * bezier3.x;
-            float y = Mathf.Pow(1 - distance, 2) * bezier1.position.y + 2 * (1 - distance) * distance * realBezier2.y + Mathf.Pow(distance,2) * bezier3.y;
-            float z = Mathf.Pow(1 - distance, 2) * bezier1.position.z + 2 * (1 - distance) * distance * realBezier2.z + Mathf.Pow(distance,2) * bezier3.z;
+            float x = Mathf.Pow(1 - distance, 2) * bezier1.position.x + 2 * (1 - distance) * distance * bezier2.position.x + Mathf.Pow(distance,2) * bezier3.x;
+            float y = Mathf.Pow(1 - distance, 2) * bezier1.position.y + 2 * (1 - distance) * distance * bezier2.position.y + Mathf.Pow(distance,2) * bezier3.y;
+            float z = Mathf.Pow(1 - distance, 2) * bezier1.position.z + 2 * (1 - distance) * distance * bezier2.position.z + Mathf.Pow(distance,2) * bezier3.z;
 
             debugBezier[i].transform.position = new Vector3(x, y, z);
             distance += value;
         }
     }
 
-    public void SetSecondBezierPoint()
+    public void SetBezierPoint(Vector3 bezierPos3)
     {
-        realBezier2 = bezier2.position;
+        bezier3 = new Vector3(bezierPos3.x, bezierPos3.y -0.7f, bezierPos3.z) ;
+        float x = bezier1.position.x * (1 - 0.50f) + bezier3.x * 0.50f;
+        float z = bezier1.position.z * (1 - 0.50f) + bezier3.z * 0.50f;
+
+        bezier2.position = new Vector3(x, bezier3.y + 10f, z);
+
+        canBeLaunch = true;
     }
 
     public void StopMovement()

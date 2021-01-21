@@ -19,6 +19,7 @@ public class FishingManager : MonoBehaviour
     public GameObject finishFishDestination;
     public GameObject midFishDestination;
 
+    public bool isInFishingRod = false;
     private void Awake()
     {
         Init();
@@ -75,7 +76,7 @@ public class FishingManager : MonoBehaviour
 
     public void CancelFishing()
     {
-        FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
+        //DesactivateLine() 
         needToWait = 0f;
         timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();
