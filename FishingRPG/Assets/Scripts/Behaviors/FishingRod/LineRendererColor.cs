@@ -6,11 +6,12 @@ public class LineRendererColor : MonoBehaviour
 {
     public MeshRenderer sphere;
     public Material mat;
-    private ColorHSV matCol;
+    private Color matCol;
 
-    /*public Gradient gr;
+    public Gradient gr;
     GradientColorKey[] colorKeys;
-    GradientAlphaKey[] alphaKeys;*/
+    GradientAlphaKey[] alphaKeys;
+    [Range(0, 1)] public float grTime;
 
     private void Start()
     {
@@ -38,18 +39,16 @@ public class LineRendererColor : MonoBehaviour
         alphaKeys[1].time = 1;
 
         gr.SetKeys(colorKeys, alphaKeys);*/
-        //matCol = new Color(0, 5, 2, 1);
-
-        //sphere.material.SetColor("Color", currentCol);
-        //sphere.material.SetColor("_Color", Random.ColorHSV());
-        StartCoroutine(UpdateColor());
+        
+        StartCoroutine(UpdateColor(grTime));
     }
 
-   IEnumerator UpdateColor()
-    {
-        matCol = Random.ColorHSV();
+    IEnumerator UpdateColor(float _grValue)
+   {
+        matCol.r = gr.Evaluate(_grValue).r;
+        matCol.g = gr.Evaluate(_grValue).g;
+        matCol.b = gr.Evaluate(_grValue).b;
 
-        //sphere.material.SetColor("Color", currentCol);
         sphere.material.SetColor("_Color", matCol);
 
         Debug.Log("Sphere " + sphere.material.color);
@@ -57,8 +56,6 @@ public class LineRendererColor : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        StartCoroutine(UpdateColor());
-    }
-
-
+        StartCoroutine(UpdateColor(grTime));
+   }
 }

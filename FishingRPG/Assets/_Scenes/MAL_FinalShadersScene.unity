@@ -26453,6 +26453,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere: {fileID: 1174349312}
   mat: {fileID: 2100000, guid: 62c434746ee51da419405cbb518a2f43, type: 2}
+  gr:
+    serializedVersion: 2
+    key0: {r: 0, g: 1, b: 0.38039216, a: 1}
+    key1: {r: 1, g: 0.6509804, b: 0.27058825, a: 1}
+    key2: {r: 1, g: 0.6509804, b: 0.27058825, a: 0}
+    key3: {r: 1, g: 0.6509804, b: 0.27058825, a: 0}
+    key4: {r: 1, g: 0.09803922, b: 0.18039216, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 26214
+    ctime2: 32768
+    ctime3: 39321
+    ctime4: 65535
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 2
+  grTime: 0
 --- !u!135 &1174349311
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -80226,6 +80256,14 @@ MonoBehaviour:
   speedAnimation: 0
   upSpeedNumberAnimation: 0
   downSpeedNumberAnimation: 0
+  mulAxisRight: 0.5
+  mulAxisLeft: 1.5
+  mulPosX: 1
+  mulPosY: 1
+  mulPosZ: 1
+  mulRotX: 0
+  mulRotY: 0
+  mulRotZ: 0
 --- !u!4 &8264241611482692099
 Transform:
   m_ObjectHideFlags: 0
@@ -80735,6 +80773,7 @@ MonoBehaviour:
   lifeJauge: {fileID: 7341231067757032660}
   isAerial: 0
   isFelling: 0
+  hasJustSpawned: 0
   aerialExitWaterX: 0
   aerialX: 0
   aerialEnterWaterX: 0
@@ -80803,14 +80842,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23084eb8fb6a0b4d8e7484f930a855a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swirlsScript: {fileID: 0}
   readyToFish: 0
   isOnWater: 0
-  fishPrefab: {fileID: 3848222990756419138, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
+  snapPrefab: {fileID: 0}
+  reefPrefab: {fileID: 0}
   dynamics: {fileID: 8264241610610516496}
   currentFish: {fileID: 0}
   finishFishDestination: {fileID: 8264241611183999437}
   midFishDestination: {fileID: 8264241611717133094}
+  snapChance: 0
+  reefChance: 0
   isInFishingRod: 0
+  isOnSwirl: 0
 --- !u!4 &8264241611729132650
 Transform:
   m_ObjectHideFlags: 0
