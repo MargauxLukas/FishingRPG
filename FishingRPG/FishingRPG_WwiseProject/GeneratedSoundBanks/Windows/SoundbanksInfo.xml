@@ -54,7 +54,7 @@
 				<Event Id="667664411" Name="OnStuffEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped" DurationType="OneShot" DurationMin="0.354452" DurationMax="0.686644"/>
 				<Event Id="4012222691" Name="OnWireLaunched" ObjectPath="\Events\Default Work Unit\Character\Canne\OnWireLaunched" DurationType="OneShot" DurationMin="0.750000" DurationMax="0.750000"/>
 				<Event Id="2381105352" Name="SPLGull" ObjectPath="\Events\Default Work Unit\Ambiant\SPLGull" MaxAttenuation="30.000000" DurationType="Infinite"/>
-				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="80.000000" DurationType="Infinite"/>
+				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="50.000000" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3392704" Language="SFX">
