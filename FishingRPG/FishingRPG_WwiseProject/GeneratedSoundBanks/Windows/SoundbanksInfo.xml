@@ -54,7 +54,7 @@
 				<Event Id="667664411" Name="OnStuffEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped" DurationType="OneShot" DurationMin="0.354452" DurationMax="0.686644"/>
 				<Event Id="4012222691" Name="OnWireLaunched" ObjectPath="\Events\Default Work Unit\Character\Canne\OnWireLaunched" DurationType="OneShot" DurationMin="0.750000" DurationMax="0.750000"/>
 				<Event Id="2381105352" Name="SPLGull" ObjectPath="\Events\Default Work Unit\Ambiant\SPLGull" MaxAttenuation="30.000000" DurationType="Infinite"/>
-				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="287.638580" DurationMax="287.638580"/>
+				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="80.000000" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3392704" Language="SFX">
@@ -63,7 +63,7 @@
 				</File>
 				<File Id="15395485" Language="SFX">
 					<ShortName>Plusieurs son de Coffre.wav</ShortName>
-					<Path>SFX\Plusieurs son de Coffre_DE9229F1.wem</Path>
+					<Path>SFX\Plusieurs son de Coffre_A4A7CE23.wem</Path>
 				</File>
 				<File Id="51199783" Language="SFX">
 					<ShortName>Food Eat 02.wav</ShortName>
@@ -75,7 +75,7 @@
 				</File>
 				<File Id="62230441" Language="SFX">
 					<ShortName>VRAIMENT plus de mouette.wav</ShortName>
-					<Path>SFX\VRAIMENT plus de mouette_873D30A7.wem</Path>
+					<Path>SFX\VRAIMENT plus de mouette_371F0898.wem</Path>
 				</File>
 				<File Id="71148004" Language="SFX">
 					<ShortName>Cute Creature_10 - Growl.wav</ShortName>
@@ -99,7 +99,7 @@
 				</File>
 				<File Id="113874636" Language="SFX">
 					<ShortName>QP05 0472 Surf surges rock jetty busier.wav</ShortName>
-					<Path>SFX\QP05 0472 Surf surges rock jetty busier_10C4C929.wem</Path>
+					<Path>SFX\QP05 0472 Surf surges rock jetty busier_D79FB2B7.wem</Path>
 				</File>
 				<File Id="120652217" Language="SFX">
 					<ShortName>Fil tendu 1.wav</ShortName>
@@ -107,7 +107,7 @@
 				</File>
 				<File Id="170624321" Language="SFX">
 					<ShortName>Special Click 33.wav</ShortName>
-					<Path>SFX\Special Click 33_3823FFA0.wem</Path>
+					<Path>SFX\Special Click 33_7519FFFD.wem</Path>
 				</File>
 				<File Id="176119966" Language="SFX">
 					<ShortName>Activation Gemme 1.wav</ShortName>
@@ -159,7 +159,7 @@
 				</File>
 				<File Id="372995603" Language="SFX">
 					<ShortName>Special Click 10.wav</ShortName>
-					<Path>SFX\Special Click 10_1339D0EF.wem</Path>
+					<Path>SFX\Special Click 10_B434AF80.wem</Path>
 				</File>
 				<File Id="394773237" Language="SFX">
 					<ShortName>Poisson dans inventaire.wav</ShortName>
@@ -203,7 +203,7 @@
 				</File>
 				<File Id="517957175" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
-					<Path>SFX\QP01 0103 Wetland marsh wren_5B3E2304.wem</Path>
+					<Path>SFX\QP01 0103 Wetland marsh wren_B6EF43E4.wem</Path>
 				</File>
 				<File Id="525592507" Language="SFX">
 					<ShortName>Footstep Concrete Walking 2_01.wav</ShortName>
@@ -231,7 +231,7 @@
 				</File>
 				<File Id="654033658" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
-					<Path>SFX\QP01 0103 Wetland marsh wren_D4EECAAA.wem</Path>
+					<Path>SFX\QP01 0103 Wetland marsh wren_AEC7523D.wem</Path>
 				</File>
 				<File Id="654139414" Language="SFX">
 					<ShortName>Footstep Sand Walking 2_01.wav</ShortName>
@@ -259,7 +259,7 @@
 				</File>
 				<File Id="699175873" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
-					<Path>SFX\QP01 0103 Wetland marsh wren_57BBB3B1.wem</Path>
+					<Path>SFX\QP01 0103 Wetland marsh wren_18EC934A.wem</Path>
 				</File>
 				<File Id="699512289" Language="SFX">
 					<ShortName>Special Click 26.wav</ShortName>
@@ -275,11 +275,11 @@
 				</File>
 				<File Id="720883655" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
-					<Path>SFX\QP01 0103 Wetland marsh wren_4230C599.wem</Path>
+					<Path>SFX\QP01 0103 Wetland marsh wren_951BBE7B.wem</Path>
 				</File>
 				<File Id="725282829" Language="SFX">
 					<ShortName>QP01 0102 Wetland killdeer fly across isolated.wav</ShortName>
-					<Path>SFX\QP01 0102 Wetland killdeer fly across isolated_939CD7D4.wem</Path>
+					<Path>SFX\QP01 0102 Wetland killdeer fly across isolated_81C807B7.wem</Path>
 				</File>
 				<File Id="730476892" Language="SFX">
 					<ShortName>Equiper gemme 2.wav</ShortName>
@@ -307,7 +307,7 @@
 				</File>
 				<File Id="826539015" Language="SFX">
 					<ShortName>Plusieurs son de Coffre.wav</ShortName>
-					<Path>SFX\Plusieurs son de Coffre_6506C4C9.wem</Path>
+					<Path>SFX\Plusieurs son de Coffre_A8A32B3F.wem</Path>
 				</File>
 				<File Id="832936103" Language="SFX">
 					<ShortName>Blacksmith 04.wav</ShortName>
@@ -323,11 +323,11 @@
 				</File>
 				<File Id="955351202" Language="SFX">
 					<ShortName>VRAIMENT plus de mouette.wav</ShortName>
-					<Path>SFX\VRAIMENT plus de mouette_96D1ABAB.wem</Path>
+					<Path>SFX\VRAIMENT plus de mouette_3ED82801.wem</Path>
 				</File>
 				<File Id="982311509" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
-					<Path>SFX\QP01 0103 Wetland marsh wren_FDD87E0D.wem</Path>
+					<Path>SFX\QP01 0103 Wetland marsh wren_704AE477.wem</Path>
 				</File>
 				<File Id="995520828" Language="SFX">
 					<ShortName>Mouvement de canne.wav</ShortName>
@@ -339,7 +339,7 @@
 				</File>
 				<File Id="1005189244" Language="SFX">
 					<ShortName>VRAIMENT plus de mouette.wav</ShortName>
-					<Path>SFX\VRAIMENT plus de mouette_19307CAD.wem</Path>
+					<Path>SFX\VRAIMENT plus de mouette_537A67E3.wem</Path>
 				</File>
 				<File Id="1016499437" Language="SFX">
 					<ShortName>Footstep Gravel Walking 1_03.wav</ShortName>
