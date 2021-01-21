@@ -271,9 +271,41 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="OnGemReady" ID="{8413AF88-1FF6-46FC-99B1-716D622C359A}"/>
+								<Event Name="OnGemReady" ID="{8413AF88-1FF6-46FC-99B1-716D622C359A}">
+									<ChildrenList>
+										<Action Name="" ID="{2CD2E582-06F5-4986-9FB2-2DEE632288BA}" ShortID="964668803">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GemReady" ID="{8082BE3D-D2D0-409F-815B-960015F6C45A}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="OnChestOpen" ID="{F59A7190-7122-44A1-BEF4-10FC8574A39B}">
+							<ChildrenList>
+								<Action Name="" ID="{7FDC894F-F9A6-456C-B6AA-CAFB601CD9E1}" ShortID="706096174">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ChestOpened" ID="{F6E64564-1B90-42E6-8D37-8A432904116E}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnChestClosed" ID="{FE6A828B-9261-4467-8530-41ED5B71CF10}">
+							<ChildrenList>
+								<Action Name="" ID="{3EEFDC73-0D7B-4257-BEE8-56890AF82EB0}" ShortID="184332549">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ChestClosed" ID="{595721E6-212E-49EE-8E9D-B6CD9143DEAD}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Fishes" ID="{638B8129-2600-40F5-8BFE-B9D17C263222}" ShortID="342882507">
@@ -370,14 +402,44 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="OnFishSlammed" ID="{C719EC25-9DD7-420D-815E-9E3A94D97A7A}"/>
 						<Event Name="OnFishCatched" ID="{890265C1-0536-41B0-A0EE-2585B0FDA10D}"/>
 						<Folder Name="Aerial" ID="{F739CAEA-E797-4E22-AC27-C0E656F26C94}" ShortID="683976509">
 							<ChildrenList>
 								<Event Name="OnFishAerial" ID="{ED3DB7CC-0CA4-4D5B-8ECB-4665A24F7106}"/>
-								<Event Name="OnFishReadyForAerial" ID="{22AD340F-27BD-4877-B682-61CCF115B4FB}"/>
-								<Event Name="OnFishReadyForBounce" ID="{2EDE796D-E903-4967-AF73-D2EAC52D9B7A}"/>
+								<Event Name="OnFishReadyForAerial" ID="{22AD340F-27BD-4877-B682-61CCF115B4FB}">
+									<ChildrenList>
+										<Action Name="" ID="{B2791F5F-95B9-4743-90DA-368145F27290}" ShortID="983974715">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ReadyForAerial" ID="{155D2315-88DA-4AE2-BA4E-505DA840F3DD}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OnFishReadyForBounce" ID="{2EDE796D-E903-4967-AF73-D2EAC52D9B7A}">
+									<ChildrenList>
+										<Action Name="" ID="{F2E46293-AA79-4132-9907-47E06BFF0243}" ShortID="341893939">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SlamSucess_RdyBounce" ID="{41742C7A-5F01-4945-ABE4-706CFEB873F0}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="OnFishBounce" ID="{6F12C52D-6564-4F5D-AEC0-C073E76AD6E3}"/>
+								<Event Name="OnFishSlammed" ID="{C719EC25-9DD7-420D-815E-9E3A94D97A7A}">
+									<ChildrenList>
+										<Action Name="" ID="{02E1F667-9A4F-456D-93F9-76DA6478BDE8}" ShortID="840559881">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SlamSucess_RdyBounce" ID="{41742C7A-5F01-4945-ABE4-706CFEB873F0}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="OnPattern" ID="{9496A788-EE3F-493C-8D38-9E0E9C4C6D8A}">
@@ -391,6 +453,34 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ambiant" ID="{D1861DF3-E56E-470A-8E1A-8F6AD76361A7}" ShortID="628017659">
+					<ChildrenList>
+						<Event Name="SPLSea" ID="{FDBB0E90-84CD-4FEC-9D65-33DC90CE73D1}">
+							<ChildrenList>
+								<Action Name="" ID="{20D86749-8980-4B24-A958-DCAA47D8084E}" ShortID="495276761">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="QP05 0472 Surf surges rock jetty busier" ID="{2DD1448B-D157-4E05-A951-F79C5F936659}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SPLGull" ID="{CD70DAB8-D126-469B-AECF-1DC60E598F3E}">
+							<ChildrenList>
+								<Action Name="" ID="{F60A7BE9-5A6C-4C63-8DE8-B0CFF43B7D51}" ShortID="44868073">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GullCallRC" ID="{40CB90F6-5804-42B1-9599-2480E7A34DEC}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SPLFrog" ID="{68C2936D-31C9-4049-8787-F5D1E0CDB98C}"/>
+						<Event Name="SPLBird" ID="{27D21930-2380-4AF0-BFFE-58D438DB99E5}"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

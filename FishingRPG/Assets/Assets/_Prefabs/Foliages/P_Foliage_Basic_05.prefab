@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7731314083391948346}
   - component: {fileID: 5525866696643818224}
   m_Layer: 0
-  m_Name: SM_Foliage_Basic_05
+  m_Name: P_Foliage_Basic_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 146fa76736e6fab419c40d8b3ab8971c, type: 2}
+  - {fileID: 2100000, guid: f891f5d7ca637a642bc67ec539e95d4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
