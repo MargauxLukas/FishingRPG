@@ -24,6 +24,7 @@ public class FishManager : MonoBehaviour
     [Header("Aerial variables")]
     [HideInInspector] public bool isAerial = false;
     [HideInInspector] public bool isFelling = false;
+    [HideInInspector] public bool hasJustSpawned = false;
     [HideInInspector] public float aerialExitWaterX  = 0f;
     [HideInInspector] public float aerialX;
     [HideInInspector] public float aerialEnterWaterX = 0f;

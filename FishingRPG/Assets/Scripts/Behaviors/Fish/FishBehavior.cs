@@ -46,6 +46,10 @@ public class FishBehavior : MonoBehaviour
     private Quaternion saveDirection;
     private Quaternion baseRotate;
 
+    //Spawn Deplacement
+    public Vector3 spawnPoint;
+    private float timerMoveToBobber = 2f;
+
     private Vector3 target;
     private float distance;
 
@@ -78,75 +82,93 @@ public class FishBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!FishManager.instance.isAerial)
+        if (FishManager.instance.hasJustSpawned)
         {
-            idleTimer += Time.fixedDeltaTime;
+            timer += Time.fixedDeltaTime;
 
-            if (idleTimer > idleMaxTime)
+            if (timer >= timerMoveToBobber)
             {
-                isIdle = false;
-            }
-        }
-
-        if (isIdle)
-        {
-            if (!inVictoryZone)
-            {
-                if (!FishManager.instance.isAerial)
-                {
-                    if (!exhausted && !isDead)
-                    {
-                        LowStaminaRecuperation();
-
-                        if (!directionHasChoosen)
-                        {
-                            ChooseDirection();
-                        }
-                        else
-                        {
-                            timer += Time.fixedDeltaTime;
-
-                            if (timer >= timeDirection)
-                            {
-                                directionHasChoosen = false;
-                                timer = 0f;
-                            }
-                            else
-                            {
-                                Idle();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        ExhaustedAndDeath();
-                    }
-                }
-                else
-                {
-                    if (!isDead)
-                    {
-                        Aerial();
-                    }
-                }
+                FishManager.instance.hasJustSpawned = false;
+                timer = 0f;
+                FishingManager.instance.CatchSomething();
             }
             else
             {
-                Victory();
+                transform.position = MoveToBobber(timer/ timerMoveToBobber);
             }
         }
         else
         {
-            if (gameObject.GetComponent<FishPatterns>().currentPattern == null)
+            if (!FishManager.instance.isAerial)
             {
-                Debug.Log("Choose a Patern !");
-                fishPattern.startPattern(isRage);
-            }
-        }
+                idleTimer += Time.fixedDeltaTime;
 
-        if (!exhausted)
-        {
-            DetectionWall();
+                if (idleTimer > idleMaxTime)
+                {
+                    isIdle = false;
+                }
+            }
+
+            if (isIdle)
+            {
+                if (!inVictoryZone)
+                {
+                    if (!FishManager.instance.isAerial)
+                    {
+                        if (!exhausted && !isDead)
+                        {
+                            LowStaminaRecuperation();
+
+                            if (!directionHasChoosen)
+                            {
+                                ChooseDirection();
+                            }
+                            else
+                            {
+                                timer += Time.fixedDeltaTime;
+
+                                if (timer >= timeDirection)
+                                {
+                                    directionHasChoosen = false;
+                                    timer = 0f;
+                                }
+                                else
+                                {
+                                    Idle();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            ExhaustedAndDeath();
+                        }
+                    }
+                    else
+                    {
+                        if (!isDead)
+                        {
+                            Aerial();
+                        }
+                    }
+                }
+                else
+                {
+                    Victory();
+                }
+            }
+            else
+            {
+                if (gameObject.GetComponent<FishPatterns>().currentPattern == null)
+                {
+                    Debug.Log("Choose a Patern !");
+                    fishPattern.startPattern(isRage);
+                }
+            }
+
+            if (!exhausted)
+            {
+                DetectionWall();
+            }
         }
     }
 
@@ -300,6 +322,19 @@ public class FishBehavior : MonoBehaviour
                 transform.position += transform.forward * baseSpeed * Time.fixedDeltaTime;
             }
         }
+    }
+
+    public Vector3 MoveToBobber(float currentTime)
+    {
+        transform.LookAt(new Vector3(FishingRodManager.instance.bobber.transform.position.x,
+                                                                  FishingRodManager.instance.bobber.transform.position.y - 0.6f,
+                                                                  FishingRodManager.instance.bobber.transform.position.z));
+
+        x = (1 - currentTime) * spawnPoint.x + currentTime * FishingRodManager.instance.bobber.transform.position.x;
+        y = (1 - currentTime) * spawnPoint.y + currentTime * FishingRodManager.instance.bobber.transform.position.y;
+        z = (1 - currentTime) * spawnPoint.z + currentTime * FishingRodManager.instance.bobber.transform.position.z;
+
+        return new Vector3(x, y, z);
     }
 
     public void ExhaustedAndDeath()

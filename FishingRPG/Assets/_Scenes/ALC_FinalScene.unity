@@ -71430,7 +71430,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6835830746776593928}
-  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
   m_LocalPosition: {x: -0.3129995, y: 1.1979997, z: -0.07499933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -79464,7 +79464,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7341231068959487793}
-  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
   m_LocalPosition: {x: -0.313, y: 1.198, z: -0.075}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -81651,6 +81651,7 @@ MonoBehaviour:
   lifeJauge: {fileID: 7341231067757032660}
   isAerial: 0
   isFelling: 0
+  hasJustSpawned: 0
   aerialExitWaterX: 0
   aerialX: 0
   aerialEnterWaterX: 0
@@ -81722,11 +81723,14 @@ MonoBehaviour:
   swirlsScript: {fileID: 2061390184}
   readyToFish: 0
   isOnWater: 0
-  fishPrefab: {fileID: 3848222990756419138, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
+  snapPrefab: {fileID: 3848222990756419138, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
+  reefPrefab: {fileID: 3848222990756419138, guid: f9c081070dddb764f8ea2d2ab323d36d, type: 3}
   dynamics: {fileID: 8264241610610516496}
   currentFish: {fileID: 0}
   finishFishDestination: {fileID: 8264241611183999437}
   midFishDestination: {fileID: 8264241611717133094}
+  snapChance: 0
+  reefChance: 0
   isInFishingRod: 0
   isOnSwirl: 0
 --- !u!4 &8264241611729132650
