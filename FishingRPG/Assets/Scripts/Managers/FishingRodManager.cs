@@ -162,17 +162,17 @@ public class FishingRodManager : MonoBehaviour
             if (axisValue > 0)
             {
                 lastAxisValues = axisValue;
-                currentAxis    = axisValue * 0.5f;
+                currentAxis    = axisValue * 0.3f;
             }
             else
             {
                 lastAxisValues = axisValue;
-                currentAxis    = axisValue * 1.5f;
+                currentAxis    = axisValue * 0.8f;
             }
         }
 
             fishingRodGameObject.transform.localPosition = Vector3.Lerp(fishingRodGameObject.transform.localPosition, new Vector3(currentAxis, fishingRodGameObject.transform.localPosition.y, fishingRodGameObject.transform.localPosition.z), speed * Time.fixedDeltaTime);
-            fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(0f, 0, -50 * axisValue), speed * Time.fixedDeltaTime);
+            fishingRodGameObject.transform.localRotation = Quaternion.Slerp(fishingRodGameObject.transform.localRotation, Quaternion.Euler(-20 * Mathf.Abs(axisValue), 10 * Mathf.Abs(axisValue), -40 * axisValue), speed * Time.fixedDeltaTime);
         
 
 

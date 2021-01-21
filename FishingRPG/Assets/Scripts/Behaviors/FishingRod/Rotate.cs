@@ -190,7 +190,7 @@ public class Rotate : MonoBehaviour
     public void ResetRotation()
     {
         transform.localRotation = Quaternion.Euler(360, 0, 0);
-        transform.parent.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
+        transform.parent.transform.localPosition = new Vector3(0f, 0f, 0f);
         transform.parent.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 }
