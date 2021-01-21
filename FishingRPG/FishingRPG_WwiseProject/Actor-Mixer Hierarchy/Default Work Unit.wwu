@@ -2652,12 +2652,15 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{F18DAB06-E313-47F4-AA7E-BDB23DDD1255}">
 												<PropertyList>
 													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="30"/>
+													<Property Name="Max" Type="Real64" Value="20"/>
 												</PropertyList>
 											</Modifier>
 										</ModifierInfo>
@@ -3061,6 +3064,21 @@
 						<Sound Name="QP01 0102 Wetland killdeer fly across isolated" ID="{0C03D5AC-C0A0-492A-8C1A-14678C0168D5}" ShortID="402251279">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{7651DD71-9F59-4C19-8E07-D2F730C94D28}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="20"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
