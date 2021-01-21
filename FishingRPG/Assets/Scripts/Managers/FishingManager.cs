@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishingManager : MonoBehaviour
 {
     public static FishingManager instance;
+    public ActivateSwirls swirlsScript;
 
     private float timer      = 0f;
     private float needToWait = 0f;
@@ -19,6 +20,8 @@ public class FishingManager : MonoBehaviour
     public GameObject finishFishDestination;
     public GameObject midFishDestination;
 
+    public bool isInFishingRod = false;
+    public bool isOnSwirl = false;
     private void Awake()
     {
         Init();
@@ -31,7 +34,7 @@ public class FishingManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isOnWater && !readyToFish)
+        if (isOnWater && !readyToFish && isOnSwirl)
         {
             if(needToWait == 0f){needToWait = SetTimer();}
 
@@ -39,6 +42,7 @@ public class FishingManager : MonoBehaviour
 
             if(timer > needToWait)
             {
+                FishingRodManager.instance.fishingLine.CheckWaterLevel();
                 readyToFish = true;
                 CatchSomething();
             }
@@ -53,7 +57,13 @@ public class FishingManager : MonoBehaviour
 
     public void CatchSomething()
     {
+        //Enlever Swirls
+        swirlsScript.DesactivateSwirl();
+
+        //Bobber
         FishingRodManager.instance.SetBobberMaterialToSucces();
+
+        //Fish Instantiate
         currentFish = Instantiate(fishPrefab, 
                     new Vector3(FishingRodManager.instance.bobber.transform.position.x, 
                                 FishingRodManager.instance.bobber.transform.position.y - 0.6f,
@@ -69,11 +79,16 @@ public class FishingManager : MonoBehaviour
         FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(true);
         FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(true);
         PlayerManager.instance.FishingCanStart();
+        //FishingRodManager.instance.fishingLine.cableComponent.InitCableParticles();
     }
 
     public void CancelFishing()
     {
-        FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
+        //Swirl Activate
+        swirlsScript.DesactivateSwirl();
+        swirlsScript.ChooseSwirl(swirlsScript.nbSwirls);
+
+        //DesactivateLine() 
         needToWait = 0f;
         timer      = 0f;
         FishingRodManager.instance.SetBobberMaterialToFail();

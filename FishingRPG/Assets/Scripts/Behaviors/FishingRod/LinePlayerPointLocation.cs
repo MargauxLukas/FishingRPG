@@ -6,6 +6,7 @@ public class LinePlayerPointLocation : MonoBehaviour
 {
     public Transform upPoint;      //Point le plus haut (Fishing Rod Point for PlayerPoint)
     public Transform downPoint;    //Point le plus bas (Check Water Level Point)
+    public Transform FishingRodPointC;
 
     private float distance;
     private float r;
@@ -16,10 +17,13 @@ public class LinePlayerPointLocation : MonoBehaviour
     {
         r = UtilitiesManager.instance.CalculateR();
 
-        Debug.Log("Player Point t = " + r);
+        if (r < 0)
+        {
+            r = 0f;
+        }
 
-        playerPointY = downPoint.position.y * (1 - r) + upPoint.position.y * r;
+        playerPointY = upPoint.position.y * (1 - r) + downPoint.position.y * r;
 
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, playerPointY, gameObject.transform.position.z);
+        gameObject.transform.position = new Vector3(FishingRodPointC.transform.position.x, playerPointY, FishingRodPointC.transform.position.z);
     }
 }

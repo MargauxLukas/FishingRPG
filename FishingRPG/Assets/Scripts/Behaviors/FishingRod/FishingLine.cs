@@ -16,7 +16,6 @@ public class FishingLine : MonoBehaviour
     [Header("Etat Ligne")]
     [HideInInspector] public bool isBlocked = false;
     [HideInInspector] public bool isTaken = false;
-    public CableComponent cableComponent;
 
     [Header("Texts/Jauge")]
     public Image tensionJauge;
@@ -44,7 +43,7 @@ public class FishingLine : MonoBehaviour
             currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 50;
             UpdateJaugeTension();
             //Play Sound
-            AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+            //AkSoundEngine.PostEvent("OnFilTendu", gameObject);
 
             if (currentTension >= maxTension)
             {
@@ -67,7 +66,7 @@ public class FishingLine : MonoBehaviour
             currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
             UpdateJaugeTension();
             //Play Sound
-            AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+            //AkSoundEngine.PostEvent("OnFilTendu", gameObject);
 
             if (currentTension >= maxTension )
             {
@@ -129,7 +128,7 @@ public class FishingLine : MonoBehaviour
     #region Bezier Fishing Line
     public void CheckWaterLevel()
     {
-        checkWaterLevelScript.canStartTheDetection = true;
+        checkWaterLevelScript.SetPositionOnWater();
     }
 
     #endregion

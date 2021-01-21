@@ -18,7 +18,7 @@ public class FishingRodManager : MonoBehaviour
     public Transform pointC;
     public List<Transform> listTargetFar = new List<Transform>();
     public List<Transform> listTargetNear = new List<Transform>();
-    [HideInInspector] public FishingLine fishingLine;
+    public FishingLine fishingLine;
     public GemSlot slot1;
     public GemSlot slot2;
     public GemSlot slot3;
@@ -66,7 +66,6 @@ public class FishingRodManager : MonoBehaviour
     private void Start()
     {
         bobberRotation = bobber.transform.localRotation;
-        fishingLine = GetComponent<FishingLine>();
         bendFishingRod.SetupValuePerFloat();
     }
 
@@ -75,7 +74,6 @@ public class FishingRodManager : MonoBehaviour
         if(fishingRodPivot.GetComponent<Rotate>().result && !bobberThrowed)
         {
             bobberThrowed = true;
-            fishingLine.cableComponent.UpdateLineLength(Vector3.Distance(pointC.position, bobber.transform.position));
             LaunchBobber();
         }
 
@@ -200,7 +198,7 @@ public class FishingRodManager : MonoBehaviour
                 }
                 AnimationReelUp(speedAnimation);
                 //Play Sound
-                AkSoundEngine.PostEvent("OnFilDeroule", gameObject);
+                //AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
@@ -314,29 +312,6 @@ public class FishingRodManager : MonoBehaviour
 
     public void UpdateFCurrent()
     {
-        if (FishManager.instance.currentFish != null)
-        {
-            if (distanceCP < fishingLine.fCurrent)
-            {
-                if (fishingLine.fCurrent - distanceCP < 5f)
-                {
-                    fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f + (fishingLine.fCurrent - distanceCP));
-                }
-                else
-                {
-                    fishingLine.cableComponent.UpdateLineLength(distanceCP);
-                }
-            }
-            else
-            {
-                fishingLine.cableComponent.UpdateLineLength(distanceCP - 5f);
-            }
-        }
-        else
-        {
-            fishingLine.cableComponent.UpdateLineLength(0f);
-        }
-
         fCurrentJauge.fillAmount = fishHook.value = (fishingLine.fCurrent*100f)/((fishingLine.fMax + fishingLine.fCritique) * 100f);
     }
     #endregion

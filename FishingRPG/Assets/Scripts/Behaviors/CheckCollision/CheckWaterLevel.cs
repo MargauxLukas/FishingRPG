@@ -19,23 +19,18 @@ public class CheckWaterLevel : MonoBehaviour
         basePosition = waterCheck.transform.localPosition;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if(canStartTheDetection)
-        {
-            waterCheck.transform.Translate(-Vector3.up * Time.fixedDeltaTime * 4f);
-
-            waterDetected = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);
-
-            if (waterDetected)
-            {
-                canStartTheDetection = false;
-            }
-        }
+        waterCheck.position = new Vector3(transform.position.x, waterCheck.position.y, transform.position.z);
     }
 
     public void ResetPosition()
     {
         waterCheck.transform.localPosition = basePosition;
+    }
+
+    public void SetPositionOnWater()
+    {
+        waterCheck.transform.position = new Vector3(waterCheck.transform.position.x, FishingRodManager.instance.bobber.transform.localPosition.y, waterCheck.transform.position.z);
     }
 }
