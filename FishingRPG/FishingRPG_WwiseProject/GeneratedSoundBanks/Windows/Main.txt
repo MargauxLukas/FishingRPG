@@ -1,15 +1,18 @@
 Event	ID	Name			Wwise Object Path	Notes
 	71788712	OnGemReady			\Default Work Unit\Character\Gemmes\OnGemReady	
 	199235004	OnGemUsed			\Default Work Unit\Character\Gemmes\OnGemUsed	
+	389117517	AMBWind			\Default Work Unit\Ambiant\AMBWind	
 	538280037	OnChestOpen			\Default Work Unit\Character\OnChestOpen	
 	667664411	OnStuffEquipped			\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped	
 	728211669	SPLSea			\Default Work Unit\Ambiant\SPLSea	
 	1031692393	OnBuildingLeft			\Default Work Unit\UI\HUB\OnBuildingLeft	
+	1146909130	SPLFrog			\Default Work Unit\Ambiant\SPLFrog	
 	1441617756	OnHubLeave			\Default Work Unit\UI\HUB\GoFishing\OnHubLeave	
 	1516238081	OnDecoupeEnded			\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeEnded	
 	1864058544	OnFishPickUp			\Default Work Unit\Fishes\OnFishPickUp	
 	2022985720	OnMoulinetOn			\Default Work Unit\Character\Canne\OnMoulinetOn	
 	2058057925	OnFishOnTable			\Default Work Unit\UI\HUB\Dépeceur\OnFishOnTable	
+	2367124489	SPLBird			\Default Work Unit\Ambiant\SPLBird	
 	2381105352	SPLGull			\Default Work Unit\Ambiant\SPLGull	
 	2598090648	OnDeath			\Default Work Unit\Fishes\OnDeath	
 	2769488228	OnGemEquipped			\Default Work Unit\UI\HUB\GoFishing\OnGemEquipped	
@@ -96,6 +99,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	466057137	QP01 0078 Ocean shore gull call	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\QP01 0078 Ocean shore gull call_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spatial\GullCallRC\QP01 0078 Ocean shore gull call		361592
 	488794485	Blacksmith 01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Blacksmith 01_85029E83.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\Artisan\CraftSoundSequence\Blacksmith 01		64252
 	498524427	Footstep Sand Walking 1_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Sand Walking 1_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Sand\Footstep Sand Walking 1_02		176464
+	504513037	QP01 0002 Wind mod soft	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\QP01 0002 Wind mod soft_5AD90456.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiant\QP01 0002 Wind mod soft		11075328
 	517957175	QP01 0103 Wetland marsh wren_03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\QP01 0103 Wetland marsh wren_B6EF43E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spatial\FrogRC\QP01 0103 Wetland marsh wren_03		500964
 	525592507	Footstep Concrete Walking 2_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Concrete Walking 2_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Rock\Footstep Concrete Walking 2_01		176464
 	562110775	SnapSnackGemSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Equiper Gemme 1_C6E58874.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\GoFishing\GemEquippementSound\SnapSnackGemSound		203376

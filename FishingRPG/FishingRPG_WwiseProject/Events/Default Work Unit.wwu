@@ -481,6 +481,7 @@
 						</Event>
 						<Event Name="SPLFrog" ID="{68C2936D-31C9-4049-8787-F5D1E0CDB98C}"/>
 						<Event Name="SPLBird" ID="{27D21930-2380-4AF0-BFFE-58D438DB99E5}"/>
+						<Event Name="AMBWind" ID="{401635CA-991A-4451-8291-500F2915E010}"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

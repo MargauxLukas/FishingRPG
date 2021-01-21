@@ -2849,9 +2849,6 @@
 						<RandomSequenceContainer Name="FrogRC" ID="{D6BFE3CA-628D-4BD6-8020-D60C03058507}" ShortID="509228930">
 							<PropertyList>
 								<Property Name="InitialDelay" Type="Real64">
-									<ValueList>
-										<Value>20</Value>
-									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{63B3C283-D692-4988-912E-C41275D20571}">
@@ -3089,6 +3086,11 @@
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -3119,9 +3121,38 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+							<ObjectRef Name="Envrionmental" ID="{5CAD3FEE-A99E-434A-9F23-4542FEDF69C6}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="QP01 0002 Wind mod soft" ID="{5D92DFE3-C82C-4272-9E12-1BE3AC463B5C}" ShortID="228874458">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="QP01 0002 Wind mod soft" ID="{28F4B5FE-A662-4E2C-9C69-F281AC4704AC}" ShortID="504513037">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.97546803652968"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.28405422374429"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>QP01 0002 Wind mod soft.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="QP01 0002 Wind mod soft" ID="{28F4B5FE-A662-4E2C-9C69-F281AC4704AC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>

@@ -21,6 +21,7 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="389117517" Name="AMBWind" ObjectPath="\Events\Default Work Unit\Ambiant\AMBWind" DurationType="Infinite"/>
 				<Event Id="2840255079" Name="OnBouchonPlop" ObjectPath="\Events\Default Work Unit\Character\Canne\OnBouchonPlop" DurationType="OneShot" DurationMin="0.966983" DurationMax="0.966983"/>
 				<Event Id="1031692393" Name="OnBuildingLeft" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingLeft" DurationType="OneShot" DurationMin="1.750000" DurationMax="1.750000"/>
 				<Event Id="3452353930" Name="OnBuildingOpen" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingOpen" DurationType="OneShot" DurationMin="1.521115" DurationMax="1.521115"/>
@@ -53,6 +54,8 @@
 				<Event Id="3303690716" Name="OnSaveStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveStarted" DurationType="OneShot" DurationMin="0.995716" DurationMax="0.995716"/>
 				<Event Id="667664411" Name="OnStuffEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped" DurationType="OneShot" DurationMin="0.354452" DurationMax="0.686644"/>
 				<Event Id="4012222691" Name="OnWireLaunched" ObjectPath="\Events\Default Work Unit\Character\Canne\OnWireLaunched" DurationType="OneShot" DurationMin="0.750000" DurationMax="0.750000"/>
+				<Event Id="2367124489" Name="SPLBird" ObjectPath="\Events\Default Work Unit\Ambiant\SPLBird" MaxAttenuation="30.000000" DurationType="Infinite"/>
+				<Event Id="1146909130" Name="SPLFrog" ObjectPath="\Events\Default Work Unit\Ambiant\SPLFrog" MaxAttenuation="30.000000" DurationType="Infinite"/>
 				<Event Id="2381105352" Name="SPLGull" ObjectPath="\Events\Default Work Unit\Ambiant\SPLGull" MaxAttenuation="30.000000" DurationType="Infinite"/>
 				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="50.000000" DurationType="Infinite"/>
 			</IncludedEvents>
@@ -200,6 +203,10 @@
 				<File Id="498524427" Language="SFX">
 					<ShortName>Footstep Sand Walking 1_02.wav</ShortName>
 					<Path>SFX\Footstep Sand Walking 1_02_10C4C929.wem</Path>
+				</File>
+				<File Id="504513037" Language="SFX">
+					<ShortName>QP01 0002 Wind mod soft.wav</ShortName>
+					<Path>SFX\QP01 0002 Wind mod soft_5AD90456.wem</Path>
 				</File>
 				<File Id="517957175" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
