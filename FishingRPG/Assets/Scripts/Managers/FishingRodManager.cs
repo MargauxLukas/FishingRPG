@@ -53,6 +53,20 @@ public class FishingRodManager : MonoBehaviour
     public bool upSpeedNumberAnimation = false;
     public bool downSpeedNumberAnimation = false;
 
+    [Header("Tweaking Debug")]
+    public float mulAxisRight = 0.5f;
+    public float mulAxisLeft = 1.5f;
+    
+    
+    public float mulPosX = 1f;
+    public float mulPosY = 1f;
+    public float mulPosZ = 1f;
+
+    public float mulRotX = 0f;
+    public float mulRotY = 0f;
+    public float mulRotZ = 0f;
+
+
     private void Awake()
     {
         Init();
