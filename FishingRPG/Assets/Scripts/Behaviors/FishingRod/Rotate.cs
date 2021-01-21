@@ -104,6 +104,8 @@ public class Rotate : MonoBehaviour
                         if (goodZone)
                         {
                             StartCoroutine("Throw");
+                            //Play Sound
+                            AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
                             FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAura.transform.position);
                         }
                         else

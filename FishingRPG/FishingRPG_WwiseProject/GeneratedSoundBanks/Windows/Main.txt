@@ -22,6 +22,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3871435048	OnCharacterWalk			\Default Work Unit\Character\OnCharacterWalk	
 	3872903362	OnDecoupeStarted			\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeStarted	
 	4012222691	OnWireLaunched			\Default Work Unit\Character\Canne\OnWireLaunched	
+	4016668133	OnFilDeroule			\Default Work Unit\Character\Canne\OnFilDeroule	
 	4034923124	OnItemCrafted			\Default Work Unit\UI\HUB\Artisan\OnItemCrafted	
 	4211819432	OnSaveConfirmed			\Default Work Unit\UI\HUB\Maison\OnSaveConfirmed	
 
@@ -46,8 +47,8 @@ Switch	ID	Name	Switch Group			Notes
 	2185786256	Gravel	Materials			
 
 Effect plug-ins	ID	Name	Type				Notes
+	893354433	Wwise_Time_Stretch_(Custom)	Wwise Time Stretch			
 	1038032793	CraftSound_TimeStretch	Wwise Time Stretch			
-	3167110156	FilTimeStretch	Wwise Time Stretch			
 	3267367848	BuildingSoundTimeStretch	Wwise Time Stretch			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
@@ -59,13 +60,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	96695506	Feinte	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Cute Creature_13 - Aggressive_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Fish\PatternSounds\Feinte		189876
 	101618568	Footstep Sand Walking 2_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Sand Walking 2_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Sand\Footstep Sand Walking 2_02		176464
 	103338287	Stone 10	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Stone 10_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\Dépeceur\FishOnTableSounds\FishOnTableBlend\Stone 10		352864
-	120652217	FilTenduSound_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_A509091E.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduRandomContainer\FilTenduSound_02		223378
+	120652217	FilTenduSound_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_A509091E.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduSequenceContainer\FilTenduRandomContainer\FilTenduSound_02		223378
 	176119966	Activation Gemme 1	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Activation Gemme 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\GemEquippedSwitchContainer\Activation Gemme 1		485164
 	215266507	CursorSelectionSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Seclection_054427A8.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\GeneralUI\CursorSelectionSound		103972
 	237184287	Footstep Sand Walking 1_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Sand Walking 1_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Sand\Footstep Sand Walking 1_01		176464
-	247694654	FilTenduSound_03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_807B7232.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduRandomContainer\FilTenduSound_03		228234
+	247694654	FilTenduSound_03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_807B7232.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduSequenceContainer\FilTenduRandomContainer\FilTenduSound_03		228234
 	266307237	DecoupeEndedSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Coupe_7BFD5EBA.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\Dépeceur\DecoupeEndedSound		65868
-	269556306	FilTenduSound_04	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_E1291B77.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduRandomContainer\FilTenduSound_04		320474
+	269556306	FilTenduSound_04	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_E1291B77.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduSequenceContainer\FilTenduRandomContainer\FilTenduSound_04		320474
 	284579494	Footstep Concrete Walking 1_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Concrete Walking 1_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Rock\Footstep Concrete Walking 1_02		114916
 	310837518	Footstep Sand Walking 2_03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Sand Walking 2_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Sand\Footstep Sand Walking 2_03		176464
 	319225149	Equiper équipement 2	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Equiper équipement 2_8DBA8C71.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\GoFishing\StuffEquipedRandomContainer\Equiper équipement 2		62588
@@ -82,7 +83,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	488794485	Blacksmith 01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Blacksmith 01_85029E83.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\Artisan\CraftSoundSequence\Blacksmith 01		64252
 	498524427	Footstep Sand Walking 1_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Sand Walking 1_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Sand\Footstep Sand Walking 1_02		176464
 	525592507	Footstep Concrete Walking 2_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Concrete Walking 2_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Rock\Footstep Concrete Walking 2_01		176464
-	542338779	DerouleFilTest_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\DerouleFilTest_30519FEC.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\WireLaunchedSound\DerouleFilTest_02		169968
 	562110775	SnapSnackGemSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Equiper Gemme 1_C6E58874.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\GoFishing\GemEquippementSound\SnapSnackGemSound		203376
 	567748039	Footstep Concrete Walking 2_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Concrete Walking 2_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Rock\Footstep Concrete Walking 2_02		176464
 	591573219	Footstep Gravel Walking 1_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Gravel Walking 1_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Gravel\Footstep Gravel Walking 1_02		352864
@@ -90,18 +90,20 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	617136103	Footstep Concrete Walking 2_03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Concrete Walking 2_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Rock\Footstep Concrete Walking 2_03		176464
 	654139414	Footstep Sand Walking 2_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Sand Walking 2_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Sand\Footstep Sand Walking 2_01		176464
 	658065750	Blacksmith 03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Blacksmith 03_F88298A4.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\Artisan\CraftSoundSequence\Blacksmith 03		132364
+	666089292	BlockMoulinetSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Moulinet qui remonte_E118BF86.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\BlockMoulinetSound		96930
 	675357428	Footstep Gravel Walking 2_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Gravel Walking 2_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Gravel\Footstep Gravel Walking 2_01		264664
 	676316682	HubLeaveSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Lancement aventure_3B579D5E.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\GoFishing\HubLeaveSound		251072
 	678263057	Footstep Gravel Walking 2_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Gravel Walking 2_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Gravel\Footstep Gravel Walking 2_02		264664
 	699512289	BuildingOpenedSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Special Click 26_73FFD0C4.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\BuildingOpenedSound		268388
 	707692028	Equiper équipement 1	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Equiper équipement 1_1D7C01E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\GoFishing\StuffEquipedRandomContainer\Equiper équipement 1		91888
-	711011926	FilTenduSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_274F70B9.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduRandomContainer\FilTenduSound		422420
+	711011926	FilTenduSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_274F70B9.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduSequenceContainer\FilTenduRandomContainer\FilTenduSound		422420
 	730476892	ReefCrusherGemSound	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Equiper gemme 2_8D8DC36F.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\GoFishing\GemEquippementSound\ReefCrusherGemSound		155272
-	731080799	FilTenduSound_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_83D2414E.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduRandomContainer\FilTenduSound_01		330180
+	731080799	FilTenduSound_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Fil tendu 1_83D2414E.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\FilTenduSequenceContainer\FilTenduRandomContainer\FilTenduSound_01		330180
 	740789736	Cute Creature_9 - Dying	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Cute Creature_9 - Dying_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Fish\RageSounds\Cute Creature_9 - Dying		219468
 	809764217	Footstep Gravel Walking 2_03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Gravel Walking 2_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Gravel\Footstep Gravel Walking 2_03		264664
 	823275461	Footstep Concrete Walking 1_03	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Concrete Walking 1_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Rock\Footstep Concrete Walking 1_03		110312
 	832936103	Blacksmith 04	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Blacksmith 04_5C03C17F.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\Artisan\CraftSoundSequence\Blacksmith 04		133272
+	865609187	DerouleFilTest	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\DerouleFilTest_9D8D6CA1.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\DerouleFilTest		133926
 	909138305	Footstep Gravel Walking 1_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Gravel Walking 1_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Gravel\Footstep Gravel Walking 1_01		352864
 	995520828	Mouvement de canne	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Mouvement de canne_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\WireLaunchedSound\Mouvement de canne		132364
 	999590192	Catapulte1	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Cute Creature_15 - Aggressive_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Fish\PatternSounds\Catapulte1		116816

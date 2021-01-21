@@ -22,10 +22,13 @@ public class CheckWater : MonoBehaviour
     {
         FishingManager.instance.isOnWater = isWater = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);
         isFloor = Physics.CheckSphere(floorCheck.position, floorDistance, floorMask);
+        
 
         if (isFloor || isWater)
         {
             FishingRodManager.instance.bobber.GetComponent<Bobber>().StopMovement();
+            //Play Sound
+            AkSoundEngine.PostEvent("OnBouchonPlop", gameObject);
         }
     }
 }

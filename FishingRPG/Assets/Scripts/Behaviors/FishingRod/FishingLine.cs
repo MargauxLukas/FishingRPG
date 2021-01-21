@@ -43,7 +43,7 @@ public class FishingLine : MonoBehaviour
             currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 50;
             UpdateJaugeTension();
             //Play Sound
-            AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+            //AkSoundEngine.PostEvent("OnFilTendu", gameObject);
 
             if (currentTension >= maxTension)
             {
@@ -66,7 +66,7 @@ public class FishingLine : MonoBehaviour
             currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
             UpdateJaugeTension();
             //Play Sound
-            AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+            //AkSoundEngine.PostEvent("OnFilTendu", gameObject);
 
             if (currentTension >= maxTension )
             {

@@ -31,6 +31,7 @@
 				<Event Id="2598090648" Name="OnDeath" ObjectPath="\Events\Default Work Unit\Fishes\OnDeath" DurationType="OneShot" DurationMin="1.284375" DurationMax="1.284375"/>
 				<Event Id="1516238081" Name="OnDecoupeEnded" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeEnded" DurationType="OneShot" DurationMin="0.373039" DurationMax="0.373039"/>
 				<Event Id="3872903362" Name="OnDecoupeStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeStarted" DurationType="OneShot" DurationMin="1.416706" DurationMax="1.416706"/>
+				<Event Id="4016668133" Name="OnFilDeroule" ObjectPath="\Events\Default Work Unit\Character\Canne\OnFilDeroule" DurationType="Infinite"/>
 				<Event Id="2964522841" Name="OnFilTendu" ObjectPath="\Events\Default Work Unit\Character\Canne\OnFilTendu" DurationType="OneShot" DurationMin="25.206055" DurationMax="25.206055"/>
 				<Event Id="2058057925" Name="OnFishOnTable" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnFishOnTable" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
 				<Event Id="1864058544" Name="OnFishPickUp" ObjectPath="\Events\Default Work Unit\Fishes\OnFishPickUp" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
@@ -45,7 +46,7 @@
 				<Event Id="4211819432" Name="OnSaveConfirmed" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveConfirmed" DurationType="OneShot" DurationMin="1.162930" DurationMax="1.162930"/>
 				<Event Id="3303690716" Name="OnSaveStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveStarted" DurationType="OneShot" DurationMin="0.995716" DurationMax="0.995716"/>
 				<Event Id="667664411" Name="OnStuffEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped" DurationType="OneShot" DurationMin="0.354452" DurationMax="0.686644"/>
-				<Event Id="4012222691" Name="OnWireLaunched" ObjectPath="\Events\Default Work Unit\Character\Canne\OnWireLaunched" DurationType="Infinite"/>
+				<Event Id="4012222691" Name="OnWireLaunched" ObjectPath="\Events\Default Work Unit\Character\Canne\OnWireLaunched" DurationType="OneShot" DurationMin="0.750000" DurationMax="0.750000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3392704" Language="SFX">
@@ -172,10 +173,6 @@
 					<ShortName>Footstep Concrete Walking 2_01.wav</ShortName>
 					<Path>SFX\Footstep Concrete Walking 2_01_10C4C929.wem</Path>
 				</File>
-				<File Id="542338779" Language="SFX">
-					<ShortName>DerouleFilTest.wav</ShortName>
-					<Path>SFX\DerouleFilTest_30519FEC.wem</Path>
-				</File>
 				<File Id="562110775" Language="SFX">
 					<ShortName>Equiper Gemme 1.wav</ShortName>
 					<Path>SFX\Equiper Gemme 1_C6E58874.wem</Path>
@@ -203,6 +200,10 @@
 				<File Id="658065750" Language="SFX">
 					<ShortName>Blacksmith 03.wav</ShortName>
 					<Path>SFX\Blacksmith 03_F88298A4.wem</Path>
+				</File>
+				<File Id="666089292" Language="SFX">
+					<ShortName>Moulinet qui remonte.wav</ShortName>
+					<Path>SFX\Moulinet qui remonte_E118BF86.wem</Path>
 				</File>
 				<File Id="675357428" Language="SFX">
 					<ShortName>Footstep Gravel Walking 2_01.wav</ShortName>
@@ -251,6 +252,10 @@
 				<File Id="832936103" Language="SFX">
 					<ShortName>Blacksmith 04.wav</ShortName>
 					<Path>SFX\Blacksmith 04_5C03C17F.wem</Path>
+				</File>
+				<File Id="865609187" Language="SFX">
+					<ShortName>DerouleFilTest.wav</ShortName>
+					<Path>SFX\DerouleFilTest_9D8D6CA1.wem</Path>
 				</File>
 				<File Id="909138305" Language="SFX">
 					<ShortName>Footstep Gravel Walking 1_01.wav</ShortName>

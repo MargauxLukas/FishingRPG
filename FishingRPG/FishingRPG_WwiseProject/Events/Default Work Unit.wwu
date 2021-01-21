@@ -211,7 +211,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="OnFilDeroule" ID="{60D3D0A5-E6D9-4DB9-88E9-3DBC7CB536F8}"/>
+								<Event Name="OnFilDeroule" ID="{60D3D0A5-E6D9-4DB9-88E9-3DBC7CB536F8}">
+									<ChildrenList>
+										<Action Name="" ID="{8FD71684-14CC-4685-9E31-BA24DED633EB}" ShortID="966657891">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DerouleFilTest" ID="{324F2F6F-4453-4F67-80FF-FACDA6B8A5AA}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="OnWireLaunched" ID="{6B0B4507-B6AA-4261-9F24-9D2A77102FC1}">
 									<ChildrenList>
 										<Action Name="" ID="{C045190F-118E-46A1-BD55-704A790CA91A}" ShortID="559778997">
