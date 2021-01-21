@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class FishingManager : MonoBehaviour
 {
@@ -107,6 +108,8 @@ public class FishingManager : MonoBehaviour
     {
         FishingRodManager.instance.SetBobberMaterialToSucces();
 
+        GamePad.SetVibration(0, 0.5f, 0.5f);
+        StartCoroutine("TimerVibration");
         FishManager.instance.SetAerialEnterWater();
         CameraManager.instance.CameraLookAtGameObject(currentFish);
         FishManager.instance.isAerial = false;
@@ -116,6 +119,12 @@ public class FishingManager : MonoBehaviour
         FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(true);
         PlayerManager.instance.FishingCanStart();
         //FishingRodManager.instance.fishingLine.cableComponent.InitCableParticles();
+    }
+
+    IEnumerator TimerVibration()
+    {
+        yield return new WaitForSeconds(0.2f);
+        GamePad.SetVibration(0, 0f, 0f);
     }
 
     public void CancelFishing()

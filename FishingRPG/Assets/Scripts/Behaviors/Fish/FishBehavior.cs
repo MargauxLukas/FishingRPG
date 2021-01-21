@@ -75,7 +75,6 @@ public class FishBehavior : MonoBehaviour
 
         animator = transform.GetChild(0).GetComponent<Animator>();
 
-        FishManager.instance.SetAerialEnterWater();
         FishManager.instance.staminaJauge.fillAmount = FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina;
         FishManager.instance.ChangeLifeJauge();
     }
