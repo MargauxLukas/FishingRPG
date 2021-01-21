@@ -479,9 +479,39 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="SPLFrog" ID="{68C2936D-31C9-4049-8787-F5D1E0CDB98C}"/>
-						<Event Name="SPLBird" ID="{27D21930-2380-4AF0-BFFE-58D438DB99E5}"/>
-						<Event Name="AMBWind" ID="{401635CA-991A-4451-8291-500F2915E010}"/>
+						<Event Name="SPLFrog" ID="{68C2936D-31C9-4049-8787-F5D1E0CDB98C}">
+							<ChildrenList>
+								<Action Name="" ID="{C009FCBC-0CEA-4431-B43A-131BA0149ABC}" ShortID="235916800">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FrogRC" ID="{D6BFE3CA-628D-4BD6-8020-D60C03058507}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SPLBird" ID="{27D21930-2380-4AF0-BFFE-58D438DB99E5}">
+							<ChildrenList>
+								<Action Name="" ID="{6C085D80-2104-443B-8D57-6095715ABAA3}" ShortID="555169080">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="QP01 0102 Wetland killdeer fly across isolated" ID="{0C03D5AC-C0A0-492A-8C1A-14678C0168D5}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="AMBWind" ID="{401635CA-991A-4451-8291-500F2915E010}">
+							<ChildrenList>
+								<Action Name="" ID="{0D601621-C8C2-49A5-A725-F9EC5A5EFA4C}" ShortID="293802276">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="QP01 0002 Wind mod soft" ID="{5D92DFE3-C82C-4272-9E12-1BE3AC463B5C}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

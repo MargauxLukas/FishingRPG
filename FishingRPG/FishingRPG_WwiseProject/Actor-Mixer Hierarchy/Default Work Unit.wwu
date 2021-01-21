@@ -2849,6 +2849,9 @@
 						<RandomSequenceContainer Name="FrogRC" ID="{D6BFE3CA-628D-4BD6-8020-D60C03058507}" ShortID="509228930">
 							<PropertyList>
 								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{63B3C283-D692-4988-912E-C41275D20571}">
@@ -3038,7 +3041,7 @@
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="InitialDelay" Type="Real64">
 									<ValueList>
-										<Value>20</Value>
+										<Value>30</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -3128,6 +3131,20 @@
 						<Sound Name="QP01 0002 Wind mod soft" ID="{5D92DFE3-C82C-4272-9E12-1BE3AC463B5C}" ShortID="228874458">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F255E585-C302-4224-BCD7-BCDCF552DA2A}">
+												<PropertyList>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
