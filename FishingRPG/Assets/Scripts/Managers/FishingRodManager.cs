@@ -292,7 +292,6 @@ public class FishingRodManager : MonoBehaviour
                 }
             }
 
-            Debug.Log("sp : " + speedAnimation);
             animFishingRod.SetFloat("SpeedMultiplier", speedAnimation);
         }
             UpdateFCurrent();
@@ -300,6 +299,7 @@ public class FishingRodManager : MonoBehaviour
 
     public void AnimationReelUp(float choosenSpeed)
     {
+        Debug.Log("cs : " + choosenSpeed);
         animFishingRod.SetFloat("SpeedMultiplier", choosenSpeed);
     }
 
