@@ -157,6 +157,7 @@ public class FishingRodManager : MonoBehaviour
         Vector3 newVector = Vector3.Lerp(bobber.transform.localPosition , bobberPosition.transform.localPosition, 1f);
         bobber.transform.localPosition = newVector;
         FishingManager.instance.readyToFish = false;
+        checkWaterScript.justOneTime = false;
     }
 
     public void SetBobberMaterialToSucces()

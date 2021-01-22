@@ -27,7 +27,6 @@ public class BezierCurve3PointRenderer : MonoBehaviour
         }
         lineRenderer.positionCount = pointList.Count;
         lineRenderer.SetPositions(pointList.ToArray());
-
     }
 
     private void OnDrawGizmos()
