@@ -14,7 +14,6 @@ public class FuiteDeLenrage : MonoBehaviour
     public static void Play(float dotDuration, float energyCost, bool costEnergyOverTime)
     {
         Debug.Log("Fuite de L'Enrage !");
-        Debug.Log(playOnce);
 
         if ((FishManager.instance.currentFishBehavior.currentStamina - energyCost) > 0)
         {

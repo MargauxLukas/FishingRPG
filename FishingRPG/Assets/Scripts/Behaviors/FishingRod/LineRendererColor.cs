@@ -48,9 +48,6 @@ public class LineRendererColor : MonoBehaviour
 
         lineRenderer.material.SetColor("_Color", matCol);
 
-        Debug.Log("Sphere " + lineRenderer.material.color);
-        Debug.Log("Random " + matCol);
-
         yield return new WaitForSeconds(1);
 
         StartCoroutine(UpdateColor(FishingRodManager.instance.fishingLine.currentTension / FishingRodManager.instance.fishingLine.maxTension));

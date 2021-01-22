@@ -124,7 +124,6 @@ public class PlayerFishing : MonoBehaviour
         {
             if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
             {
-                Debug.Log("RT");
                 PlayerManager.instance.IsTakingLineBobber();
             }
         }

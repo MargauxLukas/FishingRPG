@@ -79,7 +79,7 @@ public class UtilitiesManager : MonoBehaviour
 
     public float GetTimingForMoreAerial()
     {
-        Debug.Log((FishManager.instance.currentFishBehavior.maxTimeAerial * qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility));
+        //Debug.Log((FishManager.instance.currentFishBehavior.maxTimeAerial * qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility));
         return (FishManager.instance.currentFishBehavior.maxTimeAerial*qPercentOfMaxTimeBalancing) * (PlayerManager.instance.playerStats.dexterity / FishManager.instance.currentFishBehavior.fishyFiche.agility);
     }
 

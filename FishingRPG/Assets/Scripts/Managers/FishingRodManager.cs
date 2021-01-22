@@ -212,8 +212,10 @@ public class FishingRodManager : MonoBehaviour
                     speedAnimation = 1f;
                 }
                 AnimationReelUp(speedAnimation);
+
                 //Play Sound
                 //AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
+                
                 fishingLine.FCurrentDown();
 
                 if ((distanceCP > fishingLine.fCurrent) && !FishManager.instance.currentFishBehavior.exhausted)
