@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class LineRendererColor : MonoBehaviour
 {
-    public MeshRenderer sphere;
-    public Material mat;
+    public LineRenderer lineRenderer;
     private Color matCol;
 
     public Gradient gr;
@@ -38,7 +37,7 @@ public class LineRendererColor : MonoBehaviour
 
         gr.SetKeys(colorKeys, alphaKeys);*/
         
-        StartCoroutine(UpdateColor(grTime));
+        StartCoroutine(UpdateColor(FishingRodManager.instance.fishingLine.currentTension / FishingRodManager.instance.fishingLine.maxTension));
     }
 
     IEnumerator UpdateColor(float _grValue)
@@ -47,13 +46,13 @@ public class LineRendererColor : MonoBehaviour
         matCol.g = gr.Evaluate(_grValue).g;
         matCol.b = gr.Evaluate(_grValue).b;
 
-        sphere.material.SetColor("_Color", matCol);
+        lineRenderer.material.SetColor("_Color", matCol);
 
-        Debug.Log("Sphere " + sphere.material.color);
+        Debug.Log("Sphere " + lineRenderer.material.color);
         Debug.Log("Random " + matCol);
 
         yield return new WaitForSeconds(1);
 
-        StartCoroutine(UpdateColor(grTime));
+        StartCoroutine(UpdateColor(FishingRodManager.instance.fishingLine.currentTension / FishingRodManager.instance.fishingLine.maxTension));
    }
 }
