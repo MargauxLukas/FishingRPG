@@ -17,16 +17,23 @@ namespace AK
         static const AkUniqueID ONBUILDINGLEFT = 1031692393U;
         static const AkUniqueID ONBUILDINGOPEN = 3452353930U;
         static const AkUniqueID ONCHARACTERWALK = 3871435048U;
+        static const AkUniqueID ONCHESTCLOSED = 2980474189U;
+        static const AkUniqueID ONCHESTOPEN = 538280037U;
         static const AkUniqueID ONCURSORMOVE = 3337813975U;
         static const AkUniqueID ONCURSORSELECT = 3049358912U;
         static const AkUniqueID ONDAMMAGE = 3835741630U;
         static const AkUniqueID ONDEATH = 2598090648U;
         static const AkUniqueID ONDECOUPEENDED = 1516238081U;
         static const AkUniqueID ONDECOUPESTARTED = 3872903362U;
+        static const AkUniqueID ONFILDEROULE = 4016668133U;
         static const AkUniqueID ONFILTENDU = 2964522841U;
         static const AkUniqueID ONFISHONTABLE = 2058057925U;
         static const AkUniqueID ONFISHPICKUP = 1864058544U;
+        static const AkUniqueID ONFISHREADYFORAERIAL = 4073770688U;
+        static const AkUniqueID ONFISHREADYFORBOUNCE = 3564539514U;
+        static const AkUniqueID ONFISHSLAMMED = 3042079079U;
         static const AkUniqueID ONGEMEQUIPPED = 2769488228U;
+        static const AkUniqueID ONGEMREADY = 71788712U;
         static const AkUniqueID ONGEMUSED = 199235004U;
         static const AkUniqueID ONHUBLEAVE = 1441617756U;
         static const AkUniqueID ONITEMCANTCRAFT = 3649038553U;
@@ -38,6 +45,8 @@ namespace AK
         static const AkUniqueID ONSAVESTARTED = 3303690716U;
         static const AkUniqueID ONSTUFFEQUIPPED = 667664411U;
         static const AkUniqueID ONWIRELAUNCHED = 4012222691U;
+        static const AkUniqueID SPLGULL = 2381105352U;
+        static const AkUniqueID SPLSEA = 728211669U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -105,6 +114,11 @@ namespace AK
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID SHOREBUS = 1896271654U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

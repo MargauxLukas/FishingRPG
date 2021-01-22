@@ -14,8 +14,13 @@ public class BobbingHead : MonoBehaviour
     public Transform target;
 
 
+    [Header("For Sound Purposes")]
     //For Sound Purposes
     float oldTimer = 0f;
+    public bool playSound = true;
+    public LUD_TerrainTextureDetector terrainTextureDetector;
+
+
     
 
     // Start is called before the first frame update
@@ -23,12 +28,13 @@ public class BobbingHead : MonoBehaviour
     {
         defaultPosY = transform.localPosition.y;
         defaultPosX = transform.localPosition.x;
+
+        
     }
 
     // Update is called once per frame
     void Update() 
     {
-        
         
         if (Input.GetAxisRaw("Horizontal")>0.1f || Input.GetAxisRaw("Vertical")>0.1f || Input.GetAxisRaw("Horizontal") < -0.1f || Input.GetAxisRaw("Vertical")<-0.1f)
         {
@@ -38,12 +44,46 @@ public class BobbingHead : MonoBehaviour
 
 
             //--Le bruit de pas va-t-il se jouer ?---//
-            if (oldTimer != 0)
+            if (oldTimer != 0 && playSound)
             {
                 if ((Mathf.Cos(timer) > 0 && Mathf.Cos(oldTimer) < 0) || ((Mathf.Cos(timer) < 0 && Mathf.Cos(oldTimer) > 0)))   //si cos(oldTimer) et cos(timer) sont de signes différents
                 {
                     //Play Sound
-                    AkSoundEngine.PostEvent("OnCharacterWalk", gameObject);
+                    AkSoundEngine.PostEvent("OnCharacterWalk", gameObject);      
+                    
+
+                    string textureName = terrainTextureDetector.GetTerrainTextureAtPlayerPosition();
+
+                    if (textureName == "NewLayer")
+                    {
+                        Debug.Log("Marche sur Gravier");
+                        //Set Materials to Gravel
+                        AkSoundEngine.SetSwitch("Materials", "Gravel", gameObject);
+                    }
+                    else if (textureName == "NewLayer 2")
+                    {
+                        Debug.Log("Marche sur Rocher");
+                        //Set Materials to Rock
+                        AkSoundEngine.SetSwitch("Materials", "Rock", gameObject);
+                    }
+                    else if (textureName == "NewLayer 3")
+                    {
+                        //Set Materials to Sand
+                        AkSoundEngine.SetSwitch("Materials", "Sand", gameObject);
+                        Debug.Log("Marche sur sable");
+                    }
+                    else
+                    {
+                        //Set Materials to Sand
+                        AkSoundEngine.SetSwitch("Materials", "Sand", gameObject);
+        
+                        Debug.Log("Nom de layer non reconnu");  //ducoup son par défaut ou pas de son comme vous voulez
+                    }
+
+
+
+
+
                 }
             }
             oldTimer = timer;
