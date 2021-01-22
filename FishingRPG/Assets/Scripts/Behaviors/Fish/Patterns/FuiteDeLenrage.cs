@@ -20,7 +20,10 @@ public class FuiteDeLenrage : MonoBehaviour
             if (!playOnce)
             {
                 //Play Sound
-                //AkSoundEngine.PostEvent("OnFuite", snapSnack);
+                //Set Switch
+                AkSoundEngine.SetSwitch("PatternPlayed", "Fuite", FishManager.instance.currentFish.gameObject);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnPattern", FishManager.instance.currentFish.gameObject);
                 if (!costEnergyOverTime)
                 {
                     

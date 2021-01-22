@@ -292,6 +292,7 @@ public class FishingRodManager : MonoBehaviour
                 }
             }
 
+            Debug.Log("sp : " + speedAnimation);
             animFishingRod.SetFloat("SpeedMultiplier", speedAnimation);
         }
             UpdateFCurrent();
