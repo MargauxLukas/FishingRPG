@@ -11,15 +11,16 @@ public class Rotate : MonoBehaviour
 
     //Rotation Aerial and Fell
     public Transform fishingRodAnchor;           //Ancre canne à pêche
+    /*
     bool isFell = false;
     bool isFell2 = false;
     bool isAerial = false;
     bool isAerial2 = false;
 
     bool isFellFail = false;
-    bool isFellFail2 = false;
-    bool isAerialFail = false;
-    bool isAerialFail2 = false;
+    bool isFellFail2 = false;*/
+    //bool isAerialFail = false;
+    //bool isAerialFail2 = false;
 
 
     public bool result = false;
@@ -46,7 +47,15 @@ public class Rotate : MonoBehaviour
     public Color yellowArrow;
     public Color redArrow;
 
-    bool goodZone = true;                   //La flêche est dans une zone correcte ?
+    bool goodZone = true;  //La flêche est dans une zone correcte ?
+
+    [Header("Test Anumat Rotate")]
+    public float maxRotProjection = 0f;
+    public float timeProjecAscending = 0f;
+    public float timeProjecDescending = 0f;
+    public float maxRotAbat = 0f;
+    public float speedAbbatAscending = 0f;
+    public float speedAbbatDescending = 0f;
 
     private void Start()
     {
@@ -175,7 +184,9 @@ public class Rotate : MonoBehaviour
             }
         }
 
+
         #region Movement Canne à pêche Aerial et Claquage
+        /*
         if (isFell)
         {
             if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 50f)
@@ -224,10 +235,11 @@ public class Rotate : MonoBehaviour
             {
                 isAerial2 = false;
             }
-        }
+        }*/
         #endregion
 
         #region Movement Fail Canne à pêche Aerial et Claquage
+        /*
         if (isFellFail)
         {
             if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 15f)
@@ -252,12 +264,12 @@ public class Rotate : MonoBehaviour
                 isFellFail2 = false;
             }
         }
-
+        
         if (isAerialFail)
         {
             if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 20f || fishingRodAnchor.transform.localRotation.eulerAngles.x > 360f)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(-6f, 0f, 0f));
+                fishingRodAnchor.transform.Rotate(new Vector3(-6f*Time.deltaTime, 0f, 0f));
             }
             else
             {
@@ -270,14 +282,16 @@ public class Rotate : MonoBehaviour
         {
             if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(8f, 0f, 0f));
+                fishingRodAnchor.transform.Rotate(new Vector3(8f*Time.deltaTime, 0f, 0f));
             }
             else
             {
                 isAerialFail2 = false;
             }
         }
+        */
         #endregion
+
     }
 
     IEnumerator Throw()
@@ -314,25 +328,42 @@ public class Rotate : MonoBehaviour
     #region Rotation canne à pêche lorsque Aerial et Claquage
     public void FellRotation()
     {
-        isFell = true;
+        //isFell = true;
+        fishingRodAnchor.GetComponent<Animator>().SetBool("FellSucceed", true);
+        StartCoroutine(ResetBoolAnimator());
     }
 
     public void AerialRotation()
     {
-        isAerial = true;
+        //isAerial = true;
+        fishingRodAnchor.GetComponent<Animator>().SetBool("ProjectionSucceed", true);
+        StartCoroutine(ResetBoolAnimator());
     }
     #endregion
 
     #region Rotation Fail canne à pêche lorsque Aerial et Claquage
     public void FellFailRotation()
     {
-        isFellFail = true;
+        //isFellFail = true;
+        fishingRodAnchor.GetComponent<Animator>().SetBool("FellFail", true);
+        StartCoroutine(ResetBoolAnimator());
     }
 
     public void AerialFailRotation()
     {
-        isAerialFail = true;
+        //isAerialFail = true;
+        fishingRodAnchor.GetComponent<Animator>().SetBool("ProjectionFail", true);
+        StartCoroutine(ResetBoolAnimator());
     }
     #endregion
+
+    IEnumerator ResetBoolAnimator()
+    {
+        yield return new WaitForSeconds(0.1f);
+        fishingRodAnchor.GetComponent<Animator>().SetBool("ProjectionFail", false);
+        fishingRodAnchor.GetComponent<Animator>().SetBool("ProjectionSucceed", false);
+        fishingRodAnchor.GetComponent<Animator>().SetBool("FellFail", false);
+        fishingRodAnchor.GetComponent<Animator>().SetBool("FellSucceed", false);
+    }
 }
 

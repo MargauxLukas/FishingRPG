@@ -112,6 +112,7 @@ public class FishManager : MonoBehaviour
     public void MoreAerial()
     {
         Debug.Log("Boing Again");
+
         currentFishBehavior.nbRebond++;
         currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeAerial(currentFishBehavior.JumpHeight, currentFishBehavior.nbRebond);
         aerialExitWaterX = currentFish.transform.position.x;
@@ -138,7 +139,7 @@ public class FishManager : MonoBehaviour
 
     IEnumerator FellingFreeze()
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.3f);
 
         Debug.Log("Abattage");
 
