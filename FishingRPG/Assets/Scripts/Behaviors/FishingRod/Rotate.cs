@@ -141,7 +141,7 @@ public class Rotate : MonoBehaviour
                     if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
                     {
                         axisRelease = true;
-                        if ((transform.localRotation.eulerAngles.x > 270f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
+                        if ((transform.localRotation.eulerAngles.x > 280f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
                         {
                             transform.Rotate(new Vector3(-2f, 0f, 0f));
                             PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
