@@ -19,12 +19,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	2058057925	OnFishOnTable			\Default Work Unit\UI\HUB\Dépeceur\OnFishOnTable	
 	2367124489	SPLBird			\Default Work Unit\Ambiant\SPLBird	
 	2381105352	SPLGull			\Default Work Unit\Ambiant\SPLGull	
+	2394504184	STOP_MSCCombatMusic			\Default Work Unit\Ambiant\STOP_MSCCombatMusic	
 	2598090648	OnDeath			\Default Work Unit\Fishes\OnDeath	
 	2769488228	OnGemEquipped			\Default Work Unit\UI\HUB\GoFishing\OnGemEquipped	
 	2833632849	OnRage			\Default Work Unit\Fishes\OnRage	
 	2840255079	OnBouchonPlop			\Default Work Unit\Character\Canne\OnBouchonPlop	
 	2962512532	AMBHub			\Default Work Unit\Ambiant\AMBHub	
 	2964522841	OnFilTendu			\Default Work Unit\Character\Canne\OnFilTendu	
+	2978800029	MSCCombatMusic			\Default Work Unit\Ambiant\MSCCombatMusic	
 	2980474189	OnChestClosed			\Default Work Unit\Character\OnChestClosed	
 	3042079079	OnFishSlammed			\Default Work Unit\Fishes\Aerial\OnFishSlammed	
 	3049358912	OnCursorSelect			\Default Work Unit\UI\General UI\OnCursorSelect	
