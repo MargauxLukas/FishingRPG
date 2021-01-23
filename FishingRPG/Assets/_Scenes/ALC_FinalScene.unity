@@ -7247,6 +7247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 529502786}
+  - component: {fileID: 529502787}
   m_Layer: 0
   m_Name: AnchorFishingRod
   m_TagString: Untagged
@@ -7269,6 +7270,25 @@ Transform:
   m_Father: {fileID: 6835830746776593933}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!95 &529502787
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529502785}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f61bf920feeb294ca81ad5c68b301c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &529572106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3644510232862389841, guid: 3dff95e422dea234aba507b079b431db, type: 3}
@@ -39033,6 +39053,12 @@ MonoBehaviour:
     m_Bits: 272
   yellowArrow: {r: 1, g: 0.9019608, b: 0, a: 1}
   redArrow: {r: 1, g: 0.2668622, b: 0.16509432, a: 1}
+  maxRotProjection: 0
+  timeProjecAscending: 0
+  timeProjecDescending: 0
+  maxRotAbat: 0
+  speedAbbatAscending: 0
+  speedAbbatDescending: 0
 --- !u!1 &2364653597435130541
 GameObject:
   m_ObjectHideFlags: 0
@@ -39285,6 +39311,8 @@ MonoBehaviour:
   isReadyToFish: 0
   timeCooldownRB: 0.5
   hasJustPressRB: 0
+  timeCooldownLB: 1
+  hasJustPressLB: 0
 --- !u!114 &2364653598665634598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72414,8 +72442,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingBobbingSpeed: 6
   bobbingAmount: 0.1
-  controller: {fileID: 0}
-  target: {fileID: 0}
   playSound: 1
   terrainTextureDetector: {fileID: 0}
 --- !u!114 &6835830746776593935
@@ -80619,8 +80645,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingBobbingSpeed: 6
   bobbingAmount: 0.1
-  controller: {fileID: 0}
-  target: {fileID: 0}
   playSound: 1
   terrainTextureDetector: {fileID: 0}
 --- !u!114 &7341231068959487797
