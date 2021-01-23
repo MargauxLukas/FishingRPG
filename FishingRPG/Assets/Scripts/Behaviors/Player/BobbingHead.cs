@@ -6,12 +6,12 @@ public class BobbingHead : MonoBehaviour
 {
     public float walkingBobbingSpeed = 5f;
     public float bobbingAmount = 0.05f;
-    public PlayerMovement controller;
+    //public PlayerMovement controller;
     float normeVector;
     float defaultPosY = 0;
     float defaultPosX = 0;
     float timer = 0;
-    public Transform target;
+    //public Transform target;
 
 
     [Header("For Sound Purposes")]
@@ -48,8 +48,6 @@ public class BobbingHead : MonoBehaviour
             {
                 if ((Mathf.Cos(timer) > 0 && Mathf.Cos(oldTimer) < 0) || ((Mathf.Cos(timer) < 0 && Mathf.Cos(oldTimer) > 0)))   //si cos(oldTimer) et cos(timer) sont de signes différents
                 {
-                    
-                    Debug.Log("Pas");
                     //Play Sound
                     AkSoundEngine.PostEvent("OnCharacterWalk", gameObject);      
                     

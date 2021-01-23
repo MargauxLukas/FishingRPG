@@ -5,51 +5,80 @@ using UnityEngine;
 public class PlayerFishing : MonoBehaviour
 {
     public bool isReadyToFish = false;
-    public float timeCooldownRB;
+    public float timeCooldownRB = 1f;
     public bool hasJustPressRB = false;
+    public float timeCooldownLB = 1f;
+    public bool hasJustPressLB = false;
 
     private void Update()
     {
         if (isReadyToFish)
         {
-            Debug.Log("tt");
             if (Input.GetButton("Left Bumper"))         //LB
             {
-                if(FishManager.instance.isAerial && !FishManager.instance.isFelling && !FishManager.instance.currentFishBehavior.isDead)
+                if (!hasJustPressLB)
                 {
-                    PlayerManager.instance.FellingFish();
+                    hasJustPressLB = true;
+                    StartCoroutine(WaitCooldownTimeLB());
+
+
+                    if (FishManager.instance.isAerial && !FishManager.instance.isFelling && !FishManager.instance.currentFishBehavior.isDead)
+                    {
+                        PlayerManager.instance.FellingFish();
+                    }
+                    else
+                    {
+                        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().FellFailRotation();
+                    }
+                }
+                else
+                {
+                    Debug.Log("Déjà appuyé sur LB");
                 }
             }
             else if (Input.GetButtonDown("Right Bumper"))   //RB
             {
-                if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
+
+                if (!hasJustPressRB)
                 {
-                    FishManager.instance.SetFinishPoint();
-                    //FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
-                }
-                else
-                {
-                    if (FishManager.instance.currentFishBehavior.exhausted && !FishManager.instance.currentFishBehavior.isDead)
+
+                    hasJustPressRB = true;
+                    StartCoroutine(WaitCooldownTime());
+
+
+                    if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
                     {
-                        if (!FishManager.instance.isAerial) { PlayerManager.instance.IsAerial(); }
-                        else
+                        FishManager.instance.SetFinishPoint();
+                        //FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
+                    }
+                    else
+                    {
+                        if (FishManager.instance.currentFishBehavior.exhausted && !FishManager.instance.currentFishBehavior.isDead)
                         {
-                            //REPARER je rentre dedans quand j'appuie la premiere fois pour Aerial
-                            if (!hasJustPressRB)
-                            {
-                                PlayerManager.instance.CheckDistanceWithWater();
-                                hasJustPressRB = true;
-                                StartCoroutine(WaitCooldownTime());
+                            if (!FishManager.instance.isAerial) 
+                            { 
+                                PlayerManager.instance.IsAerial(); 
                             }
                             else
                             {
-                                //Faut il remettre le CoolDown à 0 et re-attendre 0.5f seconds ?
-                                Debug.Log("Déjà appuyé sur RB y'a pas longtemps");
+                                PlayerManager.instance.CheckDistanceWithWater();
                             }
+                            
+                        }
+                        else
+                        {
+                            FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialFailRotation();
                         }
                     }
                 }
+                else
+                {
+                    Debug.Log("Déjà appuyé sur RB y'a pas longtemps");
+                }
+
             }
+        
+    
 
             if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
             {
@@ -116,7 +145,6 @@ public class PlayerFishing : MonoBehaviour
         {
             if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
             {
-                Debug.Log("RT");
                 PlayerManager.instance.IsTakingLineBobber();
             }
         }
@@ -127,4 +155,11 @@ public class PlayerFishing : MonoBehaviour
         yield return new WaitForSeconds(timeCooldownRB);
         hasJustPressRB = false;
     }
+
+    IEnumerator WaitCooldownTimeLB()
+    {
+        yield return new WaitForSeconds(timeCooldownLB);
+        hasJustPressLB = false;
+    }
+
 }

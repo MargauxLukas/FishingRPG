@@ -14,14 +14,16 @@ public class FuiteDeLenrage : MonoBehaviour
     public static void Play(float dotDuration, float energyCost, bool costEnergyOverTime)
     {
         Debug.Log("Fuite de L'Enrage !");
-        Debug.Log(playOnce);
 
         if ((FishManager.instance.currentFishBehavior.currentStamina - energyCost) > 0)
         {
             if (!playOnce)
             {
                 //Play Sound
-                //AkSoundEngine.PostEvent("OnFuite", snapSnack);
+                //Set Switch
+                AkSoundEngine.SetSwitch("PatternPlayed", "Fuite", FishManager.instance.currentFish.gameObject);
+                //Play Sound
+                AkSoundEngine.PostEvent("OnPattern", FishManager.instance.currentFish.gameObject);
                 if (!costEnergyOverTime)
                 {
                     
