@@ -17,21 +17,34 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 25bb17835f2dca4c9948c17d689ac71c
     GuidInternal: 
-    m_lastTime: -8585916800186496344
+    m_lastTime: -8585916424324564072
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ddb38413c7dcf44fa99a5d29de4ee270
     GuidInternal: 
-    m_lastTime: -8585916649591995864
-    List: []
+    m_lastTime: -8585904305057680797
+    List:
+    - name: ShoreBus
+      guid: eecf54259d16d84a892bc799e82d34e3
+      id: 1896271654
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Envrionmental
+        ObjectType: 2
+      - ElementName: ShoreBus
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Envrionmental\ShoreBus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: c6696a3f48a9024390a5019ef35870fe
     GuidInternal: 
-    m_lastTime: -8585916614343333179
+    m_lastTime: -8585916424324594003
     List:
     - name: Main
       guid: 81c8f97c13174f479e10bb2390f7e986
@@ -47,21 +60,807 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 6457962ea8be6f478613dea899943175
     GuidInternal: 
-    m_lastTime: -8585916614343096175
+    m_lastTime: -8585902065069199727
     List:
+    - name: AMBHub
+      guid: fb9c594690d2b44e9c392e7464cb68e5
+      id: 2962512532
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: AMBHub
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\AMBHub
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: AMBWind
+      guid: ca3516401a9951448291500f2915e010
+      id: 389117517
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: AMBWind
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\AMBWind
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnBouchonPlop
+      guid: 632860e0ed423842b83a77b236ab62c6
+      id: 2840255079
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: OnBouchonPlop
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\OnBouchonPlop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnBuildingLeft
+      guid: b70d1b9b937a5841a07441d796d5a683
+      id: 1031692393
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: OnBuildingLeft
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\OnBuildingLeft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnBuildingOpen
+      guid: fadda7596a3a0e43a717ab1470b480cc
+      id: 3452353930
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: OnBuildingOpen
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\OnBuildingOpen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnCatapulte1
+      guid: e7a0d5419254db40956634e38ff0c1ab
+      id: 2761680336
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: SnapSnack
+        ObjectType: 4
+      - ElementName: OnCatapulte1
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\SnapSnack\OnCatapulte1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnCatapulte2
+      guid: 431f79137b1c0f47b0b1f5fb3c1b6595
+      id: 2761680339
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: SnapSnack
+        ObjectType: 4
+      - ElementName: OnCatapulte2
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\SnapSnack\OnCatapulte2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnCharacterWalk
+      guid: 30da8ebbbaf42241af532c7176b4bea4
+      id: 3871435048
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: OnCharacterWalk
+        ObjectType: 3
+      Path: Default Work Unit\Character\OnCharacterWalk
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnChestClosed
+      guid: 8b826afe61926744853041ed5b71cf10
+      id: 2980474189
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: OnChestClosed
+        ObjectType: 3
+      Path: Default Work Unit\Character\OnChestClosed
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnChestOpen
+      guid: 90719af52271a144bef410fc8574a39b
+      id: 538280037
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: OnChestOpen
+        ObjectType: 3
+      Path: Default Work Unit\Character\OnChestOpen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnCursorMove
+      guid: 5dfb46493a86754d8351c272758c27fd
+      id: 3337813975
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: General UI
+        ObjectType: 4
+      - ElementName: OnCursorMove
+        ObjectType: 3
+      Path: Default Work Unit\UI\General UI\OnCursorMove
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnCursorSelect
+      guid: 38ee62e613b7e641914c7d067d1429e7
+      id: 3049358912
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: General UI
+        ObjectType: 4
+      - ElementName: OnCursorSelect
+        ObjectType: 3
+      Path: Default Work Unit\UI\General UI\OnCursorSelect
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnDammage
+      guid: 93ea504b3e7d6d408c2e5eaa4da2e2f4
+      id: 3835741630
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: OnDammage
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\OnDammage
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnDeath
+      guid: 3e2e885109ef724e9a2714a361a92dfc
+      id: 2598090648
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: OnDeath
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\OnDeath
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnDecoupeEnded
+      guid: 2e4e550d4140124d9e0b1fe36d610abf
+      id: 1516238081
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: "D\xE9peceur"
+        ObjectType: 4
+      - ElementName: OnDecoupeEnded
+        ObjectType: 3
+      Path: "Default Work Unit\\UI\\HUB\\D\xE9peceur\\OnDecoupeEnded"
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnDecoupeStarted
+      guid: 4c54fe18e2a06f4285f95109841c2513
+      id: 3872903362
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: "D\xE9peceur"
+        ObjectType: 4
+      - ElementName: OnDecoupeStarted
+        ObjectType: 3
+      Path: "Default Work Unit\\UI\\HUB\\D\xE9peceur\\OnDecoupeStarted"
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFeinte
+      guid: 4984b25cf7bf5c42b261f03199cbc3c0
+      id: 1548071689
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: SnapSnack
+        ObjectType: 4
+      - ElementName: OnFeinte
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\SnapSnack\OnFeinte
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFilDeroule
+      guid: a5d0d360d9e6b94d88e93dbc7cb536f8
+      id: 4016668133
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: OnFilDeroule
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\OnFilDeroule
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFilTendu
+      guid: 92b57a2c131ed84db95613e2a9b51fea
+      id: 2964522841
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: OnFilTendu
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\OnFilTendu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishAerial
+      guid: ccb73deda40c5b4d8ecb4665a24f7106
+      id: 154703814
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: Aerial
+        ObjectType: 4
+      - ElementName: OnFishAerial
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\Aerial\OnFishAerial
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishBounce
+      guid: 2dc5126f64655d4faec0c073e76ad6e3
+      id: 124039644
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: Aerial
+        ObjectType: 4
+      - ElementName: OnFishBounce
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\Aerial\OnFishBounce
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishCatched
+      guid: c16502893605b041a0ee2585b0fda10d
+      id: 3174923270
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: OnFishCatched
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\OnFishCatched
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishOnTable
+      guid: ee6a2537a1268a478a7181dc37a0f5d3
+      id: 2058057925
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: "D\xE9peceur"
+        ObjectType: 4
+      - ElementName: OnFishOnTable
+        ObjectType: 3
+      Path: "Default Work Unit\\UI\\HUB\\D\xE9peceur\\OnFishOnTable"
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishPickUp
+      guid: fc8dddd13e53504cbf14fe527d1648be
+      id: 1864058544
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: OnFishPickUp
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\OnFishPickUp
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishReadyForAerial
+      guid: 0f34ad22bd277748b68261ccf115b4fb
+      id: 4073770688
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: Aerial
+        ObjectType: 4
+      - ElementName: OnFishReadyForAerial
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\Aerial\OnFishReadyForAerial
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishReadyForBounce
+      guid: 6d79de2e03e96749af73d2eac52d9b7a
+      id: 3564539514
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: Aerial
+        ObjectType: 4
+      - ElementName: OnFishReadyForBounce
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\Aerial\OnFishReadyForBounce
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFishSlammed
+      guid: 25ec19c7d79d0d42815e9e3a94d97a7a
+      id: 3042079079
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: Aerial
+        ObjectType: 4
+      - ElementName: OnFishSlammed
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\Aerial\OnFishSlammed
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnFuite
+      guid: bd2ba8d0c72fd748b109f4ca9d0e5fe8
+      id: 1040454059
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: SnapSnack
+        ObjectType: 4
+      - ElementName: OnFuite
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\SnapSnack\OnFuite
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnGemEquipped
+      guid: 6848411f00c79443995aa5e0a2017d61
+      id: 2769488228
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: GoFishing
+        ObjectType: 4
+      - ElementName: OnGemEquipped
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\GoFishing\OnGemEquipped
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnGemReady
+      guid: 88af1384f61ffc4699b1716d622c359a
+      id: 71788712
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Gemmes
+        ObjectType: 4
+      - ElementName: OnGemReady
+        ObjectType: 3
+      Path: Default Work Unit\Character\Gemmes\OnGemReady
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnGemUsed
+      guid: da3ea44e3f132f48a4c33aec2a92bd68
+      id: 199235004
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Gemmes
+        ObjectType: 4
+      - ElementName: OnGemUsed
+        ObjectType: 3
+      Path: Default Work Unit\Character\Gemmes\OnGemUsed
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnHubLeave
+      guid: ac89ed2573698d4aaf414198a2c89bdf
+      id: 1441617756
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: GoFishing
+        ObjectType: 4
+      - ElementName: OnHubLeave
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\GoFishing\OnHubLeave
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnItemCantCraft
+      guid: fe9d7c4d7b0559408f797a56f94c7776
+      id: 3649038553
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: Artisan
+        ObjectType: 4
+      - ElementName: OnItemCantCraft
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\Artisan\OnItemCantCraft
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: OnItemCrafted
       guid: 880eb3c98461ff4eb8e3b39526c77616
       id: 4034923124
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
       - ElementName: HUB
         ObjectType: 4
       - ElementName: Artisan
         ObjectType: 4
       - ElementName: OnItemCrafted
         ObjectType: 3
-      Path: Default Work Unit\HUB\Artisan\OnItemCrafted
+      Path: Default Work Unit\UI\HUB\Artisan\OnItemCrafted
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnMoulinetBlocked
+      guid: 19f0f24f28c8804b9875896e445c7296
+      id: 471740873
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: OnMoulinetBlocked
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\OnMoulinetBlocked
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnMoulinetOn
+      guid: 4e9824e164669f4e8251d831604cced4
+      id: 2022985720
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: OnMoulinetOn
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\OnMoulinetOn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnPattern
+      guid: 88a796943fee3c498d389e0e9c4c6d8a
+      id: 3537971040
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: OnPattern
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\OnPattern
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnRage
+      guid: e4d7e6e7771bf5448e00c9107a9d0d0e
+      id: 2833632849
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fishes
+        ObjectType: 4
+      - ElementName: OnRage
+        ObjectType: 3
+      Path: Default Work Unit\Fishes\OnRage
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnSaveConfirmed
+      guid: 01520c1a1f351849af6abb0a4e4da0c5
+      id: 4211819432
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: Maison
+        ObjectType: 4
+      - ElementName: OnSaveConfirmed
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\Maison\OnSaveConfirmed
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnSaveStarted
+      guid: 587bd76ac3355842aad20b0f094910df
+      id: 3303690716
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: Maison
+        ObjectType: 4
+      - ElementName: OnSaveStarted
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\Maison\OnSaveStarted
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnStuffEquipped
+      guid: a17dc7aba6e11341b25306e13e7bb0fa
+      id: 667664411
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: HUB
+        ObjectType: 4
+      - ElementName: GoFishing
+        ObjectType: 4
+      - ElementName: OnStuffEquipped
+        ObjectType: 3
+      Path: Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OnWireLaunched
+      guid: 07450b6baab661429f249d2a77102fc1
+      id: 4012222691
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: OnWireLaunched
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\OnWireLaunched
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SPLBird
+      guid: 3019d2278023f04abffe58d438db99e5
+      id: 2367124489
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: SPLBird
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\SPLBird
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SPLFrog
+      guid: 6d93c268c93149408787f5d1e0cdb98c
+      id: 1146909130
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: SPLFrog
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\SPLFrog
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SPLGull
+      guid: b8da70cd26d19b46aecf1dc60e598f3e
+      id: 2381105352
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: SPLGull
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\SPLGull
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SPLSea
+      guid: 900ebbfdcd84ec4f9d6533dc90ce73d1
+      id: 728211669
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: SPLSea
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\SPLSea
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: STOP_AMBHub
+      guid: 02d6d75ddf28ec40acd751da1c688011
+      id: 1669970085
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: STOP_AMBHub
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\STOP_AMBHub
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: STOP_AMBWind
+      guid: 0fe1dfed5822ce4e822adc1219a86e7c
+      id: 471591546
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambiant
+        ObjectType: 4
+      - ElementName: STOP_AMBWind
+        ObjectType: 3
+      Path: Default Work Unit\Ambiant\STOP_AMBWind
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: STOP_OnFilDeroule
+      guid: 648c435f7694484893bcbe84af994370
+      id: 3522574120
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: STOP_OnFilDeroule
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\STOP_OnFilDeroule
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: STOP_OnFilTendu
+      guid: 1567e7cf4f497f47b4918430917b7936
+      id: 1686762524
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: STOP_OnFilTendu
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\STOP_OnFilTendu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: STOP_OnMoulinetOn
+      guid: 8a0305ec0ac33c429c5c755e157d6763
+      id: 2443505261
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Canne
+        ObjectType: 4
+      - ElementName: STOP_OnMoulinetOn
+        ObjectType: 3
+      Path: Default Work Unit\Character\Canne\STOP_OnMoulinetOn
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -70,35 +869,157 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f2aacdff97dad4408f368a80ecb84ced
     GuidInternal: 
-    m_lastTime: -8585916800187345852
+    m_lastTime: -8585916424324963024
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7fd463754542364c8dbf7f82382932ca
     GuidInternal: 
-    m_lastTime: -8585916800187415808
+    m_lastTime: -8585916424324584032
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 93043757e961a84d89243dc2d535baf4
     GuidInternal: 
-    m_lastTime: -8585916800187115970
-    List: []
+    m_lastTime: -8585911275374641081
+    List:
+    - name: CurrentFishInCombat
+      guid: a05c63cbfad374409aae7a0a0543763a
+      id: 4033446347
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: CurrentFishInCombat
+        ObjectType: 11
+      Path: Default Work Unit\CurrentFishInCombat
+      values:
+      - name: ReefCrusher
+        guid: 7798e1ce47ae9f49afea46c69e1ebcf7
+        id: 671422745
+        PathAndIcons:
+        - ElementName: ReefCrusher
+          ObjectType: 10
+      - name: SnapSnack
+        guid: 042e85a3c3d8334f921c5e193bf1124b
+        id: 654028457
+        PathAndIcons:
+        - ElementName: SnapSnack
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: GemEquipped
+      guid: b3b8b1d1b57f844199baedd627322c95
+      id: 1502211265
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GemEquipped
+        ObjectType: 11
+      Path: Default Work Unit\GemEquipped
+      values:
+      - name: ReefCrusher
+        guid: c170f13aa3122c40a936c95fb651a41b
+        id: 671422745
+        PathAndIcons:
+        - ElementName: ReefCrusher
+          ObjectType: 10
+      - name: SnapSnack
+        guid: da7119c493e7a743848dcd77e496895b
+        id: 654028457
+        PathAndIcons:
+        - ElementName: SnapSnack
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Materials
+      guid: c7d84e44a0aa744a8056bd237063755a
+      id: 4050929301
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Materials
+        ObjectType: 11
+      Path: Default Work Unit\Materials
+      values:
+      - name: Gravel
+        guid: 6cafe26dbc920f4b80e8e02291c98b42
+        id: 2185786256
+        PathAndIcons:
+        - ElementName: Gravel
+          ObjectType: 10
+      - name: Rock
+        guid: 9bd9d778d2c5024db123b198af0d4ba0
+        id: 2144363834
+        PathAndIcons:
+        - ElementName: Rock
+          ObjectType: 10
+      - name: Sand
+        guid: f50b3e70fe05934985b94d751ea3a171
+        id: 803837735
+        PathAndIcons:
+        - ElementName: Sand
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: PatternPlayed
+      guid: c10bbe6c3a37f94abdb55b9f55b51400
+      id: 3398574684
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PatternPlayed
+        ObjectType: 11
+      Path: Default Work Unit\PatternPlayed
+      values:
+      - name: Catapulte1
+        guid: 6304ccc83deb45418e978d3f1ae4541e
+        id: 1565512855
+        PathAndIcons:
+        - ElementName: Catapulte1
+          ObjectType: 10
+      - name: Catapulte2
+        guid: c5b4da455f190f47bd970e661e441c2e
+        id: 1565512852
+        PathAndIcons:
+        - ElementName: Catapulte2
+          ObjectType: 10
+      - name: Feinte
+        guid: 46a61f442253b442baa84d9199024414
+        id: 3137705030
+        PathAndIcons:
+        - ElementName: Feinte
+          ObjectType: 10
+      - name: Fuite
+        guid: 44934cdbc90d1a4fa187554ffc330698
+        id: 2218847794
+        PathAndIcons:
+        - ElementName: Fuite
+          ObjectType: 10
+      - name: RageMinuscule
+        guid: 4c9b937776fb8a4f851b01a0fc9b924a
+        id: 276907015
+        PathAndIcons:
+        - ElementName: RageMinuscule
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 04d797a619788c44aa95f67f8e1336db
     GuidInternal: 
-    m_lastTime: -8585916800186876127
+    m_lastTime: -8585916424324574057
     List: []
   ExpandedItems:
   - /FishingRPG_WwiseProject
   - /FishingRPG_WwiseProject/Events
   - /FishingRPG_WwiseProject/Events/Default Work Unit
-  - /FishingRPG_WwiseProject/Events/Default Work Unit/HUB
-  - /FishingRPG_WwiseProject/Events/Default Work Unit/HUB/Artisan
   - /FishingRPG_WwiseProject/SoundBanks
   - /FishingRPG_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
