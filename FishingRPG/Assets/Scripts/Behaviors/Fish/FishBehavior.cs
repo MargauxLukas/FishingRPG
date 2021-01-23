@@ -121,7 +121,6 @@ public class FishBehavior : MonoBehaviour
                     {
                         if (!exhausted && !isDead)
                         {
-                            LowStaminaRecuperation();
 
                             if (!directionHasChoosen)
                             {
@@ -412,6 +411,7 @@ public class FishBehavior : MonoBehaviour
             FishManager.instance.NotExtenued();
             aButton.SetActive(true);
             aButton.transform.LookAt(new Vector3(PlayerManager.instance.player.transform.position.x, aButton.transform.position.y, PlayerManager.instance.player.transform.position.z));
+            transform.rotation = baseRotate;
         }
     }
 
@@ -472,10 +472,5 @@ public class FishBehavior : MonoBehaviour
         isRage = false;
         animator.SetBool("isRage", false);
         strength = fishyFiche.strength;
-    }
-
-    public void LowStaminaRecuperation()
-    {
-
     }
 }

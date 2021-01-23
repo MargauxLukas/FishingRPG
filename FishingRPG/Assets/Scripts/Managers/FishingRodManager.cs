@@ -184,6 +184,7 @@ public class FishingRodManager : MonoBehaviour
         //  /!\ Valeur au pif pour tester, need calcul d'un nombre entre 0f et 1f
         if(FishManager.instance.isAerial && !FishManager.instance.currentFishBehavior.isDead)
         {
+            Debug.Log("Je rentre là");
             FishManager.instance.aerialEnterWaterX += currentAxis*0.2f;
             FishManager.instance.UpdateAerial();
         }

@@ -106,6 +106,7 @@ public class PlayerManager : MonoBehaviour
 
     public void DisableFishMovement()
     {
+        player.GetComponent<PlayerFishing>().isReadyToFish = false;
         player.GetComponent<PlayerFishing>().enabled = false;
     }
 
@@ -239,7 +240,7 @@ public class PlayerManager : MonoBehaviour
     public void IsTakingLineBobber()
     {
         FishingRodManager.instance.bobber.transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, FishingRodManager.instance.bobber.transform.position.y, FishingRodManager.instance.pointC.position.z));
-        FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 1f * Time.deltaTime;
+        FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 3f * Time.deltaTime;
     }
 
     public void IsAerial()
