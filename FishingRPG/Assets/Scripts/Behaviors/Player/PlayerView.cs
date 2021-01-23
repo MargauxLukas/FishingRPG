@@ -27,6 +27,8 @@ public class PlayerView : MonoBehaviour
 
     //public GameObject test;
 
+
+
     private void Start()
     {
         rayRange = distance;
@@ -50,6 +52,7 @@ public class PlayerView : MonoBehaviour
         }
 
         //DrawCone();
+
     }
 
     /*

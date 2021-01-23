@@ -12,6 +12,11 @@ public class BezierCurve3PointRenderer : MonoBehaviour
     public LineRenderer lineRenderer;
     public int vertexCount = 12;
 
+    private void Start()
+    {
+        lineRenderer.enabled = false;
+    }
+
     private void Update()
     {
         var pointList = new List<Vector3>();
@@ -27,7 +32,6 @@ public class BezierCurve3PointRenderer : MonoBehaviour
         }
         lineRenderer.positionCount = pointList.Count;
         lineRenderer.SetPositions(pointList.ToArray());
-
     }
 
     private void OnDrawGizmos()
