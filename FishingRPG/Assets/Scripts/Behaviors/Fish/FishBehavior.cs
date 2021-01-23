@@ -33,6 +33,7 @@ public class FishBehavior : MonoBehaviour
     [System.NonSerialized] public float timer         = 0f;
     [HideInInspector]      public float timerAerial   = 0f;
                            public float maxTimeAerial = 2f;
+                      private float maxTimeAerialDead = 2f;
     [System.NonSerialized] public int nbRebond        = 1;
     [HideInInspector]      public bool isFellDown = false;
     [HideInInspector]      public bool fellingFreeze = false;
@@ -365,7 +366,7 @@ public class FishBehavior : MonoBehaviour
             timerAerial += Time.fixedDeltaTime;
             //Debug.Log(timerAerial);
         }
-
+        
         transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
 
         if (timerAerial >= maxTimeAerial)
@@ -399,11 +400,11 @@ public class FishBehavior : MonoBehaviour
 
     public void Victory()
     {
-        if (timerAerial <= maxTimeAerial)
+        if (timerAerial <= maxTimeAerialDead)
         {
             timerAerial += Time.fixedDeltaTime;
 
-            transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
+            transform.position = GetAerialPosition(timerAerial / maxTimeAerialDead);
         }
         else
         {

@@ -49,7 +49,6 @@ public class PlayerFishing : MonoBehaviour
                     if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
                     {
                         FishManager.instance.SetFinishPoint();
-                        //FishingRodManager.instance.fishingLine.cableComponent.DesactivateLine();
                     }
                     else
                     {
