@@ -3128,7 +3128,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="QP01 0002 Wind mod soft" ID="{5D92DFE3-C82C-4272-9E12-1BE3AC463B5C}" ShortID="228874458">
+						<Sound Name="AMB_Wind" ID="{5D92DFE3-C82C-4272-9E12-1BE3AC463B5C}" ShortID="228874458">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
@@ -3168,6 +3168,16 @@
 							<ActiveSourceList>
 								<ActiveSource Name="QP01 0002 Wind mod soft" ID="{28F4B5FE-A662-4E2C-9C69-F281AC4704AC}" Platform="Linked"/>
 							</ActiveSourceList>
+						</Sound>
+						<Sound Name="AMB_Hub" ID="{EF378476-36E4-4CE1-8211-B03071253083}" ShortID="40684727">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+							</ReferenceList>
 						</Sound>
 					</ChildrenList>
 				</ActorMixer>
