@@ -537,7 +537,7 @@
 								<Action Name="" ID="{6C085D80-2104-443B-8D57-6095715ABAA3}" ShortID="555169080">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="QP01 0102 Wetland killdeer fly across isolated" ID="{0C03D5AC-C0A0-492A-8C1A-14678C0168D5}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+											<ObjectRef Name="WeirdBird" ID="{0C03D5AC-C0A0-492A-8C1A-14678C0168D5}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

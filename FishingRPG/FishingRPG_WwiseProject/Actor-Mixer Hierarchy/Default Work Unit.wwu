@@ -3036,7 +3036,7 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
-						<Sound Name="QP01 0102 Wetland killdeer fly across isolated" ID="{0C03D5AC-C0A0-492A-8C1A-14678C0168D5}" ShortID="402251279">
+						<Sound Name="WeirdBird" ID="{0C03D5AC-C0A0-492A-8C1A-14678C0168D5}" ShortID="402251279">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="InitialDelay" Type="Real64">
