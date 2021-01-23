@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Rotate : MonoBehaviour
 {
     Quaternion FishingRodRotaBase;
+    Vector3 fishingRodPosBase;
     [HideInInspector] public bool isMax = false;
 
     //Rotation Aerial and Fell
@@ -60,6 +61,7 @@ public class Rotate : MonoBehaviour
     private void Start()
     {
         FishingRodRotaBase = transform.localRotation;
+        fishingRodPosBase = transform.localPosition;
         imageTarget = new Vector3(transform.position.x, transform.position.y + 20f, transform.position.z);
     }
 
@@ -145,6 +147,7 @@ public class Rotate : MonoBehaviour
                         {
                             transform.Rotate(new Vector3(-2f, 0f, 0f));
                             PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
+                            transform.localPosition += new Vector3(0.007f, -0.007f, 0f);
                         }
                         else
                         {
@@ -305,6 +308,8 @@ public class Rotate : MonoBehaviour
                 result = true;
             }
             transform.localRotation = Quaternion.Lerp(transform.localRotation, FishingRodRotaBase, t);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, fishingRodPosBase, t);
+
             yield return null;
         }
         transform.localRotation = FishingRodRotaBase;
@@ -315,6 +320,8 @@ public class Rotate : MonoBehaviour
         for (float t = 0f; t < 1f; t += 2f * Time.fixedDeltaTime)
         {
             transform.localRotation = Quaternion.Lerp(transform.localRotation, FishingRodRotaBase, t);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, fishingRodPosBase, t);
+
             yield return null;
         }
         transform.localRotation = FishingRodRotaBase;
