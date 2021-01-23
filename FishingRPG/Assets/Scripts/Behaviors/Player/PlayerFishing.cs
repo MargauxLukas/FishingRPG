@@ -53,15 +53,15 @@ public class PlayerFishing : MonoBehaviour
                     {
                         if (FishManager.instance.currentFishBehavior.exhausted && !FishManager.instance.currentFishBehavior.isDead)
                         {
-                            if (!FishManager.instance.isAerial) 
-                            { 
-                                PlayerManager.instance.IsAerial(); 
+                            if (!FishManager.instance.isAerial)
+                            {
+                                PlayerManager.instance.IsAerial();
                             }
                             else
                             {
                                 PlayerManager.instance.CheckDistanceWithWater();
                             }
-                            
+
                         }
                         else
                         {
@@ -75,8 +75,6 @@ public class PlayerFishing : MonoBehaviour
                 }
 
             }
-        
-    
 
             if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
             {
@@ -92,8 +90,8 @@ public class PlayerFishing : MonoBehaviour
             {
                 PlayerManager.instance.IsBlockingLine();
             }
-            
-            if(Input.GetAxis("Right Trigger") < 0.1f)
+
+            if (Input.GetAxis("Right Trigger") < 0.1f)
             {
                 PlayerManager.instance.IsNotTakingLine();
             }
@@ -103,7 +101,7 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.IsNotBlockingLine();
             }
 
-            if(Input.GetAxis("D-Pad (Vertical)") == 1)
+            if (Input.GetAxis("D-Pad (Vertical)") == 1)
             {
                 PlayerManager.instance.UseGemFirstSlot();
             }
@@ -116,7 +114,7 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.UseGemThirdSlot();
             }
 
-            if(Input.GetButton("A Button") && FishManager.instance.currentFishBehavior.canCollectTheFish)
+            if (Input.GetButton("A Button") && FishManager.instance.currentFishBehavior.canCollectTheFish)
             {
                 FishingManager.instance.CancelFishing();
                 FishingRodManager.instance.bobberThrowed = false;
@@ -127,12 +125,12 @@ public class PlayerFishing : MonoBehaviour
                 PlayerManager.instance.CHEAT_SetFishToExhausted();
             }
 
-            if(Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D))
             {
                 PlayerManager.instance.CHEAT_SetFishToDead();
             }
 
-            if(Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 PlayerManager.instance.CHEAT_ShowData();
             }
@@ -145,19 +143,22 @@ public class PlayerFishing : MonoBehaviour
             {
                 PlayerManager.instance.IsTakingLineBobber();
             }
+            else
+            {
+                FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 0);
+            }
+        }
+
+        IEnumerator WaitCooldownTime()
+        {
+            yield return new WaitForSeconds(timeCooldownRB);
+            hasJustPressRB = false;
+        }
+
+        IEnumerator WaitCooldownTimeLB()
+        {
+            yield return new WaitForSeconds(timeCooldownLB);
+            hasJustPressLB = false;
         }
     }
-
-    IEnumerator WaitCooldownTime()
-    {
-        yield return new WaitForSeconds(timeCooldownRB);
-        hasJustPressRB = false;
-    }
-
-    IEnumerator WaitCooldownTimeLB()
-    {
-        yield return new WaitForSeconds(timeCooldownLB);
-        hasJustPressLB = false;
-    }
-
 }

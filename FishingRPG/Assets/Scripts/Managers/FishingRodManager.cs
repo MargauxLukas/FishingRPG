@@ -225,6 +225,7 @@ public class FishingRodManager : MonoBehaviour
         }
         else if (fishingLine.isBlocked)
         {
+            animFishingRod.SetFloat("SpeedMultiplier", 0);
             if (distanceCP > fishingLine.fCurrent)
             {
                 FishManager.instance.DownStamina();
