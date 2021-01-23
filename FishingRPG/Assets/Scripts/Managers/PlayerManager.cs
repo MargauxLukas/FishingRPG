@@ -70,6 +70,7 @@ public class PlayerManager : MonoBehaviour
     public Image gem3Equiped;
 
 
+
     private void Awake()
     {
         Init();
@@ -250,7 +251,7 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator WaitBeforeAerial()
     {
-        yield return new WaitForSeconds(0.12f);
+        yield return new WaitForSeconds(0.2f);
         FishManager.instance.IsExhausted();
     }
 

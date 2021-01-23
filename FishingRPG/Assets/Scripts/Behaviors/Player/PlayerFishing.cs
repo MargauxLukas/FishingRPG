@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerFishing : MonoBehaviour
 {
     public bool isReadyToFish = false;
-    public float timeCooldownRB;
+    public float timeCooldownRB = 1f;
     public bool hasJustPressRB = false;
-    public float timeCooldownLB;
+    public float timeCooldownLB = 1f;
     public bool hasJustPressLB = false;
 
     private void Update()
