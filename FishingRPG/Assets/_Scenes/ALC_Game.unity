@@ -43549,7 +43549,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384587748144183257}
-  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
   m_LocalPosition: {x: -0.3129995, y: 1.1979997, z: -0.07499933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -43623,10 +43623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6f3387625ef164e919aa2f298028c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingBobbingSpeed: 6
-  bobbingAmount: 0.1
+  walkingBobbingSpeed: 5
+  bobbingAmount: 0.05
   playSound: 1
-  terrainTextureDetector: {fileID: 0}
+  terrainTextureDetector: {fileID: 2971127436854528446}
 --- !u!137 &390806291899840228
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -73635,6 +73635,7 @@ GameObject:
   - component: {fileID: 2971127436854528443}
   - component: {fileID: 2971127436854528440}
   - component: {fileID: 2971127438455659382}
+  - component: {fileID: 2971127436854528446}
   m_Layer: 0
   m_Name: ()Game Manager
   m_TagString: Untagged
@@ -73642,6 +73643,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2971127436854528446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971127436854528445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d6f651f0a7484eaf830a72e7619fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 384587747156889711}
+  mTerrain: {fileID: 0}
+  mTerrainData: {fileID: 0}
+  alphamapWidth: 0
+  alphamapHeight: 0
+  mNumTextures: 0
+  vecRet: {x: 0, y: 0, z: 0}
+  TerrainCord: {x: 0, y: 0, z: 0}
+  result_TerrainTexture: 
+  result_TerrainName: 
 --- !u!1 &2971127436887728272
 GameObject:
   m_ObjectHideFlags: 0
@@ -75745,7 +75768,7 @@ MonoBehaviour:
   isPause: 0
   isFishStock: 0
   isQuestMenu: 0
-  speed: 9
+  speed: 5
   isPressingRT: 0
   firstChestSelected: {fileID: 573757464957130025}
   gearingManager: {fileID: 573757463844403906}
@@ -79392,7 +79415,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4497584880547407584}
-  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
   m_LocalPosition: {x: -0.313, y: 1.198, z: -0.075}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -79442,7 +79465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4497584880547407584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6f3387625ef164e919aa2f298028c9, type: 3}
   m_Name: 
@@ -86833,7 +86856,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToFollow: {fileID: 2672785011215463773}
-  arm: {fileID: 0}
 --- !u!4 &6596624860233822697
 Transform:
   m_ObjectHideFlags: 0
@@ -89935,12 +89957,8 @@ MonoBehaviour:
     m_Bits: 272
   yellowArrow: {r: 1, g: 0.9019608, b: 0, a: 1}
   redArrow: {r: 1, g: 0.2668622, b: 0.16509432, a: 1}
-  maxRotProjection: 0
-  timeProjecAscending: 0
-  timeProjecDescending: 0
-  maxRotAbat: 0
-  speedAbbatAscending: 0
-  speedAbbatDescending: 0
+  playerView: {fileID: 384587748144183261}
+  slowedSensitivity: 50
 --- !u!4 &8888703474739514447
 Transform:
   m_ObjectHideFlags: 0
