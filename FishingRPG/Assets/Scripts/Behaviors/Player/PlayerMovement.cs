@@ -62,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (PlayerManager.instance.cb.isNearChest)
                 {
-                    Debug.Log("ff");
                     PlayerManager.instance.OpenChestMenu();
                 }
 
