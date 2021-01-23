@@ -593,6 +593,31 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="MSCCombatMusic" ID="{EB22CBA7-81D5-4B28-8745-DFE80E9D79D7}">
+							<ChildrenList>
+								<Action Name="" ID="{7CBDE2F1-F027-4411-8788-AEA2C4221EB0}" ShortID="602500056">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CombatMusic" ID="{0D8D6F95-2D37-45B3-A0B1-ED856F343A1C}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="STOP_MSCCombatMusic" ID="{432A38E9-3480-48A0-94D3-55C7725995FF}">
+							<ChildrenList>
+								<Action Name="" ID="{0861E4F4-19DE-4834-AD68-4D3D9EACE774}" ShortID="354571818">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CombatMusic" ID="{0D8D6F95-2D37-45B3-A0B1-ED856F343A1C}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

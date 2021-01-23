@@ -3179,6 +3179,65 @@
 								</Reference>
 							</ReferenceList>
 						</Sound>
+						<SwitchContainer Name="CombatMusic" ID="{0D8D6F95-2D37-45B3-A0B1-ED856F343A1C}" ShortID="916058737">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="CurrentFishInCombat" ID="{CB635CA0-D3FA-4074-9AAE-7A0A0543763A}" WorkUnitID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="MUS_SnapMusic" ID="{64237DEB-A23D-496F-9B90-2462AC5105A9}" ShortID="105291755">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Envrionmental" ID="{5CAD3FEE-A99E-434A-9F23-4542FEDF69C6}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MUS_ReefMusic" ID="{24E6F5C1-8CF8-405A-8BF9-73569B960F17}" ShortID="960578190">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Envrionmental" ID="{5CAD3FEE-A99E-434A-9F23-4542FEDF69C6}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="MUS_ReefMusic" ID="{24E6F5C1-8CF8-405A-8BF9-73569B960F17}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="MUS_SnapMusic" ID="{64237DEB-A23D-496F-9B90-2462AC5105A9}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
+										<ItemList>
+											<ItemRef Name="MUS_SnapMusic" ID="{64237DEB-A23D-496F-9B90-2462AC5105A9}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="ReefCrusher" ID="{CEE19877-AE47-499F-AFEA-46C69E1EBCF7}"/>
+										<ItemList>
+											<ItemRef Name="MUS_ReefMusic" ID="{24E6F5C1-8CF8-405A-8BF9-73569B960F17}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
