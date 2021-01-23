@@ -21,6 +21,7 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2962512532" Name="AMBHub" ObjectPath="\Events\Default Work Unit\Ambiant\AMBHub" DurationType="Infinite"/>
 				<Event Id="389117517" Name="AMBWind" ObjectPath="\Events\Default Work Unit\Ambiant\AMBWind" DurationType="Infinite"/>
 				<Event Id="2840255079" Name="OnBouchonPlop" ObjectPath="\Events\Default Work Unit\Character\Canne\OnBouchonPlop" DurationType="OneShot" DurationMin="0.966983" DurationMax="0.966983"/>
 				<Event Id="1031692393" Name="OnBuildingLeft" ObjectPath="\Events\Default Work Unit\UI\HUB\OnBuildingLeft" DurationType="OneShot" DurationMin="1.750000" DurationMax="1.750000"/>
@@ -206,7 +207,7 @@
 				</File>
 				<File Id="504513037" Language="SFX">
 					<ShortName>QP01 0002 Wind mod soft.wav</ShortName>
-					<Path>SFX\QP01 0002 Wind mod soft_5AD90456.wem</Path>
+					<Path>SFX\QP01 0002 Wind mod soft_85171D35.wem</Path>
 				</File>
 				<File Id="517957175" Language="SFX">
 					<ShortName>QP01 0103 Wetland marsh wren.wav</ShortName>
@@ -323,6 +324,10 @@
 				<File Id="865609187" Language="SFX">
 					<ShortName>DerouleFilTest.wav</ShortName>
 					<Path>SFX\DerouleFilTest_2DBEE026.wem</Path>
+				</File>
+				<File Id="887551974" Language="SFX">
+					<ShortName>HUB_Ambiance.wav</ShortName>
+					<Path>SFX\HUB_Ambiance_D79FB2B7.wem</Path>
 				</File>
 				<File Id="909138305" Language="SFX">
 					<ShortName>Footstep Gravel Walking 1_01.wav</ShortName>

@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMBHUB = 2962512532U;
         static const AkUniqueID AMBWIND = 389117517U;
         static const AkUniqueID ONBOUCHONPLOP = 2840255079U;
         static const AkUniqueID ONBUILDINGLEFT = 1031692393U;
