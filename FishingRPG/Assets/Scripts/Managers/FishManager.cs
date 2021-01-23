@@ -70,11 +70,6 @@ public class FishManager : MonoBehaviour
         directionPercentList = new List<int>(new int[] { sPercent, sePercent, esPercent, ePercent, enPercent, nePercent, nPercent, noPercent, onPercent, oPercent, osPercent, soPercent });
     }
 
-    public void Update()
-    {
-        test1.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
-    }
-
     public void IsExhausted()
     {
         if(currentFishBehavior.exhausted)
@@ -176,6 +171,8 @@ public class FishManager : MonoBehaviour
     {
         currentFishBehavior.exhausted = false;
         currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+        currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
+        currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
         currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
         currentFishBehavior.nbRebond = 1;
         isAerial = false;
@@ -228,6 +225,8 @@ public class FishManager : MonoBehaviour
                 DebugManager.instance.vz.DesactivateZone();
                 currentFishBehavior.exhausted = false;
                 currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+                currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
+                currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
                 NotExtenued();
                 staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
             }
@@ -257,7 +256,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentLife > 0f)
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetFellingDamage();
-            FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
+            FishManager.instance.currentFishBehavior.animator.SetTrigger("isDamage");
             lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
             //Set Switch
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
@@ -273,7 +272,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentLife > 0f)
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetAerialRebondDamage();
-            FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
+            FishManager.instance.currentFishBehavior.animator.SetTrigger("isDamage");
             lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
             // Set Switch
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);

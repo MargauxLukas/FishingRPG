@@ -57,6 +57,8 @@ public class FishBehavior : MonoBehaviour
     [HideInInspector] public bool canCollectTheFish = false;
 
     public Animator animator;
+    public Material shaderMaterialFish;
+    public Material shaderMaterialEyes;
 
     float x;
     float y;
@@ -64,6 +66,9 @@ public class FishBehavior : MonoBehaviour
 
     private void Start()
     {
+        shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
+        shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
+
         SetIdleMaxTime();
 
         fishyFiche     = fishStats.fiche   ;
@@ -418,6 +423,9 @@ public class FishBehavior : MonoBehaviour
             currentStamina = 0;
             exhausted = true;
             animator.SetBool("isDeadOrExhausted", true);
+            shaderMaterialFish.SetFloat("Vector1_403CFD6B", 0f);
+            shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 0f);
+
             FishManager.instance.ExtenuedChange();
             ResetRage();
         }
@@ -440,6 +448,8 @@ public class FishBehavior : MonoBehaviour
             //Play Sound
             AkSoundEngine.PostEvent("OnDeath", gameObject);
             animator.SetBool("isDeadOrExhausted", true);
+            shaderMaterialFish.SetFloat("Vector1_403CFD6B", 0f);
+            shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 0f);
             currentStamina = 0;
             //CheckStamina();
             FishManager.instance.ChangeLifeJauge();
