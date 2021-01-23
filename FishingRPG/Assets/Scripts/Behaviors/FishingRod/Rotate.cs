@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using XInputDotNetPure;
 
 public class Rotate : MonoBehaviour
 {
     Quaternion FishingRodRotaBase;
+    Vector3 fishingRodPosBase;
     [HideInInspector] public bool isMax = false;
 
     //Rotation Aerial and Fell
     public Transform fishingRodAnchor;           //Ancre canne à pêche
+    
     /*
     bool isFell = false;
     bool isFell2 = false;
@@ -49,18 +52,19 @@ public class Rotate : MonoBehaviour
 
     bool goodZone = true;  //La flêche est dans une zone correcte ?
 
-    [Header("Test Anumat Rotate")]
-    public float maxRotProjection = 0f;
-    public float timeProjecAscending = 0f;
-    public float timeProjecDescending = 0f;
-    public float maxRotAbat = 0f;
-    public float speedAbbatAscending = 0f;
-    public float speedAbbatDescending = 0f;
+    [Header("Slowed View")]
+    public PlayerView playerView;
+    public float slowedSensitivity = 50f;
+    float normalMouseSensitivity;
+
+
 
     private void Start()
     {
         FishingRodRotaBase = transform.localRotation;
+        fishingRodPosBase = transform.localPosition;
         imageTarget = new Vector3(transform.position.x, transform.position.y + 20f, transform.position.z);
+        normalMouseSensitivity = playerView.mouseSensitivity;
     }
 
     void Update()
@@ -143,8 +147,12 @@ public class Rotate : MonoBehaviour
                         axisRelease = true;
                         if ((transform.localRotation.eulerAngles.x > 280f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
                         {
+                            playerView.mouseSensitivity = slowedSensitivity;
+
+
                             transform.Rotate(new Vector3(-2f, 0f, 0f));
                             PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
+                            transform.localPosition += new Vector3(0.007f, -0.007f, 0f);
                         }
                         else
                         {
@@ -298,6 +306,9 @@ public class Rotate : MonoBehaviour
 
     IEnumerator Throw()
     {
+        playerView.mouseSensitivity = normalMouseSensitivity;
+
+
         for (float t = 0f; t < 1f; t += 2f * Time.fixedDeltaTime)
         {
             if(t > 0.25f)
@@ -305,6 +316,8 @@ public class Rotate : MonoBehaviour
                 result = true;
             }
             transform.localRotation = Quaternion.Lerp(transform.localRotation, FishingRodRotaBase, t);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, fishingRodPosBase, t);
+
             yield return null;
         }
         transform.localRotation = FishingRodRotaBase;
@@ -315,6 +328,8 @@ public class Rotate : MonoBehaviour
         for (float t = 0f; t < 1f; t += 2f * Time.fixedDeltaTime)
         {
             transform.localRotation = Quaternion.Lerp(transform.localRotation, FishingRodRotaBase, t);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, fishingRodPosBase, t);
+
             yield return null;
         }
         transform.localRotation = FishingRodRotaBase;
@@ -332,6 +347,7 @@ public class Rotate : MonoBehaviour
     {
         //isFell = true;
         fishingRodAnchor.GetComponent<Animator>().SetBool("FellSucceed", true);
+        StartCoroutine(FellVibration());
         StartCoroutine(ResetBoolAnimator());
     }
 
@@ -339,6 +355,7 @@ public class Rotate : MonoBehaviour
     {
         //isAerial = true;
         fishingRodAnchor.GetComponent<Animator>().SetBool("ProjectionSucceed", true);
+        StartCoroutine(AerialVibration());
         StartCoroutine(ResetBoolAnimator());
     }
     #endregion
@@ -355,6 +372,7 @@ public class Rotate : MonoBehaviour
     {
         //isAerialFail = true;
         fishingRodAnchor.GetComponent<Animator>().SetBool("ProjectionFail", true);
+        StartCoroutine(FailAerialVibration());
         StartCoroutine(ResetBoolAnimator());
     }
     #endregion
@@ -367,5 +385,31 @@ public class Rotate : MonoBehaviour
         fishingRodAnchor.GetComponent<Animator>().SetBool("FellFail", false);
         fishingRodAnchor.GetComponent<Animator>().SetBool("FellSucceed", false);
     }
+
+    #region Vibrations (Aerial, Aerial Fail et Claquage)
+
+    IEnumerator AerialVibration()
+    {
+        GamePad.SetVibration(0, 0.5f, 0.5f);
+        yield return new WaitForSeconds(0.3f);
+        GamePad.SetVibration(0, 0f, 0f);
+    }
+
+    IEnumerator FellVibration()
+    {
+        yield return new WaitForSeconds(0.5f);    //delay pour que la vibration arrive au bon moment
+        GamePad.SetVibration(0, 1f, 1f);
+        yield return new WaitForSeconds(0.5f);
+        GamePad.SetVibration(0, 0f, 0f);
+    }
+
+    IEnumerator FailAerialVibration()
+    {
+        GamePad.SetVibration(0, 0.4f, 0.4f);
+        yield return new WaitForSeconds(0.1f);
+        GamePad.SetVibration(0, 0f, 0f);
+    }
+
+    #endregion
 }
 
