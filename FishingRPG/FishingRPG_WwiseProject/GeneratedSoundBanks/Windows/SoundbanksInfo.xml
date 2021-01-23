@@ -59,6 +59,11 @@
 				<Event Id="1146909130" Name="SPLFrog" ObjectPath="\Events\Default Work Unit\Ambiant\SPLFrog" MaxAttenuation="30.000000" DurationType="Infinite"/>
 				<Event Id="2381105352" Name="SPLGull" ObjectPath="\Events\Default Work Unit\Ambiant\SPLGull" MaxAttenuation="30.000000" DurationType="Infinite"/>
 				<Event Id="728211669" Name="SPLSea" ObjectPath="\Events\Default Work Unit\Ambiant\SPLSea" MaxAttenuation="50.000000" DurationType="Infinite"/>
+				<Event Id="1669970085" Name="STOP_AMBHub" ObjectPath="\Events\Default Work Unit\Ambiant\STOP_AMBHub" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="471591546" Name="STOP_AMBWind" ObjectPath="\Events\Default Work Unit\Ambiant\STOP_AMBWind" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3522574120" Name="STOP_OnFilDeroule" ObjectPath="\Events\Default Work Unit\Character\Canne\STOP_OnFilDeroule" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1686762524" Name="STOP_OnFilTendu" ObjectPath="\Events\Default Work Unit\Character\Canne\STOP_OnFilTendu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2443505261" Name="STOP_OnMoulinetOn" ObjectPath="\Events\Default Work Unit\Character\Canne\STOP_OnMoulinetOn" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3392704" Language="SFX">
