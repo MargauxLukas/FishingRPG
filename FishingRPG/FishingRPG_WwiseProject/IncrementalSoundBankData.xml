@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:060b8dcfb2155b2fdd99ddcf3a6b212c9d0fd9409f5c1c5174c1558f38c15526
-size 893
+<?xml version="1.0" encoding="utf-8"?>
+<IncrementalBankBuild Version="6" Flags="861300542">
+	<Platform GUID="{5D1F6F2E-B018-40A4-BC80-D5D067F060AB}">
+		<Banks>
+			<Language ID="393239870">
+				<File Name="Init" Hash="2233669704" Timestamp="1611403917"/>
+				<File Name="Main" Hash="897440239" Timestamp="1611403917"/>
+			</Language>
+		</Banks>
+		<XMLInfo>
+			<Language ID="-1">
+				<File Name="" Hash="3994414012" Timestamp="1611403917"/>
+			</Language>
+		</XMLInfo>
+	</Platform>
+</IncrementalBankBuild>
