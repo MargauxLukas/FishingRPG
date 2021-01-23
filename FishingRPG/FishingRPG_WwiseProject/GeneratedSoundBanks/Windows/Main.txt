@@ -10,7 +10,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1146909130	SPLFrog			\Default Work Unit\Ambiant\SPLFrog	
 	1441617756	OnHubLeave			\Default Work Unit\UI\HUB\GoFishing\OnHubLeave	
 	1516238081	OnDecoupeEnded			\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeEnded	
-	1669970085	STOP_AMBHub			\Default Work Unit\Ambiant\STOP_AMBHub	
 	1686762524	STOP_OnFilTendu			\Default Work Unit\Character\Canne\STOP_OnFilTendu	
 	1864058544	OnFishPickUp			\Default Work Unit\Fishes\OnFishPickUp	
 	2022985720	OnMoulinetOn			\Default Work Unit\Character\Canne\OnMoulinetOn	
@@ -22,7 +21,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	2769488228	OnGemEquipped			\Default Work Unit\UI\HUB\GoFishing\OnGemEquipped	
 	2833632849	OnRage			\Default Work Unit\Fishes\OnRage	
 	2840255079	OnBouchonPlop			\Default Work Unit\Character\Canne\OnBouchonPlop	
-	2962512532	AMBHub			\Default Work Unit\Ambiant\AMBHub	
 	2964522841	OnFilTendu			\Default Work Unit\Character\Canne\OnFilTendu	
 	2980474189	OnChestClosed			\Default Work Unit\Character\OnChestClosed	
 	3042079079	OnFishSlammed			\Default Work Unit\Fishes\Aerial\OnFishSlammed	
@@ -135,7 +133,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	826539015	ChestClosed	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Plusieurs son de Coffre_A8A32B3F.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\ChestClosed		245032
 	832936103	Blacksmith 04	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Blacksmith 04_5C03C17F.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HUB\Artisan\CraftSoundSequence\Blacksmith 04		133272
 	865609187	DerouleFilTest	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\DerouleFilTest_2DBEE026.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\Canne\DerouleFilTest		133926
-	887551974	AMB_HUB	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\HUB_Ambiance_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiant\AMB_HUB		17472064
 	909138305	Footstep Gravel Walking 1_01	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\Footstep Gravel Walking 1_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\CharacterController\FootstepsSwitchContainer\Gravel\Footstep Gravel Walking 1_01		352864
 	955351202	VRAIMENT plus de mouette	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\VRAIMENT plus de mouette_3ED82801.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spatial\GullCallRC\VRAIMENT plus de mouette		1757024
 	982311509	QP01 0103 Wetland marsh wren_02	D:\FishingRPG\FishingRPG\FishingRPG_WwiseProject\.cache\Windows\SFX\QP01 0103 Wetland marsh wren_704AE477.wem		\Actor-Mixer Hierarchy\Default Work Unit\Spatial\FrogRC\QP01 0103 Wetland marsh wren_02		419184

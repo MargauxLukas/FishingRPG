@@ -13,7 +13,6 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID AMBHUB = 2962512532U;
         static const AkUniqueID AMBWIND = 389117517U;
         static const AkUniqueID ONBOUCHONPLOP = 2840255079U;
         static const AkUniqueID ONBUILDINGLEFT = 1031692393U;
@@ -51,7 +50,6 @@ namespace AK
         static const AkUniqueID SPLFROG = 1146909130U;
         static const AkUniqueID SPLGULL = 2381105352U;
         static const AkUniqueID SPLSEA = 728211669U;
-        static const AkUniqueID STOP_AMBHUB = 1669970085U;
         static const AkUniqueID STOP_AMBWIND = 471591546U;
         static const AkUniqueID STOP_ONFILDEROULE = 3522574120U;
         static const AkUniqueID STOP_ONFILTENDU = 1686762524U;
