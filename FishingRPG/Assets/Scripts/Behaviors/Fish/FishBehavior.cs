@@ -186,11 +186,18 @@ public class FishBehavior : MonoBehaviour
         {
             LookAtFrontPointFellDown(currentTime);
 
-            x = (1 - currentTime) * FishManager.instance.aerialExitWaterX + currentTime * FishManager.instance.aerialEnterWaterX;
-            y = (1- currentTime)  * FishManager.instance.aerialExitWaterY + currentTime * FishManager.instance.aerialEnterWaterY;
-            z = (1 - currentTime) * FishManager.instance.aerialExitWaterZ + currentTime * FishManager.instance.aerialEnterWaterZ;
+            if (currentTime < 1f)
+            {
+                x = (1 - currentTime) * FishManager.instance.aerialExitWaterX + currentTime * FishManager.instance.aerialEnterWaterX;
+                y = (1 - currentTime) * FishManager.instance.aerialExitWaterY + currentTime * FishManager.instance.aerialEnterWaterY;
+                z = (1 - currentTime) * FishManager.instance.aerialExitWaterZ + currentTime * FishManager.instance.aerialEnterWaterZ;
 
-            return new Vector3(x, y, z);
+                return new Vector3(x, y, z);
+            }
+            else
+            {
+                return new Vector3(FishManager.instance.aerialEnterWaterX, FishManager.instance.aerialEnterWaterY, FishManager.instance.aerialEnterWaterZ);
+            }
         }
     }
 

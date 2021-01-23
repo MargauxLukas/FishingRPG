@@ -289,7 +289,6 @@ public class FishingRodManager : MonoBehaviour
 
     public void AnimationReelUp(float choosenSpeed)
     {
-        Debug.Log("cs : " + choosenSpeed);
         animFishingRod.SetFloat("SpeedMultiplier", choosenSpeed);
     }
 

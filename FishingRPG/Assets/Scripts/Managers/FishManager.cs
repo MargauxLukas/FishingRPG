@@ -70,6 +70,11 @@ public class FishManager : MonoBehaviour
         directionPercentList = new List<int>(new int[] { sPercent, sePercent, esPercent, ePercent, enPercent, nePercent, nPercent, noPercent, onPercent, oPercent, osPercent, soPercent });
     }
 
+    public void Update()
+    {
+        test1.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+    }
+
     public void IsExhausted()
     {
         if(currentFishBehavior.exhausted)
@@ -140,9 +145,8 @@ public class FishManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.05f);
 
-        Debug.Log("Abattage");
-
         currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeFellingAerial(currentFishBehavior.maxTimeAerial, currentFish.transform.position.y - aerialExitWaterY, aerialY);
+        Debug.Log("Abattage : " + currentFishBehavior.maxTimeAerial);
 
         aerialExitWaterX = currentFish.transform.position.x;
         aerialExitWaterY = currentFish.transform.position.y;
