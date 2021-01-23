@@ -24,6 +24,7 @@ public class FishManager : MonoBehaviour
     [Header("Aerial variables")]
     [HideInInspector] public bool isAerial = false;
     [HideInInspector] public bool isFelling = false;
+    [HideInInspector] public bool hasJustSpawned = false;
     [HideInInspector] public float aerialExitWaterX  = 0f;
     [HideInInspector] public float aerialX;
     [HideInInspector] public float aerialEnterWaterX = 0f;
@@ -111,6 +112,7 @@ public class FishManager : MonoBehaviour
     public void MoreAerial()
     {
         Debug.Log("Boing Again");
+
         currentFishBehavior.nbRebond++;
         currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeAerial(currentFishBehavior.JumpHeight, currentFishBehavior.nbRebond);
         aerialExitWaterX = currentFish.transform.position.x;
@@ -131,17 +133,16 @@ public class FishManager : MonoBehaviour
     {
         isFelling = true;
         currentFishBehavior.fellingFreeze = true;
-        
+
         StartCoroutine(FellingFreeze());
     }
 
     IEnumerator FellingFreeze()
     {
-        yield return new WaitForSeconds(0.05f);
-
-        Debug.Log("Abattage");
+        yield return new WaitForSeconds(0.4f);
 
         currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeFellingAerial(currentFishBehavior.maxTimeAerial, currentFish.transform.position.y - aerialExitWaterY, aerialY);
+        Debug.Log("Abattage : " + currentFishBehavior.maxTimeAerial);
 
         aerialExitWaterX = currentFish.transform.position.x;
         aerialExitWaterY = currentFish.transform.position.y;
@@ -171,6 +172,8 @@ public class FishManager : MonoBehaviour
     {
         currentFishBehavior.exhausted = false;
         currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+        currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
+        currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
         currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
         currentFishBehavior.nbRebond = 1;
         isAerial = false;
@@ -223,6 +226,8 @@ public class FishManager : MonoBehaviour
                 DebugManager.instance.vz.DesactivateZone();
                 currentFishBehavior.exhausted = false;
                 currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+                currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
+                currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
                 NotExtenued();
                 staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
             }
@@ -252,7 +257,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentLife > 0f)
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetFellingDamage();
-            FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
+            FishManager.instance.currentFishBehavior.animator.SetTrigger("isDamage");
             lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
             //Set Switch
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
@@ -268,7 +273,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentLife > 0f)
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetAerialRebondDamage();
-            FishManager.instance.currentFishBehavior.animator.SetBool("isDamage", true);
+            FishManager.instance.currentFishBehavior.animator.SetTrigger("isDamage");
             lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
             // Set Switch
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);

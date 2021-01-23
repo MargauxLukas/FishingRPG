@@ -41,7 +41,7 @@ public class Bobber : MonoBehaviour
             }
         }
 
-        if(FishManager.instance.currentFish != null)
+        if(FishManager.instance.currentFish != null && !FishManager.instance.hasJustSpawned)
         {
             transform.position = new Vector3(FishManager.instance.currentFish.transform.position.x, FishManager.instance.currentFish.transform.position.y, FishManager.instance.currentFish.transform.position.z);
         }
@@ -84,6 +84,7 @@ public class Bobber : MonoBehaviour
 
         bezier2.position = new Vector3(x, bezier3.y + 10f, z);
 
+        FishingRodManager.instance.line.enabled = true;
         canBeLaunch = true;
     }
 

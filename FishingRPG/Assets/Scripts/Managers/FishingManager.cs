@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class FishingManager : MonoBehaviour
 {
@@ -13,15 +14,23 @@ public class FishingManager : MonoBehaviour
     public bool readyToFish = false;
     public bool isOnWater = false;
 
-    public GameObject fishPrefab;
+    public GameObject snapPrefab;
+    public GameObject reefPrefab;
     public Transform dynamics;
 
     public GameObject currentFish;
     public GameObject finishFishDestination;
     public GameObject midFishDestination;
 
+    //Chance Spawn Fish
+    public int snapChance = 0;
+    public int reefChance = 0;
+    private int totalChanceFish;
+    private int randomNumber;
+
     public bool isInFishingRod = false;
     public bool isOnSwirl = false;
+
     private void Awake()
     {
         Init();
@@ -44,7 +53,9 @@ public class FishingManager : MonoBehaviour
             {
                 FishingRodManager.instance.fishingLine.CheckWaterLevel();
                 readyToFish = true;
-                CatchSomething();
+
+                SpawnFish();
+                //CatchSomething();
             }
         }
     }
@@ -55,31 +66,63 @@ public class FishingManager : MonoBehaviour
         return Random.Range(2f, 5f);
     }
 
-    public void CatchSomething()
+    public void SpawnFish()
     {
         //Enlever Swirls
         swirlsScript.DesactivateSwirl();
 
-        //Bobber
-        FishingRodManager.instance.SetBobberMaterialToSucces();
+        totalChanceFish = snapChance + reefChance;
 
-        //Fish Instantiate
-        currentFish = Instantiate(fishPrefab, 
-                    new Vector3(FishingRodManager.instance.bobber.transform.position.x, 
-                                FishingRodManager.instance.bobber.transform.position.y - 0.6f,
-                                FishingRodManager.instance.bobber.transform.position.z),
-                    Quaternion.identity,
-                    dynamics          );
-        FishManager.instance.currentFish         = currentFish;
+        randomNumber = Random.Range(0, totalChanceFish);
+
+        if(randomNumber <= snapChance)
+        {
+            //Fish Instantiate
+            currentFish = Instantiate(snapPrefab,
+                        new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
+                                    FishingRodManager.instance.bobber.transform.position.y - 6f,
+                                    FishingRodManager.instance.bobber.transform.position.z),
+                        Quaternion.identity,
+                        dynamics);
+        }
+        else
+        {
+            //Fish Instantiate
+            currentFish = Instantiate(snapPrefab,
+                        new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
+                                    FishingRodManager.instance.bobber.transform.position.y - 6f,
+                                    FishingRodManager.instance.bobber.transform.position.z),
+                        Quaternion.identity,
+                        dynamics);
+        }
+
+        FishManager.instance.currentFish = currentFish;
         FishManager.instance.currentFishBehavior = currentFish.GetComponent<FishBehavior>();
+        FishManager.instance.currentFishBehavior.spawnPoint = new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
+                                                                          FishingRodManager.instance.bobber.transform.position.y - 6f,
+                                                                          FishingRodManager.instance.bobber.transform.position.z);
+        FishManager.instance.hasJustSpawned = true;
+    }
+
+    public void CatchSomething()
+    {
+        GamePad.SetVibration(0, 0.5f, 0.5f);
+        StartCoroutine("TimerVibration");
+        FishManager.instance.SetAerialEnterWater();
+        CameraManager.instance.CameraLookAtGameObject(currentFish);
         FishManager.instance.isAerial = false;
         FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
-        CameraManager.instance.CameraLookAtGameObject(currentFish);
         PlayerManager.instance.cfvz.fishCheck = currentFish.transform;
         FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(true);
         FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(true);
         PlayerManager.instance.FishingCanStart();
         //FishingRodManager.instance.fishingLine.cableComponent.InitCableParticles();
+    }
+
+    IEnumerator TimerVibration()
+    {
+        yield return new WaitForSeconds(0.2f);
+        GamePad.SetVibration(0, 0f, 0f);
     }
 
     public void CancelFishing()
@@ -91,7 +134,6 @@ public class FishingManager : MonoBehaviour
         //DesactivateLine() 
         needToWait = 0f;
         timer      = 0f;
-        FishingRodManager.instance.SetBobberMaterialToFail();
         FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 0);
 
         if (readyToFish)
