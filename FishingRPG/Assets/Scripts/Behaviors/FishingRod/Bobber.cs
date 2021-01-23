@@ -84,6 +84,7 @@ public class Bobber : MonoBehaviour
 
         bezier2.position = new Vector3(x, bezier3.y + 10f, z);
 
+        FishingRodManager.instance.line.enabled = true;
         canBeLaunch = true;
     }
 

@@ -29,7 +29,10 @@ public class FishingRodManager : MonoBehaviour
 
     [HideInInspector] public bool bobberThrowed = false;
 
-    [Header("Speed de la canne à peche")]
+    [Header("Ligne de la canne à pêche")]
+    public LineRenderer line;
+
+    [Header("Speed de la canne à pêche")]
     public float speed           = 10f;
     private float lastAxisValues = 0f;
     private float currentAxis;
@@ -127,6 +130,7 @@ public class FishingRodManager : MonoBehaviour
 
     public void BobberBack()
     {
+        line.enabled = false;
         //A METTRE DANS UN BEHAVIOUR BobberBACK 
         bobberThrowed = false;
         bobber.transform.parent        = fishingRodGameObject.transform.GetChild(0).GetChild(0).transform   ;              //Reset parent
