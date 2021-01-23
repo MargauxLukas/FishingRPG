@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	71788712	OnGemReady			\Default Work Unit\Character\Gemmes\OnGemReady	
 	199235004	OnGemUsed			\Default Work Unit\Character\Gemmes\OnGemUsed	
 	389117517	AMBWind			\Default Work Unit\Ambiant\AMBWind	
+	471591546	STOP_AMBWind			\Default Work Unit\Ambiant\STOP_AMBWind	
 	538280037	OnChestOpen			\Default Work Unit\Character\OnChestOpen	
 	667664411	OnStuffEquipped			\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped	
 	728211669	SPLSea			\Default Work Unit\Ambiant\SPLSea	
@@ -9,11 +10,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	1146909130	SPLFrog			\Default Work Unit\Ambiant\SPLFrog	
 	1441617756	OnHubLeave			\Default Work Unit\UI\HUB\GoFishing\OnHubLeave	
 	1516238081	OnDecoupeEnded			\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeEnded	
+	1669970085	STOP_AMBHub			\Default Work Unit\Ambiant\STOP_AMBHub	
+	1686762524	STOP_OnFilTendu			\Default Work Unit\Character\Canne\STOP_OnFilTendu	
 	1864058544	OnFishPickUp			\Default Work Unit\Fishes\OnFishPickUp	
 	2022985720	OnMoulinetOn			\Default Work Unit\Character\Canne\OnMoulinetOn	
 	2058057925	OnFishOnTable			\Default Work Unit\UI\HUB\Dépeceur\OnFishOnTable	
 	2367124489	SPLBird			\Default Work Unit\Ambiant\SPLBird	
 	2381105352	SPLGull			\Default Work Unit\Ambiant\SPLGull	
+	2443505261	STOP_OnMoulinetOn			\Default Work Unit\Character\Canne\STOP_OnMoulinetOn	
 	2598090648	OnDeath			\Default Work Unit\Fishes\OnDeath	
 	2769488228	OnGemEquipped			\Default Work Unit\UI\HUB\GoFishing\OnGemEquipped	
 	2833632849	OnRage			\Default Work Unit\Fishes\OnRage	
@@ -26,6 +30,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3303690716	OnSaveStarted			\Default Work Unit\UI\HUB\Maison\OnSaveStarted	
 	3337813975	OnCursorMove			\Default Work Unit\UI\General UI\OnCursorMove	
 	3452353930	OnBuildingOpen			\Default Work Unit\UI\HUB\OnBuildingOpen	
+	3522574120	STOP_OnFilDeroule			\Default Work Unit\Character\Canne\STOP_OnFilDeroule	
 	3537971040	OnPattern			\Default Work Unit\Fishes\OnPattern	
 	3564539514	OnFishReadyForBounce			\Default Work Unit\Fishes\Aerial\OnFishReadyForBounce	
 	3649038553	OnItemCantCraft			\Default Work Unit\UI\HUB\Artisan\OnItemCantCraft	

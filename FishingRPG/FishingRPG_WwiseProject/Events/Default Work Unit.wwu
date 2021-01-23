@@ -245,6 +245,48 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="OnMoulinetBlocked" ID="{4FF2F019-C828-4B80-9875-896E445C7296}"/>
+								<Event Name="STOP_OnMoulinetOn" ID="{EC05038A-C30A-423C-9C5C-755E157D6763}">
+									<ChildrenList>
+										<Action Name="" ID="{A2E73A82-7E0D-4962-B812-61C0005CEDF0}" ShortID="917673158">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UseMoulinetSound" ID="{6A4DC7C1-0033-4C8E-B10C-FCECB1CCC32F}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="STOP_OnFilDeroule" ID="{5F438C64-9476-4848-93BC-BE84AF994370}">
+									<ChildrenList>
+										<Action Name="" ID="{A3BC9553-E984-431F-8BAD-DBA4CDA42913}" ShortID="96757161">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DerouleFilTest" ID="{324F2F6F-4453-4F67-80FF-FACDA6B8A5AA}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="STOP_OnFilTendu" ID="{CFE76715-494F-477F-B491-8430917B7936}">
+									<ChildrenList>
+										<Action Name="" ID="{C6CB285B-B139-4634-AFC1-CD3DB081DBCD}" ShortID="905561493">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FilTenduSequenceContainer" ID="{2A6F3B0D-394F-4C90-9945-2AA088E31DBF}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="OnCharacterWalk" ID="{BB8EDA30-F4BA-4122-AF53-2C7176B4BEA4}">
@@ -459,7 +501,7 @@
 					<ChildrenList>
 						<Event Name="SPLSea" ID="{FDBB0E90-84CD-4FEC-9D65-33DC90CE73D1}">
 							<ChildrenList>
-								<Action Name="" ID="{20D86749-8980-4B24-A958-DCAA47D8084E}" ShortID="495276761">
+								<Action Name="" ID="{EBF417C5-A925-4BD1-A512-B211B60860BD}" ShortID="803870271">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="QP05 0472 Surf surges rock jetty busier" ID="{2DD1448B-D157-4E05-A951-F79C5F936659}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
@@ -518,6 +560,34 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AMB_HUB" ID="{318B338B-881E-429D-B94B-D27982764ACE}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="STOP_AMBHub" ID="{5DD7D602-28DF-40EC-ACD7-51DA1C688011}">
+							<ChildrenList>
+								<Action Name="" ID="{695ABC02-F2B8-41E1-A599-D75AE4D79896}" ShortID="709914165">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_HUB" ID="{318B338B-881E-429D-B94B-D27982764ACE}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="STOP_AMBWind" ID="{EDDFE10F-2258-4ECE-822A-DC1219A86E7C}">
+							<ChildrenList>
+								<Action Name="" ID="{C72B8073-C336-42D9-B8C2-5D0A1A226811}" ShortID="423815263">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Wind" ID="{5D92DFE3-C82C-4272-9E12-1BE3AC463B5C}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
