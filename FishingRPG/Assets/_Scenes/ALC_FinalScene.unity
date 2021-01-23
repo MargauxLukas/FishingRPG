@@ -10678,7 +10678,7 @@ MonoBehaviour:
     m_Root: {fileID: 596567963077981080}
     m_Mid: {fileID: 4271558205842307292}
     m_Tip: {fileID: 4001253678685550651}
-    m_Target: {fileID: 0}
+    m_Target: {fileID: 2045337656}
     m_Hint: {fileID: 0}
     m_TargetPositionWeight: 1
     m_TargetRotationWeight: 1
@@ -36690,7 +36690,7 @@ GameObject:
   - component: {fileID: 2045337656}
   - component: {fileID: 2045337657}
   m_Layer: 0
-  m_Name: Traget Hand
+  m_Name: Target Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36703,13 +36703,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045337655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.45451948, y: 0.5416752, z: 0.5416752, w: 0.45451948}
+  m_LocalPosition: {x: -0.06365104, y: 0.03342156, z: 1.0640681}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 543450652679347603}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 100, z: 0}
 --- !u!114 &2045337657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36723,6 +36723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToFollow: {fileID: 9123246740758750348}
+  arm: {fileID: 0}
 --- !u!1001 &2047487693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38380,7 +38381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6430559881262284882}
   m_LocalRotation: {x: -0.5425839, y: 0.45343438, z: 0.45343438, w: 0.5425839}
-  m_LocalPosition: {x: 0.02865515, y: 0, z: -0.029121399}
+  m_LocalPosition: {x: -0.33, y: 0.2, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4271558205842307292}
