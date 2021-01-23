@@ -423,8 +423,8 @@ public class FishBehavior : MonoBehaviour
             currentStamina = 0;
             exhausted = true;
             animator.SetBool("isDeadOrExhausted", true);
-            shaderMaterialFish.SetFloat("Vector1_403CFD6B", 0f);
-            shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 0f);
+            shaderMaterialFish.SetFloat("Vector1_403CFD6B", 0.2f);
+            shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 0.2f);
 
             FishManager.instance.ExtenuedChange();
             ResetRage();
