@@ -1,29 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<IncrementalBankBuild Version="6" Flags="861300542">
-	<Platform GUID="{5D1F6F2E-B018-40A4-BC80-D5D067F060AB}">
-		<Banks>
-			<Language ID="393239870">
-				<File Name="Init" Hash="2233669704" Timestamp="1611399416"/>
-				<File Name="Main" Hash="1078720296" Timestamp="1611400385"/>
-			</Language>
-		</Banks>
-		<XMLInfo>
-			<Language ID="-1">
-				<File Name="" Hash="2597402760" Timestamp="1611400385"/>
-			</Language>
-		</XMLInfo>
-	</Platform>
-	<Platform GUID="{806DF5E6-4BB2-4E23-B7F8-CAFBE931AAC0}">
-		<Banks>
-			<Language ID="393239870">
-				<File Name="Init" Hash="4080538194" Timestamp="1611402083"/>
-				<File Name="Main" Hash="1078720296" Timestamp="1611402083"/>
-			</Language>
-		</Banks>
-		<XMLInfo>
-			<Language ID="-1">
-				<File Name="" Hash="1332380470" Timestamp="1611402083"/>
-			</Language>
-		</XMLInfo>
-	</Platform>
-</IncrementalBankBuild>
+version https://git-lfs.github.com/spec/v1
+oid sha256:58c54cb2c26038b702fd59f61570afda333eb15a7b0e9e83e50091a4d1ad9ebf
+size 894

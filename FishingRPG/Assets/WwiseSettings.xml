@@ -1,13 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<WwiseSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <CopySoundBanksAsPreBuildStep>true</CopySoundBanksAsPreBuildStep>
-  <CreatedPicker>true</CreatedPicker>
-  <CreateWwiseGlobal>true</CreateWwiseGlobal>
-  <CreateWwiseListener>true</CreateWwiseListener>
-  <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
-  <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
-  <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
-  <WwiseInstallationPathMac />
-  <WwiseInstallationPathWindows>D:\Wwise 2019.1.10.7250</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../FishingRPG_WwiseProject/FishingRPG_WwiseProject.wproj</WwiseProjectPath>
-</WwiseSettings>
+version https://git-lfs.github.com/spec/v1
+oid sha256:f86970d7fb7809d4af5fb27ee2f774453e920af8a31489dab4de0b5cc1d18a40
+size 803
