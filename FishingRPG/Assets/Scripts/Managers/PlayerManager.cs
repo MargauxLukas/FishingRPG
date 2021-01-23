@@ -69,6 +69,8 @@ public class PlayerManager : MonoBehaviour
     public Image gem2Equiped;
     public Image gem3Equiped;
 
+
+
     private void Awake()
     {
         Init();
@@ -243,6 +245,13 @@ public class PlayerManager : MonoBehaviour
     public void IsAerial()
     {
         FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialRotation();
+        StartCoroutine(WaitBeforeAerial());
+        //FishManager.instance.IsExhausted();
+    }
+
+    IEnumerator WaitBeforeAerial()
+    {
+        yield return new WaitForSeconds(0.2f);
         FishManager.instance.IsExhausted();
     }
 
@@ -254,14 +263,18 @@ public class PlayerManager : MonoBehaviour
 
     public void CheckDistanceWithWater()
     {
-        //Debug.Log("!!!!!! Max Time Aerial : " + FishManager.instance.currentFishBehavior.maxTimeAerial + " // " + FishManager.instance.currentFishBehavior.timerAerial + " > " + (FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial()));
-        if(FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial())
+        Debug.Log("!!!!!! Max Time Aerial : " + FishManager.instance.currentFishBehavior.maxTimeAerial + " // " + FishManager.instance.currentFishBehavior.timerAerial + " > " + (FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial()));
+
+        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialRotation();
+
+
+        if (FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial())
         {
             FishManager.instance.MoreAerial();
         }
         else
         {
-            FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialFailRotation();
+            //FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialRotation();
         }
     }
 

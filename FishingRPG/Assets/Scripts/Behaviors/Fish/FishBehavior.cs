@@ -164,7 +164,7 @@ public class FishBehavior : MonoBehaviour
             {
                 if (gameObject.GetComponent<FishPatterns>().currentPattern == null)
                 {
-                    Debug.Log("Choose a Patern !");
+                    //Debug.Log("Choose a Patern !");
                     fishPattern.startPattern(isRage);
                 }
             }
@@ -309,7 +309,7 @@ public class FishBehavior : MonoBehaviour
 
         if (Vector3.Distance(transform.position, PlayerManager.instance.player.transform.position) < 5f)
         {
-            Debug.Log("Trop proche, je m'éloigne !");
+            //Debug.Log("Trop proche, je m'éloigne !");
             ForceDirection();
         }
 

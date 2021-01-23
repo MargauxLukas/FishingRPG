@@ -6,12 +6,12 @@ public class BobbingHead : MonoBehaviour
 {
     public float walkingBobbingSpeed = 5f;
     public float bobbingAmount = 0.05f;
-    public PlayerMovement controller;
+    //public PlayerMovement controller;
     float normeVector;
     float defaultPosY = 0;
     float defaultPosX = 0;
     float timer = 0;
-    public Transform target;
+    //public Transform target;
 
 
     [Header("For Sound Purposes")]
