@@ -170,18 +170,28 @@ public class FishManager : MonoBehaviour
     //Recuperation d'Endurance après Aerial
     public void FishRecuperation()
     {
-        currentFishBehavior.exhausted = false;
-        currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
-        currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
-        currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
-        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
-        currentFishBehavior.nbRebond = 1;
-        isAerial = false;
-        isFelling = false;
-        currentFishBehavior.isFellDown = false;
-        NotExtenued();
-        staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
-        //ChangeStaminaText();
+        if (!currentFishBehavior.isDead)
+        {
+            currentFishBehavior.exhausted = false;
+            currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+            currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
+            currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
+            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+            currentFishBehavior.nbRebond = 1;
+            isAerial = false;
+            isFelling = false;
+            currentFishBehavior.isFellDown = false;
+            NotExtenued();
+            staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            //ChangeStaminaText();
+        }
+        else
+        {
+            currentFishBehavior.nbRebond = 1;
+            isAerial = false;
+            isFelling = false;
+            currentFishBehavior.isFellDown = false;
+        }
     }
 
     //Perte d'endurance lorsque la ligne est bloqué

@@ -149,10 +149,9 @@ public class FishBehavior : MonoBehaviour
                     }
                     else
                     {
-                        if (!isDead)
-                        {
+                        
                             Aerial();
-                        }
+                        
                     }
                 }
                 else

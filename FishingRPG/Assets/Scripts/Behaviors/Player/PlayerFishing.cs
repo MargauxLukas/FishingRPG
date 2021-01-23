@@ -21,7 +21,6 @@ public class PlayerFishing : MonoBehaviour
                     hasJustPressLB = true;
                     StartCoroutine(WaitCooldownTimeLB());
 
-
                     if (FishManager.instance.isAerial && !FishManager.instance.isFelling && !FishManager.instance.currentFishBehavior.isDead)
                     {
                         PlayerManager.instance.FellingFish();
