@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowThisPoint : MonoBehaviour
 {
     public Transform pointToFollow;
-    public Transform arm;
+    //public Transform arm;
 
     // Update is called once per frame
     void Update()

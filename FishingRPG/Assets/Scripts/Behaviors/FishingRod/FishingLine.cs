@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using XInputDotNetPure;
 
 public class FishingLine : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class FishingLine : MonoBehaviour
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
+        
+        //Vibrations cassures
+        StartCoroutine(VibrationsLineBreak());
+
         CameraManager.instance.ScreenShake(0.35f);
         currentTension = 0f;
         UpdateJaugeTension();
@@ -63,6 +68,8 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
+
+
             currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
             UpdateJaugeTension();
             //Play Sound
@@ -83,6 +90,7 @@ public class FishingLine : MonoBehaviour
 
     public void TensionDown()
     {
+
         if (currentTension > 0f)
         {
             currentTension -= 55f * Time.fixedDeltaTime;
@@ -132,4 +140,12 @@ public class FishingLine : MonoBehaviour
     }
 
     #endregion
+
+    IEnumerator VibrationsLineBreak()
+    {
+        GamePad.SetVibration(0, 1f, 1f);
+        yield return new WaitForSeconds(0.7f);
+        GamePad.SetVibration(0, 0f, 0f);
+    }
+
 }

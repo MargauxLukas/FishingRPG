@@ -43571,7 +43571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a245c178277474ea5a42e5c2fe2725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 200
+  mouseSensitivity: 160
   playerBody: {fileID: 384587747156889711}
   freeCamera: 1
   bezierBobber: 1
@@ -43623,10 +43623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6f3387625ef164e919aa2f298028c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingBobbingSpeed: 6
-  bobbingAmount: 0.1
+  walkingBobbingSpeed: 5
+  bobbingAmount: 0.05
   playSound: 1
-  terrainTextureDetector: {fileID: 0}
+  terrainTextureDetector: {fileID: 4234807527261401749}
 --- !u!137 &390806291899840228
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -75745,7 +75745,7 @@ MonoBehaviour:
   isPause: 0
   isFishStock: 0
   isQuestMenu: 0
-  speed: 9
+  speed: 5
   isPressingRT: 0
   firstChestSelected: {fileID: 573757464957130025}
   gearingManager: {fileID: 573757463844403906}
@@ -77987,6 +77987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4234807527261401747}
   - component: {fileID: 4234807527261401748}
+  - component: {fileID: 4234807527261401749}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -78036,6 +78037,28 @@ MonoBehaviour:
   gemList:
   - {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
   inventory: {fileID: 11400000, guid: bafd2a44d9e916249a09d2602756395d, type: 2}
+--- !u!114 &4234807527261401749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234807527261401746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d6f651f0a7484eaf830a72e7619fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 384587747156889711}
+  mTerrain: {fileID: 0}
+  mTerrainData: {fileID: 0}
+  alphamapWidth: 0
+  alphamapHeight: 0
+  mNumTextures: 0
+  vecRet: {x: 0, y: 0, z: 0}
+  TerrainCord: {x: 0, y: 0, z: 0}
+  result_TerrainTexture: 
+  result_TerrainName: 
 --- !u!4 &4253357394062166796
 Transform:
   m_ObjectHideFlags: 0
@@ -79442,15 +79465,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4497584880547407584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6f3387625ef164e919aa2f298028c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingBobbingSpeed: 6
-  bobbingAmount: 0.1
+  walkingBobbingSpeed: 5
+  bobbingAmount: 0.05
   playSound: 1
-  terrainTextureDetector: {fileID: 0}
+  terrainTextureDetector: {fileID: 4234807527261401749}
 --- !u!1 &4497584880572090286
 GameObject:
   m_ObjectHideFlags: 0
@@ -86833,7 +86856,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToFollow: {fileID: 2672785011215463773}
-  arm: {fileID: 0}
 --- !u!4 &6596624860233822697
 Transform:
   m_ObjectHideFlags: 0
@@ -89935,12 +89957,8 @@ MonoBehaviour:
     m_Bits: 272
   yellowArrow: {r: 1, g: 0.9019608, b: 0, a: 1}
   redArrow: {r: 1, g: 0.2668622, b: 0.16509432, a: 1}
-  maxRotProjection: 0
-  timeProjecAscending: 0
-  timeProjecDescending: 0
-  maxRotAbat: 0
-  speedAbbatAscending: 0
-  speedAbbatDescending: 0
+  playerView: {fileID: 384587748144183261}
+  slowedSensitivity: 50
 --- !u!4 &8888703474739514447
 Transform:
   m_ObjectHideFlags: 0
