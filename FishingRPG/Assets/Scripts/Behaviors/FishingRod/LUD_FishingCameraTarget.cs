@@ -17,7 +17,7 @@ public class LUD_FishingCameraTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetPosition = (mulCPoint*CPoint.position + mulFishT * FishTransform.position / (mulCPoint+ mulFishT));
+        targetPosition = (mulCPoint*CPoint.position + mulFishT * FishTransform.position) / (mulCPoint+ mulFishT);
 
         transform.position = targetPosition;
     }

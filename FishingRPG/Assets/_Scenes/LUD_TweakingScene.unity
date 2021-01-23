@@ -43549,7 +43549,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384587748144183257}
-  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
   m_LocalPosition: {x: -0.3129995, y: 1.1979997, z: -0.07499933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -43571,7 +43571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a245c178277474ea5a42e5c2fe2725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 160
+  mouseSensitivity: 200
   playerBody: {fileID: 384587747156889711}
   freeCamera: 1
   bezierBobber: 1
@@ -43626,7 +43626,7 @@ MonoBehaviour:
   walkingBobbingSpeed: 5
   bobbingAmount: 0.05
   playSound: 1
-  terrainTextureDetector: {fileID: 4234807527261401749}
+  terrainTextureDetector: {fileID: 2971127436854528446}
 --- !u!137 &390806291899840228
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -73635,6 +73635,7 @@ GameObject:
   - component: {fileID: 2971127436854528443}
   - component: {fileID: 2971127436854528440}
   - component: {fileID: 2971127438455659382}
+  - component: {fileID: 2971127436854528446}
   m_Layer: 0
   m_Name: ()Game Manager
   m_TagString: Untagged
@@ -73642,6 +73643,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2971127436854528446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971127436854528445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d6f651f0a7484eaf830a72e7619fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 384587747156889711}
+  mTerrain: {fileID: 0}
+  mTerrainData: {fileID: 0}
+  alphamapWidth: 0
+  alphamapHeight: 0
+  mNumTextures: 0
+  vecRet: {x: 0, y: 0, z: 0}
+  TerrainCord: {x: 0, y: 0, z: 0}
+  result_TerrainTexture: 
+  result_TerrainName: 
 --- !u!1 &2971127436887728272
 GameObject:
   m_ObjectHideFlags: 0
@@ -77987,7 +78010,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4234807527261401747}
   - component: {fileID: 4234807527261401748}
-  - component: {fileID: 4234807527261401749}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -78037,28 +78059,6 @@ MonoBehaviour:
   gemList:
   - {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
   inventory: {fileID: 11400000, guid: bafd2a44d9e916249a09d2602756395d, type: 2}
---- !u!114 &4234807527261401749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4234807527261401746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766d6f651f0a7484eaf830a72e7619fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 384587747156889711}
-  mTerrain: {fileID: 0}
-  mTerrainData: {fileID: 0}
-  alphamapWidth: 0
-  alphamapHeight: 0
-  mNumTextures: 0
-  vecRet: {x: 0, y: 0, z: 0}
-  TerrainCord: {x: 0, y: 0, z: 0}
-  result_TerrainTexture: 
-  result_TerrainName: 
 --- !u!4 &4253357394062166796
 Transform:
   m_ObjectHideFlags: 0
@@ -79415,7 +79415,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4497584880547407584}
-  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
   m_LocalPosition: {x: -0.313, y: 1.198, z: -0.075}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -79470,10 +79470,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6f3387625ef164e919aa2f298028c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingBobbingSpeed: 5
-  bobbingAmount: 0.05
+  walkingBobbingSpeed: 6
+  bobbingAmount: 0.1
   playSound: 1
-  terrainTextureDetector: {fileID: 4234807527261401749}
+  terrainTextureDetector: {fileID: 0}
 --- !u!1 &4497584880572090286
 GameObject:
   m_ObjectHideFlags: 0
@@ -86143,7 +86143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195373837839389059}
   m_LocalRotation: {x: -0.5425839, y: 0.45343438, z: 0.45343438, w: 0.5425839}
-  m_LocalPosition: {x: -0.33, y: 0.1, z: 0.28}
+  m_LocalPosition: {x: -0.33, y: 0.1, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6975078368852355341}
