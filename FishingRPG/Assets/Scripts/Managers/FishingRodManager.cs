@@ -23,10 +23,6 @@ public class FishingRodManager : MonoBehaviour
     public GemSlot slot2;
     public GemSlot slot3;
 
-    [Header("Pour montrer visuellement que le poisson est arrivé")]
-    public Material catchMaterial;
-    public Material dontCatchMaterial;
-
     //Bobber
     private Vector3 bobberScale = new Vector3(5f, 0.25f, 5f);
     private Quaternion bobberRotation;
@@ -158,16 +154,6 @@ public class FishingRodManager : MonoBehaviour
         bobber.transform.localPosition = newVector;
         FishingManager.instance.readyToFish = false;
         checkWaterScript.justOneTime = false;
-    }
-
-    public void SetBobberMaterialToSucces()
-    {
-        bobber.GetComponent<MeshRenderer>().material = catchMaterial;
-    }
-
-    public void SetBobberMaterialToFail()
-    {
-        bobber.GetComponent<MeshRenderer>().material = dontCatchMaterial;
     }
 
     public void SetFishingRodPosition(float axisValue)

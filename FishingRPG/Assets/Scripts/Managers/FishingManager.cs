@@ -106,8 +106,6 @@ public class FishingManager : MonoBehaviour
 
     public void CatchSomething()
     {
-        FishingRodManager.instance.SetBobberMaterialToSucces();
-
         GamePad.SetVibration(0, 0.5f, 0.5f);
         StartCoroutine("TimerVibration");
         FishManager.instance.SetAerialEnterWater();
@@ -136,7 +134,6 @@ public class FishingManager : MonoBehaviour
         //DesactivateLine() 
         needToWait = 0f;
         timer      = 0f;
-        FishingRodManager.instance.SetBobberMaterialToFail();
         FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 0);
 
         if (readyToFish)
