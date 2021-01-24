@@ -16,15 +16,15 @@ MonoBehaviour:
   appearance: {fileID: 21300000, guid: 3b38e429d35f64b4f9f0b66539e33772, type: 3}
   itemType: Helmet
   upgradeState: 1
-  itemName: Pequessivo Helmet
+  itemName: SnapSnack Helmet
   tier: 1
   strength: 3
   constitution: 0
   dexterity: 1
   intelligence: 1
-  description: Pequessivo just attacks without truly thinking. Sometimes that's the
+  description: SnapSnack just attacks without truly thinking. Sometimes that's the
     best strategy.
   components:
-  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
-  - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
+  - {fileID: 11400000, guid: 3ec01becd7b254e49b3f6b5c6b753bd5, type: 2}
+  - {fileID: 11400000, guid: d9ff65285d665064ab976bfe981ec682, type: 2}
   componentsQty: 0100000002000000

@@ -1,5 +1,3 @@
-Item ID;Avancement;Item Name;Tier;Tension Canne;Emplacement de Gemme;Force (STR);Constitution (CON);Dextérité (DEX);Intelligence (INT);Composant 1 ID;Composant 1 Quantity;Composant 2 ID;Composant 2 Quantity;Composant 3 ID;Composant 3 Quantity;Composant 4 ID;Composant 4 Quantity
-PFR_1;1;Pequessivo Fishing rod;1;120;1;2;0;0;0;PFI_E;1;PLF_R;1;;;;
-CVA_1;1;Canne de Vivacité Aerienne;1;120;1;4;2;8;1;AVV_C;4;ELI_C;4;DVV_R;3;;
-CVA_2;2;Canne de Vivacité Spectrale;2;120;2;8;4;10;3;ECG_C;5;QVV_E;2;TDR_R;3;CVC_L;1
-CVA_3;3;Canne de Vivacité Débridée;4;120;2;18;10;18;5;NGT_C;5;PIM_R;4;CPR_C;3;CVT_E;3
+Item ID;Avancement;Item Name;Description;Tier;Tension Canne;Emplacement de Gemme;Force (STR);Constitution (CON);Dextérité (DEX);Intelligence (INT);Composant 1 ID;Composant 1 Quantity;Composant 2 ID;Composant 2 Quantity;Composant 3 ID;Composant 3 Quantity;Composant 4 ID;Composant 4 Quantity
+PEFI_1;1;SnapSnack Fishing Rod;A classic fishing rod crafted by every beginner fisherman. It's kind of a rite of passage before fishing bigger monster.;1;120;1;2;0;0;0;PEI_E;1;PEF_R;1;;;;
+REFI_1;1;ReefCrusher Fishing Rod;If you want to fight big monsters, you will need a solid fishing rod.;1;120;2;0;2;0;0;REH_L;1;RES_C;2;;;;
