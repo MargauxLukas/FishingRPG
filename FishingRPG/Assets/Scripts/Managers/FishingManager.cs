@@ -140,8 +140,8 @@ public class FishingManager : MonoBehaviour
 
     public void CancelFishing()
     {
-        //Stop sound -> Combat music
-        AkSoundEngine.PostEvent("STOP_MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+        //MoulinetOnce = true;
+        
 
         //Swirl Activate
         swirlsScript.DesactivateSwirl();
@@ -173,5 +173,13 @@ public class FishingManager : MonoBehaviour
         FishingRodManager.instance.BobberBack();
         FishingRodManager.instance.fishingLine.fCurrent = 0f;
         FishingRodManager.instance.distanceCP = 0f;
+
+        PlayerManager.instance.MoulinetOnce = false; 
+        //Stop sound -> Combat music
+        AkSoundEngine.PostEvent("STOP_MSCCombatMusic", gameObject);
+        //Stop -> Moulinet Sound
+        AkSoundEngine.PostEvent("STOP_MoulinetOn", gameObject);
+        //Stop -> Tension Sound
+        AkSoundEngine.PostEvent("STOP_FilTendu", gameObject);
     }
 }

@@ -70,6 +70,8 @@ public class FishingRodManager : MonoBehaviour
     public GameObject huntUI;
     public GameObject fishingUI;
 
+    private bool derouleOnce = false; 
+
 
     private void Awake()
     {
@@ -243,6 +245,7 @@ public class FishingRodManager : MonoBehaviour
         else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)    //Mettre à jour Fcurrent
         {
             speedAnimation += -1f * Time.fixedDeltaTime;
+            
 
             if (speedAnimation < -1f)
             {
@@ -274,6 +277,7 @@ public class FishingRodManager : MonoBehaviour
             if (speedAnimation > 0f)
             {
                 speedAnimation += -1f * Time.fixedDeltaTime;
+                
 
                 if (speedAnimation < 0)
                 {

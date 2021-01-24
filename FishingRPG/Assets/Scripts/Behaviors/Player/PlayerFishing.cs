@@ -10,6 +10,8 @@ public class PlayerFishing : MonoBehaviour
     public float timeCooldownLB = 1f;
     public bool hasJustPressLB = false;
 
+    private bool moulinetOnce2 = false; 
+
     private void Update()
     {
         if (isReadyToFish)
@@ -143,10 +145,21 @@ public class PlayerFishing : MonoBehaviour
             if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
             {
                 PlayerManager.instance.IsTakingLineBobber();
+                //Play Sound -> Moulinet Sound during traque
+                if (!moulinetOnce2)
+                {
+
+                    AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
+                    moulinetOnce2 = true;
+                }
             }
             else
             {
                 FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 0);
+
+                //Stop Sound -> Moulinet Sound during traque
+                AkSoundEngine.PostEvent("STOP_MoulinetOn", gameObject);
+                moulinetOnce2 = false;
             }
         }
 

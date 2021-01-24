@@ -72,7 +72,7 @@ public class PlayerManager : MonoBehaviour
     public Image gem2Equiped;
     public Image gem3Equiped;
 
-    private bool MoulinetOnce =false;
+    public bool MoulinetOnce =false;
 
 
 
@@ -259,6 +259,8 @@ public class PlayerManager : MonoBehaviour
         FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 1);
         FishingRodManager.instance.bobber.transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, FishingRodManager.instance.bobber.transform.position.y, FishingRodManager.instance.pointC.position.z));
         FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 3f * Time.deltaTime;
+
+        
     }
 
     public void IsAerial()
