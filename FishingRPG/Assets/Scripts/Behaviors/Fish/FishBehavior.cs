@@ -65,6 +65,8 @@ public class FishBehavior : MonoBehaviour
     float y;
     float z;
 
+    public Transform anchor;
+
     private void Start()
     {
         shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);

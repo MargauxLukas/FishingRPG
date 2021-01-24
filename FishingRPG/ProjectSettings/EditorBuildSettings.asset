@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/ALC_GameFinal.unity
-    guid: 436a4fa7a136ce14da7069405fac8917
+    path: Assets/_Scenes/Game.unity
+    guid: e08dddc907b1af448a9c8c9f4d4c84a4
   - enabled: 1
     path: Assets/_Scenes/MAL_LoadingScene.unity
     guid: 193c3d03a7607804788efc754c5dec30

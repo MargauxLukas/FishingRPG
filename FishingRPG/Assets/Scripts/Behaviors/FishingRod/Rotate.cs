@@ -62,6 +62,7 @@ public class Rotate : MonoBehaviour
 
     public bool playWireOnce = false;
 
+
     private void Start()
     {
         FishingRodRotaBase = transform.localRotation;
@@ -126,6 +127,9 @@ public class Rotate : MonoBehaviour
             {
                 if (PlayerManager.instance.playerInventory.inventory.currentFishOnMe < 3)
                 {
+                    //desactivate UI
+                    
+                    
                     if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
                     {
                         if (goodZone)
@@ -190,6 +194,7 @@ public class Rotate : MonoBehaviour
                 }
                 else
                 {
+                    //active UI
                     Debug.Log("Trop de poisson");
                 }
             }
