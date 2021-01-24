@@ -30,6 +30,7 @@ public class FirstGem : MonoBehaviour
             if (timer > duration)
             {
                 RemoveEffect();
+                PlayerManager.instance.StopParticleGem();
                 playTimerCD = true;
                 playTimerDuration = false;
                 timer = 0f;
@@ -61,6 +62,7 @@ public class FirstGem : MonoBehaviour
             slot = i;
 
             FishingRodManager.instance.slot1.visual.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material = usedMat;
+            PlayerManager.instance.PlayParticleGem();
 
             GemEffect();
             //mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, 0f);
