@@ -129,7 +129,7 @@ public class FishingManager : MonoBehaviour
     {
         //Swirl Activate
         swirlsScript.DesactivateSwirl();
-        swirlsScript.ChooseSwirl(swirlsScript.nbSwirls);
+        swirlsScript.ActivateSwirl();
 
         //DesactivateLine() 
         needToWait = 0f;
