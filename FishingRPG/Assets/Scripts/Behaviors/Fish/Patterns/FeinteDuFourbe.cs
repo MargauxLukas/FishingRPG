@@ -21,10 +21,18 @@ public class FeinteDuFourbe : MonoBehaviour
         {
             if (!playOnce)
             {
-                //Play Sound
-                AkSoundEngine.SetSwitch("PatternPlayed", "Feinte", FishManager.instance.currentFish.gameObject);
-                //Play Sound
-                AkSoundEngine.PostEvent("OnPattern", FishManager.instance.currentFish.gameObject);
+                if (FishingManager.instance.isSnap)
+                {
+                    //Play Sound
+                    AkSoundEngine.SetSwitch("PatternPlayed", "Feinte", FishManager.instance.currentFish.gameObject);
+                    //Play Sound
+                    AkSoundEngine.PostEvent("OnPattern", FishManager.instance.currentFish.gameObject);
+                }
+                else
+                {
+                    //Son du Reef
+                }
+
                 if (!costEnergyOverTime)
                 {
                     FishManager.instance.currentFishBehavior.currentStamina -= energyCost;

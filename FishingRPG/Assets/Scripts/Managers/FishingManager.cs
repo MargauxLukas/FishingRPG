@@ -31,6 +31,8 @@ public class FishingManager : MonoBehaviour
     public bool isInFishingRod = false;
     public bool isOnSwirl = false;
 
+    public bool isSnap = false;
+
     private void Awake()
     {
         Init();
@@ -88,6 +90,7 @@ public class FishingManager : MonoBehaviour
                                     FishingRodManager.instance.bobber.transform.position.z),
                         Quaternion.identity,
                         dynamics);
+            isSnap = true;
             //Set Current Fish to SnapSnack
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
             //Play Sound
@@ -102,7 +105,7 @@ public class FishingManager : MonoBehaviour
                                     FishingRodManager.instance.bobber.transform.position.z),
                         Quaternion.identity,
                         dynamics);
-
+            isSnap = false;
             //Set Current Fish to ReefCrusher
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", FishManager.instance.currentFish.gameObject);
             //Play Sound
@@ -157,6 +160,7 @@ public class FishingManager : MonoBehaviour
             FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(false);
             FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(false);
             FishManager.instance.currentFishBehavior.fishPattern.ResetOncePlay();
+
             if (FishManager.instance.currentFishBehavior.canCollectTheFish)
             {
                 PlayerManager.instance.playerInventory.AddThisFishToInventory(FishManager.instance.currentFishBehavior.fishyFiche.ID);
