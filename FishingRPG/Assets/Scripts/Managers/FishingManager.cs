@@ -122,6 +122,13 @@ public class FishingManager : MonoBehaviour
 
     public void CatchSomething()
     {
+        if(!isSnap)
+        {
+            FishManager.instance.currentFish.transform.position = new Vector3(FishingRodManager.instance.bobber.transform.position.x,
+                                                                          FishingRodManager.instance.bobber.transform.position.y - 2f,
+                                                                          FishingRodManager.instance.bobber.transform.position.z);
+        }
+
         GamePad.SetVibration(0, 0.5f, 0.5f);
         StartCoroutine("TimerVibration");
         FishManager.instance.SetAerialEnterWater();
