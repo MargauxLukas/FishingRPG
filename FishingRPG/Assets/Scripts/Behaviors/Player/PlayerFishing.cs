@@ -16,8 +16,13 @@ public class PlayerFishing : MonoBehaviour
     {
         if (isReadyToFish)
         {
+            //Stop sound Moulinet
+            moulinetOnce2 = false;
+            AkSoundEngine.PostEvent("STOP_MoulinetOn", gameObject);
+
             if (Input.GetButton("Left Bumper"))         //LB
             {
+
                 if (!hasJustPressLB)
                 {
                     hasJustPressLB = true;

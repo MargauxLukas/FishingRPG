@@ -193,6 +193,8 @@ public class FishingManager : MonoBehaviour
         AkSoundEngine.PostEvent("STOP_MSCCombatMusic", gameObject);
         //Stop -> Moulinet Sound
         AkSoundEngine.PostEvent("STOP_MoulinetOn", PlayerManager.instance.gameObject);
+        //Stop -> Moulinet Sound
+        AkSoundEngine.PostEvent("STOP_MoulinetOn", PlayerManager.instance.player.gameObject);
         //Stop -> Tension Sound
         AkSoundEngine.PostEvent("STOP_FilTendu", FishingRodManager.instance.fishingLine.gameObject);
     }
