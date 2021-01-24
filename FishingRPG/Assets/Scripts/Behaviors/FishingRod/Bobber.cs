@@ -43,7 +43,7 @@ public class Bobber : MonoBehaviour
 
         if(FishManager.instance.currentFish != null && !FishManager.instance.hasJustSpawned)
         {
-            transform.position = new Vector3(FishManager.instance.currentFish.transform.position.x, FishManager.instance.currentFish.transform.position.y, FishManager.instance.currentFish.transform.position.z);
+            transform.position = FishManager.instance.currentFishBehavior.anchor.position;
         }
     }
 

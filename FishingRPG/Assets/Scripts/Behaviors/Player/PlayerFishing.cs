@@ -34,7 +34,7 @@ public class PlayerFishing : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Déjà appuyé sur LB");
+                    //Debug.Log("Déjà appuyé sur LB");
                 }
             }
             else if (Input.GetButtonDown("Right Bumper"))   //RB

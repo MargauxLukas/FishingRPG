@@ -65,6 +65,8 @@ public class FishBehavior : MonoBehaviour
     float y;
     float z;
 
+    public Transform anchor;
+
     private void Start()
     {
         shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
@@ -81,7 +83,7 @@ public class FishBehavior : MonoBehaviour
 
         animator = transform.GetChild(0).GetComponent<Animator>();
 
-        FishManager.instance.staminaJauge.fillAmount = FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina;
+        LifeStaminaUI.instance.UpdateStamina(FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina);
         FishManager.instance.ChangeLifeJauge();
     }
 
@@ -453,7 +455,7 @@ public class FishBehavior : MonoBehaviour
             currentStamina = 0;
             //CheckStamina();
             FishManager.instance.ChangeLifeJauge();
-            FishManager.instance.staminaJauge.fillAmount = FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina;
+            LifeStaminaUI.instance.UpdateStamina(FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina);
         }
     }
 
