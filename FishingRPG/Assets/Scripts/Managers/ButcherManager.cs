@@ -45,11 +45,15 @@ public class ButcherManager : MonoBehaviour
     bool dropListCleared = false;
     bool canQuitButcher = true;
 
+
     void Update()
     {
         if (Input.GetButtonDown("Submit") && !fishReadyToCut && !cuttedFish && fishPile.active)
         {
             Debug.Log("NewFish");
+            
+            //Show good fish
+
             fishToButch.SetActive(true);
             fishPileInput.SetActive(false);
 
@@ -225,16 +229,27 @@ public class ButcherManager : MonoBehaviour
     public void ShowGoodFish(string id)
     {
         percentDropLoot.Clear();
+        
         //Afficher selon l'id le bon poisson
-        if(fishID == "PQS_1")
+        if(fishID == "SPS")
         {
             //Afficher bonne pile
             //Mettre à jour liste de drop
-            for (int i = 0; i < UIManager.instance.fishyFishList[0].drops.Length; i++)
+            for (int i = 0; i < UIManager.instance.fishyFishList[0].drops.Length; i++)  //regarde la 1ere FishyFish
             {
                 percentDropLoot.Add(UIManager.instance.fishyFishList[0].drops[i].dropRate);
             }
             actualFish = UIManager.instance.fishyFishList[0];
+        }
+        else if (fishID == "REC_1")
+        {
+            //Afficher bonne pile
+            //Mettre à jour liste de drop
+            for (int i = 0; i < UIManager.instance.fishyFishList[1].drops.Length; i++)  //regarde la 2eme FishyFish
+            {
+                percentDropLoot.Add(UIManager.instance.fishyFishList[1].drops[i].dropRate);
+            }
+            actualFish = UIManager.instance.fishyFishList[1];
         }
     }
 

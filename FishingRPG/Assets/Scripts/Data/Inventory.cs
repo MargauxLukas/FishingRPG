@@ -9,8 +9,8 @@ public class Inventory : ScriptableObject
     public int fishTotal;
     public int currentFishOnMe;
     public int fishNumberOnStock;
-    public int PQS_1;
-    public int PFS_1;
+    public int SPS;
+    public int REC_1;
 
     //Equiped
     public ArmorSet equipedHelmet;
@@ -22,7 +22,8 @@ public class Inventory : ScriptableObject
     public Gem equipedGem2;
     public Gem equipedGem3;
 
-    //Pequessivo Mats
+    [Header("SnapSnack Mats & Armor")]
+    //SnapSnack Mats
     public int PST_C;
     public int PSC_C;
     public int PFL_R;
@@ -35,23 +36,34 @@ public class Inventory : ScriptableObject
     public bool PBE_1;
     public bool PBO_1;
 
-    //??? armor
-    public bool AEH_1;
-    public bool ACH_1;
-    public bool ABE_1;
-    public bool ABO_1;
-    public bool AFR_1;
+    [Header("ReefCrusher Mats & Armor")]
+    //ReefCrusher Mats
+    public int RET_C;
+    public int RES_C;
+    public int REF_R;
+    public int RET_R;
+    public int REI_E;
+    public int REH_L;
+
+    //ReefCrusher armor
+    public bool REH_1;
+    public bool REP_1;
+    public bool HEBE_1;
+    public bool REB_1;
 
     //Fishing rod
     public bool PFR_1;
+    public bool REFI_1;
 
     //Gems
     public bool GPE_1;
+    public bool GRE_1;
 
     public int GetVariable(string id)
     {
         switch(id)
         {
+            //SnapSnackComposants
             case "PST_C":
                 return PST_C;
             case "PSC_C":
@@ -62,6 +74,20 @@ public class Inventory : ScriptableObject
                 return PFI_E;
             case "PBH_L":
                 return PBH_L;
+            
+            //ReefCrusherComposants
+            case "RET_C":
+                return RET_C;
+            case "RES_C":
+                return RES_C;
+            case "REF_R":
+                return REF_R;
+            case "RET_R":
+                return RET_R;
+            case "REI_E":
+                return REI_E;
+            case "REH_L":
+                return REH_L;
         }
 
         return 0;
@@ -71,6 +97,7 @@ public class Inventory : ScriptableObject
     {
         switch (id)
         {
+            //SnapSnackComposants
             case "PST_C":
                 PST_C -= qty;
                 break;
@@ -86,6 +113,26 @@ public class Inventory : ScriptableObject
             case "PBH_L":
                 PBH_L -= qty;
                 break;
+
+            //ReefCrusherComposants
+            case "RET_C":
+                RET_C -= qty;
+                break;
+            case "RES_C":
+                RES_C -= qty;
+                break;
+            case "REF_R":
+                REF_R -= qty;
+                break;
+            case "RET_R":
+                RET_R -= qty;
+                break;
+            case "REI_E":
+                REI_E -= qty;
+                break;
+            case "REH_L":
+                REH_L -= qty;
+                break;
         }
 
         fishTotal--;
@@ -95,6 +142,7 @@ public class Inventory : ScriptableObject
     {
         switch (id)
         {
+            //SnapSnack Armor
             case "PEH_1":
                 PEH_1 = true;
                 break;
@@ -113,16 +161,44 @@ public class Inventory : ScriptableObject
             case "GPE_1":
                 GPE_1 = true;
                 break;
+
+            //ReefCrusher Armor
+            case "REH_1":
+                REH_1 = true;
+                break;
+            case "REP_1":
+                REP_1 = true;
+                break;
+            case "HEBE_1":
+                HEBE_1 = true;
+                break;
+            case "REB_1":
+                REB_1 = true;
+                break;
+            case "REFI_1":
+                REFI_1 = true;
+                break;
+            case "GRE_1":
+                GRE_1 = true;
+                break;
         }
     }
 
     public string GetFish()
     {
-        if(PQS_1 > 0)
+        if(SPS > 0)
         {
-            PQS_1--;
+            SPS--;
             fishTotal--;
-            return "PQS_1";
+            currentFishOnMe--;
+            return "SPS";
+        }
+        else if(REC_1 > 0)
+        {
+            REC_1--;
+            fishTotal--;
+            currentFishOnMe--;
+            return "REC_1";
         }
 
         return null;
@@ -132,6 +208,7 @@ public class Inventory : ScriptableObject
     {
         switch (id)
         {
+            //SnapSnack Mat
             case "PST_C":
                 PST_C++;
                 break;
@@ -147,12 +224,37 @@ public class Inventory : ScriptableObject
             case "PBH_L":
                 PBH_L++;
                 break;
+
+            //ReefCrusher Mat
+            case "RET_C":
+                RET_C ++;
+                break;
+            case "RES_C":
+                RES_C++;
+                break;
+            case "REF_R":
+                REF_R++;
+                break;
+            case "RET_R":
+                RET_R++;
+                break;
+            case "REI_E":
+                REI_E++;
+                break;
+            case "REH_L":
+                REH_L++;
+                break;
+
+
+
             case "Empty":
                 break;
+
+            
         }
     }
 
-    public bool CheckHelmet(string id)
+    public bool CheckHelmet(string id) //ajouter le RC
     {
         switch(id)
         {
@@ -166,7 +268,7 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckPauldrons(string id)
+    public bool CheckPauldrons(string id) //ajouter le RC
     {
         switch (id)
         {
@@ -180,7 +282,7 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckBelt(string id)
+    public bool CheckBelt(string id) //ajouter le RC
     {
         switch (id)
         {
@@ -194,7 +296,7 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckBoots(string id)
+    public bool CheckBoots(string id) //ajouter le RC
     {
         switch (id)
         {
@@ -208,7 +310,7 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckFishingRod(string id)
+    public bool CheckFishingRod(string id) //ajouter le RC
     {
         switch (id)
         {
@@ -222,7 +324,7 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckGems(string id)
+    public bool CheckGems(string id) //ajouter le RC
     {
         switch(id)
         {

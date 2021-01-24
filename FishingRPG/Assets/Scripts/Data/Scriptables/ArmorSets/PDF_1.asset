@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: PDF_1
   appearance: {fileID: 0}
-  itemType: 
-  upgradeState: 0
-  itemName: 
-  tier: 0
+  itemType: Helmet
+  upgradeState: 1
+  itemName: RC Helmet
+  tier: 2
   strength: 0
   constitution: 0
   dexterity: 0
   intelligence: 0
+  description: 
   components: []
   componentsQty: 

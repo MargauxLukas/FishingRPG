@@ -54,13 +54,13 @@ public class BobbingHead : MonoBehaviour
 
                     if (textureName == "NewLayer")
                     {
-                        Debug.Log("Marche sur Gravier");
+                        //Debug.Log("Marche sur Gravier");
                         //Set Materials to Gravel
                         AkSoundEngine.SetSwitch("Materials", "Gravel", gameObject);
                     }
                     else if (textureName == "NewLayer 2")
                     {
-                        Debug.Log("Marche sur Rocher");
+                        //Debug.Log("Marche sur Rocher");
                         //Set Materials to Rock
                         AkSoundEngine.SetSwitch("Materials", "Rock", gameObject);
                     }
@@ -68,14 +68,14 @@ public class BobbingHead : MonoBehaviour
                     {
                         //Set Materials to Sand
                         AkSoundEngine.SetSwitch("Materials", "Sand", gameObject);
-                        Debug.Log("Marche sur sable");
+                        //Debug.Log("Marche sur sable");
                     }
                     else
                     {
                         //Set Materials to Sand
                         AkSoundEngine.SetSwitch("Materials", "Sand", gameObject);
         
-                        Debug.Log("Nom de layer non reconnu");  //ducoup son par défaut ou pas de son comme vous voulez
+                        //Debug.Log("Nom de layer non reconnu");  //ducoup son par défaut ou pas de son comme vous voulez
                     }
 
 
