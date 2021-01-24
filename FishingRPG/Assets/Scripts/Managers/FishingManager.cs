@@ -88,6 +88,10 @@ public class FishingManager : MonoBehaviour
                                     FishingRodManager.instance.bobber.transform.position.z),
                         Quaternion.identity,
                         dynamics);
+            //Set Current Fish to SnapSnack
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
         }
         else
         {
@@ -98,6 +102,11 @@ public class FishingManager : MonoBehaviour
                                     FishingRodManager.instance.bobber.transform.position.z),
                         Quaternion.identity,
                         dynamics);
+
+            //Set Current Fish to ReefCrusher
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", FishManager.instance.currentFish.gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
         }
 
         FishManager.instance.currentFish = currentFish;
@@ -131,6 +140,9 @@ public class FishingManager : MonoBehaviour
 
     public void CancelFishing()
     {
+        //Stop sound -> Combat music
+        AkSoundEngine.PostEvent("STOP_MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+
         //Swirl Activate
         swirlsScript.DesactivateSwirl();
         swirlsScript.ActivateSwirl();
