@@ -11,6 +11,8 @@ public class SceneLoading2 : MonoBehaviour
     void Start()
     {
         StartCoroutine(LoadAsyncOperation());
+        //Stop Sound -> Stop ambiance du HUB
+        AkSoundEngine.PostEvent("STOP_AMBHub", FishManager.instance.currentFish.gameObject);
     }
 
     IEnumerator LoadAsyncOperation()
