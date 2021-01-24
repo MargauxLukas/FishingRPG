@@ -170,7 +170,7 @@ public class Rotate : MonoBehaviour
 
                         if (Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80, layer))
                         {
-                            bobberAuraCircle.transform.position = new Vector3(hit.point.x, hit.point.y + 0.7f, hit.point.z);
+                            bobberAuraCircle.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                             bobberAuraCircle.SetActive(true);
 
                             if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8)
