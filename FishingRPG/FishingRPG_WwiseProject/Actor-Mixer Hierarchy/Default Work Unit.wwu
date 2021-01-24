@@ -1222,9 +1222,22 @@
 										<ActiveSource Name="Cute Creature_9 - Dying" ID="{339B0B88-B867-4DFE-974C-C959FF1093DE}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="ReefCrusherRageSound" ID="{D157FF22-58F5-400D-AA17-7996FCBAC771}" ShortID="618758137">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="ReefCrusherRageSound" ID="{D157FF22-58F5-400D-AA17-7996FCBAC771}"/>
+									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Cute Creature_9 - Dying" ID="{6FFB7064-6E7F-4EC4-A654-4CEECE79668F}"/>
 									</GroupingBehavior>
@@ -1234,6 +1247,12 @@
 										<SwitchRef Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
 										<ItemList>
 											<ItemRef Name="Cute Creature_9 - Dying" ID="{6FFB7064-6E7F-4EC4-A654-4CEECE79668F}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="ReefCrusher" ID="{CEE19877-AE47-499F-AFEA-46C69E1EBCF7}"/>
+										<ItemList>
+											<ItemRef Name="ReefCrusherRageSound" ID="{D157FF22-58F5-400D-AA17-7996FCBAC771}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
@@ -1271,11 +1290,24 @@
 										<ActiveSource Name="Cute Creature_10 - Growl" ID="{F526509B-9083-4EF1-B7EB-7051BF833CCA}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="ReefCrusherDeathSound" ID="{BDD34E86-F724-4DC1-AA1A-E907D1E172E0}" ShortID="485664278">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
 										<ItemRef Name="Cute Creature_10 - Growl" ID="{D8213C21-8E1E-4DEA-8C4D-0DD9AE6808A7}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="ReefCrusherDeathSound" ID="{BDD34E86-F724-4DC1-AA1A-E907D1E172E0}"/>
 									</GroupingBehavior>
 								</GroupingBehaviorList>
 								<GroupingList>
@@ -1283,6 +1315,12 @@
 										<SwitchRef Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
 										<ItemList>
 											<ItemRef Name="Cute Creature_10 - Growl" ID="{D8213C21-8E1E-4DEA-8C4D-0DD9AE6808A7}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="ReefCrusher" ID="{CEE19877-AE47-499F-AFEA-46C69E1EBCF7}"/>
+										<ItemList>
+											<ItemRef Name="ReefCrusherDeathSound" ID="{BDD34E86-F724-4DC1-AA1A-E907D1E172E0}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
@@ -1320,11 +1358,24 @@
 										<ActiveSource Name="Cute Creature_11 - Growl" ID="{14F72054-D915-4662-8562-A3AD290A6508}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="ReefCrusherDamageSound" ID="{B6294084-07D2-40F7-99F4-F19CEE2BADA1}" ShortID="35621205">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
 										<ItemRef Name="Cute Creature_11 - Growl" ID="{AEB0A55C-9EE9-4643-A361-82F1D8E84D02}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="ReefCrusherDamageSound" ID="{B6294084-07D2-40F7-99F4-F19CEE2BADA1}"/>
 									</GroupingBehavior>
 								</GroupingBehaviorList>
 								<GroupingList>
@@ -1334,10 +1385,16 @@
 											<ItemRef Name="Cute Creature_11 - Growl" ID="{AEB0A55C-9EE9-4643-A361-82F1D8E84D02}"/>
 										</ItemList>
 									</Grouping>
+									<Grouping>
+										<SwitchRef Name="ReefCrusher" ID="{CEE19877-AE47-499F-AFEA-46C69E1EBCF7}"/>
+										<ItemList>
+											<ItemRef Name="ReefCrusherDamageSound" ID="{B6294084-07D2-40F7-99F4-F19CEE2BADA1}"/>
+										</ItemList>
+									</Grouping>
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
-						<SwitchContainer Name="PatternSounds" ID="{62594E5E-1673-4F58-A4E7-4123EE1DED01}" ShortID="208822438">
+						<SwitchContainer Name="PatternSounds_SnapSnack" ID="{62594E5E-1673-4F58-A4E7-4123EE1DED01}" ShortID="208822438">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
@@ -1540,6 +1597,151 @@
 								<ActiveSource Name="Special Click 11" ID="{85629C9A-853A-4BDD-A60C-5D53171F6A9E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<SwitchContainer Name="PatternSounds_ReefCrusher" ID="{ADA31C43-ADAB-449E-B85E-9BC7AE0E0E80}" ShortID="551722792">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="PatternPlayed" ID="{6CBE0BC1-373A-4AF9-BDB5-5B9F55B51400}" WorkUnitID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Catapulte2" ID="{BC7EEBE7-52E8-4102-845A-A2FB0BEC339D}" ShortID="745809227">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_8" ID="{01797942-65AF-47C7-B99E-93843F485A7C}" ShortID="99355036">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_8.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="347896685"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_8" ID="{01797942-65AF-47C7-B99E-93843F485A7C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Feinte" ID="{F97A5EF0-150D-497A-A73A-5FAF8948EB40}" ShortID="909798320">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_13 - Aggressive" ID="{366015DD-4199-4F07-9B20-99E7C5D4DA43}" ShortID="689262522">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_13 - Aggressive.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="96695506"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_13 - Aggressive" ID="{366015DD-4199-4F07-9B20-99E7C5D4DA43}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Catapulte1" ID="{6155F4EA-1B4E-40C2-83B7-15A7BD93ACBE}" ShortID="371977107">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_15 - Aggressive" ID="{21ADAE2A-0421-454F-8891-B17496729259}" ShortID="1019166410">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_15 - Aggressive.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="999590192"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_15 - Aggressive" ID="{21ADAE2A-0421-454F-8891-B17496729259}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Fuite" ID="{21B291C3-DD62-4FDF-B75A-82AF1F806D94}" ShortID="250906392">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1384B3DD-DCC7-4FF4-A99A-5D29DE4EE270}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cute Creature_14 - Growl" ID="{78B67D83-C7B7-422B-AE7E-B032F856D6B9}" ShortID="760206801">
+											<Language>SFX</Language>
+											<AudioFile>Cute Creature_14 - Growl.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="609164108"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cute Creature_14 - Growl" ID="{78B67D83-C7B7-422B-AE7E-B032F856D6B9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Fuite" ID="{21B291C3-DD62-4FDF-B75A-82AF1F806D94}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Catapulte2" ID="{BC7EEBE7-52E8-4102-845A-A2FB0BEC339D}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Catapulte1" ID="{6155F4EA-1B4E-40C2-83B7-15A7BD93ACBE}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Feinte" ID="{F97A5EF0-150D-497A-A73A-5FAF8948EB40}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Fuite" ID="{DB4C9344-0DC9-4F1A-A187-554FFC330698}"/>
+										<ItemList>
+											<ItemRef Name="Fuite" ID="{21B291C3-DD62-4FDF-B75A-82AF1F806D94}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Feinte" ID="{441FA646-5322-42B4-BAA8-4D9199024414}"/>
+										<ItemList>
+											<ItemRef Name="Feinte" ID="{F97A5EF0-150D-497A-A73A-5FAF8948EB40}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Catapulte1" ID="{C8CC0463-EB3D-4145-8E97-8D3F1AE4541E}"/>
+										<ItemList>
+											<ItemRef Name="Catapulte1" ID="{6155F4EA-1B4E-40C2-83B7-15A7BD93ACBE}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Catapulte2" ID="{45DAB4C5-195F-470F-BD97-0E661E441C2E}"/>
+										<ItemList>
+											<ItemRef Name="Catapulte2" ID="{BC7EEBE7-52E8-4102-845A-A2FB0BEC339D}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="CharacterController" ID="{ABF9EBEA-6BA0-411A-A9DC-583DA7C4E369}" ShortID="360649046">
@@ -2006,6 +2208,11 @@
 								<Sound Name="UseMoulinetSound" ID="{6A4DC7C1-0033-4C8E-B10C-FCECB1CCC32F}" ShortID="99481180">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -3175,6 +3382,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="AMB_Hub" ID="{EF378476-36E4-4CE1-8211-B03071253083}" ShortID="40684727">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>

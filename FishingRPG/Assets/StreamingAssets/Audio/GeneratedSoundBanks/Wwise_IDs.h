@@ -43,6 +43,7 @@ namespace AK
         static const AkUniqueID ONITEMCRAFTED = 4034923124U;
         static const AkUniqueID ONMOULINETON = 2022985720U;
         static const AkUniqueID ONPATTERN = 3537971040U;
+        static const AkUniqueID ONPATTERN_REEFCRUSHER = 3964568295U;
         static const AkUniqueID ONRAGE = 2833632849U;
         static const AkUniqueID ONSAVECONFIRMED = 4211819432U;
         static const AkUniqueID ONSAVESTARTED = 3303690716U;
@@ -58,6 +59,7 @@ namespace AK
         static const AkUniqueID STOP_FILTENDU = 1158833363U;
         static const AkUniqueID STOP_MOULINETON = 163187650U;
         static const AkUniqueID STOP_MSCCOMBATMUSIC = 2394504184U;
+        static const AkUniqueID STOP_WIRELAUNCHED = 1422305733U;
     } // namespace EVENTS
 
     namespace SWITCHES

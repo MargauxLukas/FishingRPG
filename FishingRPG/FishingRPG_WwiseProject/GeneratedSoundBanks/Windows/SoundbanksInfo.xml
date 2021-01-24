@@ -21,7 +21,7 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2962512532" Name="AMBHub" ObjectPath="\Events\Default Work Unit\Ambiant\AMBHub" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2962512532" Name="AMBHub" ObjectPath="\Events\Default Work Unit\Ambiant\AMBHub" DurationType="Infinite"/>
 				<Event Id="389117517" Name="AMBWind" ObjectPath="\Events\Default Work Unit\Ambiant\AMBWind" DurationType="Infinite"/>
 				<Event Id="2978800029" Name="MSCCombatMusic" ObjectPath="\Events\Default Work Unit\Ambiant\MSCCombatMusic" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2840255079" Name="OnBouchonPlop" ObjectPath="\Events\Default Work Unit\Character\Canne\OnBouchonPlop" DurationType="OneShot" DurationMin="0.966983" DurationMax="0.966983"/>
@@ -32,8 +32,8 @@
 				<Event Id="538280037" Name="OnChestOpen" ObjectPath="\Events\Default Work Unit\Character\OnChestOpen" DurationType="OneShot" DurationMin="0.992355" DurationMax="0.992355"/>
 				<Event Id="3337813975" Name="OnCursorMove" ObjectPath="\Events\Default Work Unit\UI\General UI\OnCursorMove" DurationType="OneShot" DurationMin="0.657534" DurationMax="0.657534"/>
 				<Event Id="3049358912" Name="OnCursorSelect" ObjectPath="\Events\Default Work Unit\UI\General UI\OnCursorSelect" DurationType="OneShot" DurationMin="0.589041" DurationMax="0.589041"/>
-				<Event Id="3835741630" Name="OnDammage" ObjectPath="\Events\Default Work Unit\Fishes\OnDammage" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
-				<Event Id="2598090648" Name="OnDeath" ObjectPath="\Events\Default Work Unit\Fishes\OnDeath" DurationType="OneShot" DurationMin="1.284375" DurationMax="1.284375"/>
+				<Event Id="3835741630" Name="OnDammage" ObjectPath="\Events\Default Work Unit\Fishes\OnDammage" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.500000"/>
+				<Event Id="2598090648" Name="OnDeath" ObjectPath="\Events\Default Work Unit\Fishes\OnDeath" DurationType="OneShot" DurationMin="0.000000" DurationMax="1.284375"/>
 				<Event Id="1516238081" Name="OnDecoupeEnded" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeEnded" DurationType="OneShot" DurationMin="0.373039" DurationMax="0.373039"/>
 				<Event Id="3872903362" Name="OnDecoupeStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Dépeceur\OnDecoupeStarted" DurationType="OneShot" DurationMin="1.416706" DurationMax="1.416706"/>
 				<Event Id="4016668133" Name="OnFilDeroule" ObjectPath="\Events\Default Work Unit\Character\Canne\OnFilDeroule" DurationType="Infinite"/>
@@ -51,7 +51,8 @@
 				<Event Id="4034923124" Name="OnItemCrafted" ObjectPath="\Events\Default Work Unit\UI\HUB\Artisan\OnItemCrafted" DurationType="OneShot" DurationMin="2.372517" DurationMax="2.372517"/>
 				<Event Id="2022985720" Name="OnMoulinetOn" ObjectPath="\Events\Default Work Unit\Character\Canne\OnMoulinetOn" DurationType="Infinite"/>
 				<Event Id="3537971040" Name="OnPattern" ObjectPath="\Events\Default Work Unit\Fishes\OnPattern" DurationType="OneShot" DurationMin="0.260000" DurationMax="1.858167"/>
-				<Event Id="2833632849" Name="OnRage" ObjectPath="\Events\Default Work Unit\Fishes\OnRage" DurationType="OneShot" DurationMin="1.142729" DurationMax="1.142729"/>
+				<Event Id="3964568295" Name="OnPattern_ReefCrusher" ObjectPath="\Events\Default Work Unit\Fishes\OnPattern_ReefCrusher" DurationType="OneShot" DurationMin="0.260000" DurationMax="1.858167"/>
+				<Event Id="2833632849" Name="OnRage" ObjectPath="\Events\Default Work Unit\Fishes\OnRage" DurationType="OneShot" DurationMin="0.000000" DurationMax="1.142729"/>
 				<Event Id="4211819432" Name="OnSaveConfirmed" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveConfirmed" DurationType="OneShot" DurationMin="1.162930" DurationMax="1.162930"/>
 				<Event Id="3303690716" Name="OnSaveStarted" ObjectPath="\Events\Default Work Unit\UI\HUB\Maison\OnSaveStarted" DurationType="OneShot" DurationMin="0.995716" DurationMax="0.995716"/>
 				<Event Id="667664411" Name="OnStuffEquipped" ObjectPath="\Events\Default Work Unit\UI\HUB\GoFishing\OnStuffEquipped" DurationType="OneShot" DurationMin="0.354452" DurationMax="0.686644"/>
@@ -66,6 +67,7 @@
 				<Event Id="1158833363" Name="STOP_FilTendu" ObjectPath="\Events\Default Work Unit\Character\Canne\STOP_FilTendu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="163187650" Name="STOP_MoulinetOn" ObjectPath="\Events\Default Work Unit\Character\Canne\STOP_MoulinetOn" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2394504184" Name="STOP_MSCCombatMusic" ObjectPath="\Events\Default Work Unit\Ambiant\STOP_MSCCombatMusic" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1422305733" Name="STOP_WireLaunched" ObjectPath="\Events\Default Work Unit\Character\Canne\STOP_WireLaunched" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3392704" Language="SFX">
