@@ -42611,7 +42611,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1790606142}
   - component: {fileID: 1790606143}
-  - component: {fileID: 1790606144}
   m_Layer: 5
   m_Name: Gearing UI
   m_TagString: Untagged
@@ -42764,20 +42763,6 @@ MonoBehaviour:
   advertise: 0
   needToAccept: 0
   advertissement: {fileID: 1796326737}
---- !u!114 &1790606144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790606141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca1543162aeeff4593c5fb7ff7b1166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingBar: {fileID: 0}
-  sceneIndex: 0
 --- !u!1 &1790947715
 GameObject:
   m_ObjectHideFlags: 0

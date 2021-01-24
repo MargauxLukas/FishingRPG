@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class SceneLoading : MonoBehaviour
 {
     public Image loadingBar;
-    public int sceneIndex;
 
     void Start()
     {

@@ -106,12 +106,10 @@ public class GearingManager : MonoBehaviour
                     {
                         UIManager.instance.inventory.fishTotal = 0;
                         needToAccept = false;
-                        SceneLoading.instance.sceneIndex = 0;
-                        ChangeScene(1);
+                        ChangeScene(3);
                     }
                     else
                     {
-                        SceneLoading.instance.sceneIndex = 2;
                         ChangeScene(1);
                     }
                 }
