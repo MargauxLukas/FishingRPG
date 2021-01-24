@@ -17,6 +17,10 @@ public class FirstGem : MonoBehaviour
     private Color color;
     private float valueToAdd = 0f;
 
+    public Material normalMat;
+    public Material usedMat;
+    public Material cooldownMat;
+
     public void FixedUpdate()
     {
         if (playTimerDuration)
@@ -34,17 +38,18 @@ public class FirstGem : MonoBehaviour
 
         if(playTimerCD)
         {
+            FishingRodManager.instance.slot1.visual.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material = cooldownMat;
             timer += Time.fixedDeltaTime;
             PlayerManager.instance.UpdateUIGemCD(slot, timer, cooldown);
             if (timer > cooldown)
             {
                 Debug.Log("CD finish");
+                FishingRodManager.instance.slot1.visual.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material = normalMat;
                 played = false;
                 playTimerCD = false;
                 timer = 0f;
             }
         }
-
     }
 
     public void Play(Gem gem, int i)
@@ -54,6 +59,8 @@ public class FirstGem : MonoBehaviour
             duration = gem.duration;
             cooldown = gem.cooldown;
             slot = i;
+
+            FishingRodManager.instance.slot1.visual.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material = usedMat;
 
             GemEffect();
             //mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, 0f);
