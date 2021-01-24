@@ -41,7 +41,8 @@ public class Rotate : MonoBehaviour
     private bool axisRelease = false;
 
     //New Bobber launch
-    public GameObject bobberAura;
+    public GameObject bobberAuraCircle;
+    public GameObject bobberAuraArrow;
     public Camera mainCamera;
     RaycastHit hit;
     Vector3 raycastOrigin;
@@ -49,6 +50,8 @@ public class Rotate : MonoBehaviour
 
     public Color yellowArrow;
     public Color redArrow;
+    public Color yellowCircle;
+    public Color redCircle;
 
     bool goodZone = true;  //La flêche est dans une zone correcte ?
 
@@ -135,7 +138,7 @@ public class Rotate : MonoBehaviour
                                 //AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
                                 playWireOnce = true;
                             }
-                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAura.transform.position);
+                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAuraCircle.transform.position);
                         }
                         else
                         {
@@ -144,7 +147,7 @@ public class Rotate : MonoBehaviour
 
                         isMax = false;
                         axisRelease = false;
-                        bobberAura.SetActive(false);
+                        bobberAuraCircle.SetActive(false);
                     }
 
                     if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
@@ -167,17 +170,19 @@ public class Rotate : MonoBehaviour
 
                         if (Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80, layer))
                         {
-                            bobberAura.transform.position = new Vector3(hit.point.x, hit.point.y + 0.7f, hit.point.z);
-                            bobberAura.SetActive(true);
+                            bobberAuraCircle.transform.position = new Vector3(hit.point.x, hit.point.y + 0.7f, hit.point.z);
+                            bobberAuraCircle.SetActive(true);
 
                             if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8)
                             {
-                                bobberAura.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
+                                bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = redCircle;
+                                bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
                                 goodZone = false;
                             }
                             else
                             {
-                                bobberAura.gameObject.GetComponent<SpriteRenderer>().color = yellowArrow;
+                                bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = yellowCircle;
+                                bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = yellowArrow;
                                 goodZone = true;
                             }
                         }
