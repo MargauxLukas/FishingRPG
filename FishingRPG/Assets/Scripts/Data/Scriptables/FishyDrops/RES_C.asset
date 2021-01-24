@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7ec19189c88394382f1e33a0649cdd, type: 3}
-  m_Name: RSC_
+  m_Name: RES_C
   m_EditorClassIdentifier: 
-  ID: RFI_
+  ID: RES_C
   appearance: {fileID: 21300000, guid: 39ce9dcf0fb74bf479f5ba201d385759, type: 3}
   type: ReefCrusher Scale
-  rarity: 
-  dropRate: 0
-  description: 
+  rarity: Common
+  dropRate: 27
+  description: d

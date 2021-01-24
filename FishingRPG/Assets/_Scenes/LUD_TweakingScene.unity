@@ -38482,6 +38482,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6465959635676634881, guid: d147a0c208d22854cb3ff02cef1144db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465959635676634881, guid: d147a0c208d22854cb3ff02cef1144db, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7041526695537364846, guid: d147a0c208d22854cb3ff02cef1144db, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -47814,8 +47822,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0
-  m_VerticalDamping: 0
+  m_HorizontalDamping: 0.2
+  m_VerticalDamping: 0.2
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -52856,7 +52864,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658380145223759212}
-  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
   m_LocalPosition: {x: -0.313, y: 1.198, z: -0.075}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -53419,6 +53427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 0}
   fishyFishList:
+  - {fileID: 11400000, guid: bcbc63597a912ba469bdbec1e419af0a, type: 2}
   - {fileID: 11400000, guid: bcbc63597a912ba469bdbec1e419af0a, type: 2}
   helmetList:
   - {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
@@ -56331,7 +56340,7 @@ MonoBehaviour:
   playerStats: {fileID: 5481633265063244155}
   playerGem: {fileID: 2193878054665537298}
   playerInventory: {fileID: 2193878054665537299}
-  canMove: 0
+  canMove: 1
   chestGUI: {fileID: 3512752191538850124}
   inventoryGUI: {fileID: 3790161665230785615}
   fishStockGUI: {fileID: 1518409073332035988}
@@ -56883,6 +56892,7 @@ MonoBehaviour:
   bobber: {fileID: 5481633264045395401}
   bobberPosition: {fileID: 5481633264472834511}
   fishingRodGameObject: {fileID: 5481633263693278086}
+  anchorGameObject: {fileID: 0}
   checkWaterScript: {fileID: 5481633264045395406}
   bendFishingRod: {fileID: 658380144384968347}
   pointC: {fileID: 6158977280354247465}
@@ -86904,7 +86914,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3611882892504900693}
-  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
   m_LocalPosition: {x: -0.3129995, y: 1.1979997, z: -0.07499933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

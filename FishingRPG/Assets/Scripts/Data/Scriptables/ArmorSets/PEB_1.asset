@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8576b283468e6c4994a3dc4b6949d61, type: 3}
+  m_Name: PEB_1
+  m_EditorClassIdentifier: 
+  ID: PEB_1
+  appearance: {fileID: 21300000, guid: 7c40bb211a4c95b448289b85bcb1dfae, type: 3}
+  itemType: Boots
+  upgradeState: 1
+  itemName: Pequessivo Boots
+  tier: 1
+  strength: 2
+  constitution: 0
+  dexterity: 2
+  intelligence: 1
+  description: Never wear this inside or you will scratch the floor. - 1st rule of
+    the FellGiant Family
+  components:
+  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
+  - {fileID: 11400000, guid: b8af79a582570ec40a4302eddd0fe86d, type: 2}
+  componentsQty: 0100000001000000

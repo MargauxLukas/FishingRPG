@@ -31034,6 +31034,7 @@ MonoBehaviour:
   firstSelectedButton: {fileID: 1888179555}
   fishyFishList:
   - {fileID: 11400000, guid: bcbc63597a912ba469bdbec1e419af0a, type: 2}
+  - {fileID: 11400000, guid: dd7145c2ef0ae81489245baf41c79695, type: 2}
   helmetList:
   - {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
   pauldronsList:

@@ -10,9 +10,12 @@ public class PlayerInventory : MonoBehaviour
     {
         switch(id)
         {
-            case "PQS_1":
-                inventory.PQS_1++;
+            case "SPS":
+                inventory.SPS++;
                 break;
+            case "REC_1":
+                inventory.REC_1++;
+                break;            
             default:
                 Debug.Log("Don't find any case with id :" + id);
                 break;

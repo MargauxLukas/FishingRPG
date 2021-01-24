@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760cca5a8ba8c64409cc545e95b7fe7e, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  fishTotal: 0
-  currentFishOnMe: 0
+  fishTotal: 3
+  currentFishOnMe: 3
   fishNumberOnStock: 0
-  PQS_1: 0
-  PFS_1: 0
+  SPS: 0
+  REC_1: 3
   equipedHelmet: {fileID: 0}
   equipedShoulders: {fileID: 0}
   equipedBelt: {fileID: 0}
@@ -25,19 +25,26 @@ MonoBehaviour:
   equipedGem1: {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
   equipedGem2: {fileID: 0}
   equipedGem3: {fileID: 0}
-  PST_C: 0
-  PSC_C: 0
-  PFL_R: 0
-  PFI_E: 0
-  PBH_L: 0
+  PST_C: 11
+  PSC_C: 7
+  PFL_R: 5
+  PFI_E: 4
+  PBH_L: 3
   PEH_1: 0
   PCH_1: 0
   PBE_1: 0
   PBO_1: 0
-  AEH_1: 0
-  ACH_1: 0
-  ABE_1: 0
-  ABO_1: 0
-  AFR_1: 0
+  RET_C: 0
+  RES_C: 0
+  REF_R: 4
+  RET_R: 0
+  REI_E: 1
+  REH_L: 5
+  REH_1: 0
+  REP_1: 0
+  HEBE_1: 0
+  REB_1: 0
   PFR_1: 1
+  REFI_1: 0
   GPE_1: 1
+  GRE_1: 0
