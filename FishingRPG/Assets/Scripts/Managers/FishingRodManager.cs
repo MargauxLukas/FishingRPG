@@ -204,7 +204,6 @@ public class FishingRodManager : MonoBehaviour
         {
             if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
             {
-
                 speedAnimation += 1f * Time.fixedDeltaTime;
                 if(speedAnimation > 1f)
                 {

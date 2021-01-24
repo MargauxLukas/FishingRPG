@@ -152,6 +152,8 @@ public class FishingManager : MonoBehaviour
         }
 
         readyToFish = false;
+
+        FishingRodManager.instance.fishingLine.isTaken = false;
         FishingRodManager.instance.BobberBack();
         FishingRodManager.instance.fishingLine.fCurrent = 0f;
         FishingRodManager.instance.distanceCP = 0f;

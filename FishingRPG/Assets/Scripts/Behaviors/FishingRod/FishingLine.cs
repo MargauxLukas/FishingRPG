@@ -28,6 +28,11 @@ public class FishingLine : MonoBehaviour
     public Transform playerPoint;     //Point allant de 0 à 1 entre le joueur et le niveau de l'eau sous ses pieds
     public Transform fishPoint;		//Point allant de 0 à 1 entre le poisson et le niveau de l'eau sous le joueur
 
+    public void Update()
+    {
+       
+    }
+
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
@@ -68,8 +73,6 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-
-
             currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
             UpdateJaugeTension();
             //Play Sound
