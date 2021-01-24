@@ -111,7 +111,6 @@ public class GearingManager : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("pouet");
                         SceneLoading.instance.sceneIndex = 2;
                         ChangeScene(1);
                     }

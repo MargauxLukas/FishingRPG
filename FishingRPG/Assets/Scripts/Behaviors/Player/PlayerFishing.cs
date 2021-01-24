@@ -89,6 +89,7 @@ public class PlayerFishing : MonoBehaviour
             if (Input.GetAxis("Left Trigger") > 0.1f)   //LT
             {
                 PlayerManager.instance.IsBlockingLine();
+
             }
 
             if (Input.GetAxis("Right Trigger") < 0.1f)
