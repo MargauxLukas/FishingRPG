@@ -22,12 +22,11 @@ public class LinePlayerPointLocation : MonoBehaviour
             r = 0f;
         }
 
-        /*
-        if(r > 1)
+        else if(r > 1)
         {
             r = 1f;
         }
-        */
+        
         Debug.Log("PP : " + r);
 
         playerPointY = upPoint.position.y * (1 - r) + downPoint.position.y * r;
