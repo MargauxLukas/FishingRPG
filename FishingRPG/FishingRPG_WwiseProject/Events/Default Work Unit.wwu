@@ -287,6 +287,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="STOP_WireLaunched" ID="{B761BA47-8A4E-4B2F-A2D4-DF33089B7986}">
+									<ChildrenList>
+										<Action Name="" ID="{8FC60863-77AA-47D6-90B3-0EAD57CEEDBA}" ShortID="1001159860">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="WireLaunchedSound" ID="{6BDA15DF-F76C-4486-9BAF-3FEF49DC7182}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="OnCharacterWalk" ID="{BB8EDA30-F4BA-4122-AF53-2C7176B4BEA4}">
@@ -489,7 +503,18 @@
 								<Action Name="" ID="{EC2F45CA-7DCB-4B75-8443-53935DD816DE}" ShortID="736347357">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="PatternSounds" ID="{62594E5E-1673-4F58-A4E7-4123EE1DED01}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+											<ObjectRef Name="PatternSounds_SnapSnack" ID="{62594E5E-1673-4F58-A4E7-4123EE1DED01}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OnPattern_ReefCrusher" ID="{965DD403-C20B-4A82-BA2B-0BDF47CD1951}">
+							<ChildrenList>
+								<Action Name="" ID="{C9206D51-6396-4E5F-AC89-5AF5DA4CA853}" ShortID="972947433">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PatternSounds_ReefCrusher" ID="{ADA31C43-ADAB-449E-B85E-9BC7AE0E0E80}" WorkUnitID="{CA87322F-C36C-4BCB-9735-B6E456EA89DE}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
