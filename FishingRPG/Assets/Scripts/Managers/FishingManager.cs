@@ -92,9 +92,10 @@ public class FishingManager : MonoBehaviour
                         dynamics);
             isSnap = true;
             //Set Current Fish to SnapSnack
-            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
             //Play Sound
-            AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+            AkSoundEngine.PostEvent("MSCCombatMusic", gameObject);
+            Debug.Log("Ceci est un Snap");
         }
         else
         {
@@ -107,9 +108,10 @@ public class FishingManager : MonoBehaviour
                         dynamics);
             isSnap = false;
             //Set Current Fish to ReefCrusher
-            AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", FishManager.instance.currentFish.gameObject);
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", gameObject);
             //Play Sound
-            AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+            AkSoundEngine.PostEvent("MSCCombatMusic", gameObject);
+            Debug.Log("Ceci est un ReefCrusher");
         }
 
         FishManager.instance.currentFish = currentFish;

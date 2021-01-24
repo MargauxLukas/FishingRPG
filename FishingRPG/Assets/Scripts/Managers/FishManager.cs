@@ -165,6 +165,9 @@ public class FishManager : MonoBehaviour
 
         yield return new WaitForSeconds(currentFishBehavior.maxTimeAerial);
         splash.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+        //Play Sound
+        AkSoundEngine.PostEvent("OnFishSlammed", gameObject);
+
         StartCoroutine(SplashCoroutine());
         AerialDamage();
     }
