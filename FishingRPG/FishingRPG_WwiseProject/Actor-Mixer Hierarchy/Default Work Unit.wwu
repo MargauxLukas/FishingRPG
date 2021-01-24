@@ -2006,6 +2006,11 @@
 								<Sound Name="UseMoulinetSound" ID="{6A4DC7C1-0033-4C8E-B10C-FCECB1CCC32F}" ShortID="99481180">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -3175,6 +3180,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="AMB_Hub" ID="{EF378476-36E4-4CE1-8211-B03071253083}" ShortID="40684727">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5B427A0F-31A8-4041-B89D-0E3E6E5603D8}"/>

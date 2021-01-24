@@ -21,7 +21,7 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2962512532" Name="AMBHub" ObjectPath="\Events\Default Work Unit\Ambiant\AMBHub" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2962512532" Name="AMBHub" ObjectPath="\Events\Default Work Unit\Ambiant\AMBHub" DurationType="Infinite"/>
 				<Event Id="389117517" Name="AMBWind" ObjectPath="\Events\Default Work Unit\Ambiant\AMBWind" DurationType="Infinite"/>
 				<Event Id="2978800029" Name="MSCCombatMusic" ObjectPath="\Events\Default Work Unit\Ambiant\MSCCombatMusic" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2840255079" Name="OnBouchonPlop" ObjectPath="\Events\Default Work Unit\Character\Canne\OnBouchonPlop" DurationType="OneShot" DurationMin="0.966983" DurationMax="0.966983"/>

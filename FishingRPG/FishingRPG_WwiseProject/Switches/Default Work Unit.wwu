@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}" SchemaVersion="94">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{57370493-61E9-4DA8-8924-3DC2D535BAF4}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Materials" ID="{444ED8C7-AAA0-4A74-8056-BD237063755A}">
+					<ChildrenList>
+						<Switch Name="Sand" ID="{703E0BF5-05FE-4993-85B9-4D751EA3A171}"/>
+						<Switch Name="Rock" ID="{78D7D99B-C5D2-4D02-B123-B198AF0D4BA0}"/>
+						<Switch Name="Gravel" ID="{6DE2AF6C-92BC-4B0F-80E8-E02291C98B42}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="GemEquipped" ID="{D1B1B8B3-7FB5-4184-99BA-EDD627322C95}">
+					<ChildrenList>
+						<Switch Name="SnapSnack" ID="{C41971DA-E793-43A7-848D-CD77E496895B}"/>
+						<Switch Name="ReefCrusher" ID="{3AF170C1-12A3-402C-A936-C95FB651A41B}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="CurrentFishInCombat" ID="{CB635CA0-D3FA-4074-9AAE-7A0A0543763A}">
+					<ChildrenList>
+						<Switch Name="SnapSnack" ID="{A3852E04-D8C3-4F33-921C-5E193BF1124B}"/>
+						<Switch Name="ReefCrusher" ID="{CEE19877-AE47-499F-AFEA-46C69E1EBCF7}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="PatternPlayed" ID="{6CBE0BC1-373A-4AF9-BDB5-5B9F55B51400}">
+					<ChildrenList>
+						<Switch Name="Catapulte1" ID="{C8CC0463-EB3D-4145-8E97-8D3F1AE4541E}"/>
+						<Switch Name="Fuite" ID="{DB4C9344-0DC9-4F1A-A187-554FFC330698}"/>
+						<Switch Name="Feinte" ID="{441FA646-5322-42B4-BAA8-4D9199024414}"/>
+						<Switch Name="Catapulte2" ID="{45DAB4C5-195F-470F-BD97-0E661E441C2E}"/>
+						<Switch Name="RageMinuscule" ID="{77939B4C-FB76-4F8A-851B-01A0FC9B924A}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>
