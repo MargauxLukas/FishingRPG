@@ -2498,7 +2498,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658380143914319906}
-  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
   m_LocalPosition: {x: -0.313, y: 1.198, z: -0.075}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -2555,6 +2555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingBobbingSpeed: 6
   bobbingAmount: 0.1
+  playerManager: {fileID: 0}
   playSound: 1
   terrainTextureDetector: {fileID: 0}
 --- !u!114 &658380143914319904
@@ -11355,6 +11356,7 @@ MonoBehaviour:
   aerialExitWaterZ: 0
   aerialZ: 0
   aerialEnterWaterZ: 0
+  splash: {fileID: 0}
   sPercent: 1
   sePercent: 2
   esPercent: 6
@@ -12688,6 +12690,7 @@ MonoBehaviour:
   playerStats: {fileID: 5481633264359392309}
   playerGem: {fileID: 2193878055570190940}
   playerInventory: {fileID: 2193878055570190941}
+  canMove: 1
   chestGUI: {fileID: 3512752190834973698}
   inventoryGUI: {fileID: 3790161666138061057}
   fishStockGUI: {fileID: 1518409071889994970}
@@ -13632,6 +13635,8 @@ MonoBehaviour:
   mulRotX: 0
   mulRotY: 0
   mulRotZ: 0
+  huntUI: {fileID: 0}
+  fishingUI: {fileID: 0}
 --- !u!114 &2193878056062831890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41879,7 +41884,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3611882893879857435}
-  m_LocalRotation: {x: 0.032871842, y: 0.015908135, z: -0.0005232788, w: 0.99933285}
+  m_LocalRotation: {x: 0.032871865, y: 0.0159081, z: -0.00052327797, w: 0.99933285}
   m_LocalPosition: {x: -0.3129995, y: 1.1979997, z: -0.07499933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -42010,6 +42015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingBobbingSpeed: 5
   bobbingAmount: 0.05
+  playerManager: {fileID: 0}
   playSound: 1
   terrainTextureDetector: {fileID: 2193878054604681084}
 --- !u!114 &3611882893879857436
@@ -44906,7 +44912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891026130358990657}
   m_LocalRotation: {x: -0.5425839, y: 0.45343438, z: 0.45343438, w: 0.5425839}
-  m_LocalPosition: {x: -0.33, y: 0.2, z: 0.26}
+  m_LocalPosition: {x: -0.33, y: 0.1, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6306688798019915727}
@@ -48428,15 +48434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8e6cf4f0bdc984795134b3c149a6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swirls:
-  - {fileID: 7836900527713313783}
-  - {fileID: 7836900528298194711}
-  - {fileID: 7836900529118880851}
-  - {fileID: 7836900528990147475}
-  - {fileID: 7836900528886417720}
-  - {fileID: 7836900528564429288}
-  - {fileID: 7836900528961927493}
-  - {fileID: 7836900527638087362}
+  swirlsSnap: []
+  swirlsReef: []
   nbSwirls: 2
 --- !u!1 &7836900527934953252
 GameObject:

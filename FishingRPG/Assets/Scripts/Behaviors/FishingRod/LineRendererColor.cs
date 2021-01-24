@@ -48,7 +48,7 @@ public class LineRendererColor : MonoBehaviour
 
         lineRenderer.material.SetColor("_Color", matCol);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
 
         StartCoroutine(UpdateColor(FishingRodManager.instance.fishingLine.currentTension / FishingRodManager.instance.fishingLine.maxTension));
    }
