@@ -159,6 +159,7 @@ public class FishingManager : MonoBehaviour
             FishManager.instance.currentFishBehavior.fishPattern.ResetOncePlay();
             if (FishManager.instance.currentFishBehavior.canCollectTheFish)
             {
+                AkSoundEngine.PostEvent("OnFishPickUp", gameObject);
                 PlayerManager.instance.playerInventory.AddThisFishToInventory(FishManager.instance.currentFishBehavior.fishyFiche.ID);
                 FishManager.instance.currentFishBehavior.canCollectTheFish = false;
             }

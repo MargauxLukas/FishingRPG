@@ -135,6 +135,8 @@ public class PlayerManager : MonoBehaviour
         combatGUI.SetActive(false);
         EventSystem.current.SetSelectedGameObject(firstChestSelected);
         isOnMenu = true;
+        //Play Sound
+        AkSoundEngine.PostEvent("OnChestOpen", gameObject);
     }
 
     public void LeaveChestMenu()
@@ -144,6 +146,8 @@ public class PlayerManager : MonoBehaviour
         UpdateStats();
         UpdateGem();
         isOnMenu = false;
+        //Play Sound
+        AkSoundEngine.PostEvent("OnChestClosed", gameObject);
     }
 
     public void OpenInventoryMenu()
