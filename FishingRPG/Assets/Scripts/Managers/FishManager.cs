@@ -15,12 +15,6 @@ public class FishManager : MonoBehaviour
     [Header("Material Aerial")]
     public ExhaustedDebug exhaustedDebug;
 
-    [Header("Text")]
-    public Text staminaText;
-    public Text lifeText;
-    public Image staminaJauge;
-    public Image lifeJauge;
-
     [Header("Aerial variables")]
     [HideInInspector] public bool isAerial = false;
     [HideInInspector] public bool isFelling = false;
@@ -153,7 +147,7 @@ public class FishManager : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
 
         currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeFellingAerial(currentFishBehavior.maxTimeAerial, currentFish.transform.position.y - aerialExitWaterY, aerialY);
-        Debug.Log("Abattage : " + currentFishBehavior.maxTimeAerial);
+        //Debug.Log("Abattage : " + currentFishBehavior.maxTimeAerial);
 
         aerialExitWaterX = currentFish.transform.position.x;
         aerialExitWaterY = currentFish.transform.position.y;
@@ -198,7 +192,7 @@ public class FishManager : MonoBehaviour
             isFelling = false;
             currentFishBehavior.isFellDown = false;
             NotExtenued();
-            staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
             //ChangeStaminaText();
         }
         else
@@ -216,7 +210,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber()/60;
-            staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
             //ChangeStaminaText();
         }
 
@@ -229,7 +223,7 @@ public class FishManager : MonoBehaviour
         if (currentFishBehavior.currentStamina > 0)
         {
             currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine()/60;
-            staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
         }
 
         currentFishBehavior.CheckStamina();
@@ -243,7 +237,7 @@ public class FishManager : MonoBehaviour
             if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
             {
                 currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.50f) / 45;
-                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
             }
 
             if (currentFishBehavior.currentStamina > currentFishBehavior.fishyFiche.stamina)
@@ -255,7 +249,7 @@ public class FishManager : MonoBehaviour
                 currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
                 currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
                 NotExtenued();
-                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
             }
         }
     }
@@ -268,12 +262,12 @@ public class FishManager : MonoBehaviour
             if (currentFishBehavior.currentStamina < currentFishBehavior.fishyFiche.stamina)
             {
                 currentFishBehavior.currentStamina += (currentFishBehavior.fishyFiche.stamina * 0.02f) / 60;
-                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
             }
             else
             {
                 currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
-                staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
             }
         }
     }
@@ -284,7 +278,7 @@ public class FishManager : MonoBehaviour
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetFellingDamage();
             FishManager.instance.currentFishBehavior.animator.SetTrigger("isDamage");
-            lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
+            LifeStaminaUI.instance.UpdateLife(currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life);
             //Set Switch
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
             //Play Sound
@@ -300,7 +294,7 @@ public class FishManager : MonoBehaviour
         {
             currentFishBehavior.currentLife -= UtilitiesManager.instance.GetAerialRebondDamage();
             FishManager.instance.currentFishBehavior.animator.SetTrigger("isDamage");
-            lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
+            LifeStaminaUI.instance.UpdateLife(currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life);
             // Set Switch
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
             //Play Sound
@@ -330,11 +324,11 @@ public class FishManager : MonoBehaviour
 
     public void ChangeStaminaJauge()
     {
-        staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+        LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
     }
 
     public void ChangeLifeJauge()
     {
-        lifeJauge.fillAmount = currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life;
+        LifeStaminaUI.instance.UpdateLife(currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life);
     }
 }

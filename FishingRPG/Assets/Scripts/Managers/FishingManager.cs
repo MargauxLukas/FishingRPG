@@ -18,6 +18,8 @@ public class FishingManager : MonoBehaviour
     public GameObject reefPrefab;
     public Transform dynamics;
 
+    public GameObject staminaAndLifeJauge;
+
     public GameObject currentFish;
     public GameObject finishFishDestination;
     public GameObject midFishDestination;
@@ -138,8 +140,7 @@ public class FishingManager : MonoBehaviour
         FishManager.instance.isAerial = false;
         FishingRodManager.instance.fishDistanceCP.gameObject.SetActive(true);
         PlayerManager.instance.cfvz.fishCheck = currentFish.transform;
-        FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(true);
-        FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(true);
+        staminaAndLifeJauge.SetActive(true);
         PlayerManager.instance.FishingCanStart();
         //FishingRodManager.instance.fishingLine.cableComponent.InitCableParticles();
     }
@@ -166,8 +167,7 @@ public class FishingManager : MonoBehaviour
 
         if (readyToFish)
         {
-            FishManager.instance.lifeJauge.transform.parent.gameObject.SetActive(false);
-            FishManager.instance.staminaJauge.transform.parent.gameObject.SetActive(false);
+            staminaAndLifeJauge.SetActive(false);
             FishManager.instance.currentFishBehavior.fishPattern.ResetOncePlay();
 
             if (FishManager.instance.currentFishBehavior.canCollectTheFish)
