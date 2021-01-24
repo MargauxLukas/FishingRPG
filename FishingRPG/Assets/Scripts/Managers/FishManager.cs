@@ -35,6 +35,8 @@ public class FishManager : MonoBehaviour
     [HideInInspector] public float aerialZ;
     [HideInInspector] public float aerialEnterWaterZ = 0f;
 
+    public GameObject splash;
+
     [Header("Rotation Percent")]
     public int sPercent;
     public int sePercent;
@@ -126,7 +128,16 @@ public class FishManager : MonoBehaviour
         isFelling = false;
         currentFishBehavior.isFellDown = false;
         AerialRebondDamage();
+        splash.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+        StartCoroutine(SplashCoroutine());
         currentFishBehavior.timerAerial = 0f;
+    }
+
+    IEnumerator SplashCoroutine()
+    {
+        splash.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        splash.SetActive(false);
     }
 
     public void FellAerial()
@@ -153,6 +164,8 @@ public class FishManager : MonoBehaviour
         currentFishBehavior.timerAerial = 0f;
 
         yield return new WaitForSeconds(currentFishBehavior.maxTimeAerial);
+        splash.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+        StartCoroutine(SplashCoroutine());
         AerialDamage();
     }
 
@@ -170,18 +183,28 @@ public class FishManager : MonoBehaviour
     //Recuperation d'Endurance après Aerial
     public void FishRecuperation()
     {
-        currentFishBehavior.exhausted = false;
-        currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
-        currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
-        currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
-        currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
-        currentFishBehavior.nbRebond = 1;
-        isAerial = false;
-        isFelling = false;
-        currentFishBehavior.isFellDown = false;
-        NotExtenued();
-        staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
-        //ChangeStaminaText();
+        if (!currentFishBehavior.isDead)
+        {
+            currentFishBehavior.exhausted = false;
+            currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
+            currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
+            currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
+            currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+            currentFishBehavior.nbRebond = 1;
+            isAerial = false;
+            isFelling = false;
+            currentFishBehavior.isFellDown = false;
+            NotExtenued();
+            staminaJauge.fillAmount = currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina;
+            //ChangeStaminaText();
+        }
+        else
+        {
+            currentFishBehavior.nbRebond = 1;
+            isAerial = false;
+            isFelling = false;
+            currentFishBehavior.isFellDown = false;
+        }
     }
 
     //Perte d'endurance lorsque la ligne est bloqué

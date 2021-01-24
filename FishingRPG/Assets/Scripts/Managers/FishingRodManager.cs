@@ -65,6 +65,10 @@ public class FishingRodManager : MonoBehaviour
     public float mulRotY = 0f;
     public float mulRotZ = 0f;
 
+    [Header("UI HELPER")]
+    public GameObject huntUI;
+    public GameObject fishingUI;
+
 
     private void Awake()
     {
@@ -126,6 +130,9 @@ public class FishingRodManager : MonoBehaviour
 
         PlayerManager.instance.DisablePlayerMovement();
         PlayerManager.instance.EnableFishMovement();
+
+        huntUI.SetActive(false);
+        fishingUI.SetActive(true);
     }
 
     public void BobberBack()
@@ -144,6 +151,8 @@ public class FishingRodManager : MonoBehaviour
         CameraManager.instance.FreeCameraEnable();
         PlayerManager.instance.EnablePlayerMovement();
         PlayerManager.instance.DisableFishMovement();
+        fishingUI.SetActive(false);
+        huntUI.SetActive(true);
 
         //Debug.Log("isMax false");
         fishingRodPivot.GetComponent<Rotate>().ResetRotation();
@@ -225,6 +234,7 @@ public class FishingRodManager : MonoBehaviour
         }
         else if (fishingLine.isBlocked)
         {
+            animFishingRod.SetFloat("SpeedMultiplier", 0);
             if (distanceCP > fishingLine.fCurrent)
             {
                 FishManager.instance.DownStamina();

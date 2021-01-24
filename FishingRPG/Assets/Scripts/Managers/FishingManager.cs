@@ -88,7 +88,7 @@ public class FishingManager : MonoBehaviour
         else
         {
             //Fish Instantiate
-            currentFish = Instantiate(snapPrefab,
+            currentFish = Instantiate(reefPrefab,
                         new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
                                     FishingRodManager.instance.bobber.transform.position.y - 6f,
                                     FishingRodManager.instance.bobber.transform.position.z),
@@ -129,7 +129,7 @@ public class FishingManager : MonoBehaviour
     {
         //Swirl Activate
         swirlsScript.DesactivateSwirl();
-        swirlsScript.ChooseSwirl(swirlsScript.nbSwirls);
+        swirlsScript.ActivateSwirl();
 
         //DesactivateLine() 
         needToWait = 0f;

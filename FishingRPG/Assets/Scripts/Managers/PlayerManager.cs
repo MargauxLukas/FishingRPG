@@ -14,6 +14,9 @@ public class PlayerManager : MonoBehaviour
     public PlayerStats playerStats;
     public PlayerGem playerGem;
     public PlayerInventory playerInventory;
+    public bool canMove = false;
+
+    [Space]
 
     public GameObject chestGUI;
     public GameObject inventoryGUI;
@@ -97,21 +100,25 @@ public class PlayerManager : MonoBehaviour
     public void DisablePlayerMovement()
     {
         player.GetComponent<PlayerMovement>().enabled = false;
+        canMove = false;
     }
 
     public void EnablePlayerMovement()
     {
         player.GetComponent<PlayerMovement>().enabled = true;
+        canMove = true;
     }
 
     public void DisableFishMovement()
     {
+        player.GetComponent<PlayerFishing>().isReadyToFish = false;
         player.GetComponent<PlayerFishing>().enabled = false;
     }
 
     public void EnableFishMovement()
     {
         player.GetComponent<PlayerFishing>().enabled = true;
+
     }
 
     public void FishingCanStart()
@@ -238,8 +245,9 @@ public class PlayerManager : MonoBehaviour
 
     public void IsTakingLineBobber()
     {
+        FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 1);
         FishingRodManager.instance.bobber.transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, FishingRodManager.instance.bobber.transform.position.y, FishingRodManager.instance.pointC.position.z));
-        FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 1f * Time.deltaTime;
+        FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 3f * Time.deltaTime;
     }
 
     public void IsAerial()
