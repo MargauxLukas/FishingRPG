@@ -45,7 +45,11 @@ public class FishingManager : MonoBehaviour
     {
         if (isOnWater && !readyToFish && isOnSwirl)
         {
-            if(needToWait == 0f){needToWait = SetTimer();}
+            if(needToWait == 0f)
+            {
+                //CameraManager.instance.CameraLookAtGameObject(FishingRodManager.instance.bobber);
+                needToWait = SetTimer();
+            }
 
             timer += Time.fixedDeltaTime;
 
@@ -152,6 +156,8 @@ public class FishingManager : MonoBehaviour
         }
 
         readyToFish = false;
+
+        FishingRodManager.instance.fishingLine.isTaken = false;
         FishingRodManager.instance.BobberBack();
         FishingRodManager.instance.fishingLine.fCurrent = 0f;
         FishingRodManager.instance.distanceCP = 0f;

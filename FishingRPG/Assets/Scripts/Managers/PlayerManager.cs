@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerStats playerStats;
     public PlayerGem playerGem;
     public PlayerInventory playerInventory;
-    public bool canMove = false;
+    public bool canMove = true;
 
     [Space]
 
