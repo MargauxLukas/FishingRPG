@@ -11,6 +11,8 @@ public class SceneLoading : MonoBehaviour
     void Start()
     {
         StartCoroutine(LoadAsyncOperation());
+        //Stop Sound -> Stop ambiance explo
+        AkSoundEngine.PostEvent("STOP_AMBWind", FishManager.instance.currentFish.gameObject);
     }
 
     IEnumerator LoadAsyncOperation()

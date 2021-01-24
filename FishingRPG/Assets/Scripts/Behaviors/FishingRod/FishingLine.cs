@@ -28,6 +28,8 @@ public class FishingLine : MonoBehaviour
     public Transform playerPoint;     //Point allant de 0 à 1 entre le joueur et le niveau de l'eau sous ses pieds
     public Transform fishPoint;		//Point allant de 0 à 1 entre le poisson et le niveau de l'eau sous le joueur
 
+    private bool tensionOnce = false;
+
     public void Update()
     {
        
@@ -52,8 +54,15 @@ public class FishingLine : MonoBehaviour
         {
             currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 50;
             UpdateJaugeTension();
-            //Play Sound
-            //AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+
+            if (!tensionOnce)
+            {
+
+                //Play Sound
+                AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+                tensionOnce = true;
+            }
+           
 
             if (currentTension >= maxTension)
             {
@@ -75,8 +84,14 @@ public class FishingLine : MonoBehaviour
         {
             currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
             UpdateJaugeTension();
-            //Play Sound
-            //AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+            
+            if (!tensionOnce)
+            {
+
+                //Play Sound
+                AkSoundEngine.PostEvent("OnFilTendu", gameObject);
+                tensionOnce = true; 
+            }
 
             if (currentTension >= maxTension )
             {
@@ -93,6 +108,9 @@ public class FishingLine : MonoBehaviour
 
     public void TensionDown()
     {
+        tensionOnce = false;
+        //Stop Sound
+        AkSoundEngine.PostEvent("STOP_FilTendu", gameObject);
 
         if (currentTension > 0f)
         {

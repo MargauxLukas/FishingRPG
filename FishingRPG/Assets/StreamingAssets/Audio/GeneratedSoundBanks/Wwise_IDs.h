@@ -13,7 +13,9 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMBHUB = 2962512532U;
         static const AkUniqueID AMBWIND = 389117517U;
+        static const AkUniqueID MSCCOMBATMUSIC = 2978800029U;
         static const AkUniqueID ONBOUCHONPLOP = 2840255079U;
         static const AkUniqueID ONBUILDINGLEFT = 1031692393U;
         static const AkUniqueID ONBUILDINGOPEN = 3452353930U;
@@ -50,6 +52,12 @@ namespace AK
         static const AkUniqueID SPLFROG = 1146909130U;
         static const AkUniqueID SPLGULL = 2381105352U;
         static const AkUniqueID SPLSEA = 728211669U;
+        static const AkUniqueID STOP_AMBHUB = 1669970085U;
+        static const AkUniqueID STOP_AMBWIND = 471591546U;
+        static const AkUniqueID STOP_FILDEROULE = 161355731U;
+        static const AkUniqueID STOP_FILTENDU = 1158833363U;
+        static const AkUniqueID STOP_MOULINETON = 163187650U;
+        static const AkUniqueID STOP_MSCCOMBATMUSIC = 2394504184U;
     } // namespace EVENTS
 
     namespace SWITCHES

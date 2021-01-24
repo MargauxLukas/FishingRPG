@@ -72,6 +72,8 @@ public class PlayerManager : MonoBehaviour
     public Image gem2Equiped;
     public Image gem3Equiped;
 
+    public bool MoulinetOnce =false;
+
 
 
     private void Awake()
@@ -241,6 +243,15 @@ public class PlayerManager : MonoBehaviour
     {
         FishingRodManager.instance.fishingLine.isTaken = true;
         FishingRodManager.instance.fishingLine.textTaken.color = Color.green;
+        //Play Sound -> Moulinet sound
+        if (!MoulinetOnce) { 
+            
+            AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
+            MoulinetOnce = true;
+        }
+        
+        
+        
     }
 
     public void IsTakingLineBobber()
@@ -248,6 +259,8 @@ public class PlayerManager : MonoBehaviour
         FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 1);
         FishingRodManager.instance.bobber.transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, FishingRodManager.instance.bobber.transform.position.y, FishingRodManager.instance.pointC.position.z));
         FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 3f * Time.deltaTime;
+
+        
     }
 
     public void IsAerial()
@@ -298,6 +311,9 @@ public class PlayerManager : MonoBehaviour
         {
             FishingRodManager.instance.fishingLine.isTaken = false;
             FishingRodManager.instance.fishingLine.textTaken.color = Color.red;
+            //Stop Sound -> Moulinet sound
+            AkSoundEngine.PostEvent("STOP_MoulinetOn", gameObject);
+            MoulinetOnce = false;
         }
     }
 
