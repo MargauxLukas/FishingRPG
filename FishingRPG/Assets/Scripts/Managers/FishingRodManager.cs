@@ -212,8 +212,7 @@ public class FishingRodManager : MonoBehaviour
                 }
                 AnimationReelUp(speedAnimation);
 
-                //Play Sound
-                //AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
+               
                 
                 fishingLine.FCurrentDown();
 

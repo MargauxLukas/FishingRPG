@@ -309,7 +309,7 @@ public class PlayerManager : MonoBehaviour
         {
             FishingRodManager.instance.fishingLine.isTaken = false;
             FishingRodManager.instance.fishingLine.textTaken.color = Color.red;
-            //Play Sound -> Moulinet sound
+            //Stop Sound -> Moulinet sound
             AkSoundEngine.PostEvent("STOP_MoulinetOn", gameObject);
             MoulinetOnce = false;
         }
