@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8576b283468e6c4994a3dc4b6949d61, type: 3}
+  m_Name: HEBE_1
+  m_EditorClassIdentifier: 
+  ID: HEBE_1
+  appearance: {fileID: 21300000, guid: c32f6c16dbc06b94ea3dd604d6fbdfcc, type: 3}
+  itemType: Belt
+  upgradeState: 1
+  itemName: ReefCrusher Belt
+  tier: 2
+  strength: 2
+  constitution: 3
+  dexterity: 3
+  intelligence: 3
+  description: '"Satisfied or not refunded" - Lokasse TwistIron, awesome craftsman'
+  components:
+  - {fileID: 11400000, guid: c9c1b7fc1d360cf4e97fd566ce130c95, type: 2}
+  - {fileID: 11400000, guid: 163542762008cd64cab909fe9327fc46, type: 2}
+  componentsQty: 0200000002000000

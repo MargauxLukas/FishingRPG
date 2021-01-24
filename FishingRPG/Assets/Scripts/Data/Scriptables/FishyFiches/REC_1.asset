@@ -18,17 +18,17 @@ MonoBehaviour:
   tier: 2
   life: 272
   stamina: 81
-  strength: 13
+  strength: 10
   weight: 16
-  agility: 12
-  magicResistance: 12
+  agility: 10
+  magicResistance: 10
   drops:
+  - {fileID: 11400000, guid: 7d8435cacdbdb50468084063df3f41c1, type: 2}
+  - {fileID: 11400000, guid: 163542762008cd64cab909fe9327fc46, type: 2}
+  - {fileID: 11400000, guid: 0d405680dcb322c4db77d8949b2bb4bc, type: 2}
+  - {fileID: 11400000, guid: c9c1b7fc1d360cf4e97fd566ce130c95, type: 2}
   - {fileID: 11400000, guid: 1e9a80eb3fd20cc49b26e9998756909a, type: 2}
   - {fileID: 11400000, guid: 36e2be02e4112fb42802c88b5571cc39, type: 2}
-  - {fileID: 11400000, guid: 0d405680dcb322c4db77d8949b2bb4bc, type: 2}
-  - {fileID: 11400000, guid: 163542762008cd64cab909fe9327fc46, type: 2}
-  - {fileID: 11400000, guid: 7d8435cacdbdb50468084063df3f41c1, type: 2}
-  - {fileID: 11400000, guid: c9c1b7fc1d360cf4e97fd566ce130c95, type: 2}
   calmPatterns:
   - {fileID: 11400000, guid: 46a007261a1b4df4d8661da44698c689, type: 2}
   - {fileID: 11400000, guid: 09dc8440f43dbcc4b879e8704cac7c30, type: 2}

@@ -451,7 +451,7 @@ public class GearingManager : MonoBehaviour
                 helmetEquiped.enabled = true;
                 UIManager.instance.inventory.equipedHelmet = sp.armor;
                 break;
-            case "Shoulders":
+            case "Pauldrons":
                 if (UIManager.instance.inventory.equipedShoulders != null)
                 {
                     strength -= UIManager.instance.inventory.equipedShoulders.strength;
