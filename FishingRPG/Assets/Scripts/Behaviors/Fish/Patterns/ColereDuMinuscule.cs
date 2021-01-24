@@ -18,7 +18,9 @@ public class ColereDuMinuscule : MonoBehaviour
         }
         else
         {
-            //Son du Reef
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", FishManager.instance.currentFish.gameObject);
+            //Play Sound
+            AkSoundEngine.PostEvent("OnRage", FishManager.instance.currentFish.gameObject);
         }
 
         FishManager.instance.currentFishBehavior.strength += 2;

@@ -139,7 +139,7 @@ public class Rotate : MonoBehaviour
                             //Play Sound
                             if (!playWireOnce)
                             {
-                                //AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
+                                AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
                                 playWireOnce = true;
                             }
                             FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAuraCircle.transform.position);
