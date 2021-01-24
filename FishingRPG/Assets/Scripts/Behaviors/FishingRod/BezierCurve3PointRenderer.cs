@@ -36,7 +36,7 @@ public class BezierCurve3PointRenderer : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        /*
+        
         Gizmos.color = Color.green;
         Gizmos.DrawLine(p1.position, p2.position);
 
@@ -55,6 +55,6 @@ public class BezierCurve3PointRenderer : MonoBehaviour
             Gizmos.DrawLine(Vector3.Lerp(p2.position, p3.position, ratio), Vector3.Lerp(p3.position, p4.position, ratio));
         
         }
-        */
+        
     }
 }
