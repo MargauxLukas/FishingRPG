@@ -14,6 +14,9 @@ public class PlayerManager : MonoBehaviour
     public PlayerStats playerStats;
     public PlayerGem playerGem;
     public PlayerInventory playerInventory;
+    public bool canMove = false;
+
+    [Space]
 
     public GameObject chestGUI;
     public GameObject inventoryGUI;
@@ -69,6 +72,8 @@ public class PlayerManager : MonoBehaviour
     public Image gem2Equiped;
     public Image gem3Equiped;
 
+
+
     private void Awake()
     {
         Init();
@@ -95,21 +100,25 @@ public class PlayerManager : MonoBehaviour
     public void DisablePlayerMovement()
     {
         player.GetComponent<PlayerMovement>().enabled = false;
+        canMove = false;
     }
 
     public void EnablePlayerMovement()
     {
         player.GetComponent<PlayerMovement>().enabled = true;
+        canMove = true;
     }
 
     public void DisableFishMovement()
     {
+        player.GetComponent<PlayerFishing>().isReadyToFish = false;
         player.GetComponent<PlayerFishing>().enabled = false;
     }
 
     public void EnableFishMovement()
     {
         player.GetComponent<PlayerFishing>().enabled = true;
+
     }
 
     public void FishingCanStart()
@@ -236,26 +245,44 @@ public class PlayerManager : MonoBehaviour
 
     public void IsTakingLineBobber()
     {
+        FishingRodManager.instance.animFishingRod.SetFloat("SpeedMultiplier", 1);
         FishingRodManager.instance.bobber.transform.LookAt(new Vector3(FishingRodManager.instance.pointC.position.x, FishingRodManager.instance.bobber.transform.position.y, FishingRodManager.instance.pointC.position.z));
-        FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 1f * Time.deltaTime;
+        FishingRodManager.instance.bobber.transform.position += FishingRodManager.instance.bobber.transform.forward * 3f * Time.deltaTime;
     }
 
     public void IsAerial()
     {
+        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialRotation();
+        StartCoroutine(WaitBeforeAerial());
+        //FishManager.instance.IsExhausted();
+    }
+
+    IEnumerator WaitBeforeAerial()
+    {
+        yield return new WaitForSeconds(0.2f);
         FishManager.instance.IsExhausted();
     }
 
     public void FellingFish()
     {
+        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().FellRotation();
         FishManager.instance.FellAerial();
     }
 
     public void CheckDistanceWithWater()
     {
         Debug.Log("!!!!!! Max Time Aerial : " + FishManager.instance.currentFishBehavior.maxTimeAerial + " // " + FishManager.instance.currentFishBehavior.timerAerial + " > " + (FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial()));
-        if(FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial())
+
+        FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialRotation();
+
+
+        if (FishManager.instance.currentFishBehavior.timerAerial > FishManager.instance.currentFishBehavior.maxTimeAerial - UtilitiesManager.instance.GetTimingForMoreAerial())
         {
             FishManager.instance.MoreAerial();
+        }
+        else
+        {
+            //FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().AerialRotation();
         }
     }
 

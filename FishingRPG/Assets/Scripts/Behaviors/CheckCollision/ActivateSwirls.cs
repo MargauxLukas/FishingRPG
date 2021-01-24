@@ -4,33 +4,61 @@ using UnityEngine;
 
 public class ActivateSwirls : MonoBehaviour
 {
-    public List<GameObject> swirls = new List<GameObject>();
+    public List<GameObject> swirlsSnap = new List<GameObject>();
+    public List<GameObject> swirlsReef = new List<GameObject>();
+
     public int nbSwirls = 2;
-    private int firstRandomNumber;
-    private int secondRandomNumber;
+    private int firstRandomNumberSnap;
+    private int secondRandomNumberSnap;
+
+    private int firstRandomNumberReef;
+    private int secondRandomNumberReef;
 
     public void Start()
     {
-        ChooseSwirl(nbSwirls);
+        ChooseSwirlSnap(nbSwirls);
+        ChooseSwirlReef(nbSwirls);
     }
 
-    public void ChooseSwirl(int nb)
+    public void ChooseSwirlSnap(int nb)
     {
-        firstRandomNumber = Random.Range(0, swirls.Count);
-        secondRandomNumber = Random.Range(0, swirls.Count);
+        firstRandomNumberSnap = Random.Range(0, swirlsSnap.Count);
+        secondRandomNumberSnap = Random.Range(0, swirlsSnap.Count);
 
-        while(firstRandomNumber == secondRandomNumber)
+        while(firstRandomNumberSnap == secondRandomNumberSnap)
         {
-            secondRandomNumber = Random.Range(0, swirls.Count);
+            secondRandomNumberSnap = Random.Range(0, swirlsSnap.Count);
         }
 
-        swirls[firstRandomNumber].SetActive(true);
-        swirls[secondRandomNumber].SetActive(true);
+        swirlsSnap[firstRandomNumberSnap].SetActive(true);
+        swirlsSnap[secondRandomNumberSnap].SetActive(true);
+    }
+
+    public void ChooseSwirlReef(int nb)
+    {
+        firstRandomNumberReef = Random.Range(0, swirlsReef.Count);
+        secondRandomNumberReef = Random.Range(0, swirlsReef.Count);
+
+        while (firstRandomNumberReef == secondRandomNumberReef)
+        {
+            secondRandomNumberReef = Random.Range(0, swirlsReef.Count);
+        }
+
+        swirlsReef[firstRandomNumberReef].SetActive(true);
+        swirlsReef[secondRandomNumberReef].SetActive(true);
+    }
+
+    public void ActivateSwirl()
+    {
+        ChooseSwirlSnap(nbSwirls);
+        ChooseSwirlReef(nbSwirls);
     }
 
     public void DesactivateSwirl()
     {
-        swirls[firstRandomNumber].SetActive(false);
-        swirls[secondRandomNumber].SetActive(false);
+        swirlsSnap[firstRandomNumberSnap].SetActive(false);
+        swirlsSnap[secondRandomNumberSnap].SetActive(false);
+        swirlsReef[firstRandomNumberReef].SetActive(false);
+        swirlsReef[secondRandomNumberReef].SetActive(false);
     }
 }

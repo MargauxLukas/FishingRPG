@@ -10,6 +10,10 @@ public class ColereDuMinuscule : MonoBehaviour
     {
         Debug.Log("Colere du Minuscule !");
 
+        AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
+        //Play Sound
+        AkSoundEngine.PostEvent("OnRage", FishManager.instance.currentFish.gameObject);
+
         FishManager.instance.currentFishBehavior.strength += 2;
         FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
         FishManager.instance.currentFishBehavior.isRage = true;

@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/ALC_VerticalScene.unity
-    guid: 844661f13eef68e49a346dba7ae08c70
+    path: Assets/_Scenes/ALC_GameFinal.unity
+    guid: 436a4fa7a136ce14da7069405fac8917
   - enabled: 1
     path: Assets/_Scenes/MAL_LoadingScene.unity
     guid: 193c3d03a7607804788efc754c5dec30
   - enabled: 1
     path: Assets/_Scenes/MAL_HubScene.unity
     guid: 1a7577bf85409e246b51ea9c8bc93ebd
+  - enabled: 1
+    path: Assets/_Scenes/MAL_LoadingScene2.unity
+    guid: 84456096fb3c902409655d4b62e0c01f
   m_configObjects: {}

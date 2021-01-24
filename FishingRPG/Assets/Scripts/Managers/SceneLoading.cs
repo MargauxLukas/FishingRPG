@@ -6,35 +6,21 @@ using UnityEngine.UI;
 
 public class SceneLoading : MonoBehaviour
 {
-    public static SceneLoading instance;
-
     public Image loadingBar;
-    public int sceneIndex;
-
-    private void Awake()
-    {
-        Init();
-    }
-
-    public virtual void Init()
-    {
-        instance = this;
-    }
 
     void Start()
     {
-        StartCoroutine(LoadAsyncOperation(sceneIndex));
+        StartCoroutine(LoadAsyncOperation());
     }
 
-    IEnumerator LoadAsyncOperation(int _scene)
+    IEnumerator LoadAsyncOperation()
     {
-        AsyncOperation lvl = SceneManager.LoadSceneAsync(_scene);
+        AsyncOperation lvl = SceneManager.LoadSceneAsync(2);
 
         while(lvl.progress < 1)
         {
             loadingBar.rectTransform.sizeDelta = new Vector2(lvl.progress * 1650, 135);
+            yield return new WaitForEndOfFrame();
         }
-
-        yield return new WaitForEndOfFrame();
     }
 }

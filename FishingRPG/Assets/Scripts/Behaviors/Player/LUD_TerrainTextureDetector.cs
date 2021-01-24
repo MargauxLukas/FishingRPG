@@ -24,7 +24,7 @@ public class LUD_TerrainTextureDetector : MonoBehaviour
 
     private void Update()
     {
-        //GetTerrainTextureAtPosition(playerTransform.position);   //à transférer
+        //GetTerrainTextureAtPlayerPosition();   //pour Debug
     }
 
     private void GetTerrainProps()

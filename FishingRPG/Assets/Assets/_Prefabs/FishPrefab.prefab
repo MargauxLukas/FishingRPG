@@ -222,9 +222,12 @@ MonoBehaviour:
   fellingFreeze: 0
   minTimeForChangeDirection: 0.5
   maxTimeForChangeDirection: 2
+  spawnPoint: {x: 0, y: 0, z: 0}
   aButton: {fileID: 7738792073316754151}
   canCollectTheFish: 0
   animator: {fileID: 0}
+  shaderMaterialFish: {fileID: 2100000, guid: 6ca9cb5dd3a011c49b7b705f2dd8ba1e, type: 2}
+  shaderMaterialEyes: {fileID: 2100000, guid: 319fe7a790088ef4b9613901cab89f67, type: 2}
 --- !u!114 &3329990018515731799
 MonoBehaviour:
   m_ObjectHideFlags: 0
