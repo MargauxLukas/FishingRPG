@@ -6,12 +6,11 @@ public class BobbingHead : MonoBehaviour
 {
     public float walkingBobbingSpeed = 5f;
     public float bobbingAmount = 0.05f;
-    //public PlayerMovement controller;
     float normeVector;
     float defaultPosY = 0;
     float defaultPosX = 0;
     float timer = 0;
-    //public Transform target;
+    public PlayerManager playerManager;
 
 
     [Header("For Sound Purposes")]
@@ -28,15 +27,14 @@ public class BobbingHead : MonoBehaviour
     {
         defaultPosY = transform.localPosition.y;
         defaultPosX = transform.localPosition.x;
-
-        
+        playerManager = PlayerManager.instance;
     }
 
     // Update is called once per frame
     void Update() 
     {
         
-        if (Input.GetAxisRaw("Horizontal")>0.1f || Input.GetAxisRaw("Vertical")>0.1f || Input.GetAxisRaw("Horizontal") < -0.1f || Input.GetAxisRaw("Vertical")<-0.1f)
+        if ((playerManager.canMove) && (Input.GetAxisRaw("Horizontal")>0.1f || Input.GetAxisRaw("Vertical")>0.1f || Input.GetAxisRaw("Horizontal") < -0.1f || Input.GetAxisRaw("Vertical")<-0.1f))
         {
             normeVector = Mathf.Sqrt(Mathf.Pow(Input.GetAxisRaw("Horizontal"),2) + Mathf.Pow(Input.GetAxisRaw("Vertical"),2));
             //Player is moving

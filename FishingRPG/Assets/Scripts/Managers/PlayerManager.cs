@@ -14,6 +14,9 @@ public class PlayerManager : MonoBehaviour
     public PlayerStats playerStats;
     public PlayerGem playerGem;
     public PlayerInventory playerInventory;
+    public bool canMove = false;
+
+    [Space]
 
     public GameObject chestGUI;
     public GameObject inventoryGUI;
@@ -97,11 +100,13 @@ public class PlayerManager : MonoBehaviour
     public void DisablePlayerMovement()
     {
         player.GetComponent<PlayerMovement>().enabled = false;
+        canMove = false;
     }
 
     public void EnablePlayerMovement()
     {
         player.GetComponent<PlayerMovement>().enabled = true;
+        canMove = true;
     }
 
     public void DisableFishMovement()
@@ -113,6 +118,7 @@ public class PlayerManager : MonoBehaviour
     public void EnableFishMovement()
     {
         player.GetComponent<PlayerFishing>().enabled = true;
+
     }
 
     public void FishingCanStart()
