@@ -13,6 +13,7 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public GameObject anchorGameObject;
     public CheckWater checkWaterScript;
     public BendFishingRod bendFishingRod;
     public Transform pointC;
@@ -125,7 +126,7 @@ public class FishingRodManager : MonoBehaviour
     {
         bobber.GetComponent<Bobber>().Throw();
 
-        CameraManager.instance.CameraLookAtGameObject(bobber);
+        //CameraManager.instance.CameraLookAtGameObject(bobber);
         CameraManager.instance.SaveBaseRotation();
 
         PlayerManager.instance.DisablePlayerMovement();
@@ -319,6 +320,15 @@ public class FishingRodManager : MonoBehaviour
         return false;
     }
 
+    public void FishingRodToDynamic()
+    {
+        anchorGameObject.transform.parent = FishingManager.instance.dynamics;
+    }
+
+    public void FishingRodToMainCamera()
+    {
+        anchorGameObject.transform.parent = Camera.main.transform;
+    }
 
     #region Text Change
     public void ChangeTextCPDistance()

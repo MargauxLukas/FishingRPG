@@ -28,10 +28,11 @@ public class CheckWater : MonoBehaviour
         {
             FishingRodManager.instance.bobber.GetComponent<Bobber>().StopMovement();
 
-            if (!justOneTime)
+            if (!justOneTime && FishingRodManager.instance.bobberThrowed)
             {
                 //Play Sound
                 AkSoundEngine.PostEvent("OnBouchonPlop", gameObject);
+                CameraManager.instance.CameraLookAtGameObject(FishingRodManager.instance.bobber);
                 justOneTime = true;
             }
         }
