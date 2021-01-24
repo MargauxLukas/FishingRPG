@@ -27,7 +27,6 @@ public class LinePlayerPointLocation : MonoBehaviour
             r = 1f;
         }
         
-        Debug.Log("PP : " + r);
 
         playerPointY = upPoint.position.y * (1 - r) + downPoint.position.y * r;
 

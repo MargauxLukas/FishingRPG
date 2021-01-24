@@ -244,14 +244,12 @@ public class PlayerManager : MonoBehaviour
         FishingRodManager.instance.fishingLine.isTaken = true;
         FishingRodManager.instance.fishingLine.textTaken.color = Color.green;
         //Play Sound -> Moulinet sound
-        if (!MoulinetOnce) { 
-            
+        if (!MoulinetOnce) 
+        {
+            Debug.Log("Je joue le son du moulinet");
             AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
             MoulinetOnce = true;
-        }
-        
-        
-        
+        }  
     }
 
     public void IsTakingLineBobber()

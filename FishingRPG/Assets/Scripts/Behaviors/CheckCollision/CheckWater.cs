@@ -32,6 +32,8 @@ public class CheckWater : MonoBehaviour
             {
                 //Play Sound
                 AkSoundEngine.PostEvent("OnBouchonPlop", gameObject);
+                //Stop WireLaunched
+                FishingRodManager.instance.fishingRodPivot.GetComponent<Rotate>().playWireOnce = false;
                 CameraManager.instance.CameraLookAtGameObject(FishingRodManager.instance.bobber);
                 justOneTime = true;
             }
