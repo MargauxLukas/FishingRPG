@@ -57,7 +57,7 @@ public class Rotate : MonoBehaviour
     public float slowedSensitivity = 50f;
     float normalMouseSensitivity;
 
-
+    public bool playWireOnce = false;
 
     private void Start()
     {
@@ -128,8 +128,13 @@ public class Rotate : MonoBehaviour
                         if (goodZone)
                         {
                             StartCoroutine("Throw");
+
                             //Play Sound
-                            AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
+                            if (!playWireOnce)
+                            {
+                                //AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
+                                playWireOnce = true;
+                            }
                             FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAura.transform.position);
                         }
                         else
@@ -148,8 +153,6 @@ public class Rotate : MonoBehaviour
                         if ((transform.localRotation.eulerAngles.x > 280f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
                         {
                             playerView.mouseSensitivity = slowedSensitivity;
-
-
                             transform.Rotate(new Vector3(-2f, 0f, 0f));
                             PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
                             transform.localPosition += new Vector3(0.007f, -0.007f, 0f);

@@ -13,6 +13,7 @@ public class FishingRodManager : MonoBehaviour
     public GameObject bobber;
     public GameObject bobberPosition;
     public GameObject fishingRodGameObject;
+    public GameObject anchorGameObject;
     public CheckWater checkWaterScript;
     public BendFishingRod bendFishingRod;
     public Transform pointC;
@@ -68,6 +69,8 @@ public class FishingRodManager : MonoBehaviour
     [Header("UI HELPER")]
     public GameObject huntUI;
     public GameObject fishingUI;
+
+    private bool derouleOnce = false; 
 
 
     private void Awake()
@@ -125,7 +128,7 @@ public class FishingRodManager : MonoBehaviour
     {
         bobber.GetComponent<Bobber>().Throw();
 
-        CameraManager.instance.CameraLookAtGameObject(bobber);
+        //CameraManager.instance.CameraLookAtGameObject(bobber);
         CameraManager.instance.SaveBaseRotation();
 
         PlayerManager.instance.DisablePlayerMovement();
@@ -204,7 +207,6 @@ public class FishingRodManager : MonoBehaviour
         {
             if (distanceCP < fishingLine.fCurrent + fishingLine.fCritique)
             {
-
                 speedAnimation += 1f * Time.fixedDeltaTime;
                 if(speedAnimation > 1f)
                 {
@@ -212,8 +214,7 @@ public class FishingRodManager : MonoBehaviour
                 }
                 AnimationReelUp(speedAnimation);
 
-                //Play Sound
-                //AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
+               
                 
                 fishingLine.FCurrentDown();
 
@@ -244,6 +245,7 @@ public class FishingRodManager : MonoBehaviour
         else if (distanceCP > fishingLine.fCurrent && fishingLine.fCurrent < fishingLine.fMax)    //Mettre à jour Fcurrent
         {
             speedAnimation += -1f * Time.fixedDeltaTime;
+            
 
             if (speedAnimation < -1f)
             {
@@ -275,6 +277,7 @@ public class FishingRodManager : MonoBehaviour
             if (speedAnimation > 0f)
             {
                 speedAnimation += -1f * Time.fixedDeltaTime;
+                
 
                 if (speedAnimation < 0)
                 {
@@ -320,6 +323,15 @@ public class FishingRodManager : MonoBehaviour
         return false;
     }
 
+    public void FishingRodToDynamic()
+    {
+        anchorGameObject.transform.parent = FishingManager.instance.dynamics;
+    }
+
+    public void FishingRodToMainCamera()
+    {
+        anchorGameObject.transform.parent = Camera.main.transform;
+    }
 
     #region Text Change
     public void ChangeTextCPDistance()

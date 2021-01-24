@@ -28,6 +28,7 @@ public class UtilitiesManager : MonoBehaviour
     [System.NonSerialized]
     public float fellingDamage;
 
+
     private void Awake()
     {
         Init();
@@ -120,6 +121,8 @@ public class UtilitiesManager : MonoBehaviour
 
     public float CalculateR()
     {
-        return (FishingRodManager.instance.fishingLine.fCurrent - FishingRodManager.instance.distanceCP) / ((FishingRodManager.instance.fishingLine.fMax+FishingRodManager.instance.fishingLine.fCritique) - FishingRodManager.instance.distanceCP);
+        float clampedCP = Mathf.Clamp(FishingRodManager.instance.distanceCP, 0, FishingRodManager.instance.fishingLine.fMax);   //pour éviter que la ligne pète un cable visuellement
+        
+        return (FishingRodManager.instance.fishingLine.fCurrent - clampedCP) / ((FishingRodManager.instance.fishingLine.fMax + FishingRodManager.instance.fishingLine.fCritique) - clampedCP);
     }
 }
