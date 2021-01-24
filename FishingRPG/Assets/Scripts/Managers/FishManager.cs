@@ -108,6 +108,7 @@ public class FishManager : MonoBehaviour
     public void MoreAerial()
     {
         Debug.Log("Boing Again");
+        AkSoundEngine.PostEvent("OnFishBounce", gameObject);
 
         currentFishBehavior.nbRebond++;
         currentFishBehavior.maxTimeAerial = UtilitiesManager.instance.GetTimeAerial(currentFishBehavior.JumpHeight, currentFishBehavior.nbRebond);
