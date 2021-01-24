@@ -35,6 +35,8 @@ public class FishManager : MonoBehaviour
     [HideInInspector] public float aerialZ;
     [HideInInspector] public float aerialEnterWaterZ = 0f;
 
+    public GameObject splash;
+
     [Header("Rotation Percent")]
     public int sPercent;
     public int sePercent;
@@ -126,7 +128,16 @@ public class FishManager : MonoBehaviour
         isFelling = false;
         currentFishBehavior.isFellDown = false;
         AerialRebondDamage();
+        splash.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+        StartCoroutine(SplashCoroutine());
         currentFishBehavior.timerAerial = 0f;
+    }
+
+    IEnumerator SplashCoroutine()
+    {
+        splash.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        splash.SetActive(false);
     }
 
     public void FellAerial()
@@ -153,6 +164,8 @@ public class FishManager : MonoBehaviour
         currentFishBehavior.timerAerial = 0f;
 
         yield return new WaitForSeconds(currentFishBehavior.maxTimeAerial);
+        splash.transform.position = new Vector3(aerialEnterWaterX, aerialEnterWaterY, aerialEnterWaterZ);
+        StartCoroutine(SplashCoroutine());
         AerialDamage();
     }
 
