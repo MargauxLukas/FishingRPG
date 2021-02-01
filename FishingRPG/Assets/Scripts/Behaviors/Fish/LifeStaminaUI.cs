@@ -22,6 +22,16 @@ public class LifeStaminaUI : MonoBehaviour
         instance = this;
     }
 
+    public void Start()
+    {
+        lifeCD.fillAmount = 1f;
+    }
+
+    public void Update()
+    {
+        Debug.Log(lifeCD.fillAmount);
+    }
+
     public void UpdateLife(float _life)
     {
         life.fillAmount = _life;

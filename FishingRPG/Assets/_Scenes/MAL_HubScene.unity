@@ -314,7 +314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -60}
+  m_AnchoredPosition: {x: -29, y: -60}
   m_SizeDelta: {x: 60, y: 177.5}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &11079748
@@ -3672,7 +3672,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157743249}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3685,7 +3685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fcdd41c89cb527942891383cdcffa3c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4033,6 +4033,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1213941396}
+          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
+          m_MethodName: UpdateText
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 172269048}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -4142,7 +4154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armor: {fileID: 0}
+  armor: {fileID: 11400000, guid: bd9c79be681ad714eaa6c2c765cfb1a5, type: 2}
   fishingRod: {fileID: 0}
   gem: {fileID: 0}
 --- !u!1 &175321082
@@ -4196,7 +4208,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ????????????????????????????
+  m_Text: ReefCrusher Fishing Rod
 --- !u!222 &175321084
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6005,7 +6017,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pequessivo Boots
+  m_Text: SnapSnack Boots
 --- !u!222 &266651761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9021,6 +9033,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1213941396}
+          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
+          m_MethodName: UpdateText
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 347753746}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -9077,7 +9101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armor: {fileID: 0}
+  armor: {fileID: 11400000, guid: 89952a46b2dd2b849b2a2abcb2b892ae, type: 2}
   fishingRod: {fileID: 0}
   gem: {fileID: 0}
 --- !u!1 &354142783
@@ -9558,7 +9582,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ????????????????????????????
+  m_Text: ReefCrusher Boots
 --- !u!222 &384629810
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11665,7 +11689,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pequessivo Fishing Rod
+  m_Text: SnapSnack Fishing Rod
 --- !u!222 &478231599
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16412,7 +16436,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693571138}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -16425,7 +16449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c32f6c16dbc06b94ea3dd604d6fbdfcc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18120,7 +18144,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ????????????????????????????
+  m_Text: ReefCrusher Pauldrons
 --- !u!222 &762278717
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19523,6 +19547,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1213941396}
+          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
+          m_MethodName: UpdateTextRod
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 853170395}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -19580,7 +19616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
-  fishingRod: {fileID: 0}
+  fishingRod: {fileID: 11400000, guid: 4e878c54c3aa6004b9695ae63305b3fa, type: 2}
   gem: {fileID: 0}
 --- !u!1 &859665021
 GameObject:
@@ -22166,6 +22202,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1213941396}
+          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
+          m_MethodName: UpdateText
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 932701054}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -22222,7 +22270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armor: {fileID: 0}
+  armor: {fileID: 11400000, guid: a82c49262be2b354485411835a814587, type: 2}
   fishingRod: {fileID: 0}
   gem: {fileID: 0}
 --- !u!1 &932887581
@@ -22262,7 +22310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.45001, y: 98.750015}
+  m_AnchoredPosition: {x: -105, y: 98.750015}
   m_SizeDelta: {x: 39, y: 177.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932887583
@@ -22588,7 +22636,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955150511}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -22601,7 +22649,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3ffecb41230aa514d9942631252a4a3c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23454,7 +23502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 59.100006, y: -60}
+  m_AnchoredPosition: {x: 61, y: -60}
   m_SizeDelta: {x: 200, y: 177.5}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &968238533
@@ -26919,7 +26967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ????????????????????????????
+  m_Text: ReefCrusher Belt
 --- !u!222 &1105275732
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28127,7 +28175,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144407995}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -28140,7 +28188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 17f512f7f801f544ba2d9e07525c802c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28535,7 +28583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ????????????????????????????
+  m_Text: ReefCrusher Helmet
 --- !u!222 &1161967888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31038,14 +31086,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd7145c2ef0ae81489245baf41c79695, type: 2}
   helmetList:
   - {fileID: 11400000, guid: d17f1a048e3c33a4da9b274fcfc79196, type: 2}
+  - {fileID: 11400000, guid: bd9c79be681ad714eaa6c2c765cfb1a5, type: 2}
   pauldronsList:
   - {fileID: 11400000, guid: 3dfbf2549ff984143904d07b816e3801, type: 2}
+  - {fileID: 11400000, guid: 89952a46b2dd2b849b2a2abcb2b892ae, type: 2}
   beltList:
   - {fileID: 11400000, guid: ec4cd86c6204c1e4b9954e6d768f5ca7, type: 2}
+  - {fileID: 11400000, guid: efd43749b05dec846a9ea6d42cef2236, type: 2}
   bootsList:
   - {fileID: 11400000, guid: 2a0f58e388ea6334f9479a713fe63574, type: 2}
+  - {fileID: 11400000, guid: a82c49262be2b354485411835a814587, type: 2}
   fishingRodList:
-  - {fileID: 11400000, guid: 2fb310c7908eea14f85df257654e7595, type: 2}
+  - {fileID: 11400000, guid: c01cfd45fe519024ab0ae7cdfa6e99f1, type: 2}
+  - {fileID: 11400000, guid: 4e878c54c3aa6004b9695ae63305b3fa, type: 2}
   gemList:
   - {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
   inventory: {fileID: 11400000, guid: bafd2a44d9e916249a09d2602756395d, type: 2}
@@ -31519,7 +31572,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273967239}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -31532,7 +31585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2da9124140c071043ae24e94c100b291, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35642,7 +35695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pequessivo Pauldrons
+  m_Text: SnapSnack Pauldrons
 --- !u!222 &1455975921
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36093,6 +36146,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1213941396}
+          m_TargetAssemblyTypeName: ArtisanManager, Assembly-CSharp
+          m_MethodName: UpdateText
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1483581601}
+            m_ObjectArgumentAssemblyTypeName: ScriptablePointer, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 10
     callback:
       m_PersistentCalls:
@@ -36149,7 +36214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24e6de28f7cb9645856d0302abe8c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armor: {fileID: 0}
+  armor: {fileID: 11400000, guid: efd43749b05dec846a9ea6d42cef2236, type: 2}
   fishingRod: {fileID: 0}
   gem: {fileID: 0}
 --- !u!1 &1489339594
@@ -37454,7 +37519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: {fileID: 0}
-  fishingRod: {fileID: 11400000, guid: 2fb310c7908eea14f85df257654e7595, type: 2}
+  fishingRod: {fileID: 11400000, guid: c01cfd45fe519024ab0ae7cdfa6e99f1, type: 2}
   gem: {fileID: 0}
 --- !u!1 &1532520222
 GameObject:
@@ -40090,7 +40155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pequessivo Helmet
+  m_Text: SnapSnack Helmet
 --- !u!222 &1654179868
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40948,7 +41013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pequessivo Belt
+  m_Text: SnapSnack Belt
 --- !u!222 &1691705719
 CanvasRenderer:
   m_ObjectHideFlags: 0

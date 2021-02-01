@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8576b283468e6c4994a3dc4b6949d61, type: 3}
+  m_Name: REH_1
+  m_EditorClassIdentifier: 
+  ID: REH_1
+  appearance: {fileID: 21300000, guid: 2da9124140c071043ae24e94c100b291, type: 3}
+  itemType: Helmet
+  upgradeState: 1
+  itemName: ReefCrusher Helmet
+  tier: 2
+  strength: 2
+  constitution: 3
+  dexterity: 3
+  intelligence: 3
+  description: Perfect if you want to headbutt a rock. Even if it still would be
+    a bad idea.
+  components:
+  - {fileID: 11400000, guid: 1e9a80eb3fd20cc49b26e9998756909a, type: 2}
+  - {fileID: 11400000, guid: 7d8435cacdbdb50468084063df3f41c1, type: 2}
+  componentsQty: 0100000004000000

@@ -44,12 +44,20 @@ public class ArtisanManager : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.C))
         {
-            UIManager.instance.inventory.PST_C += 10;
-            UIManager.instance.inventory.PSC_C += 10;
-            UIManager.instance.inventory.PFL_R += 10;
-            UIManager.instance.inventory.PFI_E += 10;
-            UIManager.instance.inventory.PBH_L += 10;
-        }
+            UIManager.instance.inventory.PET_C += 10;
+            UIManager.instance.inventory.PES_C += 10;
+            UIManager.instance.inventory.PEF_R += 10;
+            UIManager.instance.inventory.PEI_E += 10;
+            UIManager.instance.inventory.PEH_L += 10;
+
+            UIManager.instance.inventory.RET_C += 10;
+            UIManager.instance.inventory.RES_C += 10;
+            UIManager.instance.inventory.REF_R += 10;
+            UIManager.instance.inventory.RET_R += 10;
+            UIManager.instance.inventory.REI_E += 10;
+            UIManager.instance.inventory.REH_L += 10;
+
+}
 
         if(Input.GetButtonDown("Left Bumper"))
         {

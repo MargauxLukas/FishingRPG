@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: SPS
   appearance: {fileID: 21300000, guid: 504ad7f948e76434f94d086d78203012, type: 3}
-  species: Pequessivo
+  species: SnapSnack
   tier: 1
   life: 100
   stamina: 130
-  strength: 8
-  weight: 4
-  agility: 4
-  magicResistance: 4
+  strength: 7
+  weight: 3
+  agility: 3
+  magicResistance: 3
   drops:
-  - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
-  - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
-  - {fileID: 11400000, guid: b8af79a582570ec40a4302eddd0fe86d, type: 2}
-  - {fileID: 11400000, guid: e4c02087cc30a78418fca68988afeb64, type: 2}
-  - {fileID: 11400000, guid: 9bc4e260fda4fd14fbdc8e4868b24da0, type: 2}
+  - {fileID: 11400000, guid: 28e60374b89257d40b10087106f08f70, type: 2}
+  - {fileID: 11400000, guid: d9ff65285d665064ab976bfe981ec682, type: 2}
+  - {fileID: 11400000, guid: b08271358e6abf442a8c5997a27e3d54, type: 2}
+  - {fileID: 11400000, guid: 3ec01becd7b254e49b3f6b5c6b753bd5, type: 2}
+  - {fileID: 11400000, guid: 926c8750d06292e4dac87d696e8617d4, type: 2}
   calmPatterns:
   - {fileID: 11400000, guid: 46a007261a1b4df4d8661da44698c689, type: 2}
   - {fileID: 11400000, guid: 09dc8440f43dbcc4b879e8704cac7c30, type: 2}

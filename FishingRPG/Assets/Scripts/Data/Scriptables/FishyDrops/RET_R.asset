@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: RET_R
   appearance: {fileID: 21300000, guid: 9ccc7efb21d2ca643a5d275845b49193, type: 3}
-  type: ReefCrusher Tail
+  type: ReefCrusher tail
   rarity: Rare
   dropRate: 13
-  description: c
+  description: "Its enormous size makes it perfect to balance the weight of the ReefCrusher.\r"

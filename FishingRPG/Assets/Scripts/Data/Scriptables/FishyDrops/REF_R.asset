@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: REF_R
   appearance: {fileID: 21300000, guid: a391a775133c51f4a9b9de5021c7637b, type: 3}
-  type: ReefCrusher Flipper
+  type: ReefCrusher Clawed Flipper
   rarity: Rare
   dropRate: 13
-  description: d
+  description: "The ReefCrusher uses its powerful flippers to catch and stun its
+    preys or ennemies.\r"

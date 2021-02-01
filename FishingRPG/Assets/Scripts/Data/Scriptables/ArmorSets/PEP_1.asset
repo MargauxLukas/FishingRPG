@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: PEP_1
   appearance: {fileID: 21300000, guid: 378312616644d314ca30ff30e6d39f80, type: 3}
-  itemType: Shoulders
+  itemType: Pauldrons
   upgradeState: 1
-  itemName: Pequessivo Pauldrons
+  itemName: SnapSnack Pauldrons
   tier: 1
   strength: 2
   constitution: 0
@@ -25,6 +25,6 @@ MonoBehaviour:
   description: Anyone looks taller wearing this. It's kind of reassuring when you
     fight boat sized behemoth.
   components:
-  - {fileID: 11400000, guid: cf06e32ebc602db42bfdff966dd1b3f3, type: 2}
-  - {fileID: 11400000, guid: 0e1e92b9657c8744fb77a94883ebb947, type: 2}
+  - {fileID: 11400000, guid: 28e60374b89257d40b10087106f08f70, type: 2}
+  - {fileID: 11400000, guid: d9ff65285d665064ab976bfe981ec682, type: 2}
   componentsQty: 0200000001000000
