@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5314494227651856950}
   - component: {fileID: 7936493862327779068}
   m_Layer: 0
-  m_Name: SM_stand_piedtable01_01
+  m_Name: P_stand_piedtable01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9110566279865075091
 Transform:

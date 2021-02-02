@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7328918824842427535}
   - component: {fileID: 4778736601045338181}
   m_Layer: 0
-  m_Name: SM_stand_pot_01
+  m_Name: P_stand_pot_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5916137001490903850
 Transform:
