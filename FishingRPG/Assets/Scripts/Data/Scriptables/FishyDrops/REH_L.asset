@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: REH_L
   appearance: {fileID: 21300000, guid: fc9c4899f455d3d4eb41654c38f631e6, type: 3}
-  type: ReefCrusher Horn
+  type: ReefCrusher Thick Horn
   rarity: Legendary
   dropRate: 10
-  description: d
+  description: 'Incrusted with pieces of coral. It''s the prefect proof that the
+    Reef Crusher deserves its name. '

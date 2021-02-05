@@ -24,17 +24,17 @@ public class Inventory : ScriptableObject
 
     [Header("SnapSnack Mats & Armor")]
     //SnapSnack Mats
-    public int PST_C;
-    public int PSC_C;
-    public int PFL_R;
-    public int PFI_E;
-    public int PBH_L;
+    public int PET_C; 
+    public int PES_C;
+    public int PEF_R;
+    public int PEI_E; 
+    public int PEH_L; 
 
     //Pequessivo Armor
     public bool PEH_1;
-    public bool PCH_1;
-    public bool PBE_1;
-    public bool PBO_1;
+    public bool PEP_1;
+    public bool PEBE_1;
+    public bool PEB_1;
 
     [Header("ReefCrusher Mats & Armor")]
     //ReefCrusher Mats
@@ -52,7 +52,7 @@ public class Inventory : ScriptableObject
     public bool REB_1;
 
     //Fishing rod
-    public bool PFR_1;
+    public bool PEFI_1;
     public bool REFI_1;
 
     //Gems
@@ -64,16 +64,16 @@ public class Inventory : ScriptableObject
         switch(id)
         {
             //SnapSnackComposants
-            case "PST_C":
-                return PST_C;
-            case "PSC_C":
-                return PSC_C;
-            case "PLF_R":
-                return PFL_R;
-            case "PFI_E":
-                return PFI_E;
-            case "PBH_L":
-                return PBH_L;
+            case "PET_C":
+                return PET_C;
+            case "PES_C":
+                return PES_C;
+            case "PEF_R":
+                return PEF_R;
+            case "PEI_E":
+                return PEI_E;
+            case "PEH_L":
+                return PEH_L;
             
             //ReefCrusherComposants
             case "RET_C":
@@ -98,20 +98,20 @@ public class Inventory : ScriptableObject
         switch (id)
         {
             //SnapSnackComposants
-            case "PST_C":
-                PST_C -= qty;
+            case "PET_C":
+                PET_C -= qty;
                 break;
-            case "PSC_C":
-                PSC_C -= qty;
+            case "PES_C":
+                PES_C -= qty;
                 break;
-            case "PLF_R":
-                PFL_R -= qty;
+            case "PEF_R":
+                PEF_R -= qty;
                 break;
-            case "PFI_E":
-                PFI_E -= qty;
+            case "PEI_E":
+                PEI_E -= qty;
                 break;
-            case "PBH_L":
-                PBH_L -= qty;
+            case "PEH_L":
+                PEH_L -= qty;
                 break;
 
             //ReefCrusherComposants
@@ -135,7 +135,7 @@ public class Inventory : ScriptableObject
                 break;
         }
 
-        fishTotal--;
+        
     }
 
     public void SetArmor(string id)
@@ -146,17 +146,17 @@ public class Inventory : ScriptableObject
             case "PEH_1":
                 PEH_1 = true;
                 break;
-            case "PCH_1":
-                PCH_1 = true;
+            case "PEP_1":
+                PEP_1 = true;
                 break;
-            case "PBE_1":
-                PBE_1 = true;
+            case "PEBE_1":
+                PEBE_1 = true;
                 break;
-            case "PBO_1":
-                PBO_1 = true;
+            case "PEB_1":
+                PEB_1 = true;
                 break;
-            case "PFR_1":
-                PFR_1 = true;
+            case "PEFI_1":
+                PEFI_1 = true;
                 break;
             case "GPE_1":
                 GPE_1 = true;
@@ -209,20 +209,20 @@ public class Inventory : ScriptableObject
         switch (id)
         {
             //SnapSnack Mat
-            case "PST_C":
-                PST_C++;
+            case "PET_C":
+                PET_C++;
                 break;
-            case "PSC_C":
-                PSC_C++;
+            case "PES_C":
+                PES_C++;
                 break;
-            case "PLF_R":
-                PFL_R++;
+            case "PEF_R":
+                PEF_R++;
                 break;
-            case "PFI_E":
-                PFI_E++;
+            case "PEI_E":
+                PEI_E++;
                 break;
-            case "PBH_L":
-                PBH_L++;
+            case "PEH_L":
+                PEH_L++;
                 break;
 
             //ReefCrusher Mat
@@ -254,7 +254,7 @@ public class Inventory : ScriptableObject
         }
     }
 
-    public bool CheckHelmet(string id) //ajouter le RC
+    public bool CheckHelmet(string id) 
     {
         switch(id)
         {
@@ -264,16 +264,9 @@ public class Inventory : ScriptableObject
                     return true;
                 }
                 return false;
-        }
-        return false;
-    }
 
-    public bool CheckPauldrons(string id) //ajouter le RC
-    {
-        switch (id)
-        {
-            case "PCH_1":
-                if (PCH_1)
+            case "REH_1":
+                if(REH_1)
                 {
                     return true;
                 }
@@ -282,12 +275,19 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckBelt(string id) //ajouter le RC
+    public bool CheckPauldrons(string id) 
     {
         switch (id)
         {
-            case "PBE_1":
-                if (PBE_1)
+            case "PEP_1":
+                if (PEP_1)
+                {
+                    return true;
+                }
+                return false;
+
+            case "REP_1":
+                if (REP_1)
                 {
                     return true;
                 }
@@ -296,12 +296,19 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckBoots(string id) //ajouter le RC
+    public bool CheckBelt(string id)
     {
         switch (id)
         {
-            case "PBO_1":
-                if (PBO_1)
+            case "PEBE_1":
+                if (PEBE_1)
+                {
+                    return true;
+                }
+                return false;
+
+            case "HEBE_1":
+                if (HEBE_1)
                 {
                     return true;
                 }
@@ -310,12 +317,19 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckFishingRod(string id) //ajouter le RC
+    public bool CheckBoots(string id)
     {
         switch (id)
         {
-            case "PFR_1":
-                if (PFR_1)
+            case "PEB_1":
+                if (PEB_1)
+                {
+                    return true;
+                }
+                return false;
+
+            case "REB_1":
+                if (REB_1)
                 {
                     return true;
                 }
@@ -324,7 +338,28 @@ public class Inventory : ScriptableObject
         return false;
     }
 
-    public bool CheckGems(string id) //ajouter le RC
+    public bool CheckFishingRod(string id)
+    {
+        switch (id)
+        {
+            case "PEFI_1":
+                if (PEFI_1)
+                {
+                    return true;
+                }
+                return false;
+
+            case "REFI_1":
+                if (REFI_1)
+                {
+                    return true;
+                }
+                return false;
+        }
+        return false;
+    }
+
+    public bool CheckGems(string id) //ajouter le RC (pas encore dispo)
     {
         switch(id)
         {

@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 4016779045612021124}
   - component: {fileID: 1178395039139565902}
   m_Layer: 0
-  m_Name: SM_stand_cailloux01_01
+  m_Name: P_stand_cailloux01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4975117727754785
 Transform:

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dda8c0eb1cb9d48af82b0214b0f508, type: 3}
+  m_Name: REFI_1
+  m_EditorClassIdentifier: 
+  ID: REFI_1
+  appearance: {fileID: 21300000, guid: 3ffecb41230aa514d9942631252a4a3c, type: 3}
+  upgradeState: 1
+  itemName: ReefCrusher Fishing Rod
+  tier: 1
+  rodTension: 120
+  gemSlots: 2
+  strength: 0
+  constitution: 2
+  dexterity: 0
+  intelligence: 0
+  description: If you want to fight big monsters, you will need a solid fishing rod.
+  components:
+  - {fileID: 11400000, guid: 36e2be02e4112fb42802c88b5571cc39, type: 2}
+  - {fileID: 11400000, guid: 163542762008cd64cab909fe9327fc46, type: 2}
+  componentsQty: 0100000002000000

@@ -1,8 +1,9 @@
-Item ID;Item Type;Avancement;Item Name;Tier;Force (STR);Constitution (CON);Dextérité (DEX);Intelligence (INT);Composant 1 ID;Composant 1 Quantity;Composant 2 ID;Composant 2 Quantity;Composant 3 ID;Composant 3 Quantity;Composant 4 ID;Composant 4 Quantity
-PEH_1;Helmet;1;Pequessivo helmet;1;1;0;0;0;PFI_E;1;PST_C;2;;;;
-PCH_1;Chest;1;Pequessivo pauldrons;1;1;0;1;0;PSC_C;2;PST_C;1;;;;
-PBE_1;Belt;1;Pequessivo belt;1;1;0;0;0;PSC_C;2;PST_C;1;;;;
-PBO_1;Boots;1;Pequessivo boots;1;1;0;1;0;PFI_E;1;PLF_R;1;;;;
-PDF_1;Chest;1;Épaulières de Force Vicieux;1;13;3;4;5;DPS_C;4;ELI_C;2;GDP_L;1;;
-PDF_2;Chest;2;Épaulières de Force Brutal;3;14;4;5;6;DVV_R;5;DBR_C;2;QBR_E;2;;
-PDF_3;Chest;3;Épaulières de Force Inarétable;4;15;5;6;7;ESD_C;5;NGT_C;4;PIM_R;3;GAR_L;1
+Item ID;Item Type;Avancement;Item Name;Description;Tier;Force (STR);Constitution (CON);Dextérité (DEX);Intelligence (INT);Composant 1 ID;Composant 1 Quantity;Composant 2 ID;Composant 2 Quantity;Composant 3 ID;Composant 3 Quantity;Composant 4 ID;Composant 4 Quantity
+PEH_1;Helmet;1;SnapSnack Helmet;SnapSnack just attacks without truly thinking. Sometimes that's the best strategy.;1;3;0;1;1;PEI_E;1;PET_C;2;;;;
+PEP_1;Pauldrons;1;SnapSnack Pauldrons;Anyone looks taller wearing this. It's kind of reassuring when you fight boat sized behemoth.;1;2;0;2;1;PES_C;2;PET_C;1;;;;
+PEBE_1;Belt;1;SnapSnack Belt;It always annoyed Maera that this belt looked better on Bal than her.;1;3;0;1;1;PES_C;2;PET_C;1;;;;
+PEB_1;Boots;1;SnapSnack Boots;Never wear this inside or you will scratch the floor. - 1st rule of the FellGiant Family;1;2;0;2;1;PEI_E;1;PEF_R;1;;;;
+REH_1;Helmet;1;ReefCrusher Helmet;Perfect if you want to headbutt a rock. Even if it still would be a bad idea.;2;2;3;3;3;REI_E;1;RET_C;4;;;;
+REP_1;Pauldrons;1;ReefCrusher Pauldrons;Wearing this, no creature will be able to hurt you. You will sink, but remain unharmed for sure.;2;2;3;3;3;REF_R;2;RES_C;3;;;;
+HEBE_1;Belt;1;ReefCrusher Belt;"Satisfied or not refunded" - Lokasse TwistIron, awesome craftsman;2;2;3;3;3;RET_R;2;RES_C;2;;;;
+REB_1;Boots;1;ReefCrusher Boots;The power of the ReefCrusher lies in its resistance: you don't have to hit the hardest if you resist the longest.;2;2;3;3;3;REI_E;1;REF_R;2;;;;

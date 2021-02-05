@@ -74,6 +74,10 @@ public class PlayerManager : MonoBehaviour
 
     public bool MoulinetOnce =false;
 
+    public GameObject particleGem;
+    public SkinnedMeshRenderer armSMR;
+    public Material normalArm;
+    public Material gemArm;
 
 
     private void Awake()
@@ -596,5 +600,17 @@ public class PlayerManager : MonoBehaviour
         {
             cooldownGem3.fillAmount = timer / max;
         }
+    }
+
+    public void PlayParticleGem()
+    {
+        particleGem.SetActive(true);
+        armSMR.material = gemArm;
+    }
+
+    public void StopParticleGem()
+    {
+        particleGem.SetActive(false);
+        armSMR.material = normalArm;
     }
 }
