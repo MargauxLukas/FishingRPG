@@ -226,7 +226,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 603062082}
   m_Father: {fileID: 932943272}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3318,6 +3319,85 @@ MonoBehaviour:
   armor: {fileID: 0}
   fishingRod: {fileID: 0}
   gem: {fileID: 0}
+--- !u!1 &143989110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143989111}
+  - component: {fileID: 143989113}
+  - component: {fileID: 143989112}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &143989111
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143989110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2095574363}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 342.00003, y: -89.032715}
+  m_SizeDelta: {x: 560, y: 110}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &143989112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143989110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 829615bd83dc5c344bcbc4972d2608cc, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &143989113
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143989110}
+  m_CullTransparentMesh: 0
 --- !u!1 &144677111
 GameObject:
   m_ObjectHideFlags: 0
@@ -14057,6 +14137,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600186998}
+  m_CullTransparentMesh: 0
+--- !u!1 &603062081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603062082}
+  - component: {fileID: 603062084}
+  - component: {fileID: 603062083}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &603062082
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603062081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8481740}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 360, y: -93}
+  m_SizeDelta: {x: 560, y: 110}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &603062083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603062081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 829615bd83dc5c344bcbc4972d2608cc, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &603062084
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603062081}
   m_CullTransparentMesh: 0
 --- !u!1 &613195044
 GameObject:
@@ -30381,6 +30540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1213941395}
   - component: {fileID: 1213941396}
+  - component: {fileID: 1213941397}
   m_Layer: 5
   m_Name: Artisan UI
   m_TagString: Untagged
@@ -30443,6 +30603,24 @@ MonoBehaviour:
   bonusStats: {fileID: 2040591200}
   description: {fileID: 1185326500}
   holdButtonImg: {fileID: 867546646}
+--- !u!114 &1213941397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213941394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ee6d43909a57b48964ae0c7aa99f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterArtisanShopDialogue:
+  - Enter artisan 1
+  - Enter Artisan 2
+  leaveArtisanShopDialogue:
+  - Leave Artisan 1
+  - Leave Artisan 2
 --- !u!1 &1218687690
 GameObject:
   m_ObjectHideFlags: 0
@@ -31047,6 +31225,7 @@ GameObject:
   - component: {fileID: 1249759979}
   - component: {fileID: 1249759980}
   - component: {fileID: 1249759981}
+  - component: {fileID: 1249759982}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -31114,6 +31293,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f75bd4c4da3497428cdf0d8e9bc871a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1249759982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249759978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a212fd00747d4ac48a8428a4d86f4e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artisanDialogue: {fileID: 1213941397}
+  artisanText: {fileID: 603062083}
+  butcherDialogue: {fileID: 1544894138}
+  butcherText: {fileID: 143989112}
+  houseDialogue: {fileID: 0}
+  tutoDialogue: {fileID: 0}
+  artisanSprite: {fileID: 21300000, guid: 006132e69cbb0e444ae1e2bfc300b2a2, type: 3}
+  butcherSprite: {fileID: 0}
+  mainCharacterSprite: {fileID: 0}
 --- !u!1 &1259292397
 GameObject:
   m_ObjectHideFlags: 0
@@ -37697,6 +37897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544894136}
   - component: {fileID: 1544894137}
+  - component: {fileID: 1544894138}
   m_Layer: 5
   m_Name: Butcher UI
   m_TagString: Untagged
@@ -37769,6 +37970,24 @@ MonoBehaviour:
   - {fileID: 1866324768}
   holdButtonImg: {fileID: 493546608}
   cuttingTime: 1.2
+--- !u!114 &1544894138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544894135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f431c291eb00428a537fc408ea9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterButcherShopDialogue:
+  - Enter Butcher 1
+  - Enter Butcher 2
+  leaveButcherShopDialogue:
+  - Leave Butcher 1
+  - Leave butcher 2
 --- !u!1 &1545180119
 GameObject:
   m_ObjectHideFlags: 0
@@ -39679,6 +39898,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1249759980}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SetButcherSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1249759982}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: EnterButcher
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44748,6 +44979,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1249759982}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: EnterArtisan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1888179558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47426,6 +47669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2024929102}
+  - component: {fileID: 2024929103}
   m_Layer: 5
   m_Name: Village UI
   m_TagString: Untagged
@@ -47457,6 +47701,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2024929103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024929101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ea7078458c9324c91dd5e0e6cc124f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterVillageDialogue:
+  - Voici le village
+  - "Enfin \xE0 la maison"
+  enterBayDialogue:
+  - Il fait beau
+  - 'A la peche aux moules, moules '
 --- !u!1 &2032973012
 GameObject:
   m_ObjectHideFlags: 0
@@ -50032,7 +50294,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 143989111}
   m_Father: {fileID: 310750526}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
