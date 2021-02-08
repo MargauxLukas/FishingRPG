@@ -15,6 +15,7 @@ public class FishingManager : MonoBehaviour
     public bool isOnWater = false;
 
     public GameObject snapPrefab;
+    public GameObject snapTuto;
     public GameObject reefPrefab;
     public Transform dynamics;
 
@@ -83,15 +84,15 @@ public class FishingManager : MonoBehaviour
 
         randomNumber = Random.Range(0, totalChanceFish);
 
-        if(randomNumber <= snapChance)
+        if (TutoManager.instance.isOnTutorial)
         {
-            //Fish Instantiate
-            currentFish = Instantiate(snapPrefab,
-                        new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
-                                    FishingRodManager.instance.bobber.transform.position.y - 6f,
-                                    FishingRodManager.instance.bobber.transform.position.z),
-                        Quaternion.identity,
-                        dynamics);
+            currentFish = Instantiate(snapTuto,
+                           new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
+                                       FishingRodManager.instance.bobber.transform.position.y - 6f,
+                                       FishingRodManager.instance.bobber.transform.position.z),
+                           Quaternion.identity,
+                           dynamics);
+
             isSnap = true;
             //Set Current Fish to SnapSnack
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
@@ -100,18 +101,36 @@ public class FishingManager : MonoBehaviour
         }
         else
         {
-            //Fish Instantiate
-            currentFish = Instantiate(reefPrefab,
-                        new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
-                                    FishingRodManager.instance.bobber.transform.position.y - 6f,
-                                    FishingRodManager.instance.bobber.transform.position.z),
-                        Quaternion.identity,
-                        dynamics);
-            isSnap = false;
-            //Set Current Fish to ReefCrusher
-            AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", FishManager.instance.currentFish.gameObject);
-            //Play Sound
-            AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+            if (randomNumber <= snapChance)
+            {
+                //Fish Instantiate
+                currentFish = Instantiate(snapPrefab,
+                            new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
+                                        FishingRodManager.instance.bobber.transform.position.y - 6f,
+                                        FishingRodManager.instance.bobber.transform.position.z),
+                            Quaternion.identity,
+                            dynamics);
+                isSnap = true;
+                //Set Current Fish to SnapSnack
+                AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
+                //Play Sound
+                AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+            }
+            else
+            {
+                //Fish Instantiate
+                currentFish = Instantiate(reefPrefab,
+                            new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
+                                        FishingRodManager.instance.bobber.transform.position.y - 6f,
+                                        FishingRodManager.instance.bobber.transform.position.z),
+                            Quaternion.identity,
+                            dynamics);
+                isSnap = false;
+                //Set Current Fish to ReefCrusher
+                AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", FishManager.instance.currentFish.gameObject);
+                //Play Sound
+                AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+            }
         }
 
         FishManager.instance.currentFish = currentFish;
@@ -124,7 +143,7 @@ public class FishingManager : MonoBehaviour
 
     public void CatchSomething()
     {
-        if(!isSnap)
+        if (!isSnap)
         {
             FishManager.instance.currentFish.transform.position = new Vector3(FishingRodManager.instance.bobber.transform.position.x,
                                                                           FishingRodManager.instance.bobber.transform.position.y - 2f,
@@ -140,6 +159,7 @@ public class FishingManager : MonoBehaviour
         PlayerManager.instance.cfvz.fishCheck = currentFish.transform;
         staminaAndLifeJauge.SetActive(true);
         PlayerManager.instance.FishingCanStart();
+
         //FishingRodManager.instance.fishingLine.cableComponent.InitCableParticles();
     }
 
@@ -147,6 +167,11 @@ public class FishingManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         GamePad.SetVibration(0, 0f, 0f);
+
+        if (TutoManager.instance.isOnTutorial)
+        {
+            TutoManager.instance.Chap3Dialogue1();
+        }
     }
 
     public void CancelFishing()

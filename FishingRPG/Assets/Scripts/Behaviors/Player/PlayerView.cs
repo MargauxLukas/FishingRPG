@@ -39,7 +39,7 @@ public class PlayerView : MonoBehaviour
     void Update()  //passe en Update
     {
         //Changera surement vu que y'a plus de cone
-        if (freeCamera)
+        if (freeCamera && !TutoManager.instance.isOnDialogue)
         {
             float mouseX = Input.GetAxis("Right Stick (Horizontal)") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Right Stick (Vertical)") * mouseSensitivity * Time.deltaTime;
