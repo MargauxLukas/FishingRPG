@@ -26489,6 +26489,7 @@ GameObject:
   - component: {fileID: 1174349312}
   - component: {fileID: 1174349311}
   - component: {fileID: 1174349310}
+  - component: {fileID: 1174349315}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -26609,12 +26610,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174349309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.452621, y: 22.819, z: 32.287}
+  m_LocalPosition: {x: 19.452621, y: 22.819, z: 31.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1174349315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174349309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208583559f2194b4b97539be5cf2f924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMat: {fileID: 2100000, guid: 4505b0a3dc621944fa934d7c481d1c3d, type: 2}
+  outlineScaleFact: -1.1
+  outlineColor: {r: 1, g: 0.07075471, b: 0.07075471, a: 1}
 --- !u!1001 &1178897537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34461,6 +34477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948325890}
   - component: {fileID: 1948325891}
+  - component: {fileID: 1948325892}
   m_Layer: 0
   m_Name: rage
   m_TagString: Untagged
@@ -34477,7 +34494,7 @@ Transform:
   m_GameObject: {fileID: 1948325889}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_Children: []
   m_Father: {fileID: 668803932986538891}
   m_RootOrder: 2
@@ -34534,6 +34551,21 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.002892904, y: 0.047086485, z: 0.03767377}
     m_Extent: {x: 0.17252523, y: 0.22357094, z: 0.248014}
   m_DirtyAABB: 0
+--- !u!114 &1948325892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948325889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208583559f2194b4b97539be5cf2f924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMat: {fileID: 2100000, guid: 4505b0a3dc621944fa934d7c481d1c3d, type: 2}
+  outlineScaleFact: -1.1
+  outlineColor: {r: 1, g: 0, b: 0.12319422, a: 1}
 --- !u!4 &1949579684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6448732819056950518, guid: 1bf74a7ca91c496468af3a68ee3266b9, type: 3}
