@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1677928145038007271}
   - component: {fileID: 3507676889501019949}
   m_Layer: 0
-  m_Name: SM_stand_caisse02_01
+  m_Name: P_stand_caisse02_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2370838814895756354
 Transform:
