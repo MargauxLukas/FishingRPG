@@ -6,7 +6,7 @@ using UnityEngine;
 public class FeinteDuFourbe : MonoBehaviour
 {
     static bool playOnce = false;
-    static int speedModifier = 4;
+    static int speedModifier = 6;
 
     static float timer = 50f;
 

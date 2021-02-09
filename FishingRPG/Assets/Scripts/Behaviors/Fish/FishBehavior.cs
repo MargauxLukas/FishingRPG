@@ -483,7 +483,7 @@ public class FishBehavior : MonoBehaviour
 
     public void SetIdleMaxTime()
     {
-        idleMaxTime = Random.Range(5, 10);
+        idleMaxTime = Random.Range(5, 6);
     }
 
     public void ResetStats()
