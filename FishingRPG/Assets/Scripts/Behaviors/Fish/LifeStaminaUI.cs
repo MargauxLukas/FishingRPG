@@ -35,7 +35,6 @@ public class LifeStaminaUI : MonoBehaviour
     public void UpdateLife(float _life)
     {
         life.fillAmount = _life;
-        Debug.Log("life_ : " + _life);
         StartCoroutine(LifeCooldown(_life));
     }
 
@@ -50,7 +49,6 @@ public class LifeStaminaUI : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         float currentAmt = lifeCD.fillAmount;
-        Debug.Log("currentAmt : " + currentAmt);
 
         lifeCD.fillAmount = Mathf.Lerp(currentAmt, _life, 2);
     }

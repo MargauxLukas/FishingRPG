@@ -11,9 +11,6 @@ public class TutoManager : MonoBehaviour
     public GameObject helpInputs;
     public GameObject colliderReef;
 
-    //UI INPUT
-    public GameObject UIPressRT;
-
     public bool isFirstTimePlay = true;
     public bool isOnTutorial = true;
     public bool isOnDialogue = false;
@@ -46,6 +43,16 @@ public class TutoManager : MonoBehaviour
     //Timer
     public float timer;
 
+    //UI
+    public Text UItext;
+    public Image RTHL;
+    public Image RTFishHL;
+    public Image LTFishHL;
+    public GameObject maskUI;
+    public GameObject aerialText;
+    public GameObject fellText;
+    public GameObject rebondText;
+
     private void Awake()
     {
         instance = this;
@@ -53,7 +60,7 @@ public class TutoManager : MonoBehaviour
 
     public void Start()
     {
-        if(PlayerManager.instance.playerInventory.inventory.tutoFini)
+        if (PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
             canRebond = true;
             canFell = true;
@@ -209,37 +216,43 @@ public class TutoManager : MonoBehaviour
 
         if (nextText == "c2d6" && FishingManager.instance.isOnWater)
         {
-            if (!FishingManager.instance.isOnSwirl){Chap2DialogueFail();}
-            else                                   { nextText = ""     ;}
+            RTHL.enabled = false;
+            if (!FishingManager.instance.isOnSwirl) { Chap2DialogueFail(); }
+            else
+            {
+                UItext.text = "";
+                dialogueText.text = "";
+                nextText = "";
+            }
         }
 
-        if(nextText == "c4Wait")
+        if (nextText == "c4Wait")
         {
             timer += Time.deltaTime;
 
-            if(timer > 60f || Vector3.Distance(FishingRodManager.instance.bobberPosition.transform.position, FishManager.instance.currentFish.transform.position) < 5f 
+            if (timer > 60f || Vector3.Distance(FishingRodManager.instance.bobberPosition.transform.position, FishManager.instance.currentFish.transform.position) < 5f
                            || FishManager.instance.currentFishBehavior.currentStamina <= 0)
             {
                 Chap4Dialogue8();
             }
         }
 
-        if(nextText == "c5Wait" && Input.GetButton("Right Bumper"))
+        if (nextText == "c5Wait" && Input.GetButton("Right Bumper"))
         {
             Time.timeScale = 1f;
             nextText = "c5Wait2";
         }
 
-        if(nextText == "c5Wait3" && Input.GetButton("Right Bumper"))
+        if (nextText == "c5Wait3" && Input.GetButton("Right Bumper"))
         {
             Time.timeScale = 1f;
             nextText = "c5d4";
         }
 
-        if(nextText == "c5Wait4" && Input.GetButton("Left Bumper"))
+        if (nextText == "c5Wait4" && Input.GetButton("Left Bumper"))
         {
             Time.timeScale = 1f;
-            //UI DISPARAIT APPUYER SUR LB
+            fellText.SetActive(false);
             nextText = "";
         }
 
@@ -284,8 +297,26 @@ public class TutoManager : MonoBehaviour
     public void EndTutorial()
     {
         isOnTutorial = false;
+        dialogueText.text = "";
+        UItext.text = "";
         PlayerManager.instance.playerInventory.inventory.tutoFini = true;
+        canRebond = true;
+        canFell = true;
+        canVictory = true;
+        fishIsDead = true;
+        buttonBAutorisation = true;
+        DisableDialogueBox();
+        helpInputs.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(1).GetChild(1).GetChild(2).gameObject.SetActive(true);
+        helpInputs.transform.GetChild(1).GetChild(1).GetChild(3).gameObject.SetActive(true);
     }
+
 
     #endregion
 
@@ -351,20 +382,20 @@ public class TutoManager : MonoBehaviour
     {
         DisableDialogueBox();
         helpInputs.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
-        //UIPressRT.SetActive(true);
-        //Appuyer sur RT
+        RTHL.enabled = true;
+        UItext.text = "Appuyer sur RT pour préparer le lancer";
         nextText = "c2d5";
     }
 
     public void Chap2Dialogue5()
     {
-        //Viser un remous
+        UItext.text = "Viser un remous et relâcher RT pour lancer";
         nextText = "c2d6";
     }
 
     public void Chap2DialogueFail()
     {
-        //Appuyer sur B pour quitter la pêche
+        UItext.text = "Appuyez sur B pour quitter la pêche";
         helpInputs.transform.GetChild(1).GetChild(1).GetChild(2).gameObject.SetActive(true);
         nextText = "c2Fail";
         buttonBAutorisation = true;
@@ -376,11 +407,9 @@ public class TutoManager : MonoBehaviour
     {
         chap3 = true;
         Time.timeScale = 0;
-        //Fond noir transparent jauge
         ShowDialogueBox();
         BaalSpeaking();
         dialogueText.text = "To catch a fish, I have 2 options: tire the fish to bring it on the sand or kill it.";
-        //UI vie + Endu
         nextText = "c3d2";
     }
 
@@ -394,9 +423,7 @@ public class TutoManager : MonoBehaviour
     public void Chap3Dialogue3()
     {
         BaalSpeaking();
-        //Fond noir transparent fil
         dialogueText.text = "When the fish is too heavy or energic, it’s simpler. Anyway, I need to keep an eye on the tension of the rope.";
-        //UI Fil
         nextText = "c3d4";
     }
 
@@ -426,8 +453,7 @@ public class TutoManager : MonoBehaviour
         DisableDialogueBox();
         nextText = "";
         chap3 = true;
-        //Enlever fond noir
-        //Wait 3 seconds avant de lancer Chapitre IV
+        TutoManager.instance.maskUI.SetActive(false);
 
         StartCoroutine(WaitChapter4());
     }
@@ -444,7 +470,6 @@ public class TutoManager : MonoBehaviour
     public void Chap4Dialogue1()
     {
         ShowDialogueBox();
-        //3 Capacités
         dialogueText.text = "I have 3 main possible actions…";
         nextText = "c4d2";
     }
@@ -452,14 +477,12 @@ public class TutoManager : MonoBehaviour
     public void Chap4Dialogue2()
     {
         helpInputs.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
-        //Prendre la ligne
         dialogueText.text = "First, I can Take the line. It brings back the fish and tire it a lot, but the rope will have a hard time.";
         nextText = "c4d3";
     }
 
     public void Chap4Dialogue3()
     {
-        //Lâcher la ligne
         dialogueText.text = "Secondly I can Let the line go. The tension goes down, but the fish is free and can fly away very easily.";
         nextText = "c4d4";
     }
@@ -481,8 +504,9 @@ public class TutoManager : MonoBehaviour
     {
         DisableDialogueBox();
         nextText = "";
-        //Show UI
-        // Lacher ces 2 boutons pour lâcher la ligne
+        RTFishHL.enabled = true;
+        LTFishHL.enabled = true;
+        UItext.text = "Lacher ces 2 boutons pour lâcher la ligne.";
 
         StartCoroutine(WaitChap4Dialogue7());
     }
@@ -490,13 +514,14 @@ public class TutoManager : MonoBehaviour
     IEnumerator WaitChap4Dialogue7()
     {
         yield return new WaitForSeconds(3f);
-
+        RTFishHL.enabled = false;
+        LTFishHL.enabled = false;
         Chap4Dialogue7();
     }
 
     public void Chap4Dialogue7()
     {
-        //UI "Essayer de fatiguer le poisson" !
+        UItext.text = "Essayer de fatiguer le poisson.";
         nextText = "c4Wait";
     }
 
@@ -504,13 +529,13 @@ public class TutoManager : MonoBehaviour
     {
         nextText = "";
         chap4 = true;
-        //Disparition UI "Essayer de fatiguer le poisson".
+        UItext.text = "";
         if (FishManager.instance.currentFishBehavior.currentStamina > 0)
         {
             staminaNeedToDown = true;
         }
     }
-     
+
     #endregion
 
     #region Chapitre V
@@ -523,7 +548,7 @@ public class TutoManager : MonoBehaviour
         BaalSpeaking();
         dialogueText.text = "The fish isn’t moving, it’s exhausted. While it can’t move, I can throw it in the air to hurt him.";
         nextText = "c5d2";
-        
+
     }
 
     public void Chap5Dialogue2()
@@ -535,40 +560,40 @@ public class TutoManager : MonoBehaviour
 
     public void Chap5Dialogue3()
     {
-        Debug.Log("t3");
         DisableDialogueBox();
         helpInputs.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(true);
-        //Apparition UI " Appuyer sur RB pour envoyer le poisson en l'air"
+        aerialText.SetActive(true);
         nextText = "c5Wait";
     }
 
     public void Chap5Dialogue4()
     {
-        Debug.Log("c5d4");
         nextText = "c5Wait3";
         canRebond = true;
-        //Apparition UI "RB pour faire rebonbir le poisson"
+        aerialText.SetActive(false);
+        rebondText.SetActive(true);
     }
 
     public void Chap5Dialogue6()
     {
         ShowDialogueBox();
         BaalSpeaking();
-        dialogueText.text = "Quand un poisson est dans les airs, on peut aussi le claquer contre la surface de l’eau";
+        dialogueText.text = "When the fish is in the air I can also slap it on the surface of the water.";
         nextText = "c5d5";
+        rebondText.SetActive(false);
     }
 
     public void Chap5Dialogue7()
     {
         LokasseSpeaking();
-        dialogueText.text = "C’est quoi la différence ?";
+        dialogueText.text = "What’s the difference?";
         nextText = "c5d6";
     }
 
     public void Chap5Dialogue8()
     {
         BaalSpeaking();
-        dialogueText.text = "Le claquage fait beaucoup de dégâts, mais le poisson retourne aussitôt dans l’eau. Tant qu’il est dans les airs, essaye de le faire un peu rebondir avant de le claquer pour l’endommager un peu plus.";
+        dialogueText.text = "Felling the fish deals a lot of damage but you can’t make it bounce. So the best strategy is to keep it a little bit in the air before felling it to inflict as much damage as possible.";
         nextText = "c5d7";
     }
 
@@ -578,7 +603,7 @@ public class TutoManager : MonoBehaviour
         canFell = true;
         helpInputs.transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
         nextText = "c5Wait4";
-        //UI Appuyer sur LB pour claquer le poisson
+        fellText.SetActive(true);
         canVictory = true;
     }
 
@@ -589,7 +614,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap6Dialogue1()
     {
-        //Apparition UI --> Terminer la peche
+        UItext.text = "Essayer de terminer la pêche.";
         nextText = "c6Wait";
     }
 
@@ -672,7 +697,5 @@ public class TutoManager : MonoBehaviour
         nextText = "";
         EndTutorial();
     }
-
-
-    #endregion
 }
+    #endregion

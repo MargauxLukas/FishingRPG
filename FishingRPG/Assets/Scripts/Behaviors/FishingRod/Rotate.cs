@@ -134,15 +134,12 @@ public class Rotate : MonoBehaviour
 
             if (isReleaseButton)
             {
-                Debug.Log("1");
+                Debug.Log(!PlayerManager.instance.isPressingRT + " && " + FishingManager.instance.isInFishingRod);
                 if (!PlayerManager.instance.isPressingRT && FishingManager.instance.isInFishingRod)
                 {
-                    Debug.Log("2");
+                    Debug.Log("LA");
                     if (PlayerManager.instance.playerInventory.inventory.currentFishOnMe < 3)
                     {
-                        Debug.Log("3");
-                        //desactivate UI
-
                         if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
                         {
                             if (goodZone && FishingManager.instance.isInFishingRod)
