@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760cca5a8ba8c64409cc545e95b7fe7e, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  fishTotal: 0
-  currentFishOnMe: 0
+  fishTotal: 1
+  currentFishOnMe: 1
   fishNumberOnStock: 0
-  SPS: 0
+  SPS: 1
   REC_1: 0
   equipedHelmet: {fileID: 0}
   equipedShoulders: {fileID: 0}
@@ -48,4 +48,4 @@ MonoBehaviour:
   REFI_1: 0
   GPE_1: 1
   GRE_1: 0
-  tutoFini: 1
+  tutoFini: 0

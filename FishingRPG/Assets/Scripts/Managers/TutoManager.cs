@@ -282,7 +282,7 @@ public class TutoManager : MonoBehaviour
 
     public void BaalSpeaking()
     {
-        nameText.text = "Baal";
+        nameText.text = "Bal";
         baal.color = speakingColor;
         lokasse.color = notSpeakingColor;
     }
