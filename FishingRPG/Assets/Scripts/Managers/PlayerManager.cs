@@ -254,7 +254,6 @@ public class PlayerManager : MonoBehaviour
         //Play Sound -> Moulinet sound
         if (!MoulinetOnce) 
         {
-            Debug.Log("Je joue le son du moulinet");
             AkSoundEngine.PostEvent("OnMoulinetOn", gameObject);
             MoulinetOnce = true;
         }  

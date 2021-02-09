@@ -46,6 +46,11 @@ public class FishingManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        //isInFishingRod = false;
+    }
+
     private void FixedUpdate()
     {
         if (isOnWater && !readyToFish && isOnSwirl)
@@ -98,7 +103,6 @@ public class FishingManager : MonoBehaviour
             AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
             //Play Sound
             AkSoundEngine.PostEvent("MSCCombatMusic", gameObject);
-            Debug.Log("Ceci est un Snap");
         }
         else
         {
@@ -171,6 +175,7 @@ public class FishingManager : MonoBehaviour
 
         if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
+            TutoManager.instance.maskUI.SetActive(true);
             TutoManager.instance.Chap3Dialogue1();
         }
     }

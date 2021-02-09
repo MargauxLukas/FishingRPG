@@ -376,7 +376,7 @@ public class FishBehavior : MonoBehaviour
             timerAerial = 0f;
         }
 
-        if((FishManager.instance.currentFishBehavior.timerAerial > (FishManager.instance.currentFishBehavior.maxTimeAerial - 0.2f)) && TutoManager.instance.nextText == "c5Wait2")
+        if ((FishManager.instance.currentFishBehavior.timerAerial > (FishManager.instance.currentFishBehavior.maxTimeAerial - 0.3f)) && TutoManager.instance.nextText == "c5Wait2")
         {
             Time.timeScale = 0f;
             TutoManager.instance.Chap5Dialogue4();
@@ -442,6 +442,7 @@ public class FishBehavior : MonoBehaviour
             exhausted = true;
             if (!TutoManager.instance.fishIsDead)
             {
+                TutoManager.instance.staminaNeedToDown = false;
                 TutoManager.instance.Chap5Dialogue1();
             }
 

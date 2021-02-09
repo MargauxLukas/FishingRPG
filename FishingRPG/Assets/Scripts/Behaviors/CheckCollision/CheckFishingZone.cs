@@ -6,16 +6,21 @@ public class CheckFishingZone : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        FishingManager.instance.isInFishingRod = true;
-        Debug.Log("zone fishing");
-        if(other.gameObject.name.Contains("Player") && !TutoManager.instance.chap2 && !PlayerManager.instance.playerInventory.inventory.tutoFini)
+        if (other.gameObject.name.Contains("Player"))
         {
-            TutoManager.instance.Chap2Dialogue1();
+            FishingManager.instance.isInFishingRod = true;
+            if (!TutoManager.instance.chap2 && !PlayerManager.instance.playerInventory.inventory.tutoFini)
+            {
+                TutoManager.instance.Chap2Dialogue1();
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        FishingManager.instance.isInFishingRod = false;
+        if (other.gameObject.name.Contains("Player"))
+        {
+            FishingManager.instance.isInFishingRod = false;
+        }
     }
 }
