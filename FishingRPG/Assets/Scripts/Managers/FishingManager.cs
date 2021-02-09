@@ -84,7 +84,7 @@ public class FishingManager : MonoBehaviour
 
         randomNumber = Random.Range(0, totalChanceFish);
 
-        if (TutoManager.instance.isOnTutorial)
+        if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
             currentFish = Instantiate(snapTuto,
                            new Vector3(FishingRodManager.instance.bobber.transform.position.x - 2f,
@@ -168,7 +168,7 @@ public class FishingManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         GamePad.SetVibration(0, 0f, 0f);
 
-        if (TutoManager.instance.isOnTutorial)
+        if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
             TutoManager.instance.Chap3Dialogue1();
         }

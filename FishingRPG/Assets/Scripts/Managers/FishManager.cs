@@ -204,7 +204,7 @@ public class FishManager : MonoBehaviour
     //Perte d'endurance lorsque la ligne est bloqué
     public void DownStamina()
     {
-        if(TutoManager.instance.isOnTutorial)
+        if(!PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
             if (currentFishBehavior.currentStamina > 0)
             {
@@ -229,7 +229,7 @@ public class FishManager : MonoBehaviour
     //Perte d'endurance lorsque la ligne est remonté
     public void DownStaminaTakingLine()
     {
-        if(TutoManager.instance.isOnTutorial)
+        if(!PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
             if (currentFishBehavior.currentStamina > 0)
             {

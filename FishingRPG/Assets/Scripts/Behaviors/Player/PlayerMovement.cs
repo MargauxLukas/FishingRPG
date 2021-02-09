@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && !TutoManager.instance.chap1)
+        if(isGrounded && !TutoManager.instance.chap1 && !PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
             TutoManager.instance.chap1 = true;
             TutoManager.instance.Chap1Dialogue1();

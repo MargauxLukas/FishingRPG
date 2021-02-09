@@ -73,8 +73,8 @@ public class Rotate : MonoBehaviour
 
     void Update()
     {
-        if (TutoManager.instance.chap2 )
-        {
+        //if (!TutoManager.instance.chap1 )
+        //{
             if (TutoManager.instance.buttonBAutorisation)
             {
                 if (Input.GetButtonUp("B Button"))
@@ -90,7 +90,7 @@ public class Rotate : MonoBehaviour
                         isCancelFishing = false;
                     }
 
-                    if (TutoManager.instance.isOnTutorial)
+                    if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
                     {
                         TutoManager.instance.buttonBAutorisation = false;
                     }
@@ -134,10 +134,13 @@ public class Rotate : MonoBehaviour
 
             if (isReleaseButton)
             {
+                Debug.Log("1");
                 if (!PlayerManager.instance.isPressingRT && FishingManager.instance.isInFishingRod)
                 {
+                    Debug.Log("2");
                     if (PlayerManager.instance.playerInventory.inventory.currentFishOnMe < 3)
                     {
+                        Debug.Log("3");
                         //desactivate UI
 
                         if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
@@ -332,7 +335,7 @@ public class Rotate : MonoBehaviour
             }
             */
             #endregion
-        }
+        //}
 
     }
 

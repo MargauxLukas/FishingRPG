@@ -106,7 +106,7 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            if (!FishManager.instance.isAerial && !TutoManager.instance.isOnTutorial)
+            if (!FishManager.instance.isAerial && PlayerManager.instance.playerInventory.inventory.tutoFini)
             {
                 idleTimer += Time.fixedDeltaTime;
 
@@ -365,7 +365,6 @@ public class FishBehavior : MonoBehaviour
         if (!fellingFreeze)
         {
             timerAerial += Time.fixedDeltaTime;
-            //Debug.Log(timerAerial);
         }
         
         transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
@@ -376,7 +375,7 @@ public class FishBehavior : MonoBehaviour
             ChooseDirection();
             timerAerial = 0f;
         }
-        Debug.Log(FishManager.instance.currentFishBehavior.timerAerial);
+
         if((FishManager.instance.currentFishBehavior.timerAerial > (FishManager.instance.currentFishBehavior.maxTimeAerial - 0.2f)) && TutoManager.instance.nextText == "c5Wait2")
         {
             Time.timeScale = 0f;
@@ -421,6 +420,11 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
+            if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
+            {
+                TutoManager.instance.Chap6Win1();
+            }
+
             canCollectTheFish = true;
             FishManager.instance.NotExtenued();
             aButton.SetActive(true);

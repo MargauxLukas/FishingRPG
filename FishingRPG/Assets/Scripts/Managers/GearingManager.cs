@@ -58,7 +58,7 @@ public class GearingManager : MonoBehaviour
             advertissement.SetActive(false);
         }
 
-        if (!TutoManager.instance.isOnTutorial)
+        if (PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
             if (Input.GetButton("Y Button"))
             {

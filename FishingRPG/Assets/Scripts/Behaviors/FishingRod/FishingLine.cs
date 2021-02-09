@@ -52,7 +52,7 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            if (TutoManager.instance.isOnTutorial)
+            if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
             {
                 currentTension += (UtilitiesManager.instance.GetLossTensionNumber() / 50)/50;
 
@@ -94,7 +94,7 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            if (TutoManager.instance.isOnTutorial)
+            if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
             {
                 currentTension += (UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60)/50;
                 

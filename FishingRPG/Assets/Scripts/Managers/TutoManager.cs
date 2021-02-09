@@ -53,7 +53,24 @@ public class TutoManager : MonoBehaviour
 
     public void Start()
     {
-
+        if(PlayerManager.instance.playerInventory.inventory.tutoFini)
+        {
+            canRebond = true;
+            canFell = true;
+            canVictory = true;
+            fishIsDead = true;
+            buttonBAutorisation = true;
+            DisableDialogueBox();
+            helpInputs.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(1).GetChild(1).GetChild(2).gameObject.SetActive(true);
+            helpInputs.transform.GetChild(1).GetChild(1).GetChild(3).gameObject.SetActive(true);
+        }
     }
 
     public void Update()
@@ -266,7 +283,8 @@ public class TutoManager : MonoBehaviour
 
     public void EndTutorial()
     {
-
+        isOnTutorial = false;
+        PlayerManager.instance.playerInventory.inventory.tutoFini = true;
     }
 
     #endregion
@@ -275,7 +293,6 @@ public class TutoManager : MonoBehaviour
 
     public void Chap1Dialogue1()
     {
-        isOnTutorial = true;
         ShowDialogueBox();
         BaalSpeaking();
         textIsFinish = false;
@@ -527,16 +544,10 @@ public class TutoManager : MonoBehaviour
 
     public void Chap5Dialogue4()
     {
+        Debug.Log("c5d4");
         nextText = "c5Wait3";
         canRebond = true;
-        //Apparition UI "RB pour faire ronbir le poisson"
-    }
-
-    public void Chap5Dialogue5()
-    {
-        nextText = "c5Wait4";
-        canRebond = true;
-        //Apparition UI "RB pour faire ronbir le poisson"
+        //Apparition UI "RB pour faire rebonbir le poisson"
     }
 
     public void Chap5Dialogue6()
@@ -566,6 +577,7 @@ public class TutoManager : MonoBehaviour
         DisableDialogueBox();
         canFell = true;
         helpInputs.transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+        nextText = "c5Wait4";
         //UI Appuyer sur LB pour claquer le poisson
         canVictory = true;
     }
@@ -614,6 +626,7 @@ public class TutoManager : MonoBehaviour
     {
         textIsFinish = true;
         nextText = "";
+        EndTutorial();
     }
 
     //Win
@@ -657,6 +670,7 @@ public class TutoManager : MonoBehaviour
     {
         textIsFinish = true;
         nextText = "";
+        EndTutorial();
     }
 
 
