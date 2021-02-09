@@ -106,7 +106,7 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            if (!FishManager.instance.isAerial)
+            if (!FishManager.instance.isAerial && PlayerManager.instance.playerInventory.inventory.tutoFini)
             {
                 idleTimer += Time.fixedDeltaTime;
 
@@ -118,7 +118,7 @@ public class FishBehavior : MonoBehaviour
 
             if (isIdle)
             {
-                if (!inVictoryZone)
+                if (!inVictoryZone || !TutoManager.instance.canVictory)
                 {
                     if (!FishManager.instance.isAerial)
                     {
@@ -365,7 +365,6 @@ public class FishBehavior : MonoBehaviour
         if (!fellingFreeze)
         {
             timerAerial += Time.fixedDeltaTime;
-            //Debug.Log(timerAerial);
         }
         
         transform.position = GetAerialPosition(timerAerial / maxTimeAerial);
@@ -375,6 +374,18 @@ public class FishBehavior : MonoBehaviour
             FishManager.instance.FishRecuperation();
             ChooseDirection();
             timerAerial = 0f;
+        }
+
+        if((FishManager.instance.currentFishBehavior.timerAerial > (FishManager.instance.currentFishBehavior.maxTimeAerial - 0.2f)) && TutoManager.instance.nextText == "c5Wait2")
+        {
+            Time.timeScale = 0f;
+            TutoManager.instance.Chap5Dialogue4();
+        }
+
+        if (timerAerial >= 0.45f && TutoManager.instance.nextText == "c5d4")
+        {
+            Time.timeScale = 0f;
+            TutoManager.instance.Chap5Dialogue6();
         }
     }
 
@@ -409,6 +420,11 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
+            if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
+            {
+                TutoManager.instance.Chap6Win1();
+            }
+
             canCollectTheFish = true;
             FishManager.instance.NotExtenued();
             aButton.SetActive(true);
@@ -424,6 +440,11 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
+            if (!TutoManager.instance.fishIsDead)
+            {
+                TutoManager.instance.Chap5Dialogue1();
+            }
+
             animator.SetBool("isDeadOrExhausted", true);
             shaderMaterialFish.SetFloat("Vector1_403CFD6B", 0.2f);
             shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 0.2f);

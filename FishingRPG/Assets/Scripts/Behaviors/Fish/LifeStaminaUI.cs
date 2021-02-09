@@ -29,7 +29,7 @@ public class LifeStaminaUI : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(lifeCD.fillAmount);
+        
     }
 
     public void UpdateLife(float _life)

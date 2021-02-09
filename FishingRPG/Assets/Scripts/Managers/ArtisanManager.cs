@@ -26,7 +26,7 @@ public class ArtisanManager : MonoBehaviour
 
     public Image holdButtonImg;
 
-
+    private bool leaveOneTime = false;
 
     void Start()
     {
@@ -128,12 +128,22 @@ public class ArtisanManager : MonoBehaviour
             holdButtonImg.fillAmount = 0;
         }
 
-        if (Input.GetButtonDown("B Button"))
+        if (Input.GetButtonDown("B Button") && !leaveOneTime)
         {
-            UIManager.instance.CloseMenu(gameObject);
-            //Play Sound
-            AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
+            leaveOneTime = true;
+            DialogueManager.instance.LeaveArtisan();
+            StartCoroutine(LeaveArtisan());
         }
+    }
+
+    IEnumerator LeaveArtisan()
+    {
+        yield return new WaitForSeconds(0.4f);
+
+        UIManager.instance.CloseMenu(gameObject);
+        //Play Sound
+        AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
+        leaveOneTime = false;
     }
 
     void SetSelectedTabColor(GameObject _tab)

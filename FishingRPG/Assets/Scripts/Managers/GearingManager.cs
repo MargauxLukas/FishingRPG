@@ -58,75 +58,77 @@ public class GearingManager : MonoBehaviour
             advertissement.SetActive(false);
         }
 
-        if (Input.GetButton("Y Button"))
+        if (PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
-            isLeaving = true;
-
-            leavingTimer += Time.deltaTime;
-
-            if (leavingTimer < leavingTime)
+            if (Input.GetButton("Y Button"))
             {
-                holdButtonImg.fillAmount = leavingTimer / leavingTime;
+                isLeaving = true;
+
+                leavingTimer += Time.deltaTime;
+
+                if (leavingTimer < leavingTime)
+                {
+                    holdButtonImg.fillAmount = leavingTimer / leavingTime;
+                }
+                if (leavingTimer >= leavingTime)
+                {
+                    leavingTimer = 0;
+                    isLeaving = false;
+                    holdButtonImg.fillAmount = 0;
+
+                    AkSoundEngine.PostEvent("OnHubLeave", gameObject);
+
+                    if (SceneManager.GetActiveScene().buildIndex == 0)
+                    {
+                        if (PlayerManager.instance.playerInventory.inventory.fishTotal > 9)
+                        {
+                            PlayerManager.instance.playerInventory.inventory.fishTotal = 9;
+                            PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
+                            PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
+                        }
+                        else
+                        {
+                            PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
+                            PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
+                        }
+                    }
+
+                    if (SceneManager.GetActiveScene().buildIndex == 1)
+                    {
+                        if (UIManager.instance.inventory.fishTotal > 0 && !needToAccept)
+                        {
+                            advertise = true;
+                        }
+                    }
+
+                    if (!advertise)
+                    {
+                        if (SceneManager.GetActiveScene().buildIndex == 2)
+                        {
+                            UIManager.instance.inventory.fishTotal = 0;
+                            needToAccept = false;
+                            ChangeScene(3);
+                        }
+                        else
+                        {
+                            ChangeScene(1);
+                        }
+                    }
+                    else
+                    {
+                        advertissement.SetActive(true);
+                        needToAccept = true;
+                    }
+                }
             }
 
-            if (leavingTimer >= leavingTime)
+            if (Input.GetButtonUp("Y Button") && isLeaving)
             {
+                Debug.Log("Release");
                 leavingTimer = 0;
                 isLeaving = false;
                 holdButtonImg.fillAmount = 0;
-
-                AkSoundEngine.PostEvent("OnHubLeave", gameObject);
-
-                if (SceneManager.GetActiveScene().buildIndex == 0)
-                {
-                    if (PlayerManager.instance.playerInventory.inventory.fishTotal > 9)
-                    {
-                        PlayerManager.instance.playerInventory.inventory.fishTotal = 9;
-                        PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
-                        PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
-                    }
-                    else
-                    {
-                        PlayerManager.instance.playerInventory.inventory.currentFishOnMe = 0;
-                        PlayerManager.instance.playerInventory.inventory.fishNumberOnStock = 0;
-                    }
-                }
-
-                if (SceneManager.GetActiveScene().buildIndex == 1)
-                {
-                    if (UIManager.instance.inventory.fishTotal > 0 && !needToAccept)
-                    {
-                        advertise = true;
-                    }
-                }
-
-                if (!advertise)
-                {
-                    if (SceneManager.GetActiveScene().buildIndex == 2)
-                    {
-                        UIManager.instance.inventory.fishTotal = 0;
-                        needToAccept = false;
-                        ChangeScene(3);
-                    }
-                    else
-                    {
-                        ChangeScene(1);
-                    }
-                }
-                else
-                {
-                    advertissement.SetActive(true);
-                    needToAccept = true;
-                }
             }
-        }
-
-        if (Input.GetButtonUp("Y Button") && isLeaving)
-        {
-            Debug.Log("Release");
-            leavingTimer = 0;
-            isLeaving = false;
-            holdButtonImg.fillAmount = 0;
         }
 
         if (Input.GetButtonDown("B Button"))

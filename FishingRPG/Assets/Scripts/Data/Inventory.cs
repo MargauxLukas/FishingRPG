@@ -59,6 +59,8 @@ public class Inventory : ScriptableObject
     public bool GPE_1;
     public bool GRE_1;
 
+    public bool tutoFini = false;
+
     public int GetVariable(string id)
     {
         switch(id)

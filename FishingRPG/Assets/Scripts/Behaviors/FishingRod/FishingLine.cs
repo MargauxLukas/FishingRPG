@@ -54,7 +54,19 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 50;
+            if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
+            {
+                currentTension += (UtilitiesManager.instance.GetLossTensionNumber() / 50)/50;
+
+                if (currentTension > 90f)
+                {
+                    currentTension = 90f;
+                }
+            }
+            else
+            {
+                currentTension += UtilitiesManager.instance.GetLossTensionNumber() / 50;
+            }
             UpdateJaugeTension();
 
             if (!tensionOnce)
@@ -84,7 +96,19 @@ public class FishingLine : MonoBehaviour
     {
         if (!FishManager.instance.currentFishBehavior.isDead && !FishManager.instance.currentFishBehavior.exhausted)
         {
-            currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
+            if (!PlayerManager.instance.playerInventory.inventory.tutoFini)
+            {
+                currentTension += (UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60)/50;
+                
+                if(currentTension > 90f)
+                {
+                    currentTension = 90f;
+                }
+            }
+            else
+            {
+                currentTension += UtilitiesManager.instance.GetLossTensionNumberTakingLine() / 60;
+            }
             UpdateJaugeTension();
             
             if (!tensionOnce)

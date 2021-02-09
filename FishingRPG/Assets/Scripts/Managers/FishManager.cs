@@ -207,11 +207,23 @@ public class FishManager : MonoBehaviour
     //Perte d'endurance lorsque la ligne est bloqué
     public void DownStamina()
     {
-        if (currentFishBehavior.currentStamina > 0)
+        if(!PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
-            currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber()/60;
-            LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
-            //ChangeStaminaText();
+            if (currentFishBehavior.currentStamina > 0)
+            {
+                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber() / 20;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
+                //ChangeStaminaText();
+            }
+        }
+        else
+        {
+            if (currentFishBehavior.currentStamina > 0)
+            {
+                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumber() / 60;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
+                //ChangeStaminaText();
+            }
         }
 
         currentFishBehavior.CheckStamina();
@@ -220,10 +232,21 @@ public class FishManager : MonoBehaviour
     //Perte d'endurance lorsque la ligne est remonté
     public void DownStaminaTakingLine()
     {
-        if (currentFishBehavior.currentStamina > 0)
+        if(!PlayerManager.instance.playerInventory.inventory.tutoFini)
         {
-            currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine()/60;
-            LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
+            if (currentFishBehavior.currentStamina > 0)
+            {
+                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine() / 20;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
+            }
+        }
+        else
+        {
+            if (currentFishBehavior.currentStamina > 0)
+            {
+                currentFishBehavior.currentStamina -= UtilitiesManager.instance.GetLossEnduranceNumberTakingLine() / 60;
+                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
+            }
         }
 
         currentFishBehavior.CheckStamina();
@@ -266,8 +289,9 @@ public class FishManager : MonoBehaviour
             }
             else
             {
-                currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
-                LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
+                    currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
+                    LifeStaminaUI.instance.UpdateStamina(currentFishBehavior.currentStamina / currentFishBehavior.fishyFiche.stamina);
+                
             }
         }
     }

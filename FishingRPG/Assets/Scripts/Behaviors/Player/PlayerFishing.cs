@@ -16,7 +16,7 @@ public class PlayerFishing : MonoBehaviour
     {
         if (isReadyToFish)
         {
-            if (Input.GetButton("Left Bumper"))         //LB
+            if (Input.GetButton("Left Bumper") && TutoManager.instance.canFell)         //LB
             {
                 if (!hasJustPressLB)
                 {
@@ -47,7 +47,7 @@ public class PlayerFishing : MonoBehaviour
                     StartCoroutine(WaitCooldownTime());
 
 
-                    if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
+                    if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone && TutoManager.instance.canVictory)
                     {
                         FishManager.instance.SetFinishPoint();
                     }
@@ -59,7 +59,7 @@ public class PlayerFishing : MonoBehaviour
                             {
                                 PlayerManager.instance.IsAerial();
                             }
-                            else
+                            else if(TutoManager.instance.canRebond)
                             {
                                 PlayerManager.instance.CheckDistanceWithWater();
                             }

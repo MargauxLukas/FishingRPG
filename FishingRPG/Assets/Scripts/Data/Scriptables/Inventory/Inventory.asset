@@ -25,11 +25,11 @@ MonoBehaviour:
   equipedGem1: {fileID: 11400000, guid: 33445e111fe513a439e50be41a629b4b, type: 2}
   equipedGem2: {fileID: 0}
   equipedGem3: {fileID: 0}
-  PET_C: 0
-  PES_C: 0
-  PEF_R: 0
-  PEI_E: 0
-  PEH_L: 0
+  PET_C: 3
+  PES_C: 4
+  PEF_R: 3
+  PEI_E: 2
+  PEH_L: 1
   PEH_1: 0
   PEP_1: 0
   PEBE_1: 0
@@ -48,3 +48,4 @@ MonoBehaviour:
   REFI_1: 0
   GPE_1: 1
   GRE_1: 0
+  tutoFini: 0
