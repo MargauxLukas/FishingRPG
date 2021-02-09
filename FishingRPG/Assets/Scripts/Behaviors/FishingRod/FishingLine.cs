@@ -38,7 +38,9 @@ public class FishingLine : MonoBehaviour
     public void LineIsBroken()
     {
         FishingManager.instance.CancelFishing();
-        
+        //Play sound breaking line
+        AkSoundEngine.PostEvent("OnBreakingLine", gameObject);
+
         //Vibrations cassures
         StartCoroutine(VibrationsLineBreak());
 
@@ -191,6 +193,7 @@ public class FishingLine : MonoBehaviour
         GamePad.SetVibration(0, 1f, 1f);
         yield return new WaitForSeconds(0.7f);
         GamePad.SetVibration(0, 0f, 0f);
+        
     }
 
 }

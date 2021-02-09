@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Play Sound -> launch ambiance de l'explo
-        AkSoundEngine.PostEvent("AMBWind", FishManager.instance.currentFish.gameObject);
+        AkSoundEngine.PostEvent("AMBWind", gameObject);
     }
 
     // Update is called once per frame

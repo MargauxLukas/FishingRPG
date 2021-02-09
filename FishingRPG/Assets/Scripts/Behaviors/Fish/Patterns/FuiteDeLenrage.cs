@@ -30,6 +30,9 @@ public class FuiteDeLenrage : MonoBehaviour
                 else
                 {
                     //Son du Reef
+                    AkSoundEngine.SetSwitch("PatternPlayed", "Fuite", FishManager.instance.currentFish.gameObject);
+                    //Play Sound
+                    AkSoundEngine.PostEvent("OnPattern_ReefCrusher", FishManager.instance.currentFish.gameObject);
                 }
 
                 if (!costEnergyOverTime)

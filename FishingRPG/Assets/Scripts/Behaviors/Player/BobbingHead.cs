@@ -73,7 +73,7 @@ public class BobbingHead : MonoBehaviour
                     else
                     {
                         //Set Materials to Sand
-                        AkSoundEngine.SetSwitch("Materials", "Sand", gameObject);
+                        AkSoundEngine.SetSwitch("Materials", "Rock", gameObject);
         
                         //Debug.Log("Nom de layer non reconnu");  //ducoup son par défaut ou pas de son comme vous voulez
                     }
