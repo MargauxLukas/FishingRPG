@@ -460,7 +460,7 @@ public class TutoManager : MonoBehaviour
 
     IEnumerator WaitChapter4()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         Chap4Dialogue1();
     }
@@ -469,6 +469,7 @@ public class TutoManager : MonoBehaviour
     #region Chapitre IV
     public void Chap4Dialogue1()
     {
+        Time.timeScale = 0f;
         ShowDialogueBox();
         dialogueText.text = "I have 3 main possible actions…";
         nextText = "c4d2";
@@ -503,6 +504,7 @@ public class TutoManager : MonoBehaviour
     public void Chap4Dialogue6()
     {
         DisableDialogueBox();
+        Time.timeScale = 1f;
         nextText = "";
         RTFishHL.enabled = true;
         LTFishHL.enabled = true;
