@@ -45630,6 +45630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialog Box
       objectReference: {fileID: 0}
+    - target: {fileID: 5144853096117379139, guid: 916b4593d0359434eb6a59f4dce83bc9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5144853096117379140, guid: 916b4593d0359434eb6a59f4dce83bc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
