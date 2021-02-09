@@ -13,6 +13,7 @@ public class Rotate : MonoBehaviour
 
     //Rotation Aerial and Fell
     public Transform fishingRodAnchor;           //Ancre canne à pêche
+    public GameObject UItextTropFish;
     
     /*
     bool isFell = false;
@@ -132,98 +133,98 @@ public class Rotate : MonoBehaviour
                 }
             }
 
-            if (isReleaseButton)
+        if (isReleaseButton)
+        {
+            Debug.Log(!PlayerManager.instance.isPressingRT + " && " + FishingManager.instance.isInFishingRod);
+            if (!PlayerManager.instance.isPressingRT && FishingManager.instance.isInFishingRod)
             {
-                Debug.Log(!PlayerManager.instance.isPressingRT + " && " + FishingManager.instance.isInFishingRod);
-                if (!PlayerManager.instance.isPressingRT && FishingManager.instance.isInFishingRod)
+                if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
                 {
-                    Debug.Log("LA");
+                    if (goodZone && FishingManager.instance.isInFishingRod)
+                    {
+                        StartCoroutine("Throw");
+
+                        //Play Sound
+                        if (!playWireOnce)
+                        {
+                            //AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
+                            playWireOnce = true;
+                        }
+                        FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAuraCircle.transform.position);
+                    }
+                    else
+                    {
+                        StartCoroutine("FailedThrow");
+                    }
+
+                    isMax = false;
+                    axisRelease = false;
+                    bobberAuraCircle.SetActive(false);
+                }
+
+                if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
+                {
                     if (PlayerManager.instance.playerInventory.inventory.currentFishOnMe < 3)
                     {
-                        if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
+                        axisRelease = true;
+                        if ((transform.localRotation.eulerAngles.x > 280f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
                         {
-                            if (goodZone && FishingManager.instance.isInFishingRod)
-                            {
-                                StartCoroutine("Throw");
-
-                                //Play Sound
-                                if (!playWireOnce)
-                                {
-                                    //AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
-                                    playWireOnce = true;
-                                }
-                                FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAuraCircle.transform.position);
-                            }
-                            else
-                            {
-                                StartCoroutine("FailedThrow");
-                            }
-
-                            isMax = false;
-                            axisRelease = false;
-                            bobberAuraCircle.SetActive(false);
+                            playerView.mouseSensitivity = slowedSensitivity;
+                            transform.Rotate(new Vector3(-2f, 0f, 0f));
+                            PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
+                            transform.localPosition += new Vector3(0.007f, -0.007f, 0f);
+                        }
+                        else
+                        {
+                            isMax = true;
                         }
 
-                        if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
+                        //Aura bobber
+                        raycastOrigin = mainCamera.transform.position;
+
+                        if (Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80, layer))
                         {
-                            axisRelease = true;
-                            if ((transform.localRotation.eulerAngles.x > 280f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
+                            bobberAuraCircle.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                            bobberAuraCircle.SetActive(true);
+
+                            if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8)
                             {
-                                playerView.mouseSensitivity = slowedSensitivity;
-                                transform.Rotate(new Vector3(-2f, 0f, 0f));
-                                PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
-                                transform.localPosition += new Vector3(0.007f, -0.007f, 0f);
+                                bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = redCircle;
+                                bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
+                                goodZone = false;
                             }
                             else
                             {
-                                isMax = true;
-                            }
-
-                            //Aura bobber
-                            raycastOrigin = mainCamera.transform.position;
-
-                            if (Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80, layer))
-                            {
-                                bobberAuraCircle.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                                bobberAuraCircle.SetActive(true);
-
-                                if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8)
-                                {
-                                    bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = redCircle;
-                                    bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
-                                    goodZone = false;
-                                }
-                                else
-                                {
-                                    bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = yellowCircle;
-                                    bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = yellowArrow;
-                                    goodZone = true;
-                                }
+                                bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = yellowCircle;
+                                bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = yellowArrow;
+                                goodZone = true;
                             }
                         }
                     }
                     else
                     {
-                        //active UI
+                        UItextTropFish.SetActive(true);
+                        StartCoroutine(TropFish());
                         Debug.Log("Trop de poisson");
                     }
                 }
-                else
+            }
+            else
+            {
+                if (Input.GetAxis("Right Trigger") == 0)
                 {
-                    if (Input.GetAxis("Right Trigger") == 0)
-                    {
-                        PlayerManager.instance.isPressingRT = false;
+                    PlayerManager.instance.isPressingRT = false;
 
-                        if(!FishingManager.instance.isInFishingRod)
-                        {
-                            StartCoroutine("FailedThrow");
-                            isMax = false;
-                            axisRelease = false;
-                            bobberAuraCircle.SetActive(false);
-                        }
+                    if (!FishingManager.instance.isInFishingRod)
+                    {
+                        StartCoroutine("FailedThrow");
+                        isMax = false;
+                        axisRelease = false;
+                        bobberAuraCircle.SetActive(false);
                     }
                 }
             }
+        }
 
 
             #region Movement Canne à pêche Aerial et Claquage
@@ -334,6 +335,12 @@ public class Rotate : MonoBehaviour
             #endregion
         //}
 
+    }
+
+    IEnumerator TropFish()
+    {
+        yield return new WaitForSeconds(1.2f);
+        UItextTropFish.SetActive(false);
     }
 
     IEnumerator Throw()
