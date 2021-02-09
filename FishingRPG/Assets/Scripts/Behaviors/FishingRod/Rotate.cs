@@ -73,247 +73,269 @@ public class Rotate : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonUp("B Button"))
+        if (TutoManager.instance.chap2 )
         {
-            isReleaseButton = true;
-            holdButtonImage.gameObject.SetActive(false);
-            holdingButtonTimer = 0;
-            holdButtonImage.fillAmount = 0f;
-
-            if(isCancelFishing)
+            if (TutoManager.instance.buttonBAutorisation)
             {
-                isCancelFishing = false;
-            }
-        }
-     
-        /*
-        if (Input.GetButtonUp("B Button") && isCancelFishing)
-        {
-            holdButtonImage.gameObject.SetActive(false);
-            holdingButtonTimer = 0;
-            holdButtonImage.fillAmount = 0f;
-            isCancelFishing = false;
-            isReleaseButton = true;
-        }*/
-
-        if (Input.GetButton("B Button") && FishingRodManager.instance.bobberThrowed)
-        {
-            holdButtonImage.gameObject.SetActive(true);
-
-            isCancelFishing = true;
-            isReleaseButton = false;
-            holdingButtonTimer += Time.deltaTime;
-
-            if (holdingButtonTimer < holdingButtonMaxTimer)
-            {
-                holdButtonImage.fillAmount = holdingButtonTimer / holdingButtonMaxTimer;
-            }
-
-            if (holdingButtonTimer >= holdingButtonMaxTimer)
-            {
-                FishingManager.instance.CancelFishing();
-                FishingRodManager.instance.bobberThrowed = false;
-
-                holdingButtonTimer = 0;
-                holdButtonImage.fillAmount = 0f;
-                isCancelFishing = false;
-                holdButtonImage.gameObject.SetActive(false);
-            }
-        }
-
-        if (isReleaseButton && FishingManager.instance.isInFishingRod)
-        {
-            if (!PlayerManager.instance.isPressingRT)
-            {
-                if (PlayerManager.instance.playerInventory.inventory.currentFishOnMe < 3)
+                if (Input.GetButtonUp("B Button"))
                 {
-                    //desactivate UI
-                    
-                    
-                    if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
+                    Debug.Log("1");
+                    isReleaseButton = true;
+                    holdButtonImage.gameObject.SetActive(false);
+                    holdingButtonTimer = 0;
+                    holdButtonImage.fillAmount = 0f;
+
+                    if (isCancelFishing)
                     {
-                        if (goodZone)
-                        {
-                            StartCoroutine("Throw");
-
-                            //Play Sound
-                            if (!playWireOnce)
-                            {
-                                //AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
-                                playWireOnce = true;
-                            }
-                            FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAuraCircle.transform.position);
-                        }
-                        else
-                        {
-                            StartCoroutine("FailedThrow");
-                        }
-
-                        isMax = false;
-                        axisRelease = false;
-                        bobberAuraCircle.SetActive(false);
+                        isCancelFishing = false;
                     }
 
-                    if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
+                    if (TutoManager.instance.isOnTutorial)
                     {
-                        axisRelease = true;
-                        if ((transform.localRotation.eulerAngles.x > 280f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
-                        {
-                            playerView.mouseSensitivity = slowedSensitivity;
-                            transform.Rotate(new Vector3(-2f, 0f, 0f));
-                            PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
-                            transform.localPosition += new Vector3(0.007f, -0.007f, 0f);
-                        }
-                        else
-                        {
-                            isMax = true;
-                        }
+                        TutoManager.instance.buttonBAutorisation = false;
+                    }
+                }
 
-                        //Aura bobber
-                        raycastOrigin = mainCamera.transform.position;
+                /*
+                if (Input.GetButtonUp("B Button") && isCancelFishing)
+                {
+                    holdButtonImage.gameObject.SetActive(false);
+                    holdingButtonTimer = 0;
+                    holdButtonImage.fillAmount = 0f;
+                    isCancelFishing = false;
+                    isReleaseButton = true;
+                }*/
 
-                        if (Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80, layer))
+                if (Input.GetButton("B Button") && FishingRodManager.instance.bobberThrowed)
+                {
+                    holdButtonImage.gameObject.SetActive(true);
+
+                    isCancelFishing = true;
+                    isReleaseButton = false;
+                    holdingButtonTimer += Time.deltaTime;
+
+                    if (holdingButtonTimer < holdingButtonMaxTimer)
+                    {
+                        holdButtonImage.fillAmount = holdingButtonTimer / holdingButtonMaxTimer;
+                    }
+
+                    if (holdingButtonTimer >= holdingButtonMaxTimer)
+                    {
+                        FishingManager.instance.CancelFishing();
+                        FishingRodManager.instance.bobberThrowed = false;
+
+                        holdingButtonTimer = 0;
+                        holdButtonImage.fillAmount = 0f;
+                        isCancelFishing = false;
+                        holdButtonImage.gameObject.SetActive(false);
+                    }
+                }
+            }
+
+            if (isReleaseButton)
+            {
+                Debug.Log("1");
+                if (!PlayerManager.instance.isPressingRT && FishingManager.instance.isInFishingRod)
+                {
+                    Debug.Log("2");
+                    if (PlayerManager.instance.playerInventory.inventory.currentFishOnMe < 3)
+                    {
+                        Debug.Log("3");
+                        //desactivate UI
+
+                        if (Input.GetAxis("Right Trigger") == 0 && axisRelease && !FishingRodManager.instance.bobberThrowed)
                         {
-                            bobberAuraCircle.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                            bobberAuraCircle.SetActive(true);
-
-                            if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8)
+                            if (goodZone && FishingManager.instance.isInFishingRod)
                             {
-                                bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = redCircle;
-                                bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
-                                goodZone = false;
+                                StartCoroutine("Throw");
+
+                                //Play Sound
+                                if (!playWireOnce)
+                                {
+                                    //AkSoundEngine.PostEvent("OnWireLaunched", gameObject);
+                                    playWireOnce = true;
+                                }
+                                FishingRodManager.instance.bobber.GetComponent<Bobber>().SetBezierPoint(bobberAuraCircle.transform.position);
                             }
                             else
                             {
-                                bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = yellowCircle;
-                                bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = yellowArrow;
-                                goodZone = true;
+                                StartCoroutine("FailedThrow");
+                            }
+
+                            isMax = false;
+                            axisRelease = false;
+                            bobberAuraCircle.SetActive(false);
+                        }
+
+                        if ((Input.GetAxis("Right Trigger") > 0.1f) && !FishingRodManager.instance.bobberThrowed)                               //First Press RT
+                        {
+                            axisRelease = true;
+                            if ((transform.localRotation.eulerAngles.x > 280f || (transform.localRotation.eulerAngles.x >= 0 && transform.localRotation.eulerAngles.x < 1)) && !isMax)
+                            {
+                                playerView.mouseSensitivity = slowedSensitivity;
+                                transform.Rotate(new Vector3(-2f, 0f, 0f));
+                                PlayerManager.instance.playerView.GetComponent<PlayerView>().bezierBobber += 0.6f;
+                                transform.localPosition += new Vector3(0.007f, -0.007f, 0f);
+                            }
+                            else
+                            {
+                                isMax = true;
+                            }
+
+                            //Aura bobber
+                            raycastOrigin = mainCamera.transform.position;
+
+                            if (Physics.Raycast(raycastOrigin, mainCamera.transform.forward, out hit, 80, layer))
+                            {
+                                bobberAuraCircle.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                                bobberAuraCircle.SetActive(true);
+
+                                if (hit.distance > FishingRodManager.instance.fishingLine.fMax || hit.collider.gameObject.layer == 8)
+                                {
+                                    bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = redCircle;
+                                    bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = redArrow;
+                                    goodZone = false;
+                                }
+                                else
+                                {
+                                    bobberAuraCircle.gameObject.GetComponent<SpriteRenderer>().color = yellowCircle;
+                                    bobberAuraArrow.gameObject.GetComponent<SpriteRenderer>().color = yellowArrow;
+                                    goodZone = true;
+                                }
                             }
                         }
+                    }
+                    else
+                    {
+                        //active UI
+                        Debug.Log("Trop de poisson");
                     }
                 }
                 else
                 {
-                    //active UI
-                    Debug.Log("Trop de poisson");
+                    if (Input.GetAxis("Right Trigger") == 0)
+                    {
+                        PlayerManager.instance.isPressingRT = false;
+
+                        if(!FishingManager.instance.isInFishingRod)
+                        {
+                            StartCoroutine("FailedThrow");
+                            isMax = false;
+                            axisRelease = false;
+                            bobberAuraCircle.SetActive(false);
+                        }
+                    }
                 }
             }
-            else
+
+
+            #region Movement Canne à pêche Aerial et Claquage
+            /*
+            if (isFell)
             {
-                if (Input.GetAxis("Right Trigger") == 0)
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 50f)
                 {
-                    PlayerManager.instance.isPressingRT = false;
+                    fishingRodAnchor.transform.Rotate(new Vector3(6f, 0f, 0f));
+                }
+                else
+                {
+                    isFell = false;
+                    isFell2 = true;
                 }
             }
-        }
 
+            if (isFell2)
+            {
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
+                {
+                    fishingRodAnchor.transform.Rotate(new Vector3(-8f, 0f, 0f));
+                }
+                else
+                {
+                    isFell2 = false;
+                }
+            }
 
-        #region Movement Canne à pêche Aerial et Claquage
-        /*
-        if (isFell)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 50f)
+            if (isAerial)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(6f, 0f, 0f));
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 20f || fishingRodAnchor.transform.localRotation.eulerAngles.x > 320f)
+                {
+                    fishingRodAnchor.transform.Rotate(new Vector3(-6f, 0f, 0f));
+                }
+                else
+                {
+                    isAerial = false;
+                    isAerial2 = true;
+                }
             }
-            else
-            {
-                isFell = false;
-                isFell2 = true;
-            }
-        }
 
-        if (isFell2)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
+            if (isAerial2)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(-8f, 0f, 0f));
-            }
-            else
-            {
-                isFell2 = false;
-            }
-        }
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
+                {
+                    fishingRodAnchor.transform.Rotate(new Vector3(8f, 0f, 0f));
+                }
+                else
+                {
+                    isAerial2 = false;
+                }
+            }*/
+            #endregion
 
-        if (isAerial)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 20f || fishingRodAnchor.transform.localRotation.eulerAngles.x > 320f)
+            #region Movement Fail Canne à pêche Aerial et Claquage
+            /*
+            if (isFellFail)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(-6f, 0f, 0f));
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 15f)
+                {
+                    fishingRodAnchor.transform.Rotate(new Vector3(6f, 0f, 0f));
+                }
+                else
+                {
+                    isFellFail = false;
+                    isFellFail2 = true;
+                }
             }
-            else
-            {
-                isAerial = false;
-                isAerial2 = true;
-            }
-        }
 
-        if (isAerial2)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
+            if (isFellFail2)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(8f, 0f, 0f));
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
+                {
+                    fishingRodAnchor.transform.Rotate(new Vector3(-8f, 0f, 0f));
+                }
+                else
+                {
+                    isFellFail2 = false;
+                }
             }
-            else
-            {
-                isAerial2 = false;
-            }
-        }*/
-        #endregion
 
-        #region Movement Fail Canne à pêche Aerial et Claquage
-        /*
-        if (isFellFail)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 15f)
+            if (isAerialFail)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(6f, 0f, 0f));
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 20f || fishingRodAnchor.transform.localRotation.eulerAngles.x > 360f)
+                {
+                    fishingRodAnchor.transform.Rotate(new Vector3(-6f*Time.deltaTime, 0f, 0f));
+                }
+                else
+                {
+                    isAerialFail = false;
+                    isAerialFail2 = true;
+                }
             }
-            else
-            {
-                isFellFail = false;
-                isFellFail2 = true;
-            }
-        }
 
-        if (isFellFail2)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
+            if (isAerialFail2)
             {
-                fishingRodAnchor.transform.Rotate(new Vector3(-8f, 0f, 0f));
+                if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
+                {
+                    fishingRodAnchor.transform.Rotate(new Vector3(8f*Time.deltaTime, 0f, 0f));
+                }
+                else
+                {
+                    isAerialFail2 = false;
+                }
             }
-            else
-            {
-                isFellFail2 = false;
-            }
+            */
+            #endregion
         }
-        
-        if (isAerialFail)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x < 20f || fishingRodAnchor.transform.localRotation.eulerAngles.x > 360f)
-            {
-                fishingRodAnchor.transform.Rotate(new Vector3(-6f*Time.deltaTime, 0f, 0f));
-            }
-            else
-            {
-                isAerialFail = false;
-                isAerialFail2 = true;
-            }
-        }
-
-        if (isAerialFail2)
-        {
-            if (fishingRodAnchor.transform.localRotation.eulerAngles.x > 10f)
-            {
-                fishingRodAnchor.transform.Rotate(new Vector3(8f*Time.deltaTime, 0f, 0f));
-            }
-            else
-            {
-                isAerialFail2 = false;
-            }
-        }
-        */
-        #endregion
 
     }
 

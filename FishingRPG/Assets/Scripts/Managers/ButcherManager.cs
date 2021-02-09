@@ -45,6 +45,8 @@ public class ButcherManager : MonoBehaviour
     bool dropListCleared = false;
     bool canQuitButcher = true;
 
+    private bool leaveOneTime;
+
 
     void Update()
     {
@@ -128,10 +130,10 @@ public class ButcherManager : MonoBehaviour
 
         if (Input.GetButtonDown("B Button") && canQuitButcher)
         {
-            ResetButcherToDefault();
-            UIManager.instance.CloseMenu(gameObject);
-            //Play Sound
-            AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
+            leaveOneTime = true;
+            DialogueManager.instance.LeaveButcher();
+            StartCoroutine(LeaveButcher());
+
         }
 
         if(Input.GetButtonUp("Submit") && dropListCleared)
@@ -141,6 +143,17 @@ public class ButcherManager : MonoBehaviour
             isCutting = false;
             dropListCleared = false;
         }
+    }
+
+    IEnumerator LeaveButcher()
+    {
+        yield return new WaitForSeconds(0.4f);
+
+        ResetButcherToDefault();
+        UIManager.instance.CloseMenu(gameObject);
+        //Play Sound
+        AkSoundEngine.PostEvent("OnBuildingLeft", gameObject);
+        leaveOneTime = false;
     }
 
     public void ClearDropList(int i)

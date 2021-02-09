@@ -376,6 +376,18 @@ public class FishBehavior : MonoBehaviour
             ChooseDirection();
             timerAerial = 0f;
         }
+
+        if(timerAerial >= 0.9f && TutoManager.instance.nextText == "c5Wait2")
+        {
+            Time.timeScale = 0f;
+            TutoManager.instance.Chap5Dialogue4();
+        }
+
+        if (timerAerial >= 0.45f && TutoManager.instance.nextText == "c5d4")
+        {
+            Time.timeScale = 0f;
+            TutoManager.instance.Chap5Dialogue6();
+        }
     }
 
     public void DetectionWall()
@@ -424,6 +436,7 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
+            TutoManager.instance.Chap5Dialogue1();
             animator.SetBool("isDeadOrExhausted", true);
             shaderMaterialFish.SetFloat("Vector1_403CFD6B", 0.2f);
             shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 0.2f);
