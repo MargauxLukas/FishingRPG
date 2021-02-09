@@ -28,9 +28,11 @@ public class TutoManager : MonoBehaviour
     public bool buttonBAutorisation = false;
     public bool launchingBobber = false;
     public bool staminaNeedToDown = false;
+    public bool fishIsDead = false;
 
     public bool canRebond = false;
     public bool canFell = false;
+    public bool canVictory = false;
 
     public Text dialogueText;
     public Text nameText;
@@ -100,6 +102,9 @@ public class TutoManager : MonoBehaviour
                     case "c3d6":
                         Chap3Dialogue6();
                         break;
+                    case "c3d7":
+                        Chap3Dialogue7();
+                        break;
                     case "c4d2":
                         Chap4Dialogue2();
                         break;
@@ -129,6 +134,33 @@ public class TutoManager : MonoBehaviour
                         break;
                     case "c5d7":
                         Chap5Dialogue9();
+                        break;
+                    case "c6Fail1":
+                        Chap6Fail2();
+                        break;
+                    case "c6Fail2":
+                        Chap6Fail3();
+                        break;
+                    case "c6Fail3":
+                        Chap6Fail4();
+                        break;
+                    case "c6Fail4":
+                        Chap6Fail5();
+                        break;
+                    case "c6Win1":
+                        Chap6Win2();
+                        break;
+                    case "c6Win2":
+                        Chap6Win3();
+                        break;
+                    case "c6Win3":
+                        Chap6Win4();
+                        break;
+                    case "c6Win4":
+                        Chap6Win5();
+                        break;
+                    case "c6Win5":
+                        Chap6Win6();
                         break;
                     default:
                         break;
@@ -168,10 +200,10 @@ public class TutoManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if(timer > 60f || Vector3.Distance(FishingRodManager.instance.bobberPosition.transform.position, FishManager.instance.currentFish.transform.position) < 8f 
+            if(timer > 60f || Vector3.Distance(FishingRodManager.instance.bobberPosition.transform.position, FishManager.instance.currentFish.transform.position) < 5f 
                            || FishManager.instance.currentFishBehavior.currentStamina <= 0)
             {
-                //
+                Chap4Dialogue8();
             }
         }
 
@@ -232,6 +264,11 @@ public class TutoManager : MonoBehaviour
         baal.color = notSpeakingColor;
     }
 
+    public void EndTutorial()
+    {
+
+    }
+
     #endregion
 
     #region Chapitre I
@@ -241,6 +278,7 @@ public class TutoManager : MonoBehaviour
         isOnTutorial = true;
         ShowDialogueBox();
         BaalSpeaking();
+        textIsFinish = false;
         dialogueText.text = "Here we are! The BluePearl Bay. You will quickly understand why we call it that way.";
         nextText = "c1d2";
     }
@@ -262,6 +300,7 @@ public class TutoManager : MonoBehaviour
     {
         BaalSpeaking();
         dialogueText.text = "Well, now is the best part. A fishing session! First, let’s go to the waterfront.";
+        textIsFinish = true;
         nextText = "";
     }
 
@@ -462,10 +501,12 @@ public class TutoManager : MonoBehaviour
     public void Chap5Dialogue1()
     {
         Time.timeScale = 0f;
+        fishIsDead = true;
         ShowDialogueBox();
         BaalSpeaking();
         dialogueText.text = "The fish isn’t moving, it’s exhausted. While it can’t move, I can throw it in the air to hurt him.";
         nextText = "c5d2";
+        
     }
 
     public void Chap5Dialogue2()
@@ -477,6 +518,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap5Dialogue3()
     {
+        Debug.Log("t3");
         DisableDialogueBox();
         helpInputs.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(true);
         //Apparition UI " Appuyer sur RB pour envoyer le poisson en l'air"
@@ -492,7 +534,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap5Dialogue5()
     {
-        nextText = "c5Wait3";
+        nextText = "c5Wait4";
         canRebond = true;
         //Apparition UI "RB pour faire ronbir le poisson"
     }
@@ -525,7 +567,7 @@ public class TutoManager : MonoBehaviour
         canFell = true;
         helpInputs.transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
         //UI Appuyer sur LB pour claquer le poisson
-        nextText = "c5Wait4";
+        canVictory = true;
     }
 
 
@@ -535,8 +577,88 @@ public class TutoManager : MonoBehaviour
 
     public void Chap6Dialogue1()
     {
-
+        //Apparition UI --> Terminer la peche
+        nextText = "c6Wait";
     }
+
+    public void Chap6Fail1()
+    {
+        ShowDialogueBox();
+        BaalSpeaking();
+        dialogueText.text = "Aaaaand that’s how you DON’T catch a SnapSnack.";
+        nextText = "c6Fail1";
+    }
+
+    public void Chap6Fail2()
+    {
+        LokasseSpeaking();
+        dialogueText.text = "I see… Interesting method…";
+        nextText = "c6Fail2";
+    }
+
+    public void Chap6Fail3()
+    {
+        BaalSpeaking();
+        dialogueText.text = " I have to be careful not to empty the Bay, or you will not have any materials for your craft.";
+        nextText = "c6Fail3";
+    }
+
+    public void Chap6Fail4()
+    {
+        LokasseSpeaking();
+        dialogueText.text = "Oooof course...";
+        nextText = "c6Fail4";
+    }
+
+    public void Chap6Fail5()
+    {
+        textIsFinish = true;
+        nextText = "";
+    }
+
+    //Win
+    public void Chap6Win1()
+    {
+        ShowDialogueBox();
+        BaalSpeaking();
+        dialogueText.text = "And that’s how you get a beautiful SnapSnack.";
+        nextText = "c6Win1";
+    }
+
+    public void Chap6Win2()
+    {
+        LokasseSpeaking();
+        dialogueText.text = "He seems not that dangerous.";
+        nextText = "c6Win2";
+    }
+
+    public void Chap6Win3()
+    {
+        BaalSpeaking();
+        dialogueText.text = " Yeah, this one was pretty calm. But be careful with them. Dossam almost lost a few fingers with them.";
+        nextText = "c6Win3";
+    }
+
+    public void Chap6Win4()
+    {
+        LokasseSpeaking();
+        dialogueText.text = " I understand why. But that seems cool. Can I try?";
+        nextText = "c6Win4";
+    }
+
+    public void Chap6Win5()
+    {
+        BaalSpeaking();
+        dialogueText.text = " Of course...";
+        nextText = "c6Win5";
+    }
+
+    public void Chap6Win6()
+    {
+        textIsFinish = true;
+        nextText = "";
+    }
+
 
     #endregion
 }

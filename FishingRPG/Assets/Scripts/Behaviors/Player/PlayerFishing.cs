@@ -47,7 +47,7 @@ public class PlayerFishing : MonoBehaviour
                     StartCoroutine(WaitCooldownTime());
 
 
-                    if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone)
+                    if ((FishManager.instance.currentFishBehavior.exhausted || FishManager.instance.currentFishBehavior.isDead) && PlayerManager.instance.cfvz.isNearVictoryZone && TutoManager.instance.canVictory)
                     {
                         FishManager.instance.SetFinishPoint();
                     }

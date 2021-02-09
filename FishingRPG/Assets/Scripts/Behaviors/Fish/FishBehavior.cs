@@ -106,7 +106,7 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            if (!FishManager.instance.isAerial)
+            if (!FishManager.instance.isAerial && !TutoManager.instance.isOnTutorial)
             {
                 idleTimer += Time.fixedDeltaTime;
 
@@ -118,7 +118,7 @@ public class FishBehavior : MonoBehaviour
 
             if (isIdle)
             {
-                if (!inVictoryZone)
+                if (!inVictoryZone || !TutoManager.instance.canVictory)
                 {
                     if (!FishManager.instance.isAerial)
                     {
@@ -376,8 +376,8 @@ public class FishBehavior : MonoBehaviour
             ChooseDirection();
             timerAerial = 0f;
         }
-
-        if(timerAerial >= 0.9f && TutoManager.instance.nextText == "c5Wait2")
+        Debug.Log(FishManager.instance.currentFishBehavior.timerAerial);
+        if((FishManager.instance.currentFishBehavior.timerAerial > (FishManager.instance.currentFishBehavior.maxTimeAerial - 0.2f)) && TutoManager.instance.nextText == "c5Wait2")
         {
             Time.timeScale = 0f;
             TutoManager.instance.Chap5Dialogue4();
@@ -436,7 +436,11 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
-            TutoManager.instance.Chap5Dialogue1();
+            if (!TutoManager.instance.fishIsDead)
+            {
+                TutoManager.instance.Chap5Dialogue1();
+            }
+
             animator.SetBool("isDeadOrExhausted", true);
             shaderMaterialFish.SetFloat("Vector1_403CFD6B", 0.2f);
             shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 0.2f);
