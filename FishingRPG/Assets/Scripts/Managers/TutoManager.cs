@@ -24,8 +24,13 @@ public class TutoManager : MonoBehaviour
     public bool chap1 = false;
     public bool chap2 = false;
     public bool chap3 = false;
+    public bool chap4 = false;
     public bool buttonBAutorisation = false;
     public bool launchingBobber = false;
+    public bool staminaNeedToDown = false;
+
+    public bool canRebond = false;
+    public bool canFell = false;
 
     public Text dialogueText;
     public Text nameText;
@@ -35,6 +40,9 @@ public class TutoManager : MonoBehaviour
 
     public Image baal;
     public Image lokasse;
+
+    //Timer
+    public float timer;
 
     private void Awake()
     {
@@ -59,6 +67,15 @@ public class TutoManager : MonoBehaviour
             {
                 switch (nextText)
                 {
+                    case "c1d2":
+                        Chap1Dialogue2();
+                        break;
+                    case "c1d3":
+                        Chap1Dialogue3();
+                        break;
+                    case "c1d4":
+                        Chap1Dialogue4();
+                        break;
                     case "c2d2":
                         Chap2Dialogue2();
                         break;
@@ -73,6 +90,45 @@ public class TutoManager : MonoBehaviour
                         break;
                     case "c3d3":
                         Chap3Dialogue3();
+                        break;
+                    case "c3d4":
+                        Chap3Dialogue4();
+                        break;
+                    case "c3d5":
+                        Chap3Dialogue5();
+                        break;
+                    case "c3d6":
+                        Chap3Dialogue6();
+                        break;
+                    case "c4d2":
+                        Chap4Dialogue2();
+                        break;
+                    case "c4d3":
+                        Chap4Dialogue3();
+                        break;
+                    case "c4d4":
+                        Chap4Dialogue4();
+                        break;
+                    case "c4d5":
+                        Chap4Dialogue5();
+                        break;
+                    case "c4d6":
+                        Chap4Dialogue6();
+                        break;
+                    case "c5d2":
+                        Chap5Dialogue2();
+                        break;
+                    case "c5d3":
+                        Chap5Dialogue3();
+                        break;
+                    case "c5d5":
+                        Chap5Dialogue7();
+                        break;
+                    case "c5d6":
+                        Chap5Dialogue8();
+                        break;
+                    case "c5d7":
+                        Chap5Dialogue9();
                         break;
                     default:
                         break;
@@ -106,6 +162,43 @@ public class TutoManager : MonoBehaviour
         {
             if (!FishingManager.instance.isOnSwirl){Chap2DialogueFail();}
             else                                   { nextText = ""     ;}
+        }
+
+        if(nextText == "c4Wait")
+        {
+            timer += Time.deltaTime;
+
+            if(timer > 60f || Vector3.Distance(FishingRodManager.instance.bobberPosition.transform.position, FishManager.instance.currentFish.transform.position) < 8f 
+                           || FishManager.instance.currentFishBehavior.currentStamina <= 0)
+            {
+                //
+            }
+        }
+
+        if(nextText == "c5Wait" && Input.GetButton("Right Bumper"))
+        {
+            Time.timeScale = 1f;
+            nextText = "c5Wait2";
+        }
+
+        if(nextText == "c5Wait3" && Input.GetButton("Right Bumper"))
+        {
+            Time.timeScale = 1f;
+            nextText = "c5d4";
+        }
+
+        if(nextText == "c5Wait4" && Input.GetButton("Left Bumper"))
+        {
+            Time.timeScale = 1f;
+            //UI DISPARAIT APPUYER SUR LB
+            nextText = "";
+        }
+
+        if (staminaNeedToDown)
+        {
+            FishManager.instance.currentFishBehavior.currentStamina -= 2f;
+            LifeStaminaUI.instance.UpdateStamina(FishManager.instance.currentFishBehavior.currentStamina / FishManager.instance.currentFishBehavior.fishyFiche.stamina);
+            FishManager.instance.currentFishBehavior.CheckStamina();
         }
     }
 
@@ -148,7 +241,28 @@ public class TutoManager : MonoBehaviour
         isOnTutorial = true;
         ShowDialogueBox();
         BaalSpeaking();
-        dialogueText.text = "Regarde, je vais te montrer comment pêcher";
+        dialogueText.text = "Here we are! The BluePearl Bay. You will quickly understand why we call it that way.";
+        nextText = "c1d2";
+    }
+
+    public void Chap1Dialogue2()
+    {
+        LokasseSpeaking();
+        dialogueText.text = "Nice! I always wanted to see what your daily life looks like…";
+        nextText = "c1d3";
+    }
+
+    public void Chap1Dialogue3()
+    {
+        dialogueText.text = "I stay all day long in my shop, it’s good to go out sometimes.";
+        nextText = "c1d4";
+    }
+
+    public void Chap1Dialogue4()
+    {
+        BaalSpeaking();
+        dialogueText.text = "Well, now is the best part. A fishing session! First, let’s go to the waterfront.";
+        nextText = "";
     }
 
     #endregion
@@ -161,19 +275,19 @@ public class TutoManager : MonoBehaviour
         ShowDialogueBox();
         BaalSpeaking();
         nextText = "c2d2";
-        dialogueText.text = "Ok, on peut commencer.";
+        dialogueText.text = "So it’s begin. First: find a fish. This part is easy.";
     }
 
     public void Chap2Dialogue2()
     {
         nextText = "c2d3";
-        dialogueText.text = "Quand On cherche à attraper un poisson, on guette les remous à la surface de l’eau";
+        dialogueText.text = "You get the eddies?";
     }
 
     public void Chap2Dialogue3()
     {
         nextText = "c2d4";
-        dialogueText.text = "Quand on a repéré, on lance sa ligne dedans";
+        dialogueText.text = "Exactly! And when you found one, you throw your bobber in it.";
         chap2 = true;
     }
 
@@ -209,62 +323,219 @@ public class TutoManager : MonoBehaviour
         //Fond noir transparent jauge
         ShowDialogueBox();
         BaalSpeaking();
-        dialogueText.text = "L’objectif d’une pêche est de tuer le poisson ou de le fatiguer et de l’amener sur la rive";
+        dialogueText.text = "To catch a fish, I have 2 options: tire the fish to bring it on the sand or kill it.";
         //UI vie + Endu
         nextText = "c3d2";
     }
 
     public void Chap3Dialogue2()
     {
-        //Fond noir transparent fil
-        dialogueText.text = "Attention au fil, qu’il ne casse pas. Il faut toujours garder un œil dessus.";
-        //UI Fil
+        LokasseSpeaking();
+        dialogueText.text = "Kill it?";
         nextText = "c3d3";
     }
 
     public void Chap3Dialogue3()
     {
+        BaalSpeaking();
+        //Fond noir transparent fil
+        dialogueText.text = "When the fish is too heavy or energic, it’s simpler. Anyway, I need to keep an eye on the tension of the rope.";
+        //UI Fil
+        nextText = "c3d4";
+    }
+
+    public void Chap3Dialogue4()
+    {
+        dialogueText.text = "If the rope breaks, it’s the end. The idea is simple: tire the fish without breaking the rope.";
+        nextText = "c3d5";
+    }
+
+    public void Chap3Dialogue5()
+    {
+        LokasseSpeaking();
+        dialogueText.text = "Aaaaand you’re welcome for the enchantment.";
+        nextText = "c3d6";
+    }
+
+    public void Chap3Dialogue6()
+    {
+        BaalSpeaking();
+        dialogueText.text = " Indeed! The color helps a lot.";
+        nextText = "c3d7";
+    }
+
+    public void Chap3Dialogue7()
+    {
         Time.timeScale = 1;
         DisableDialogueBox();
         nextText = "";
+        chap3 = true;
         //Enlever fond noir
         //Wait 3 seconds avant de lancer Chapitre IV
+
+        StartCoroutine(WaitChapter4());
+    }
+
+    IEnumerator WaitChapter4()
+    {
+        yield return new WaitForSeconds(3f);
+
+        Chap4Dialogue1();
     }
     #endregion
 
     #region Chapitre IV
     public void Chap4Dialogue1()
     {
+        ShowDialogueBox();
         //3 Capacités
-        dialogueText.text = "Tu as 3 capacités.";
+        dialogueText.text = "I have 3 main possible actions…";
         nextText = "c4d2";
     }
 
     public void Chap4Dialogue2()
     {
+        helpInputs.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
         //Prendre la ligne
-        dialogueText.text = "Prendre la ligne. Ramène le poisson et le fatigue, mais la ligne prend cher.";
+        dialogueText.text = "First, I can Take the line. It brings back the fish and tire it a lot, but the rope will have a hard time.";
         nextText = "c4d3";
     }
 
     public void Chap4Dialogue3()
     {
         //Lâcher la ligne
-        dialogueText.text = "Lâcher la ligne. La tension baisse, mais le poisson est libre de bouger et peut s’éloigner de nouveau";
+        dialogueText.text = "Secondly I can Let the line go. The tension goes down, but the fish is free and can fly away very easily.";
         nextText = "c4d4";
     }
 
     public void Chap4Dialogue4()
     {
-        //Bloquer la ligne
-        dialogueText.text = "Un entre deux : Bloquer la ligne. Fatigue peu le poisson, mais l’empêche de reprendre de la distance. La tension augmente peu";
+        helpInputs.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
+        dialogueText.text = "But I also can just Block the line. The tension will rise a little, but the fish will not be able to go away. It’s very useful when it’s moving too fast.";
         nextText = "c4d5";
     }
 
     public void Chap4Dialogue5()
     {
         dialogueText.text = "L’idée est de réussir à affaiblir le poisson sans que la ligne casse";
+        nextText = "c4d6";
+    }
+
+    public void Chap4Dialogue6()
+    {
+        DisableDialogueBox();
         nextText = "";
+        //Show UI
+        // Lacher ces 2 boutons pour lâcher la ligne
+
+        StartCoroutine(WaitChap4Dialogue7());
+    }
+
+    IEnumerator WaitChap4Dialogue7()
+    {
+        yield return new WaitForSeconds(3f);
+
+        Chap4Dialogue7();
+    }
+
+    public void Chap4Dialogue7()
+    {
+        //UI "Essayer de fatiguer le poisson" !
+        nextText = "c4Wait";
+    }
+
+    public void Chap4Dialogue8()
+    {
+        nextText = "";
+        chap4 = true;
+        //Disparition UI "Essayer de fatiguer le poisson".
+        if (FishManager.instance.currentFishBehavior.currentStamina > 0)
+        {
+            staminaNeedToDown = true;
+        }
+    }
+     
+    #endregion
+
+    #region Chapitre V
+
+    public void Chap5Dialogue1()
+    {
+        Time.timeScale = 0f;
+        ShowDialogueBox();
+        BaalSpeaking();
+        dialogueText.text = "The fish isn’t moving, it’s exhausted. While it can’t move, I can throw it in the air to hurt him.";
+        nextText = "c5d2";
+    }
+
+    public void Chap5Dialogue2()
+    {
+        LokasseSpeaking();
+        dialogueText.text = "Ooook, so that’s how you kill him. I see…";
+        nextText = "c5d3";
+    }
+
+    public void Chap5Dialogue3()
+    {
+        DisableDialogueBox();
+        helpInputs.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(true);
+        //Apparition UI " Appuyer sur RB pour envoyer le poisson en l'air"
+        nextText = "c5Wait";
+    }
+
+    public void Chap5Dialogue4()
+    {
+        nextText = "c5Wait3";
+        canRebond = true;
+        //Apparition UI "RB pour faire ronbir le poisson"
+    }
+
+    public void Chap5Dialogue5()
+    {
+        nextText = "c5Wait3";
+        canRebond = true;
+        //Apparition UI "RB pour faire ronbir le poisson"
+    }
+
+    public void Chap5Dialogue6()
+    {
+        ShowDialogueBox();
+        BaalSpeaking();
+        dialogueText.text = "Quand un poisson est dans les airs, on peut aussi le claquer contre la surface de l’eau";
+        nextText = "c5d5";
+    }
+
+    public void Chap5Dialogue7()
+    {
+        LokasseSpeaking();
+        dialogueText.text = "C’est quoi la différence ?";
+        nextText = "c5d6";
+    }
+
+    public void Chap5Dialogue8()
+    {
+        BaalSpeaking();
+        dialogueText.text = "Le claquage fait beaucoup de dégâts, mais le poisson retourne aussitôt dans l’eau. Tant qu’il est dans les airs, essaye de le faire un peu rebondir avant de le claquer pour l’endommager un peu plus.";
+        nextText = "c5d7";
+    }
+
+    public void Chap5Dialogue9()
+    {
+        DisableDialogueBox();
+        canFell = true;
+        helpInputs.transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+        //UI Appuyer sur LB pour claquer le poisson
+        nextText = "c5Wait4";
+    }
+
+
+    #endregion
+
+    #region Chapitre VI
+
+    public void Chap6Dialogue1()
+    {
+
     }
 
     #endregion

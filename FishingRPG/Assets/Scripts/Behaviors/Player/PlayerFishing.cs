@@ -16,7 +16,7 @@ public class PlayerFishing : MonoBehaviour
     {
         if (isReadyToFish)
         {
-            if (Input.GetButton("Left Bumper"))         //LB
+            if (Input.GetButton("Left Bumper") && TutoManager.instance.canFell)         //LB
             {
                 if (!hasJustPressLB)
                 {
@@ -59,7 +59,7 @@ public class PlayerFishing : MonoBehaviour
                             {
                                 PlayerManager.instance.IsAerial();
                             }
-                            else
+                            else if(TutoManager.instance.canRebond)
                             {
                                 PlayerManager.instance.CheckDistanceWithWater();
                             }
