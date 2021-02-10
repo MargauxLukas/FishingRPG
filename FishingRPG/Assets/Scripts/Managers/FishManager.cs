@@ -50,6 +50,10 @@ public class FishManager : MonoBehaviour
     public GameObject test1;
     public GameObject test2;
 
+    public GameObject iconRage;
+    public GameObject iconDeath;
+    public GameObject iconExhausted;
+
     [HideInInspector]public List<int> directionPercentList = new List<int>(11);
     private void Awake()
     {
@@ -181,6 +185,7 @@ public class FishManager : MonoBehaviour
         if (!currentFishBehavior.isDead)
         {
             currentFishBehavior.exhausted = false;
+            DesactivateAllIcon();
             currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
             currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
             currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
@@ -266,6 +271,7 @@ public class FishManager : MonoBehaviour
                 currentFishBehavior.currentStamina = currentFishBehavior.fishyFiche.stamina;
                 DebugManager.instance.vz.DesactivateZone();
                 currentFishBehavior.exhausted = false;
+                DesactivateAllIcon();
                 currentFishBehavior.animator.SetBool("isDeadOrExhausted", false);
                 currentFishBehavior.shaderMaterialFish.SetFloat("Vector1_403CFD6B", 1f);
                 currentFishBehavior.shaderMaterialEyes.SetFloat("Vector1_403CFD6B", 1f);
@@ -352,5 +358,30 @@ public class FishManager : MonoBehaviour
     public void ChangeLifeJauge()
     {
         LifeStaminaUI.instance.UpdateLife(currentFishBehavior.currentLife / currentFishBehavior.fishyFiche.life);
+    }
+
+    public void DesactivateAllIcon()
+    {
+        iconDeath.SetActive(false);
+        iconExhausted.SetActive(false);
+        iconRage.SetActive(false);
+    }
+
+    public void ActiveRageIcon()
+    {
+        DesactivateAllIcon();
+        iconRage.SetActive(true);
+    }
+
+    public void ActiveExhaustedIcon()
+    {
+        DesactivateAllIcon();
+        iconExhausted.SetActive(true);
+    }
+
+    public void ActiveDeathIcon()
+    {
+        DesactivateAllIcon();
+        iconDeath.SetActive(true);
     }
 }
