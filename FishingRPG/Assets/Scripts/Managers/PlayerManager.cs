@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
 
     public GameObject player;
+    public GameObject body;
     public GameObject playerView;
     public PlayerStats playerStats;
     public PlayerGem playerGem;

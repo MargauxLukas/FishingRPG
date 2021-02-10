@@ -108,18 +108,22 @@ public class FishBehavior : MonoBehaviour
         }
         else
         {
-            if (!FishManager.instance.isAerial && PlayerManager.instance.playerInventory.inventory.tutoFini)
+            if (gameObject.GetComponent<FishPatterns>().currentPattern == null && !isDead)
             {
-                idleTimer += Time.fixedDeltaTime;
-
-                if (idleTimer > idleMaxTime)
+                if (!FishManager.instance.isAerial && PlayerManager.instance.playerInventory.inventory.tutoFini)
                 {
-                    isIdle = false;
+                    idleTimer += Time.fixedDeltaTime;
+
+                    if (idleTimer > idleMaxTime)
+                    {
+                        isIdle = false;
+                    }
                 }
             }
 
             if (isIdle)
             {
+                Debug.Log("la");
                 if (!inVictoryZone || !TutoManager.instance.canVictory)
                 {
                     if (!FishManager.instance.isAerial)
