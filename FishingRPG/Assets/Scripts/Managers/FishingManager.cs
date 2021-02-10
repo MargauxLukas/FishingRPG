@@ -219,7 +219,7 @@ public class FishingManager : MonoBehaviour
 
         PlayerManager.instance.MoulinetOnce = false; 
         //Stop sound -> Combat music
-        AkSoundEngine.PostEvent("STOP_MSCCombatMusic", gameObject);
+        AkSoundEngine.PostEvent("STOP_MSCCombatMusic", FishManager.instance.currentFish.gameObject);
         //Stop -> Moulinet Sound
         AkSoundEngine.PostEvent("STOP_MoulinetOn", PlayerManager.instance.gameObject);
         //Stop -> Tension Sound
