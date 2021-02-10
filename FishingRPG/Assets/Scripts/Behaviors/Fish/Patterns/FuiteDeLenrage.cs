@@ -5,7 +5,7 @@ using UnityEngine;
 public class FuiteDeLenrage : MonoBehaviour
 {
     static bool playOnce = false;
-    static int speedModifier = 5;
+    static int speedModifier = 8;
 
     public GameObject snapSnack;
 

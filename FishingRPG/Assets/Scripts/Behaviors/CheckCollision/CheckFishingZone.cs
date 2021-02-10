@@ -9,10 +9,11 @@ public class CheckFishingZone : MonoBehaviour
         if (other.gameObject.name.Contains("Player"))
         {
             FishingManager.instance.isInFishingRod = true;
-            if (!TutoManager.instance.chap2 && !PlayerManager.instance.playerInventory.inventory.tutoFini)
-            {
-                TutoManager.instance.Chap2Dialogue1();
-            }
+        }
+
+        if (!TutoManager.instance.chap2 && !PlayerManager.instance.playerInventory.inventory.tutoFini && other.gameObject.name.Contains("Body"))
+        {
+            TutoManager.instance.Chap2Dialogue1();
         }
     }
 

@@ -100,5 +100,10 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerManager.instance.LeaveFishingStockMenu();
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            PlayerManager.instance.CHEAT_FinishTuto();
+        }
     }
 }

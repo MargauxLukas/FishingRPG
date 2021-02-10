@@ -440,6 +440,7 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
+            FishManager.instance.ActiveExhaustedIcon();
             if (!TutoManager.instance.fishIsDead)
             {
                 TutoManager.instance.staminaNeedToDown = false;
@@ -467,6 +468,7 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentLife = 0;
             isDead = true;
+            FishManager.instance.ActiveDeathIcon();
             //Stop sound -> Combat music
             AkSoundEngine.PostEvent("STOP_MSCCombatMusic", FishManager.instance.currentFish.gameObject);
             //Play Sound
@@ -483,7 +485,7 @@ public class FishBehavior : MonoBehaviour
 
     public void SetIdleMaxTime()
     {
-        idleMaxTime = Random.Range(5, 10);
+        idleMaxTime = Random.Range(5, 6);
     }
 
     public void ResetStats()
@@ -494,6 +496,7 @@ public class FishBehavior : MonoBehaviour
     public void ResetRage()
     {
         isRage = false;
+        FishManager.instance.DesactivateAllIcon();
         animator.SetBool("isRage", false);
         strength = fishyFiche.strength;
     }

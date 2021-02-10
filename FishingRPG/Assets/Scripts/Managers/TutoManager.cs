@@ -280,9 +280,9 @@ public class TutoManager : MonoBehaviour
         helpInputs.SetActive(true);
     }
 
-    public void BaalSpeaking()
+    public void BalSpeaking()
     {
-        nameText.text = "Baal";
+        nameText.text = "Bal";
         baal.color = speakingColor;
         lokasse.color = notSpeakingColor;
     }
@@ -325,7 +325,7 @@ public class TutoManager : MonoBehaviour
     public void Chap1Dialogue1()
     {
         ShowDialogueBox();
-        BaalSpeaking();
+        BalSpeaking();
         textIsFinish = false;
         dialogueText.text = "Here we are! The BluePearl Bay. You will quickly understand why we call it that way.";
         nextText = "c1d2";
@@ -346,7 +346,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap1Dialogue4()
     {
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = "Well, now is the best part. A fishing session! First, let’s go to the waterfront.";
         textIsFinish = true;
         nextText = "";
@@ -360,19 +360,21 @@ public class TutoManager : MonoBehaviour
     {
         textIsFinish = false;
         ShowDialogueBox();
-        BaalSpeaking();
+        BalSpeaking();
         nextText = "c2d2";
         dialogueText.text = "So it’s begin. First: find a fish. This part is easy.";
     }
 
     public void Chap2Dialogue2()
     {
+        LokasseSpeaking();
         nextText = "c2d3";
-        dialogueText.text = "You get the eddies?";
+        dialogueText.text = "You get the swirls?";
     }
 
     public void Chap2Dialogue3()
     {
+        BalSpeaking();
         nextText = "c2d4";
         dialogueText.text = "Exactly! And when you found one, you throw your bobber in it.";
         chap2 = true;
@@ -383,19 +385,19 @@ public class TutoManager : MonoBehaviour
         DisableDialogueBox();
         helpInputs.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
         RTHL.enabled = true;
-        UItext.text = "Appuyer sur RT pour préparer le lancer";
+        UItext.text = "Use RT to prepare the launch";
         nextText = "c2d5";
     }
 
     public void Chap2Dialogue5()
     {
-        UItext.text = "Viser un remous et relâcher RT pour lancer";
+        UItext.text = "Aim for a swirl and release RT";
         nextText = "c2d6";
     }
 
     public void Chap2DialogueFail()
     {
-        UItext.text = "Appuyez sur B pour quitter la pêche";
+        UItext.text = "Use B to leave";
         helpInputs.transform.GetChild(1).GetChild(1).GetChild(2).gameObject.SetActive(true);
         nextText = "c2Fail";
         buttonBAutorisation = true;
@@ -408,7 +410,7 @@ public class TutoManager : MonoBehaviour
         chap3 = true;
         Time.timeScale = 0;
         ShowDialogueBox();
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = "To catch a fish, I have 2 options: tire the fish to bring it on the sand or kill it.";
         nextText = "c3d2";
     }
@@ -422,8 +424,8 @@ public class TutoManager : MonoBehaviour
 
     public void Chap3Dialogue3()
     {
-        BaalSpeaking();
-        dialogueText.text = "When the fish is too heavy or energic, it’s simpler. Anyway, I need to keep an eye on the tension of the rope.";
+        BalSpeaking();
+        dialogueText.text = "When the fish is too heavy or energic, it’s simplier. Anyway, I need to keep an eye on the tension of the rope.";
         nextText = "c3d4";
     }
 
@@ -442,7 +444,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap3Dialogue6()
     {
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = " Indeed! The color helps a lot.";
         nextText = "c3d7";
     }
@@ -460,7 +462,7 @@ public class TutoManager : MonoBehaviour
 
     IEnumerator WaitChapter4()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         Chap4Dialogue1();
     }
@@ -469,6 +471,7 @@ public class TutoManager : MonoBehaviour
     #region Chapitre IV
     public void Chap4Dialogue1()
     {
+        Time.timeScale = 0f;
         ShowDialogueBox();
         dialogueText.text = "I have 3 main possible actions…";
         nextText = "c4d2";
@@ -477,36 +480,37 @@ public class TutoManager : MonoBehaviour
     public void Chap4Dialogue2()
     {
         helpInputs.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
-        dialogueText.text = "First, I can Take the line. It brings back the fish and tire it a lot, but the rope will have a hard time.";
+        dialogueText.text = "First, I can TAKE THE LINE. It brings back the fish and tire it a lot, but the rope will have a hard time.";
         nextText = "c4d3";
     }
 
     public void Chap4Dialogue3()
     {
-        dialogueText.text = "Secondly I can Let the line go. The tension goes down, but the fish is free and can fly away very easily.";
+        dialogueText.text = "Secondly I can LET THE LINE GO. The tension goes down, but the fish is free and can fly away very easily.";
         nextText = "c4d4";
     }
 
     public void Chap4Dialogue4()
     {
         helpInputs.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
-        dialogueText.text = "But I also can just Block the line. The tension will rise a little, but the fish will not be able to go away. It’s very useful when it’s moving too fast.";
+        dialogueText.text = "But I also can just BLOCK THE LINE. The tension will rise a little, but the fish will not be able to go away.";
         nextText = "c4d5";
     }
 
     public void Chap4Dialogue5()
     {
-        dialogueText.text = "L’idée est de réussir à affaiblir le poisson sans que la ligne casse";
+        dialogueText.text = "It’s very useful when it’s moving too fast.";
         nextText = "c4d6";
     }
 
     public void Chap4Dialogue6()
     {
         DisableDialogueBox();
+        Time.timeScale = 1f;
         nextText = "";
         RTFishHL.enabled = true;
         LTFishHL.enabled = true;
-        UItext.text = "Lacher ces 2 boutons pour lâcher la ligne.";
+        UItext.text = " Release the triggers to LET THE LINE GO.";
 
         StartCoroutine(WaitChap4Dialogue7());
     }
@@ -521,7 +525,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap4Dialogue7()
     {
-        UItext.text = "Essayer de fatiguer le poisson.";
+        UItext.text = "Try to tire the fish now.";
         nextText = "c4Wait";
     }
 
@@ -545,7 +549,7 @@ public class TutoManager : MonoBehaviour
         Time.timeScale = 0f;
         fishIsDead = true;
         ShowDialogueBox();
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = "The fish isn’t moving, it’s exhausted. While it can’t move, I can throw it in the air to hurt him.";
         nextText = "c5d2";
 
@@ -577,7 +581,7 @@ public class TutoManager : MonoBehaviour
     public void Chap5Dialogue6()
     {
         ShowDialogueBox();
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = "When the fish is in the air I can also slap it on the surface of the water.";
         nextText = "c5d5";
         rebondText.SetActive(false);
@@ -592,7 +596,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap5Dialogue8()
     {
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = "Felling the fish deals a lot of damage but you can’t make it bounce. So the best strategy is to keep it a little bit in the air before felling it to inflict as much damage as possible.";
         nextText = "c5d7";
     }
@@ -614,14 +618,14 @@ public class TutoManager : MonoBehaviour
 
     public void Chap6Dialogue1()
     {
-        UItext.text = "Essayer de terminer la pêche.";
+        UItext.text = "Try to end the capture or kill the fish.";
         nextText = "c6Wait";
     }
 
     public void Chap6Fail1()
     {
         ShowDialogueBox();
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = "Aaaaand that’s how you DON’T catch a SnapSnack.";
         nextText = "c6Fail1";
     }
@@ -635,7 +639,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap6Fail3()
     {
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = " I have to be careful not to empty the Bay, or you will not have any materials for your craft.";
         nextText = "c6Fail3";
     }
@@ -658,7 +662,7 @@ public class TutoManager : MonoBehaviour
     public void Chap6Win1()
     {
         ShowDialogueBox();
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = "And that’s how you get a beautiful SnapSnack.";
         nextText = "c6Win1";
     }
@@ -672,7 +676,7 @@ public class TutoManager : MonoBehaviour
 
     public void Chap6Win3()
     {
-        BaalSpeaking();
+        BalSpeaking();
         dialogueText.text = " Yeah, this one was pretty calm. But be careful with them. Dossam almost lost a few fingers with them.";
         nextText = "c6Win3";
     }
@@ -680,14 +684,14 @@ public class TutoManager : MonoBehaviour
     public void Chap6Win4()
     {
         LokasseSpeaking();
-        dialogueText.text = " I understand why. But that seems cool. Can I try?";
+        dialogueText.text = " I understand why. That seems cool, but also not my kind of stuff. I will leave it to you!";
         nextText = "c6Win4";
     }
 
     public void Chap6Win5()
     {
-        BaalSpeaking();
-        dialogueText.text = " Of course...";
+        BalSpeaking();
+        dialogueText.text = "Pfff...";
         nextText = "c6Win5";
     }
 

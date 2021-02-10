@@ -384,6 +384,11 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void CHEAT_FinishTuto()
+    {
+        TutoManager.instance.EndTutorial();
+    }
+
     public void ResetStats()
     {
         playerStats.strenght     = 3;
