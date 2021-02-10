@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 517705673724863546}
   - component: {fileID: 4826135862791181224}
   - component: {fileID: 1091831740433665997}
+  - component: {fileID: 2750302225001971091}
   m_Layer: 10
   m_Name: "Animation Enerv\xE9"
   m_TagString: Untagged
@@ -360,6 +361,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2750302225001971091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082750009631763058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45867119c3588b9409fbd639d0668b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4879463314687720101
 GameObject:
   m_ObjectHideFlags: 0
