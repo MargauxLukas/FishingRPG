@@ -80,8 +80,17 @@ public class PlayerFishing : MonoBehaviour
 
             if (Input.GetAxis("Right Trigger") > 0.1f)  //RT
             {
-                PlayerManager.instance.IsTakingLine();
-                PlayerManager.instance.isPressingRT = true;
+                //Debug.Log(Vector3.Distance(PlayerManager.instance.body.transform.position, FishManager.instance.currentFishBehavior.transform.position));
+                if (Vector3.Distance(PlayerManager.instance.body.transform.position, FishManager.instance.currentFishBehavior.transform.position) > 5f)
+                {
+                    PlayerManager.instance.IsTakingLine();
+                    PlayerManager.instance.isPressingRT = true;
+                }
+                else
+                {
+                    FishingRodManager.instance.fishingLine.isTaken = false;
+                    PlayerManager.instance.isPressingRT = false;
+                }
             }
             else
             {
