@@ -232,6 +232,7 @@ MonoBehaviour:
   shaderMaterialEyes: {fileID: 2100000, guid: 319fe7a790088ef4b9613901cab89f67, type: 2}
   anchor: {fileID: 6079044056965655428}
   animationRage: {fileID: 4082750009631763058}
+  matRage: {fileID: 2100000, guid: f74088332125e584985360d5b2d58b03, type: 2}
 --- !u!114 &3329990018515731799
 MonoBehaviour:
   m_ObjectHideFlags: 0
