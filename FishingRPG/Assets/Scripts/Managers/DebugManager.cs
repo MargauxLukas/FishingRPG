@@ -19,6 +19,7 @@ public class DebugManager : MonoBehaviour
 #endif
        */
        
+       
     }
 
     public virtual void Init()
