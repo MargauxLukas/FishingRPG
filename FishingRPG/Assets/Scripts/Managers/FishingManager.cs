@@ -48,7 +48,7 @@ public class FishingManager : MonoBehaviour
 
     private void Start()
     {
-        //isInFishingRod = false;
+        isInFishingRod = false;
     }
 
     private void FixedUpdate()
@@ -100,9 +100,9 @@ public class FishingManager : MonoBehaviour
 
             isSnap = true;
             //Set Current Fish to SnapSnack
-            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
             //Play Sound
-            AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+            AkSoundEngine.PostEvent("MSCCombatMusic", gameObject);
         }
         else
         {
@@ -117,9 +117,9 @@ public class FishingManager : MonoBehaviour
                             dynamics);
                 isSnap = true;
                 //Set Current Fish to SnapSnack
-                AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
+                AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
                 //Play Sound
-                AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+                AkSoundEngine.PostEvent("MSCCombatMusic", gameObject);
             }
             else
             {
@@ -132,9 +132,9 @@ public class FishingManager : MonoBehaviour
                             dynamics);
                 isSnap = false;
                 //Set Current Fish to ReefCrusher
-                AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", FishManager.instance.currentFish.gameObject);
+                AkSoundEngine.SetSwitch("CurrentFishInCombat", "ReefCrusher", gameObject);
                 //Play Sound
-                AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+                AkSoundEngine.PostEvent("MSCCombatMusic", gameObject);
             }
         }
 
@@ -219,7 +219,7 @@ public class FishingManager : MonoBehaviour
 
         PlayerManager.instance.MoulinetOnce = false; 
         //Stop sound -> Combat music
-        AkSoundEngine.PostEvent("STOP_MSCCombatMusic", FishManager.instance.currentFish.gameObject);
+        AkSoundEngine.PostEvent("STOP_MSCCombatMusic", gameObject);
         //Stop -> Moulinet Sound
         AkSoundEngine.PostEvent("STOP_MoulinetOn", PlayerManager.instance.gameObject);
         //Stop -> Tension Sound
