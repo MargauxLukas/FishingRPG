@@ -100,9 +100,9 @@ public class FishingManager : MonoBehaviour
 
             isSnap = true;
             //Set Current Fish to SnapSnack
-            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", gameObject);
+            AkSoundEngine.SetSwitch("CurrentFishInCombat", "SnapSnack", FishManager.instance.currentFish.gameObject);
             //Play Sound
-            AkSoundEngine.PostEvent("MSCCombatMusic", gameObject);
+            AkSoundEngine.PostEvent("MSCCombatMusic", FishManager.instance.currentFish.gameObject);
         }
         else
         {

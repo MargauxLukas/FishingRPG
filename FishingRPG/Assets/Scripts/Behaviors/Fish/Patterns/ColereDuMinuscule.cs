@@ -27,7 +27,6 @@ public class ColereDuMinuscule : MonoBehaviour
         FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
         FishManager.instance.currentFishBehavior.isRage = true;
         FishManager.instance.currentFishBehavior.animationRage.SetActive(true);
-        Debug.Log("llaaaaaa");
         FishManager.instance.ActiveRageIcon();
         FishManager.instance.currentFishBehavior.animator.SetBool("isRage", true);
 
