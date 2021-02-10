@@ -217,6 +217,8 @@ public class FishingManager : MonoBehaviour
         FishingRodManager.instance.fishingLine.fCurrent = 0f;
         FishingRodManager.instance.distanceCP = 0f;
 
+        FishManager.instance.DesactivateAllIcon();
+
         PlayerManager.instance.MoulinetOnce = false; 
         //Stop sound -> Combat music
         AkSoundEngine.PostEvent("STOP_MSCCombatMusic", gameObject);

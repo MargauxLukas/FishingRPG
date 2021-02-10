@@ -362,7 +362,6 @@ public class FishManager : MonoBehaviour
 
     public void DesactivateAllIcon()
     {
-        Debug.Log("tst");
         iconDeath.SetActive(false);
         iconExhausted.SetActive(false);
         iconRage.SetActive(false);
