@@ -66,6 +66,7 @@ public class FishBehavior : MonoBehaviour
     float z;
 
     public Transform anchor;
+    public GameObject animationRage;
 
     private void Start()
     {
@@ -496,6 +497,7 @@ public class FishBehavior : MonoBehaviour
     public void ResetRage()
     {
         isRage = false;
+        FishManager.instance.currentFishBehavior.animationRage.SetActive(false);
         FishManager.instance.DesactivateAllIcon();
         animator.SetBool("isRage", false);
         strength = fishyFiche.strength;
