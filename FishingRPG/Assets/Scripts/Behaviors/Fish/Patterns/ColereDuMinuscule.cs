@@ -26,8 +26,8 @@ public class ColereDuMinuscule : MonoBehaviour
         FishManager.instance.currentFishBehavior.strength += 2;
         FishManager.instance.currentFishBehavior.currentStamina -= energyCost;
         FishManager.instance.currentFishBehavior.isRage = true;
+        FishManager.instance.currentFishBehavior.gameObject.transform.GetChild(0).GetChild(1).GetComponent<SkinnedMeshRenderer>().material = FishManager.instance.currentFishBehavior.matRage;
         FishManager.instance.currentFishBehavior.animationRage.SetActive(true);
-        Debug.Log("llaaaaaa");
         FishManager.instance.ActiveRageIcon();
         FishManager.instance.currentFishBehavior.animator.SetBool("isRage", true);
 

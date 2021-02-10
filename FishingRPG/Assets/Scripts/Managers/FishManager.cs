@@ -369,19 +369,22 @@ public class FishManager : MonoBehaviour
 
     public void ActiveRageIcon()
     {
-        DesactivateAllIcon();
+        iconDeath.SetActive(false);
+        iconExhausted.SetActive(false);
         iconRage.SetActive(true);
     }
 
     public void ActiveExhaustedIcon()
     {
-        DesactivateAllIcon();
+        iconRage.SetActive(false);
+        iconDeath.SetActive(false);
         iconExhausted.SetActive(true);
     }
 
     public void ActiveDeathIcon()
     {
-        DesactivateAllIcon();
         iconDeath.SetActive(true);
+        iconRage.SetActive(false);
+        iconExhausted.SetActive(false);
     }
 }

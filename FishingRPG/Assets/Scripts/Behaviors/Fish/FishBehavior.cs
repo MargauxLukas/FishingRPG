@@ -67,6 +67,7 @@ public class FishBehavior : MonoBehaviour
 
     public Transform anchor;
     public GameObject animationRage;
+    public Material matRage;
 
     private void Start()
     {
@@ -164,7 +165,7 @@ public class FishBehavior : MonoBehaviour
             }
             else
             {
-                if (gameObject.GetComponent<FishPatterns>().currentPattern == null)
+                if (gameObject.GetComponent<FishPatterns>().currentPattern == null && !isDead)
                 {
                     //Debug.Log("Choose a Patern !");
                     fishPattern.startPattern(isRage);
@@ -441,7 +442,11 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
-            FishManager.instance.ActiveExhaustedIcon();
+            FishManager.instance.currentFishBehavior.idleTimer = 0f;
+            if (!isDead)
+            {
+                FishManager.instance.ActiveExhaustedIcon();
+            }
             if (!TutoManager.instance.fishIsDead)
             {
                 TutoManager.instance.staminaNeedToDown = false;
@@ -469,6 +474,7 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentLife = 0;
             isDead = true;
+            animationRage.SetActive(false);
             FishManager.instance.ActiveDeathIcon();
             //Stop sound -> Combat music
             AkSoundEngine.PostEvent("STOP_MSCCombatMusic", FishManager.instance.currentFish.gameObject);
@@ -497,8 +503,8 @@ public class FishBehavior : MonoBehaviour
     public void ResetRage()
     {
         isRage = false;
+        FishManager.instance.currentFishBehavior.gameObject.transform.GetChild(0).GetChild(1).GetComponent<SkinnedMeshRenderer>().material = FishManager.instance.currentFishBehavior.shaderMaterialFish;
         FishManager.instance.currentFishBehavior.animationRage.SetActive(false);
-        FishManager.instance.DesactivateAllIcon();
         animator.SetBool("isRage", false);
         strength = fishyFiche.strength;
     }
