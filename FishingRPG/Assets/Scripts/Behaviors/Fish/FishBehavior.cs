@@ -498,7 +498,6 @@ public class FishBehavior : MonoBehaviour
     {
         isRage = false;
         FishManager.instance.currentFishBehavior.animationRage.SetActive(false);
-        FishManager.instance.DesactivateAllIcon();
         animator.SetBool("isRage", false);
         strength = fishyFiche.strength;
     }
