@@ -441,6 +441,7 @@ public class FishBehavior : MonoBehaviour
             DebugManager.instance.vz.ActivateZone();
             currentStamina = 0;
             exhausted = true;
+            FishManager.instance.currentFishBehavior.idleTimer = 0f;
             FishManager.instance.ActiveExhaustedIcon();
             if (!TutoManager.instance.fishIsDead)
             {
